@@ -20,20 +20,24 @@ const MAX_CHIPS = 8;
 
 <Layout
   title="Contributors"
-  description="Everyone who has shipped a skill to the CAT Agent Skills gallery — look up your handle to reveal your own personal contributor badge."
+  description="Everyone who has shipped a skill to the AI.Tedt.org gallery — look up your handle to reveal your own contributor badges."
 >
   <section class="mx-auto max-w-8xl px-4 py-10 sm:px-6">
     <header class="mb-8">
-      <h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">
+      <span class="text-xs font-semibold uppercase tracking-[0.08em] text-accent-text">
+        Community ledger
+      </span>
+      <h1 class="mt-2 text-4xl leading-tight text-[var(--text-heading)] sm:text-5xl">
         Contributors
       </h1>
-      <p class="mt-2 max-w-2xl text-muted">
+      <p class="mt-3 max-w-[68ch] text-lg leading-relaxed text-muted sm:text-xl">
         Everyone who has shipped a skill to the gallery — each with a{" "}
         <strong class="text-fg">personal badge</strong> waiting to be claimed.
       </p>
       <p class="mt-1 text-sm text-muted">
         {authors.length} contributors · {totalSkills} skills · {featuredTotal} featured
       </p>
+      <div class="accent-rule mt-5"></div>
     </header>
 
     {/* ── The "You" panel: private snark, revealed client-side ── */}
@@ -75,7 +79,7 @@ const MAX_CHIPS = 8;
 
     {/* ── Public directory: neutral, no snark for others ── */}
     <div class="mb-4 flex items-baseline justify-between gap-3">
-      <h2 class="text-lg font-semibold">All contributors</h2>
+      <h2 class="text-2xl text-[var(--text-heading)]">All contributors</h2>
       <span class="hidden text-sm text-muted sm:inline">
         sorted by skills shipped
       </span>
@@ -138,14 +142,7 @@ const MAX_CHIPS = 8;
                   <li>
                     <a class="chip" href={withBase(`/skills/${s.slug}`)} title={s.name}>
                       {s.featured && (
-                        <svg
-                          class="chip-star"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          aria-hidden="true"
-                        >
-                          <path d="M12 2.5l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.9l-5.8 3.05 1.11-6.46-4.7-4.58 6.49-.94L12 2.5z" />
-                        </svg>
+                        <span class="chip-featured" title="Featured" aria-hidden="true"></span>
                       )}
                       <span class="chip-name">{s.name}</span>
                     </a>
@@ -158,9 +155,6 @@ const MAX_CHIPS = 8;
                 <div class="author-foot">
                   {a.featuredCount > 0 && (
                     <span class="foot-item">
-                      <svg class="chip-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path d="M12 2.5l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.9l-5.8 3.05 1.11-6.46-4.7-4.58 6.49-.94L12 2.5z" />
-                      </svg>
                       {a.featuredCount} featured
                     </span>
                   )}
@@ -182,7 +176,7 @@ const MAX_CHIPS = 8;
     /* ---- "You" panel + form (template elements → scoped) ---- */
     .you-panel {
       border: 1px solid var(--border);
-      border-radius: 1.25rem;
+      border-radius: var(--radius-lg);
       background: var(--surface);
       padding: 1.25rem;
     }
@@ -339,7 +333,7 @@ const MAX_CHIPS = 8;
       display: flex;
       flex-direction: column;
       border: 1px solid var(--border);
-      border-radius: 0.9rem;
+      border-radius: var(--radius-lg);
       background: var(--surface);
       padding: 1rem;
       transition:
@@ -404,7 +398,7 @@ const MAX_CHIPS = 8;
     }
     .author-count-num {
       display: block;
-      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-family: var(--font-mono);
       font-weight: 700;
       font-size: 1.15rem;
       color: var(--fg);
@@ -453,11 +447,12 @@ const MAX_CHIPS = 8;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-    .chip-star {
-      width: 0.7rem;
-      height: 0.7rem;
+    .chip-featured {
+      width: 0.45rem;
+      height: 0.45rem;
       flex-shrink: 0;
-      color: #e0a92e;
+      border-radius: 999px;
+      background: var(--orange);
     }
     .chip-more {
       display: inline-flex;
@@ -510,7 +505,7 @@ const MAX_CHIPS = 8;
       color: var(--fg);
     }
     #you-result .carousel-position {
-      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-family: var(--font-mono);
       font-size: 0.78rem;
       font-weight: 600;
       letter-spacing: 0.1em;
@@ -605,7 +600,7 @@ const MAX_CHIPS = 8;
       filter: drop-shadow(0 16px 26px rgb(0 0 0 / 0.24));
     }
     #you-result .award-eyebrow {
-      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-family: var(--font-mono);
       font-size: 0.6875rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -642,7 +637,7 @@ const MAX_CHIPS = 8;
     }
     #you-result .stat-num {
       display: block;
-      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-family: var(--font-mono);
       font-weight: 700;
       font-size: 1.2rem;
       line-height: 1;
@@ -651,7 +646,7 @@ const MAX_CHIPS = 8;
     #you-result .stat-label {
       display: block;
       margin-top: 0.3rem;
-      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-family: var(--font-mono);
       font-size: 0.625rem;
       letter-spacing: 0.09em;
       text-transform: uppercase;
@@ -845,7 +840,7 @@ const MAX_CHIPS = 8;
       const share = real
         ? `<a class="award-download" href="${BASE}/badge/${encodeURIComponent(
             login,
-          )}/${badge.id}.png" download="cat-badge-${login}-${badge.id}.png"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/><path d="M5 21h14"/></svg>Download this badge</a>`
+          )}/${badge.id}.png" download="cat-badge-${login}-${badge.id}.png">↓ Download this badge</a>`
         : "";
       return `
         <div class="award" id="award-detail" aria-live="polite" tabindex="0">
@@ -882,8 +877,8 @@ const MAX_CHIPS = 8;
         <div class="carousel-toolbar">
           <p class="carousel-status" aria-label="${positionLabel}"><span class="carousel-position">${visiblePosition}</span></p>
           <div class="carousel-controls" aria-label="Browse earned badges">
-            <button class="carousel-arrow" type="button" data-direction="-1" aria-label="Previous badge" ${activeBadgeIndex === 0 ? "disabled" : ""}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
-            <button class="carousel-arrow" type="button" data-direction="1" aria-label="Next badge" ${activeBadgeIndex === resolved.length - 1 ? "disabled" : ""}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+            <button class="carousel-arrow" type="button" data-direction="-1" aria-label="Previous badge" ${activeBadgeIndex === 0 ? "disabled" : ""}>←</button>
+            <button class="carousel-arrow" type="button" data-direction="1" aria-label="Next badge" ${activeBadgeIndex === resolved.length - 1 ? "disabled" : ""}>→</button>
           </div>
         </div>
         ${detailHtml(login, selected)}
@@ -921,10 +916,9 @@ const MAX_CHIPS = 8;
     function emptyHtml(login: string) {
       return `
         <div class="badge-empty">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.9l-5.8 3.05 1.11-6.46-4.7-4.58 6.49-.94L12 2.5z"/></svg>
           <p>No skills yet under <strong>@${esc(
             login,
-          )}</strong> — no badge to show. Ship one and check back. 🐱</p>
+          )}</strong> — no badge to show. Ship one and check back.</p>
         </div>`;
     }
 

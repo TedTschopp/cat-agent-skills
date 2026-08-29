@@ -14,31 +14,16 @@ export type Platform = (typeof PLATFORMS)[number];
  */
 export type SkillType = "skill" | "plugin" | "automation";
 
-/** Brand accent color used for each platform's badge (CAT palette). */
+/** AI.Tedt.org platform tones, drawn from the tedt.org brand palette. */
 export const PLATFORM_COLORS: Record<Platform, string> = {
-  Cowork: "#7f39fb",
-  "Copilot Studio": "#0078d4",
-  Scout: "#0d9488",
+  Cowork: "#00446f",
+  "Copilot Studio": "#00a9e0",
+  Scout: "#e86027",
 };
 
-/**
- * Cover gradient pairs drawn from the CAT brand spectrum
- * (blue -> purple -> pink -> orange). Calm enough to read well against both
- * light and dark backgrounds.
- */
-const COVER_PALETTE: Array<[string, string]> = [
-  ["#0078d4", "#5b8def"],
-  ["#5b8def", "#7f39fb"],
-  ["#7f39fb", "#c26cf3"],
-  ["#c26cf3", "#d83b73"],
-  ["#d83b73", "#ff8c00"],
-  ["#0078d4", "#7f39fb"],
-  ["#3aa0ff", "#5b8def"],
-  ["#7f39fb", "#d83b73"],
-  ["#0d9488", "#5b8def"],
-  ["#c26cf3", "#5b8def"],
-  ["#d83b73", "#c26cf3"],
-  ["#0078d4", "#0d9488"],
+const COVER_GLOWS = [
+  { color: "#e86027", rgb: "232, 96, 39" },
+  { color: "#00a9e0", rgb: "0, 169, 224" },
 ];
 
 /** Stable hash for a string (FNV-1a style, good enough for theming). */
@@ -51,14 +36,26 @@ function hash(input: string): number {
   return h >>> 0;
 }
 
-/** Deterministic gradient for a skill, derived from its slug. */
+/** The stable cyan-or-orange edge used by a skill cover. */
+export function coverAccent(slug: string): string {
+  return COVER_GLOWS[hash(slug) % COVER_GLOWS.length].color;
+}
+
+/** Near-black skill-cover field, backlit like the tedt.org TT mark. */
+export function coverField(slug: string, override?: string): string {
+  if (override) return override;
+  const glow = COVER_GLOWS[hash(slug) % COVER_GLOWS.length];
+  const drift = hash(`${slug}:drift`) % 40;
+  return `radial-gradient(120% 140% at ${30 + drift}% 8%, rgba(${glow.rgb}, 0.42) 0%, rgba(${glow.rgb}, 0.1) 34%, transparent 62%), linear-gradient(180deg, #17202b 0%, #101820 55%, #07090f 100%)`;
+}
+
+/**
+ * Compatibility treatment for small contributor initials. Skill covers use
+ * `coverField`; avatars use one flat brand signal instead of the old spectrum.
+ */
 export function coverGradient(slug: string, override?: string): string {
-  if (override) {
-    return `linear-gradient(135deg, ${override} 0%, ${override} 100%)`;
-  }
-  const [from, to] = COVER_PALETTE[hash(slug) % COVER_PALETTE.length];
-  const angle = 110 + (hash(slug + "angle") % 60);
-  return `linear-gradient(${angle}deg, ${from} 0%, ${to} 100%)`;
+  const tone = override ?? coverAccent(slug);
+  return `linear-gradient(135deg, ${tone} 0%, ${tone} 100%)`;
 }
 
 /** Up to two-letter initials used as a watermark on covers. */

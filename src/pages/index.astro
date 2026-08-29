@@ -63,15 +63,15 @@ const allContributors = [...contributorMap.entries()]
 ---
 
 <Layout>
-  <!-- Hero -->
-  <section class="border-b border-border bg-surface/40">
-    <div class="mx-auto max-w-8xl px-4 py-8 sm:px-6 sm:py-10">
-      <h1
-        class="text-2xl font-bold tracking-tight text-fg sm:text-3xl"
-      >
+  <section class="mx-auto max-w-8xl px-4 pb-8 pt-10 sm:px-6 sm:pb-10 sm:pt-14">
+    <header>
+      <span class="text-xs font-semibold uppercase tracking-[0.08em] text-accent-text">
+        AI skill library
+      </span>
+      <h1 class="mt-2 max-w-[18ch] text-4xl leading-tight text-[var(--text-heading)] sm:text-5xl">
         The gallery of skills for your AI agents
       </h1>
-      <p class="mt-2 max-w-2xl text-muted">
+      <p class="mt-3 max-w-[68ch] text-lg leading-relaxed text-muted sm:text-xl">
         Browse <span class="text-fg">skills and plugins contributed by the
         community</span>: drop-in instructions and script bundles that teach your
         agents new tricks. Find one, download the markdown (and scripts), and add
@@ -79,55 +79,57 @@ const allContributors = [...contributorMap.entries()]
           class="text-fg">Copilot Studio</span
         >, or <span class="text-fg">Scout</span>.
       </p>
+      <div class="accent-rule mt-5"></div>
+    </header>
+  </section>
 
-      <!-- Search -->
-      <div class="mt-6 max-w-xl">
-        <label for="skill-search" class="sr-only">Search skills</label>
-        <div class="relative">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            class="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-subtle"
-          >
-            <circle cx="11" cy="11" r="7"></circle>
-            <path d="m21 21-4.3-4.3" stroke-linecap="round"></path>
-          </svg>
+  <div class="mx-auto grid max-w-8xl grid-cols-[minmax(0,1fr)] gap-8 px-4 pb-12 sm:px-6 lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-12">
+    <aside class="min-w-0 rounded-lg border border-border bg-surface-2 p-4 shadow-[var(--shadow-sm)] sm:p-5">
+      <div>
+        <label for="skill-search" class="text-xs font-semibold uppercase tracking-[0.08em] text-subtle">
+          Search
+        </label>
+        <div class="mt-2 flex items-center gap-2 rounded border border-border bg-surface px-3 py-2 shadow-[var(--shadow-inset)] focus-within:border-accent">
           <input
             id="skill-search"
             type="search"
-            placeholder="Search skills by name, contributor, description, or tag…"
+            placeholder="Name, contributor, or tag…"
             autocomplete="off"
-            class="w-full rounded-xl border border-border bg-surface py-2.5 pl-11 pr-4 text-fg placeholder:text-subtle outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/25"
+            class="min-w-0 flex-1 bg-transparent text-sm text-fg placeholder:text-subtle outline-none"
           />
+          <button
+            id="search-clear"
+            type="button"
+            class="hidden text-xs text-[var(--link)] underline underline-offset-2"
+          >
+            Clear
+          </button>
         </div>
       </div>
-    </div>
-  </section>
 
   <!-- Platform filters -->
-  <section class="border-b border-border bg-bg">
-    <div
-      class="mx-auto flex max-w-8xl flex-wrap items-center gap-3 px-4 py-4 sm:px-6"
-    >
-      <span class="text-xs font-semibold uppercase tracking-wider text-subtle"
+  <section class="mt-6 border-t border-border pt-5">
+    <div>
+      <span class="text-xs font-semibold uppercase tracking-[0.08em] text-subtle"
         >Platform</span
       >
-      <div id="platform-filters" class="flex flex-wrap gap-2">
+      <div id="platform-filters" class="mt-2 flex flex-col gap-2">
         <button
           type="button"
           data-platform=""
-          class="platform-chip rounded-full border border-accent bg-accent-soft px-3.5 py-1.5 text-sm font-semibold text-accent-text transition"
-          aria-pressed="true">All platforms</button
+          class="platform-chip flex w-full items-center justify-between rounded border border-accent bg-accent px-3 py-1.5 text-left text-sm font-semibold text-accent-fg transition"
+          aria-pressed="true"
+        >
+          <span>All platforms</span>
+          <span class="text-xs text-subtle">{skills.length}</span>
+        </button
         >
         {
           PLATFORMS.map((platform) => (
             <button
               type="button"
               data-platform={platform}
-              class="platform-chip flex items-center gap-2 rounded-full border border-border bg-surface-2 px-3.5 py-1.5 text-sm font-semibold text-muted transition hover:border-accent/40 hover:text-fg"
+              class="platform-chip flex w-full items-center gap-2 rounded border border-border bg-surface px-3 py-1.5 text-left text-sm font-semibold text-muted transition hover:border-accent/40 hover:text-fg"
               aria-pressed="false"
             >
               <span
@@ -135,7 +137,7 @@ const allContributors = [...contributorMap.entries()]
                 style={`background:${PLATFORM_COLORS[platform]}`}
               />
               {platform}
-              <span class="text-xs text-subtle">
+              <span class="ml-auto text-xs text-subtle">
                 {platformCounts.get(platform) ?? 0}
               </span>
             </button>
@@ -146,11 +148,12 @@ const allContributors = [...contributorMap.entries()]
   </section>
 
   <!-- Tag filters -->
-  <section class="border-b border-border bg-bg">
-    <div class="mx-auto max-w-8xl px-4 py-4 sm:px-6">
+  <section class="mt-6 border-t border-border pt-5">
+    <div>
+      <span class="text-xs font-semibold uppercase tracking-[0.08em] text-subtle">Tags and contributors</span>
       <div
         id="tag-row"
-        class="relative flex flex-nowrap items-center gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0"
+        class="relative mt-2 flex flex-nowrap items-center gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0"
       >
         <button
           type="button"
@@ -194,7 +197,7 @@ const allContributors = [...contributorMap.entries()]
               </button>
               <div
                 id="tag-panel"
-                class="fixed inset-x-0 bottom-0 z-40 hidden max-h-[70vh] w-full overflow-y-auto rounded-t-2xl border border-border bg-surface p-3 shadow-2xl sm:absolute sm:inset-x-auto sm:bottom-auto sm:right-0 sm:top-full sm:z-30 sm:mt-2 sm:max-h-none sm:w-80 sm:rounded-xl sm:shadow-lg"
+                class="fixed inset-x-0 bottom-0 z-40 hidden max-h-[70vh] w-full overflow-y-auto rounded-t-2xl border border-border bg-surface p-3 shadow-2xl sm:absolute sm:inset-x-auto sm:bottom-auto sm:left-0 sm:top-full sm:z-30 sm:mt-2 sm:max-h-none sm:w-80 sm:rounded-lg sm:shadow-lg"
               >
           <div class="mb-2 flex items-center justify-between sm:hidden">
             <span class="text-sm font-semibold text-fg">Filter by tag</span>
@@ -236,10 +239,6 @@ const allContributors = [...contributorMap.entries()]
             )
           }
         <div
-          class="mx-1 hidden h-5 w-px shrink-0 self-center bg-border sm:block"
-          aria-hidden="true"
-        ></div>
-        <div
           id="contributor-backdrop"
           class="fixed inset-0 z-30 hidden bg-black/40 sm:hidden"
           aria-hidden="true"
@@ -252,25 +251,11 @@ const allContributors = [...contributorMap.entries()]
             aria-expanded="false"
             aria-haspopup="true"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="h-3.5 w-3.5"
-              aria-hidden="true"
-            >
-              <circle cx="12" cy="8" r="3.25"></circle>
-              <path d="M5.5 19.2a6.5 6.5 0 0 1 13 0"></path>
-            </svg>
             Contributor<span id="contributor-count" class="font-semibold"></span> ▾
           </button>
           <div
             id="contributor-panel"
-            class="fixed inset-x-0 bottom-0 z-40 hidden max-h-[70vh] w-full overflow-y-auto rounded-t-2xl border border-border bg-surface p-3 shadow-2xl sm:absolute sm:inset-x-auto sm:bottom-auto sm:left-0 sm:top-full sm:z-30 sm:mt-2 sm:max-h-none sm:w-80 sm:rounded-xl sm:shadow-lg"
+            class="fixed inset-x-0 bottom-0 z-40 hidden max-h-[70vh] w-full overflow-y-auto rounded-t-2xl border border-border bg-surface p-3 shadow-2xl sm:absolute sm:inset-x-auto sm:bottom-auto sm:left-0 sm:top-full sm:z-30 sm:mt-2 sm:max-h-none sm:w-80 sm:rounded-lg sm:shadow-lg"
           >
             <div class="mb-2 flex items-center justify-between sm:hidden">
               <span class="text-sm font-semibold text-fg">Filter by contributor</span>
@@ -343,47 +328,51 @@ const allContributors = [...contributorMap.entries()]
     </div>
   </section>
 
+    </aside>
+
+    <div class="min-w-0">
+
   <!-- Gallery -->
-  <section class="mx-auto max-w-8xl px-4 py-8 sm:px-6 sm:py-10">
+  <section>
 
     <div class="mb-5 flex flex-wrap items-center justify-between gap-4">
-      <h2 class="text-lg font-semibold text-fg">
+      <h2 class="display-face text-2xl text-[var(--text-heading)]">
         Skills <span id="result-count" class="text-muted"
           >({skills.length})</span
         >
       </h2>
       <div class="flex flex-wrap items-center gap-3">
-        <div id="type-filters" class="flex flex-wrap gap-2">
+        <div id="type-filters" class="flex flex-wrap gap-0">
           <button
             type="button"
             data-type=""
-            class="type-chip rounded-full border border-accent bg-accent-soft px-3 py-1 text-sm font-medium text-accent-text transition"
+            class="type-chip rounded-l border border-accent bg-accent px-3 py-1 text-sm font-medium text-accent-fg transition"
             aria-pressed="true">All</button
           >
           <button
             type="button"
             data-type="skill"
-            class="type-chip rounded-full border border-border bg-surface-2 px-3 py-1 text-sm font-medium text-muted transition hover:border-accent/40 hover:text-fg"
+            class="type-chip -ml-px border border-border bg-surface px-3 py-1 text-sm font-medium text-muted transition hover:border-accent/40 hover:text-fg"
             aria-pressed="false">Skills</button
           >
           <button
             type="button"
             data-type="plugin"
-            class="type-chip rounded-full border border-border bg-surface-2 px-3 py-1 text-sm font-medium text-muted transition hover:border-accent/40 hover:text-fg"
+            class="type-chip -ml-px border border-border bg-surface px-3 py-1 text-sm font-medium text-muted transition hover:border-accent/40 hover:text-fg"
             aria-pressed="false">Plugins</button
           >
           <button
             type="button"
             data-type="automation"
-            class="type-chip rounded-full border border-border bg-surface-2 px-3 py-1 text-sm font-medium text-muted transition hover:border-accent/40 hover:text-fg"
+            class="type-chip -ml-px rounded-r border border-border bg-surface px-3 py-1 text-sm font-medium text-muted transition hover:border-accent/40 hover:text-fg"
             aria-pressed="false">Automations</button
           >
         </div>
         <label class="flex items-center gap-2 text-sm text-muted">
-          <span class="hidden sm:inline">Sort by</span>
+          <span class="hidden text-xs font-semibold uppercase tracking-[0.08em] sm:inline">Sort</span>
           <select
             id="sort-select"
-            class="rounded-lg border border-border bg-surface-2 px-3 py-1.5 text-sm text-fg focus:border-accent focus:outline-none"
+            class="rounded border border-border bg-surface px-3 py-1.5 text-sm text-fg focus:border-accent focus:outline-none"
           >
             <option value="featured">Featured</option>
             <option value="rating">Top rated</option>
@@ -397,7 +386,7 @@ const allContributors = [...contributorMap.entries()]
 
     <div
       id="gallery"
-      class="grid grid-cols-1 gap-4 sm:grid-cols-[repeat(auto-fill,minmax(17rem,1fr))]"
+      class="grid grid-cols-1 gap-6 sm:grid-cols-[repeat(auto-fill,minmax(18rem,1fr))]"
     >
       {
         skills.map((skill) => (
@@ -447,6 +436,8 @@ const allContributors = [...contributorMap.entries()]
 
     <div id="scroll-sentinel" class="h-10"></div>
   </section>
+    </div>
+  </div>
 </Layout>
 
 <script>
@@ -459,6 +450,7 @@ const allContributors = [...contributorMap.entries()]
     gallery.querySelectorAll<HTMLElement>(".skill-item")
   );
   const search = document.getElementById("skill-search") as HTMLInputElement;
+  const searchClear = document.getElementById("search-clear") as HTMLButtonElement;
   const tagRow = document.getElementById("tag-row")!;
   const tagAllBtn = tagRow.querySelector<HTMLButtonElement>("[data-tag-all]")!;
   const tagInlineBtns = Array.from(
@@ -649,8 +641,7 @@ const allContributors = [...contributorMap.entries()]
     clear.setAttribute("aria-label", `Remove contributor filter: ${name}`);
     clear.className =
       "grid h-5 w-5 shrink-0 place-items-center rounded-full text-muted transition-colors hover:bg-surface hover:text-accent-text";
-    clear.innerHTML =
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>';
+    clear.textContent = "×";
     clear.addEventListener("click", () => toggleContributor(key));
     chip.appendChild(clear);
     return chip;
@@ -747,12 +738,21 @@ const allContributors = [...contributorMap.entries()]
   // Search (debounced)
   let t: number | undefined;
   search.addEventListener("input", () => {
+    searchClear.classList.toggle("hidden", search.value.length === 0);
     window.clearTimeout(t);
     t = window.setTimeout(() => {
       query = search.value.trim().toLowerCase();
       syncUrl();
       refilter();
     }, 120);
+  });
+  searchClear.addEventListener("click", () => {
+    search.value = "";
+    query = "";
+    searchClear.classList.add("hidden");
+    syncUrl();
+    refilter();
+    search.focus();
   });
 
   function paintChips(
@@ -764,10 +764,10 @@ const allContributors = [...contributorMap.entries()]
       const on = (c.dataset[key] ?? "") === active;
       c.setAttribute("aria-pressed", String(on));
       c.classList.toggle("border-accent", on);
-      c.classList.toggle("bg-accent-soft", on);
-      c.classList.toggle("text-accent-text", on);
+      c.classList.toggle("bg-accent", on);
+      c.classList.toggle("text-accent-fg", on);
       c.classList.toggle("border-border", !on);
-      c.classList.toggle("bg-surface-2", !on);
+      c.classList.toggle("bg-surface", !on);
       c.classList.toggle("text-muted", !on);
     });
   }
@@ -965,6 +965,7 @@ const allContributors = [...contributorMap.entries()]
     sortMode = s && SORTS.includes(s) ? s : "featured";
     sortSelect.value = sortMode;
     search.value = query;
+    searchClear.classList.toggle("hidden", query.length === 0);
     paintTags();
     paintChips(platformChips, "platform", activePlatform);
     paintChips(typeChips, "type", activeType);

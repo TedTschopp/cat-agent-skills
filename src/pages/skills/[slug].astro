@@ -8,7 +8,7 @@ import {
   validateAutomationData,
   type AutomationDigest,
 } from "../../../scripts/validate-automation";
-import { formatDate, PLATFORM_COLORS, initials, coverGradient } from "../../lib/skills";
+import { formatDate, initials, coverGradient } from "../../lib/skills";
 import { withBase } from "../../lib/url";
 import { authorKey, normalizeLogin } from "../../lib/badges";
 import { getRating } from "../../lib/ratings";
@@ -93,53 +93,50 @@ const authorLogin = normalizeLogin(d.authorGithub);
 const authorSlug = authorKey(d.authorGithub, d.author);
 const authorProfileUrl =
   d.authorUrl ?? (authorLogin ? `https://github.com/${authorLogin}` : undefined);
+const platformTone: Record<string, string> = {
+  Cowork: "var(--platform-cowork)",
+  "Copilot Studio": "var(--platform-copilot-studio)",
+  Scout: "var(--platform-scout)",
+};
 ---
 
 <Layout title={d.name} description={d.description}>
-  <div class="mx-auto max-w-5xl px-4 py-6 sm:px-6 sm:py-8">
+  <div class="mx-auto max-w-[82.5rem] px-4 py-8 sm:px-6 sm:py-10">
     <a
       href={withBase("/")}
-      class="inline-flex items-center gap-1.5 text-sm text-muted hover:text-fg transition-colors"
+      class="inline-flex items-center gap-1.5 text-sm text-[var(--link)] underline underline-offset-2 hover:text-[var(--link-hover)]"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        class="h-4 w-4"
-      >
-        <path d="m15 18-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"
-        ></path>
-      </svg>
-      Back to gallery
+      <span aria-hidden="true">←</span>
+      All skills
     </a>
 
-    <div class="mt-5 overflow-hidden rounded-2xl border border-border">
-      <SkillCover
-        slug={skill.id}
-        name={d.name}
-        platforms={d.platforms}
-        tags={d.tags}
-        coverColor={d.coverColor}
-        hasBundle={Boolean(d.bundle)}
-        type={d.type}
-        isInstaller={isInstaller}
-        variant="hero"
-      />
-    </div>
+    <header class="mt-6">
+      <span class="inline-flex rounded-sm bg-accent-soft px-2 py-0.5 text-xs font-semibold uppercase tracking-[0.08em] text-accent-text">
+        {noun}
+      </span>
+      <h1 class="mt-3 max-w-[20ch] text-4xl leading-tight text-[var(--text-heading)] sm:text-5xl">
+        {d.name}
+      </h1>
+      <p class="mt-3 max-w-[68ch] text-lg leading-relaxed text-muted sm:text-xl">
+        {d.description}
+      </p>
+      <div class="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-subtle">
+        {updated && (
+          <span><span class="text-xs font-semibold uppercase tracking-[0.08em]">Updated</span> {updated}</span>
+        )}
+        {d.version && (
+          <><span aria-hidden="true">·</span><span><span class="text-xs font-semibold uppercase tracking-[0.08em]">Version</span> {d.version}</span></>
+        )}
+        {downloads > 0 && (
+          <><span aria-hidden="true">·</span><span>{downloads.toLocaleString("en-US")} downloads</span></>
+        )}
+      </div>
+      <div class="accent-rule mt-5"></div>
+    </header>
 
     {
       isSample && (
-        <div class="mt-5 flex items-start gap-3 rounded-xl border border-amber-400/40 bg-amber-400/10 p-4">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            class="mt-0.5 h-5 w-5 shrink-0 text-amber-500"
-          >
-            <path d="M12 2 3 7v10l9 5 9-5V7l-9-5zm0 2.3L18 8v.02l-6 3.33-6-3.33V8l6-3.7zM5 9.7l6 3.33v6.64l-6-3.33V9.7zm14 0v6.64l-6 3.33v-6.64l6-3.33z" />
-          </svg>
+        <div class="mt-5 rounded-lg border border-[var(--gold)] bg-[color-mix(in_srgb,var(--gold)_12%,transparent)] p-4">
           <p class="text-sm text-fg/80">
             <span class="font-semibold text-fg">Sample {noun}.</span> This
             is placeholder / demo content included to show how the gallery works —
@@ -149,11 +146,9 @@ const authorProfileUrl =
       )
     }
 
-    <div class="mt-8 grid gap-8 lg:grid-cols-[1fr_18rem]">
+    <div class="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-12">
       <!-- Main content -->
       <div class="order-last min-w-0 lg:order-none">
-        <p class="text-lg text-muted">{d.description}</p>
-
         {
           d.author && (
             <div class="mt-5 flex items-center gap-3">
@@ -203,22 +198,9 @@ const authorProfileUrl =
                 {authorSkillCount > 1 && (
                   <a
                     href={withBase(`/?author=${encodeURIComponent(authorSlug)}`)}
-                    class="group mt-0.5 inline-flex items-center gap-1 text-xs font-medium text-muted hover:text-accent-text transition-colors"
+                    class="mt-0.5 inline-flex items-center gap-1 text-xs font-medium text-[var(--link)] underline underline-offset-2 hover:text-[var(--link-hover)]"
                   >
-                    View all {authorSkillCount} skills
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="h-3 w-3 transition-transform group-hover:translate-x-0.5"
-                      aria-hidden="true"
-                    >
-                      <path d="M5 12h14M13 6l6 6-6 6" />
-                    </svg>
+                    View all {authorSkillCount} skills →
                   </a>
                 )}
               </div>
@@ -232,7 +214,7 @@ const authorProfileUrl =
             class="inline-flex items-center rounded-full border border-border bg-surface-2 px-3 py-1 text-sm font-medium text-fg transition-colors hover:border-accent/50"
           >
             <span class="inline-flex items-center gap-1.5">
-              <span aria-hidden="true">👍</span>
+              <span aria-hidden="true">▲</span>
               <span>{rating}</span>
               <span class="text-muted">{rating === 1 ? "rating" : "ratings"}</span>
             </span>
@@ -245,19 +227,7 @@ const authorProfileUrl =
                 class="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-2 px-3 py-1 text-sm font-medium text-fg"
                 title={`${downloads.toLocaleString("en-US")} all-time ${downloads === 1 ? "download" : "downloads"}`}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="h-3.5 w-3.5"
-                  aria-hidden="true"
-                >
-                  <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" />
-                </svg>
+                <span aria-hidden="true">↓</span>
                 <span>{downloads.toLocaleString("en-US")}</span>
                 <span class="text-muted">{downloads === 1 ? "download" : "downloads"}</span>
               </span>
@@ -290,23 +260,10 @@ const authorProfileUrl =
           ) : isAutomation && automation ? (
             <div>
               <div class="mb-6">
-                <h2 class="mb-2 text-sm font-semibold uppercase tracking-wider text-accent-text">
+                <h2 class="mb-2 text-xl text-[var(--text-heading)]">
                   Trigger
                 </h2>
-                <p class="flex items-center gap-2 text-muted">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-4 w-4 shrink-0 text-accent-text"
-                  >
-                    <circle cx="12" cy="12" r="9" />
-                    <path d="M12 7v5l3 2" />
-                  </svg>
+                <p class="text-muted">
                   <span>
                     <span class="font-medium text-fg">
                       {automation.triggerType === "condition"
@@ -320,7 +277,7 @@ const authorProfileUrl =
               </div>
 
               <div class="mb-3 flex items-baseline gap-2">
-                <h2 class="text-sm font-semibold uppercase tracking-wider text-accent-text">
+                <h2 class="text-xl text-[var(--text-heading)]">
                   Steps
                 </h2>
                 <span class="text-xs text-subtle">
@@ -351,14 +308,14 @@ const authorProfileUrl =
             <>
               {d.agentDescription && (
                 <div class="mb-6">
-                  <h2 class="mb-2 text-sm font-semibold uppercase tracking-wider text-accent-text">
+                  <h2 class="mb-2 text-xl text-[var(--text-heading)]">
                     Description
                   </h2>
                   <p class="text-muted">{d.agentDescription}</p>
                 </div>
               )}
 
-              <h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-accent-text">
+              <h2 class="mb-3 text-xl text-[var(--text-heading)]">
                 Instructions
               </h2>
               <article class="prose max-w-none dark:prose-invert prose-headings:text-fg prose-a:text-accent-text prose-strong:text-fg prose-code:text-accent-text prose-code:before:content-[''] prose-code:after:content-[''] prose-table:text-muted prose-th:text-fg">
@@ -370,19 +327,25 @@ const authorProfileUrl =
       </div>
 
       <!-- Sidebar -->
-      <aside class="order-first lg:order-none lg:sticky lg:top-20 lg:self-start">
-        <div class="rounded-2xl border border-border bg-surface p-5">
+      <aside class="order-first lg:order-none lg:sticky lg:top-4 lg:self-start">
+        <div class="overflow-hidden rounded-lg border border-[var(--border-subtle)] bg-surface shadow-[var(--shadow-sm)]">
+          <SkillCover
+            slug={skill.id}
+            name={d.name}
+            coverColor={d.coverColor}
+            variant="card"
+          />
+          <div class="p-5">
           <h3 class="text-xs font-semibold uppercase tracking-wider text-subtle">
             Works with
           </h3>
           <div class="mt-2 flex flex-wrap gap-2">
             {
               d.platforms.map((platform) => (
-                <span class="flex items-center gap-1.5 rounded-full border border-border bg-surface-2 px-3 py-1 text-sm font-medium text-fg">
-                  <span
-                    class="h-2 w-2 rounded-full"
-                    style={`background:${PLATFORM_COLORS[platform]}`}
-                  />
+                <span
+                  class="rounded-sm border px-2 py-0.5 text-xs font-medium"
+                  style={`color:${platformTone[platform]};border-color:${platformTone[platform]};`}
+                >
                   {platform}
                 </span>
               ))
@@ -412,21 +375,6 @@ const authorProfileUrl =
 
           <div class="mt-4 rounded-lg border border-border bg-surface-2 p-3.5">
             <div class="flex items-start gap-2.5">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="mt-0.5 h-4 w-4 shrink-0 text-amber-500"
-                aria-hidden="true"
-              >
-                <path d="M12 3 4 6v5c0 4.5 3.2 7.9 8 9 4.8-1.1 8-4.5 8-9V6l-8-3z" />
-                <path d="M12 8v4" />
-                <path d="M12 16h.01" />
-              </svg>
               <div>
                 <p class="text-xs font-semibold text-fg">Add only what you trust</p>
                 <label
@@ -460,16 +408,8 @@ const authorProfileUrl =
                     data-clarity-download-type="plugin"
                     data-download-gated
                     aria-disabled="true"
-                    class="flex items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-accent-fg hover:opacity-90 transition-opacity pointer-events-none opacity-50 cursor-not-allowed"
+                    class="pointer-events-none flex items-center justify-center rounded bg-cta px-4 py-2.5 text-sm font-semibold text-cta-fg opacity-50 shadow-sm hover:bg-[var(--action-cta-hover)] cursor-not-allowed"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="h-4 w-4"
-                    >
-                      <path d="M3 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" />
-                    </svg>
                     Download plugin package (.zip)
                   </a>
                 )
@@ -483,22 +423,8 @@ const authorProfileUrl =
                     data-clarity-download-type={isInstaller ? "automation-installer" : "automation"}
                     data-download-gated
                     aria-disabled="true"
-                    class="flex items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-accent-fg hover:opacity-90 transition-opacity pointer-events-none opacity-50 cursor-not-allowed"
+                    class="pointer-events-none flex items-center justify-center rounded bg-cta px-4 py-2.5 text-sm font-semibold text-cta-fg opacity-50 shadow-sm hover:bg-[var(--action-cta-hover)] cursor-not-allowed"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      class="h-4 w-4"
-                    >
-                      <path
-                        d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
                     {isInstaller ? "Download automation installer (.zip)" : "Download automation (.json)"}
                   </a>
                 )
@@ -513,16 +439,8 @@ const authorProfileUrl =
                       data-clarity-download-type="bundle"
                       data-download-gated
                       aria-disabled="true"
-                      class="flex items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-accent-fg hover:opacity-90 transition-opacity pointer-events-none opacity-50 cursor-not-allowed"
+                      class="pointer-events-none flex items-center justify-center rounded bg-cta px-4 py-2.5 text-sm font-semibold text-cta-fg opacity-50 shadow-sm hover:bg-[var(--action-cta-hover)] cursor-not-allowed"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        class="h-4 w-4"
-                      >
-                        <path d="M3 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" />
-                      </svg>
                       Download bundle (.zip)
                     </a>
                   ) : (
@@ -534,22 +452,8 @@ const authorProfileUrl =
                       data-clarity-download-type="markdown"
                       data-download-gated
                       aria-disabled="true"
-                      class="flex items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-accent-fg hover:opacity-90 transition-opacity pointer-events-none opacity-50 cursor-not-allowed"
+                      class="pointer-events-none flex items-center justify-center rounded bg-cta px-4 py-2.5 text-sm font-semibold text-cta-fg opacity-50 shadow-sm hover:bg-[var(--action-cta-hover)] cursor-not-allowed"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        class="h-4 w-4"
-                      >
-                        <path
-                          d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
                       Download .md
                     </a>
                   )}
@@ -594,19 +498,20 @@ const authorProfileUrl =
               >Support</a
             >{" "}for how to get help.
           </p>
+          </div>
         </div>
       </aside>
     </div>
 
     <section id="rate" class="mt-10 scroll-mt-24 border-t border-border pt-8">
-      <h2 class="text-sm font-semibold uppercase tracking-wider text-accent-text">
+      <h2 class="text-xl text-[var(--text-heading)]">
         Rate &amp; discuss this {noun}
       </h2>
       {
         RATINGS_ENABLED ? (
           <>
             <p class="mt-2 text-sm text-muted">
-              Give this {noun} a 👍 with your GitHub account. Ratings power the
+              Give this {noun} an upvote (▲) with your GitHub account. Ratings power the
               gallery's "Top rated" sort (refreshed on each deploy).
             </p>
             <div class="mt-5">
