@@ -9,6 +9,12 @@ own detail page and downloads.
 Built with [Astro](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/),
 deployed as a static site to GitHub Pages.
 
+> **Mirror note:** This repository is an independently published mirror of
+> [Microsoft's CAT Agent Skills repository](https://github.com/microsoft/cat-agent-skills).
+> Community ratings, issues, support, and contributions continue to use the
+> Microsoft upstream repository. The upstream Microsoft Clarity project is
+> disabled in this deployment.
+
 ## ✨ Features
 
 - **Infinite-scroll gallery** with auto-generated branded covers (no image
@@ -132,7 +138,7 @@ scripts/           import-submissions + validate-skill + fetch-ratings
 Pull requests run `.github/workflows/ci.yml`, which builds the site (and thereby
 validates every skill against the content schema). Pushing to `main` triggers
 `.github/workflows/deploy.yml`, which builds and publishes the site to GitHub
-Pages at `https://microsoft.github.io/cat-agent-skills/`. Enable Pages in the
+Pages at `https://tedtschopp.github.io/cat-agent-skills/`. Enable Pages in the
 repo settings with the **GitHub Actions** source.
 
 Before each build, `deploy.yml` runs `npm run ratings:fetch` to snapshot 👍
