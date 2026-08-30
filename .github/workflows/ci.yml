@@ -36,15 +36,32 @@ jobs:
       - name: Run unit tests
         run: npm test
 
-      # Same-repo PRs get a write token: extract submission zips into the site
-      # (writes src/content/skills/*.md + public/bundles/*.zip) and commit the
-      # result back to the PR branch. Hard-fails on missing/invalid metadata.
+      # Extract submissions in every PR checkout so the safety scan and Astro
+      # build evaluate the exact generated Markdown a merge would publish.
+      # Same-repo PRs can commit the generated artifacts back to their branch;
+      # fork PR output stays ephemeral because forks never receive a write token.
+      # Hard-fails on missing/invalid metadata.
       # `authorGithub` is resolved purely from each submission's own metadata
       # (an explicit handle, or a github.com/<login> authorUrl) — never the
       # PR/merger login — so attribution is stable no matter who lands the skill.
       - name: Import skill submissions
-        if: github.event.pull_request.head.repo.full_name == github.repository
         run: npm run import:submissions
+
+      # Scan every generated page before committing importer output or running
+      # Astro. The verifier renders Markdown as HTML, while leaving fenced and
+      # inline code examples inert, and rejects active elements, handlers, and
+      # dangerous URL protocols that must never reach the published gallery.
+      - name: Reject active content in generated Markdown
+        run: |
+          set -euo pipefail
+          GENERATED_SLUGS="$(
+            find src/content/skills -maxdepth 1 -type f -name '*.md' -print \
+              | sed 's#^src/content/skills/##; s#\.md$##' \
+              | LC_ALL=C sort \
+              | paste -sd, -
+          )"
+          npm run check:upstream-rendered-content -- \
+            --generated-slugs "$GENERATED_SLUGS"
 
       - name: Commit extracted skills
         if: github.event.pull_request.head.repo.full_name == github.repository
@@ -59,10 +76,9 @@ jobs:
             echo "No extracted changes to commit."
           fi
 
-      # Fork PRs can't receive a write token, so only validate the submissions
-      # (still a hard fail on missing/invalid metadata). A maintainer can run
-      # `npm run import:submissions` after merge, or the contributor can run it
-      # locally and commit the generated files.
+      # Retain an explicit check-only pass for fork submissions. Import and scan
+      # above already exercise their generated output, but this keeps the
+      # contributor-facing metadata validation result distinct in the job log.
       - name: Validate skill submissions (fork PRs)
         if: github.event.pull_request.head.repo.full_name != github.repository
         run: npm run check:submissions

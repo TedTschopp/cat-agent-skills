@@ -47,10 +47,12 @@
  * Usage:
  *   tsx scripts/import-submissions.ts            # import everything
  *   tsx scripts/import-submissions.ts --check    # validate only, write nothing
+ *   tsx scripts/import-submissions.ts --slug foo # import only one slug
  */
 import {
   existsSync,
   mkdirSync,
+  lstatSync,
   readFileSync,
   readdirSync,
   rmSync,
@@ -61,6 +63,7 @@ import { basename, join, posix, relative, sep } from "node:path";
 import { pathToFileURL } from "node:url";
 import AdmZip from "adm-zip";
 import matter from "gray-matter";
+import { assertUniquePortablePaths } from "./portable-paths.mjs";
 import { validateSkillData } from "./validate-skill.ts";
 import {
   validateAutomationData,
@@ -128,7 +131,51 @@ const FIELD_ORDER = [
   "bundle",
 ];
 
-const checkOnly = process.argv.includes("--check");
+let checkOnly = false;
+
+export type ImportCliOptions = {
+  checkOnly: boolean;
+  slugs: string[];
+};
+
+const SAFE_SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+
+/** Parse the importer CLI without silently accepting misspelled or unsafe flags. */
+export function parseImportCliArgs(args: string[]): ImportCliOptions {
+  const slugs = new Set<string>();
+  let parsedCheckOnly = false;
+
+  for (let index = 0; index < args.length; index += 1) {
+    const arg = args[index];
+    if (arg === "--check") {
+      parsedCheckOnly = true;
+      continue;
+    }
+
+    let slug: string | undefined;
+    if (arg === "--slug") {
+      slug = args[index + 1];
+      index += 1;
+      if (!slug) throw new Error("`--slug` requires a value");
+    } else if (arg.startsWith("--slug=")) {
+      slug = arg.slice("--slug=".length);
+    } else {
+      throw new Error(`unknown argument: ${arg}`);
+    }
+
+    if (!SAFE_SLUG.test(slug)) {
+      throw new Error(`invalid submission slug: ${slug}`);
+    }
+    slugs.add(slug);
+  }
+
+  return { checkOnly: parsedCheckOnly, slugs: [...slugs] };
+}
+
+/** Decide whether a submission belongs to the requested import subset. */
+export function shouldImportSlug(slug: string, selectedSlugs: ReadonlySet<string>): boolean {
+  return selectedSlugs.size === 0 || selectedSlugs.has(slug);
+}
 
 type ImportProblem = { source: string; problems: string[] };
 /** A file inside a submission, with a forward-slash relative path. */
@@ -319,6 +366,10 @@ function parseMetadataFile(name: string, text: string): Record<string, unknown> 
 
 /** Write a deterministic zip from the given files. */
 function writeBundle(files: SubFile[], outPath: string): void {
+  assertUniquePortablePaths(
+    files.map((file) => file.path),
+    `bundle ${basename(outPath)}`,
+  );
   const out = new AdmZip();
   for (const file of [...files].sort((a, b) => a.path.localeCompare(b.path))) {
     out.addFile(file.path, file.data);
@@ -352,18 +403,49 @@ function writeGuide(slug: string, sub: Submission): void {
   }
 }
 
+/** Require a real directory without following a symlink at the traversal root. */
+export function assertSubmissionDirectory(dir: string, label: string): void {
+  const directory = lstatSync(dir);
+  if (directory.isSymbolicLink()) {
+    throw new Error(`submission directory is an unsupported symlink: ${label}`);
+  }
+  if (!directory.isDirectory()) {
+    throw new Error(`submission path is not a directory: ${label}`);
+  }
+}
+
 /** Recursively list every file under `dir`, with forward-slash relative paths. */
-function listFiles(dir: string, baseDir = dir): SubFile[] {
+export function listFiles(dir: string, baseDir = dir): SubFile[] {
+  const directoryPath = relative(baseDir, dir).split(sep).join("/") || basename(dir);
+  assertSubmissionDirectory(dir, directoryPath);
+
   const out: SubFile[] = [];
   for (const name of readdirSync(dir)) {
     const full = join(dir, name);
-    if (statSync(full).isDirectory()) {
+    const entry = lstatSync(full);
+    const entryPath = relative(baseDir, full).split(sep).join("/");
+    if (entry.isSymbolicLink()) {
+      throw new Error(`submission payload contains unsupported symlink: ${entryPath}`);
+    }
+    if (entry.isDirectory()) {
       out.push(...listFiles(full, baseDir));
+    } else if (entry.isFile()) {
+      out.push({ path: entryPath, data: readFileSync(full) });
     } else {
-      out.push({ path: relative(baseDir, full).split(sep).join("/"), data: readFileSync(full) });
+      throw new Error(`submission payload contains unsupported filesystem entry: ${entryPath}`);
     }
   }
   return out;
+}
+
+/** Read a grandfathered ZIP without normalizing unsafe entry-name spellings. */
+export function readPackedSubmissionFiles(zipPath: string, label: string): SubFile[] {
+  const entries = new AdmZip(zipPath).getEntries().filter((entry) => !entry.isDirectory);
+  assertUniquePortablePaths(
+    entries.map((entry) => entry.entryName),
+    label,
+  );
+  return entries.map((entry) => ({ path: entry.entryName, data: entry.getData() }));
 }
 
 /**
@@ -896,6 +978,14 @@ function loadSubmission(dir: string): Submission {
   const label = `submissions/${slug}/`;
   const sub: Submission = { slug, label, kind: "skill", bundleFiles: [] };
   const problems: string[] = [];
+  // Validate the whole tree before reading any metadata/payload through a path.
+  // lstat-based enumeration rejects symlinks, and the portable policy prevents
+  // ZIP aliases and paths that cannot be checked out safely on macOS/Windows.
+  const submissionFiles = listFiles(dir);
+  assertUniquePortablePaths(
+    submissionFiles.map((file) => file.path),
+    label,
+  );
 
   const topFiles = readdirSync(dir).filter((n) => statSync(join(dir, n)).isFile());
   const zips = topFiles.filter((n) => n.toLowerCase().endsWith(".zip"));
@@ -940,10 +1030,7 @@ function loadSubmission(dir: string): Submission {
       // `manifest.json` marks a Cowork plugin (an M365 app package); otherwise
       // it's a canonical Agent Skill (root `SKILL.md`), re-bundled from its
       // exploded contents.
-      const files = new AdmZip(join(dir, zips[0]))
-        .getEntries()
-        .filter((e) => !e.isDirectory)
-        .map((e) => ({ path: e.entryName.split("\\").join("/"), data: e.getData() }));
+      const files = readPackedSubmissionFiles(join(dir, zips[0]), `${label}${zips[0]}`);
       if (isPluginPackage(files)) {
         sub.kind = "plugin";
         // Ship the package verbatim, minus any stray metadata sidecar.
@@ -965,7 +1052,7 @@ function loadSubmission(dir: string): Submission {
     }
   } else if (hasRootSkill) {
     // Unpacked: bundle the folder contents verbatim (minus the metadata sidecar).
-    classifyPayload(sub, listFiles(dir));
+    classifyPayload(sub, submissionFiles);
   } else {
     // A Scout automation payload: a single top-level `.json` that is NOT the
     // metadata sidecar (all root `.json` files are automations by Scout's
@@ -997,19 +1084,51 @@ function loadSubmission(dir: string): Submission {
 }
 
 function main() {
+  let selectedSlugs: Set<string>;
+  try {
+    const options = parseImportCliArgs(process.argv.slice(2));
+    checkOnly = options.checkOnly;
+    selectedSlugs = new Set(options.slugs);
+  } catch (error) {
+    console.error(`\n\u2717 ${(error as Error).message}`);
+    process.exit(1);
+  }
+
   if (!existsSync(SUBMISSIONS_DIR)) {
     console.log("No submissions/ directory \u2014 nothing to import.");
     return;
   }
+  assertSubmissionDirectory(SUBMISSIONS_DIR, "submissions");
 
   const submissions: Submission[] = [];
   for (const name of readdirSync(SUBMISSIONS_DIR)) {
     if (name.startsWith(".") || name.startsWith("_")) continue; // _template, etc.
+    if (!shouldImportSlug(name, selectedSlugs)) continue;
     const full = join(SUBMISSIONS_DIR, name);
     // Submissions are folders. Each holds an unpacked skill (root `SKILL.md` +
     // optional dirs) or, for Scout, a single automation `<name>.json`.
-    if (statSync(full).isDirectory()) {
-      submissions.push(loadSubmission(full));
+    const entry = lstatSync(full);
+    if (entry.isSymbolicLink()) {
+      throw new Error(`submission directory is an unsupported symlink: submissions/${name}`);
+    }
+    if (!entry.isDirectory()) {
+      // Documentation such as submissions/README.md is not a submission. A
+      // slug-shaped non-directory would shadow a real submission and is an
+      // invalid entry rather than an ignorable repository document.
+      if (SAFE_SLUG.test(name)) {
+        throw new Error(`submission path is not a directory: submissions/${name}`);
+      }
+      continue;
+    }
+    submissions.push(loadSubmission(full));
+  }
+
+  if (selectedSlugs.size > 0) {
+    const found = new Set(submissions.map((submission) => submission.slug));
+    const missing = [...selectedSlugs].filter((slug) => !found.has(slug));
+    if (missing.length > 0) {
+      console.error(`\n\u2717 submission slug(s) not found: ${missing.join(", ")}`);
+      process.exit(1);
     }
   }
 

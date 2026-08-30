@@ -4,15 +4,15 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  # Refresh baked-in skill ratings (positive reaction counts) once a day even
-  # when there are no code pushes, so "Top rated" sort stays current. The build
-  # and deploy only run when the counts actually changed, so quiet days don't
-  # produce a redundant no-op deployment (see the "Fetch skill ratings" step).
+  # Refresh Microsoft and AI.Tedt.org reactions, comments, and repository stars
+  # after the 03:00 Pacific catalog sync. The build and deploy only run when the
+  # deterministic snapshots changed, so quiet days remain true no-ops.
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "30 3 * * *"
+      timezone: "America/Los_Angeles"
 
 permissions:
-  contents: write # commit the refreshed ratings snapshot back to main
+  contents: write # commit refreshed engagement snapshots back to main
   pages: write
   id-token: write
   discussions: read
@@ -26,7 +26,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      should_deploy: ${{ steps.ratings.outputs.should_deploy }}
+      should_deploy: ${{ steps.engagement.outputs.should_deploy }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -37,50 +37,64 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Fetch skill ratings
-        id: ratings
+      - name: Fetch community engagement
+        id: engagement
         run: |
-          npm run ratings:fetch
-          if git diff --quiet -- src/data/ratings.json; then
+          npm run engagement:fetch
+          if git diff --quiet -- src/data/engagement.json src/data/ratings.json; then
             changed=false
           else
             changed=true
           fi
           echo "changed=$changed" >> "$GITHUB_OUTPUT"
           # Always build/deploy on code pushes and manual runs; on the daily
-          # cron, only when the reaction counts actually changed.
+          # cron, only when the engagement snapshots actually changed.
           if [ "${{ github.event_name }}" != "schedule" ] || [ "$changed" = "true" ]; then
             echo "should_deploy=true" >> "$GITHUB_OUTPUT"
           else
             echo "should_deploy=false" >> "$GITHUB_OUTPUT"
-            echo "No rating changes on scheduled run; skipping build and deploy."
+            echo "No engagement changes on scheduled run; skipping build and deploy."
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Persist refreshed ratings
-        if: steps.ratings.outputs.changed == 'true'
+      - name: Persist refreshed engagement
+        if: steps.engagement.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/ratings.json
-          git commit -m "chore(ratings): refresh skill reaction counts"
+          git add src/data/engagement.json src/data/ratings.json
+          git commit -m "chore(engagement): refresh community snapshots"
           # A GITHUB_TOKEN push does not retrigger workflows, so this run still
           # owns the deploy below; the commit only keeps tomorrow's diff stable.
-          git push || echo "::warning::Could not push refreshed ratings; will retry next run."
+          git push || echo "::warning::Could not push refreshed engagement; will retry next run."
       # Regenerate every skill page + bundle from submissions/ before building.
-      # PR CI only commits generated content back to SAME-REPO PR branches; fork
-      # PRs are validate-only, so their src/content/skills/<slug>.md never lands
-      # on main and the skill would 404 / be missing from the gallery. Importing
-      # here makes the deployed site reflect submissions/ regardless of how a PR
-      # was merged. Idempotent: it rewrites the same files a same-repo PR did.
+      # PR CI only commits generated content back to same-repo PR branches. Fork
+      # PRs generate and scan their artifacts in an ephemeral checkout, so those
+      # files never land on main. Importing here makes the deployed site reflect
+      # submissions/ regardless of how a PR was merged. Idempotent: it rewrites
+      # the same files a same-repo PR did.
       - name: Import skill submissions
-        if: steps.ratings.outputs.should_deploy == 'true'
+        if: steps.engagement.outputs.should_deploy == 'true'
         run: npm run import:submissions
+      - name: Reject active content in generated Markdown
+        if: steps.engagement.outputs.should_deploy == 'true'
+        run: |
+          set -euo pipefail
+          GENERATED_SLUGS="$(
+            find src/content/skills -maxdepth 1 -type f -name '*.md' -print \
+              | sed 's#^src/content/skills/##; s#\.md$##' \
+              | LC_ALL=C sort \
+              | paste -sd, -
+          )"
+          npm run check:upstream-rendered-content -- \
+            --generated-slugs "$GENERATED_SLUGS"
       - name: Build
-        if: steps.ratings.outputs.should_deploy == 'true'
+        if: steps.engagement.outputs.should_deploy == 'true'
         run: npm run build
+        env:
+          PUBLIC_LOCAL_GISCUS_ENABLED: ${{ vars.PUBLIC_LOCAL_GISCUS_ENABLED }}
       - name: Upload Pages artifact
-        if: steps.ratings.outputs.should_deploy == 'true'
+        if: steps.engagement.outputs.should_deploy == 'true'
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist

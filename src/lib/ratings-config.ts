@@ -1,37 +1,65 @@
 /**
  * Configuration for the GitHub-native skill rating feature.
  *
- * Ratings are 👍 reactions on a GitHub Discussion (one per skill). We use the
- * giscus widget for in-page voting and read the reaction counts at build time
- * via the GitHub GraphQL API (see `scripts/fetch-ratings.ts`).
+ * Ratings are positive reactions on source-separated GitHub Discussions. We
+ * preserve Microsoft's upstream threads and add an independent AI.Tedt.org
+ * thread for each skill. Aggregate counts are read at build time via the
+ * GitHub GraphQL API (see `scripts/fetch-engagement.ts`).
  *
- * The `repoId` and `categoryId` values below are NOT secrets — giscus emits
- * them into the public client bundle. They are safe to commit. Fill them in
- * once the giscus GitHub App is installed on the repo (https://giscus.app):
+ * The repo and category IDs below are public giscus client values and are safe
+ * to commit. A new source becomes interactive only after its repository has
+ * Discussions enabled and the giscus GitHub App installed.
  *
  *   1. Enable Discussions on the repository.
  *   2. Create a Discussion category (e.g. "Skill Ratings").
  *   3. Install the giscus app and paste the generated ids here (or set the
  *      matching PUBLIC_GISCUS_* env vars at build time).
  *
- * Until real ids are provided, `RATINGS_ENABLED` is false: the voting widget is
- * hidden and the gallery simply shows zero counts. Everything else still works.
+ * The local embed has an additional explicit feature gate so a valid category
+ * ID cannot accidentally expose a broken widget before the app is installed.
  */
 
-/** `owner/repo` that hosts the rating Discussions. */
-export const GISCUS_REPO = import.meta.env.PUBLIC_GISCUS_REPO ?? "microsoft/cat-agent-skills";
+/** Microsoft upstream discussion source. */
+export const MICROSOFT_GISCUS_REPO =
+  import.meta.env.PUBLIC_MICROSOFT_GISCUS_REPO ?? "microsoft/cat-agent-skills";
+export const MICROSOFT_GISCUS_REPO_ID =
+  import.meta.env.PUBLIC_MICROSOFT_GISCUS_REPO_ID ?? "R_kgDOSwZGlA";
+export const MICROSOFT_GISCUS_CATEGORY =
+  import.meta.env.PUBLIC_MICROSOFT_GISCUS_CATEGORY ?? "Announcements";
+export const MICROSOFT_GISCUS_CATEGORY_ID =
+  import.meta.env.PUBLIC_MICROSOFT_GISCUS_CATEGORY_ID ?? "DIC_kwDOSwZGlM4DAxet";
 
-/** giscus repository id (public client id, safe to commit). */
-export const GISCUS_REPO_ID = import.meta.env.PUBLIC_GISCUS_REPO_ID ?? "R_kgDOSwZGlA";
-
-/** Discussion category name that holds the rating discussions. */
-export const GISCUS_CATEGORY = import.meta.env.PUBLIC_GISCUS_CATEGORY ?? "Announcements";
-
-/** giscus category id (public client id, safe to commit). */
-export const GISCUS_CATEGORY_ID = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID ?? "DIC_kwDOSwZGlM4DAxet";
+/** AI.Tedt.org discussion source in this repository. */
+export const LOCAL_GISCUS_REPO =
+  import.meta.env.PUBLIC_LOCAL_GISCUS_REPO ?? "TedTschopp/cat-agent-skills";
+export const LOCAL_GISCUS_REPO_ID =
+  import.meta.env.PUBLIC_LOCAL_GISCUS_REPO_ID ?? "R_kgDOUII1_Q";
+export const LOCAL_GISCUS_CATEGORY =
+  import.meta.env.PUBLIC_LOCAL_GISCUS_CATEGORY ?? "Announcements";
+export const LOCAL_GISCUS_CATEGORY_ID =
+  import.meta.env.PUBLIC_LOCAL_GISCUS_CATEGORY_ID ?? "DIC_kwDOUII1_c4DEej4";
 
 /**
  * The rating widget renders only when giscus has been fully configured. This
  * keeps local dev and un-provisioned deploys from showing a broken embed.
  */
-export const RATINGS_ENABLED = Boolean(GISCUS_REPO_ID && GISCUS_CATEGORY_ID);
+export const MICROSOFT_RATINGS_ENABLED = Boolean(
+  MICROSOFT_GISCUS_REPO_ID && MICROSOFT_GISCUS_CATEGORY_ID,
+);
+
+/**
+ * The local category exists, but the giscus GitHub App still needs to be
+ * installed for this repository. Keep the embed off until that external setup
+ * is complete; setting this public flag to `true` is the deliberate go-live.
+ */
+export const LOCAL_RATINGS_ENABLED =
+  import.meta.env.PUBLIC_LOCAL_GISCUS_ENABLED === "true" &&
+  Boolean(LOCAL_GISCUS_REPO_ID && LOCAL_GISCUS_CATEGORY_ID);
+
+// Backward-compatible aliases for consumers that still expect one discussion
+// source. They continue to mean Microsoft upstream.
+export const GISCUS_REPO = MICROSOFT_GISCUS_REPO;
+export const GISCUS_REPO_ID = MICROSOFT_GISCUS_REPO_ID;
+export const GISCUS_CATEGORY = MICROSOFT_GISCUS_CATEGORY;
+export const GISCUS_CATEGORY_ID = MICROSOFT_GISCUS_CATEGORY_ID;
+export const RATINGS_ENABLED = MICROSOFT_RATINGS_ENABLED;

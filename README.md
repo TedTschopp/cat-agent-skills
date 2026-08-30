@@ -11,9 +11,9 @@ deployed as a static site to GitHub Pages.
 
 > **Mirror note:** This repository is an independently published mirror of
 > [Microsoft's CAT Agent Skills repository](https://github.com/microsoft/cat-agent-skills).
-> Community ratings, issues, support, and contributions continue to use the
-> Microsoft upstream repository. The upstream Microsoft Clarity project is
-> disabled in this deployment.
+> Microsoft engagement remains visible as a labeled upstream source, while
+> AI.Tedt.org collects its own ratings and comments in this repository. The
+> upstream Microsoft Clarity project is disabled in this deployment.
 
 ## ✨ Features
 
@@ -24,8 +24,9 @@ deployed as a static site to GitHub Pages.
   `?q=`/`?tag=`/`?platform=`/`?sort=` URLs.
 - **Sort** by Featured, Top rated, Name, or Newest.
 - **Skill detail pages** rendering the instructions, metadata, and downloads.
-- **Skill ratings**: 👍 a skill with your GitHub account (via GitHub
-  Discussions); the gallery bakes in the counts and offers a "Top rated" sort.
+- **Federated community engagement**: rate and discuss a skill through GitHub
+  Discussions. Microsoft and AI.Tedt.org activity stays separately attributed,
+  while the gallery uses their combined positive reactions for "Top rated."
   See [`docs/ratings.md`](docs/ratings.md).
 - **Downloads**: the skill as a `SKILL.md` file, plus an optional `.zip` bundle
   when a skill ships files beyond its `SKILL.md`.
@@ -119,7 +120,7 @@ src/
   content/skills/  generated skill pages (produced from submissions/ — do not edit by hand)
   layouts/         base page layout
   lib/             cover theming + small helpers
-  data/            ratings.json (build-time 👍 snapshot; see docs/ratings.md)
+  data/            engagement.json + derived ratings.json snapshots
   pages/
     index.astro          home gallery (search + filter + sort + infinite scroll)
     skills/[slug].astro  skill detail page (instructions, download, ratings)
@@ -129,8 +130,8 @@ src/
 public/
   bundles/         downloadable .zip skill bundles
 submissions/       drop-in skill submissions (folders imported by CI)
-scripts/           import-submissions + validate-skill + fetch-ratings
-.github/workflows/ ci.yml (PR build check) + deploy.yml (Pages deploy + ratings)
+scripts/           import-submissions + validation + fetch-engagement
+.github/workflows/ CI + Microsoft catalog sync + Pages/engagement refresh
 ```
 
 ## 🚢 Deployment
@@ -141,10 +142,12 @@ validates every skill against the content schema). Pushing to `main` triggers
 Pages at `https://tedtschopp.github.io/cat-agent-skills/`. Enable Pages in the
 repo settings with the **GitHub Actions** source.
 
-Before each build, `deploy.yml` runs `npm run ratings:fetch` to snapshot 👍
-counts from GitHub Discussions, and a daily `schedule` cron refreshes them
-without a code push. See [`docs/ratings.md`](docs/ratings.md) for the one-time
-giscus/Discussions setup.
+Before each build, `deploy.yml` runs `npm run engagement:fetch` to snapshot
+Microsoft and AI.Tedt.org reactions, comments, discussion links, and repository
+stars. Its daily schedule runs at 3:30 a.m. Pacific, after the 3:00 a.m.
+Microsoft catalog sync, and deploys only when the deterministic snapshots
+change. See [`docs/ratings.md`](docs/ratings.md) for the source and ownership
+model.
 
 ## 🆘 Support
 

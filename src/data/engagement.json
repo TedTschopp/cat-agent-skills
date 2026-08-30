@@ -1,0 +1,753 @@
+{
+  "schemaVersion": 1,
+  "repositories": {
+    "microsoft": {
+      "repository": "microsoft/cat-agent-skills",
+      "stars": 62
+    },
+    "local": {
+      "repository": "TedTschopp/cat-agent-skills",
+      "stars": 0
+    }
+  },
+  "skills": {
+    "agent-harness-explorer": {
+      "microsoft": {
+        "rating": 5,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 65,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/65"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 5,
+        "comments": 0
+      }
+    },
+    "ai-demo-assistant": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 184,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/184"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "ai-usecase-assessment": {
+      "microsoft": {
+        "rating": 3,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 83,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/83"
+          },
+          {
+            "number": 110,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/110"
+          },
+          {
+            "number": 111,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/111"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 3,
+        "comments": 0
+      }
+    },
+    "brand-template-enforcer": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 9,
+        "discussions": [
+          {
+            "number": 129,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/129"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
+        "comments": 9
+      }
+    },
+    "campaign-deck-builder": {
+      "microsoft": {
+        "rating": 2,
+        "comments": 3,
+        "discussions": [
+          {
+            "number": 40,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/40"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 2,
+        "comments": 3
+      }
+    },
+    "chart-builder": {
+      "microsoft": {
+        "rating": 5,
+        "comments": 2,
+        "discussions": [
+          {
+            "number": 98,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/98"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 5,
+        "comments": 2
+      }
+    },
+    "classic-text-adventure": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 167,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/167"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
+        "comments": 0
+      }
+    },
+    "commenting-content": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 66,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/66"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
+        "comments": 0
+      }
+    },
+    "conditional-chat-reminder": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 164,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/164"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
+        "comments": 0
+      }
+    },
+    "copilot-agent-advisor": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 298,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/298"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "copilot-agents-news-scout": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 2,
+        "discussions": [
+          {
+            "number": 266,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/266"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
+        "comments": 2
+      }
+    },
+    "copilot-studio-harness-picker": {
+      "microsoft": {
+        "rating": 2,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 275,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/275"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 2,
+        "comments": 0
+      }
+    },
+    "doc-format-converter": {
+      "microsoft": {
+        "rating": 5,
+        "comments": 5,
+        "discussions": [
+          {
+            "number": 63,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/63"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 5,
+        "comments": 5
+      }
+    },
+    "enterprise-agent-design-authority": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 189,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/189"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
+        "comments": 0
+      }
+    },
+    "expense-report-filler": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 24,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/24"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
+        "comments": 0
+      }
+    },
+    "generating-podcast-script": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 240,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/240"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
+        "comments": 0
+      }
+    },
+    "iterative-file-editing": {
+      "microsoft": {
+        "rating": 2,
+        "comments": 2,
+        "discussions": [
+          {
+            "number": 194,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/194"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 2,
+        "comments": 2
+      }
+    },
+    "knowledge-corpus-curator": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 178,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/178"
+          },
+          {
+            "number": 179,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/179"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "knowledge-source-router": {
+      "microsoft": {
+        "rating": 3,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 26,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/26"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 3,
+        "comments": 0
+      }
+    },
+    "linkedin-content-writer": {
+      "microsoft": {
+        "rating": 2,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 61,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/61"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 2,
+        "comments": 0
+      }
+    },
+    "lookup-dataverse-table": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 151,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/151"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
+        "comments": 0
+      }
+    },
+    "mct-excellence-iq": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 199,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/199"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
+        "comments": 0
+      }
+    },
+    "powerpoint-deck-designer": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 142,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/142"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "presentation-talk-track-builder": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 282,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/282"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
+        "comments": 0
+      }
+    },
+    "redlining-content": {
+      "microsoft": {
+        "rating": 2,
+        "comments": 2,
+        "discussions": [
+          {
+            "number": 35,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/35"
+          },
+          {
+            "number": 41,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/41"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 2,
+        "comments": 2
+      }
+    },
+    "regulation-monitor": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 281,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/281"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
+        "comments": 0
+      }
+    },
+    "rich-html-presentation": {
+      "microsoft": {
+        "rating": 3,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 145,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/145"
+          },
+          {
+            "number": 246,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/246"
+          },
+          {
+            "number": 248,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/248"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 3,
+        "comments": 0
+      }
+    },
+    "scrollytelling-data": {
+      "microsoft": {
+        "rating": 7,
+        "comments": 4,
+        "discussions": [
+          {
+            "number": 185,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/185"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 7,
+        "comments": 4
+      }
+    },
+    "spend-more-time-with-friends-and-family": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 58,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/58"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
+        "comments": 0
+      }
+    },
+    "stoic-negotiator": {
+      "microsoft": {
+        "rating": 2,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 276,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/276"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 2,
+        "comments": 0
+      }
+    },
+    "wcag-power-platform": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 294,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/294"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
+        "comments": 0
+      }
+    },
+    "what-to-use-when": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 256,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/256"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "wikipedia-human-style-writing": {
+      "microsoft": {
+        "rating": 2,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 152,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/152"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 2,
+        "comments": 0
+      }
+    },
+    "work-brief": {
+      "microsoft": {
+        "rating": 2,
+        "comments": 2,
+        "discussions": [
+          {
+            "number": 202,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/202"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 2,
+        "comments": 2
+      }
+    }
+  }
+}

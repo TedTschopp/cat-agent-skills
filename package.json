@@ -13,11 +13,16 @@
     "validate:skills": "tsx scripts/validate-skill.ts src/content/skills/*.md",
     "import:submissions": "tsx scripts/import-submissions.ts",
     "check:submissions": "tsx scripts/import-submissions.ts --check",
+    "sync:upstream": "node scripts/sync-upstream-submissions.mjs",
+    "check:upstream-rendered-content": "node scripts/verify-rendered-markdown.mjs",
+    "check:upstream-sync-scope": "node scripts/sync-upstream-submissions.mjs --verify-worktree",
     "test": "node --import tsx --test scripts/*.test.ts",
-    "ratings:fetch": "tsx scripts/fetch-ratings.ts"
+    "engagement:fetch": "tsx scripts/fetch-engagement.ts",
+    "ratings:fetch": "tsx scripts/fetch-engagement.ts"
   },
   "dependencies": {
-    "astro": "^7.1.0"
+    "astro": "^7.1.0",
+    "giscus": "^1.6.0"
   },
   "devDependencies": {
     "@fontsource/dm-sans": "^5.2.8",
@@ -29,7 +34,9 @@
     "adm-zip": "^0.6.0",
     "croner": "^9.1.0",
     "gray-matter": "^4.0.3",
+    "hast-util-from-html": "^2.0.3",
     "satori": "^0.26.0",
+    "satteri": "^0.9.5",
     "tailwindcss": "^4.1.4",
     "tsx": "^4.22.4"
   }

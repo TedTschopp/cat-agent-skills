@@ -7,7 +7,108 @@
  */
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { buildMeta, CATALOG_PASSTHROUGH } from "./import-submissions.ts";
+import { mkdirSync, mkdtempSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import AdmZip from "adm-zip";
+import {
+  assertSubmissionDirectory,
+  buildMeta,
+  CATALOG_PASSTHROUGH,
+  parseImportCliArgs,
+  listFiles,
+  readPackedSubmissionFiles,
+  shouldImportSlug,
+} from "./import-submissions.ts";
+
+test("submission enumeration rejects symlinks before reading their targets", (t) => {
+  const root = mkdtempSync(join(tmpdir(), "cat-import-symlink-"));
+  const payload = join(root, "payload");
+  mkdirSync(payload);
+  writeFileSync(join(root, "outside.txt"), "must not be bundled\n");
+  symlinkSync("../outside.txt", join(payload, "leak.txt"));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+
+  assert.throws(() => listFiles(payload), /unsupported symlink: leak\.txt/);
+});
+
+test("submission enumeration rejects a symlinked submission root", (t) => {
+  const root = mkdtempSync(join(tmpdir(), "cat-import-root-symlink-"));
+  const outside = join(root, "outside-submission");
+  const submission = join(root, "evil-submission");
+  mkdirSync(outside);
+  writeFileSync(join(outside, "SKILL.md"), "must not be bundled\n");
+  symlinkSync("outside-submission", submission, "dir");
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+
+  assert.throws(
+    () => listFiles(submission),
+    /unsupported symlink: evil-submission/,
+  );
+  assert.deepEqual(
+    listFiles(outside).map((file) => file.path),
+    ["SKILL.md"],
+  );
+});
+
+test("the importer rejects a symlinked submissions parent", (t) => {
+  const root = mkdtempSync(join(tmpdir(), "cat-import-parent-symlink-"));
+  const outside = join(root, "outside");
+  const submissions = join(root, "submissions");
+  mkdirSync(join(outside, "poc"), { recursive: true });
+  writeFileSync(join(outside, "poc", "SKILL.md"), "must not be bundled\n");
+  symlinkSync("outside", submissions, "dir");
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+
+  assert.throws(
+    () => assertSubmissionDirectory(submissions, "submissions"),
+    /unsupported symlink: submissions/,
+  );
+});
+
+test("grandfathered ZIP import rejects backslash entry names before reading them", (t) => {
+  const root = mkdtempSync(join(tmpdir(), "cat-import-zip-path-"));
+  const zipPath = join(root, "payload.zip");
+  const zip = new AdmZip();
+  const entry = zip.addFile("placeholder", Buffer.from("must not be bundled\n"));
+  entry.entryName = "assets\\payload.txt";
+  zip.writeZip(zipPath);
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+
+  assert.throws(
+    () => readPackedSubmissionFiles(zipPath, "test ZIP"),
+    /backslashes are not portable path separators/,
+  );
+});
+
+test("the importer accepts repeatable, deduplicated slug filters", () => {
+  assert.deepEqual(
+    parseImportCliArgs([
+      "--check",
+      "--slug",
+      "meeting-analyzer",
+      "--slug=work-brief",
+      "--slug",
+      "meeting-analyzer",
+    ]),
+    {
+      checkOnly: true,
+      slugs: ["meeting-analyzer", "work-brief"],
+    },
+  );
+});
+
+test("the importer rejects missing, unsafe, and unknown CLI arguments", () => {
+  assert.throws(() => parseImportCliArgs(["--slug"]), /requires a value/);
+  assert.throws(() => parseImportCliArgs(["--slug", "../escape"]), /invalid submission slug/);
+  assert.throws(() => parseImportCliArgs(["--slgu", "work-brief"]), /unknown argument/);
+});
+
+test("the slug filter imports all entries by default and only selected entries when set", () => {
+  assert.equal(shouldImportSlug("one", new Set()), true);
+  assert.equal(shouldImportSlug("one", new Set(["one", "two"])), true);
+  assert.equal(shouldImportSlug("three", new Set(["one", "two"])), false);
+});
 
 test("derived fields always win over same-named catalog keys", () => {
   const meta = buildMeta(

@@ -8,9 +8,6 @@ This automation watches that gap for you. Every weekday morning it looks at what
 <div class="not-prose mb-6">
   <h2 class="mb-2 text-sm font-semibold uppercase tracking-wider text-accent-text">Trigger</h2>
   <p class="flex items-center gap-2 text-muted">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 text-accent-text">
-      <circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" />
-    </svg>
     <span><span class="font-medium text-fg">Runs on a schedule</span>, every weekday at 7:30 AM</span>
   </p>
 </div>

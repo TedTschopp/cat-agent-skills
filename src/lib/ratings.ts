@@ -1,10 +1,9 @@
 /**
  * Read-side helper for skill ratings.
  *
- * `src/data/ratings.json` is a build-time snapshot of 👍 counts keyed by skill
- * slug, produced by `scripts/fetch-ratings.ts`. It is committed as `{}` so the
- * site builds with all-zero ratings when no snapshot has been fetched (local
- * dev, forks, or a repo without the giscus/Discussions setup).
+ * `src/data/ratings.json` is the compatibility view of the two-source
+ * engagement snapshot produced by `scripts/fetch-engagement.ts`. Each value is
+ * the combined Microsoft + AI.Tedt.org positive-reaction total for one slug.
  */
 import ratings from "../data/ratings.json";
 
