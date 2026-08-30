@@ -39,13 +39,13 @@ deployed as a static site to GitHub Pages.
 
 ```bash
 npm install
-npm run dev      # start the dev server (http://localhost:4321/cat-agent-skills)
+npm run dev      # start the dev server (http://localhost:4321/)
 npm run build    # production build into ./dist
 npm run preview  # preview the production build locally
 ```
 
-> The site is configured with a `base` path of `/cat-agent-skills`
-> for GitHub Pages, so local URLs include that prefix.
+> The production site is served from the root of the `ai.tedt.org` custom
+> domain, so local URLs do not use a repository-name prefix.
 
 ## 🧩 Adding a skill
 
@@ -139,8 +139,8 @@ scripts/           import-submissions + validation + fetch-engagement
 Pull requests run `.github/workflows/ci.yml`, which builds the site (and thereby
 validates every skill against the content schema). Pushing to `main` triggers
 `.github/workflows/deploy.yml`, which builds and publishes the site to GitHub
-Pages at `https://tedtschopp.github.io/cat-agent-skills/`. Enable Pages in the
-repo settings with the **GitHub Actions** source.
+Pages at `https://ai.tedt.org/`. Enable Pages in the repo settings with the
+**GitHub Actions** source and assign `ai.tedt.org` as the custom domain.
 
 Before each build, `deploy.yml` runs `npm run engagement:fetch` to snapshot
 Microsoft and AI.Tedt.org reactions, comments, discussion links, and repository

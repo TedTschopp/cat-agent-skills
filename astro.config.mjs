@@ -2,10 +2,9 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
-// GitHub Pages deployment: served from /cat-agent-skills
+// GitHub Pages deployment: served from the AI.Tedt.org custom domain root.
 export default defineConfig({
-  site: "https://tedtschopp.github.io",
-  base: "/cat-agent-skills",
+  site: "https://ai.tedt.org",
   trailingSlash: "ignore",
   vite: {
     plugins: [tailwindcss()],

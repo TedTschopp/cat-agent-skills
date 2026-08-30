@@ -125,7 +125,7 @@ only link isn't a GitHub profile, e.g. LinkedIn.)
 npm install
 npm run check:submissions   # validate metadata only, writes nothing
 npm run import:submissions   # generate the skill page(s) + bundle(s)
-npm run dev                  # preview at http://localhost:4321/cat-agent-skills
+npm run dev                  # preview at http://localhost:4321/
 npm run build                # runs the same content validation as CI
 ```
 
