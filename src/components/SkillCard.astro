@@ -58,7 +58,7 @@ const platformTone: Record<Platform, string> = {
 };
 const Wrapper = isInteractive ? "a" : "div";
 const wrapperProps = isInteractive
-  ? { href: withBase(`/skills/${slug}`) }
+  ? { href: withBase(`/skills/${slug}/`) }
   : {
       "aria-disabled": "true",
       title: "Sample content — not a production-ready submission",

@@ -3,36 +3,248 @@ import "../styles/global.css";
 import { withBase } from "../lib/url";
 import { FEEDBACK_URL } from "../lib/issues";
 import { ANALYTICS_ENABLED, CLARITY_PROJECT_ID } from "../lib/analytics-config";
+import {
+  SITE_METADATA,
+  compactDescription,
+  toIsoDate,
+  type OpenGraphType,
+  type PageSchemaType,
+  type SocialImageMetadata,
+} from "../lib/site-metadata";
 
 interface Props {
   title?: string;
   description?: string;
+  canonicalPath?: string | false;
+  image?: SocialImageMetadata;
+  ogType?: OpenGraphType;
+  schemaType?: PageSchemaType;
+  noindex?: boolean;
+  publishedTime?: Date | string;
+  modifiedTime?: Date | string;
+  authorName?: string;
+  authorUrl?: string;
+  section?: string;
+  tags?: string[];
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
+  fediverseCreator?: string | false;
 }
 
 const {
-  title = "Prompts and Agent Skills",
-  description = "Reusable prompts, agent skills, plugins, and automations for Cowork, Copilot Studio, and Scout.",
+  title = SITE_METADATA.title,
+  description = SITE_METADATA.description,
+  canonicalPath,
+  image = {
+    path: SITE_METADATA.socialImagePath,
+    alt: SITE_METADATA.socialImageAlt,
+    width: SITE_METADATA.socialImageWidth,
+    height: SITE_METADATA.socialImageHeight,
+    type: SITE_METADATA.socialImageType,
+  },
+  ogType = "website",
+  schemaType = "WebPage",
+  noindex = false,
+  publishedTime,
+  modifiedTime,
+  authorName = SITE_METADATA.owner,
+  authorUrl,
+  section,
+  tags = [],
+  structuredData = [],
+  fediverseCreator = SITE_METADATA.fediverseCreator,
 } = Astro.props;
 
-const fullTitle = `${title} · AI.Tedt.org`;
+const fullTitle = `${title} · ${SITE_METADATA.name}`;
+const metaDescription = compactDescription(description, 200);
+const siteUrl = Astro.site ?? new URL(SITE_METADATA.url);
+const pageUrl = new URL(Astro.url.pathname, siteUrl);
+const canonicalUrl =
+  canonicalPath === false
+    ? undefined
+    : new URL(canonicalPath ?? Astro.url.pathname, siteUrl);
+const siteRoot = new URL(withBase("/"), siteUrl);
+const imagePath = /^https?:\/\//i.test(image.path)
+  ? image.path
+  : withBase(image.path);
+const imageUrl = new URL(imagePath, siteUrl);
+const imageWidth = image.width ?? SITE_METADATA.socialImageWidth;
+const imageHeight = image.height ?? SITE_METADATA.socialImageHeight;
+const imageType = image.type ?? SITE_METADATA.socialImageType;
+const publishedIso = toIsoDate(publishedTime);
+const modifiedIso = toIsoDate(modifiedTime);
+const robots = noindex
+  ? "noindex, follow, max-image-preview:large"
+  : "max-image-preview:large, max-snippet:-1, max-video-preview:-1";
+
+const ownerId = `${siteRoot.href}#owner`;
+const websiteId = `${siteRoot.href}#website`;
+const pageId = canonicalUrl ? `${canonicalUrl.href}#webpage` : undefined;
+const imageId = `${imageUrl.href}#primaryimage`;
+const author =
+  authorName === SITE_METADATA.owner
+    ? { "@id": ownerId }
+    : {
+        "@type": "Person",
+        name: authorName,
+        ...(authorUrl ? { url: authorUrl } : {}),
+      };
+const extraStructuredData = Array.isArray(structuredData)
+  ? structuredData
+  : [structuredData];
+const jsonLd =
+  canonicalUrl && !noindex
+    ? {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": ownerId,
+            name: SITE_METADATA.owner,
+            url: SITE_METADATA.ownerUrl,
+            sameAs: SITE_METADATA.sameAs,
+          },
+          {
+            "@type": "WebSite",
+            "@id": websiteId,
+            url: siteRoot.href,
+            name: SITE_METADATA.name,
+            alternateName: SITE_METADATA.title,
+            description: SITE_METADATA.description,
+            inLanguage: SITE_METADATA.language,
+            publisher: { "@id": ownerId },
+          },
+          {
+            "@type": "ImageObject",
+            "@id": imageId,
+            url: imageUrl.href,
+            contentUrl: imageUrl.href,
+            width: imageWidth,
+            height: imageHeight,
+            caption: image.alt,
+          },
+          {
+            "@type": schemaType,
+            "@id": pageId,
+            url: canonicalUrl.href,
+            name: fullTitle,
+            description: metaDescription,
+            inLanguage: SITE_METADATA.language,
+            isPartOf: { "@id": websiteId },
+            primaryImageOfPage: { "@id": imageId },
+            image: { "@id": imageId },
+            author,
+            publisher: { "@id": ownerId },
+            ...(publishedIso ? { datePublished: publishedIso } : {}),
+            ...(modifiedIso ? { dateModified: modifiedIso } : {}),
+          },
+          ...extraStructuredData,
+        ],
+      }
+    : undefined;
+const serializedJsonLd = jsonLd
+  ? JSON.stringify(jsonLd).replace(/</g, "\\u003c")
+  : undefined;
 const path = Astro.url.pathname;
 const contributorsActive = path.includes("/authors");
 ---
 
 <!doctype html>
-<html lang="en" data-default-theme="system">
+<html
+  lang={SITE_METADATA.language}
+  prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#"
+  data-default-theme="system"
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="msvalidate.01" content="486EC2936921901A59F27BD421FB062D" />
     <title>{fullTitle}</title>
-    <meta name="description" content={description} />
+    <meta name="description" content={metaDescription} />
+    <meta name="author" content={authorName} />
+    <meta name="application-name" content={SITE_METADATA.name} />
+    <meta name="apple-mobile-web-app-title" content={SITE_METADATA.name} />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content={robots} />
+    <meta name="googlebot" content={robots} />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="theme-color"
+      content={SITE_METADATA.themeLight}
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content={SITE_METADATA.themeDark}
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta name="msapplication-TileColor" content={SITE_METADATA.themeDark} />
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl.href} />}
+    <link rel="home" href={siteRoot.href} />
+    <link rel="author" href={SITE_METADATA.ownerUrl} />
+    <link rel="me" href={SITE_METADATA.fediverseProfile} />
+    <link
+      rel="alternate"
+      type="application/json"
+      title="AI.Tedt.org skill catalog"
+      href={withBase("/skills.json")}
+    />
+    <link rel="sitemap" type="application/xml" href={withBase("/sitemap.xml")} />
     <meta property="og:title" content={fullTitle} />
-    <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={(canonicalUrl ?? pageUrl).href} />
+    <meta property="og:site_name" content={SITE_METADATA.name} />
+    <meta property="og:locale" content={SITE_METADATA.locale} />
+    <meta property="og:image" content={imageUrl.href} />
+    <meta property="og:image:secure_url" content={imageUrl.href} />
+    <meta property="og:image:type" content={imageType} />
+    <meta property="og:image:width" content={String(imageWidth)} />
+    <meta property="og:image:height" content={String(imageHeight)} />
+    <meta property="og:image:alt" content={image.alt} />
+    {
+      ogType === "article" && publishedIso && (
+        <meta property="article:published_time" content={publishedIso} />
+      )
+    }
+    {
+      ogType === "article" && modifiedIso && (
+        <meta property="article:modified_time" content={modifiedIso} />
+      )
+    }
+    {
+      ogType === "article" && authorUrl && (
+        <meta property="article:author" content={authorUrl} />
+      )
+    }
+    {
+      ogType === "article" && section && (
+        <meta property="article:section" content={section} />
+      )
+    }
+    {
+      ogType === "article" &&
+        tags.map((tag) => <meta property="article:tag" content={tag} />)
+    }
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={SITE_METADATA.twitterSite} />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={imageUrl.href} />
+    <meta name="twitter:image:alt" content={image.alt} />
+    {
+      fediverseCreator && (
+        <meta name="fediverse:creator" content={fediverseCreator} />
+      )
+    }
+    <link rel="icon" href={withBase("/favicon.ico")} sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href={withBase("/favicon-32.png")} />
-    <link rel="apple-touch-icon" sizes="196x196" href={withBase("/favicon-196.png")} />
+    <link rel="icon" type="image/png" sizes="196x196" href={withBase("/favicon-196.png")} />
+    <link rel="apple-touch-icon" sizes="180x180" href={withBase("/apple-touch-icon.png")} />
+    <link rel="manifest" href={withBase("/site.webmanifest")} />
+    {serializedJsonLd && (
+      <script type="application/ld+json" set:html={serializedJsonLd} />
+    )}
     {/* Resolve the saved preference before paint to prevent a theme flash. */}
     <script
       is:inline
@@ -92,7 +304,7 @@ const contributorsActive = path.includes("/authors");
             Report an issue
           </a>
           <a
-            href={withBase("/authors")}
+            href={withBase("/authors/")}
             class:list={[
               "hidden border-b-[3px] pb-0.5 no-underline md:inline-flex",
               contributorsActive

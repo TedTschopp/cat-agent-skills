@@ -1,0 +1,46 @@
+{
+  "id": "/",
+  "name": "AI.Tedt.org — Prompts and Agent Skills",
+  "short_name": "AI.Tedt.org",
+  "description": "Reusable prompts, agent skills, plugins, and automations for Cowork, Copilot Studio, and Scout.",
+  "lang": "en-US",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#f8f6f0",
+  "theme_color": "#101820",
+  "categories": ["productivity", "education", "utilities"],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Browse skills",
+      "short_name": "Skills",
+      "url": "/"
+    },
+    {
+      "name": "Browse contributors",
+      "short_name": "Contributors",
+      "url": "/authors/"
+    }
+  ]
+}

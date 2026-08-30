@@ -3,7 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import { withBase } from "../lib/url";
 ---
 
-<Layout title="Page not found">
+<Layout
+  title="Page not found"
+  description="The requested AI.Tedt.org skill or page does not exist or has moved."
+  canonicalPath={false}
+  noindex={true}
+  fediverseCreator={false}
+>
   <div
     class="mx-auto flex max-w-2xl flex-col items-center px-4 py-24 text-center sm:px-6"
   >

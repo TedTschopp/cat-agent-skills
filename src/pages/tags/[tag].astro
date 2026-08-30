@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import SkillCard from "../../components/SkillCard.astro";
 import { getCollection } from "astro:content";
 import { withBase } from "../../lib/url";
+import { SITE_METADATA } from "../../lib/site-metadata";
 
 export async function getStaticPaths() {
   const skills = await getCollection("skills");
@@ -21,11 +22,30 @@ export async function getStaticPaths() {
 }
 
 const { tag, skills } = Astro.props;
+const tagUrl = new URL(`/tags/${encodeURIComponent(tag)}/`, SITE_METADATA.url).href;
+const indexableSkills = skills.filter(
+  (skill) => !skill.data.tags.includes("sample"),
+);
+const tagSchema = {
+  "@type": "ItemList",
+  "@id": `${tagUrl}#skill-list`,
+  name: `Skills tagged ${tag}`,
+  numberOfItems: indexableSkills.length,
+  isPartOf: { "@id": `${tagUrl}#webpage` },
+  itemListElement: indexableSkills.map((skill, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: skill.data.name,
+    url: new URL(`/skills/${skill.id}/`, SITE_METADATA.url).href,
+  })),
+};
 ---
 
 <Layout
   title={`#${tag} skills`}
-  description={`Copilot Studio skills tagged "${tag}".`}
+  description={`AI agent skills, plugins, and automations tagged "${tag}" in the AI.Tedt.org gallery.`}
+  schemaType="CollectionPage"
+  structuredData={tagSchema}
 >
   <div class="mx-auto max-w-8xl px-4 py-8 sm:px-6 sm:py-10">
     <a

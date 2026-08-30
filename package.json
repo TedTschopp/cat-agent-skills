@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/verify-site-metadata.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "validate:skills": "node --import tsx scripts/validate-skill.ts src/content/skills/*.md",
@@ -21,7 +21,9 @@
     "ratings:fetch": "node --import tsx scripts/fetch-engagement.ts",
     "artwork:pending": "node --import tsx scripts/skill-artwork.ts pending",
     "artwork:prepare": "node --import tsx scripts/skill-artwork.ts prepare",
-    "artwork:validate": "node --import tsx scripts/skill-artwork.ts validate"
+    "artwork:validate": "node --import tsx scripts/skill-artwork.ts validate",
+    "assets:icons": "node scripts/generate-site-icons.mjs",
+    "check:metadata": "node scripts/verify-site-metadata.mjs"
   },
   "dependencies": {
     "astro": "^7.1.0",

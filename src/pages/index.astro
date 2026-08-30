@@ -6,6 +6,7 @@ import { PLATFORMS, PLATFORM_COLORS, initials, coverGradient } from "../lib/skil
 import { authorKey, normalizeLogin } from "../lib/badges";
 import { getRating } from "../lib/ratings";
 import { getDownloads } from "../lib/downloads";
+import { SITE_METADATA } from "../lib/site-metadata";
 
 const isSample = (s: { data: { tags: string[] } }) =>
   s.data.tags.includes("sample");
@@ -60,9 +61,24 @@ for (const skill of skills) {
 const allContributors = [...contributorMap.entries()]
   .map(([key, v]) => ({ key, ...v }))
   .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+
+const indexableSkills = skills.filter((skill) => !isSample(skill));
+const gallerySchema = {
+  "@type": "ItemList",
+  "@id": `${SITE_METADATA.url}#skill-gallery`,
+  name: "Prompts and Agent Skills",
+  numberOfItems: indexableSkills.length,
+  isPartOf: { "@id": `${SITE_METADATA.url}#webpage` },
+  itemListElement: indexableSkills.map((skill, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: skill.data.name,
+    url: new URL(`/skills/${skill.id}/`, SITE_METADATA.url).href,
+  })),
+};
 ---
 
-<Layout>
+<Layout schemaType="CollectionPage" structuredData={gallerySchema}>
   <section class="mx-auto max-w-8xl px-4 pb-8 pt-10 sm:px-6 sm:pb-10 sm:pt-14">
     <header>
       <span class="text-xs font-semibold uppercase tracking-[0.08em] text-accent-text">

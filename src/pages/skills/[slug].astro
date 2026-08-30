@@ -17,6 +17,7 @@ import {
 } from "../../lib/engagement";
 import { getDownloads } from "../../lib/downloads";
 import { ANALYTICS_ENABLED } from "../../lib/analytics-config";
+import { SITE_METADATA, toIsoDate } from "../../lib/site-metadata";
 import {
   MICROSOFT_RATINGS_ENABLED,
   MICROSOFT_GISCUS_REPO,
@@ -112,9 +113,83 @@ const platformTone: Record<string, string> = {
   "Copilot Studio": "var(--platform-copilot-studio)",
   Scout: "var(--platform-scout)",
 };
+const skillPageUrl = new URL(`/skills/${skill.id}/`, SITE_METADATA.url).href;
+const socialImagePath = `/social/skills/${skill.id}.jpg`;
+const socialImageUrl = new URL(socialImagePath, SITE_METADATA.url).href;
+const socialImageAlt = d.coverImageAlt
+  ? `Social preview for ${d.name}. ${d.coverImageAlt}`
+  : `Branded AI.Tedt.org preview for ${d.name}, ${noun === "automation" ? "an" : "a"} ${noun} by ${d.author}.`;
+const createdIso = toIsoDate(d.createdAt);
+const modifiedIso = toIsoDate(d.updatedAt ?? d.createdAt);
+const skillSchema = {
+  "@type": "CreativeWork",
+  "@id": `${skillPageUrl}#skill`,
+  name: d.name,
+  description: d.description,
+  url: skillPageUrl,
+  mainEntityOfPage: { "@id": `${skillPageUrl}#webpage` },
+  isPartOf: { "@id": `${SITE_METADATA.url}#website` },
+  image: socialImageUrl,
+  author: {
+    "@type": "Person",
+    name: d.author,
+    ...(authorProfileUrl ? { url: authorProfileUrl } : {}),
+  },
+  publisher: { "@id": `${SITE_METADATA.url}#owner` },
+  ...(createdIso ? { dateCreated: createdIso } : {}),
+  ...(modifiedIso ? { dateModified: modifiedIso } : {}),
+  ...(d.version ? { version: d.version } : {}),
+  keywords: d.tags,
+  genre: nounTitle,
+  isAccessibleForFree: true,
+  about: d.platforms.map((platform) => ({
+    "@type": "Thing",
+    name: platform,
+  })),
+};
+const breadcrumbSchema = {
+  "@type": "BreadcrumbList",
+  "@id": `${skillPageUrl}#breadcrumb`,
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: SITE_METADATA.title,
+      item: SITE_METADATA.url,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: d.name,
+      item: skillPageUrl,
+    },
+  ],
+};
 ---
 
-<Layout title={d.name} description={d.description}>
+<Layout
+  title={d.name}
+  description={d.description}
+  canonicalPath={isSample ? false : undefined}
+  image={{
+    path: socialImagePath,
+    alt: socialImageAlt,
+    width: 1200,
+    height: 630,
+    type: "image/jpeg",
+  }}
+  ogType="article"
+  schemaType="ItemPage"
+  noindex={isSample}
+  publishedTime={d.createdAt}
+  modifiedTime={d.updatedAt ?? d.createdAt}
+  authorName={d.author}
+  authorUrl={authorProfileUrl}
+  section={nounTitle}
+  tags={d.tags}
+  structuredData={[skillSchema, breadcrumbSchema]}
+  fediverseCreator={false}
+>
   <div class="mx-auto max-w-[82.5rem] px-4 py-8 sm:px-6 sm:py-10">
     <a
       href={withBase("/")}
@@ -254,7 +329,7 @@ const platformTone: Record<string, string> = {
             <div class="mt-4 flex flex-wrap gap-2">
               {d.tags.map((tag) => (
                 <a
-                  href={withBase(`/tags/${encodeURIComponent(tag)}`)}
+                  href={withBase(`/tags/${encodeURIComponent(tag)}/`)}
                   class="rounded-full border border-border bg-surface-2 px-3 py-1 text-sm text-muted hover:border-accent/50 hover:text-fg transition-colors"
                 >
                   {tag}

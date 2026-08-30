@@ -40,7 +40,7 @@ deployed as a static site to GitHub Pages.
 ```bash
 npm install
 npm run dev      # start the dev server (http://localhost:4321/)
-npm run build    # production build into ./dist
+npm run build    # production build into ./dist + metadata/social asset audit
 npm run preview  # preview the production build locally
 ```
 
@@ -126,11 +126,15 @@ src/
     skills/[slug].astro  skill detail page (instructions, download, ratings)
     skills/[slug].md.ts  raw Markdown download endpoint
     tags/[tag].astro     per-tag listing
+    social/              generated 1200×630 site + per-skill preview images
+    robots.txt.ts        crawler policy + sitemap discovery
+    sitemap.xml.ts       canonical, indexable page inventory
     skills.json.ts       metadata endpoint
 public/
   bundles/         downloadable .zip skill bundles
+  site.webmanifest + browser, Apple, and installable-app icons
 submissions/       drop-in skill submissions (folders imported by CI)
-scripts/           import-submissions + validation + fetch-engagement
+scripts/           import, content validation, metadata audit, icons, engagement
 .github/workflows/ CI + Microsoft catalog sync + Pages/engagement refresh
 ```
 

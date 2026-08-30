@@ -4,6 +4,7 @@ import { withBase } from "../lib/url";
 import { formatDate } from "../lib/skills";
 import { allAuthors } from "../lib/badges";
 import { loadBadgeSkills } from "../lib/badge-data";
+import { SITE_METADATA } from "../lib/site-metadata";
 
 // Build the public contribution ledger from the baked skills. Everything here is
 // public (author, github login, featured, dates); the snarky badge is layered on
@@ -16,11 +17,36 @@ const featuredTotal = badgeSkills.filter((s) => s.featured).length;
 
 // How many skill chips to show per author card before collapsing to "+N more".
 const MAX_CHIPS = 8;
+const contributorsSchema = {
+  "@type": "ItemList",
+  "@id": `${SITE_METADATA.url}authors/#contributors`,
+  name: "AI.Tedt.org contributors",
+  numberOfItems: authors.length,
+  isPartOf: { "@id": `${SITE_METADATA.url}authors/#webpage` },
+  itemListElement: authors.map((author, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "Person",
+      name: author.displayName,
+      url: `https://github.com/${author.login}`,
+    },
+  })),
+};
 ---
 
 <Layout
   title="Contributors"
   description="Everyone who has shipped a skill to the AI.Tedt.org gallery — look up your handle to reveal your own contributor badges."
+  image={{
+    path: "/social/contributors.jpg",
+    alt: "AI.Tedt.org contributors — the people behind the Prompts and Agent Skills gallery.",
+    width: 1200,
+    height: 630,
+    type: "image/jpeg",
+  }}
+  schemaType="CollectionPage"
+  structuredData={contributorsSchema}
 >
   <section class="mx-auto max-w-8xl px-4 py-10 sm:px-6">
     <header class="mb-8">
@@ -140,7 +166,7 @@ const MAX_CHIPS = 8;
               <ul class="skill-chips" role="list">
                 {shown.map((s) => (
                   <li>
-                    <a class="chip" href={withBase(`/skills/${s.slug}`)} title={s.name}>
+                    <a class="chip" href={withBase(`/skills/${s.slug}/`)} title={s.name}>
                       {s.featured && (
                         <span class="chip-featured" title="Featured" aria-hidden="true"></span>
                       )}
