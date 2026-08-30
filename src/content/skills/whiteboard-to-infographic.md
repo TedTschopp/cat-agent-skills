@@ -10,6 +10,15 @@ authorGithub: NickBurns42
 version: 1.0.0
 createdAt: 2026-07-22
 updatedAt: 2026-07-22
+coverImage: skill-art/whiteboard-to-infographic.webp
+coverImageAlt: A rough hand-drawn process sketch is transformed through a cyan alignment frame into a polished geometric flow.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a rough hand-drawn process sketch is faithfully transformed into a polished, editable infographic structure without inventing missing connections\nScene/backdrop: a calm slate studio with a warm-paper sketch surface passing through a cyan-lit alignment frame\nSubject: loose charcoal-like boxes, arrows, and connection lines on one side become a precise tactile process rail and network of clean geometric cards on the other, preserving the same topology\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; strong before-and-after transformation with clear topology at card size\nLighting/mood: calm, capable, quietly technical; soft cyan alignment glow with one sparing orange emphasis point\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: abstract unlabeled marks only; no text, letters, numbers, interface labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-30
+coverImageSourceHash: "sha256:123ffaa043314b23c16d13c629b0d7c5d776ab2a58fa44d404fb0745b2605800"
 bundle: bundles/whiteboard-to-infographic.zip
 ---
 # Whiteboard to Infographic

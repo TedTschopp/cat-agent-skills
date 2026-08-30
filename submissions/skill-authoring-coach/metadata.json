@@ -17,5 +17,14 @@
   "authorUrl": "https://github.com/SimonOwenDigital",
   "version": "0.1.0",
   "createdAt": "2026-07-17",
-  "updatedAt": "2026-07-17"
+  "updatedAt": "2026-07-17",
+  "coverImage": "skill-art/skill-authoring-coach.webp",
+  "coverImageAlt": "Loose modules align through a cyan assembly jig into a compact reusable toolkit.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: loose instruction modules are coached into a concise, reusable skill package with a clear trigger, ordered core, and neatly separated supporting resources\nScene/backdrop: an uncluttered slate workshop surface with warm paper and navy modular pieces moving through a cyan alignment jig\nSubject: a few irregular blocks and folded sheets becoming one precise compact toolkit with distinct compartments and a strong silhouette\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; centered assembly metaphor with generous calm negative space\nLighting/mood: calm, capable, quietly technical; soft cyan backlight and restrained orange emphasis on one alignment point\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-30",
+  "coverImageSourceHash": "sha256:193fd63b3df50a4d50dd9eb71db4f465a0013733fc75a73f2b1056c73e7678bb"
 }

@@ -10,6 +10,15 @@ authorGithub: farideilanda
 version: 1.0.0
 createdAt: 2026-08-04
 updatedAt: 2026-08-09
+coverImage: skill-art/stoic-negotiator.webp
+coverImageAlt: Two geometric structures are linked by a balanced navy bridge resting on a cyan-lit central anchor.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: two opposing sculptural forms reach a principled agreement across a balanced bridge anchored by a calm central stone, suggesting disciplined negotiation without domination\nScene/backdrop: a spacious slate negotiation table rendered as an abstract architectural landscape with warm paper planes\nSubject: two distinct geometric structures facing each other, a balanced navy bridge between them, and a cyan-lit central anchor that stabilizes the exchange\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; symmetrical but not rigid, with strong silhouette and open space\nLighting/mood: calm, capable, quietly technical; composed low-contrast light with restrained cyan backlighting and one sparing orange concession piece\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-30
+coverImageSourceHash: "sha256:34a857472002e0ebb44561c0afeae9d635b45b7391a041d94e251ccdaa6c7734"
 ---
 # Stoic Negotiator
 

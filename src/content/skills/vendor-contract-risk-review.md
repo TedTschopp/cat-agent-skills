@@ -10,6 +10,15 @@ authorGithub: Timziito
 version: 1.0.0
 createdAt: 2026-07-27
 updatedAt: 2026-07-27
+coverImage: skill-art/vendor-contract-risk-review.webp
+coverImageAlt: Layered agreement sheets pass beneath a cyan inspection lens that reveals a few orange risk knots.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a layered vendor agreement passes through a precise risk-inspection lens that reveals a few hidden knots and one-sided pressure points for human review\nScene/backdrop: a restrained slate procurement desk with warm-paper contract layers and a cyan-lit inspection frame\nSubject: folded paper planes with abstract line textures passing under a glass lens, where subtle orange tension knots and uneven fasteners become visible while most of the structure remains calm\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; central inspection lens and prioritized risk cues with generous negative space\nLighting/mood: calm, capable, quietly technical; restrained cyan backlighting and sparing orange risk highlights\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: abstract line textures only, not readable legal writing; no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-30
+coverImageSourceHash: "sha256:821f67d3c1cfd56f441fbbc6a7d1698df7b7d7719320a41df77d6f76f4c055c6"
 ---
 Read the contract for the clauses that commonly cause problems later, flag
 them clearly, and never present this as a substitute for legal review.

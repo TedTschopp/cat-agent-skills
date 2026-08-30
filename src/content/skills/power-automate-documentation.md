@@ -10,6 +10,15 @@ authorGithub: m-salomonsen
 version: 1.0.0
 createdAt: 2026-07-19
 updatedAt: 2026-07-19
+coverImage: skill-art/power-automate-documentation.webp
+coverImageAlt: A tangled automation network resolves through a cyan organizing frame into orderly technical reference sheets.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a tangled branching automation mechanism is methodically translated into a clean, complete technical reference with every connection and dependency accounted for\nScene/backdrop: a quiet slate drafting table where an intricate network of tubes and junctions enters a cyan-lit organizing frame and emerges as aligned warm-paper layers\nSubject: interlocking flow channels, connectors, and dependency bridges resolving into an orderly exploded-view document stack with abstract diagram marks only\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; clear transformation from complex network to structured reference\nLighting/mood: calm, capable, quietly technical; precise cyan rim light with one sparing orange inspection marker\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: abstract marks only, not readable writing; no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-30
+coverImageSourceHash: "sha256:6fc9b71ca5c6973a1dec3fc7905394de5844aa4abae54fcecd30801128de8fc2"
 ---
 You are producing a **technical reference document** for a Power Automate solution export: what each flow does, in plain English, and every place it reaches outside itself to read, write, or delete data. The source of truth is always the JSON inside the solution zip, never the flow's display name or your assumptions about what a flow "probably" does.
 

@@ -1,6 +1,6 @@
 {
   "name": "Tool Tracer",
-  "description": "On-demand tool/action trace for Copilot Studio runs (`/special-debug tool-trace` \u2192 `tool_trace.json`).",
+  "description": "On-demand tool/action trace for Copilot Studio runs (`/special-debug tool-trace` → `tool_trace.json`).",
   "platforms": [
     "Copilot Studio"
   ],
@@ -17,5 +17,14 @@
   "authorUrl": "https://github.com/rafalcaraz",
   "version": "1.0.0",
   "createdAt": "2026-07-22",
-  "updatedAt": "2026-07-22"
+  "updatedAt": "2026-07-22",
+  "coverImage": "skill-art/tool-tracer.webp",
+  "coverImageAlt": "A cyan tool path branches around a plain orange interruption and rejoins before reaching a clear audit crystal.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: an invisible sequence of tool actions becomes a precise, inspectable trace showing order, branching, retry, and outcome without exposing sensitive contents\nScene/backdrop: a dark slate instrument bench with transparent layered channels illuminated from beneath\nSubject: a single cyan path travels through a sequence of tactile mechanical nodes, briefly branches around a plain solid orange mechanical interruption with no symbol or marking, rejoins, and terminates in a clear audit crystal\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; readable left-to-right sequence and strong silhouette at card size\nLighting/mood: calm, capable, quietly technical; controlled cyan backlighting with one sparing orange fault accent\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: the orange interruption must be an unmarked solid geometric object with no warning icon, punctuation, glyph, or symbol; no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-30",
+  "coverImageSourceHash": "sha256:a87f6bb3bdc84c3f88bf4148d20d6a5316d301d418b768f443d15b2d694d41cb"
 }

@@ -20,5 +20,14 @@
   "authorUrl": "https://github.com/rafalcaraz",
   "version": "1.0.0",
   "createdAt": "2026-07-19",
-  "updatedAt": "2026-07-19"
+  "updatedAt": "2026-07-19",
+  "coverImage": "skill-art/phi-deidentifier.webp",
+  "coverImageAlt": "Layered clinical records pass through a cyan privacy frame and emerge as anonymous geometric tokens.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a protective privacy aperture transforms a stream of sensitive clinical record fragments into anonymous, consistent geometric tokens while preserving their orderly sequence\nScene/backdrop: an uncluttered slate work surface with warm paper record layers passing through a precise cyan-lit privacy frame\nSubject: layered paper-like clinical forms with purely abstract marks on one side, clean repeated geometric tokens and a small audit trail of matching shapes on the other\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; strong left-to-right transformation with calm negative space\nLighting/mood: calm, capable, quietly technical; restrained cyan backlighting around the privacy frame\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: abstract marks only, not readable writing; no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-30",
+  "coverImageSourceHash": "sha256:02509b14230181a7d4256d52d64f3690fef718575bc4114ca098145c034a2d65"
 }

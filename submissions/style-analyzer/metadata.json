@@ -1,11 +1,30 @@
 {
   "name": "Communication Style Analyzer",
   "description": "Analyzes your Teams chats and emails to build a reusable profile of your writing voice — greetings, tone, length, punctuation, sign-offs, common phrases, and quirks — and saves it to memory for other assistants to use.",
-  "platforms": ["Cowork", "Scout"],
-  "tags": ["writing", "style", "teams", "email", "memory", "productivity"],
+  "platforms": [
+    "Cowork",
+    "Scout"
+  ],
+  "tags": [
+    "writing",
+    "style",
+    "teams",
+    "email",
+    "memory",
+    "productivity"
+  ],
   "author": "Srinivas Varukala",
   "authorUrl": "https://github.com/svarukala",
   "version": "1.0.0",
   "createdAt": "2026-07-26",
-  "updatedAt": "2026-07-26"
+  "updatedAt": "2026-07-26",
+  "coverImage": "skill-art/style-analyzer.webp",
+  "coverImageAlt": "Several paper-like communication rhythms pass through a cyan prism and become one distinctive waveform.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: many subtle communication rhythms are distilled into one distinctive reusable voice profile without revealing any message content\nScene/backdrop: an uncluttered slate acoustic studio with translucent warm-paper ribbons flowing through a cyan-lit analytical prism\nSubject: varied abstract speech rhythms and punctuation-like curves enter separately, then emerge as one coherent layered waveform sculpture with a unique cadence\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; graceful convergence toward a clear central profile with negative space\nLighting/mood: calm, capable, quietly technical; soft cyan edge light and subtle orange accent at the final profile\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: purely abstract rhythm forms with no readable communication content; no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-30",
+  "coverImageSourceHash": "sha256:c566251b68e52c530bfff4ee8c9256afaea178c5ebe84843a7f27cd7957668e4"
 }
