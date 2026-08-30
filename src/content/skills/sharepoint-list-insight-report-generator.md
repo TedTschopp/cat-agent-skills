@@ -10,6 +10,15 @@ authorGithub: marcorocca1973
 version: 1.0.0
 createdAt: 2026-07-24
 updatedAt: 2026-07-24
+coverImage: skill-art/sharepoint-list-insight-report-generator.webp
+coverImageAlt: "Blank record tiles pass through a cyan analysis prism and emerge as bars, a segmented ring, and one orange anomaly."
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a validated tray of structured records passes through a clear analysis prism and casts a coherent field of business insights\nScene/backdrop: uncluttered slate analysis bench with warm paper record tiles and restrained depth\nSubject: an orderly stack of blank record tiles entering a central cyan glass prism, emerging as tactile bars, a segmented ring, and one orange anomaly pebble arranged as a physical exhibit\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; center the complete record stack, prism, bars, segmented ring, and anomaly pebble within the inner 76%; leave the outer 12% on every side as quiet slate negative space\nLighting/mood: calm, capable, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no cropped records or insight forms; no text, letters, numbers, chart labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:4baa3b22873469dcd647fe411afce3ef4b04a4df148b88409552abad90175e67"
 ---
 Before starting, verify that configured SharePoint connector actions, agent flows, or equivalent tools can discover approved lists and their schemas, retrieve list items page by page, and invoke **Create file** to return the created file's URL or path. A SharePoint knowledge source alone does not guarantee these capabilities. If any capability is unavailable, stop and name the missing capability.
 

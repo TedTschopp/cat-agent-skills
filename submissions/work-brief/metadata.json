@@ -1,12 +1,31 @@
 {
   "name": "Work Brief",
   "description": "A morning brief that reads your mail, calendar, and Teams, then tells you what you owe people before the week starts.",
-  "platforms": ["Scout"],
-  "tags": ["productivity", "automation", "teams", "email", "calendar", "briefing", "multilingual"],
+  "platforms": [
+    "Scout"
+  ],
+  "tags": [
+    "productivity",
+    "automation",
+    "teams",
+    "email",
+    "calendar",
+    "briefing",
+    "multilingual"
+  ],
   "author": "Allan De Castro",
   "authorUrl": "https://github.com/allandecastro",
   "version": "0.4.0",
   "featured": true,
   "createdAt": "2026-07-25",
-  "updatedAt": "2026-07-27"
+  "updatedAt": "2026-07-27",
+  "coverImage": "skill-art/work-brief.webp",
+  "coverImageAlt": "Blank correspondence parcels, schedule discs, and conversation pebbles converge through a cyan sorting lens into a short priority stack.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: three distinct streams of blank correspondence parcels, schedule discs, and conversation pebbles converge through a sorting lens into one short prioritized stack\nScene/backdrop: uncluttered morning worktable on warm paper with a deep slate horizon and generous negative space\nSubject: one cyan sorting lens, three source streams, a compact ordered stack, and one sparing orange deadline tile at the front\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject centered; no essential detail in the outer 8%; sources and prioritized output readable at card size\nLighting/mood: focused, ready, calm, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, symbols, pseudo-writing, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI, calendar screenshot, or Microsoft Fluent branding\nCorrection: shorten and compact all three source streams so none enters from or touches an edge; keep every parcel, disc, pebble, sorting lens, and prioritized tile fully inside the inner 84% of the frame with clean negative space around the composition",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:f84d314917a962232d159d206065cc3e090084ab7103a0ecbfcf56531967fac0"
 }

@@ -11,5 +11,14 @@
     "routing"
   ],
   "author": "Gaurav Mahajan",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "coverImage": "skill-art/what-to-use-when.webp",
+  "coverImageAlt": "A central selector routes one task sphere along a cyan-lit path toward the best of four abstract workstations.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a single task sphere enters a compass-like mechanical selector and is routed along one illuminated path to the best-matched one of several distinct abstract workstations\nScene/backdrop: spare warm-paper decision table with a deep slate field and generous negative space\nSubject: one central routing selector, one incoming sphere, four distinct destination forms, and a cyan chosen path with one small orange pivot\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject centered; no essential detail in the outer 8%; destinations remain abstract and logo-free; clear at card size\nLighting/mood: discerning, efficient, calm, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, symbols, pseudo-writing, vendor marks, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding\nCorrection: replace the compass star and needle with a plain rotating selector disk, scale the entire selector and all four destination forms down so every meaningful form sits fully inside the inner 84% of the frame, and leave clean negative space around it",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:bf237625ced6e33d24bfb6192b4597b840ef595489995e01049f806c12de5f7e"
 }

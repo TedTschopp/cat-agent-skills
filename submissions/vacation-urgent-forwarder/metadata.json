@@ -1,10 +1,24 @@
 {
   "name": "Vacation Urgent Forwarder",
   "description": "A Scout automation installer that, only during a configured vacation window, scans work email and Teams and forwards genuinely urgent items to your personal email.",
-  "tags": ["automation", "email", "teams", "out-of-office"],
+  "tags": [
+    "automation",
+    "email",
+    "teams",
+    "out-of-office"
+  ],
   "author": "Giorgio Ughini",
   "authorUrl": "https://github.com/GiorgioUghini",
   "version": "1.0.0",
   "createdAt": "2026-07-16",
-  "updatedAt": "2026-07-16"
+  "updatedAt": "2026-07-16",
+  "coverImage": "skill-art/vacation-urgent-forwarder.webp",
+  "coverImageAlt": "A selective cyan-lit gate lets one orange urgent parcel reach a receiving tray while routine parcels wait behind.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a selective gate filters a quiet stream of work-message parcels, allowing only one genuinely urgent orange parcel to cross a protected boundary toward a small personal receiving tray\nScene/backdrop: serene vacation-blue distance behind a warm-paper foreground, with a compact slate filtering gate and calm negative space\nSubject: one high-threshold gate, several muted blank parcels held back, and one orange urgent parcel moving through a cyan-lit channel\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject centered; no essential detail in the outer 8%; clear selective-filter metaphor at card size\nLighting/mood: protective, restrained, calm, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, pseudo-writing, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI, mail screenshot, or Microsoft Fluent branding\nCorrection: Simplify to one compact complete ensemble consisting only of the gate, a small group of waiting blank parcels, one orange urgent parcel, and one receiving tray, all fully visible and contained within the middle 60% of both canvas width and canvas height; leave every meaningful object at least 12% from every edge, with no cropped or edge-crossing form.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:4cc9b05caf7e438f78943c78930f77aedfd56efa0f8d1d27ef1e43f08db861e7"
 }

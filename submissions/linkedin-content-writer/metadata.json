@@ -15,5 +15,14 @@
   "authorGithub": "DigitalBoopLtd",
   "version": "1.0.1",
   "createdAt": "2026-07-14",
-  "updatedAt": "2026-07-17"
+  "updatedAt": "2026-07-17",
+  "coverImage": "skill-art/linkedin-content-writer.webp",
+  "coverImageAlt": "Blank source slips align through a cyan glass lens into one polished portrait card.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: supplied facts are focused into one clear, credible professional story without inventing evidence, represented as a single polished blank publication card built from grounded source pieces\nScene/backdrop: an uncluttered warm-paper writing field with a small centered slate composition table and no stationery or room props\nSubject: several completely blank source slips aligned through one transparent cyan glass focusing lens into one clean blank portrait card, with a small orange foundation block anchoring the composition\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; centered three-quarter view at a noticeably smaller scale; contain every source slip, complete glass lens, finished card, foundation block, table, and shadow within the central 58% of the canvas; leave at least 21% calm empty border on all four sides; no object may enter the outer 16%\nLighting/mood: thoughtful, credible, human, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: all paper surfaces blank and unmarked; no arrows, chevrons, directional rods, social-network logos, profile silhouettes, text, letters, numbers, pseudo-writing, hashtags, icons, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:3638996fcf80177ca58ae3e45e30229a0b0559e40db0749de9127bdae4ea5e6f"
 }

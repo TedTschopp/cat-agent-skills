@@ -10,6 +10,15 @@ authorGithub: rafsan-huseynov
 version: 1.0.0
 createdAt: 2026-07-18
 updatedAt: 2026-07-18
+coverImage: skill-art/microsoft-ai-platform-advisor.webp
+coverImageAlt: A precision balance weighs four architectural modules and highlights one selected platform.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a complex AI project is weighed across needs, risk, and technical effort to select the most suitable architectural platform, represented as a clear physical decision instrument\nScene/backdrop: an uncluttered warm-paper architecture studio field with one compact slate decision plinth and no screens or branded product imagery\nSubject: one central precision balance supporting several distinct unmarked architectural modules around a navy decision core, with one cyan path settling onto the selected module and one restrained orange risk weight\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; centered frontal three-quarter view; contain the complete balance, all modules, path, weight, plinth, and shadows within the central 68% of the canvas; leave at least 16% calm empty border on every side; no object may enter the outer 12%\nLighting/mood: advisory, measured, confident, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no Microsoft logos, vendor logos, product icons, quadrants, charts, labels, text, letters, numbers, pseudo-writing, arrows, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:e81de5b27d1366cf0087d74b94227f71042b639cdd03b83ff61253dcd52866fc"
 bundle: bundles/microsoft-ai-platform-advisor.zip
 ---
 # Microsoft AI Platform Advisor

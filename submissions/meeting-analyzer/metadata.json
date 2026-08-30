@@ -1,8 +1,28 @@
 {
   "name": "Meeting Analyzer",
   "description": "Analyzes meeting content pasted as text or provided as audio/video transcripts. Delivers a structured intelligence report: explicit decisions and action items, participant persona profiles, and — most importantly — hidden insights: unspoken tensions, implicit risks, unresolved topics, and signals that were not made explicit during the meeting but are critical to the context.",
-  "platforms": ["Copilot Studio", "Cowork"],
-  "tags": ["meetings", "analysis", "insights", "personas", "transcription", "productivity", "communication"],
+  "platforms": [
+    "Copilot Studio",
+    "Cowork"
+  ],
+  "tags": [
+    "meetings",
+    "analysis",
+    "insights",
+    "personas",
+    "transcription",
+    "productivity",
+    "communication"
+  ],
   "author": "Michael Ferro Pereira",
-  "authorUrl": "https://github.com/michaelfp"
+  "authorUrl": "https://github.com/michaelfp",
+  "coverImage": "skill-art/meeting-analyzer.webp",
+  "coverImageAlt": "Voice ribbons converge across a translucent meeting table while hidden threads appear below its surface.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a meeting's visible discussion is separated from its deeper tensions, unresolved threads, and hidden signals, revealing both the explicit and implicit layers in one evidence-grounded view\nScene/backdrop: an uncluttered warm-paper analysis field with one compact centered slate meeting surface and no office room scenery\nSubject: one round translucent meeting table with several distinct smooth voice ribbons above it and quieter submerged strands visible beneath the surface under a cyan inspection light, with one orange unresolved thread kept separate\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; centered slightly top-down view; contain the complete table, every ribbon and strand, light, platform, and shadow within the central 66% of the canvas; leave at least 17% calm empty border on all four sides; no object may enter the outer 12%\nLighting/mood: observant, evidence-led, composed, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no people, faces, chairs, speech bubbles, quotation marks, text, letters, numbers, pseudo-writing, icons, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:d140c23333e3377ad2854c0650a4ded86fc3cda08587d1946adfcde9aaeb910f"
 }

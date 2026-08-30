@@ -10,6 +10,15 @@ authorGithub: raemone
 version: 1.1.0
 createdAt: 2026-07-28
 updatedAt: 2026-07-28
+coverImage: skill-art/generating-podcast-script.webp
+coverImageAlt: Two acoustic ribbons weave around a central resonator above blank source sheets.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a compact pair of distinct acoustic ribbons transforms a small stack of blank source sheets into one coherent two-voice audio composition, suggesting evidence becoming a conversational podcast\nScene/backdrop: an uncluttered warm-paper acoustic studio field with one small centered slate platform and no room props\nSubject: two differently shaped but balanced sound ribbons, one cyan and one navy, weaving around a central matte resonator above completely blank source sheets, with one restrained orange continuity accent\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; centered three-quarter view at a compact scale; contain the complete ribbons, resonator, sheets, platform, and all shadows within the central 64% of the canvas; leave at least 18% calm empty border on all four sides; no object may enter the outer 12%; bold silhouette legible at small card size\nLighting/mood: calm, conversational, capable, quietly technical, with restrained cyan backlighting\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: all paper and object surfaces blank and unmarked; no microphones, headphones, people, faces, text, letters, numbers, pseudo-writing, waveform labels, icons, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:b48b0d30dd95a2eccb5ba7fa57212a1b75aba452f0fa741bb1c9f649d59888d4"
 ---
 # Podcast Script Generation
 

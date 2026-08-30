@@ -10,6 +10,15 @@ authorGithub: dvsRCalejo
 version: 1.1.0
 createdAt: 2026-07-17
 updatedAt: 2026-07-18
+coverImage: skill-art/power-automate-desktop-assessment.webp
+coverImageAlt: A compact automation mechanism is inspected through a centered magnifying lens that reveals one orange risk point.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: A compact kinetic automation machine of gears, loop belts, branching rails, and a work queue is examined by a precision inspection lens that reveals one worn orange risk point and several sound cyan paths.\nScene/backdrop: A tactile engineering inspection bench on a slate field, entirely physical and without screens.\nSubject: One crop-safe automation mechanism, one large inspection lens, orderly workflow components, and a single orange defect marker.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%\nLighting/mood: calm, capable, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding\nCorrection: Reframe as one compact centered machine and a complete round inspection lens on a short internal stand, with every belt, rail, queue, lens, and handle inside the inner 84% and a clear border; remove the paper diagram, accessory trays, and all cropped peripheral parts."
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:e24e8c5b07ba32a76a47b77cea0dc0579728fd8fe4df6f5d3e325e6558f10949"
 bundle: bundles/power-automate-desktop-assessment.zip
 ---
 # Power Automate Desktop Assessment

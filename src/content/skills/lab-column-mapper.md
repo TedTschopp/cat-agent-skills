@@ -9,6 +9,15 @@ authorUrl: "https://www.linkedin.com/in/rafsanhuseynov"
 version: 1.0.0
 createdAt: 2026-07-18
 updatedAt: 2026-07-18
+coverImage: skill-art/lab-column-mapper.webp
+coverImageAlt: A translucent lab column passes through a matching comb into a canonical channel beside a plain review block.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: an unfamiliar laboratory data column is precisely matched into the correct channel of a canonical clinical structure, with a distinct final review stop before acceptance\nScene/backdrop: an uncluttered warm-paper laboratory work surface with one compact slate calibration platform and no clinical room scenery\nSubject: one short irregular translucent sample column passing through a cyan precision matching comb into one aligned navy channel among a small set of distinct channels, ending beside one completely plain unmarked orange review block\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; centered frontal three-quarter view at a noticeably smaller scale; contain the complete sample column, matching comb, all channels, review block, platform, and shadows within the central 58% of the canvas; leave at least 21% calm empty border on every side; no object may enter the outer 16%\nLighting/mood: careful, clinical, evidence-led, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: the orange review block must be featureless; no people, human silhouettes, person icons, patient imagery, medical symbols, labels, codes, text, letters, numbers, pseudo-writing, tables, interface elements, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no Microsoft Fluent branding; every visible surface blank and unmarked"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:625d0ed2187bc9f964e8c44bda99763e8b0a19698ecb1f960a01a4936dddd29e"
 bundle: bundles/lab-column-mapper.zip
 ---
 # Lab Column Mapper

@@ -9,6 +9,15 @@ version: 1.1.0
 createdAt: 2026-07-24
 updatedAt: 2026-07-24
 coverColor: "#0F6CBD"
+coverImage: skill-art/process-sop-architect.webp
+coverImageAlt: Loose process tiles and threads pass through a drafting frame and emerge as an orderly controlled pathway.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: scattered process fragments pass through an architect's drafting jig and emerge as one orderly operating pathway\nScene/backdrop: uncluttered slate workbench with warm paper drafting surfaces and restrained architectural depth\nSubject: a few loose blank note tiles and threadlike inputs entering a central navy drafting frame, then resolving into a clean stepped route made only of abstract solid role blocks, decision gates, and control checkpoints\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; center the complete input, drafting frame, and finished pathway within the inner 76%; leave the outer 12% on every side as quiet slate negative space\nLighting/mood: calm, capable, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no pictograms, arrows, profile icons, shield icons, interface glyphs, or cropped objects; no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:131cc7708ef0d49f9a4b6403d042e4d9f2f0fe586b132626ef751893e368f360"
 bundle: bundles/process-sop-architect.zip
 ---
 # Process & SOP Architect

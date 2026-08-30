@@ -1,11 +1,27 @@
 {
   "name": "Scrollytelling Data",
   "description": "Turns data into a scroll-driven HTML story.",
-  "platforms": ["Copilot Studio"],
-  "tags": ["data", "visualization", "storytelling", "reporting"],
+  "platforms": [
+    "Copilot Studio"
+  ],
+  "tags": [
+    "data",
+    "visualization",
+    "storytelling",
+    "reporting"
+  ],
   "author": "AndrewHessMSFT",
   "authorUrl": "https://github.com/AndrewHessMSFT",
   "version": "1.0.0",
   "createdAt": "2026-07-21",
-  "updatedAt": "2026-07-21"
+  "updatedAt": "2026-07-21",
+  "coverImage": "skill-art/scrollytelling-data.webp",
+  "coverImageAlt": "A long paper scroll turns scattered data dots into ordered bars, a trend ribbon, and a final orange insight marker.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a long paper narrative scroll transforms raw data tokens into a sequence of clear visual story chapters\nScene/backdrop: uncluttered empty slate reading table with a warm paper scroll flowing through restrained architectural space and no decorative props\nSubject: one continuous scroll passing through three chapter terraces where scattered dots become ordered bars, then a smooth trend ribbon, ending at one highlighted insight marker\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; center the entire scroll, both rollers, all terraces, data forms, and insight marker within the inner 76%; leave the outer 12% on every side as quiet slate negative space\nLighting/mood: calm, capable, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no cropped scroll, roller, or data forms; no plants, vessels, spheres, or peripheral props; no text, letters, numbers, chart labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:b2d00cbbe8518d55b4941932d7efcb455a60cdbe8ca2abd16b5f115eaeb239cc"
 }

@@ -10,6 +10,15 @@ authorGithub: svarukala
 version: 1.0.0
 createdAt: 2026-07-26
 updatedAt: 2026-07-26
+coverImage: skill-art/pattern-radar.webp
+coverImageAlt: A compact scanning arm reveals three repeating clusters among scattered blank geometric tokens.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: A physical scanning arm sweeps across scattered work tokens and reveals three recurring formations hidden among otherwise irregular pieces, expressing the discovery of patterns worth turning into content or automation.\nScene/backdrop: A quiet circular observation table on a slate field, rendered as a real tactile instrument rather than a screen.\nSubject: One cyan scanning arm, scattered paper and mechanical tokens, and three clearly repeated clusters with one sparing orange opportunity marker.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%\nLighting/mood: calm, capable, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding\nCorrection: Use fewer tokens and make every token a completely blank solid geometric piece with no dots, lines, grids, graphs, marks, or pseudo-writing; keep the scan mechanism and all three clusters compact inside the inner 84% with a clearly empty border."
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:e55200a93d0ee01a6093b19c947d74a2b559a3040a9e20362b150a6fe1397d0c"
 ---
 # Pattern Radar
 

@@ -1,9 +1,27 @@
 {
   "name": "Persona Reaction Panel",
   "description": "Pre-test an internal launch, comms, or enablement artefact against your own role-based personas before it ships — surfaces blackspots, domain gaps, credible-detractor risks, and concrete edits. Bring your own personas file.",
-  "platforms": ["Cowork", "Copilot Studio"],
-  "tags": ["communications", "change-management", "launch-readiness", "personas", "qa"],
+  "platforms": [
+    "Cowork",
+    "Copilot Studio"
+  ],
+  "tags": [
+    "communications",
+    "change-management",
+    "launch-readiness",
+    "personas",
+    "qa"
+  ],
   "author": "Olivia Zhang",
   "authorUrl": "https://github.com/Olivia2327",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "coverImage": "skill-art/persona-reaction-panel.webp",
+  "coverImageAlt": "Five faceted role figures stand around a blank folded launch artifact under cyan and orange review light.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: A blank folded launch artifact stands before a semicircle of distinct faceted role figures, each casting a different colored reflection onto it, expressing a persona panel pressure-testing communications before release.\nScene/backdrop: A restrained editorial review chamber with a warm paper floor and slate background.\nSubject: One central blank artifact, five clearly distinct abstract role figures on small plinths, and converging cyan reflections with one orange risk accent.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%\nLighting/mood: calm, capable, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding\nCorrection: Widen and simplify the composition so the complete central artifact and all five full role figures with their plinths fit inside the inner 84% with a clearly empty border; make the figures empty-handed and remove all edge-touching forms.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:29ef31cfd2bf7e06c69aaf4778091a45cb22927bef8b3e810a352a78dc13233c"
 }

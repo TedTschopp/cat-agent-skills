@@ -1,9 +1,28 @@
 {
   "name": "Own Voice Builder",
   "description": "Mines your sent emails to extract your real writing voice — languages, tone modes, structure, vocabulary, taboo phrases — and generates a personal voice skill that makes every email and Teams draft sound like you.",
-  "platforms": ["Cowork", "Scout"],
-  "tags": ["writing", "voice", "email", "teams", "productivity", "microsoft-365"],
+  "platforms": [
+    "Cowork",
+    "Scout"
+  ],
+  "tags": [
+    "writing",
+    "voice",
+    "email",
+    "teams",
+    "productivity",
+    "microsoft-365"
+  ],
   "author": "Marcel",
   "authorUrl": "https://github.com/marcelhuszar",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "coverImage": "skill-art/own-voice-builder.webp",
+  "coverImageAlt": "A blank paper ribbon passes through three tuning rings and emerges as a distinctive cyan waveform.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: A blank paper ribbon passes through a compact set of acoustic tuning rings and emerges as a distinctive, coherent waveform sculpture, expressing the discovery and rebuilding of a person’s authentic writing voice.\nScene/backdrop: An uncluttered slate workbench with warm paper surfaces and a few restrained signal forms.\nSubject: One continuous paper ribbon, three tactile tuning rings, and a unique cyan waveform with a small orange calibration accent.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%\nLighting/mood: calm, capable, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding\nCorrection: Reframe the entire metaphor as one compact centered sculpture inside the inner 84% of the canvas with a clearly empty border on all four sides; remove every secondary waveform drawing, crosshair, axis line, peripheral paper stack, and edge-touching form.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:fbb9a57ff87148b3bb0fb152b2ca544ca3717ef534fb944196c954535e033e4d"
 }

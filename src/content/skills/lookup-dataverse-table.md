@@ -10,6 +10,15 @@ authorGithub: ChrisGarty
 version: 1.0.0
 createdAt: 2026-07-18
 updatedAt: 2026-07-18
+coverImage: skill-art/lookup-dataverse-table.webp
+coverImageAlt: A cyan inspection lens examines one blank record drawn from an orderly archive.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a live record is found inside a large structured archive and brought forward for precise inspection while the surrounding records remain orderly and protected\nScene/backdrop: an uncluttered warm-paper archival field with one compact slate cabinet platform and no office scenery\nSubject: a small geometric vault of blank record drawers, one drawer gently extended under a complete cyan inspection lens, revealing a single blank record card with a restrained orange edge\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; centered three-quarter view; contain the complete vault, extended drawer, lens, record card, platform, and all shadows within the central 66% of the canvas; leave at least 17% calm empty border on all four sides; no object may enter the outer 12%\nLighting/mood: precise, dependable, live, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: record cards and drawers blank and unmarked; no database cylinders, tables, field labels, GUIDs, text, letters, numbers, pseudo-writing, icons, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:127f80406b0f1f6ebf764bdbd53c1a5273f18fad9c3e3cfe857bfa7cf2a8862f"
 ---
 Help the user search any Microsoft Dataverse table, browse matching records, and
 view full record details — all sourced live from Dataverse via the Dataverse MCP

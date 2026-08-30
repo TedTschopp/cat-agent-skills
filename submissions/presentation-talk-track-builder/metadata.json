@@ -1,11 +1,30 @@
 {
   "name": "Presentation Talk Track Builder",
   "description": "Writes natural, first-person spoken presenter scripts for the slides in a deck. Treats existing speaker notes as authoritative when they contradict slide text. Calibrates length to a target duration and speaking pace and returns a timing table. Never modifies visible slide content.",
-  "platforms": ["Cowork", "Copilot Studio", "Scout"],
-  "tags": ["presentations", "speaker-notes", "powerpoint", "writing", "productivity"],
+  "platforms": [
+    "Cowork",
+    "Copilot Studio",
+    "Scout"
+  ],
+  "tags": [
+    "presentations",
+    "speaker-notes",
+    "powerpoint",
+    "writing",
+    "productivity"
+  ],
   "author": "Jagmeet Chabra",
   "authorUrl": "https://github.com/jchha001",
   "version": "1.0.0",
   "createdAt": "2026-07-16",
-  "updatedAt": "2026-07-17"
+  "updatedAt": "2026-07-17",
+  "coverImage": "skill-art/presentation-talk-track-builder.webp",
+  "coverImageAlt": "Three blank slide panels feed into a cyan voice waveform paced by an unmarked metronome.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a sequence of blank presentation panels becoming a natural spoken voice ribbon paced by a quiet metronome\nScene/backdrop: uncluttered slate studio with a shallow warm paper platform and restrained acoustic depth\nSubject: three blank slide plates feeding into one smooth cyan waveform ribbon, balanced beside a small abstract metronome with no markings\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; center the complete three-panel, waveform, and metronome ensemble within the inner 76%; leave the outer 12% on every side as quiet slate negative space\nLighting/mood: calm, capable, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no cropped objects or waveform at any edge; no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:efd4001bcbbcf8fdcd159bd44281385d0cfd98c1f5538d5c1ea4b33ce6c5decd"
 }

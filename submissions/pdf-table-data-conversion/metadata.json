@@ -1,11 +1,30 @@
 {
   "name": "PDF Table Data Conversion",
   "description": "Extract tables from a PDF document (e.g. contract rebate or pricing schedules) and convert them into a clean, workable Excel spreadsheet or CSV.",
-  "platforms": ["Copilot Studio"],
-  "tags": ["documents", "extraction", "pdf", "csv", "xlsx", "tables", "sharepoint"],
+  "platforms": [
+    "Copilot Studio"
+  ],
+  "tags": [
+    "documents",
+    "extraction",
+    "pdf",
+    "csv",
+    "xlsx",
+    "tables",
+    "sharepoint"
+  ],
   "author": "Lewis Baybutt",
   "authorUrl": "https://github.com/lewisdoesdev",
   "version": "1.0.0",
   "createdAt": "2026-07-16",
-  "updatedAt": "2026-07-16"
+  "updatedAt": "2026-07-16",
+  "coverImage": "skill-art/pdf-table-data-conversion.webp",
+  "coverImageAlt": "A folded blank document passes through precision rollers and emerges as an orderly matrix of blank data tiles.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: A thick folded document with a table trapped inside passes through precision rollers and emerges as clean, separated rows and columns of physical data tiles ready for reuse.\nScene/backdrop: A compact document-conversion workbench on a slate field, with no screens or software controls.\nSubject: One folded blank paper document, a central precision roller assembly, and an orderly set of unlabeled warm-paper data tiles.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%\nLighting/mood: calm, capable, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding\nCorrection: Widen the view so the complete folded document, roller assembly, and finite output-tile matrix all fit inside the inner 84% with clear empty space around them; remove accessory trays and every edge-touching object, and keep all paper and tiles entirely blank.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:63c6f785e990c4f9ccfcc10c41ea2fa81bc900068c1c8e264869c07477682820"
 }

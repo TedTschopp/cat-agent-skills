@@ -10,6 +10,15 @@ authorGithub: m-salomonsen
 version: 1.0.0
 createdAt: 2026-07-17
 updatedAt: 2026-07-17
+coverImage: skill-art/sharepoint-list-formatter.webp
+coverImageAlt: Irregular blank record tiles pass through a cyan organizing comb and settle into a consistent table.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: irregular record tiles pass through a precision organizing comb and settle into one clean, consistent table\nScene/backdrop: uncluttered slate workbench with warm paper record pieces and calm negative space\nSubject: a compact cyan sorting comb aligning a small group of varied blank input tiles into evenly spaced rows and columns on a blank navy-backed sheet, ending with one small orange access tab\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; center the complete input tiles, sorting comb, table sheet, and orange tab within the inner 76%; leave the outer 12% on every side as quiet slate negative space\nLighting/mood: calm, capable, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: all tiles and sheets completely blank; no cropped tiles, sheet, or comb; no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:66b126ee85596ba6920d860c1479398f41e2a04d88b012c68a0be3d83b4f63e5"
 ---
 Reformat every SharePoint result the same way so the person always gets a predictable, scannable table instead of a one-off dump, with a one-click path to open each item.
 

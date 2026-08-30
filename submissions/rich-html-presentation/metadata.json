@@ -1,12 +1,30 @@
 {
   "name": "Rich HTML Presentation",
   "description": "Create polished, self-contained HTML slide decks with keynote-style visuals, keyboard navigation, themes, animations, and reusable presentation components.",
-  "platforms": ["Cowork", "Copilot Studio"],
-  "tags": ["presentations", "html", "design", "productivity", "writing"],
+  "platforms": [
+    "Cowork",
+    "Copilot Studio"
+  ],
+  "tags": [
+    "presentations",
+    "html",
+    "design",
+    "productivity",
+    "writing"
+  ],
   "author": "Henry Jammes",
   "authorUrl": "https://www.linkedin.com/in/henryjammes/",
   "authorGithub": "HenryJammes",
   "version": "1.2.0",
   "createdAt": "2026-07-21",
-  "updatedAt": "2026-08-03"
+  "updatedAt": "2026-08-03",
+  "coverImage": "skill-art/rich-html-presentation.webp",
+  "coverImageAlt": "Five blank illuminated presentation canvases unfold around a central stage above a cyan progress ribbon.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a self-contained sequence of luminous presentation canvases unfolds like a compact kinetic stage\nScene/backdrop: uncluttered empty slate theater-workbench with restrained depth and no peripheral props\nSubject: five blank rectangular canvases connected by subtle hinges around one larger illuminated center panel, with a small cyan progress ribbon running beneath them as a physical strip\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; center all five canvases and the progress ribbon within the inner 76%; leave the outer 12% on every side as quiet slate negative space\nLighting/mood: calm, capable, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: every canvas completely blank; no pens, loose papers, books, desk accessories, cropped objects, or edge clutter; no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI, browser chrome, or Microsoft Fluent branding",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:4c8a12332e0d8bc5f98eed02a5112dec954d2cf0397ac594f1b711adc252f5da"
 }

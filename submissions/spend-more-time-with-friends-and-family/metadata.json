@@ -1,10 +1,24 @@
 {
   "name": "Spend More Time With Friends & Family",
   "description": "While you're out of office, watches a group chat and answers questions from your local knowledge docs (clearly marked AI-generated), logs anything it can't answer for later, and pings you on Teams if its setup is incomplete.",
-  "tags": ["automation", "teams", "out-of-office", "knowledge"],
+  "tags": [
+    "automation",
+    "teams",
+    "out-of-office",
+    "knowledge"
+  ],
   "author": "Adi Leibowitz",
   "authorUrl": "https://github.com/adilei",
   "version": "1.0.0",
   "createdAt": "2026-07-14",
-  "updatedAt": "2026-07-14"
+  "updatedAt": "2026-07-14",
+  "coverImage": "skill-art/spend-more-time-with-friends-and-family.webp",
+  "coverImageAlt": "A lantern-like knowledge cabinet illuminates blank message tokens and holds one unresolved orange token in a catch tray.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: an autonomous knowledge lantern quietly receives plain message tokens, illuminates those it can answer, and holds one unresolved token in a small catch tray while its owner is away\nScene/backdrop: uncluttered warm-paper tabletop with a calm slate field and a subtle path receding into rest\nSubject: one compact lantern-like knowledge cabinet, a few smooth message tokens, and one sparing orange held token\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject centered; no essential detail in the outer 8%; clear at small card size\nLighting/mood: calm, capable, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, punctuation, symbols, pictograms, pseudo-writing, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI, chat screenshot, or Microsoft Fluent branding\nCorrection: remove every icon, question mark, pictogram, decorative leaf, and marked token; use only completely blank smooth message tokens around the central cabinet, with all meaningful forms inside the inner 84% of the frame",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:f4111a8a26b191051f6f4b27f4b99356fd2588c398565b1b6176c05528189dfc"
 }

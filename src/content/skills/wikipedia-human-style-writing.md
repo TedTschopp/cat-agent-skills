@@ -8,6 +8,15 @@ author: Chris Garty
 version: 0.1.0
 createdAt: 2026-07-20
 updatedAt: 2026-07-20
+coverImage: skill-art/wikipedia-human-style-writing.webp
+coverImageAlt: A compact editorial press turns uniform blank paper stock into varied cyan-edged ribbons with a more natural rhythm.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a rigid stack of mechanically identical blank paper ribbons passes through a warm editorial press and emerges as varied, naturally paced strips with distinct lengths and tactile character\nScene/backdrop: minimal warm-paper editor's table against a deep slate field with calm negative space\nSubject: one compact press, uniform navy input ribbons, varied cyan-edged output ribbons, and one sparing orange adjustment wheel\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject centered; no essential detail in the outer 8%; transformation clear at card size\nLighting/mood: human, discerning, calm, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: every paper surface must be blank; no text, letters, numbers, punctuation, pseudo-writing, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding\nCorrection: scale down the press and both input and output ribbons so every paper form sits completely inside the inner 84% of the frame, remove the loose side paper stacks, and preserve generous clean negative space"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:9981c8c2f77005970c59e94f0ae6308182bc44bdee94f2f88c2ba4784542506d"
 bundle: bundles/wikipedia-human-style-writing.zip
 ---
 # Wikipedia Human Style Writing

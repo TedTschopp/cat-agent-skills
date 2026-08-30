@@ -10,6 +10,15 @@ authorGithub: jchha001
 version: 1.0.0
 createdAt: 2026-07-23
 updatedAt: 2026-07-23
+coverImage: skill-art/regulation-monitor.webp
+coverImageAlt: A central inspection beacon sweeps a fixed ring of blank documents and highlights one orange change tab.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a bounded inspection beacon methodically watches a fixed circle of authoritative blank documents and illuminates one new change\nScene/backdrop: uncluttered slate observatory table with a restrained circular archive and calm negative space\nSubject: a compact central cyan inspection beacon sweeping across a small evenly spaced ring of blank folios, with one folio carrying a small raised orange change tab\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; center the complete beacon and document ring within the inner 76%; leave the outer 12% on every side as quiet slate negative space\nLighting/mood: calm, capable, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: all documents completely blank and without seals; no cropped documents or objects; no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:3ea8f4e2c7991045aa63f1f45bbbbd44b3cf95ebd3fd3f622c46220fea6d3e34"
 bundle: bundles/regulation-monitor.zip
 ---
 # Regulation Monitor

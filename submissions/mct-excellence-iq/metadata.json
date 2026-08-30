@@ -1,7 +1,10 @@
 {
   "name": "MCT Excellence IQ",
   "description": "An AI-powered Instructional Intelligence Skill that helps Microsoft Certified Trainers design, deliver, assess, localize, and continuously improve world-class Microsoft learning experiences across Azure, Business Applications, Data & AI, Modern Work, and Security.",
-  "platforms": ["Copilot Studio", "Cowork"],
+  "platforms": [
+    "Copilot Studio",
+    "Cowork"
+  ],
   "tags": [
     "mct",
     "instructional-intelligence",
@@ -28,5 +31,14 @@
   "authorUrl": "https://github.com/farideilanda",
   "version": "1.0.0",
   "createdAt": "2026-07-25",
-  "updatedAt": "2026-07-25"
+  "updatedAt": "2026-07-25",
+  "coverImage": "skill-art/mct-excellence-iq.webp",
+  "coverImageAlt": "A faceted teaching prism connects four blank learning stations in a continuous improvement loop.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a learning experience is shaped through a complete cycle of discovery, hands-on practice, assessment, feedback, and improvement, represented as one coherent instructional instrument\nScene/backdrop: an uncluttered warm-paper learning studio field with one compact slate platform and no classroom scenery\nSubject: one central faceted teaching prism joined to four distinct tactile learning stations by one smooth continuous cyan light ribbon that loops back into the prism, with one restrained orange practice station\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; centered slightly top-down view at a compact scale; contain the complete prism, uninterrupted loop, all stations, platform, and shadows within the central 68% of the canvas; leave at least 16% calm empty border on every side; no object may enter the outer 12%\nLighting/mood: inclusive, rigorous, encouraging, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: the light ribbon must have smooth rounded ends and no direction markers; no arrows, arrowheads, chevrons, flowchart connectors, people, graduation caps, product marks, text, letters, numbers, pseudo-writing, flags, icons, diagrams, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; every station blank and unmarked",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:3a682d8d6373bc318c35763f264a634fc7ae5c5bfb64808c91ee86dd8af808e8"
 }

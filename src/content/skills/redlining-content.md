@@ -10,6 +10,15 @@ authorGithub: AndrewHessMSFT
 version: 1.0.0
 createdAt: 2026-07-08
 updatedAt: 2026-07-08
+coverImage: skill-art/redlining-content.webp
+coverImageAlt: Two blank document stacks meet along a precise seam of cyan insertions and orange removals.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: two blank document layers are reconciled by a precise visible seam of inserted and removed paper fragments\nScene/backdrop: uncluttered slate document table with a warm paper pool of light\nSubject: overlapping blank folios held in a precision alignment frame, with cyan insertion tabs and sparing orange lifted fragments tracing only the changed seam\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%\nLighting/mood: calm, capable, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: all paper surfaces completely blank; no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:ac9137ac86c2e17d0f2a43cc06c7dd2179e2459539cff6b9d6869fee5b8f4623"
 featured: true
 bundle: bundles/redlining-content.zip
 ---

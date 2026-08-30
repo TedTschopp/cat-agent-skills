@@ -17,5 +17,14 @@
   "authorUrl": "https://github.com/SimonOwenDigital",
   "version": "0.1.0",
   "createdAt": "2026-07-17",
-  "updatedAt": "2026-07-17"
+  "updatedAt": "2026-07-17",
+  "coverImage": "skill-art/linkedin-content-system.webp",
+  "coverImageAlt": "Blank evidence cards pass through an editorial loom and emerge as three coherent publication forms.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a grounded set of evidence fragments passes through an orderly editorial loom and resolves into several coherent publication forms, suggesting one reusable system for credible professional content\nScene/backdrop: an uncluttered warm-paper editorial workshop field with one compact centered slate plinth and no desk accessories\nSubject: a small fan of completely blank evidence cards feeding through a tactile navy-and-cyan weaving frame into three distinct blank portrait-format paper forms, with one restrained orange quality marker expressed only as material\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; centered frontal view at a compact scale; contain all cards, frame, finished forms, plinth, and shadows within the central 68% of the canvas; leave at least 16% calm empty border on every side; no object may enter the outer 12%\nLighting/mood: credible, composed, practical, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: every paper surface blank and unmarked; no social-network logos, brand colors, profile silhouettes, text, letters, numbers, pseudo-writing, hashtags, icons, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:5ffe1e3f252182e363149476413a27ea6fc9d7ae3882da799ae95d871ad0bb5b"
 }

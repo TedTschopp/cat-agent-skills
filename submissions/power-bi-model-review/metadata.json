@@ -1,11 +1,31 @@
 {
   "name": "Power BI Model Review",
   "description": "Review a Power BI or Analysis Services semantic model (TMDL, BIM/JSON, or a pasted table/measure list) for relationship, DAX, date-handling, and naming issues, with corrected DAX for anything flagged.",
-  "platforms": ["Copilot Studio", "Cowork", "Scout"],
-  "tags": ["power-bi", "dax", "semantic-model", "data", "review", "fabric"],
+  "platforms": [
+    "Copilot Studio",
+    "Cowork",
+    "Scout"
+  ],
+  "tags": [
+    "power-bi",
+    "dax",
+    "semantic-model",
+    "data",
+    "review",
+    "fabric"
+  ],
   "author": "Tim Karlsson",
   "authorUrl": "https://github.com/Timziito",
   "version": "1.0.0",
   "createdAt": "2026-07-26",
-  "updatedAt": "2026-07-26"
+  "updatedAt": "2026-07-26",
+  "coverImage": "skill-art/power-bi-model-review.webp",
+  "coverImageAlt": "A star-shaped model of connected blocks is inspected through a lens that reveals one corrected orange relationship.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: A physical star-shaped semantic model made of a central fact block and surrounding dimension blocks is inspected through a precision lens that exposes one misaligned relationship and a corrected orange connector.\nScene/backdrop: An uncluttered slate modeling table with tactile warm-paper blocks and thin cyan structural rods, not a software diagram.\nSubject: One centered star-schema sculpture, one inspection lens, several stable relationships, and one clearly corrected connection.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%\nLighting/mood: calm, capable, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding\nCorrection: Reframe the complete star-model sculpture and a complete round inspection lens on a short internal stand as one compact centered arrangement inside the inner 84% with a clear border; no lens handle, connector, block, or other form may touch or cross a frame edge.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:f058a3399f618666df967edebe50123b72a1eac6f0f7ebba1513b52285410b1d"
 }

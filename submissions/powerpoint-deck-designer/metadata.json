@@ -7,7 +7,9 @@
   "authorGithub": "fchopo",
   "description": "Creates polished PowerPoint decks from a JSON specification using python-pptx. Designed as a Copilot Studio Skill that runs natively inside the agent's Python container (no Azure Function or custom connector required). Supports 8 layouts plus native charts (bar, column, line, pie, donut with stacked / 100% stacked variants).",
   "license": "MIT",
-  "platforms": ["Copilot Studio"],
+  "platforms": [
+    "Copilot Studio"
+  ],
   "runtime": "python>=3.10",
   "runtime_target": "copilot-studio-skill-container",
   "entrypoint": "scripts/generate_presentation.py",
@@ -27,5 +29,14 @@
     "presentations",
     "python",
     "charts"
-  ]
+  ],
+  "coverImage": "skill-art/powerpoint-deck-designer.webp",
+  "coverImageAlt": "A compact precision press assembles three blank presentation panels beside one abstract rising chart form.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a simplified precision deck press assembling a coherent sequence of modular blank presentation panels, accompanied by at most one abstract chart form\nScene/backdrop: an empty uncluttered slate drafting stage with warm paper panels, restrained architectural depth, and generous negative space\nSubject: the entire compact deck press aligning three blank presentation panels, with at most one small tactile bar-chart form as the only supporting object\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; scale the entire simplified deck press and the optional single abstract chart form to fit within the central 60% of the image width and central 60% of the image height; keep every meaningful object at least 12% from every edge\nLighting/mood: calm, capable, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no UI-like panel, dashboard, interface frame, extra chart forms, ring chart, peripheral props, edge clutter, or cropped machinery; no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:da01bc8f02b1a0b53993cfe300c3e821383200bd84b78eb892bc0a1408c19e7a"
 }

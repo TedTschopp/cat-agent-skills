@@ -10,6 +10,15 @@ authorGithub: svarukala
 version: 1.0.0
 createdAt: 2026-07-26
 updatedAt: 2026-07-26
+coverImage: skill-art/pattern-radar-automation.webp
+coverImageAlt: A clockwork arm follows recurring cyan paths between signal clusters and an orange delivery capsule.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: A clockwork scanning arm returns along two recurring arcs to gather repeated work signals into a single delivered insight capsule, expressing an automated pattern scan that runs on a schedule.\nScene/backdrop: An uncluttered slate mechanism table with shallow concentric grooves and warm paper signal tokens.\nSubject: One compact mechanical scan arm, two recurring cyan sweep arcs without clock markings, repeated token clusters, and one orange delivery capsule.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%\nLighting/mood: calm, capable, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding\nCorrection: Make every signal token completely blank and solid with no dots, bars, lines, grids, marks, or pseudo-writing; simplify the scene and keep the arm, arcs, clusters, and delivery capsule fully inside the inner 84% with a clearly empty border."
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:8c6f1cd4a801fd2b12d67731dafccc21b05252fe73068b3a0d64b57721aca9bd"
 bundle: bundles/pattern-radar-automation.json
 ---
 Twice a week, scans your recent Microsoft 365 signals and posts a Teams summary of recurring patterns worth productizing — things you keep explaining (blog candidates) and multi-step tasks you keep doing by hand (automation candidates). Read-only and privacy-aware.

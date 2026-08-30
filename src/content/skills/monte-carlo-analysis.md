@@ -10,6 +10,15 @@ authorGithub: nazishqassim
 version: 1.0.0
 createdAt: 2026-07-31
 updatedAt: 2026-07-31
+coverImage: skill-art/monte-carlo-analysis.webp
+coverImageAlt: Faceted samples cascade through a randomizing field and settle into a smooth probability basin.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: thousands of uncertain trials resolve into a clear probability landscape, represented by many small faceted samples passing through a physical randomizing field and settling into a smooth distribution basin\nScene/backdrop: an uncluttered warm-paper analytical field with one compact centered slate simulation platform and no interface or laboratory props\nSubject: a controlled cascade of tiny navy and cyan faceted samples moving through a sparse field of slender pegs into one smooth translucent distribution basin, with a single orange tail sample isolated at one edge of the basin\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; centered frontal view at a compact scale; contain every sample, peg, basin edge, platform, and shadow within the central 68% of the canvas; leave at least 16% calm empty border on every side; no object may enter the outer 12%; maintain a simple overall silhouette at card size\nLighting/mood: analytical, probabilistic, calm, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: faceted samples must not form paw-like clusters; no charts, axes, labels, text, letters, numbers, pseudo-writing, dice, casino imagery, icons, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:c9a13e4f23891ce1c339894d9a382f1f24589e0cfcaa9774181235745a53c17f"
 bundle: bundles/monte-carlo-analysis.zip
 ---
 Convert an unstructured risk question into a structured Monte Carlo run via the
