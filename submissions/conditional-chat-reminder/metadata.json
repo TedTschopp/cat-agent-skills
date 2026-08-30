@@ -1,12 +1,29 @@
 {
   "name": "Conditional Chat Reminder",
   "description": "Schedule a Teams reminder that sends only when the expected person has not already posted a relevant update.",
-  "platforms": ["Scout"],
-  "tags": ["automation", "teams", "reminders", "follow-up", "productivity"],
+  "platforms": [
+    "Scout"
+  ],
+  "tags": [
+    "automation",
+    "teams",
+    "reminders",
+    "follow-up",
+    "productivity"
+  ],
   "author": "Giorgio Ughini",
   "authorUrl": "https://github.com/GiorgioUghini",
   "version": "1.0.0",
   "createdAt": "2026-07-22",
   "updatedAt": "2026-07-22",
-  "featured": true
+  "featured": true,
+  "coverImage": "skill-art/conditional-chat-reminder.webp",
+  "coverImageAlt": "Cyan update sphere holds a safety gate between an hourglass and a reminder chime.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: Show a one-shot reminder chime governed by a precise condition: a cyan update sphere arriving before an hourglass empties engages a mechanical safety gate that holds an orange clapper away from the chime, a metaphor for suppressing an unnecessary reminder when news arrives.\nScene/backdrop: compact slate clockwork chamber on a warm paper ground, with no interface elements\nSubject: one elegant unmarked glass hourglass, one small suspended metal chime, one orange clapper held just short of contact, and one cyan glass update sphere visibly engaging the intervening gate; the conditional cause and effect should read instantly\nStyle/medium: premium editorial illustration with tactile dimensional detail, frosted glass, brushed metal, paper-cut supports, and restrained mechanical craft\nComposition/framing: exact 16:10 landscape; compact centered mechanism with every element fully contained within the central 84% crop-safe area; simple strong silhouette and open margins\nLighting/mood: calm, considerate, precise, quietly technical; soft cyan safety glow and a restrained warm orange highlight\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, pseudo-writing, letters, numbers, clock numerals, icons, chat bubbles, notification badges, logos, trademarks, or watermark; no product UI, chat UI, Teams branding, Microsoft branding, or Fluent gradients; no paw imagery or paw logo; no cats or cat silhouettes",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:4679e687e8df1c250968f4803015ebd73a960f5b8d21d55e81715eb6f0d0cd42"
 }

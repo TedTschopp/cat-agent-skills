@@ -1,11 +1,30 @@
 {
   "name": "Copilot Studio Harness Picker",
   "description": "Choose the right Copilot Studio harness and build shape; in Cowork, use GPT-5.6 with High effort for Detailed mode, Claude Opus 5 as fallback, or Auto for Quick mode.",
-  "platforms": ["Cowork", "Copilot Studio"],
-  "tags": ["copilot-studio", "cowork", "architecture", "agent-design", "governance", "licensing"],
+  "platforms": [
+    "Cowork",
+    "Copilot Studio"
+  ],
+  "tags": [
+    "copilot-studio",
+    "cowork",
+    "architecture",
+    "agent-design",
+    "governance",
+    "licensing"
+  ],
   "author": "Liam O'Grady",
   "authorUrl": "https://github.com/ogradyliam5",
   "version": "1.1.0",
   "createdAt": "2026-08-04",
-  "updatedAt": "2026-08-04"
+  "updatedAt": "2026-08-04",
+  "coverImage": "skill-art/copilot-studio-harness-picker.webp",
+  "coverImageAlt": "Precision selector holding a faceted cyan workload core above one of three distinct support frames.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a precision engineering selector choosing the one support frame whose shape correctly fits a complex workload core\nScene/backdrop: a minimal workshop plinth on warm paper with three clearly different unmarked navy support frames arranged in a shallow arc\nSubject: a central tactile selector arm holds one faceted cyan workload core above the matching frame while the two other frames remain visibly distinct and unused, expressing evidence-led fit and architecture choice\nStyle/medium: premium editorial illustration with tactile dimensional detail, machined ceramic forms, brushed matte metal, and restrained architectural realism\nComposition/framing: exact 16:10 landscape; centered three-quarter view; selector, core, and all three frames remain fully inside the central 84%; generous breathing room; no essential detail in the outer 8%\nTargeted correction: preserve the exact precision-selector metaphor, but scale down and recenter the entire apparatus so the selector arm, top knob, far joint, full vertical base, full plinth, faceted core, and all three support frames all sit comfortably inside the central 78%; leave a continuous uninterrupted warm-paper background border of at least 11% on all four sides\nLighting/mood: calm, capable, quietly technical, with crisp cyan rim light and a tiny orange locator glow\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: all surfaces completely blank; no text, pseudo-writing, glyphs, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no people; no robot or brain motif; no product UI, screens, branded equipment, vendor branding, Microsoft branding, or Microsoft Fluent gradients",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:f85754f8b1e190e74469507b67845b3bf66bdc835bdaf2bbd227df83d9b163bd"
 }

@@ -8,6 +8,15 @@ author: Michael Heath
 authorUrl: "https://github.com/GetAutomating"
 authorGithub: GetAutomating
 version: 1.0.0
+coverImage: skill-art/competitive-battlecard-builder.webp
+coverImageAlt: Three faceted product forms compared through a central prism with verified and unresolved evidence tokens.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: Depict a calibrated comparison chamber where distinct faceted product forms face a central optical prism and evidence tokens are separated into confidently illuminated pieces and unresolved translucent pieces, a metaphor for honest competitive comparison grounded in verified claims.\nScene/backdrop: spare slate testing bench set into a warm paper architectural alcove\nSubject: two to three different abstract faceted forms arranged evenly around one central glass prism; small solid cyan evidence tokens seated in precision sockets; a few translucent tokens held outside the chamber; balanced geometry with no implied universal winner\nStyle/medium: premium editorial illustration with tactile dimensional detail, cut paper, machined metal, and optical glass\nComposition/framing: exact 16:10 landscape; centered comparison apparatus and all evidence pieces fully within the central 84% crop-safe area; strong silhouette and generous quiet margins\nLighting/mood: calm, credible, analytical, quietly technical; crisp cyan refraction with one restrained orange accent\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, pseudo-writing, letters, numbers, labels, scoreboards, tables, cards, checklists, logos, trademarks, or watermark; no battle imagery, weapons, product UI, presentation UI, or Microsoft Fluent branding; no paw imagery or paw logo; no cats or cat silhouettes\nTargeted correction: preserve the apparatus and evidence-token concept, but reduce and recenter the entire chamber so every architecture edge and every loose translucent token remains at least 12% inside the canvas, with broad uninterrupted warm-paper negative space on all four sides."
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:24197aca828a1e3e0f7c32f5f97a587d67d134db3a3db02adc4df2b9d7781343"
 bundle: bundles/competitive-battlecard-builder.zip
 ---
 # Competitive Battlecard Builder

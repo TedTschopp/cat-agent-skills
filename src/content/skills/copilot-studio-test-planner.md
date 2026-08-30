@@ -10,6 +10,15 @@ authorGithub: OwnOptic
 version: 1.0.0
 createdAt: 2026-07-18
 updatedAt: 2026-07-18
+coverImage: skill-art/copilot-studio-test-planner.webp
+coverImageAlt: Miniature proving ground with branching challenge paths and a separate ring of repeatable outcome tokens.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a physical proving ground that sends the same neutral test token through several distinct challenge paths and gathers verified outcomes into a stable regression ring\nScene/backdrop: a compact slate testing platform on a warm-paper field, built as a tactile miniature course rather than a diagram or interface\nSubject: one smooth cyan token at the center branches toward varied unmarked gates, turns, and knowledge blocks, then several matching outcome pieces settle into a complete circular navy tray with one small orange reference peg\nStyle/medium: premium editorial illustration with tactile dimensional detail, machined tabletop-model forms, matte ceramic, and restrained architectural depth\nComposition/framing: exact 16:10 landscape; slightly elevated three-quarter view; full proving ground and regression ring remain inside the central 84%; clear silhouette at card size; no essential detail in the outer 8%\nTargeted correction: scale down the complete platform and its separate regression ring so both are fully visible inside the central 80%, with an unmistakable continuous warm-paper border on all four sides and no object approaching an edge\nLighting/mood: calm, capable, quietly technical, with controlled cyan edge light and subtle warm backlighting\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: all surfaces completely blank; no text, pseudo-writing, glyphs, letters, numbers, logos, trademarks, or watermark; no checkmarks, scorecards, axes, or chart marks; no paw imagery or paw logo; no cats or cat silhouettes; no people; no robot or brain motif; no product UI, screens, vendor branding, Microsoft branding, or Microsoft Fluent gradients"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:610dba5669a5c609933e13431d0bb12fb02d8fec1e58e5d9ae679c732a178519"
 bundle: bundles/copilot-studio-test-planner.zip
 ---
 Copilot Studio Test Planner reads an exported Copilot Studio agent (solution ZIP, topic YAML, or pasted definition) and generates a full, graded test plan: happy-path, paraphrase, disambiguation, slot-filling, negative, knowledge-grounding, multilingual, and safety cases, plus a regression subset. It emits a coverage summary, a test matrix with expected topics or tools, and step-by-step instructions to run the suite in the free Copilot Studio test panel. It produces tests only and never modifies your tenant.

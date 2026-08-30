@@ -18,5 +18,14 @@
   "authorUrl": "https://github.com/SimonOwenDigital",
   "version": "0.1.0",
   "createdAt": "2026-07-17",
-  "updatedAt": "2026-07-17"
+  "updatedAt": "2026-07-17",
+  "coverImage": "skill-art/content-quality-auditor.webp",
+  "coverImageAlt": "Seven-facet inspection halo reveals orange flaws in a paper structure with cyan repair pieces queued below.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: Depict a blank modular paper artefact inside a seven-facet optical inspection halo; the calibrated light reveals a few orange structural flaws while cyan repair pieces align nearby in clear priority order, a metaphor for evidence-led content scoring and actionable improvement.\nScene/backdrop: quiet slate inspection bay on a warm paper field, minimal and architectural\nSubject: one central layered blank-paper sculpture; one unmarked seven-facet glass-and-metal halo around it; narrow cyan inspection light; two or three visible orange flaws; a short descending sequence of fitted cyan repair pieces ready to restore the structure\nStyle/medium: premium editorial illustration with tactile dimensional detail, cut paper, optical glass, brushed metal, and softly luminous inserts\nComposition/framing: exact 16:10 landscape; centered artefact and complete inspection halo fully contained within the central 84% crop-safe area; strong silhouette with calm negative space\nLighting/mood: rigorous, constructive, calm, quietly technical; cyan analytical light with sparing orange fault highlights\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, pseudo-writing, letters, numbers, tick marks, score labels, checklists, clipboards, magnifying glasses, logos, trademarks, or watermark; no document UI, dashboard UI, product UI, or Microsoft Fluent branding; no paw imagery or paw logo; no cats or cat silhouettes\nTargeted correction: preserve the inspection-halo concept exactly, but scale and lower the complete halo, artefact, flaws, and repair pieces so the highest metal edge and lowest repair piece both sit at least 12% inside the canvas, with broad warm-paper negative space above and below.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:14768486ed705f40ccc2d6afec67ba463f64fe9cb6fb63216aef912b0a85e091"
 }

@@ -8,6 +8,15 @@ author: Jay Padimiti
 version: 1.0.0
 createdAt: 2026-06-22
 updatedAt: 2026-06-22
+coverImage: skill-art/copilot-studio-knowledge-readiness.webp
+coverImageAlt: Blank fragments passing through a navy readiness arch and emerging as a clean stack of aligned tiles.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: an abstract corpus of varied raw knowledge pieces passing through a precise readiness aperture and emerging as a clean, coherent set\nScene/backdrop: a quiet warm-paper inspection table with one freestanding navy calibration arch and no surrounding interface\nSubject: irregular blank slate tiles approach the arch; only well-formed cyan-edged tiles emerge aligned in a compact orderly stack while a few warped fragments rest separately, expressing assessment, cleanup, chunking, and readiness\nStyle/medium: premium editorial illustration with tactile dimensional detail, layered paperboard, matte ceramic tiles, and subtle physical depth\nComposition/framing: exact 16:10 landscape; gentle top-down three-quarter view; arch, incoming pieces, and finished stack remain fully inside the central 84%; uncluttered negative space; no essential detail in the outer 8%\nTargeted correction: scale the entire still life down and move every loose incoming fragment inward so all tiles, fragments, arch, and finished stack sit comfortably within the central 80%, leaving a continuous empty warm-paper border on every side\nLighting/mood: calm, capable, quietly technical, with soft cyan transmission light through the aperture and one restrained orange status accent\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: every tile and surface completely blank; no text, pseudo-writing, glyphs, letters, numbers, logos, trademarks, or watermark; no checkmarks or rating symbols; no paw imagery or paw logo; no cats or cat silhouettes; no people; no robot or brain motif; no books, documents, product UI, screens, vendor branding, Microsoft branding, or Microsoft Fluent gradients"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:9b6b229172c2f9e7bffd201903989f74076f70a635aaf97552511edb8a1e4cf9"
 bundle: bundles/copilot-studio-knowledge-readiness.zip
 ---
 # Copilot Studio Knowledge Readiness

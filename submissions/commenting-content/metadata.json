@@ -1,11 +1,26 @@
 {
   "name": "Commenting Content",
   "description": "Comments Word or PowerPoint files with Comments.",
-  "platforms": ["Cowork", "Copilot Studio"],
-  "tags": ["documents", "productivity"],
+  "platforms": [
+    "Cowork",
+    "Copilot Studio"
+  ],
+  "tags": [
+    "documents",
+    "productivity"
+  ],
   "author": "AndrewHessMSFT",
   "authorUrl": "https://github.com/AndrewHessMSFT",
   "version": "1.0.0",
   "createdAt": "2026-07-08",
-  "updatedAt": "2026-07-08"
+  "updatedAt": "2026-07-08",
+  "coverImage": "skill-art/commenting-content.webp",
+  "coverImageAlt": "Blank paper stack surrounded by cyan research beacons casting precise light onto selected areas.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: Show a pristine layered blank-document sculpture remaining untouched while small evidence beacons dock around its edges and cast precise pools of light onto selected areas, a visual metaphor for adding researched comments without altering the source content.\nScene/backdrop: quiet slate worktable against a warm paper field, uncluttered and architectural\nSubject: one central stack of sculptural blank paper layers; a restrained ring of cyan glass beacons with one sparing orange beacon around the perimeter; narrow clean light paths touch specific points on the paper while the paper itself remains intact\nStyle/medium: premium editorial illustration with tactile dimensional detail, hand-finished paper, frosted glass, and anodized metal\nComposition/framing: exact 16:10 landscape; strong centered silhouette; all paper, beacons, and light endpoints fully contained within the central 84% crop-safe area; calm negative space around the system\nLighting/mood: calm, capable, quietly technical; soft cyan backlight and restrained warm highlights\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, pseudo-writing, letters, numbers, symbols, icons, checkmarks, logos, trademarks, or watermark; no speech bubbles or comment bubbles; no product UI, document UI, chat UI, or Microsoft Fluent branding; no paw imagery or paw logo; no cats or cat silhouettes\nTargeted correction: preserve the concept exactly, but scale the complete paper-and-beacon apparatus down so every beacon sits at least 12% in from every canvas edge and the whole system occupies no more than about 72% of the frame width and height.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:f98b572a8a4a00b9085be5494f24c300ece277dce577d67baa2fdd6fa9afc2c2"
 }

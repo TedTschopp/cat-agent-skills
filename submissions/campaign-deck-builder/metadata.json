@@ -16,5 +16,14 @@
   "authorGithub": "adilei",
   "version": "1.0.0",
   "createdAt": "2026-07-09",
-  "updatedAt": "2026-07-09"
+  "updatedAt": "2026-07-09",
+  "coverImage": "skill-art/campaign-deck-builder.webp",
+  "coverImageAlt": "Three blank campaign panels unfolding from a single faceted idea form.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a single compact idea sculpture unfolds into three polished campaign presentation panels, expressing a short interview becoming a vibrant three-part launch story\nScene/backdrop: warm-paper studio field over a deep slate plinth with understated editorial depth\nSubject: three distinct blank physical panels fanned as a cohesive triptych, emerging from one small faceted conversation-seed form and linked by a narrow sparing-orange ribbon of motion\nStyle/medium: premium editorial illustration with tactile dimensional detail, layered card stock, painted ceramic, and restrained dimensional shadows\nComposition/framing: exact 16:10 landscape; scale the full triptych and seed form down so every part sits within the central 80%, with at least 10% completely clear space on all four edges; clear three-panel rhythm and strong silhouette; generous outer crop-safe margin; readable at small gallery-card size\nLighting/mood: upbeat but composed, capable, quietly technical; cyan edge light and restrained warm orange glow\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: the three panels must be completely blank abstract surfaces, not slide screenshots or UI; no text, pseudo-writing, glyphs, letters, numbers, icons, charts, logos, trademarks, watermark, labels, interface chrome, or product UI; no paw imagery or paw logo; no cats or cat silhouettes; no Microsoft branding or Fluent gradient",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:a1d476997d3047cfa9fa0a677e03a18ad8b2ba3e3309acadc40cad20787132e4"
 }

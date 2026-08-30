@@ -10,6 +10,15 @@ authorGithub: OwnOptic
 version: 1.0.0
 createdAt: 2026-07-18
 updatedAt: 2026-07-18
+coverImage: skill-art/copilot-studio-topic-blueprint.webp
+coverImageAlt: "Orange seed opening into a structured network of blank modules, pathways, reservoir, and protective boundary."
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a single compact use-case seed unfolding into a build-ready modular agent structure with distinct pathways, tool sockets, knowledge reservoir, and protective boundary\nScene/backdrop: a warm-paper architectural model table with a deep slate backdrop and no drafting grid or interface\nSubject: one small orange seed-like polyhedron at the center opens into an organized cyan-and-navy assembly of connected blank modules, channels, one translucent reservoir, and an enclosing curved guard, expressing structured design from a simple idea\nStyle/medium: premium editorial illustration with tactile dimensional detail, elegant physical model-making, layered paperboard, matte ceramic, and subtle architectural depth\nComposition/framing: exact 16:10 landscape; centered isometric three-quarter view; the complete modular structure remains fully inside the central 84%; generous uncluttered margins; no essential detail in the outer 8%\nTargeted correction: preserve the exact seed-to-modular-structure metaphor, but scale down and recenter the entire circular assembly so the complete enclosing guard, every blank module, every pathway, the reservoir, and the central seed all sit comfortably inside the central 78%; leave a continuous uninterrupted deep-slate background border of at least 11% on all four sides\nLighting/mood: calm, capable, quietly technical, with restrained cyan backlighting and a focused warm orange origin glow\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: all modules and surfaces completely blank; no text, pseudo-writing, glyphs, letters, numbers, logos, trademarks, or watermark; no arrows, labels, flowchart symbols, or drafting marks; no paw imagery or paw logo; no cats or cat silhouettes; no people; no robot or brain motif; no product UI, screens, vendor branding, Microsoft branding, or Microsoft Fluent gradients"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:f7bee97b98f953eca7a9730284427f01584c4f7f5456843b39e02b45135bb45e"
 ---
 Turn a one or two sentence use case into a build-ready Microsoft Copilot Studio
 agent blueprint the maker can implement directly. You design and specify; you do

@@ -7,6 +7,15 @@ tags: [rh, folha, clt, brasil, trabalhista, rescisao, inss, irrf, verbas-resciso
 author: Michael Ferro Pereira
 authorUrl: "https://github.com/michaelfp"
 authorGithub: michaelfp
+coverImage: skill-art/clt-hr-assistant.webp
+coverImageAlt: Balanced scale holding an abstract worker figure and accounting tokens above blank paper layers.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a balanced employment-law and payroll calculation metaphor: a precise sculptural balance holds a simple worker figure on one side and calibrated stacks of blank accounting tokens on the other, supported by layered blank document forms\nScene/backdrop: dignified warm-paper professional workspace with a deep slate architectural backdrop\nSubject: one central navy balance scale in equilibrium, carrying an abstract human figure and orderly cyan token stacks, with completely blank folded paper layers beneath and one sparing orange verification marker without any symbol\nStyle/medium: premium editorial illustration with tactile dimensional detail, matte ceramic, brushed metal, heavy paper, and restrained physical depth\nComposition/framing: exact 16:10 landscape; scale, figure, tokens, and blank paper remain within the central 84%; strong trustworthy silhouette; generous crop-safe margins; readable at small gallery-card size\nLighting/mood: calm, trustworthy, precise, quietly technical; restrained cyan backlight with sparing orange emphasis\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no official Brazilian marks, flag, coat of arms, seals, government insignia, courthouse symbols, readable documents, document text, currency symbols, numerals, calculation notation, text, pseudo-writing, glyphs, letters, numbers, logos, trademarks, watermark, interface panels, or product UI; no paw imagery or paw logo; no cats or cat silhouettes; no Microsoft branding or Fluent gradient"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:02a0bf30ce9e39d64433d679aa4a0df2456c256358bb1c565b845eea2093d549"
 bundle: bundles/clt-hr-assistant.zip
 ---
 # Assistente CLT para RH

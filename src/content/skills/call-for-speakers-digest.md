@@ -8,6 +8,15 @@ author: Michael Heath
 authorUrl: "https://github.com/GetAutomating"
 authorGithub: GetAutomating
 version: 1.0.0
+coverImage: skill-art/call-for-speakers-digest.webp
+coverImageAlt: Blank speaker invitation cards gathered from illuminated conference lecterns into one open digest envelope.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: an editorial metaphor for discovering open conference speaking opportunities: several small, unbranded stage lecterns under individual spotlights serve as sources while delicate curved light threads without arrowheads converge inward into one open digest envelope filled with pristine blank invitation cards\nScene/backdrop: deep slate editorial space with a warm-paper floor plane and calm architectural depth\nSubject: one central open envelope receiving a curated fan of completely blank cards, with miniature lecterns and soft stage-light cones arranged behind it and plain light threads visibly converging toward the envelope\nStyle/medium: premium editorial illustration with tactile dimensional detail, subtly sculpted paper, painted wood, and restrained physical depth\nComposition/framing: exact 16:10 landscape; strong central silhouette; keep the envelope, cards, lecterns, and every essential detail within the central 84%; generous calm negative space; readable at small gallery-card size\nLighting/mood: calm, capable, quietly technical; restrained cyan backlight with one sparing orange deadline accent\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: all cards and surfaces must be completely blank; the light threads must have no arrowheads or directional symbols; no text, pseudo-writing, glyphs, letters, numbers, symbols, logos, trademarks, watermark, labels, signage, calendar marks, interface panels, or product UI; no paw imagery or paw logo; no cats or cat silhouettes; no Microsoft branding or Fluent gradient"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:cbd61dd2c7b445e824f836a38eaec12813ca73b1029ad09460361a397d6ec47c"
 ---
 # Call for Speakers Digest
 

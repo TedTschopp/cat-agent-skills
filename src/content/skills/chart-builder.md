@@ -10,6 +10,15 @@ authorGithub: adilei
 version: 1.0.0
 createdAt: 2026-07-14
 updatedAt: 2026-07-14
+coverImage: skill-art/chart-builder.webp
+coverImageAlt: Ceramic data pebbles rising into cyan columns beneath a smooth orange trend line.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a tactile field of raw data pebbles rises into a clear visual pattern of cyan columns while one smooth orange thread traces a relationship through the forms, representing reliable chart creation from tabular data\nScene/backdrop: calm warm-paper tabletop fading into a deep slate editorial backdrop\nSubject: a central group of unlabeled ceramic data pebbles transforming into varied-height navy and cyan columns, crossed by one elegant orange curve suspended above them\nStyle/medium: premium editorial illustration with tactile dimensional detail, matte ceramic forms, subtle paper grain, and restrained physical depth\nComposition/framing: exact 16:10 landscape; all columns, pebbles, and the orange curve stay within the central 84%; strong scan-friendly silhouette; generous negative space; readable at small gallery-card size\nLighting/mood: calm, capable, quietly technical; restrained cyan backlighting with sparing orange emphasis\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no axes, baselines, tick marks, grid lines, labels, legends, numerals, percentages, text, pseudo-writing, glyphs, letters, numbers, logos, trademarks, watermark, interface panels, dashboards, or product UI; no paw imagery or paw logo; no cats or cat silhouettes; no Microsoft branding or Fluent gradient"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:9457d94981e9a1d40fff23fea2580aa8a6ed6ceb0be18fc15ac35155bfbe88b4"
 featured: true
 bundle: bundles/chart-builder.zip
 ---
