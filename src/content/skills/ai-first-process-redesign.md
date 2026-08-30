@@ -8,6 +8,15 @@ author: Tim Sparks
 authorUrl: "https://github.com/SparkyT"
 authorGithub: SparkyT
 version: 2.1.1
+coverImage: skill-art/ai-first-process-redesign.webp
+coverImageAlt: A complete legacy maze feeds into three clear AI-first paths and a fully visible human judgment gate.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a tangled legacy workflow physically rebuilt into a clear AI-first route, showing work moving from cluttered sequential handoffs into a simple coordinated flow with distinct automated, collaborative, and human judgment paths\nScene/backdrop: an uncluttered warm-paper architectural workbench on a deep slate field, with a complete compact maze and entry ramp on one side and a newly assembled flowing pathway at center\nSubject: a strong central branching mechanism made of tactile navy and cyan channels, small translucent decision forms, one complete warm human-made ceramic judgment bowl at the final gate, and a few removed obsolete blocks set aside\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; zoomed out orthographic three-quarter view; every essential before-and-after endpoint, the complete maze, entry ramp, branching route, final gate and bowl, and the full focal system must fit entirely within the central 84% of the canvas; leave clean uninterrupted negative space in the outer 8% on all four sides; nothing may touch or be clipped by any frame edge; bold readable silhouette at small card size\nLighting/mood: calm, capable, quietly technical; restrained cyan backlight with one sparing orange highlight\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding\nTargeted correction: remove every ruler, pen, blueprint line, written mark, etched mark, scale, measuring tool, and drafting annotation; preserve the complete maze-to-clear-route transformation; keep all visible surfaces completely blank; do not crop, truncate, or run any object beyond the central safe area\nSecond-pass targeted correction: the previous attempt was still too large; render the entire maze, entry ramp, branching system, gate, bowl, and supporting base as one small centered tabletop miniature occupying no more than 70% of the canvas width and 65% of its height, with at least 15% visibly empty background on the left, right, top, and bottom; do not let the paper platform or any object approach a frame edge"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:4b009d30496652f7307e5c65da1910b36ad9a5ce152416af00452093328c17d3"
 bundle: bundles/ai-first-process-redesign.zip
 ---
 # AI-First Process Redesign (Zero-Based)

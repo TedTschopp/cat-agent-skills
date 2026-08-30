@@ -1,11 +1,28 @@
 {
   "name": "Agent Evaluation Designer",
   "description": "Design a rigorous, platform-aware evaluation for an AI agent - define what good looks like, pick the right grading method, build a test set, and turn results into a defensible go/no-go decision.",
-  "platforms": ["Copilot Studio"],
-  "tags": ["evaluation", "testing", "quality-assurance", "go-live", "decision-making"],
+  "platforms": [
+    "Copilot Studio"
+  ],
+  "tags": [
+    "evaluation",
+    "testing",
+    "quality-assurance",
+    "go-live",
+    "decision-making"
+  ],
   "author": "James Papadimitriou",
   "authorUrl": "https://github.com/jpapadimitriou",
   "version": "1.0.0",
   "createdAt": "2026-07-23",
-  "updatedAt": "2026-07-23"
+  "updatedAt": "2026-07-23",
+  "coverImage": "skill-art/agent-evaluation-designer.webp",
+  "coverImageAlt": "A complete input ramp carries varied test pieces through a faceted agent core, balance, and fully visible release gate.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a rigorous agent evaluation made visible as varied test objects moving through a calibrated physical proving ground toward one defensible release gate\nScene/backdrop: quiet deep-slate testing chamber with warm-paper platforms and restrained navy structure, surrounded by generous clean negative space\nSubject: a central faceted agent core surrounded by diverse geometric test pieces, comparison rails, a balanced grading apparatus, one complete input ramp, and one complete final release gate with its exit ramp illuminated only when the pieces align\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; zoomed out orthographic three-quarter view; every essential before-and-after endpoint, the complete input ramp, all test pieces and rails, the central core, balance, complete release gate and exit ramp, and the full focal system must fit entirely within the central 84% of the canvas; leave clean uninterrupted negative space in the outer 8% on all four sides; nothing may touch or be clipped by any frame edge; clear left-to-right evaluation flow without arrows or labels; readable at card size\nLighting/mood: calm, capable, quietly technical; cyan measurement light with one sparing orange decision accent\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, logos, trademarks, symbols, interface labels, score markings, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding\nTargeted correction: preserve the proving-ground metaphor while making the entire ramp-to-gate sequence visibly complete; do not crop, truncate, or run any platform, ramp, gate, rail, test object, or focal element beyond the central safe area\nSecond-pass targeted correction: the previous attempt was still too large; render the entire input ramp, test platform, rails, balance, central core, complete release gate, exit ramp, and supporting base as one small centered tabletop miniature occupying no more than 70% of the canvas width and 65% of its height, with at least 15% visibly empty background on the left, right, top, and bottom; do not let any structure or object approach a frame edge",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:adea0c486af54dd856a366a14bc752086f548fb52f309c870a5a0101ab0512a5"
 }

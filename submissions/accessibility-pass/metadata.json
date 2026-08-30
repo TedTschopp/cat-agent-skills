@@ -1,11 +1,30 @@
 {
   "name": "Accessibility Pass",
   "description": "Check a PowerPoint deck, Word document, HTML page, or Markdown file against Microsoft's Accessibility Checker rules (missing alt text, untitled slides, headerless tables, low contrast, illogical reading order) and fix what it finds.",
-  "platforms": ["Copilot Studio", "Cowork"],
-  "tags": ["accessibility", "documents", "presentations", "powerpoint", "quality", "scripts"],
+  "platforms": [
+    "Copilot Studio",
+    "Cowork"
+  ],
+  "tags": [
+    "accessibility",
+    "documents",
+    "presentations",
+    "powerpoint",
+    "quality",
+    "scripts"
+  ],
   "author": "Tim Karlsson",
   "authorUrl": "https://github.com/Timziito",
   "version": "1.0.0",
   "createdAt": "2026-07-26",
-  "updatedAt": "2026-07-26"
+  "updatedAt": "2026-07-26",
+  "coverImage": "skill-art/accessibility-pass.webp",
+  "coverImageAlt": "Layered documents pass through a cyan inspection aperture and emerge in a clear, accessible reading order.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a document accessibility inspection made tangible as layered paper pages passing through a precise circular aperture and emerging with clear structure, strong contrast, and an orderly reading path\nScene/backdrop: quiet warm-paper workbench against a deep slate field with restrained navy architectural forms\nSubject: a crop-safe central stack of unlabeled pages, one high-contrast geometric image block, a raised tactile path, and a cyan inspection ring aligning scattered page elements into a coherent sequence\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; simple strong silhouette readable at card size\nLighting/mood: calm, capable, quietly technical; soft cyan backlight with a faint sparing orange edge light\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, logos, trademarks, symbols, interface labels, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:b43bdf82bccdb7bed2a9b815d1592273e372377aea5f2fb43cdc3b71ab8e35c7"
 }

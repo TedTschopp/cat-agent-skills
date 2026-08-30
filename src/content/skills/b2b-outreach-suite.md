@@ -8,6 +8,15 @@ author: Marcel
 authorUrl: "https://github.com/marcelhuszar"
 authorGithub: marcelhuszar
 version: 1.0.0
+coverImage: skill-art/b2b-outreach-suite.webp
+coverImageAlt: "A six-armed outreach instrument coordinates research, messages, follow-ups, broadcasting, and response handling."
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a coordinated six-part business outreach toolkit that researches a prospect, shapes tailored messages across channels, sequences follow-ups, and handles responses without becoming generic mass marketing\nScene/backdrop: an elegant warm-paper communications workbench within a deep slate studio, uncluttered and architectural\nSubject: a central precision outreach instrument with six distinct articulated arms—lens, blank envelope, speech form, cadence beads, small broadcast cone, and response shield—carefully aligning one cyan signal toward a distant abstract business counterpart\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; unified central silhouette readable at small card size rather than six scattered icons\nLighting/mood: capable, deliberate, quietly technical; restrained cyan backlight with sparing orange at the point of connection\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:856f074eac33d2469a522a959fa32531b744898dcaebaa955e86c7af7889fed0"
 bundle: bundles/b2b-outreach-suite.zip
 ---
 # B2B Outreach Suite

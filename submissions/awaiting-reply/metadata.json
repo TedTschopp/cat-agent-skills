@@ -1,12 +1,31 @@
 {
   "name": "Awaiting Reply",
   "description": "A weekday-morning Scout automation that finds emails you sent that asked for something and never got an answer, reports how many are waiting, and prepares follow-up drafts in each thread's own language that it never sends.",
-  "platforms": ["Scout"],
-  "tags": ["email", "follow-up", "automation", "productivity", "inbox", "reminder", "multilingual"],
+  "platforms": [
+    "Scout"
+  ],
+  "tags": [
+    "email",
+    "follow-up",
+    "automation",
+    "productivity",
+    "inbox",
+    "reminder",
+    "multilingual"
+  ],
   "author": "Allan De Castro",
   "authorUrl": "https://github.com/allandecastro",
   "authorGithub": "allandecastro",
   "version": "1.0.0",
   "createdAt": "2026-07-27",
-  "updatedAt": "2026-07-27"
+  "updatedAt": "2026-07-27",
+  "coverImage": "skill-art/awaiting-reply.webp",
+  "coverImageAlt": "A sent envelope waits across a tether while an unsent follow-up draft rests under a glass weight.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a sent request patiently waiting for a response while a safe follow-up draft is prepared but remains unsent\nScene/backdrop: a minimal warm-paper correspondence table floating in a deep slate field, with quiet open space suggesting elapsed time\nSubject: one cyan outgoing envelope resting at the far end of a taut thread between two small mail trays, a series of subtle concentric waiting rings behind it, and a second blank folded note held securely under a translucent glass weight to show a prepared draft that has not been sent\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; simple strong silhouette legible at small card size\nLighting/mood: patient, attentive, quietly technical; calm cyan backlight and one sparing orange status accent\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: every paper and envelope surface must remain completely blank; no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:7525cc8e2aab4915f5867e774c3fc58cb27b39d95b88a0a084d3b335e1c01e94"
 }

@@ -16,5 +16,14 @@
   "authorUrl": "https://github.com/CATDAB",
   "version": "1.2.0",
   "createdAt": "2026-07-16",
-  "updatedAt": "2026-07-18"
+  "updatedAt": "2026-07-18",
+  "coverImage": "skill-art/brand-template-enforcer.webp",
+  "coverImageAlt": "A dark master frame aligns a landscape presentation panel and portrait document to the same cyan grid, secured by one orange template pin.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: Create a premium editorial illustration of an approved brand template physically governing both presentation and document outputs before content is produced.\nScene/backdrop: A warm paper-toned design workshop with a single compact alignment apparatus and generous negative space, not a software screen.\nSubject: One dark-slate master frame with precise cyan margin rails receives a landscape presentation panel and a portrait document sheet from opposite sides; both emerge aligned to the same modular grid, color tabs, and recurring footer bar, while one small orange locking pin secures the approved template.\nStyle/medium: Premium editorial illustration with tactile dimensional detail, layered cut paper, matte ceramic framing, and subtle translucent acrylic guides.\nComposition/framing: Exact 16:10 landscape; crop-safe centered master frame; the two output formats remain visually distinct but unified; no essential detail in the outer 8%; strong simple geometry legible on a small gallery card.\nLighting/mood: Controlled, trustworthy, orderly, quietly technical, with restrained cyan backlighting and a sparing warm orange accent.\nColor palette: Warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nConstraints: No text, letters, numbers, placeholder copy, interface labels, logos, trademarks, or watermark; no pseudo-writing or writing-like lines; no paw imagery or paw logo; no cats or cat silhouettes; no Microsoft Office icons, product UI, browser chrome, Microsoft Fluent gradients, or Microsoft branding.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:69abb8f5db24bd2ed5aa2532b0404910770515acf35af2ba7ef4e54064d54a13"
 }

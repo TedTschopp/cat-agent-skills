@@ -10,6 +10,15 @@ authorGithub: ChrisGarty
 version: 0.1.0
 createdAt: 2026-07-14
 updatedAt: 2026-07-14
+coverImage: skill-art/agent-harness-explorer.webp
+coverImageAlt: "A glowing agent core sits in an open modular harness, linked to tool modules and two layered capability snapshots."
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: an agent runtime harness revealed as a compact modular frame whose tools, libraries, connections, and capability snapshots can be inspected and compared\nScene/backdrop: deep slate diagnostic bay with a warm-paper floor and calm negative space\nSubject: a crop-safe central glowing agent core held in an open navy harness, surrounded by a small set of distinct unlabeled tool modules, connector ports, and two layered snapshot plates showing changed geometric arrangements\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; strong central silhouette and restrained supporting modules readable at card size\nLighting/mood: calm, capable, quietly technical; cyan diagnostic backlight with a sparing orange changed-module accent\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, logos, trademarks, symbols, interface labels, code, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:7b7a6f0b2b92139a6d40a2230365ebbca762bb218bb74fc8c46b81c0fb68ed7a"
 featured: true
 bundle: bundles/agent-harness-explorer.zip
 ---

@@ -10,6 +10,15 @@ authorGithub: hisandeepangara
 version: 1.0.0
 createdAt: 2026-07-22
 updatedAt: 2026-07-22
+coverImage: skill-art/acroform-writer.webp
+coverImageAlt: A precision press fills blank recessed fields on a paper form and seals the completed document under a transparent platen.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a precision document press filling real recessed form fields and sealing the completed sheet into a clean finished artifact\nScene/backdrop: uncluttered warm-paper drafting bench set within a deep slate studio\nSubject: one crop-safe central paper form with blank geometric field recesses, small cyan data tiles settling exactly into them, and a transparent platen descending to flatten and lock the completed page\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; strong centered silhouette readable at card size\nLighting/mood: calm, capable, quietly technical; controlled cyan backlight with a subtle orange reflection on the press edge\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: all fields and pages must be completely blank; no text, letters, numbers, logos, trademarks, symbols, interface labels, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:1b8b0412b006935d76a9f4e1c832a71d41d8e7974bbcf75c81e67e2b9c8bacfa"
 bundle: bundles/acroform-writer.zip
 ---
 Fill an existing PDF's real AcroForm fields with supplied data, and

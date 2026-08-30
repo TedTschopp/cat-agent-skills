@@ -10,6 +10,15 @@ authorGithub: SimonOwenDigital
 version: 0.1.0
 createdAt: 2026-07-17
 updatedAt: 2026-07-17
+coverImage: skill-art/blog-post-structure-pass.webp
+coverImageAlt: Loose blank article cards travel through a cyan guide and lock into five ordered modules ending at a safely inset orange marker.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: Create a premium editorial illustration of a blog draft being reorganized into a clear narrative spine without changing its underlying material.\nScene/backdrop: A sparse warm paper-toned composition bench with an open field and no software interface.\nSubject: Six blank tactile paper modules begin as a loose uneven cluster on the left, travel through one elegant cyan guide rail, and lock into a single coherent rising sequence on the right; the same small navy and orange geometric evidence pieces remain visibly preserved as they move into the stronger structure.\nStyle/medium: Premium editorial illustration with tactile dimensional detail, layered cut paper, matte ceramic joints, and restrained translucent acrylic.\nComposition/framing: Exact 16:10 landscape; one strong left-to-right transformation; crop-safe central guide rail and finished sequence; no essential detail in the outer 8%; simple silhouettes legible on a small gallery card.\nLighting/mood: Calm, editorial, purposeful, quietly technical, with soft studio light, restrained cyan backlighting, and a sparing orange focal accent.\nColor palette: Warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nConstraints: No text, letters, numbers, headings, interface labels, logos, trademarks, or watermark; no pseudo-writing or writing-like lines; no paw imagery or paw logo; no cats or cat silhouettes; no literal browser, product UI, Microsoft Fluent gradients, or Microsoft branding.\nTargeted correction: Pull the entire finished sequence and orange endpoint inward so every object has at least 8% clear warm-paper margin from all edges. Use five finished modules rather than six, keep their heights moderately varied, and preserve the same simple geometric evidence pieces without adding any markings.\nTargeted correction 2: Scale down and recenter the entire transformation as one self-contained tabletop model. Every loose source card, every segment of the cyan guide tube, every white connector node, all five finished cards, and the final orange endpoint must be fully contained inside the central 84% of the canvas. Leave a continuous empty warm-paper border at least 8% wide on all four sides, with the orange endpoint clearly separated from the right border rather than touching or approaching it."
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:37a00fd69439f28a3064df2c6e67ded0e9f7e5e688383884469421b84a3206d9"
 bundle: bundles/blog-post-structure-pass.zip
 ---
 # Blog Post Structure Pass

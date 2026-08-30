@@ -7,6 +7,15 @@ tags: [demo, copilot, microsoft-365, sales-enablement, content, productivity]
 author: Doak Moore
 authorGithub: doakm
 version: 1.0.0
+coverImage: skill-art/ai-demo-assistant.webp
+coverImageAlt: "A stage manager arranges blank document, presentation, and data artifacts with persona markers on a miniature demo stage."
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a polished customer AI demo being rehearsed as a miniature stage where scenario artifacts, personas, and delivery steps are arranged into one coherent performance\nScene/backdrop: intimate deep-slate rehearsal studio with a warm-paper miniature stage and ample calm negative space\nSubject: a crop-safe central stage manager light arranging three blank artifact forms—a paper document, a presentation panel, and a dimensional data grid—alongside simple persona markers connected into a clear scenario sequence\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; layered theatrical depth with one clear central silhouette readable at card size\nLighting/mood: calm, capable, quietly technical; cyan stage backlight with one sparing orange cue light\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: all artifacts completely blank; no text, letters, numbers, logos, trademarks, symbols, interface labels, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:5868bbc6ec4419bd9a5734c8196307db04944ec47b965e87a4450e1cf0fd2410"
 ---
 # AI Demo Assistant
 

@@ -10,6 +10,15 @@ authorGithub: SimonOwenDigital
 version: 0.1.0
 createdAt: 2026-07-17
 updatedAt: 2026-07-17
+coverImage: skill-art/blog-content-auditor.webp
+coverImageAlt: "A dark editorial inspection frame examines three blank article sheets, revealing simple cyan content blocks and one orange priority wedge."
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: Create a premium editorial illustration of a rigorous blog-content audit that turns a scattered article library into an evidence-based priority.\nScene/backdrop: A warm paper-toned editorial inspection table with generous calm negative space and no screens or interface chrome.\nSubject: A compact dark-slate inspection frame holds three blank article sheets at staggered depths; a clear cyan optical lens reveals a balanced arrangement of large geometric content blocks on the center sheet, while one small orange priority wedge selects the strongest next action and two spare sheets settle into an orderly queue.\nStyle/medium: Premium editorial illustration with tactile dimensional detail, layered cut paper, matte ceramic hardware, and subtle translucent acrylic.\nComposition/framing: Exact 16:10 landscape; crop-safe centered focal cluster; strong inspection-frame silhouette; no essential detail in the outer 8%; large simple forms legible on a small gallery card.\nLighting/mood: Calm, discerning, evidence-led, quietly technical, with restrained cyan backlighting and one sparing warm orange accent.\nColor palette: Warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nConstraints: No text, letters, numbers, scores, interface labels, logos, trademarks, or watermark; no pseudo-writing or writing-like lines; no paw imagery or paw logo; no cats or cat silhouettes; no magnifying-glass icon, checklist, literal browser, product UI, Microsoft Fluent gradients, or Microsoft branding.\nTargeted correction: Remove every narrow horizontal bar or line that could resemble writing. The article sheets must contain only a few large blank rectangles, one cyan circle, and one orange wedge, with no line clusters or typographic rhythm. Keep the inspection apparatus compact and fully inside the crop."
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:e71b573b320ebd3b88be31cc3b6970f7201edb941f197e597a41f0068e3f003a"
 bundle: bundles/blog-content-auditor.zip
 ---
 # Blog Content Auditor
