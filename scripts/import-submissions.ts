@@ -253,8 +253,9 @@ function serializeFrontmatter(meta: Record<string, unknown>): string {
 }
 
 /** Build a content markdown file from metadata + an instructions body. */
-function buildContent(meta: Record<string, unknown>, body: string): string {
-  return serializeFrontmatter(meta) + body.replace(/^\s+/, "");
+export function buildContent(meta: Record<string, unknown>, body: string): string {
+  const normalizedBody = body.replace(/^\s+/, "").replace(/\s+$/, "");
+  return `${serializeFrontmatter(meta)}${normalizedBody}\n`;
 }
 
 /**

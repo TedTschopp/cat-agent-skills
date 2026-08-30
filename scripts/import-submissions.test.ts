@@ -13,6 +13,7 @@ import { join } from "node:path";
 import AdmZip from "adm-zip";
 import {
   assertSubmissionDirectory,
+  buildContent,
   buildMeta,
   CATALOG_PASSTHROUGH,
   parseImportCliArgs,
@@ -20,6 +21,16 @@ import {
   readPackedSubmissionFiles,
   shouldImportSlug,
 } from "./import-submissions.ts";
+
+test("generated Markdown ends with exactly one newline", () => {
+  const content = buildContent(
+    { name: "Whitespace Test" },
+    "\n\nInstructions stay intact.\n\n\n",
+  );
+
+  assert.match(content, /Instructions stay intact\.\n$/);
+  assert.doesNotMatch(content, /\n\n$/);
+});
 
 test("submission enumeration rejects symlinks before reading their targets", (t) => {
   const root = mkdtempSync(join(tmpdir(), "cat-import-symlink-"));
