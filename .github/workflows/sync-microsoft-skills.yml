@@ -85,6 +85,10 @@ jobs:
         if: steps.sync.outputs.needs_import == 'true'
         run: npm run validate:skills
 
+      - name: Validate generated skill artwork
+        if: steps.sync.outputs.needs_import == 'true'
+        run: npm run artwork:validate
+
       - name: Build the production site
         if: steps.sync.outputs.needs_import == 'true'
         run: npm run build

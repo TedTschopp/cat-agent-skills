@@ -188,7 +188,10 @@ needed by the agent, so it stays in `SKILL.md`.
 - `metadata.json` should carry the documented fields only
   (`name`, `description`, `platforms`, `tags`, `author`, and the optional
   `authorUrl`, `authorGithub`, `version`, `createdAt`, `updatedAt`, `coverColor`,
-  `featured`). Unknown keys are silently stripped by the schema — flag them as noise.
+  `featured`). The gallery's scheduled Codex pass may also add the complete
+  `coverImage*` field set documented in `docs/authoring-skills.md`; these fields
+  are system-managed and stay outside the downloadable package. Other unknown
+  keys are silently stripped by the schema — flag them as noise.
 - `authorGithub` is normally derived from a `github.com/<login>` `authorUrl`; set
   it explicitly only to attribute an author whose link isn't a GitHub profile
   (e.g. LinkedIn), or leave it unset. It is never the PR/merger login. Never set

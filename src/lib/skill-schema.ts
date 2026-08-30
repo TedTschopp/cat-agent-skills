@@ -63,7 +63,52 @@ export const skillSchema = z.object({
   bundle: z.string().optional(),
   // Optional override for the auto-generated cover color (any CSS color).
   coverColor: z.string().optional(),
+  // Gallery-only generated artwork. These fields originate in the
+  // submission's non-bundled metadata sidecar; the image itself lives under
+  // /public/skill-art, never inside the downloadable skill package.
+  coverImage: z
+    .string()
+    .regex(
+      /^skill-art\/[a-z0-9]+(?:-[a-z0-9]+)*\.webp$/,
+      "must be skill-art/<skill-slug>.webp",
+    )
+    .optional(),
+  coverImageAlt: z.string().trim().min(12).max(240).optional(),
+  coverImagePrompt: z.string().trim().min(120).max(6000).optional(),
+  coverImageAspectRatio: z.literal("16:10").optional(),
+  coverImageWidth: z.literal(1600).optional(),
+  coverImageHeight: z.literal(1000).optional(),
+  coverImageGenerator: z.string().trim().min(3).max(120).optional(),
+  coverImageGeneratedAt: z.coerce.date().optional(),
+  coverImageSourceHash: z
+    .string()
+    .regex(/^sha256:[a-f0-9]{64}$/, "must be a sha256:<64 lowercase hex> digest")
+    .optional(),
   featured: z.boolean().default(false),
+}).superRefine((data, ctx) => {
+  const artworkFields = [
+    "coverImage",
+    "coverImageAlt",
+    "coverImagePrompt",
+    "coverImageAspectRatio",
+    "coverImageWidth",
+    "coverImageHeight",
+    "coverImageGenerator",
+    "coverImageGeneratedAt",
+    "coverImageSourceHash",
+  ] as const;
+  const present = artworkFields.filter((field) => data[field] !== undefined);
+  if (present.length > 0 && present.length !== artworkFields.length) {
+    for (const field of artworkFields) {
+      if (data[field] === undefined) {
+        ctx.addIssue({
+          code: "custom",
+          path: [field],
+          message: "is required when generated cover artwork is present",
+        });
+      }
+    }
+  }
 });
 
 export type SkillFrontmatter = z.infer<typeof skillSchema>;

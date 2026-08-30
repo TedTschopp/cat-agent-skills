@@ -29,6 +29,10 @@ export const GET: APIRoute = async () => {
         downloads: getDownloads(skill.id),
         gradient: coverGradient(skill.id, d.coverColor),
         initials: initials(d.name),
+        coverImage: d.coverImage ?? null,
+        coverImageAlt: d.coverImageAlt ?? null,
+        coverImageWidth: d.coverImageWidth ?? null,
+        coverImageHeight: d.coverImageHeight ?? null,
       };
     })
     .sort((a, b) => {

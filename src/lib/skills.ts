@@ -92,4 +92,8 @@ export type SkillSummary = {
   downloads: number;
   gradient: string;
   initials: string;
+  coverImage?: string | null;
+  coverImageAlt?: string | null;
+  coverImageWidth?: number | null;
+  coverImageHeight?: number | null;
 };

@@ -47,6 +47,9 @@ jobs:
       - name: Import skill submissions
         run: npm run import:submissions
 
+      - name: Validate generated skill artwork
+        run: npm run artwork:validate
+
       # Scan every generated page before committing importer output or running
       # Astro. The verifier renders Markdown as HTML, while leaving fenced and
       # inline code examples inert, and rejects active elements, handlers, and

@@ -6,6 +6,7 @@ import {
   type Platform,
   type SkillType,
 } from "../lib/skills";
+import { withBase } from "../lib/url";
 
 interface Props {
   slug: string;
@@ -14,6 +15,10 @@ interface Props {
   type?: SkillType;
   tags?: string[];
   coverColor?: string;
+  coverImage?: string;
+  coverImageAlt?: string;
+  coverImageWidth?: number;
+  coverImageHeight?: number;
   hasBundle?: boolean;
   isInstaller?: boolean;
   variant?: "card" | "hero";
@@ -24,6 +29,10 @@ const {
   slug,
   name,
   coverColor,
+  coverImage,
+  coverImageAlt,
+  coverImageWidth = 1600,
+  coverImageHeight = 1000,
   variant = "card",
   class: className = "",
 } = Astro.props;
@@ -32,28 +41,43 @@ const field = coverField(slug, coverColor);
 const accent = coverColor ?? coverAccent(slug);
 const mark = initials(name);
 const isHero = variant === "hero";
+const imageUrl = coverImage ? withBase(coverImage) : undefined;
 ---
 
 <div
   class:list={[
-    "relative grid place-items-center overflow-hidden bg-[var(--slate)]",
-    isHero ? "h-40 sm:h-44" : "h-[8.25rem]",
+    "relative grid aspect-[16/10] w-full place-items-center overflow-hidden bg-[var(--slate)]",
     className,
   ]}
   style={`background:${field};`}
-  aria-hidden="true"
 >
-  <span
-    class:list={[
-      "display-face select-none leading-none tracking-[-0.01em] text-[var(--paper)]",
-      isHero ? "text-7xl sm:text-8xl" : "text-6xl",
-    ]}
-    style={`text-shadow:0 0 1.4rem ${accent},0 1px 0 rgba(0,0,0,.6);`}
-  >
-    {mark}
-  </span>
+  {
+    imageUrl ? (
+      <img
+        src={imageUrl}
+        alt={coverImageAlt ?? ""}
+        width={coverImageWidth}
+        height={coverImageHeight}
+        loading={isHero ? "eager" : "lazy"}
+        decoding="async"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+    ) : (
+      <span
+        class:list={[
+          "display-face select-none leading-none tracking-[-0.01em] text-[var(--paper)]",
+          isHero ? "text-7xl sm:text-8xl" : "text-6xl",
+        ]}
+        style={`text-shadow:0 0 1.4rem ${accent},0 1px 0 rgba(0,0,0,.6);`}
+        aria-hidden="true"
+      >
+        {mark}
+      </span>
+    )
+  }
   <span
     class="absolute inset-x-0 bottom-0 h-[3px]"
     style={`background:${accent};`}
+    aria-hidden="true"
   ></span>
 </div>

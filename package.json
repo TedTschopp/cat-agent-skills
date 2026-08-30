@@ -10,15 +10,18 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "validate:skills": "tsx scripts/validate-skill.ts src/content/skills/*.md",
-    "import:submissions": "tsx scripts/import-submissions.ts",
-    "check:submissions": "tsx scripts/import-submissions.ts --check",
+    "validate:skills": "node --import tsx scripts/validate-skill.ts src/content/skills/*.md",
+    "import:submissions": "node --import tsx scripts/import-submissions.ts",
+    "check:submissions": "node --import tsx scripts/import-submissions.ts --check",
     "sync:upstream": "node scripts/sync-upstream-submissions.mjs",
     "check:upstream-rendered-content": "node scripts/verify-rendered-markdown.mjs",
     "check:upstream-sync-scope": "node scripts/sync-upstream-submissions.mjs --verify-worktree",
     "test": "node --import tsx --test scripts/*.test.ts",
-    "engagement:fetch": "tsx scripts/fetch-engagement.ts",
-    "ratings:fetch": "tsx scripts/fetch-engagement.ts"
+    "engagement:fetch": "node --import tsx scripts/fetch-engagement.ts",
+    "ratings:fetch": "node --import tsx scripts/fetch-engagement.ts",
+    "artwork:pending": "node --import tsx scripts/skill-artwork.ts pending",
+    "artwork:prepare": "node --import tsx scripts/skill-artwork.ts prepare",
+    "artwork:validate": "node --import tsx scripts/skill-artwork.ts validate"
   },
   "dependencies": {
     "astro": "^7.1.0",
@@ -35,8 +38,10 @@
     "croner": "^9.1.0",
     "gray-matter": "^4.0.3",
     "hast-util-from-html": "^2.0.3",
+    "js-yaml": "^4.3.2",
     "satori": "^0.26.0",
     "satteri": "^0.9.5",
+    "sharp": "^0.35.3",
     "tailwindcss": "^4.1.4",
     "tsx": "^4.22.4"
   }

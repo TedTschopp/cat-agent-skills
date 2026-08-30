@@ -76,6 +76,9 @@ jobs:
       - name: Import skill submissions
         if: steps.engagement.outputs.should_deploy == 'true'
         run: npm run import:submissions
+      - name: Validate generated skill artwork
+        if: steps.engagement.outputs.should_deploy == 'true'
+        run: npm run artwork:validate
       - name: Reject active content in generated Markdown
         if: steps.engagement.outputs.should_deploy == 'true'
         run: |

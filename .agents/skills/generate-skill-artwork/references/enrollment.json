@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "582ef9393b86627b3987717fcefee4f80842bfa8",
+  "initialSlugs": [
+    "action-items-todo",
+    "agent-performance-triage",
+    "agent-red-team",
+    "booth-loop-video",
+    "browser-uat-analyst",
+    "clipchamp-video",
+    "copilot-agent-advisor",
+    "copilot-studio-agent-test",
+    "cowork-use-case-one-pager",
+    "explainer-video",
+    "holiday-recap",
+    "route-map-visualizer",
+    "travel-cost-estimator",
+    "wcag-power-platform",
+    "work-iq-signalboard"
+  ]
+}

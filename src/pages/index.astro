@@ -419,6 +419,10 @@ const allContributors = [...contributorMap.entries()]
               tags={skill.data.tags}
               author={skill.data.author}
               coverColor={skill.data.coverColor}
+              coverImage={skill.data.coverImage}
+              coverImageAlt={skill.data.coverImageAlt}
+              coverImageWidth={skill.data.coverImageWidth}
+              coverImageHeight={skill.data.coverImageHeight}
               hasBundle={Boolean(skill.data.bundle)}
               isInstaller={skill.data.type === "automation" && Boolean(skill.data.bundle?.endsWith(".zip"))}
               rating={getRating(skill.id)}

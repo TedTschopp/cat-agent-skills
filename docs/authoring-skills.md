@@ -85,6 +85,16 @@ yourself.) The same fields work in a `metadata.yaml` if you prefer YAML. A
 missing or invalid **required** field fails the PR with a message listing exactly
 what's wrong.
 
+### Generated gallery artwork
+
+After a skill lands, the repository's scheduled Codex artwork pass may add a
+complete set of `coverImage*` fields to this sidecar and place a 1600×1000 WebP
+under `public/skill-art/`. These fields are system-managed: contributors should
+not add or edit them. The exact generation prompt, image path, alt text, 16:10
+geometry, generator/date, and source hash are retained for review and
+reproducibility. The metadata sidecar and public gallery image are excluded from
+the downloadable skill package; `SKILL.md` and its `assets/` remain unchanged.
+
 If you bundle scripts, mention them in the instructions and include a `README.md`
 in the submission explaining requirements and usage.
 

@@ -12,6 +12,10 @@ interface Props {
   tags?: string[];
   author?: string;
   coverColor?: string;
+  coverImage?: string;
+  coverImageAlt?: string;
+  coverImageWidth?: number;
+  coverImageHeight?: number;
   hasBundle?: boolean;
   isInstaller?: boolean;
   rating?: number;
@@ -28,6 +32,10 @@ const {
   tags = [],
   author,
   coverColor,
+  coverImage,
+  coverImageAlt,
+  coverImageWidth,
+  coverImageHeight,
   hasBundle = false,
   isInstaller = false,
   rating = 0,
@@ -67,7 +75,15 @@ const wrapperProps = isInteractive
   style={featured ? "border-color:var(--orange);" : "border-color:var(--border-subtle);"}
   {...wrapperProps}
 >
-  <SkillCover slug={slug} name={name} coverColor={coverColor} />
+  <SkillCover
+    slug={slug}
+    name={name}
+    coverColor={coverColor}
+    coverImage={coverImage}
+    coverImageAlt={coverImageAlt}
+    coverImageWidth={coverImageWidth}
+    coverImageHeight={coverImageHeight}
+  />
 
   <div class="flex flex-1 flex-col gap-2 p-4">
     <div class="flex flex-wrap items-center gap-2">

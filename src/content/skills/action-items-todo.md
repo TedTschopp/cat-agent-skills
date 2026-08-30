@@ -10,6 +10,15 @@ authorGithub: qmatteoq
 version: 1.0.0
 createdAt: 2026-08-19
 updatedAt: 2026-08-19
+coverImage: skill-art/action-items-todo.webp
+coverImageAlt: Warm paper messages and an audio waveform converge through cyan paths into an organized priority checklist.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: an editorial visual metaphor for incoming communication being distilled into a clear, prioritized action list\nScene/backdrop: a deep slate workbench field with warm paper message fragments and transcript ribbons converging into one orderly task panel\nSubject: three abstract communication streams flow through a precise cyan organizing path into a short stack of clean checklist cards, with one restrained orange priority marker; use shapes only, not readable interface elements\nStyle/medium: premium editorial illustration with tactile dimensional paper, subtle beveled depth, and restrained technical precision\nComposition/framing: exact 16:10 landscape; centered crop-safe focal subject; balanced negative space; no essential detail in the outer 8%\nLighting/mood: calm, capable, quietly technical, with a controlled cyan backlight and soft warm-paper highlights\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI, Microsoft Fluent branding, or rainbow gradient"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:c530909e13bc4ad932214efd8c3ee58d5b55c88d5d907400226b3cd3d13eebe9"
 ---
 :: ACTION ITEMS TO MICROSOFT TO DO ::
 Monitors Teams chats, meeting transcripts, and Outlook mail for action items EXPLICITLY directed at the user, and captures each one as a Microsoft To Do task with a due date, importance, and owner tagging. Microsoft To Do is the only task store this skill writes to.

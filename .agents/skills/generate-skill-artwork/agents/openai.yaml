@@ -1,0 +1,3 @@
+interface:
+  display_name: "Generate Skill Artwork"
+  short_description: "Create and publish safe gallery-only skill covers"
