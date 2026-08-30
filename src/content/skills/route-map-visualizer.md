@@ -10,6 +10,15 @@ authorGithub: nazishqassim
 version: 1.0.0
 createdAt: 2026-08-10
 updatedAt: 2026-08-10
+coverImage: skill-art/route-map-visualizer.webp
+coverImageAlt: Five colored pins follow a navy route across a layered terrain map toward three map-output artifacts.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: Create a premium editorial illustration that communicates transforming ordered geographic stops and route geometry into clear map outputs.\nScene/backdrop: A warm paper-toned tabletop becomes a dimensional folded landscape with rivers, roads, low relief terrain, and an abstract city edge, all free of labels.\nSubject: A single navy route ribbon travels through five distinct cyan and orange location pins in a clear sequence, then branches into three elegant output artifacts: a framed map image, a folded paper map, and a translucent globe-like geometry tile.\nStyle/medium: Premium editorial illustration with tactile dimensional detail, layered topographic paper, matte ceramic pins, translucent acrylic route layers, precise cartographic craft without resembling a software interface.\nComposition/framing: Exact 16:10 landscape; sweeping lower-left to upper-right route; central route and pins dominate; outputs arranged as a restrained cluster; generous warm negative space; crop-safe focal subject; no essential detail in the outer 8%.\nLighting/mood: Calm, capable, quietly technical; soft studio light across raised terrain, crisp legibility, confident logistical clarity.\nColor palette: Warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nConstraints: No text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding. No recognizable national borders, road shields, compass letters, QR code, map labels, or vendor map styling."
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:25a62845a978f3a73fd8360f8c29c9f12e0360f7550a17775fba344e5a7d170e"
 bundle: bundles/route-map-visualizer.zip
 ---
 Visualizes pre-ordered routes and location maps via `scripts/map_generator.py`.

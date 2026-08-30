@@ -1,7 +1,9 @@
 {
   "name": "Copilot Studio Agent Test",
   "description": "Test a Copilot Studio agent against your own Q&A set and get a graded pass/fail report — no browser automation.",
-  "platforms": ["Scout"],
+  "platforms": [
+    "Scout"
+  ],
   "tags": [
     "copilot-studio",
     "testing",
@@ -14,5 +16,14 @@
   "authorUrl": "https://github.com/qmatteoq",
   "version": "1.0.0",
   "createdAt": "2026-08-10",
-  "updatedAt": "2026-08-10"
+  "updatedAt": "2026-08-10",
+  "coverImage": "skill-art/copilot-studio-agent-test.webp",
+  "coverImageAlt": "A dark precision balance compares plain warm-paper and cyan answer tiles, with isolated test capsules queued beside it.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a precision quality-control balance comparing an expected-answer tile with an agent-response tile, while a short queue of isolated test capsules waits behind it, a clear metaphor for programmatic question-by-question evaluation and grading\nScene/backdrop: uncluttered warm-paper laboratory bench with a low navy backdrop and no screens or interface elements\nSubject: one dark-slate mechanical balance with a warm-paper reference tile on one pan and a cyan response tile on the other; small separate capsules feed the comparison one at a time, and a restrained orange indicator bead flags a mismatch without any symbol\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; bold balance silhouette and simple paired forms legible on a small gallery card\nLighting/mood: calm, capable, quietly technical, with controlled cyan backlighting and a sparing orange accent\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, question marks, check marks, crosses, interface labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI, browser chrome, Microsoft Fluent gradients, or Microsoft branding\nTargeted correction: keep both comparison tiles and every queued capsule completely plain and solid, with no engraved lines, inset rectangles, document layouts, pseudo-text, symbols, or markings of any kind",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:8f6e650149c2a3b418333639d6ff0098a5cc8ab895bf2d3af955175d07535527"
 }

@@ -6,6 +6,15 @@ platforms: [Copilot Studio, Cowork]
 tags: [copilot-studio, analytics, optimization, operations, post-launch, backlog, assessment, monitoring]
 author: Marco Zama
 version: 1.0.0
+coverImage: skill-art/agent-performance-triage.webp
+coverImageAlt: "A dark diagnostic funnel filters tangled cyan signal strands, isolates an orange fault, and outputs three ordered repair tokens."
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a precision diagnostic funnel that turns a tangled stream of conversation signals into a clean prioritized sequence of repair tokens, visualizing post-launch agent performance triage\nScene/backdrop: an uncluttered dark-slate analytical workbench floating within calm warm-paper negative space, with a single funnel-like diagnostic instrument\nSubject: cyan signal ribbons enter the wide end, one sparing orange fault knot is isolated beneath a plain glass lens, and three unlabeled geometric repair tokens emerge in a clearly ordered path\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject centered with a strong silhouette; no essential detail in the outer 8%; immediately legible at small gallery-card size\nLighting/mood: calm, capable, quietly technical, with restrained cyan backlighting\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, interface labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI, charts, dashboards, or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:fea4b9c47eddd24f23ee004075859b4996942f4236b5b6c25aa246bbd1fe6a2a"
 bundle: bundles/agent-performance-triage.zip
 ---
 # Agent Performance Triage

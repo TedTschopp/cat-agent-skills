@@ -1,11 +1,29 @@
 {
   "name": "Work IQ Signalboard",
   "description": "Turn four weeks of Calendar, Mail, and Teams chat activity into a colorful dashboard of reconciled Work IQ counts.",
-  "platforms": ["Copilot Studio"],
-  "tags": ["work-iq", "microsoft-365", "dashboard", "visualization", "work-patterns", "analytics"],
+  "platforms": [
+    "Copilot Studio"
+  ],
+  "tags": [
+    "work-iq",
+    "microsoft-365",
+    "dashboard",
+    "visualization",
+    "work-patterns",
+    "analytics"
+  ],
   "author": "Andreas Adner",
   "authorUrl": "https://github.com/adner",
   "version": "2.0.0",
   "createdAt": "2026-08-10",
-  "updatedAt": "2026-08-12"
+  "updatedAt": "2026-08-12",
+  "coverImage": "skill-art/work-iq-signalboard.webp",
+  "coverImageAlt": "Four weekly activity bands reconcile mail, calendar, and conversation signals into a colorful physical signalboard.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: Create a premium editorial illustration that communicates reconciling four weeks of work activity into one colorful, trustworthy signalboard.\nScene/backdrop: A warm paper-toned analytical studio with four layered weekly bands feeding abstract calendar blocks, mail forms, and conversation signals into a central physical display.\nSubject: A sculptural signalboard made of aligned vertical counters, circular activity clusters, and connected trend ribbons, with three distinct input streams merging cleanly and duplicate signals visibly paired before they reach the board.\nStyle/medium: Premium editorial illustration with tactile dimensional detail, layered cut paper, matte ceramic counters, translucent acrylic channels, precise data-visualization craft without resembling software.\nComposition/framing: Exact 16:10 landscape; four rhythmic weekly layers across the lower field; central signalboard dominates; input streams enter from three directions; balanced color and generous warm negative space; crop-safe focal subject; no essential detail in the outer 8%.\nLighting/mood: Calm, capable, quietly technical; clear studio lighting, reconciled order, upbeat insight without spectacle.\nColor palette: Warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nConstraints: No text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding. No readable charts, axis labels, notification badges, employee names, profile photos, or literal dashboard screenshot.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:4bea79c9a1bb5c6281e1e0f86858869d8b51d378f1deb6a1fcb7d2e3cedeb269"
 }

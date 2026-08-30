@@ -1,12 +1,30 @@
 {
   "name": "Travel Cost Estimator",
   "description": "Price a business trip from live fares in your corporate booking tool, benchmark the non-bookable lines against your own approved expense reports, and produce an estimate a manager can approve — with a hard guardrail that never enters the booking funnel.",
-  "platforms": ["Scout"],
-  "tags": ["travel", "expenses", "browser-automation", "playwright", "finance", "productivity"],
+  "platforms": [
+    "Scout"
+  ],
+  "tags": [
+    "travel",
+    "expenses",
+    "browser-automation",
+    "playwright",
+    "finance",
+    "productivity"
+  ],
   "author": "Al Macey",
   "authorUrl": "https://github.com/amacey-msft",
   "authorGithub": "amacey-msft",
   "version": "1.0.0",
   "createdAt": "2026-08-04",
-  "updatedAt": "2026-08-04"
+  "updatedAt": "2026-08-04",
+  "coverImage": "skill-art/travel-cost-estimator.webp",
+  "coverImageAlt": "Travel components and expense evidence feed a balanced estimate folio while an orange gate blocks the booking path.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: Create a premium editorial illustration that communicates assembling a manager-ready business travel estimate from live fare signals and approved expense evidence while stopping safely before booking.\nScene/backdrop: A warm paper-toned planning table with a miniature travel landscape: an abstract aircraft form, a hotel block, ground transport, meal tokens, and archived expense slips arranged as evidence rather than a consumer travel advertisement.\nSubject: Multiple travel-cost components flow through a precise balancing scale into one clean estimate folio, while a distinct orange safety gate blocks the route before a distant departure portal, making estimate-only intent unmistakable without words.\nStyle/medium: Premium editorial illustration with tactile dimensional detail, layered cut paper, matte ceramic travel objects, brushed metal scale, translucent acrylic data paths, restrained enterprise craftsmanship.\nComposition/framing: Exact 16:10 landscape; evidence sources on the left, balanced estimate at center, guarded boundary on the right; central scale and folio dominate; generous warm negative space; crop-safe focal subject; no essential detail in the outer 8%.\nLighting/mood: Calm, capable, quietly technical; measured studio lighting, trustworthy financial clarity, cautious forward planning.\nColor palette: Warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nConstraints: No text, letters, numbers, currency symbols, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding. No boarding passes, readable receipts, branded aircraft, credit cards, booking confirmation, or travel-site interface.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:d48f5a80c516d9a48c38459812df0a0b74e09725250be17ed9465519e455ea84"
 }

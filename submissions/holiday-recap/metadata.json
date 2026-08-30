@@ -1,7 +1,9 @@
 {
   "name": "Holiday Recap",
   "description": "Catch up after annual leave in one pass — a single prioritised briefing of the mail, meetings, and Teams conversations you missed, with deep links and one-click follow-up actions.",
-  "platforms": ["Cowork"],
+  "platforms": [
+    "Cowork"
+  ],
   "tags": [
     "productivity",
     "outlook",
@@ -14,5 +16,14 @@
   ],
   "author": "Suparna Banerjee",
   "authorUrl": "https://github.com/suparna-banerjee23",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "coverImage": "skill-art/holiday-recap.webp",
+  "coverImageAlt": "Mail, meeting, and conversation signals converge into a calm three-level briefing beside a packed travel case.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: Create a premium editorial illustration that communicates returning from time away and receiving one calm, prioritized briefing from a backlog of work signals.\nScene/backdrop: A warm paper-toned desk landscape where a small closed travel case and a sunlit horizon sit behind streams of abstract mail cards, meeting tokens, and conversation bubbles converging into an orderly briefing tray.\nSubject: A central layered briefing folio with three distinct colored priority markers, linked by elegant paths to abstract envelope forms, calendar tiles without markings, and rounded conversation forms; a single check-shaped paper fold suggests an actionable plan without using a symbol as text.\nStyle/medium: Premium editorial illustration with tactile dimensional detail, layered cut paper, matte ceramic objects, fine thread-like connectors, restrained and sophisticated rather than playful.\nComposition/framing: Exact 16:10 landscape; left-to-right return-and-reconcile story; central briefing folio as the dominant focal point; generous warm negative space; crop-safe focal subject; no essential detail in the outer 8%.\nLighting/mood: Calm, capable, quietly technical; early-morning studio light, gentle shadows, relief and renewed control after absence.\nColor palette: Warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nConstraints: No text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding. Do not show readable calendars, inbox screens, notification badges, tropical clichés, or clutter.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:7dae3012d29ba3c53c31c45d06a8f6f441d5d627194410944d28b8c42b3238a6"
 }

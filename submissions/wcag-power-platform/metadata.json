@@ -1,11 +1,31 @@
 {
   "name": "WCAG 2.1 for Web Apps & Power Platform",
   "description": "Makes everything the agent builds or reviews conform to WCAG 2.1 AA — HTML pages, SPAs, theming, PCF controls, model-driven and canvas apps, and Power Pages.",
-  "platforms": ["Cowork"],
-  "tags": ["accessibility", "wcag", "a11y", "power-platform", "power-apps", "pcf", "power-pages", "web"],
+  "platforms": [
+    "Cowork"
+  ],
+  "tags": [
+    "accessibility",
+    "wcag",
+    "a11y",
+    "power-platform",
+    "power-apps",
+    "pcf",
+    "power-pages",
+    "web"
+  ],
   "author": "Mark Christie",
   "authorGithub": "TheMarkChristie",
   "version": "1.0.0",
   "createdAt": "2026-07-23",
-  "updatedAt": "2026-07-23"
+  "updatedAt": "2026-07-23",
+  "coverImage": "skill-art/wcag-power-platform.webp",
+  "coverImageAlt": "Four accessibility mechanisms converge on one high-contrast open frame with a smooth navigation path and tactile controls.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: Create a premium editorial illustration that communicates accessibility being engineered into every web and business-app component from the beginning.\nScene/backdrop: A warm paper-toned component workshop with modular panels, controls, navigation paths, and content blocks assembled as physical objects rather than a literal interface.\nSubject: A central open frame is supported by four coordinated accessibility mechanisms: a high-contrast focus ring, a smooth ramp-like navigation path, tactile controls with generous spacing, and a sculptural sound wave paired with a clear visual signal; all paths converge through the same usable opening.\nStyle/medium: Premium editorial illustration with tactile dimensional detail, layered cut paper, matte ceramic controls, translucent acrylic focus layers, precise inclusive-design craftsmanship, sophisticated rather than playful.\nComposition/framing: Exact 16:10 landscape; central accessible frame dominates; four mechanisms balance around it in a clear system; strong contrast and generous spacing; crop-safe focal subject; no essential detail in the outer 8%.\nLighting/mood: Calm, capable, quietly technical; bright even studio light, assured clarity, humane and rigorous.\nColor palette: Warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027, with contrast relationships that remain visually distinct.\nConstraints: No text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding. Do not use a wheelchair icon, compliance badge, checklist text, browser chrome, or a literal software screenshot.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:31ab6fea8999cee5ff0e7a86ea8897390d8fc705d01467c6dfb523cff570bcf3"
 }

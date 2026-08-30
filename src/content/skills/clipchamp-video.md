@@ -10,6 +10,15 @@ authorGithub: phnguy
 version: 1.0.0
 createdAt: 2026-08-21
 updatedAt: 2026-08-21
+coverImage: skill-art/clipchamp-video.webp
+coverImageAlt: A sculptural camera lens projects a cyan ribbon of abstract screen moments beside an orange narration waveform.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a single dark slate camera lens sending one flowing cyan film ribbon forward while a slender orange sound ribbon weaves alongside it, a clear metaphor for recording a live screen flow and pairing it with narration\nScene/backdrop: uncluttered warm-paper studio field with a low navy architectural plinth and ample calm negative space\nSubject: one sculptural lens assembly with a strong circular silhouette; the cyan ribbon carries only abstract, unlabeled geometric moments and the orange ribbon suggests a clean voice waveform without symbols\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; bold, simple forms that remain legible on a small gallery card\nLighting/mood: calm, capable, quietly technical, with restrained cyan backlighting and a small warm orange accent\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, interface labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI, browser chrome, filmstrip perforations, clapperboard markings, or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:3478a66eaf6437c0e394d9ecb11fb627a911527835d5e8e1fe0a420bc46f9872"
 bundle: bundles/clipchamp-video.zip
 ---
 # Clipchamp Narrated Demo Video Skill

@@ -1,9 +1,27 @@
 {
   "name": "Cowork Use Case One-Pager",
   "description": "Turn a Cowork conversation, into a one-page HTML use case write-up — narrative, impact figures, workflow steps, and outputs.",
-  "platforms": ["Cowork"],
-  "tags": ["productivity", "use-case", "html", "documents", "writing", "audit"],
+  "platforms": [
+    "Cowork"
+  ],
+  "tags": [
+    "productivity",
+    "use-case",
+    "html",
+    "documents",
+    "writing",
+    "audit"
+  ],
   "author": "Tim Sparks",
   "authorUrl": "https://github.com/SparkyT",
-  "version": "1.0.1"
+  "version": "1.0.1",
+  "coverImage": "skill-art/cowork-use-case-one-pager.webp",
+  "coverImageAlt": "A dark editorial press turns a cyan ribbon of blank conversation tokens into a single warm-paper page with simple cyan and orange shapes.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: one compact editorial press transforms a flowing cyan conversation ribbon into a single finished warm-paper sheet, a clear metaphor for turning a workflow conversation into a concise one-page use case\nScene/backdrop: uncluttered navy work surface against a warm-paper studio field with generous calm negative space\nSubject: a tactile dark-slate press at center; abstract cyan workflow tokens travel in on one continuous ribbon, and one portrait-oriented paper sheet emerges with only bold unlabeled geometric zones: a cyan circle, a short rail of raised dots, and one small orange impact block\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; strong press-and-page silhouette with simplified forms legible on a small gallery card\nLighting/mood: calm, capable, quietly technical, with restrained cyan backlighting and a sparing warm orange accent\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, interface labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no pseudo-writing, writing-like lines, product UI, browser chrome, Microsoft Fluent gradients, or Microsoft branding\nTargeted correction: keep every token inside the incoming cyan ribbon completely blank and simple, using only plain rounded tiles, dots, and empty speech-bubble silhouettes; remove all interior line clusters, hand shapes, icons, symbols, and markings while preserving the press and finished page",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:8f06afb4e47c71dfe475788457bb2a1ef7094c326848ca83e8767d1c3bb26e1d"
 }

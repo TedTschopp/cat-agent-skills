@@ -1,8 +1,29 @@
 {
   "name": "Agent Red Team",
   "description": "Adversarial assurance review for agents you own: prompt injection, oversharing, leakage and tool misuse, mapped to fixes.",
-  "platforms": ["Copilot Studio", "Cowork"],
-  "tags": ["copilot-studio", "security", "prompt-injection", "governance", "responsible-ai", "testing", "risk", "assessment"],
+  "platforms": [
+    "Copilot Studio",
+    "Cowork"
+  ],
+  "tags": [
+    "copilot-studio",
+    "security",
+    "prompt-injection",
+    "governance",
+    "responsible-ai",
+    "testing",
+    "risk",
+    "assessment"
+  ],
   "version": "1.0.0",
-  "author": "Marco Zama"
+  "author": "Marco Zama",
+  "coverImage": "skill-art/agent-red-team.webp",
+  "coverImageAlt": "A faceted dark core sits behind concentric cyan shields while tethered orange probes stress-test its defenses in a controlled chamber.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a controlled adversarial test chamber where orange probe filaments stress-test layered cyan defenses around a protected agent core, visualizing authorized red-team assurance and mapped remediation\nScene/backdrop: a sparse laboratory plinth on warm-paper negative space, with no screens or interface elements\nSubject: one dark faceted core enclosed by concentric transparent shield rings, several tethered orange test filaments pressing from different angles, one filament safely captured in a clear inspection clamp, and a small cyan canary bead remaining contained at the center\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject centered with a strong silhouette; no essential detail in the outer 8%; immediately legible at small gallery-card size\nLighting/mood: calm, capable, quietly technical, controlled rather than threatening, with restrained cyan backlighting\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, interface labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI, branded security symbols, weapons, or Microsoft Fluent branding",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:b3f3e89a8d5dd8859efc56cfb235d08f04cf3e974453129e3b533d3ce4638973"
 }

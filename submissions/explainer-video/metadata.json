@@ -1,11 +1,27 @@
 {
   "name": "Explainer Video",
   "description": "Create narrated, captioned 1080p explainer videos with researched scripts, generated b-roll, and supplied screenshots.",
-  "platforms": ["Cowork"],
-  "tags": ["video", "education", "training", "communication"],
+  "platforms": [
+    "Cowork"
+  ],
+  "tags": [
+    "video",
+    "education",
+    "training",
+    "communication"
+  ],
   "author": "Damien Bird",
   "authorUrl": "https://github.com/DamoBird365",
   "version": "1.0.0",
   "createdAt": "2026-08-20",
-  "updatedAt": "2026-08-20"
+  "updatedAt": "2026-08-20",
+  "coverImage": "skill-art/explainer-video.webp",
+  "coverImageAlt": "A sculptural microphone and camera connect research cards to three illustrated story frames and an audio waveform.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: Create a premium editorial illustration that communicates turning researched ideas into a polished narrated explainer video.\nScene/backdrop: A warm paper-toned studio workspace rendered as an elegant miniature set, with abstract research cards and image fragments flowing through a clear visual sequence toward a finished cinematic frame.\nSubject: A central sculptural microphone and camera-lens form connected by a ribbon-like timeline to three borderless storyboard scenes; subtle waveform ridges and blank caption bands suggest narration and accessibility without showing any interface or text.\nStyle/medium: Premium editorial illustration with tactile dimensional detail, layered cut paper, matte ceramic forms, subtle translucent acrylic, restrained technical precision, sophisticated rather than playful.\nComposition/framing: Exact 16:10 landscape; one strong left-to-right narrative arc; central focal cluster; generous warm negative space; crop-safe focal subject; no essential detail in the outer 8%.\nLighting/mood: Calm, capable, quietly technical; soft directional studio light, refined shadows, reassuring creative momentum.\nColor palette: Warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nConstraints: No text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding. Avoid photorealistic people, clutter, generic glowing AI brains, and literal software screenshots.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:80deb3f016161f2e92ad900cd59a8494185ce11b270ef6829190950d7ee5fdbb"
 }

@@ -10,6 +10,15 @@ authorGithub: amacey-msft
 version: 1.0.0
 createdAt: 2026-08-04
 updatedAt: 2026-08-04
+coverImage: skill-art/booth-loop-video.webp
+coverImageAlt: "A navy filmstrip forms an infinity loop, showing a cyan orb advancing frame by frame toward a glowing orange seam."
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a seamless Mobius loop built from a sequence of wide animation frames, each frame advancing one cyan orb along a path, visualizing a silent booth video rendered frame by frame and returning cleanly to its start\nScene/backdrop: an isolated sculptural rendering on warm-paper negative space above a low dark-slate plinth\nSubject: one continuous navy film ribbon twisting into a horizontal infinity loop, with repeated blank landscape apertures showing the same cyan orb in successive motion positions and one subtle orange-lit seam where the loop closes\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject centered with a strong silhouette; no essential detail in the outer 8%; immediately legible at small gallery-card size\nLighting/mood: calm, capable, quietly technical, with restrained cyan backlighting and a polished show-floor presence\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, interface labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI, audio glyphs, slide-deck look, or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:9ad1d3b92335496a01080884711909c0c8787d1d403cf4dea105a3e5df8e272a"
 ---
 # Booth / kiosk loop video
 

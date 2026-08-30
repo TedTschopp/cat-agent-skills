@@ -1,12 +1,31 @@
 {
   "name": "Browser UAT Analyst",
   "description": "Run evidence-driven UAT on any browser-based app — Copilot Studio, Power Platform, Dataverse, Dynamics 365, admin centres, or a custom web app — with Playwright execution, a screenshot evidence ledger, and failure classification that separates product defects from tenant config.",
-  "platforms": ["Scout"],
-  "tags": ["testing", "uat", "playwright", "quality", "copilot-studio", "power-platform", "automation"],
+  "platforms": [
+    "Scout"
+  ],
+  "tags": [
+    "testing",
+    "uat",
+    "playwright",
+    "quality",
+    "copilot-studio",
+    "power-platform",
+    "automation"
+  ],
   "author": "Al Macey",
   "authorUrl": "https://github.com/amacey-msft",
   "authorGithub": "amacey-msft",
   "version": "1.0.0",
   "createdAt": "2026-08-04",
-  "updatedAt": "2026-08-04"
+  "updatedAt": "2026-08-04",
+  "coverImage": "skill-art/browser-uat-analyst.webp",
+  "coverImageAlt": "A cyan-lit inspection lens compares three glass application-state panes, isolates an orange discrepancy, and routes blank evidence plates into separate channels.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a precision inspection gantry examines a sequence of wide glass application-state panes and turns each observed state into paired evidence plates, visualizing browser UAT grounded in screenshots and careful failure classification\nScene/backdrop: a sparse testing laboratory on warm-paper negative space above a compact dark-slate work surface\nSubject: one large cyan-rimmed optical lens suspended over three translucent landscape panes that repeat the same simple geometric scene, with a small orange displacement visible in one pane and corresponding blank evidence plates arranged in separate channels below\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject centered with a strong silhouette; no essential detail in the outer 8%; immediately legible at small gallery-card size\nLighting/mood: calm, skeptical, methodical, quietly technical, with restrained cyan backlighting\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, interface labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI, browser chrome, literal screenshots, checkmarks, status icons, or Microsoft Fluent branding",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:491df507c7d504df189d67dba13a72fb54333f8962a753c872e3ed52873172bf"
 }

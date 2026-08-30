@@ -10,6 +10,15 @@ authorGithub: SandraBcna
 version: 1.0.0
 createdAt: 2026-08-04
 updatedAt: 2026-08-17
+coverImage: skill-art/copilot-agent-advisor.webp
+coverImageAlt: "An unmarked compass directs three physical paths toward a glowing destination, with simple and modular routes branching to either side."
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a precision compass poised at a three-way architectural fork, clearly selecting the lightest route that still reaches the goal, as a metaphor for advising whether to use an existing capability, a structured agent, or a custom agent\nScene/backdrop: calm warm-paper planning table with a restrained navy field and no interface elements\nSubject: one tactile dark-slate compass with a cyan needle at the junction of three unlabeled physical paths: a direct open path, a measured structured path, and a more complex modular path; a tiny orange marker emphasizes the selected junction\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; strong central silhouette and simplified path geometry legible on a small gallery card\nLighting/mood: calm, capable, quietly technical, with restrained cyan backlighting and sparing warm accents\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, interface labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI, branded icons, Microsoft Fluent gradients, or Microsoft branding\nTargeted correction: keep the compass face completely unmarked, with only a plain cyan needle and three simple raised wedge markers; absolutely no tick marks, cardinal points, scales, glyphs, symbols, or pseudo-writing anywhere in the image"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:dcf42e409887d5684c8b3fc28e6589df7df6a5f199fe217e209d6034c0af63ad"
 ---
 ## Overview
 
