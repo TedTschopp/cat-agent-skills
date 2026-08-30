@@ -10,6 +10,15 @@ authorGithub: nazishqassim
 version: 1.0.0
 createdAt: 2026-07-23
 updatedAt: 2026-07-23
+coverImage: skill-art/gantt-chart-generator.webp
+coverImageAlt: Parallel project beams span a layered timeline while completion inlays advance and a vertical cyan marker shows the present.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: parallel project spans become a precisely aligned set of dimensional timeline beams, with varied lengths, visible completion inlays, and one crisp vertical present-time marker\nScene/backdrop: an uncluttered architectural planning field in slate and warm paper with shallow layered depth\nSubject: a strong centered stack of horizontal task beams grouped into calm lanes, some partially filled with tactile inlays, crossed by a single slender cyan present marker\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%\nLighting/mood: calm, capable, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:8277e09ff467d1b9413759b0f7bb1e2f19ffbdd14ed7419dab8f921b31cbebcc"
 bundle: bundles/gantt-chart-generator.zip
 ---
 Generate horizontal Gantt charts from schedule data via the bundled `scripts/gantt.py` toolkit.

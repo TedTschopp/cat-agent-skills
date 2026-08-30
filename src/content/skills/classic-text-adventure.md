@@ -10,6 +10,15 @@ authorGithub: Adner
 version: 0.1.0
 createdAt: 2026-07-22
 updatedAt: 2026-07-22
+coverImage: skill-art/classic-text-adventure.webp
+coverImageAlt: A brass lantern illuminates a compact winding cavern route marked by orderly stone checkpoints.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a compact brass explorer's lantern revealing one deterministic winding route through a miniature underground cavern, suggesting a classic adventure that can pause and resume without losing its path\nScene/backdrop: a quiet slate cavern chamber with warm paper-toned mineral planes and a single cyan route glow, uncluttered and atmospheric\nSubject: one central lantern beside a tightly contained looping stone passage with a few orderly cairn-like checkpoints, all forms clearly readable without symbols\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; scale the entire lantern-and-cavern diorama down and center it so every lantern edge, cave structure, glowing route, stair, crystal, and cairn stays between 18% and 82% of both canvas axes; outer 18% on every edge remains calm empty cavern atmosphere with no objects or architecture; no essential detail in the outer 8%\nLighting/mood: calm, capable, quietly technical, with restrained cyan backlighting and a sparing orange lantern glow\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, runes, symbols, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no people; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:fb9e1bf7f2623a4e39be29eeedb912052a563426a9492fa4e3b835d62bcbfe4e"
 bundle: bundles/classic-text-adventure.zip
 ---
 # Classic Text Adventure

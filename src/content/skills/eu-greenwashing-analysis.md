@@ -9,6 +9,15 @@ authorUrl: "https://github.com/raemone"
 authorGithub: raemone
 version: 1.0.0
 createdAt: 2026-07-21
+coverImage: skill-art/eu-greenwashing-analysis.webp
+coverImageAlt: A compact inspection lens peels back a leaf veneer to reveal contrasting material layers and evidence fragments.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a precision inspection beam peels back a convincing leaf-shaped veneer from a plain product block, exposing the contrasting lifecycle layers and evidence fragments hidden beneath\nScene/backdrop: an uncluttered warm-paper field with one compact slate inspection platform and no side props, charts, or analytical graphics\nSubject: one centered product block with a thin botanical veneer lifting under a complete freestanding glass inspection lens on a short pedestal, revealing honest internal material layers and a small cluster of blank evidence fragments\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; scale the complete lens, pedestal, block, veneer, fragments, platform, and all shadows into the central 68% of the frame; leave at least 16% calm empty border on all four sides; no object may enter the outer 12%; bold silhouette legible at small card size\nLighting/mood: calm, capable, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no charts, graphs, rings, bars, diagrams, gauges, side props, text, letters, numbers, symbols, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; every visible surface must remain blank and unmarked"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:98dde001638132003b6e3ee71e7aed5fdb5831ddf3e4e5a786b234a60d2cd339"
 featured: true
 ---
 # EU Greenwashing Analysis

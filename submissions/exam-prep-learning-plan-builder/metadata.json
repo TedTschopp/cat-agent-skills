@@ -1,9 +1,24 @@
 {
   "name": "Exam Prep Learning Plan Builder",
   "description": "Build a personalized study plan app for an exam or certification: overview timeline, day-by-day schedule with a calendar picker, domain breakdown, one-click .ics download, and a notes tab to track confidence over time.",
-  "platforms": ["Copilot Studio"],
-  "tags": ["planning", "productivity", "learning"],
+  "platforms": [
+    "Copilot Studio"
+  ],
+  "tags": [
+    "planning",
+    "productivity",
+    "learning"
+  ],
   "author": "Michael Heath",
   "authorUrl": "https://github.com/GetAutomating",
-  "version": "2.0.1"
+  "version": "2.0.1",
+  "coverImage": "skill-art/exam-prep-learning-plan-builder.webp",
+  "coverImageAlt": "An open blank study book becomes a looping path of unmarked learning tiles ending at an orange terminal block.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: an open blank study book unfolds into a deliberately spaced path of completely unmarked modular learning tiles that revisits key topic blocks before reaching one plain orange terminal tile\nScene/backdrop: an uncluttered warm-paper field with one compact slate study platform and no stationery, plant, compass, charts, or room props\nSubject: one open book with completely blank pages feeding a rhythmic loop of plain raised tiles distinguished only by size, material, and color, ending at one unmarked orange terminal block with no flag\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; scale the complete book, full tile path, terminal block, platform, and all shadows into the central 68% of the frame; leave at least 16% calm empty border on all four sides; no object may enter the outer 12%; simple silhouette legible at small card size\nLighting/mood: calm, capable, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: book pages and tiles completely blank; no text, letters, numbers, arrows, icons, symbols, charts, diagrams, maps, graphs, flags, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:303ec82c53a422692613a446c9d837edef240c7701e9baef67c2757b1927de36"
 }

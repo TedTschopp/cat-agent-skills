@@ -1,11 +1,31 @@
 {
   "name": "Institutional Knowledge Archivist",
   "description": "Preserve a departing senior leader's institutional knowledge — decisions, rationale, relationships, and tribal knowledge — by mining their M365 signals into a structured, multi-phase archive a successor can ground on.",
-  "platforms": ["Cowork", "Scout"],
-  "tags": ["knowledge", "handoff", "leadership", "m365", "offboarding", "documentation", "productivity"],
+  "platforms": [
+    "Cowork",
+    "Scout"
+  ],
+  "tags": [
+    "knowledge",
+    "handoff",
+    "leadership",
+    "m365",
+    "offboarding",
+    "documentation",
+    "productivity"
+  ],
   "author": "Srinivas Varukala",
   "authorUrl": "https://github.com/svarukala",
   "version": "1.0.1",
   "createdAt": "2026-07-26",
-  "updatedAt": "2026-07-28"
+  "updatedAt": "2026-07-28",
+  "coverImage": "skill-art/institutional-knowledge.webp",
+  "coverImageAlt": "Smooth knowledge ribbons flow from a tree-ring memory disc into a blank structured archive.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: Luminous strands carrying decisions, relationships, and hard-won context flow from a weathered tree-ring memory disc into a structured archival vault, a single clear metaphor for preserving a departing leader's institutional knowledge for a successor.\nScene/backdrop: An uncluttered warm-paper archival work surface with a centered slate inset, no office scenery and no interface.\nSubject: One tactile tree-ring disc, several smooth continuous cyan knowledge ribbons with no nodes or marks, and one orderly navy archive vault with blank compartments, joined into a compact central handoff composition with one smooth orange continuity ribbon.\nStyle/medium: premium editorial illustration with tactile dimensional detail, warm wood grain, woven threads, matte ceramic, and translucent glass layers\nComposition/framing: exact 16:10 landscape; centered three-quarter view at a smaller scale; the full disc, every unbroken ribbon, complete archive vault, platform, and all shadows contained within the central 68% of the frame; leave at least 16% calm empty border on all four sides; no object may enter the outer 12%; bold silhouette legible at small card size\nLighting/mood: calm, respectful, enduring, quietly technical, with restrained cyan backlighting and soft directional shadows\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no floating nodes, circles, rosettes, glyphs, flowers, clusters, text, letters, numbers, pseudo-writing, labels, names, portraits, symbols, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI, no Microsoft Fluent gradients, and no Microsoft branding; all ribbons, archive compartments, and visible surfaces must remain blank and unmarked",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:66d8291b9fc18c8aa4743d1944b9c612d34704195763a2410310a34d088f6aea"
 }

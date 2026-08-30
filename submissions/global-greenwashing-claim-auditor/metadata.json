@@ -22,5 +22,14 @@
   "authorUrl": "https://github.com/ChrisGarty",
   "version": "1.0.0",
   "createdAt": "2026-07-26",
-  "updatedAt": "2026-07-28"
+  "updatedAt": "2026-07-28",
+  "coverImage": "skill-art/global-greenwashing-claim-auditor.webp",
+  "coverImageAlt": "A cyan inspection lens reveals the hollow veneer and rooted core of a leaf-shaped claim token.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: A precision inspection lens scans a polished leaf-shaped claim token and reveals a hollow veneer on one side and a firmly rooted, evidence-backed core on the other, a single clear metaphor for auditing environmental claims.\nScene/backdrop: An uncluttered warm-paper inspection table with a small recessed slate work surface, no scenery and no interface.\nSubject: One large tactile leaf-shaped token, one cyan optical inspection lens, and a few restrained orange evidence markers, all completely blank and unmarked.\nStyle/medium: premium editorial illustration with tactile dimensional detail, cut-paper fibers, frosted glass, matte ceramic, and subtle carved depth\nComposition/framing: exact 16:10 landscape; centered three-quarter view; the complete subject group contained within the central 76% of the frame; at least 12% calm empty border on all four sides; no essential detail in the outer 8%; bold silhouette legible at small card size\nLighting/mood: calm, capable, evidence-led, quietly technical, with restrained cyan backlighting and soft directional shadows\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, pseudo-writing, labels, flags, maps, logos, trademarks, seals, badges, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI, no Microsoft Fluent gradients, and no Microsoft branding; every visible surface must remain blank and unmarked",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:402957e434d7de12328efc7af2198b0cf6a1dde13a2e8ea855a33f19f03c95a7"
 }

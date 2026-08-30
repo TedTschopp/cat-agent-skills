@@ -1,11 +1,30 @@
 {
   "name": "Enterprise Agent Design Authority (EADA)",
   "description": "An enterprise design review framework that helps architects build secure, scalable, governable, and production-ready Microsoft Copilot Studio agents.",
-  "platforms": ["Copilot Studio", "Cowork"],
-  "tags": ["assessment", "review", "architecture", "enterprise", "design-review", "copilot-studio"],
+  "platforms": [
+    "Copilot Studio",
+    "Cowork"
+  ],
+  "tags": [
+    "assessment",
+    "review",
+    "architecture",
+    "enterprise",
+    "design-review",
+    "copilot-studio"
+  ],
   "author": "Faride Ilanda",
   "authorUrl": "https://github.com/farideilanda",
   "version": "1.0.0",
   "createdAt": "2026-07-22",
-  "updatedAt": "2026-07-22"
+  "updatedAt": "2026-07-22",
+  "coverImage": "skill-art/enterprise-agent-design-authority.webp",
+  "coverImageAlt": "A protected networked architectural model stands beneath a focused inspection light.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: an intricate but orderly networked architectural model being inspected inside a protective structural frame, expressing enterprise design review before construction\nScene/backdrop: a quiet architect's model table in a slate studio with warm paper planes, sparse and free of screens or interface elements\nSubject: one central miniature structure of connected geometric nodes supported by balanced pillars, enclosed by a protective navy ring and crossed by a focused cyan inspection light, with one small orange readiness marker that is purely geometric\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject fully contained inside the central 78%; strong architectural silhouette; calm negative space; no essential detail in the outer 8%\nLighting/mood: calm, capable, quietly technical, with restrained cyan backlighting and sparing orange emphasis\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no people; no shield icon; no checkmark; no text, letters, numbers, symbols, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:7b9d9b8f99f64226623ecdf5d61bc5c0ac19ba2f2297dbc67aef5ba81af2e894"
 }

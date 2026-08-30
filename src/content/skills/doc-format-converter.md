@@ -10,6 +10,15 @@ authorGithub: adner
 version: 1.0.0
 createdAt: 2026-07-16
 updatedAt: 2026-07-16
+coverImage: skill-art/doc-format-converter.webp
+coverImageAlt: A central conversion hub reshapes blank paper into several distinct document forms.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a sculptural conversion hub smoothly reshaping one blank paper form into several distinct physical document forms, expressing reliable offline transformation between formats\nScene/backdrop: a restrained workshop-like field of warm paper and slate with subtle navy construction planes and no interface elements\nSubject: one central tactile spindle with a blank sheet flowing in and a compact bound booklet, layered card, and folded presentation-board form flowing out along a continuous cyan ribbon, all surfaces unmarked\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; scale down and center the complete conversion hub, every blank document form, and the full cyan ribbon so all remain between 14% and 86% of both canvas axes; outer 14% on every edge contains only calm flat backdrop with no document, ribbon, hub, or prop; no essential detail in the outer 8%\nLighting/mood: calm, capable, quietly technical, with restrained cyan backlighting and one sparing orange highlight on the central hub\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: all document surfaces completely blank; no file icons; no arrows; no text, letters, numbers, symbols, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-08-29
+coverImageSourceHash: "sha256:e43d093acc43c67d88aa43bc04f3c84deab0ed811f242c1374b802e763ebf14f"
 featured: true
 bundle: bundles/doc-format-converter.zip
 ---

@@ -17,5 +17,14 @@
   "authorUrl": "https://github.com/CATDAB",
   "version": "0.8.0",
   "createdAt": "2026-07-21",
-  "updatedAt": "2026-07-22"
+  "updatedAt": "2026-07-22",
+  "coverImage": "skill-art/knowledge-corpus-curator.webp",
+  "coverImageAlt": "Blank documents pass through a central sorting sieve into four organized stacks and one orange review item.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a purposeful visual metaphor for curating a knowledge corpus: a central collection of mixed paper documents passes through a precise circular sorting sieve and resolves into a few orderly evidence groups for human review\nScene/backdrop: an uncluttered warm-paper field with one compact slate sorting platform and no side storage, stationery, or room props\nSubject: one central circular sorting sieve holding a small group of completely blank document forms, resolving into four compact blank stacks and one orange outlier represented only through shape, spacing, and material differences\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; strong central silhouette and simple forms legible at small card size; scale the complete sieve, every blank document, all five result groups, platform, and shadows into the central 68% of the frame; leave at least 16% calm empty border on all four sides; no object may enter the outer 12%\nLighting/mood: calm, analytical, evidence-led, quietly technical, with restrained cyan backlighting and a sparing orange accent on the isolated review item\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: all document surfaces completely blank; no ruled lines, grids, tables, forms, holes, pseudo-writing, text, letters, numbers, interface labels, icons, symbols, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:ee395ee8d9e4e53164a0634fa60837961874596a7dffe5c05fb9de90d273644d"
 }

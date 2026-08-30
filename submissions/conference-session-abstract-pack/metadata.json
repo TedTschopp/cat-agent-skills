@@ -18,5 +18,14 @@
   "authorUrl": "https://github.com/SimonOwenDigital",
   "version": "0.1.0",
   "createdAt": "2026-07-17",
-  "updatedAt": "2026-07-17"
+  "updatedAt": "2026-07-17",
+  "coverImage": "skill-art/conference-session-abstract-pack.webp",
+  "coverImageAlt": "Blank paper sheets form a compact conference stage beneath three focused lights.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a small stack of completely blank paper sheets folding upward into a polished conference stage, turning an initial idea into a coherent talk proposal\nScene/backdrop: a quiet warm-paper architectural space with a slate floor and three restrained overhead light cones, uncluttered and editorial\nSubject: one compact central stage formed from layered blank sheets, a simple unmarked lectern silhouette, and three converging light beams that imply title, abstract, and takeaways without displaying content\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; scale down and center the complete stage, every paper edge, all three full light fixtures, every light cone, and every shadow so all remain between 18% and 82% of both canvas axes; outer 18% on every edge remains calm empty atmosphere with no objects, fixtures, beams, paper, stage surface, or shadows; no essential detail in the outer 8%\nLighting/mood: calm, capable, quietly technical, with restrained cyan backlighting and a sparing orange stage accent\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: every sheet and lectern surface must be completely blank and unmarked; no audience figures; no text, letters, numbers, symbols, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:d72c33ebc69929737ad340d8b771c92037c34b50761e73ce1386c08671ea90f7"
 }

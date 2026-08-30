@@ -1,11 +1,28 @@
 {
   "name": "Grab My Files",
   "description": "One-tap way to bundle every file your Copilot Studio agent produced in a session into a single timestamped .zip and hand it back as a download.",
-  "platforms": ["Copilot Studio"],
-  "tags": ["files", "export", "zip", "download", "productivity"],
+  "platforms": [
+    "Copilot Studio"
+  ],
+  "tags": [
+    "files",
+    "export",
+    "zip",
+    "download",
+    "productivity"
+  ],
   "author": "Rafael Alcaraz",
   "authorUrl": "https://github.com/rafalcaraz",
   "version": "1.0.0",
   "createdAt": "2026-07-24",
-  "updatedAt": "2026-07-24"
+  "updatedAt": "2026-07-24",
+  "coverImage": "skill-art/grab-my-files.webp",
+  "coverImageAlt": "Blank file sheets converge through a clasp into a single zippered archive pouch.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: Several varied blank file sheets and media tiles sweep together through a precise mechanical clasp and emerge as one compact zippered archive pouch, a single clear metaphor for collecting every session output into one download.\nScene/backdrop: An uncluttered warm-paper tabletop with a centered slate assembly platform, no room scenery and no interface.\nSubject: A compact navy archive pouch with a cyan zipper and sparing orange pull tab, plus a small fan of completely blank paper sheets and unlabeled media tiles converging into it.\nStyle/medium: premium editorial illustration with tactile dimensional detail, folded paper, woven canvas, matte metal, and subtle embossed depth\nComposition/framing: exact 16:10 landscape; centered slightly top-down view at a noticeably smaller scale; use a short compact file fan and keep every sheet, tile, clasp, platform edge, pouch, zipper, and pull tab fully inside the central 68% of the frame; leave at least 16% completely empty warm-paper border on all four sides; no object may enter the outer 12%; simple silhouette legible at small card size\nLighting/mood: calm, capable, orderly, quietly technical, with restrained cyan backlighting and soft directional shadows\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, pseudo-writing, filenames, labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI, no Microsoft Fluent gradients, and no Microsoft branding; all papers, tiles, and pouch surfaces must be completely blank and unmarked",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-08-29",
+  "coverImageSourceHash": "sha256:cb6c5e20c58b9e8d16f1cda3fca6f4e131f659a5402300a8567161c2d0382f87"
 }
