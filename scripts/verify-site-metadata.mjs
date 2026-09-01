@@ -195,6 +195,99 @@ for (const file of htmlFiles) {
   const scripts = elements(tree, "script");
   const titles = elements(tree, "title");
 
+  const universalHeaders = elements(tree, "header").filter(
+    (node) => property(node, "id") === "tedt-universal-header",
+  );
+  const universalHeader = one(universalHeaders, "TedT.org universal header", page);
+  if (universalHeader) {
+    const headerLinks = elements(universalHeader, "a");
+    const headerImages = elements(universalHeader, "img");
+    const headerButtons = elements(universalHeader, "button");
+    const topLevelLabels = [];
+    visit(universalHeader, (node) => {
+      if (
+        node.type === "element" &&
+        property(node, "className").split(/\s+/).includes("tedt-navbar__link")
+      ) {
+        topLevelLabels.push(textContent(node).trim().replace(/\s+/g, " "));
+      }
+    });
+
+    const expectedLabels = [
+      "Profile",
+      "Career",
+      "Projects",
+      "Tools",
+      "Assessments",
+      "Presentations",
+      "Prompts",
+      "Skills & Agents",
+    ];
+    check(
+      JSON.stringify(topLevelLabels) === JSON.stringify(expectedLabels),
+      `${page}: universal navigation order is wrong: ${topLevelLabels.join(" > ")}`,
+    );
+
+    const prompts = headerLinks.filter(
+      (node) => textContent(node).trim() === "Prompts",
+    );
+    const skillsAndAgents = headerLinks.filter(
+      (node) => textContent(node).trim() === "Skills & Agents",
+    );
+    const brand = headerLinks.filter(
+      (node) => property(node, "ariaLabel") === "Ted Tschopp home",
+    );
+    const logo = headerImages.filter(
+      (node) => property(node, "alt") === "Ted Tschopp home",
+    );
+    const themeChoices = headerButtons
+      .filter((node) => ["Light", "System", "Dark"].includes(property(node, "title")))
+      .map((node) => property(node, "title"));
+    const tocChoices = headerButtons
+      .filter((node) => ["Show TOC", "Hide TOC"].includes(property(node, "title")))
+      .map((node) => ({
+        title: property(node, "title"),
+        disabled: property(node, "disabled"),
+      }));
+
+    check(prompts.length === 1, `${page}: expected one Prompts universal link`);
+    check(
+      prompts[0] && property(prompts[0], "href") === "https://tedt.org/prompts/",
+      `${page}: Prompts must link to https://tedt.org/prompts/`,
+    );
+    check(skillsAndAgents.length === 1, `${page}: expected one Skills & Agents universal link`);
+    check(
+      skillsAndAgents[0] && property(skillsAndAgents[0], "href") === "https://ai.tedt.org/",
+      `${page}: Skills & Agents must link to https://ai.tedt.org/`,
+    );
+    check(
+      skillsAndAgents[0] && property(skillsAndAgents[0], "ariaCurrent") === "page",
+      `${page}: Skills & Agents must identify the current site`,
+    );
+    check(
+      brand.length === 1 && property(brand[0], "href") === "https://tedt.org/",
+      `${page}: universal brand must return to https://tedt.org/`,
+    );
+    check(
+      logo.length === 1 &&
+        property(logo[0], "src") === "https://tedt.org/img/home/logo-Tschopp.svg" &&
+        property(logo[0], "height") === "64",
+      `${page}: universal header must use the canonical 64px TedT.org logo`,
+    );
+    check(
+      JSON.stringify(themeChoices) === JSON.stringify(["Light", "System", "Dark"]),
+      `${page}: universal theme controls must be Light, System, Dark`,
+    );
+    check(
+      JSON.stringify(tocChoices) ===
+        JSON.stringify([
+          { title: "Show TOC", disabled: "true" },
+          { title: "Hide TOC", disabled: "true" },
+        ]),
+      `${page}: unavailable TOC controls must remain present and disabled`,
+    );
+  }
+
   const title = one(titles, "title", page);
   check(Boolean(title && textContent(title).trim()), `${page}: title is empty`);
 

@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import UniversalHeader from "../components/UniversalHeader.astro";
 import { withBase } from "../lib/url";
 import { FEEDBACK_URL } from "../lib/issues";
 import { ANALYTICS_ENABLED, CLARITY_PROJECT_ID } from "../lib/analytics-config";
@@ -263,12 +264,14 @@ const contributorsActive = path.includes("/authors");
   <body class="flex min-h-screen flex-col antialiased">
     <a
       href="#main-content"
-      class="sr-only z-50 rounded bg-accent px-3 py-2 text-sm font-semibold text-accent-fg focus:not-sr-only focus:fixed focus:left-3 focus:top-3"
+      class="sr-only z-[1100] rounded bg-accent px-3 py-2 text-sm font-semibold text-accent-fg focus:not-sr-only focus:fixed focus:left-3 focus:top-3"
     >
       Skip to content
     </a>
 
-    <header class="border-b border-border bg-bg">
+    <UniversalHeader />
+
+    <section class="border-b border-border bg-bg" aria-label="Skills and agents">
       <div
         class="mx-auto flex max-w-8xl flex-wrap items-center gap-x-5 gap-y-3 px-4 py-4 sm:px-6"
       >
@@ -323,29 +326,9 @@ const contributorsActive = path.includes("/authors");
             <span class="sm:hidden">Contribute</span>
             <span class="hidden sm:inline">Contribute a skill</span>
           </a>
-          <div
-            id="theme-toggle"
-            role="radiogroup"
-            aria-label="Colour theme"
-            class="inline-flex overflow-hidden rounded-full border border-border bg-surface-2 p-0.5"
-          >
-            {
-              ["Light", "System", "Dark"].map((label) => (
-                <button
-                  type="button"
-                  role="radio"
-                  aria-checked="false"
-                  data-theme-choice={label.toLowerCase()}
-                  class="rounded-full px-2 py-1 text-[11px] font-medium text-muted hover:text-fg sm:px-2.5"
-                >
-                  {label}
-                </button>
-              ))
-            }
-          </div>
         </nav>
       </div>
-    </header>
+    </section>
 
     <main id="main-content" class="flex-1">
       <slot />
@@ -371,7 +354,7 @@ const contributorsActive = path.includes("/authors");
 
     <script
       is:inline
-      set:html={`(function(){var d=document.documentElement;var key='ai-tedt-theme';var buttons=Array.prototype.slice.call(document.querySelectorAll('[data-theme-choice]'));var mq=window.matchMedia?window.matchMedia('(prefers-color-scheme: dark)'):null;function resolved(p){return p==='system'?((mq&&mq.matches)?'dark':'light'):p;}function paint(){var p=d.dataset.themePreference||'system';buttons.forEach(function(b){var on=b.dataset.themeChoice===p;b.setAttribute('aria-checked',String(on));b.classList.toggle('bg-accent',on);b.classList.toggle('text-accent-fg',on);b.classList.toggle('text-muted',!on);});}function setPreference(p,save){d.dataset.themePreference=p;d.setAttribute('data-theme',resolved(p));if(save){try{localStorage.setItem(key,p);}catch(e){}}paint();document.dispatchEvent(new CustomEvent('themechange',{detail:{theme:d.getAttribute('data-theme'),preference:p}}));}buttons.forEach(function(b){b.addEventListener('click',function(){setPreference(b.dataset.themeChoice||'system',true);});});if(mq){var onSystem=function(){if((d.dataset.themePreference||'system')==='system')setPreference('system',false);};if(mq.addEventListener)mq.addEventListener('change',onSystem);else if(mq.addListener)mq.addListener(onSystem);}paint();})();`}
+      set:html={`(function(){var d=document.documentElement;var key='ai-tedt-theme';var buttons=Array.prototype.slice.call(document.querySelectorAll('[data-theme-choice]'));var mq=window.matchMedia?window.matchMedia('(prefers-color-scheme: dark)'):null;function resolved(p){return p==='system'?((mq&&mq.matches)?'dark':'light'):p;}function paint(){var p=d.dataset.themePreference||'system';buttons.forEach(function(b){var on=b.dataset.themeChoice===p;b.setAttribute('aria-pressed',String(on));});}function setPreference(p,save){d.dataset.themePreference=p;d.setAttribute('data-theme',resolved(p));if(save){try{localStorage.setItem(key,p);}catch(e){}}paint();document.dispatchEvent(new CustomEvent('themechange',{detail:{theme:d.getAttribute('data-theme'),preference:p}}));}buttons.forEach(function(b){b.addEventListener('click',function(){setPreference(b.dataset.themeChoice||'system',true);});});if(mq){var onSystem=function(){if((d.dataset.themePreference||'system')==='system')setPreference('system',false);};if(mq.addEventListener)mq.addEventListener('change',onSystem);else if(mq.addListener)mq.addListener(onSystem);}paint();})();`}
     />
     {
       ANALYTICS_ENABLED && (
