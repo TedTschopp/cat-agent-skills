@@ -251,6 +251,15 @@
         "match": "{{author_names}}\\n\\n## Introduction",
         "replacement": "{{author_names}}\\nInclude a formal grading rubric: {{include_grading}}.\\n\\n## Introduction",
         "resultingPromptSha256": "sha256:9aa30870344493843ad9ad33cba8d9b50a8707fa5890044b2d1e864a3986bd61"
+      },
+      {
+        "id": "decode-academic-legacy-serialized-text",
+        "artifactId": "prompt:academic-critique-content",
+        "operation": "decode-legacy-serialized-text",
+        "approval": "approved",
+        "ifDeclined": "hold-asset",
+        "sourcePromptSha256": "sha256:9aa30870344493843ad9ad33cba8d9b50a8707fa5890044b2d1e864a3986bd61",
+        "resultingPromptSha256": "sha256:f52788e31edc24d7ec28726754b81791d97097688dc915a6af68f6987d01b848"
       }
     ]
   },

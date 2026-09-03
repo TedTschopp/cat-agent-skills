@@ -1,0 +1,199 @@
+{
+  "kind": "prompt-template",
+  "slug": "risk-assessment-clean-up",
+  "name": "Risk Assessment Cleanup",
+  "description": "Professional risk assessment clean up prompt designed for high-quality content generation and structured analysis.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Risk Management",
+    "Documentation",
+    "Business Strategy"
+  ],
+  "tags": [
+    "Risk Management",
+    "Documentation",
+    "Business Strategy"
+  ],
+  "keywords": [
+    "compliance",
+    "content creation",
+    "documentation",
+    "risk assessment",
+    "strategic planning"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "risk-assessment-clean-up.prompt.md",
+  "payloadPaths": [
+    "risk-assessment-clean-up.prompt.md"
+  ],
+  "downloadPath": "bundles/risk-assessment-clean-up.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": null,
+  "subtitle": "AI-Powered Content Generation Framework",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master risk assessment clean up with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-risk-assessment-clean-up.md",
+    "sourceUrl": "https://tedt.org/prompts/risk-assessment-clean-up/",
+    "sourceFileSha256": "sha256:bfd337129861fd358fb33a7fbf06388629fcc43a4fee2bf78be68b2104c90fcb",
+    "sourcePromptSha256": "sha256:63783131f0dfbb69e6fa6901059479931e2ab62d01a62fda443f0052c7c628cc",
+    "importedPromptSha256": "sha256:63783131f0dfbb69e6fa6901059479931e2ab62d01a62fda443f0052c7c628cc",
+    "sourceGuideSha256": "sha256:0f425c54bd4c3d2a3f3b2c30fa1cd98a044e1564d2ed2947379ca6d32bcef472",
+    "importedGuideSha256": "sha256:0f425c54bd4c3d2a3f3b2c30fa1cd98a044e1564d2ed2947379ca6d32bcef472",
+    "rawFrontmatterSha256": "sha256:7addf7989a73a3157ef1e6940e6c74aa7326e18ceb2c5d851205e47087e73afd",
+    "sourceTitle": "Risk Assessment clean up",
+    "sourceDescription": "Professional risk assessment clean up prompt designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master risk assessment clean up with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/risk-assessment-clean-up/"
+    ],
+    "legacyCategories": [
+      "Prompts - Opinion"
+    ],
+    "visibleInAlphaIndex": false,
+    "legacyImage": {
+      "sourcePath": null,
+      "sourceUrl": null,
+      "exists": false,
+      "sha256": null,
+      "metadata": {
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-credits": "Ted Tschopp",
+        "image-credits-artist": "Ted Tschopp",
+        "image-credits-artist-URL": "https://tedt.org/",
+        "image-credits-URL": "https://tedt.org/"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts - Opinion"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "Professional risk assessment clean up prompt designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for risk assessment clean up with advanced AI capabilities and structured output formatting.",
+      "image": null,
+      "image_height": null,
+      "image_width": null,
+      "image-alt": "",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-credits": "Ted Tschopp",
+      "image-credits-artist": "Ted Tschopp",
+      "image-credits-artist-URL": "https://tedt.org/",
+      "image-credits-title": "",
+      "image-credits-URL": "https://tedt.org/",
+      "image-description": "",
+      "image-title": "",
+      "keywords": [
+        "compliance",
+        "content creation",
+        "documentation",
+        "risk assessment",
+        "strategic planning"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master risk assessment clean up with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "AI-Powered Content Generation Framework",
+      "tags": [
+        "Risk Management",
+        "Documentation",
+        "Business Strategy"
+      ],
+      "title": "Risk Assessment clean up",
+      "update": null
+    },
+    "appliedRepairs": [
+      "include-hidden-alpha-prompt",
+      "normalize-model-github-to-github-copilot",
+      "repair-title-risk-assessment-clean-up"
+    ]
+  },
+  "coverImage": "skill-art/risk-assessment-clean-up.webp",
+  "coverImageAlt": "A navy reel pulls a tangled bundle of slate cord into three orderly cyan thread spools with sparing orange strands.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: A dense tangle of vulnerable orange and slate threads being wound through one disciplined red-team reel into orderly risk spools, expressing adversarial business-idea analysis that turns hidden failure paths into an actionable damage report.\nScene/backdrop: Uncluttered warm-paper repair bench set against deep slate, with a single clear before-and-after path.\nSubject: One dominant navy winding reel; thorny tangled threads and a few cracked clay fragments enter from one side, then emerge as three clean cyan-bound spools arranged by severity, all without labels or symbols.\nStyle/medium: premium editorial illustration with tactile dimensional detail; linen cord, machined reel, ceramic fragments, paper-wrapped spools, and restrained handcrafted realism.\nComposition/framing: exact 16:10 landscape; strong diagonal transformation around the central reel; tangle and ordered spools remain bold at approximately 290-pixel card width; crop-safe focal subject; no essential detail in the outer 8%.\nLighting/mood: probing but controlled, calm and capable rather than alarming; restrained cyan edge light and sparing orange only in the vulnerable threads.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nMaterials/textures: coarse linen thread, matte metal, torn paper fibers, chalky ceramic, subtle workshop patina.\nConstraints: original image; one dominant untangling metaphor; no hazard icons or written labels; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, cats, cat silhouettes, or Microsoft Fluent styling.\nAvoid: gore, weapons, flames, warning symbols, red alert dashboards, generic chatbot imagery, glowing brains, visual chaos beyond the controlled thread tangle, Microsoft-like gradients.\nTargeted correction: Pull the camera back and reduce the tangle so the complete before-and-after transformation, every loose thread end, the full reel, and all three spools fit inside the inner 84% with a dark border; make the tangle predominantly slate with only two or three sparing orange strands, and keep the scene clean enough to read at card size.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:924dbe718896c574deba5e292e2692fa21c482c7849a5597cab7d6ab9cb55be2",
+  "coverImageSourceHashVersion": 2
+}

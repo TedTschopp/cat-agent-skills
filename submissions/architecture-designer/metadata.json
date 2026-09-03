@@ -1,0 +1,196 @@
+{
+  "kind": "prompt-template",
+  "slug": "architecture-designer",
+  "name": "Automation Architecture Designer",
+  "description": "Professional automation architecture designer prompt designed for high-quality content generation and structured analysis.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Architecture",
+    "Requirements Engineering",
+    "Documentation"
+  ],
+  "tags": [
+    "Architecture",
+    "Requirements Engineering",
+    "Documentation"
+  ],
+  "keywords": [
+    "system architecture",
+    "solution architecture",
+    "requirements analysis",
+    "automation",
+    "design patterns"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "architecture-designer.prompt.md",
+  "payloadPaths": [
+    "architecture-designer.prompt.md"
+  ],
+  "downloadPath": "bundles/architecture-designer.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": null,
+  "subtitle": "Enterprise Architecture and Requirements Engineering",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master automation architecture designer with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-architecture-designer.md",
+    "sourceUrl": "https://tedt.org/prompts/architecture-designer/",
+    "sourceFileSha256": "sha256:6e4a7645ca7f14de60033d1b8dedcf9219cc25d64d1147b72248aca2ae44835c",
+    "sourcePromptSha256": "sha256:048563b801b011a60636c48f2d858ff4faedf7fd30f794e88dbc71f98e1de1a1",
+    "importedPromptSha256": "sha256:048563b801b011a60636c48f2d858ff4faedf7fd30f794e88dbc71f98e1de1a1",
+    "sourceGuideSha256": "sha256:a788c5cf864b2019f389d81ca6c5e606f391098c65e17d2ec719953b20f0685e",
+    "importedGuideSha256": "sha256:a788c5cf864b2019f389d81ca6c5e606f391098c65e17d2ec719953b20f0685e",
+    "rawFrontmatterSha256": "sha256:845534541601d8ddce48398a9aeee2a1a3aae7880eb7a0d7b96bdc5fdff94a02",
+    "sourceTitle": "Automation Architecture Designer",
+    "sourceDescription": "Professional automation architecture designer prompt designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master automation architecture designer with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/architecture-designer/"
+    ],
+    "legacyCategories": [
+      "Prompts",
+      "Projects"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/architecture-product-requirements-document.png",
+      "sourceUrl": "https://tedt.org/img/prompts/architecture-product-requirements-document.png",
+      "exists": true,
+      "sha256": "sha256:e75f8707b50cebef77add8bc54ca39264f9e02a84cd284c2258d48cbfe8d887f",
+      "metadata": {
+        "image": "/img/prompts/architecture-product-requirements-document.png",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+        "image-title": "Architectural Blueprint of Enterprise Product Requirements"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts",
+        "Projects"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "Professional automation architecture designer prompt designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for automation architecture designer with advanced AI capabilities and structured output formatting.",
+      "image": "/img/prompts/architecture-product-requirements-document.png",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+      "image-title": "Architectural Blueprint of Enterprise Product Requirements",
+      "keywords": [
+        "system architecture",
+        "solution architecture",
+        "requirements analysis",
+        "automation",
+        "design patterns"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master automation architecture designer with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "Enterprise Architecture and Requirements Engineering",
+      "tags": [
+        "Architecture",
+        "Requirements Engineering",
+        "Documentation"
+      ],
+      "title": "Automation Architecture Designer",
+      "update": null
+    },
+    "appliedRepairs": [
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/architecture-designer.webp",
+  "coverImageAlt": "A handcrafted kinetic machine routes cyan glass beads into distinct physical output forms.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: Automation architecture represented by a compact kinetic routing machine that turns one incoming object into an ordered sequence of coordinated outcomes.\nScene/backdrop: An uncluttered slate workshop table with a warm paper backdrop.\nSubject: A handcrafted system of wheels, gates, channels, and cyan glass beads, with one orange trigger lever and several neatly delivered output forms.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe machine silhouette; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: precise, efficient, quietly ingenious\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no interface or control-panel UI; completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:f1f7aa8d6a85bc66026b813e9249af7fcd078342003ecdea427186c8be854fc5",
+  "coverImageSourceHashVersion": 2
+}

@@ -1,0 +1,184 @@
+{
+  "kind": "prompt-template",
+  "slug": "create-a-unforgettable-opening-to-a-ttrpg",
+  "name": "Create an Unforgettable Opening to a TTRPG",
+  "description": "An advanced prompt designed to generate richly layered, culturally resonant TTRPG session openings across artistic media—blending worldbuilding with deep artistic analysis and narrative design.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Game Master",
+    "TTRPG",
+    "Content Creation"
+  ],
+  "tags": [
+    "Game Master",
+    "TTRPG",
+    "Content Creation"
+  ],
+  "keywords": [
+    "RPG tools",
+    "tabletop gaming",
+    "worldbuilding",
+    "storytelling",
+    "narrative design"
+  ],
+  "models": [
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4.5",
+    "microsoft-copilot",
+    "o4-mini",
+    "o4-mini-high"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "create-a-unforgettable-opening-to-a-ttrpg.prompt.md",
+  "payloadPaths": [
+    "create-a-unforgettable-opening-to-a-ttrpg.prompt.md"
+  ],
+  "downloadPath": "bundles/create-a-unforgettable-opening-to-a-ttrpg.prompt.md",
+  "createdAt": "2025-05-03",
+  "updatedAt": null,
+  "subtitle": null,
+  "summaryBullets": [
+    "Generate richly layered TTRPG session openings",
+    "Culturally resonant narrative design",
+    "Blends worldbuilding with artistic analysis"
+  ],
+  "seoDescription": null,
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-05-03-Create-a-Unforgettable-Opening-to-a-TTRPG.md",
+    "sourceUrl": "https://tedt.org/prompts/Create-a-Unforgettable-Opening-to-a-TTRPG/",
+    "sourceFileSha256": "sha256:0298d5a7d2a615f855216b46dabb689ebab3e4ead2f9a5e38c28981ba60ba2db",
+    "sourcePromptSha256": "sha256:c12389afe01c5668977655289c702aaaf38f803125c023b45b78747aba1a1f43",
+    "importedPromptSha256": "sha256:c12389afe01c5668977655289c702aaaf38f803125c023b45b78747aba1a1f43",
+    "sourceGuideSha256": "sha256:5b4f6ab18bdf0833df865bb6459f619f875124c7e23a242fa740d7d02fe27811",
+    "importedGuideSha256": "sha256:5b4f6ab18bdf0833df865bb6459f619f875124c7e23a242fa740d7d02fe27811",
+    "rawFrontmatterSha256": "sha256:a463eebbd897380c49e709a22cfda84f71174e57d795e842a7bf7eaab0aa05dd",
+    "sourceTitle": "Create a Unforgettable Opening to a TTRPG",
+    "sourceDescription": "An advanced prompt designed to generate richly layered, culturally resonant TTRPG session openings across artistic media—blending worldbuilding with deep artistic analysis and narrative design.",
+    "sourceSeoDescription": null,
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4.5",
+      "gpt-4-mini",
+      3,
+      "04-mini",
+      "04-mini-high",
+      "github",
+      "microsoft-copilot"
+    ],
+    "unresolvedModelIdentifiers": [
+      3
+    ],
+    "legacyPaths": [
+      "/prompts/Create-a-Unforgettable-Opening-to-a-TTRPG/"
+    ],
+    "legacyCategories": [
+      "Prompts"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/TTRPG-Opening-Scene.png",
+      "sourceUrl": "https://tedt.org/img/prompts/TTRPG-Opening-Scene.png",
+      "exists": true,
+      "sha256": "sha256:a8266fd56e40a6322a4bc8c3295bfb0e8c2b8d0d21e31b658efe60495cf8fe3c",
+      "metadata": {
+        "image": "/img/prompts/TTRPG-Opening-Scene.png",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "An illustrated TTRPG setting depicting a vibrant, detailed blue market building with bustling activity, stairs, lanterns, and annotated notes for game design.",
+        "image-credits-artist": "Ted Tschopp",
+        "image-credits-artist-URL": "https://tedt.org/",
+        "image-description": "This illustration presents an intricately detailed scene intended as a tabletop roleplaying game (TTRPG) opening scenario. The central feature is a vivid, blue-painted market building bustling with activity, featuring multiple floors and outdoor staircases connecting levels. Warm lantern lights illuminate various market stalls and interior spaces, creating an inviting and immersive atmosphere. Figures interact in small groups around crates and tables, suggesting active engagement and layered storytelling opportunities. Surrounding the image are handwritten annotations and design notes, hinting at hidden secrets, puzzles, and narrative possibilities integral to immersive gameplay. This richly illustrated environment enhances player engagement and narrative depth, perfect for detailed exploration in a TTRPG session.",
+        "image-title": "Bustling Blue Market Scene for TTRPG Adventure"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Generate richly layered TTRPG session openings",
+        "Culturally resonant narrative design",
+        "Blends worldbuilding with artistic analysis"
+      ],
+      "categories": [
+        "Prompts"
+      ],
+      "date": "2025-05-03",
+      "description": "An advanced prompt designed to generate richly layered, culturally resonant TTRPG session openings across artistic media—blending worldbuilding with deep artistic analysis and narrative design.",
+      "image": "/img/prompts/TTRPG-Opening-Scene.png",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "An illustrated TTRPG setting depicting a vibrant, detailed blue market building with bustling activity, stairs, lanterns, and annotated notes for game design.",
+      "image-credits-artist": "Ted Tschopp",
+      "image-credits-artist-URL": "https://tedt.org/",
+      "image-description": "This illustration presents an intricately detailed scene intended as a tabletop roleplaying game (TTRPG) opening scenario. The central feature is a vivid, blue-painted market building bustling with activity, featuring multiple floors and outdoor staircases connecting levels. Warm lantern lights illuminate various market stalls and interior spaces, creating an inviting and immersive atmosphere. Figures interact in small groups around crates and tables, suggesting active engagement and layered storytelling opportunities. Surrounding the image are handwritten annotations and design notes, hinting at hidden secrets, puzzles, and narrative possibilities integral to immersive gameplay. This richly illustrated environment enhances player engagement and narrative depth, perfect for detailed exploration in a TTRPG session.",
+      "image-title": "Bustling Blue Market Scene for TTRPG Adventure",
+      "keywords": [
+        "RPG tools",
+        "tabletop gaming",
+        "worldbuilding",
+        "storytelling",
+        "narrative design"
+      ],
+      "layout": "prompt-details",
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4.5",
+        "gpt-4-mini",
+        3,
+        "04-mini",
+        "04-mini-high",
+        "github",
+        "microsoft-copilot"
+      ],
+      "permalink": "/prompts/Create-a-Unforgettable-Opening-to-a-TTRPG/",
+      "tags": [
+        "Game Master",
+        "TTRPG",
+        "Content Creation"
+      ],
+      "title": "Create a Unforgettable Opening to a TTRPG"
+    },
+    "appliedRepairs": [
+      "normalize-model-04-mini-high-to-o4-mini-high",
+      "normalize-model-04-mini-to-o4-mini",
+      "normalize-model-github-to-github-copilot",
+      "normalize-slug-Create-a-Unforgettable-Opening-to-a-TTRPG-to-create-a-unforgettable-opening-to-a-ttrpg",
+      "repair-title-create-a-unforgettable-opening-to-a-ttrpg"
+    ]
+  },
+  "coverImage": "skill-art/create-a-unforgettable-opening-to-a-ttrpg.webp",
+  "coverImageAlt": "Cyan-lit portal rising from a blank paper map, reached by a bridge beside a burning candle.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: a candlelit threshold rises from a blank tabletop map, opening onto layered mystery, danger, and wonder at the first moment of a tabletop role-playing adventure\nScene/backdrop: dark navy chamber surrounding a warm paper map terrain with subtle paths but no symbols or writing\nSubject: one tall cyan-edged portal emerging from the map, a tiny bridge leading toward it, hidden layered silhouettes beyond, and a single orange flame casting the invitation forward\nStyle/medium: premium tactile editorial illustration with paper theater, carved miniatures, translucent vellum, and cinematic dimensional detail\nComposition/framing: exact 16:10 landscape; dramatic central threshold with converging tabletop path; crop-safe focal subject; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: intriguing, purposeful, suspenseful but inviting, restrained candlelight and backlight\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nMaterials/textures: cut paper terrain, carved wood, translucent vellum, wax, gentle atmospheric haze\nConstraints: map completely blank with no runes or symbols; original composition; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, paw logos, cats, cat silhouettes, or Microsoft Fluent styling\nAvoid: recognizable game brands, dice faces, character sheets, book covers, generic fantasy battle scene, screens, excessive detail",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:7d9b815d865b82602cff759cb9ad694adf5c7a797ab440c2241e8ca09e75f012",
+  "coverImageSourceHashVersion": 2
+}

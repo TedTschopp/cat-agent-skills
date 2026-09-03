@@ -1,0 +1,198 @@
+---
+import type { LibraryAsset } from "../lib/library-assets";
+import { getRepositoryEngagement } from "../lib/engagement";
+import {
+  LOCAL_GISCUS_CATEGORY,
+  LOCAL_GISCUS_CATEGORY_ID,
+  LOCAL_GISCUS_REPO,
+  LOCAL_GISCUS_REPO_ID,
+  LOCAL_RATINGS_ENABLED,
+  MICROSOFT_GISCUS_CATEGORY,
+  MICROSOFT_GISCUS_CATEGORY_ID,
+  MICROSOFT_GISCUS_REPO,
+  MICROSOFT_GISCUS_REPO_ID,
+  MICROSOFT_RATINGS_ENABLED,
+} from "../lib/ratings-config";
+
+interface Props {
+  asset: LibraryAsset;
+}
+
+const { asset } = Astro.props;
+const hasMicrosoftSource = ["skill", "plugin", "automation"].includes(asset.kind);
+const localRepository = getRepositoryEngagement("local");
+const microsoftRepository = getRepositoryEngagement("microsoft");
+const localDiscussionTarget = asset.engagement.local.discussions[0]?.url ?? localRepository.discussionsUrl;
+const microsoftDiscussionTarget = asset.engagement.microsoft.discussions[0]?.url ?? microsoftRepository.discussionsUrl;
+const total = hasMicrosoftSource
+  ? asset.engagement.total
+  : {
+      rating: asset.engagement.local.rating,
+      comments: asset.engagement.local.comments,
+    };
+---
+
+<section id="rate" class="mt-12 scroll-mt-24 border-t border-border pt-8" aria-labelledby="asset-engagement-heading">
+  <div class="max-w-[68ch]">
+    <h2 id="asset-engagement-heading" class="text-2xl text-[var(--text-heading)]">
+      Rate and Discuss This {asset.kindLabel}
+    </h2>
+    <p class="mt-2 text-sm leading-relaxed text-muted">
+      {
+        hasMicrosoftSource
+          ? "Microsoft upstream and AI.Tedt.org remain separate communities. Discovery totals combine their responses, but each discussion stays with its source."
+          : "Ratings and discussion begin fresh on AI.Tedt.org. Legacy prompt reactions and social threads are not carried into this library."
+      }
+    </p>
+  </div>
+
+  <dl class:list={[
+    "mt-6 overflow-hidden rounded-lg border border-[var(--border-subtle)] bg-surface shadow-[var(--shadow-sm)]",
+    hasMicrosoftSource && "sm:grid sm:grid-cols-3",
+  ]}>
+    <div class:list={["p-4", hasMicrosoftSource && "sm:border-r sm:border-[var(--border-subtle)]"]}>
+      <dt class="text-xs font-semibold uppercase tracking-[0.08em] text-subtle">
+        {hasMicrosoftSource ? "Combined Response" : "AI.Tedt.org Response"}
+      </dt>
+      <dd class="mt-2 flex flex-wrap items-baseline gap-x-4 gap-y-1 tabular-nums">
+        <span class="text-2xl font-semibold text-[var(--text-heading)]">▲ {total.rating}</span>
+        <span class="text-sm text-muted">
+          {total.comments} {total.comments === 1 ? "comment" : "comments"}
+        </span>
+      </dd>
+      {hasMicrosoftSource && (
+        <p class="mt-2 text-xs leading-relaxed text-subtle">
+          Source totals are added. They do not represent unique people.
+        </p>
+      )}
+    </div>
+
+    {hasMicrosoftSource && (
+      <>
+        <div class="border-t border-[var(--border-subtle)] p-4 sm:border-r sm:border-t-0">
+          <dt class="text-xs font-semibold uppercase tracking-[0.08em] text-subtle">Microsoft Upstream</dt>
+          <dd class="mt-2 flex flex-wrap items-baseline gap-x-4 gap-y-1 tabular-nums">
+            <span class="text-lg font-semibold text-fg">▲ {asset.engagement.microsoft.rating}</span>
+            <span class="text-sm text-muted">
+              {asset.engagement.microsoft.comments} {asset.engagement.microsoft.comments === 1 ? "comment" : "comments"}
+            </span>
+          </dd>
+          <a href={microsoftRepository.url} target="_blank" rel="noopener noreferrer" class="mt-2 inline-block text-xs text-[var(--link)] underline underline-offset-2 hover:text-[var(--link-hover)]">
+            {microsoftRepository.stars.toLocaleString("en-US")} repository {microsoftRepository.stars === 1 ? "star" : "stars"}
+          </a>
+        </div>
+        <div class="border-t border-[var(--border-subtle)] p-4 sm:border-t-0">
+          <dt class="text-xs font-semibold uppercase tracking-[0.08em] text-subtle">AI.Tedt.org</dt>
+          <dd class="mt-2 flex flex-wrap items-baseline gap-x-4 gap-y-1 tabular-nums">
+            <span class="text-lg font-semibold text-fg">▲ {asset.engagement.local.rating}</span>
+            <span class="text-sm text-muted">
+              {asset.engagement.local.comments} {asset.engagement.local.comments === 1 ? "comment" : "comments"}
+            </span>
+          </dd>
+          <a href={localRepository.url} target="_blank" rel="noopener noreferrer" class="mt-2 inline-block text-xs text-[var(--link)] underline underline-offset-2 hover:text-[var(--link-hover)]">
+            {localRepository.stars.toLocaleString("en-US")} repository {localRepository.stars === 1 ? "star" : "stars"}
+          </a>
+        </div>
+      </>
+    )}
+  </dl>
+
+  <div class:list={["mt-8 grid gap-8", hasMicrosoftSource && "xl:grid-cols-2"]}>
+    <section aria-labelledby="local-discussion-heading">
+      <div class="flex flex-wrap items-baseline justify-between gap-2 border-b border-[var(--border-subtle)] pb-3">
+        <h3 id="local-discussion-heading" class="text-lg text-[var(--text-heading)]">AI.Tedt.org Discussion</h3>
+        <a href={localDiscussionTarget} target="_blank" rel="noopener noreferrer" class="text-xs text-[var(--link)] underline underline-offset-2 hover:text-[var(--link-hover)]">
+          Open on GitHub
+        </a>
+      </div>
+
+      {asset.engagement.local.discussions.length > 0 && (
+        <p class="mt-3 text-xs leading-relaxed text-subtle">
+          Source {asset.engagement.local.discussions.length === 1 ? "thread" : "threads"}: {" "}
+          {asset.engagement.local.discussions.map((discussion, index) => (
+            <>
+              {index > 0 && <span aria-hidden="true"> · </span>}
+              <a href={discussion.url} target="_blank" rel="noopener noreferrer" class="text-[var(--link)] underline underline-offset-2 hover:text-[var(--link-hover)]">#{discussion.number}</a>
+            </>
+          ))}
+        </p>
+      )}
+
+      {
+        LOCAL_RATINGS_ENABLED ? (
+          <div class="mt-5">
+            <giscus-widget
+              class="block w-full"
+              repo={LOCAL_GISCUS_REPO}
+              repoid={LOCAL_GISCUS_REPO_ID}
+              category={LOCAL_GISCUS_CATEGORY}
+              categoryid={LOCAL_GISCUS_CATEGORY_ID}
+              mapping="specific"
+              term={asset.slug}
+              strict="1"
+              reactionsenabled="1"
+              emitmetadata="0"
+              inputposition="bottom"
+              theme="light"
+              lang="en"
+              loading="lazy"
+            ></giscus-widget>
+          </div>
+        ) : (
+          <div class="mt-5 rounded-lg border border-[var(--border-subtle)] bg-surface-2 p-4">
+            <p class="text-sm leading-relaxed text-muted">
+              The local in-page discussion is not active yet. Open the AI.Tedt.org Discussions area to continue on GitHub.
+            </p>
+            <a href={localDiscussionTarget} target="_blank" rel="noopener noreferrer" class="mt-3 inline-block text-sm font-medium text-[var(--link)] underline underline-offset-2 hover:text-[var(--link-hover)]">
+              View AI.Tedt.org Discussions
+            </a>
+          </div>
+        )
+      }
+    </section>
+
+    {hasMicrosoftSource && (
+      <section aria-labelledby="microsoft-discussion-heading">
+        <div class="flex flex-wrap items-baseline justify-between gap-2 border-b border-[var(--border-subtle)] pb-3">
+          <h3 id="microsoft-discussion-heading" class="text-lg text-[var(--text-heading)]">Microsoft Upstream Discussion</h3>
+          <a href={microsoftDiscussionTarget} target="_blank" rel="noopener noreferrer" class="text-xs text-[var(--link)] underline underline-offset-2 hover:text-[var(--link-hover)]">
+            Open on GitHub
+          </a>
+        </div>
+
+        {
+          MICROSOFT_RATINGS_ENABLED ? (
+            <div class="mt-5">
+              <giscus-widget
+                class="block w-full"
+                repo={MICROSOFT_GISCUS_REPO}
+                repoid={MICROSOFT_GISCUS_REPO_ID}
+                category={MICROSOFT_GISCUS_CATEGORY}
+                categoryid={MICROSOFT_GISCUS_CATEGORY_ID}
+                mapping="specific"
+                term={asset.slug}
+                strict="1"
+                reactionsenabled="1"
+                emitmetadata="0"
+                inputposition="bottom"
+                theme="light"
+                lang="en"
+                loading="lazy"
+              ></giscus-widget>
+            </div>
+          ) : (
+            <p class="mt-5 text-sm leading-relaxed text-muted">
+              Microsoft ratings and comments remain available in the {" "}
+              <a href={microsoftRepository.discussionsUrl} target="_blank" rel="noopener noreferrer" class="text-[var(--link)] underline underline-offset-2 hover:text-[var(--link-hover)]">upstream Discussions area</a>.
+            </p>
+          )
+        }
+      </section>
+    )}
+  </div>
+</section>
+
+<script>
+  import "giscus";
+</script>
+<script is:inline set:html={`(function(){function themeFor(){return document.documentElement.getAttribute('data-theme')==='dark'?'dark':'light';}function apply(){document.querySelectorAll('giscus-widget').forEach(function(widget){widget.setAttribute('theme',themeFor());});}document.addEventListener('themechange',apply);apply();})();`} />

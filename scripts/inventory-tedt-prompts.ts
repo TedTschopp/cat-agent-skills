@@ -223,17 +223,28 @@ export type PromptInventoryManifest = {
         rows: number;
       };
     }>;
-    promptBodyEdits: Array<{
-      id: string;
-      artifactId: `prompt:${string}`;
-      operation: "replace-exactly-once";
-      approval: "pending";
-      ifDeclined: "hold-asset";
-      sourcePromptSha256: string;
-      match: string;
-      replacement: string;
-      resultingPromptSha256: string;
-    }>;
+    promptBodyEdits: Array<
+      | {
+          id: string;
+          artifactId: `prompt:${string}`;
+          operation: "replace-exactly-once";
+          approval: "pending" | "approved";
+          ifDeclined: "hold-asset";
+          sourcePromptSha256: string;
+          match: string;
+          replacement: string;
+          resultingPromptSha256: string;
+        }
+      | {
+          id: string;
+          artifactId: `prompt:${string}`;
+          operation: "decode-legacy-serialized-text";
+          approval: "approved";
+          ifDeclined: "hold-asset";
+          sourcePromptSha256: string;
+          resultingPromptSha256: string;
+        }
+    >;
   };
   records: PromptInventoryRecord[];
 };

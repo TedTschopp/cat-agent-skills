@@ -1,0 +1,173 @@
+{
+  "kind": "prompt-template",
+  "slug": "marketing-copy-evaluation-template",
+  "name": "Marketing Copy Evaluation & Rewrite Template",
+  "description": "A prompt for critically evaluating and rewriting web marketing copy using 15 weighted copywriting criteria based on clarity, persuasion, and customer relevance.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Content Creation",
+    "Communications",
+    "Business Strategy"
+  ],
+  "tags": [
+    "Content Creation",
+    "Communications",
+    "Business Strategy"
+  ],
+  "keywords": [
+    "content creation",
+    "copywriting",
+    "persuasion",
+    "prompt engineering",
+    "social media"
+  ],
+  "models": [
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4.5",
+    "microsoft-copilot",
+    "o4-mini",
+    "o4-mini-high"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "marketing-copy-evaluation-template.prompt.md",
+  "payloadPaths": [
+    "marketing-copy-evaluation-template.prompt.md"
+  ],
+  "downloadPath": "bundles/marketing-copy-evaluation-template.prompt.md",
+  "createdAt": "2025-05-03",
+  "updatedAt": null,
+  "subtitle": null,
+  "summaryBullets": [],
+  "seoDescription": null,
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-05-03-copy-writing.md",
+    "sourceUrl": "https://tedt.org/prompts/marketing-copy-evaluation-template/",
+    "sourceFileSha256": "sha256:4e4045e649fcca4148bc0295b1dbbeed0743e69dbc3432dbd68bf84e3cfb9229",
+    "sourcePromptSha256": "sha256:fde4f915f6f00412eeeb266023fcea2089ced53233059af94d48362878538b25",
+    "importedPromptSha256": "sha256:fde4f915f6f00412eeeb266023fcea2089ced53233059af94d48362878538b25",
+    "sourceGuideSha256": "sha256:558f41df2e2f9a5ac61ebaa614e661b268c11f2fa58893419ca9d48c7ac0d41c",
+    "importedGuideSha256": "sha256:558f41df2e2f9a5ac61ebaa614e661b268c11f2fa58893419ca9d48c7ac0d41c",
+    "rawFrontmatterSha256": "sha256:aac0d24d0360aab936eb46d13386f956ab35f46f1356c186e5f63c65f6fb7b3a",
+    "sourceTitle": "Marketing Copy Evaluation & Rewrite Template",
+    "sourceDescription": "A prompt for critically evaluating and rewriting web marketing copy using 15 weighted copywriting criteria based on clarity, persuasion, and customer relevance.",
+    "sourceSeoDescription": null,
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-mini",
+      "gpt-4.5",
+      3,
+      "04-mini",
+      "04-mini-high",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [
+      3
+    ],
+    "legacyPaths": [
+      "/prompts/marketing-copy-evaluation-template/"
+    ],
+    "legacyCategories": [
+      "Prompts"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/Analysis-Analytics-and-Reports.png",
+      "sourceUrl": "https://tedt.org/img/prompts/Analysis-Analytics-and-Reports.png",
+      "exists": true,
+      "sha256": "sha256:c4eedcddc0ee95123ba265713b220bd58a0a18d77a2c5af9a140d44ece90dcdb",
+      "metadata": {
+        "image": "/img/prompts/Analysis-Analytics-and-Reports.png",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "A 3D illustration depicting various stylized interfaces, analytics dashboards, graphs, charts, and modular content blocks in pastel colors arranged dynamically.",
+        "image-credits-artist": "Ted Tschopp",
+        "image-credits-artist-URL": "https://tedt.org/",
+        "image-description": "This image shows a visually engaging 3D illustration of multiple digital interfaces and analytical dashboards floating in space. Various elements including charts, graphs, content blocks, and interactive buttons are rendered in pastel shades of purple, orange, yellow, and green, set against a neutral gradient background. Soft, ambient lighting and semi-transparent materials give the image a futuristic, clean, and professional look, reflecting the processes involved in digital analytics and reporting",
+        "image-title": "Digital Analytics"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "categories": [
+        "Prompts"
+      ],
+      "date": "2025-05-03",
+      "description": "A prompt for critically evaluating and rewriting web marketing copy using 15 weighted copywriting criteria based on clarity, persuasion, and customer relevance.",
+      "image": "/img/prompts/Analysis-Analytics-and-Reports.png",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "A 3D illustration depicting various stylized interfaces, analytics dashboards, graphs, charts, and modular content blocks in pastel colors arranged dynamically.",
+      "image-credits-artist": "Ted Tschopp",
+      "image-credits-artist-URL": "https://tedt.org/",
+      "image-description": "This image shows a visually engaging 3D illustration of multiple digital interfaces and analytical dashboards floating in space. Various elements including charts, graphs, content blocks, and interactive buttons are rendered in pastel shades of purple, orange, yellow, and green, set against a neutral gradient background. Soft, ambient lighting and semi-transparent materials give the image a futuristic, clean, and professional look, reflecting the processes involved in digital analytics and reporting",
+      "image-title": "Digital Analytics",
+      "keywords": [
+        "content creation",
+        "copywriting",
+        "persuasion",
+        "prompt engineering",
+        "social media"
+      ],
+      "layout": "prompt-details",
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-mini",
+        "gpt-4.5",
+        3,
+        "04-mini",
+        "04-mini-high",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/marketing-copy-evaluation-template/",
+      "tags": [
+        "Content Creation",
+        "Communications",
+        "Business Strategy"
+      ],
+      "title": "Marketing Copy Evaluation & Rewrite Template"
+    },
+    "appliedRepairs": [
+      "normalize-model-04-mini-high-to-o4-mini-high",
+      "normalize-model-04-mini-to-o4-mini",
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/marketing-copy-evaluation-template.webp",
+  "coverImageAlt": "Blank paper ribbon passing through a cyan glass sieve and emerging as an orange-edged arrow.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: an unrefined blank paper ribbon passes through a critical optical sieve and emerges as a focused, persuasive arrow-shaped fold aimed clearly forward\nScene/backdrop: warm paper studio with a deep navy gradient wall and generous breathing room\nSubject: one continuous blank ribbon entering a faceted cyan lens-and-sieve sculpture, shedding fuzzy excess fibers, and exiting as a crisp folded form with one sparing orange edge\nStyle/medium: premium tactile editorial illustration with folded paper, optical glass, and dimensional craft detail\nComposition/framing: exact 16:10 landscape; clean left-to-right transformation with the lens as dominant focal object; crop-safe focal subject; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: discerning, clear, persuasive, quietly energetic\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nMaterials/textures: blank deckled paper, translucent glass, soft paper fibers, matte painted base\nConstraints: paper entirely blank with no writing or marks; no rating scales or score symbols; original composition; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, paw logos, cats, cat silhouettes, or Microsoft Fluent styling\nAvoid: megaphones, bullseyes, social-media icons, advertisements, screens, dashboards, generic documents, clutter",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:94a8068334dd746581bdae4fc94bcb02ffb50f56c48c944af5fd6b720599a321",
+  "coverImageSourceHashVersion": 2
+}

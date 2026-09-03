@@ -1,0 +1,199 @@
+{
+  "kind": "prompt-template",
+  "slug": "product-requirements-document-prd-template-3",
+  "name": "Architecture Product Requirements Document (PRD) Template 3",
+  "description": "Professional architecture product requirements document (PRD) Template 3 prompt designed for high-quality content generation and structured analysis.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Product Management",
+    "Requirements Engineering",
+    "Documentation"
+  ],
+  "tags": [
+    "Product Management",
+    "Requirements Engineering",
+    "Documentation"
+  ],
+  "keywords": [
+    "documentation",
+    "product management",
+    "product requirements",
+    "requirements analysis",
+    "templates"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "product-requirements-document-prd-template-3.prompt.md",
+  "payloadPaths": [
+    "product-requirements-document-prd-template-3.prompt.md"
+  ],
+  "downloadPath": "bundles/product-requirements-document-prd-template-3.prompt.md",
+  "createdAt": "2025-12-07",
+  "updatedAt": null,
+  "subtitle": "Enterprise Architecture and Requirements Engineering",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master architecture product requirements document (PRD) Template 3 with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-product-requirements-document-prd-template-3.md",
+    "sourceUrl": "https://tedt.org/prompts/product-requirements-document-prd-template-3/",
+    "sourceFileSha256": "sha256:7d3d491e21435fe5a74931121ee945b58d623c5e9cd8c8a645fe2003ffe570c7",
+    "sourcePromptSha256": "sha256:b6f0aef24529df6684fc5fbb6e4bec25ddeda46adcda736d3ee01d74b383e228",
+    "importedPromptSha256": "sha256:b6f0aef24529df6684fc5fbb6e4bec25ddeda46adcda736d3ee01d74b383e228",
+    "sourceGuideSha256": "sha256:c3e8f5e7b43cd41dc1a2ca167e3fed978ded2168383ab8854ea598e38e54538a",
+    "importedGuideSha256": "sha256:c3e8f5e7b43cd41dc1a2ca167e3fed978ded2168383ab8854ea598e38e54538a",
+    "rawFrontmatterSha256": "sha256:72d037c0811eaba14f7bd7ce446ca81401382c3c62aff2bc4978594f70d97ba8",
+    "sourceTitle": "Architecture Product Requirements Document (PRD) Template 3",
+    "sourceDescription": "Professional architecture product requirements document (prd) template 2 prompt designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master architecture product requirements document (prd) template 2 with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/product-requirements-document-prd-template-3/"
+    ],
+    "legacyCategories": [
+      "Prompts",
+      "Business",
+      "Projects"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/architecture-product-requirements-document.png",
+      "sourceUrl": "https://tedt.org/img/prompts/architecture-product-requirements-document.png",
+      "exists": true,
+      "sha256": "sha256:e75f8707b50cebef77add8bc54ca39264f9e02a84cd284c2258d48cbfe8d887f",
+      "metadata": {
+        "image": "/img/prompts/architecture-product-requirements-document.png",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+        "image-title": "Architectural Blueprint of Enterprise Product Requirements"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts",
+        "Business",
+        "Projects"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-12-07",
+      "description": "Professional architecture product requirements document (prd) template 2 prompt designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for architecture product requirements document (prd) template 3 with advanced AI capabilities and structured output formatting.",
+      "image": "/img/prompts/architecture-product-requirements-document.png",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+      "image-title": "Architectural Blueprint of Enterprise Product Requirements",
+      "keywords": [
+        "documentation",
+        "product management",
+        "product requirements",
+        "requirements analysis",
+        "templates"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master architecture product requirements document (prd) template 2 with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "Enterprise Architecture and Requirements Engineering",
+      "tags": [
+        "Product Management",
+        "Requirements Engineering",
+        "Documentation"
+      ],
+      "title": "Architecture Product Requirements Document (PRD) Template 3",
+      "update": null
+    },
+    "appliedRepairs": [
+      "normalize-model-github-to-github-copilot",
+      "repair-prd-template-3-description"
+    ]
+  },
+  "coverImage": "skill-art/product-requirements-document-prd-template-3.webp",
+  "coverImageAlt": "A blank warm-paper sheet folds into a freestanding cyan-edged architectural scaffold locked by one orange fold.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: A single blank sheet folded into a stable architectural scaffold with connected spaces for product intent, users, requirements, and delivery, expressing a template that turns source material into an integrated product plan.\nScene/backdrop: Warm-paper floor fading into a deep slate studio field, uncluttered and free of tools or screens.\nSubject: One dominant freestanding origami scaffold made from warm paper, with four large connected planes and bridges; cyan fold edges reveal structure and one small orange locking fold provides stability.\nStyle/medium: premium editorial illustration with tactile dimensional detail; precision paper folding, subtle fibers, crisp creases, and architectural model photography rendered as illustration.\nComposition/framing: exact 16:10 landscape; low frontal three-quarter view; strong sculptural silhouette distinct from flat documents and layered sheets; crop-safe focal subject; legible at approximately 290-pixel card width; no essential detail in the outer 8%.\nLighting/mood: calm, capable, quietly technical; restrained cyan rim light and soft grounded shadows with a sparing orange locking fold.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nMaterials/textures: fibrous heavyweight paper, matte folded edges, subtle embossed depth without marks.\nConstraints: original image; coherent PRD-template family yet unmistakably distinct through a freestanding origami silhouette; every plane completely blank and unmarked; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, cats, cat silhouettes, or Microsoft Fluent styling.\nAvoid: paper airplane, recognizable animal origami, icon-like symbols, architectural lettering, generic chatbot imagery, glowing brains, Microsoft-like gradients.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:e8007eb223f65f1c4c364c474e9fb87c2c4c0215cfbf98f5227219614c8430ea",
+  "coverImageSourceHashVersion": 2
+}

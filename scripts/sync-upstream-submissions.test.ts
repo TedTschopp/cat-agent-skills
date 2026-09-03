@@ -181,3 +181,62 @@ test("does not generate fork-only submissions that Microsoft does not publish", 
   assert.deepEqual(plan.newSlugs, []);
   assert.deepEqual(plan.pendingGeneratedSlugs, []);
 });
+
+test("recognizes a generic artifact page as an existing generated catalog entry", (t) => {
+  const repo = initializeRepository();
+  t.after(() => rmSync(repo, { recursive: true, force: true }));
+
+  write(repo, "submissions/existing-artifact/metadata.json", '{"name":"Artifact"}\n');
+  write(repo, "submissions/existing-artifact/AGENTS.md", "instructions\n");
+  write(repo, "src/content/artifacts/existing-artifact.md", "generated artifact\n");
+  git(repo, "add", ".");
+  git(repo, "commit", "-m", "add generated generic artifact");
+  git(repo, "branch", "microsoft-main");
+
+  const plan = planUpstreamSync({ repoRoot: repo, upstreamRef: "microsoft-main" });
+  assert.deepEqual(plan.pendingGeneratedSlugs, []);
+});
+
+test("allows one generated generic page, its payload tree, and the shared catalog", (t) => {
+  const repo = initializeRepository();
+  t.after(() => rmSync(repo, { recursive: true, force: true }));
+
+  write(repo, "public/assets.json", "[]\n");
+  git(repo, "add", ".");
+  git(repo, "commit", "-m", "track public catalog");
+
+  write(repo, "src/content/artifacts/new-instructions.md", "generated page\n");
+  write(repo, "src/content/guides/new-instructions.md", "generated guide\n");
+  write(repo, "public/bundles/new-instructions/rules/AGENTS.md", "payload\n");
+  write(repo, "public/assets.json", '[{"slug":"new-instructions"}]\n');
+
+  const scope = verifySyncWorktree({
+    repoRoot: repo,
+    newSlugs: [],
+    generatedSlugs: ["new-instructions"],
+  });
+  assert.equal(scope.changed, true);
+  assert.ok(scope.entries.some((entry) => entry.path === "public/assets.json"));
+
+  write(repo, "src/content/prompts/new-instructions.md", "ambiguous page\n");
+  assert.throws(
+    () =>
+      verifySyncWorktree({
+        repoRoot: repo,
+        newSlugs: [],
+        generatedSlugs: ["new-instructions"],
+      }),
+    /multiple generated library pages/,
+  );
+});
+
+test("does not allow the shared catalog to change without generated slugs", (t) => {
+  const repo = initializeRepository();
+  t.after(() => rmSync(repo, { recursive: true, force: true }));
+
+  write(repo, "public/assets.json", "[]\n");
+  assert.throws(
+    () => verifySyncWorktree({ repoRoot: repo, newSlugs: [], generatedSlugs: [] }),
+    /outside the addition-only allowlist/,
+  );
+});

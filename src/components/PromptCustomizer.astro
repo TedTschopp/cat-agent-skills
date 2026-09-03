@@ -1,0 +1,275 @@
+---
+interface PromptVariable {
+  name: string;
+  label: string;
+  type: string;
+  required?: boolean;
+  default?: string | number | boolean | string[] | null;
+  placeholder?: string;
+  help?: string;
+  rows?: number;
+  options?: string[];
+  min?: number;
+  max?: number;
+  step?: number;
+}
+
+interface Props {
+  slug: string;
+  body: string;
+  variables?: PromptVariable[];
+  worksWith?: string[];
+}
+
+const {
+  slug,
+  body,
+  variables = [],
+  worksWith = [],
+} = Astro.props;
+
+const providerDefinitions = [
+  {
+    match: /(chatgpt|openai|\bgpt\b|\bo[134](?:-|\b))/i,
+    label: "ChatGPT",
+    url: "https://chatgpt.com/",
+  },
+  { match: /claude/i, label: "Claude", url: "https://claude.ai/new" },
+  { match: /gemini/i, label: "Gemini", url: "https://gemini.google.com/app" },
+  {
+    match: /^github-copilot$/i,
+    label: "GitHub Copilot",
+    url: "https://github.com/copilot",
+  },
+  {
+    match: /^(microsoft-copilot|copilot)$/i,
+    label: "Microsoft Copilot",
+    url: "https://copilot.microsoft.com/",
+  },
+];
+
+const providerLinks = providerDefinitions.filter((provider) =>
+  worksWith.some((item) => provider.match.test(item)),
+);
+
+const defaultString = (variable: PromptVariable): string => {
+  if (Array.isArray(variable.default)) return variable.default.join(", ");
+  if (variable.default === undefined || variable.default === null) return "";
+  return String(variable.default);
+};
+
+const isSelected = (variable: PromptVariable, option: string): boolean => {
+  if (Array.isArray(variable.default)) return variable.default.includes(option);
+  return String(variable.default ?? "") === option;
+};
+---
+
+<section
+  class="prompt-workbench rounded-xl border border-[var(--border-subtle)] bg-surface shadow-[var(--shadow-sm)]"
+  aria-labelledby="customize-prompt-heading"
+  data-prompt-customizer
+>
+  <div class="border-b border-[var(--border-subtle)] p-5 sm:p-6">
+    <span class="text-xs font-semibold uppercase tracking-[0.08em] text-accent-text">
+      Prompt Workbench
+    </span>
+    <h2 id="customize-prompt-heading" class="mt-1 text-2xl text-[var(--text-heading)]">
+      Customize This Prompt
+    </h2>
+    <p class="mt-2 max-w-[68ch] text-sm leading-relaxed text-muted">
+      Set the available fields, review the complete prompt, then copy or download it. Unknown
+      authoring placeholders remain unchanged.
+    </p>
+  </div>
+
+  <textarea class="hidden" aria-hidden="true" tabindex="-1" data-prompt-template>{body}</textarea>
+
+  <div class:list={["grid gap-0", variables.length > 0 && "lg:grid-cols-[minmax(16rem,22rem)_minmax(0,1fr)]"]}>
+    {
+      variables.length > 0 && (
+        <form class="border-b border-[var(--border-subtle)] bg-surface-2 p-5 lg:border-b-0 lg:border-r sm:p-6" onsubmit="return false;" data-prompt-form>
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="text-lg text-[var(--text-heading)]">Prompt Fields</h3>
+            <button
+              type="button"
+              class="text-xs font-medium text-[var(--link)] underline underline-offset-2 hover:text-[var(--link-hover)]"
+              data-prompt-reset
+            >
+              Reset Fields
+            </button>
+          </div>
+
+          <div class="mt-5 space-y-5">
+            {variables.map((variable) => {
+              const id = `prompt-${slug}-${variable.name}`;
+              const commonClass = "mt-1.5 w-full rounded border border-border bg-surface px-3 py-2 text-sm text-fg shadow-[var(--shadow-inset)] outline-none focus:border-accent";
+
+              if (variable.type === "radio" && variable.options?.length) {
+                return (
+                  <fieldset>
+                    <legend class="text-sm font-semibold text-fg">
+                      {variable.label}{variable.required && <span class="text-[var(--danger)]"> *</span>}
+                    </legend>
+                    {variable.help && <p class="mt-1 text-xs leading-relaxed text-muted">{variable.help}</p>}
+                    <div class="mt-2 space-y-1.5">
+                      {variable.options.map((option, index) => (
+                        <label class="flex items-start gap-2 text-sm text-muted">
+                          <input
+                            type="radio"
+                            name={id}
+                            value={option}
+                            checked={isSelected(variable, option)}
+                            required={variable.required && index === 0}
+                            class="mt-1 accent-accent"
+                            data-prompt-variable={variable.name}
+                          />
+                          <span>{option}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </fieldset>
+                );
+              }
+
+              if (variable.type === "checkbox" && variable.options?.length) {
+                return (
+                  <fieldset
+                    data-prompt-checkbox-group={variable.name}
+                    data-prompt-required={variable.required ? "true" : undefined}
+                  >
+                    <legend class="text-sm font-semibold text-fg">
+                      {variable.label}{variable.required && <span class="text-[var(--danger)]"> *</span>}
+                    </legend>
+                    {variable.help && <p class="mt-1 text-xs leading-relaxed text-muted">{variable.help}</p>}
+                    <div class="mt-2 space-y-1.5">
+                      {variable.options.map((option) => (
+                        <label class="flex items-start gap-2 text-sm text-muted">
+                          <input
+                            type="checkbox"
+                            name={id}
+                            value={option}
+                            checked={isSelected(variable, option)}
+                            class="mt-1 accent-accent"
+                            data-prompt-variable={variable.name}
+                            data-option-value={option}
+                          />
+                          <span>{option}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </fieldset>
+                );
+              }
+
+              return (
+                <label for={id} class="block">
+                  <span class="text-sm font-semibold text-fg">
+                    {variable.label}{variable.required && <span class="text-[var(--danger)]"> *</span>}
+                  </span>
+                  {variable.help && <span class="mt-1 block text-xs leading-relaxed text-muted">{variable.help}</span>}
+                  {variable.type === "textarea" ? (
+                    <textarea
+                      id={id}
+                      name={variable.name}
+                      rows={variable.rows ?? 5}
+                      required={variable.required}
+                      placeholder={variable.placeholder}
+                      class={commonClass}
+                      data-prompt-variable={variable.name}
+                    >{defaultString(variable)}</textarea>
+                  ) : variable.type === "select" && variable.options?.length ? (
+                    <select
+                      id={id}
+                      name={variable.name}
+                      required={variable.required}
+                      class={commonClass}
+                      data-prompt-variable={variable.name}
+                    >
+                      {!variable.required && <option value="">No selection</option>}
+                      {variable.options.map((option) => (
+                        <option value={option} selected={isSelected(variable, option)}>{option}</option>
+                      ))}
+                    </select>
+                  ) : (
+                    <input
+                      id={id}
+                      name={variable.name}
+                      type={variable.type === "number" ? "number" : "text"}
+                      value={defaultString(variable)}
+                      min={variable.min}
+                      max={variable.max}
+                      step={variable.step}
+                      required={variable.required}
+                      placeholder={variable.placeholder}
+                      class={commonClass}
+                      data-prompt-variable={variable.name}
+                    />
+                  )}
+                </label>
+              );
+            })}
+          </div>
+        </form>
+      )
+    }
+
+    <div class="min-w-0 p-5 sm:p-6">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h3 class="text-lg text-[var(--text-heading)]">
+          {variables.length > 0 ? "Customized Prompt" : "Prompt"}
+        </h3>
+        <span class="text-xs text-subtle">
+          <span data-prompt-character-count>{body.length.toLocaleString("en-US")}</span> characters
+        </span>
+      </div>
+      <label class="sr-only" for={`prompt-output-${slug}`}>Customized prompt</label>
+      <textarea
+        id={`prompt-output-${slug}`}
+        readonly
+        spellcheck="false"
+        class="mono-face mt-3 min-h-96 w-full resize-y rounded border border-border bg-[var(--code-bg)] p-4 text-[13px] leading-relaxed text-[var(--code-fg)] shadow-[var(--shadow-inset)] outline-none focus:border-accent"
+        data-prompt-output
+      >{body}</textarea>
+
+      <div class="mt-4 flex flex-wrap items-center gap-2">
+        <button
+          type="button"
+          class="rounded bg-cta px-4 py-2 text-sm font-semibold text-cta-fg shadow-sm hover:bg-[var(--action-cta-hover)]"
+          data-copy-prompt
+        >
+          Copy Prompt
+        </button>
+        <button
+          type="button"
+          class="rounded border border-border bg-surface px-4 py-2 text-sm font-semibold text-fg hover:border-[var(--border-strong)]"
+          data-download-customized
+          data-filename={`${slug}.prompt.md`}
+        >
+          Download Customized Prompt
+        </button>
+        {providerLinks.map((provider) => (
+          <a
+            href={provider.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded border border-border bg-surface px-4 py-2 text-sm font-semibold text-[var(--link)] no-underline hover:border-[var(--border-strong)] hover:text-[var(--link-hover)]"
+            data-open-provider
+            data-provider-label={provider.label}
+          >
+            Copy and Open {provider.label}
+          </a>
+        ))}
+      </div>
+
+      <p class="mt-3 text-xs leading-relaxed text-subtle">
+        Provider actions copy the prompt to your clipboard and open only the provider’s home page.
+        The prompt is never placed in a URL.
+      </p>
+      <p class="mt-2 min-h-5 text-sm text-muted" role="status" aria-live="polite" data-prompt-status></p>
+    </div>
+  </div>
+</section>
+
+<script>
+  import "../scripts/prompt-customizer";
+</script>

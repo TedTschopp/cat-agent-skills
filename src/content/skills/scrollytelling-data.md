@@ -622,4 +622,3 @@ Always deliver to `/app/created/` so it is returned as an attachment.
 - [ ] Chart heights: minimum 460px per chart div
 - [ ] Headline font: `clamp(2.2rem, 4.5vw, 4rem)` minimum
 - [ ] Output file → `/app/created/<dataset-name>-story-YYYY-MM-DD.html`
-

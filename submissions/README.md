@@ -1,89 +1,167 @@
-# Submit a skill
+# Submit an Asset
 
-**Every** skill is contributed by adding it to this `submissions/` folder and
-opening a pull request — you never edit `src/content/skills/` by hand. On each
-PR, CI validates your metadata and generates the published skill page (and any
-download bundle) for you.
+Add one `submissions/<slug>/` folder and open a pull request. Do not edit the
+generated files in `src/content/`, `src/content/guides/`, `public/bundles/`, or
+`public/assets.json`. CI validates the authored files, rejects unsafe rendered
+Markdown, and generates the catalog record, detail-page content, and downloads.
 
-Every **new** submission is a **`submissions/<slug>/` folder** containing a
-`metadata.json` gallery sidecar plus **exactly one** payload — an **unpacked**
-canonical Agent Skill (or, for Scout, a single automation `.json`; see below):
+The folder name is the asset slug. Use lowercase letters, numbers, and hyphens,
+such as `repository-instructions`. The slug remains the asset identity when you
+update it later.
 
-```
+## Choose an Asset Type
+
+The importer accepts these new submission formats:
+
+| Asset type | Authored payload |
+| --- | --- |
+| Agent Skill | A root `SKILL.md` with optional `scripts/`, `references/`, and `assets/` |
+| Scout Automation | One importable `.json` export |
+| Prompt Template File | One `<slug>.prompt.md` file |
+| Agent Instruction File | One or more explicitly declared `.md` or `.mdc` files |
+| Scoped Agent Instruction File | One or more explicitly declared `.md` or `.mdc` files |
+| Agent Definition File | One or more explicitly declared `.md` or `.mdc` files |
+| Work Specification File | One or more explicitly declared `.md` or `.mdc` files |
+
+New packaged `.zip` submissions are not accepted because a packed file hides
+its contents from review. Existing grandfathered plugins and automation
+installers remain published, but contributors cannot add new ones.
+
+## Common Folder Rules
+
+Every submission uses a metadata sidecar and one supported payload. A root
+`README.md` is optional human-facing guidance:
+
+```text
 submissions/<slug>/
-├── metadata.json     # OR metadata.yaml — catalog details for this gallery
-│                     # (a SIDECAR — never packaged into the download bundle)
-├── README.md         # OPTIONAL — human-facing overview shown on the detail page
-│                     # (never bundled, never seen by the agent)
-└── an unpacked canonical Agent Skill:
-    ├── SKILL.md      # frontmatter (name + agent description) + instructions
-    ├── scripts/      # optional executable code
-    ├── references/   # optional docs the agent reads on demand
-    └── assets/       # optional templates / data files
+├── metadata.json       # or metadata.yaml or metadata.yml
+├── README.md           # optional human-facing guide
+└── payload files       # exact files installed or imported by the user
 ```
 
-`.zip` payloads are **no longer accepted** — submit your skill unpacked. (Scout
-submissions can instead be a single automation `.json`; see below.)
+- Metadata and the optional guide are sidecars. They are not downloads.
+- For a generic file asset, a root `README.md` becomes the guide unless its
+  exact path is included in `payloadPaths`; when declared there, it is a payload
+  instead.
+- Payload paths are relative POSIX paths. Do not use absolute paths,
+  backslashes, `.` or `..` segments, empty segments, or symlinks.
+- Generic file payloads must end in `.md` or `.mdc`, contain valid UTF-8, and
+  contain non-whitespace text.
+- Filenames, relative paths, and payload bytes are preserved.
 
-The `<slug>` is the folder name — use lowercase, hyphenated names, e.g.
-`submissions/meeting-summarizer/` -> `/skills/meeting-summarizer`. Start by
-copying [`_template/`](./_template).
+## Submit a Generic File Asset
 
-Bundling is **verbatim** — whatever you put in `scripts/`/`references/`/`assets/`
-ships exactly as authored. Only `metadata.*` and the optional `README.md` are
-stripped; they are sidecars and never land inside the bundle.
+Use this contract for an Agent Instruction File, Scoped Agent Instruction File,
+Agent Definition File, or Work Specification File:
 
-> ℹ️ **Talking to a human? Use `README.md`.** A root-level `README.md` is the one
-> file meant for people, not the agent. It is **never bundled** and **never part
-> of `SKILL.md`** — and when present it **becomes the main content** on the detail
-> page (your own overview, setup steps, tips, and examples), with the exact
-> `SKILL.md` still offered as the download. Without one, the page falls back to
-> the skill's own instructions. It's optional and works for every entry type
-> (skill or automation). Everything *else* in the folder is
-> agent-facing and ships verbatim, so don't add stray docs like `CHANGELOG` or
-> `CONTRIBUTING` next to your payload — they'd just waste the agent's context. Put
-> those in your PR description.
+```text
+submissions/repository-instructions/
+├── metadata.json
+├── README.md
+└── AGENTS.md
+```
 
-## Two descriptions — they are different on purpose
+```json
+{
+  "kind": "agent-instruction",
+  "name": "Repository Instructions",
+  "description": "Persistent operating instructions for a repository.",
+  "tags": ["engineering", "governance"],
+  "author": "Your Name",
+  "entrypoint": "AGENTS.md",
+  "payloadPaths": ["AGENTS.md"],
+  "compatibility": ["codex", "github-copilot"]
+}
+```
 
-| | Lives in | Who reads it |
-| --- | --- | --- |
-| **Agent description** | `SKILL.md` frontmatter `description` | the **agent/model**, to decide *when to invoke* the skill |
-| **Catalog description** | `metadata.json` `description` | **people** browsing this gallery (card + top of the detail page) |
+Required contributor fields are:
 
-Write the agent description as a precise trigger ("Use this skill whenever the
-user… BEFORE calling…"). Write the catalog description as a friendly one-liner.
+| Field | Requirement |
+| --- | --- |
+| `kind` | One of `agent-instruction`, `scoped-agent-instruction`, `agent-definition`, or `work-specification` |
+| `name` | Human-readable catalog name |
+| `description` | Human-readable catalog summary |
+| `tags` | One or more search and topic labels |
+| `author` | Person or team responsible for the asset |
+| `entrypoint` | Exact path of the primary file; it must also appear in `payloadPaths` |
+| `payloadPaths` | Complete, nonempty list of payload files in install-relative order |
 
-## `SKILL.md` — name + description + instructions
+The importer derives `slug` from the folder, copies `tags` to `topics` when
+`topics` is omitted, mirrors `compatibility` and `worksWith` when only one is
+provided, and derives the download path. If metadata supplies `slug`, it must
+match the folder name.
 
-The canonical Agent Skills file: frontmatter with a slug `name` (lowercase,
-hyphenated, **matching the folder name**) and the **agent-facing** `description`,
-then the instructions body. All three are required.
+Optional catalog fields include `keywords`, `models`, `compatibility`,
+`worksWith`, `authorUrl`, `authorGithub`, `authorAvatar`, `createdAt`,
+`updatedAt`, `subtitle`, `summaryBullets`, `seoDescription`, `version`,
+`featured`, `series`, `relatedAssetIds`, and `provenance`. Unknown metadata
+fields fail validation instead of being ignored.
+
+Every declared payload is published separately at
+`public/bundles/<slug>/<payloadPath>`. A submission with more than one payload
+also gets a deterministic `public/bundles/<slug>.zip` containing exactly the
+declared payload files.
+
+## Submit a Prompt Template File
+
+A prompt template contains exactly one `<slug>.prompt.md` payload. It may also
+have an optional root `README.md` guide.
+
+```text
+submissions/decision-brief/
+├── metadata.json
+├── README.md
+└── decision-brief.prompt.md
+```
+
+```json
+{
+  "kind": "prompt-template",
+  "slug": "decision-brief",
+  "name": "Decision Brief",
+  "description": "Turn evidence and tradeoffs into a concise decision brief.",
+  "topics": ["Decision-Making"],
+  "tags": ["Decision-Making"],
+  "author": "Your Name",
+  "entrypoint": "decision-brief.prompt.md",
+  "payloadPaths": ["decision-brief.prompt.md"],
+  "downloadPath": "bundles/decision-brief.prompt.md"
+}
+```
+
+The prompt body may contain `{{variable_name}}` placeholders. Define matching
+entries in the optional `variables` array to give visitors typed customization
+controls. Supported variable types are `text`, `textarea`, `number`, `select`,
+`radio`, and `checkbox`.
+
+## Submit an Agent Skill
+
+Copy [`_template/`](./_template) to start. A skill is an unpacked, canonical
+Agent Skill:
+
+```text
+submissions/meeting-summarizer/
+├── metadata.json
+├── README.md          # optional human-facing guide
+├── SKILL.md
+├── scripts/           # optional executable code
+├── references/        # optional supporting documents
+└── assets/            # optional templates or data
+```
+
+The root `SKILL.md` requires a slug `name` that matches the folder, an
+agent-facing `description`, and a nonempty instruction body:
 
 ```markdown
 ---
 name: meeting-summarizer
-description: Use this skill whenever the user asks to summarize a meeting transcript, before drafting any reply.
+description: Use this skill whenever the user asks to summarize a meeting transcript.
 ---
 
-Turn the transcript into concise notes and action items…
+Turn the transcript into concise notes and action items.
 ```
 
-The human-friendly **display name** lives in `metadata.json` (`name`), not here.
-
-## `README.md` — an optional human-facing overview
-
-Want to tell the person adding your skill how to set it up, what to expect, or a
-few tips? Drop a `README.md` in the submission folder. It's **optional**, plain
-Markdown, and written for **people** — so it never ships in the download bundle
-and the agent never reads it. When present, it **becomes the main content** on
-the detail page (in your own words), while the exact `SKILL.md` stays available as
-the download. Leave it out and the page falls back to showing the skill's
-instructions. It works the same way for a skill or a Scout automation.
-
-## `metadata.json` — catalog details
-
-All the catalog details for the gallery (kept out of the agent file):
+The metadata sidecar provides the human-facing catalog fields:
 
 ```json
 {
@@ -93,132 +171,93 @@ All the catalog details for the gallery (kept out of the agent file):
   "tags": ["meetings", "productivity"],
   "author": "Your Name",
   "authorUrl": "https://example.com",
-  "version": "1.0.0",
-  "createdAt": "2026-01-01",
-  "updatedAt": "2026-01-01"
+  "version": "1.0.0"
 }
 ```
 
-The same fields work in a `metadata.yaml` if you prefer YAML.
+`name`, `description`, `platforms`, `tags`, and `author` are required in skill
+metadata. `platforms` must contain one or more of `Cowork`, `Copilot Studio`,
+and `Scout`. Optional fields include `authorUrl`, `authorGithub`, `version`,
+`createdAt`, `updatedAt`, `coverColor`, and `featured`. The importer derives
+`authorGithub` from a direct GitHub profile `authorUrl` when possible.
 
-## Metadata fields
+### Two Descriptions With Different Audiences
 
-| Field         | Where           | Required | Notes                                                        |
-| ------------- | --------------- | -------- | ------------------------------------------------------------ |
-| `name`        | `SKILL.md`      | yes      | Slug (lowercase-hyphenated), must match the folder name.     |
-| `description` | `SKILL.md`      | yes      | **Agent-facing** trigger description.                        |
-| `name`        | `metadata.json` | yes      | **Display** name shown in the gallery.                       |
-| `description` | `metadata.json` | yes      | **Catalog** summary shown in the gallery.                    |
-| `platforms`   | `metadata.json` | yes      | One or more of `Cowork`, `Copilot Studio`, `Scout`.          |
-| `tags`        | `metadata.json` | yes      | Lowercase tags for search/filtering.                         |
-| `author`      | `metadata.json` |          | Person or team.                                              |
-| `authorUrl`   | `metadata.json` |          | Link to the author's website/profile.                        |
-| `authorGithub`| `metadata.json` |          | Author's GitHub login. Normally derived from a `github.com/<login>` `authorUrl`; set it explicitly only when the author's link isn't a GitHub profile (see below).|
-| `version`     | `metadata.json` |          | Semantic version, e.g. `1.0.0`.                              |
-| `createdAt`   | `metadata.json` |          | `YYYY-MM-DD`.                                                |
-| `updatedAt`   | `metadata.json` |          | `YYYY-MM-DD`.                                                |
-| `coverColor`  | `metadata.json` |          | CSS color to override the auto-generated cover.              |
-| `featured`    | `metadata.json` |          | `true` to sort the skill to the top.                         |
-| `bundle`      | —               |          | Set automatically when your skill ships files beyond `SKILL.md` — don't add it.|
+| Description | Source | Audience |
+| --- | --- | --- |
+| Agent description | `SKILL.md` frontmatter | The model deciding when to invoke the skill |
+| Catalog description | `metadata.*` | People browsing the AI Library |
 
-A missing or invalid **required** field fails the PR with a message listing
-exactly what's wrong.
+An optional root `README.md` is written for people and becomes the guide on the
+detail page. It is never part of the skill bundle. Without it, the page uses the
+skill instructions as its main explanatory content.
 
-### `authorGithub` (attribution)
+If a skill contains files beyond `SKILL.md`, the importer creates a
+deterministic ZIP with the canonical root `SKILL.md` and every declared helper
+file verbatim. Metadata and the optional guide stay outside the bundle.
 
-`authorGithub` is the author's GitHub login, stored WITHOUT a leading `@`. The
-importer resolves it purely from your submission — never from whoever merges the
-PR — so attribution is stable no matter who lands the skill:
+## Submit a Scout Automation
 
-1. an explicit `authorGithub` in `metadata.json` wins; otherwise
-2. it is derived from `authorUrl` when that points to a GitHub profile
-   (`https://github.com/<login>`); otherwise
-3. it is left unset.
+Copy [`_template-automation/`](./_template-automation) to start. A Scout
+automation is one importable `.json` export beside the metadata sidecar:
 
-It exists so the repo's *skillbot* can @-mention the author on the first comment
-of the skill's discussion, so they hear about early feedback. **Most contributors
-don't need to set it** — just make `authorUrl` your GitHub profile. Set it
-explicitly only when your only link isn't a GitHub profile (e.g. LinkedIn), or
-leave it blank to opt out of the mention.
-
-## Cowork plugins (no longer accepted)
-
-Earlier, the gallery also accepted **Cowork plugins** — Microsoft 365 app
-packages (a `.zip` with a root `manifest.json`) that bundle one or more skills
-(plus optional MCP connectors) and run **only** in Copilot Cowork. Because the
-gallery no longer accepts `.zip` payloads, **new plugin submissions are no longer
-accepted**. Existing plugin submissions (e.g. [`legal-toolkit/`](./legal-toolkit))
-stay published.
-
-## Scout automations (advanced)
-
-The gallery also hosts **Scout automations** — a scheduled/triggered `.json`
-(a schedule plus an ordered list of prompt steps) that runs **only** in Scout.
-
-An automation submission is a `submissions/<slug>/` folder with a `metadata.json`
-sidecar plus a **single `.json` automation export**. It's auto-detected as an
-automation because the one non-sidecar top-level file is a `.json` (not a
-`SKILL.md`):
-
-```
-submissions/<slug>/
-├── metadata.json          # catalog sidecar (name/description/tags optional —
-│                          #  they fall back to the automation's own fields)
-└── <name>.json            # the Scout automation export
-    ├── name               # non-empty string
-    ├── schedule           # required: single | interval | multi | monthly | cron
-    ├── steps[]            # { label, prompt } — the ordered prompt steps
-    └── …                  # optional: description, triggerType, model, etc.
+```text
+submissions/follow-up-reminder/
+├── metadata.json
+└── follow-up-reminder.json
 ```
 
-The importer forces `platforms: ["Scout"]` and `type: "automation"`, publishes
-the `.json` **verbatim** as the download, and synthesizes the detail page
-(overview, the trigger/schedule, each step's prompt, and import steps).
-Automations show an **Automation** badge on their card and are filterable on the
-homepage. The exact `.json` you submit is what's offered for download and
-re-imported into Scout — so strip any personal paths or secrets first.
+The automation file requires a nonempty `name`, a valid `schedule`, and ordered
+`steps` with a `label` and `prompt`. The importer publishes the JSON verbatim,
+sets its type to Automation, and limits compatibility to Scout. Remove secrets,
+personal paths, and private data before submitting it.
 
-This matches Scout's own GitHub-directory import convention: when Scout imports a
-bundle from a GitHub directory, **every root-level `.json` is an automation** and
-a `skills/` subdirectory holds skills. The file you submit here is the exact file
-Scout imports.
+## Publication and Artwork
 
-Validation is a faithful port of Scout's import schema
-(`scripts/validate-automation.ts`) and will fail the PR with an itemized list if
-anything is off: `name` must be non-empty, every step needs a `label` and
-`prompt`, and `schedule` must be a valid discriminated union — including that an
-`interval`'s `intervalMinutes` divides 1440 evenly, a `monthly` selector can
-actually fire, and a `cron` expression is valid and fireable. Copy
-[`_template-automation/`](./_template-automation) to start, and see
-[`spend-more-time-with-friends-and-family/`](./spend-more-time-with-friends-and-family)
-for a complete example.
+New Prompt Template Files and generic file assets are fail-closed. Do not add
+`publicationStatus` or generated artwork fields to the initial submission. The
+importer stages the source as `blocked-pending-artwork`, which keeps it out of
+public routes, sitemaps, catalog cards, and `public/assets.json`.
 
-## Scout automation installers (no longer accepted)
-
-Some automations aren't a directly-importable `.json` but an **installer**: a
-`.zip` you download, unzip, and follow to set the automation up (an agent reads
-the instructions, collects your settings into a personal config, and calls
-`m_create_automation`). Because the gallery no longer accepts `.zip` payloads,
-**new installer submissions are no longer accepted** — submit a Scout automation
-as a single importable `.json` (above) instead. Existing installer submissions
-(e.g. [`vacation-urgent-forwarder/`](./vacation-urgent-forwarder)) stay
-published.
-
-## Updating an existing skill
-
-Same path: edit the files in your `submissions/<slug>/` folder and open a PR. The
-slug is the identity — same slug updates the existing skill, a new slug creates a
-new one.
-
-The handful of **grandfathered legacy `.zip` submissions** (e.g.
-`vacation-urgent-forwarder/`) are the one exception: update them by replacing
-their existing `.zip` payload in the same folder. New submissions can't be zips,
-but these pre-existing ones are still maintained that way.
-
-## Try it locally before opening a PR
+After an approved 1600×1000 WebP cover exists, a maintainer runs:
 
 ```bash
-npm run check:submissions    # validate metadata only, write nothing
-npm run import:submissions   # generate the skill page(s) + bundle(s)
-npm run build                # confirm the site builds
+npm run artwork:prepare -- --slug <slug> --source <image.webp> --alt "<alt text>" --prompt-file <prompt.txt>
+```
+
+That command writes the complete artwork provenance and changes publication to
+`published` as one operation. Do not hand-author a partial artwork record or set
+`publicationStatus` to `published` first.
+
+## Generated Outputs
+
+Depending on the asset type, the importer maintains:
+
+- `src/content/skills/<slug>.md`
+- `src/content/prompts/<slug>.md`
+- `src/content/artifacts/<slug>.md`
+- `src/content/artifact-payloads/<slug>.json`
+- `src/content/guides/<slug>.md`
+- `public/bundles/`
+- `public/assets.json`
+
+CI may commit these generated files back to a same-repository pull request.
+Fork pull requests receive validation only.
+
+## Update an Existing Asset
+
+Edit the existing `submissions/<slug>/` folder and open a pull request. Do not
+rename the folder unless you intend to create a different asset. Grandfathered
+legacy `.zip` submissions are the only exception to the unpacked-source rule;
+maintainers may replace the existing package at the same path.
+
+## Validate Locally
+
+```bash
+npm install
+npm run check:submissions     # validate authored submissions without writing
+npm run import:submissions    # regenerate content, downloads, and assets.json
+npm run check:generated-content
+npm test
+npm run build
 ```

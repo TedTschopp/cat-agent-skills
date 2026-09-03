@@ -1,0 +1,183 @@
+{
+  "kind": "prompt-template",
+  "slug": "midjourney-v6-1-prompt-template",
+  "name": "Midjourney V6.1 Prompt Generator Template",
+  "description": "A structured, weight-based system to generate high-quality prompts for Midjourney V6.1 image creation. Includes detailed formatting, keyword layering, and parameter explanations.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Image Generation",
+    "Artificial Intelligence",
+    "Content Creation"
+  ],
+  "tags": [
+    "Image Generation",
+    "Artificial Intelligence",
+    "Content Creation"
+  ],
+  "keywords": [
+    "documentation",
+    "image generation",
+    "Midjourney",
+    "prompt engineering",
+    "visual generation"
+  ],
+  "models": [
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4.5",
+    "microsoft-copilot",
+    "o4-mini",
+    "o4-mini-high"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "midjourney-v6-1-prompt-template.prompt.md",
+  "payloadPaths": [
+    "midjourney-v6-1-prompt-template.prompt.md"
+  ],
+  "downloadPath": "bundles/midjourney-v6-1-prompt-template.prompt.md",
+  "createdAt": "2025-05-02",
+  "updatedAt": null,
+  "subtitle": null,
+  "summaryBullets": [
+    "Structured weight-based prompt system for Midjourney V6.1",
+    "Detailed formatting and keyword layering",
+    "Comprehensive parameter explanations"
+  ],
+  "seoDescription": null,
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-05-02-Midjounrey-Prompt.6.1.md",
+    "sourceUrl": "https://tedt.org/prompts/midjourney-v6.1-prompt-template/",
+    "sourceFileSha256": "sha256:dedab99a473329adc61df9f1b6384fe8de097bdc342bf7540372192cb5e09d08",
+    "sourcePromptSha256": "sha256:27323885af458bca2c949fa2bd15ceb021f56479e8a199ecb7864a79bf7689b0",
+    "importedPromptSha256": "sha256:27323885af458bca2c949fa2bd15ceb021f56479e8a199ecb7864a79bf7689b0",
+    "sourceGuideSha256": "sha256:4642006f7ede8f81a2aaaaa9a71b6c9a2c83aabdbf33c628f3a6f288c443bdf5",
+    "importedGuideSha256": "sha256:4642006f7ede8f81a2aaaaa9a71b6c9a2c83aabdbf33c628f3a6f288c443bdf5",
+    "rawFrontmatterSha256": "sha256:7c277160f1ae3ac0f425b6de5d60b1a0e99e395d47fe6c7fb624a6d53b4100e0",
+    "sourceTitle": "Midjourney V6.1 Prompt Generator Template",
+    "sourceDescription": "A structured, weight-based system to generate high-quality prompts for Midjourney V6.1 image creation. Includes detailed formatting, keyword layering, and parameter explanations.",
+    "sourceSeoDescription": null,
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-mini",
+      "gpt-4.5",
+      3,
+      "04-mini",
+      "04-mini-high",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [
+      3
+    ],
+    "legacyPaths": [
+      "/prompts/midjourney-v6.1-prompt-template/"
+    ],
+    "legacyCategories": [
+      "Prompts"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/Image-Prompt-Engineering.png",
+      "sourceUrl": "https://tedt.org/img/prompts/Image-Prompt-Engineering.png",
+      "exists": true,
+      "sha256": "sha256:29b7160cb17716755f86c179e0940e129c6febafbad08a2436c126c1aa9fc1cc",
+      "metadata": {
+        "image": "/img/prompts/Image-Prompt-Engineering.png",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "Woman with magenta hair working on a glowing digital map in a futuristic sci-fi lab surrounded by monitors, tools, and cybernetic equipment",
+        "image-credits-artist": "Ted Tschopp",
+        "image-credits-artist-URL": "https://tedt.org/",
+        "image-description": "In a high-tech workspace bathed in blue hues and electric shadows, a woman with vibrant magenta hair intently works at a glowing, map-like interface surrounded by a ring of dynamic data screens and sci-fi engineering tools. Her posture conveys focus and determination as she drafts or analyzes complex information on the illuminated surface. The environment is both cluttered and purposeful, a visual symphony of wires, mechanical limbs, and interactive holograms, embodying the convergence of creativity, technology, and exploration. The scene blends cyberpunk aesthetics with narrative-driven futurism, evoking themes of prompt engineering, space navigation, and digital craftsmanship.",
+        "image-title": "Image Prompt Architect at the Edge of the Future"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Structured weight-based prompt system for Midjourney V6.1",
+        "Detailed formatting and keyword layering",
+        "Comprehensive parameter explanations"
+      ],
+      "categories": [
+        "Prompts"
+      ],
+      "date": "2025-05-02",
+      "description": "A structured, weight-based system to generate high-quality prompts for Midjourney V6.1 image creation. Includes detailed formatting, keyword layering, and parameter explanations.",
+      "image": "/img/prompts/Image-Prompt-Engineering.png",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "Woman with magenta hair working on a glowing digital map in a futuristic sci-fi lab surrounded by monitors, tools, and cybernetic equipment",
+      "image-credits-artist": "Ted Tschopp",
+      "image-credits-artist-URL": "https://tedt.org/",
+      "image-description": "In a high-tech workspace bathed in blue hues and electric shadows, a woman with vibrant magenta hair intently works at a glowing, map-like interface surrounded by a ring of dynamic data screens and sci-fi engineering tools. Her posture conveys focus and determination as she drafts or analyzes complex information on the illuminated surface. The environment is both cluttered and purposeful, a visual symphony of wires, mechanical limbs, and interactive holograms, embodying the convergence of creativity, technology, and exploration. The scene blends cyberpunk aesthetics with narrative-driven futurism, evoking themes of prompt engineering, space navigation, and digital craftsmanship.",
+      "image-title": "Image Prompt Architect at the Edge of the Future",
+      "keywords": [
+        "documentation",
+        "image generation",
+        "Midjourney",
+        "prompt engineering",
+        "visual generation"
+      ],
+      "layout": "prompt-details",
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-mini",
+        "gpt-4.5",
+        3,
+        "04-mini",
+        "04-mini-high",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/midjourney-v6.1-prompt-template/",
+      "tags": [
+        "Image Generation",
+        "Artificial Intelligence",
+        "Content Creation"
+      ],
+      "title": "Midjourney V6.1 Prompt Generator Template"
+    },
+    "appliedRepairs": [
+      "normalize-model-04-mini-high-to-o4-mini-high",
+      "normalize-model-04-mini-to-o4-mini",
+      "normalize-model-github-to-github-copilot",
+      "normalize-slug-midjourney-v6.1-prompt-template-to-midjourney-v6-1-prompt-template"
+    ]
+  },
+  "coverImage": "skill-art/midjourney-v6-1-prompt-template.webp",
+  "coverImageAlt": "Overlapping navy and cyan lenses aligning layered mountain fragments into a single lake landscape.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: a stack of weighted optical layers combines subject, medium, lighting, composition, and atmosphere into one precise surreal image tableau\nScene/backdrop: warm paper optical workbench with a calm slate-to-navy background\nSubject: one sculptural sequence of overlapping cyan and navy glass lenses of varied thickness, aligning disparate tactile fragments into a single dreamlike landscape panel; one orange counterweight fine-tunes the stack\nStyle/medium: premium tactile editorial illustration with optical glass, paper diorama, and dimensional studio detail\nComposition/framing: exact 16:10 landscape; oblique view through the layered lens stack toward one coherent scene; crop-safe focal subject; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: experimental, exacting, imaginative, restrained luminous depth\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nMaterials/textures: beveled glass, folded paper terrain, matte enamel rings, subtle vellum haze\nConstraints: all panels and controls unmarked; no interface or parameter notation; original composition; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, paw logos, cats, cat silhouettes, or Microsoft Fluent styling\nAvoid: provider branding, command lines, camera bodies, generic image grids, glowing brains, neon rainbow gradients, clutter",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:738ace2adc057ac2dfd8d0259d59f18c134dd158691cdeca5c6697f52a175d9a",
+  "coverImageSourceHashVersion": 2
+}

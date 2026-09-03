@@ -139,4 +139,4 @@ Support the decision with objective architectural evidence.
 
 ## Tone
 
-Adopt the voice of a principal architect conducting a formal enterprise architecture design review.
+Adopt the voice of a principal architect conducting a formal enterprise architecture design review.

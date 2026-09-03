@@ -1,0 +1,199 @@
+{
+  "kind": "prompt-template",
+  "slug": "expert-novelist",
+  "name": "Communications Expert Novelist",
+  "description": "Professional communications expert novelist prompt designed for high-quality content generation and structured analysis.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Writing",
+    "Content Creation",
+    "Communications"
+  ],
+  "tags": [
+    "Writing",
+    "Content Creation",
+    "Communications"
+  ],
+  "keywords": [
+    "content creation",
+    "creative writing",
+    "narrative development",
+    "prompt engineering",
+    "storytelling"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "expert-novelist.prompt.md",
+  "payloadPaths": [
+    "expert-novelist.prompt.md"
+  ],
+  "downloadPath": "bundles/expert-novelist.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": null,
+  "subtitle": "Professional Content Creation Assistant",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master communications expert novelist with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-expert-novelist.md",
+    "sourceUrl": "https://tedt.org/prompts/expert-novelist/",
+    "sourceFileSha256": "sha256:3eb3c3a6b9d228ef8616456595ddd6bbdde3dbdc1674ba27f46f2410f7ead500",
+    "sourcePromptSha256": "sha256:51aa974f6bd29c4ae3df93d18d6a4eacfc31506857bb79b8b451dfe7250e1ed1",
+    "importedPromptSha256": "sha256:51aa974f6bd29c4ae3df93d18d6a4eacfc31506857bb79b8b451dfe7250e1ed1",
+    "sourceGuideSha256": "sha256:af068ac53480445e62181b01151203129c2121d8c32a0ad05818829b73a3f499",
+    "importedGuideSha256": "sha256:af068ac53480445e62181b01151203129c2121d8c32a0ad05818829b73a3f499",
+    "rawFrontmatterSha256": "sha256:cbe8ffd64467df101969ea662bcd879abd53f32f413cc4c8021b7045e9d6eb0e",
+    "sourceTitle": "Communications expert novelist",
+    "sourceDescription": "Professional communications expert novelist prompt designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master communications expert novelist with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/expert-novelist/"
+    ],
+    "legacyCategories": [
+      "Prompts - Communications"
+    ],
+    "visibleInAlphaIndex": false,
+    "legacyImage": {
+      "sourcePath": null,
+      "sourceUrl": null,
+      "exists": false,
+      "sha256": null,
+      "metadata": {
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-credits": "Ted Tschopp",
+        "image-credits-artist": "Ted Tschopp",
+        "image-credits-artist-URL": "https://tedt.org/",
+        "image-credits-URL": "https://tedt.org/"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts - Communications"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "Professional communications expert novelist prompt designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for communications expert novelist with advanced AI capabilities and structured output formatting.",
+      "image": null,
+      "image_height": null,
+      "image_width": null,
+      "image-alt": "",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-credits": "Ted Tschopp",
+      "image-credits-artist": "Ted Tschopp",
+      "image-credits-artist-URL": "https://tedt.org/",
+      "image-credits-title": "",
+      "image-credits-URL": "https://tedt.org/",
+      "image-description": "",
+      "image-title": "",
+      "keywords": [
+        "content creation",
+        "creative writing",
+        "narrative development",
+        "prompt engineering",
+        "storytelling"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master communications expert novelist with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "Professional Content Creation Assistant",
+      "tags": [
+        "Writing",
+        "Content Creation",
+        "Communications"
+      ],
+      "title": "Communications expert novelist",
+      "update": null
+    },
+    "appliedRepairs": [
+      "include-hidden-alpha-prompt",
+      "normalize-model-github-to-github-copilot",
+      "repair-title-expert-novelist"
+    ]
+  },
+  "coverImage": "skill-art/expert-novelist.webp",
+  "coverImageAlt": "Wooden loom weaving navy, cyan, and orange threads into the blank pages of an open book.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: a story loom weaves separate strands of character, setting, conflict, and emotion into the dimensional pages of one blank open book\nScene/backdrop: intimate warm-paper atelier with a calm deep navy wall and generous negative space\nSubject: one compact tabletop loom feeding colored fibers into layered blank book pages, with a single orange narrative strand crossing navy and cyan threads\nStyle/medium: premium tactile editorial illustration with woven fiber, hand-bound paper, carved wood, and dimensional craft detail\nComposition/framing: exact 16:10 landscape; close three-quarter view; loom and book form one unified dominant silhouette; crop-safe focal subject; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: imaginative, deliberate, intimate, softly backlit\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nMaterials/textures: linen thread, deckled blank paper, dark stained wood, subtle cloth weave\nConstraints: book pages and every surface completely blank and unmarked; original composition; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, paw logos, cats, cat silhouettes, or Microsoft Fluent styling\nAvoid: quill pens, typewriters, floating letters, generic author portraits, glowing books, screens, decorative clutter",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:67602ea2fa0857ca9b79716d6856570fa9b39d6c7b28649d82f49b662aa98e93",
+  "coverImageSourceHashVersion": 2
+}

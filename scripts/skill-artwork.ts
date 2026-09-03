@@ -28,6 +28,11 @@ import { basename, join, relative, resolve, sep } from "node:path";
 import { pathToFileURL } from "node:url";
 import { JSON_SCHEMA, dump as dumpYaml, load as loadYaml } from "js-yaml";
 import sharp from "sharp";
+import {
+  genericFileAssetSchema,
+  normalizeGenericFileAssetInput,
+  promptSchema,
+} from "../src/lib/library-asset-schema.ts";
 
 export const ARTWORK = Object.freeze({
   aspectRatio: "16:10",
@@ -50,12 +55,26 @@ export const ARTWORK_FIELDS = [
   "coverImageSourceHash",
 ] as const;
 
+export const ARTWORK_SOURCE_HASH_VERSION = 2 as const;
+const ARTWORK_SOURCE_HASH_VERSION_FIELD = "coverImageSourceHashVersion";
+const DERIVED_PUBLICATION_FIELD = "publicationStatus";
+
 const SAFE_SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const METADATA_NAMES = ["metadata.json", "metadata.yaml", "metadata.yml"];
 const DEFAULT_GENERATOR = "OpenAI image generation via Codex";
 const ARTWORK_TIME_ZONE = "America/Los_Angeles";
 
 type Metadata = Record<string, unknown>;
+export type ArtworkAssetKind =
+  | "skill"
+  | "plugin"
+  | "automation"
+  | "agent-instruction"
+  | "scoped-agent-instruction"
+  | "agent-definition"
+  | "prompt-template"
+  | "work-specification";
+type ArtworkSourceHashVersion = 1 | typeof ARTWORK_SOURCE_HASH_VERSION;
 type Enrollment = {
   schemaVersion: number;
   baselineCommit: string;
@@ -65,11 +84,31 @@ type Dimensions = { width: number; height: number };
 type Candidate = {
   slug: string;
   name: string;
+  kind: ArtworkAssetKind;
   metadataPath: string;
   status: "pending" | "complete" | "blocked" | "stale";
   reason?: string;
   sourceHash: string;
+  sourceHashVersion: ArtworkSourceHashVersion;
 };
+
+const ARTWORK_ASSET_KINDS = new Set<ArtworkAssetKind>([
+  "skill",
+  "plugin",
+  "automation",
+  "agent-instruction",
+  "scoped-agent-instruction",
+  "agent-definition",
+  "prompt-template",
+  "work-specification",
+]);
+const PUBLICATION_GATED_KINDS = new Set<ArtworkAssetKind>([
+  "prompt-template",
+  "agent-instruction",
+  "scoped-agent-instruction",
+  "agent-definition",
+  "work-specification",
+]);
 
 function assertRepoRoot(root: string): void {
   const packagePath = join(root, "package.json");
@@ -184,6 +223,88 @@ function readMetadata(path: string): Metadata {
   return parseMetadataText(path, readFileSync(path, "utf8"));
 }
 
+export function artworkAssetKind(metadata: Metadata): ArtworkAssetKind {
+  const value = metadata.kind ?? "skill";
+  if (typeof value !== "string" || !ARTWORK_ASSET_KINDS.has(value as ArtworkAssetKind)) {
+    throw new Error(`unsupported artwork asset kind: ${String(value)}`);
+  }
+  return value as ArtworkAssetKind;
+}
+
+function assertRegularFile(path: string, label: string): void {
+  if (!existsSync(path) || !lstatSync(path).isFile()) {
+    throw new Error(`${label} is required and must be a regular file`);
+  }
+}
+
+function assertSafePayloadPath(path: string, kind: ArtworkAssetKind): void {
+  if (
+    path.startsWith("/") ||
+    path.includes("\\") ||
+    path.split("/").some((segment) => !segment || segment === "." || segment === "..")
+  ) {
+    throw new Error(`${kind} payload path is unsafe: ${path}`);
+  }
+}
+
+function assertAssetSourceContract(
+  root: string,
+  slug: string,
+  metadata: Metadata,
+  kind: ArtworkAssetKind,
+): void {
+  if (!PUBLICATION_GATED_KINDS.has(kind)) return;
+  const submission = join(root, "submissions", slug);
+  const entrypoint = metadata.entrypoint;
+  const payloadPaths = metadata.payloadPaths;
+  if (typeof entrypoint !== "string" || !entrypoint) throw new Error(`${kind} entrypoint is required`);
+  if (
+    !Array.isArray(payloadPaths) ||
+    payloadPaths.length === 0 ||
+    payloadPaths.some((path) => typeof path !== "string") ||
+    !payloadPaths.includes(entrypoint)
+  ) {
+    throw new Error(`${kind} payloadPaths must contain its entrypoint`);
+  }
+  for (const path of payloadPaths as string[]) {
+    assertSafePayloadPath(path, kind);
+    assertRegularFile(join(submission, path), `submissions/${slug}/${path}`);
+  }
+  if (kind === "prompt-template") {
+    const expected = `${slug}.prompt.md`;
+    if (entrypoint !== expected || payloadPaths.length !== 1 || payloadPaths[0] !== expected) {
+      throw new Error(`prompt-template payloadPaths must contain only ${expected}`);
+    }
+    assertRegularFile(join(submission, "README.md"), `submissions/${slug}/README.md`);
+  }
+}
+
+function assertPublicationGatedMetadata(
+  metadata: Metadata,
+  kind: ArtworkAssetKind,
+  slug: string,
+): void {
+  if (
+    kind !== "prompt-template" &&
+    PUBLICATION_GATED_KINDS.has(kind) &&
+    metadata.slug !== undefined &&
+    metadata.slug !== slug
+  ) {
+    throw new Error(`${kind} slug: must equal ${slug} when provided`);
+  }
+  const result =
+    kind === "prompt-template"
+      ? promptSchema.safeParse(metadata)
+      : PUBLICATION_GATED_KINDS.has(kind)
+        ? genericFileAssetSchema.safeParse(normalizeGenericFileAssetInput(metadata, slug))
+        : null;
+  if (result && !result.success) {
+    const issue = result.error.issues[0];
+    const path = issue.path.length ? issue.path.join(".") : "metadata";
+    throw new Error(`${kind} ${path}: ${issue.message}`);
+  }
+}
+
 function walkFiles(directory: string): string[] {
   const files: string[] = [];
   const visit = (current: string) => {
@@ -221,6 +342,68 @@ export function skillSourceHash(root: string, slug: string, metadata?: Metadata)
     records.push({ kind: "content", data: readFileSync(file) });
   }
   return framedSourceDigest(records);
+}
+
+/**
+ * Hash a normalized library-asset source using the v2, kind-aware contract.
+ *
+ * Artwork metadata and publicationStatus are derived by the artwork workflow,
+ * so neither can make its own source hash stale. All descriptive source files,
+ * including a prompt's README guide and exact .prompt.md payload, remain bound.
+ */
+export function assetSourceHash(root: string, slug: string, metadata?: Metadata): string {
+  if (!SAFE_SLUG.test(slug)) throw new Error(`invalid asset slug: ${slug}`);
+  const submission = join(root, "submissions", slug);
+  if (!existsSync(submission) || !lstatSync(submission).isDirectory()) {
+    throw new Error(`submission directory not found: ${slug}`);
+  }
+  const meta = { ...(metadata ?? readMetadata(findMetadata(root, slug))) };
+  const kind = artworkAssetKind(meta);
+  assertAssetSourceContract(root, slug, meta, kind);
+  for (const field of ARTWORK_FIELDS) delete meta[field];
+  delete meta[ARTWORK_SOURCE_HASH_VERSION_FIELD];
+  delete meta[DERIVED_PUBLICATION_FIELD];
+
+  const records: HashRecord[] = [
+    { kind: "domain", data: "ai-tedt-org:library-asset-source:v2" },
+    { kind: "asset-kind", data: kind },
+    { kind: "metadata", data: stableJson(meta) },
+  ];
+  for (const file of walkFiles(submission)) {
+    if (METADATA_NAMES.includes(basename(file))) continue;
+    records.push({
+      kind: "path",
+      data: relative(submission, file).split(sep).join("/"),
+    });
+    records.push({ kind: "content", data: readFileSync(file) });
+  }
+  return framedSourceDigest(records);
+}
+
+export function artworkSourceHashVersion(
+  metadata: Metadata,
+  hasArtwork = presentArtworkFields(metadata).length > 0,
+): ArtworkSourceHashVersion {
+  const configured = metadata[ARTWORK_SOURCE_HASH_VERSION_FIELD];
+  if (configured !== undefined && configured !== ARTWORK_SOURCE_HASH_VERSION) {
+    throw new Error(`unsupported coverImageSourceHashVersion: ${String(configured)}`);
+  }
+  if (configured === ARTWORK_SOURCE_HASH_VERSION) return ARTWORK_SOURCE_HASH_VERSION;
+  if (artworkAssetKind(metadata) === "prompt-template" || !hasArtwork) {
+    return ARTWORK_SOURCE_HASH_VERSION;
+  }
+  return 1;
+}
+
+export function artworkSourceHash(
+  root: string,
+  slug: string,
+  metadata?: Metadata,
+): string {
+  const value = metadata ?? readMetadata(findMetadata(root, slug));
+  return artworkSourceHashVersion(value) === 1
+    ? skillSourceHash(root, slug, value)
+    : assetSourceHash(root, slug, value);
 }
 
 function littleEndian24(data: Buffer, offset: number): number {
@@ -281,6 +464,13 @@ function presentArtworkFields(metadata: Metadata): string[] {
   return ARTWORK_FIELDS.filter((field) => metadata[field] !== undefined);
 }
 
+/** Accept an explicit no/without clause whose comma-separated scope includes paws. */
+export function excludesPawImagery(prompt: string): boolean {
+  return /(?:\bno\b|\bwithout\b)[^\n.;]{0,256}\bpaw(?:\s+(?:imagery|logo))?\b/i.test(
+    prompt,
+  );
+}
+
 /** Validate one complete gallery-art record and its external image. */
 export function validateArtwork(
   root: string,
@@ -289,11 +479,38 @@ export function validateArtwork(
 ): string[] {
   const problems: string[] = [];
   const present = presentArtworkFields(metadata);
-  if (present.length === 0) return problems;
+  let kind: ArtworkAssetKind;
+  try {
+    kind = artworkAssetKind(metadata);
+  } catch (error) {
+    return [(error as Error).message];
+  }
+  const configuredVersion = metadata[ARTWORK_SOURCE_HASH_VERSION_FIELD];
+  if (
+    configuredVersion !== undefined &&
+    configuredVersion !== ARTWORK_SOURCE_HASH_VERSION
+  ) {
+    problems.push(`coverImageSourceHashVersion must be ${ARTWORK_SOURCE_HASH_VERSION}`);
+  }
+  if (present.length === 0 && configuredVersion === undefined) {
+    if (PUBLICATION_GATED_KINDS.has(kind) && metadata.publicationStatus === "published") {
+      problems.push(`published ${kind} artwork record is missing`);
+    }
+    return problems;
+  }
   for (const field of ARTWORK_FIELDS) {
     if (metadata[field] === undefined) problems.push(`${field} is missing`);
   }
-  if (present.length !== ARTWORK_FIELDS.length) return problems;
+  const requiresVersion = kind === "prompt-template" || configuredVersion !== undefined;
+  if (requiresVersion && configuredVersion !== ARTWORK_SOURCE_HASH_VERSION) {
+    problems.push(`coverImageSourceHashVersion must be ${ARTWORK_SOURCE_HASH_VERSION}`);
+  }
+  if (
+    present.length !== ARTWORK_FIELDS.length ||
+    problems.some((problem) => problem.startsWith("coverImageSourceHashVersion"))
+  ) {
+    return [...new Set(problems)];
+  }
 
   const expectedPath = `${ARTWORK.directory}/${slug}.${ARTWORK.format}`;
   if (metadata.coverImage !== expectedPath) {
@@ -314,14 +531,17 @@ export function validateArtwork(
     if (!metadata.coverImagePrompt.includes(ARTWORK.aspectRatio)) {
       problems.push(`coverImagePrompt must name the ${ARTWORK.aspectRatio} aspect ratio`);
     }
-    if (!/no paw|without paw/i.test(metadata.coverImagePrompt)) {
+    if (!excludesPawImagery(metadata.coverImagePrompt)) {
       problems.push("coverImagePrompt must explicitly exclude paw imagery");
     }
   }
   if (typeof metadata.coverImageAlt !== "string" || metadata.coverImageAlt.trim().length < 12) {
     problems.push("coverImageAlt must be meaningful alt text");
   }
-  if (metadata.coverImageSourceHash !== skillSourceHash(root, slug, metadata)) {
+  const expectedSourceHash = configuredVersion === ARTWORK_SOURCE_HASH_VERSION
+    ? assetSourceHash(root, slug, metadata)
+    : skillSourceHash(root, slug, metadata);
+  if (metadata.coverImageSourceHash !== expectedSourceHash) {
     problems.push("coverImageSourceHash does not match the current submission source");
   }
 
@@ -348,19 +568,37 @@ export function validateArtwork(
   return problems;
 }
 
-/** Extract newly added skill slugs from committed submission or catalog paths. */
-export function slugsFromAddedSkillPaths(paths: string[]): string[] {
+/** Extract newly added asset slugs from committed submission or catalog paths. */
+export function slugsFromAddedAssetPaths(paths: string[]): string[] {
   const slugs = new Set<string>();
   for (const path of paths) {
     let match = /^submissions\/([^/]+)\/(?:metadata\.json|metadata\.ya?ml)$/.exec(path);
     if (!match) match = /^src\/content\/skills\/([^/]+)\.md$/.exec(path);
+    if (!match) {
+      const promptSubmission = /^submissions\/([^/]+)\/([^/]+)\.prompt\.md$/.exec(path);
+      if (promptSubmission?.[1] === promptSubmission?.[2]) match = promptSubmission;
+    }
+    if (!match) {
+      const promptCatalog = /^src\/content\/prompts\/([^/]+)\.md$/.exec(path);
+      if (promptCatalog) {
+        const catalogSlug = promptCatalog[1].replace(/\.prompt$/, "");
+        if (SAFE_SLUG.test(catalogSlug)) slugs.add(catalogSlug);
+        continue;
+      }
+    }
+    if (!match) match = /^src\/content\/artifacts\/([^/]+)\.md$/.exec(path);
     const slug = match?.[1];
     if (slug && SAFE_SLUG.test(slug)) slugs.add(slug);
   }
   return [...slugs].sort();
 }
 
-function addedSkillSlugs(root: string, baseline: string): string[] {
+/** Backward-compatible name retained for existing callers. */
+export function slugsFromAddedSkillPaths(paths: string[]): string[] {
+  return slugsFromAddedAssetPaths(paths);
+}
+
+function addedAssetSlugs(root: string, baseline: string): string[] {
   execFileSync("git", ["merge-base", "--is-ancestor", baseline, "HEAD"], { cwd: root });
   const output = execFileSync(
     "git",
@@ -372,72 +610,110 @@ function addedSkillSlugs(root: string, baseline: string): string[] {
       "--",
       "submissions",
       "src/content/skills",
+      "src/content/prompts",
+      "src/content/artifacts",
     ],
     { cwd: root, encoding: "utf8" },
   );
-  return slugsFromAddedSkillPaths(output.split("\n").filter(Boolean));
+  return slugsFromAddedAssetPaths(output.split("\n").filter(Boolean));
 }
 
-/** Discover enrolled current/future skills and classify their artwork state. */
+function onDiskNonLegacyAssetSlugs(root: string): string[] {
+  const submissions = join(root, "submissions");
+  if (!existsSync(submissions)) return [];
+  const slugs = new Set<string>();
+  for (const entry of readdirSync(submissions, { withFileTypes: true })) {
+    if (!entry.isDirectory() || !SAFE_SLUG.test(entry.name)) continue;
+    try {
+      const metadata = readMetadata(findMetadata(root, entry.name));
+      if (metadata.kind !== undefined && metadata.kind !== "skill") slugs.add(entry.name);
+    } catch {
+      // A malformed, otherwise-unenrolled submission is handled by the import validators.
+    }
+  }
+  return [...slugs].sort();
+}
+
+/** Discover enrolled current/future library assets and classify their artwork state. */
 export function discoverCandidates(root: string): Candidate[] {
   const enrollment = readEnrollment(root);
   const slugs = new Set([
     ...enrollment.initialSlugs,
-    ...addedSkillSlugs(root, enrollment.baselineCommit),
+    ...addedAssetSlugs(root, enrollment.baselineCommit),
+    ...onDiskNonLegacyAssetSlugs(root),
   ]);
   const candidates: Candidate[] = [];
   for (const slug of [...slugs].sort()) {
+    let kind: ArtworkAssetKind = "skill";
+    let sourceHashVersion: ArtworkSourceHashVersion = ARTWORK_SOURCE_HASH_VERSION;
     try {
       const metadataPath = findMetadata(root, slug);
       const metadata = readMetadata(metadataPath);
-      const sourceHash = skillSourceHash(root, slug, metadata);
+      kind = artworkAssetKind(metadata);
+      assertPublicationGatedMetadata(metadata, kind, slug);
       const present = presentArtworkFields(metadata);
-      if (present.length === 0) {
+      sourceHashVersion = artworkSourceHashVersion(metadata, present.length > 0);
+      const sourceHash = sourceHashVersion === 1
+        ? skillSourceHash(root, slug, metadata)
+        : assetSourceHash(root, slug, metadata);
+      const problems = validateArtwork(root, slug, metadata);
+      const hasArtworkState =
+        present.length > 0 || metadata[ARTWORK_SOURCE_HASH_VERSION_FIELD] !== undefined;
+      if (!hasArtworkState && problems.length === 0) {
         candidates.push({
           slug,
           name: String(metadata.name ?? slug),
+          kind,
           metadataPath: relative(root, metadataPath),
           status: "pending",
           sourceHash,
+          sourceHashVersion,
         });
         continue;
       }
-      const problems = validateArtwork(root, slug, metadata);
       if (problems.length === 0) {
         candidates.push({
           slug,
           name: String(metadata.name ?? slug),
+          kind,
           metadataPath: relative(root, metadataPath),
           status: "complete",
           sourceHash,
+          sourceHashVersion,
         });
       } else if (problems.length === 1 && problems[0].includes("SourceHash")) {
         candidates.push({
           slug,
           name: String(metadata.name ?? slug),
+          kind,
           metadataPath: relative(root, metadataPath),
           status: "stale",
           reason: problems[0],
           sourceHash,
+          sourceHashVersion,
         });
       } else {
         candidates.push({
           slug,
           name: String(metadata.name ?? slug),
+          kind,
           metadataPath: relative(root, metadataPath),
           status: "blocked",
           reason: problems.join("; "),
           sourceHash,
+          sourceHashVersion,
         });
       }
     } catch (error) {
       candidates.push({
         slug,
         name: slug,
+        kind,
         metadataPath: `submissions/${slug}`,
         status: "blocked",
         reason: (error as Error).message,
         sourceHash: "",
+        sourceHashVersion,
       });
     }
   }
@@ -463,14 +739,15 @@ function requiredOption(options: Map<string, string>, name: string): string {
   return value;
 }
 
-async function prepare(root: string, args: string[]): Promise<void> {
+export async function prepareArtwork(root: string, args: string[]): Promise<void> {
   const options = parseArgs(args);
   const slug = requiredOption(options, "slug");
   const source = resolve(requiredOption(options, "source"));
   const promptFile = resolve(requiredOption(options, "prompt-file"));
   const alt = requiredOption(options, "alt").trim();
   const generator = options.get("generator")?.trim() || DEFAULT_GENERATOR;
-  if (!SAFE_SLUG.test(slug)) throw new Error(`invalid skill slug: ${slug}`);
+  const refreshStale = options.get("refresh-stale") === "true";
+  if (!SAFE_SLUG.test(slug)) throw new Error(`invalid asset slug: ${slug}`);
   if (!existsSync(source) || !statSync(source).isFile()) {
     throw new Error(`source image not found: ${source}`);
   }
@@ -481,7 +758,7 @@ async function prepare(root: string, args: string[]): Promise<void> {
   if (prompt.length < 120 || !prompt.includes(ARTWORK.aspectRatio)) {
     throw new Error(`prompt must be at least 120 characters and name ${ARTWORK.aspectRatio}`);
   }
-  if (!/no paw|without paw/i.test(prompt)) {
+  if (!excludesPawImagery(prompt)) {
     throw new Error("prompt must explicitly exclude paw imagery");
   }
   if (alt.length < 12 || alt.length > 240) {
@@ -490,7 +767,7 @@ async function prepare(root: string, args: string[]): Promise<void> {
 
   const enrolled = discoverCandidates(root).find((candidate) => candidate.slug === slug);
   if (!enrolled) throw new Error(`${slug} is not enrolled for generated artwork`);
-  if (enrolled.status !== "pending") {
+  if (enrolled.status !== "pending" && !(refreshStale && enrolled.status === "stale")) {
     throw new Error(`${slug} is ${enrolled.status}; refusing to overwrite or repair artwork`);
   }
 
@@ -498,7 +775,9 @@ async function prepare(root: string, args: string[]): Promise<void> {
   const metadata = readMetadata(metadataPath);
   const imageRelative = `${ARTWORK.directory}/${slug}.${ARTWORK.format}`;
   const imagePath = join(root, "public", imageRelative);
-  if (existsSync(imagePath)) throw new Error(`refusing to overwrite ${imageRelative}`);
+  if (existsSync(imagePath) && !refreshStale) {
+    throw new Error(`refusing to overwrite ${imageRelative}`);
+  }
   mkdirSync(join(root, "public", ARTWORK.directory), { recursive: true });
 
   const imageTemp = join(root, "public", ARTWORK.directory, `.${slug}-${process.pid}.webp`);
@@ -517,8 +796,12 @@ async function prepare(root: string, args: string[]): Promise<void> {
       throw new Error(`normalized image exceeds ${ARTWORK.maxBytes} bytes`);
     }
 
+    const sourceHash = assetSourceHash(root, slug, metadata);
     const updated: Metadata = {
       ...metadata,
+      ...(PUBLICATION_GATED_KINDS.has(enrolled.kind)
+        ? { publicationStatus: "published" }
+        : {}),
       coverImage: imageRelative,
       coverImageAlt: alt,
       coverImagePrompt: prompt,
@@ -527,8 +810,10 @@ async function prepare(root: string, args: string[]): Promise<void> {
       coverImageHeight: ARTWORK.height,
       coverImageGenerator: generator,
       coverImageGeneratedAt: artworkDate(new Date()),
-      coverImageSourceHash: skillSourceHash(root, slug, metadata),
+      coverImageSourceHash: sourceHash,
+      coverImageSourceHashVersion: ARTWORK_SOURCE_HASH_VERSION,
     };
+    assertPublicationGatedMetadata(updated, enrolled.kind, slug);
     writeFileSync(metadataTemp, serializeMetadataText(metadataPath, updated), "utf8");
     renameSync(imageTemp, imagePath);
     renameSync(metadataTemp, metadataPath);
@@ -580,12 +865,19 @@ function validateAll(root: string): void {
   const failures: string[] = [];
   const submissions = join(root, "submissions");
   let artworkCount = 0;
+  const kinds = new Set<ArtworkAssetKind>();
   for (const entry of readdirSync(submissions, { withFileTypes: true })) {
     if (!entry.isDirectory() || entry.name.startsWith("_") || !SAFE_SLUG.test(entry.name)) continue;
     const metadataPath = findMetadata(root, entry.name);
     const metadata = readMetadata(metadataPath);
-    if (presentArtworkFields(metadata).length === 0) continue;
+    const kind = artworkAssetKind(metadata);
+    const hasArtworkState =
+      presentArtworkFields(metadata).length > 0 ||
+      metadata[ARTWORK_SOURCE_HASH_VERSION_FIELD] !== undefined ||
+      (PUBLICATION_GATED_KINDS.has(kind) && metadata.publicationStatus === "published");
+    if (!hasArtworkState) continue;
     artworkCount += 1;
+    kinds.add(kind);
     for (const problem of validateArtwork(root, entry.name, metadata)) {
       failures.push(`${entry.name}: ${problem}`);
     }
@@ -594,7 +886,8 @@ function validateAll(root: string): void {
     for (const failure of failures) console.error(`\u2717 ${failure}`);
     throw new Error(`${failures.length} generated-artwork validation problem(s)`);
   }
-  console.log(`\u2713 ${artworkCount} generated skill artwork record(s) validated`);
+  const label = kinds.size === 1 && kinds.has("skill") ? "skill artwork" : "library artwork";
+  console.log(`\u2713 ${artworkCount} generated ${label} record(s) validated`);
 }
 
 async function main(): Promise<void> {
@@ -602,7 +895,7 @@ async function main(): Promise<void> {
   assertRepoRoot(root);
   const [command, ...args] = process.argv.slice(2);
   if (command === "pending") pending(root, args);
-  else if (command === "prepare") await prepare(root, args);
+  else if (command === "prepare") await prepareArtwork(root, args);
   else if (command === "validate") validateAll(root);
   else throw new Error("usage: skill-artwork.ts <pending|prepare|validate> [options]");
 }

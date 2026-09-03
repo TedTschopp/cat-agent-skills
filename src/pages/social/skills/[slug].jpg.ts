@@ -1,37 +1,30 @@
 import type { APIRoute, GetStaticPaths } from "astro";
-import { getCollection } from "astro:content";
+import { getLibraryAssets, type LibraryAsset } from "../../../lib/library-assets";
 import { coverAccent, coverField, initials } from "../../../lib/skills";
 import { renderSocialCardJpeg } from "../../../lib/social-card";
+import { worksWithLabel } from "../../../components/asset-labels";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const skills = await getCollection("skills");
-  return skills.map((skill) => ({
-    params: { slug: skill.id },
-    props: { skill },
-  }));
+  const assets = await getLibraryAssets();
+  return assets
+    .filter((asset) => ["skill", "plugin", "automation"].includes(asset.kind))
+    .map((asset) => ({ params: { slug: asset.slug }, props: { asset } }));
 };
 
 export const GET: APIRoute = async ({ props }) => {
-  const skill = props.skill;
-  const data = skill.data;
-  const kind =
-    data.type === "plugin"
-      ? "Agent plugin"
-      : data.type === "automation"
-        ? "Agent automation"
-        : "Agent skill";
-  const accent = data.coverColor ?? coverAccent(skill.id);
+  const asset = props.asset as LibraryAsset;
+  const accent = coverAccent(asset.slug);
 
   const image = await renderSocialCardJpeg({
-    label: "AI.Tedt.org",
-    title: data.name,
-    description: data.description,
-    badges: data.platforms,
-    kind,
-    byline: `By ${data.author}`,
-    artPath: data.coverImage,
-    initials: initials(data.name),
-    coverField: coverField(skill.id, data.coverColor),
+    label: "AI Library",
+    title: asset.name,
+    description: asset.description,
+    badges: asset.worksWith.map(worksWithLabel),
+    kind: asset.kindLabel,
+    byline: `By ${asset.author.name}`,
+    artPath: asset.artwork.image ?? undefined,
+    initials: initials(asset.name),
+    coverField: coverField(asset.slug),
     accent,
   });
 

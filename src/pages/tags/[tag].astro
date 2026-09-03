@@ -1,93 +1,68 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import SkillCard from "../../components/SkillCard.astro";
-import { getCollection } from "astro:content";
+import AssetCard from "../../components/AssetCard.astro";
+import { getLibraryAssets, type LibraryAsset } from "../../lib/library-assets";
 import { withBase } from "../../lib/url";
 import { SITE_METADATA } from "../../lib/site-metadata";
+import { groupAssetsByTopic } from "../../components/topic-routing";
 
 export async function getStaticPaths() {
-  const skills = await getCollection("skills");
-  const tags = new Set<string>();
-  for (const skill of skills) for (const t of skill.data.tags) tags.add(t);
-
-  return [...tags].map((tag) => ({
-    params: { tag },
+  const assets = await getLibraryAssets();
+  return groupAssetsByTopic(assets).map((topic) => ({
+    params: { tag: topic.routeTopic },
     props: {
-      tag,
-      skills: skills
-        .filter((s) => s.data.tags.includes(tag))
-        .sort((a, b) => a.data.name.localeCompare(b.data.name)),
+      topicKey: topic.key,
+      topicLabel: topic.label,
+      routeTopic: topic.routeTopic,
+      assets: topic.assets.sort((left, right) => left.name.localeCompare(right.name)),
     },
   }));
 }
 
-const { tag, skills } = Astro.props;
-const tagUrl = new URL(`/tags/${encodeURIComponent(tag)}/`, SITE_METADATA.url).href;
-const indexableSkills = skills.filter(
-  (skill) => !skill.data.tags.includes("sample"),
-);
+const { topicKey, topicLabel, routeTopic, assets } = Astro.props as {
+  topicKey: string;
+  topicLabel: string;
+  routeTopic: string;
+  assets: LibraryAsset[];
+};
+const tagUrl = new URL(`/tags/${routeTopic}/`, SITE_METADATA.url).href;
+const indexableAssets = assets.filter((asset) => !asset.tags.includes("sample"));
 const tagSchema = {
   "@type": "ItemList",
-  "@id": `${tagUrl}#skill-list`,
-  name: `Skills tagged ${tag}`,
-  numberOfItems: indexableSkills.length,
+  "@id": `${tagUrl}#asset-list`,
+  name: `AI Library assets about ${topicLabel}`,
+  numberOfItems: indexableAssets.length,
   isPartOf: { "@id": `${tagUrl}#webpage` },
-  itemListElement: indexableSkills.map((skill, index) => ({
+  itemListElement: indexableAssets.map((asset, index) => ({
     "@type": "ListItem",
     position: index + 1,
-    name: skill.data.name,
-    url: new URL(`/skills/${skill.id}/`, SITE_METADATA.url).href,
+    name: asset.name,
+    url: new URL(asset.canonicalPath, SITE_METADATA.url).href,
   })),
 };
 ---
 
 <Layout
-  title={`#${tag} skills`}
-  description={`AI agent skills, plugins, and automations tagged "${tag}" in the AI.Tedt.org gallery.`}
+  title={`${topicLabel} Assets`}
+  description={`Reusable AI assets about ${topicLabel} in the unified AI.Tedt.org library.`}
   schemaType="CollectionPage"
   structuredData={tagSchema}
 >
   <div class="mx-auto max-w-8xl px-4 py-8 sm:px-6 sm:py-10">
-    <a
-      href={withBase("/")}
-      class="inline-flex items-center gap-1.5 text-sm text-[var(--link)] underline underline-offset-2 hover:text-[var(--link-hover)]"
-    >
-      <span aria-hidden="true">←</span> All skills
+    <a href={withBase(`/?topic=${encodeURIComponent(topicKey)}`)} class="inline-flex items-center gap-1.5 text-sm text-[var(--link)] underline underline-offset-2 hover:text-[var(--link-hover)]">
+      <span aria-hidden="true">←</span> Back to the Filtered Library
     </a>
 
     <h1 class="mt-4 text-4xl leading-tight text-[var(--text-heading)] sm:text-5xl">
-      <span class="text-accent-text">#</span>{tag}
+      <span class="text-accent-text">Topic:</span> {topicLabel}
     </h1>
-    <p class="mt-1 text-muted">
-      {skills.length}
-      {skills.length === 1 ? "skill" : "skills"} tagged “{tag}”.
+    <p class="mt-2 text-muted">
+      {assets.length} {assets.length === 1 ? "asset" : "assets"} about “{topicLabel}”.
     </p>
     <div class="accent-rule mt-5"></div>
 
-    <div
-      class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-[repeat(auto-fill,minmax(18rem,1fr))]"
-    >
-      {
-        skills.map((skill) => (
-          <SkillCard
-            slug={skill.id}
-            name={skill.data.name}
-            description={skill.data.description}
-            platforms={skill.data.platforms}
-            type={skill.data.type}
-            tags={skill.data.tags}
-            author={skill.data.author}
-            coverColor={skill.data.coverColor}
-            coverImage={skill.data.coverImage}
-            coverImageAlt={skill.data.coverImageAlt}
-            coverImageWidth={skill.data.coverImageWidth}
-            coverImageHeight={skill.data.coverImageHeight}
-            hasBundle={Boolean(skill.data.bundle)}
-            isInstaller={skill.data.type === "automation" && Boolean(skill.data.bundle?.endsWith(".zip"))}
-            featured={skill.data.featured}
-          />
-        ))
-      }
+    <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-[repeat(auto-fill,minmax(18rem,1fr))]">
+      {assets.map((asset) => <AssetCard {asset} />)}
     </div>
   </div>
 </Layout>

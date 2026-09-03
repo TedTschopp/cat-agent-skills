@@ -5,8 +5,10 @@
  * it to understand how visitors browse the gallery and, in particular, to
  * capture two important interactions:
  *
- *   - `skill_download` — a visitor downloads a skill/plugin package or `.md`.
- *   - `skill_view`     — a visitor lands on a skill detail page.
+ *   - `asset_download` — a visitor downloads any reusable library asset.
+ *   - `skill_download` — compatibility event for a skill-family download.
+ *   - `asset_view`     — a visitor lands on any library asset detail page.
+ *   - `skill_view`     — compatibility event for a skill-family detail page.
  *
  * A project id is NOT a secret — Clarity emits it into the public client bundle
  * (like the giscus ids in `ratings-config.ts`). This mirror leaves analytics

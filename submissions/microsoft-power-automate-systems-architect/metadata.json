@@ -1,0 +1,196 @@
+{
+  "kind": "prompt-template",
+  "slug": "microsoft-power-automate-systems-architect",
+  "name": "Architecture Microsoft Power Automate Systems Architect",
+  "description": "Professional architecture microsoft power automate systems architect prompt designed for high-quality content generation and structured analysis.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Architecture",
+    "Requirements Engineering",
+    "Documentation"
+  ],
+  "tags": [
+    "Architecture",
+    "Requirements Engineering",
+    "Documentation"
+  ],
+  "keywords": [
+    "Power Platform",
+    "system architecture",
+    "solution architecture",
+    "requirements analysis",
+    "automation"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "microsoft-power-automate-systems-architect.prompt.md",
+  "payloadPaths": [
+    "microsoft-power-automate-systems-architect.prompt.md"
+  ],
+  "downloadPath": "bundles/microsoft-power-automate-systems-architect.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": null,
+  "subtitle": "Enterprise Architecture and Requirements Engineering",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master architecture microsoft power automate systems architect with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-microsoft-power-automate-systems-architect.md",
+    "sourceUrl": "https://tedt.org/prompts/microsoft-power-automate-systems-architect/",
+    "sourceFileSha256": "sha256:ba3e3793d1e883af71972dca2f0d6b34a77604009829dba2bcbc49c74740b716",
+    "sourcePromptSha256": "sha256:0bbce2158e126e7e005a9ee2804c4b9ffbd794305070a894e2dfae9fe9f6af35",
+    "importedPromptSha256": "sha256:0bbce2158e126e7e005a9ee2804c4b9ffbd794305070a894e2dfae9fe9f6af35",
+    "sourceGuideSha256": "sha256:7e8837ac3a2795a20a1a99bb9d23f42ca1d06daa58e76619bd974b457248fc44",
+    "importedGuideSha256": "sha256:7e8837ac3a2795a20a1a99bb9d23f42ca1d06daa58e76619bd974b457248fc44",
+    "rawFrontmatterSha256": "sha256:d0518c50ef77d066a49d609288db39dea4d8f22eddaf4defa87dd3ef8e91d2ef",
+    "sourceTitle": "Architecture Microsoft Power Automate Systems Architect",
+    "sourceDescription": "Professional architecture microsoft power automate systems architect prompt designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master architecture microsoft power automate systems architect with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/microsoft-power-automate-systems-architect/"
+    ],
+    "legacyCategories": [
+      "Prompts",
+      "Projects"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/architecture-product-requirements-document.png",
+      "sourceUrl": "https://tedt.org/img/prompts/architecture-product-requirements-document.png",
+      "exists": true,
+      "sha256": "sha256:e75f8707b50cebef77add8bc54ca39264f9e02a84cd284c2258d48cbfe8d887f",
+      "metadata": {
+        "image": "/img/prompts/architecture-product-requirements-document.png",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+        "image-title": "Architectural Blueprint of Enterprise Product Requirements"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts",
+        "Projects"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "Professional architecture microsoft power automate systems architect prompt designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for architecture microsoft power automate systems architect with advanced AI capabilities and structured output formatting.",
+      "image": "/img/prompts/architecture-product-requirements-document.png",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+      "image-title": "Architectural Blueprint of Enterprise Product Requirements",
+      "keywords": [
+        "Power Platform",
+        "system architecture",
+        "solution architecture",
+        "requirements analysis",
+        "automation"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master architecture microsoft power automate systems architect with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "Enterprise Architecture and Requirements Engineering",
+      "tags": [
+        "Architecture",
+        "Requirements Engineering",
+        "Documentation"
+      ],
+      "title": "Architecture Microsoft Power Automate Systems Architect",
+      "update": null
+    },
+    "appliedRepairs": [
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/microsoft-power-automate-systems-architect.webp",
+  "coverImageAlt": "Navy routing machine carrying blank shapes along cyan rails through smooth hubs and recovery loops.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: a kinetic routing machine turns scattered business events into governed, resilient automated pathways across a coherent system\nScene/backdrop: warm paper engineering bench against a dark slate wall with quiet negative space\nSubject: one compact navy routing machine with physical cyan rails, smooth structural hubs, gates, and recovery loops carrying simple blank geometric tokens; a single orange override lever on a completely plain housing signals governance\nStyle/medium: premium tactile editorial illustration with hand-built mechanical model detail, not a software interface\nComposition/framing: exact 16:10 landscape; three-quarter isometric view; one unified machine silhouette; crop-safe focal subject; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: reliable, orchestrated, quietly technical, restrained backlighting\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nMaterials/textures: matte enamel, painted wood, frosted acrylic, subtle paper grain, controlled shadows\nConstraints: all hubs and housings are smooth and completely blank; absolutely no dial faces, tick marks, glyphs, embossed marks, punched templates, or control panels; no software UI; original composition; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, paw logos, cats, cat silhouettes, or Microsoft Fluent styling\nAvoid: Microsoft branding, familiar app icons, flowchart symbols, dashboards, screens, marked controls, cables forming letters, generic robots, clutter",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:7ce432f05539001f73dd0f15f52367ddbb7ace0a6c303ca0c41dc5482a58be4e",
+  "coverImageSourceHashVersion": 2
+}

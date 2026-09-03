@@ -1,0 +1,195 @@
+{
+  "kind": "prompt-template",
+  "slug": "module-format",
+  "name": "TTRPG Module Format",
+  "description": "Professional ttrpg module format prompt designed for high-quality content generation and structured analysis.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Game Master",
+    "TTRPG",
+    "Content Creation"
+  ],
+  "tags": [
+    "Game Master",
+    "TTRPG",
+    "Content Creation"
+  ],
+  "keywords": [
+    "content creation",
+    "module templates",
+    "prompt engineering",
+    "RPG tools",
+    "tabletop gaming"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "module-format.prompt.md",
+  "payloadPaths": [
+    "module-format.prompt.md"
+  ],
+  "downloadPath": "bundles/module-format.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": null,
+  "subtitle": "Tabletop RPG Content Generation Tools",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master ttrpg module format with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-module-format.md",
+    "sourceUrl": "https://tedt.org/prompts/module-format/",
+    "sourceFileSha256": "sha256:45483776d264bb31ba4ccda4c98ae6f3ab5a7448f7530b7cc4012f7e1a6afa67",
+    "sourcePromptSha256": "sha256:341ce7351f9e11231ab4422311368ef08152e00767d5873a68e0b1a8320b89e9",
+    "importedPromptSha256": "sha256:341ce7351f9e11231ab4422311368ef08152e00767d5873a68e0b1a8320b89e9",
+    "sourceGuideSha256": "sha256:84f1449a6a01e6dc4ba30d6fca8fe2841b72d873a5c36ddf2c626415090f733f",
+    "importedGuideSha256": "sha256:84f1449a6a01e6dc4ba30d6fca8fe2841b72d873a5c36ddf2c626415090f733f",
+    "rawFrontmatterSha256": "sha256:f3787ff7e2d7ad3e61cd43d998ee2e4561f921d0c4ed654e74c0481671bdf4cb",
+    "sourceTitle": "TTRPG Module Format",
+    "sourceDescription": "Professional ttrpg module format prompt designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master ttrpg module format with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/module-format/"
+    ],
+    "legacyCategories": [
+      "Prompts - Role Playing Games"
+    ],
+    "visibleInAlphaIndex": false,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/TTRPG-Opening-Scene.png",
+      "sourceUrl": "https://tedt.org/img/prompts/TTRPG-Opening-Scene.png",
+      "exists": true,
+      "sha256": "sha256:a8266fd56e40a6322a4bc8c3295bfb0e8c2b8d0d21e31b658efe60495cf8fe3c",
+      "metadata": {
+        "image": "/img/prompts/TTRPG-Opening-Scene.png",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "An illustrated TTRPG setting depicting a vibrant, detailed blue market building with bustling activity, stairs, lanterns, and annotated notes for game design.",
+        "image-credits-artist": "Ted Tschopp",
+        "image-credits-artist-URL": "https://tedt.org/",
+        "image-description": "This illustration presents an intricately detailed scene intended as a tabletop roleplaying game (TTRPG) opening scenario. The central feature is a vivid, blue-painted market building bustling with activity, featuring multiple floors and outdoor staircases connecting levels. Warm lantern lights illuminate various market stalls and interior spaces, creating an inviting and immersive atmosphere. Figures interact in small groups around crates and tables, suggesting active engagement and layered storytelling opportunities. Surrounding the image are handwritten annotations and design notes, hinting at hidden secrets, puzzles, and narrative possibilities integral to immersive gameplay. This richly illustrated environment enhances player engagement and narrative depth, perfect for detailed exploration in a TTRPG session.",
+        "image-title": "Bustling Blue Market Scene for TTRPG Adventure"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts - Role Playing Games"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "Professional ttrpg module format prompt designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for ttrpg module format with advanced AI capabilities and structured output formatting.",
+      "image": "/img/prompts/TTRPG-Opening-Scene.png",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "An illustrated TTRPG setting depicting a vibrant, detailed blue market building with bustling activity, stairs, lanterns, and annotated notes for game design.",
+      "image-credits-artist": "Ted Tschopp",
+      "image-credits-artist-URL": "https://tedt.org/",
+      "image-description": "This illustration presents an intricately detailed scene intended as a tabletop roleplaying game (TTRPG) opening scenario. The central feature is a vivid, blue-painted market building bustling with activity, featuring multiple floors and outdoor staircases connecting levels. Warm lantern lights illuminate various market stalls and interior spaces, creating an inviting and immersive atmosphere. Figures interact in small groups around crates and tables, suggesting active engagement and layered storytelling opportunities. Surrounding the image are handwritten annotations and design notes, hinting at hidden secrets, puzzles, and narrative possibilities integral to immersive gameplay. This richly illustrated environment enhances player engagement and narrative depth, perfect for detailed exploration in a TTRPG session.",
+      "image-title": "Bustling Blue Market Scene for TTRPG Adventure",
+      "keywords": [
+        "content creation",
+        "module templates",
+        "prompt engineering",
+        "RPG tools",
+        "tabletop gaming"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master ttrpg module format with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "Tabletop RPG Content Generation Tools",
+      "tags": [
+        "Game Master",
+        "TTRPG",
+        "Content Creation"
+      ],
+      "title": "TTRPG Module Format",
+      "update": null
+    },
+    "appliedRepairs": [
+      "include-hidden-alpha-prompt",
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/module-format.webp",
+  "coverImageAlt": "An open navy folio unfolds into three connected paper-cut adventure landscapes ending at an orange-lit chamber.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: An open hand-bound adventure folio whose layered blank paper panels unfold into a miniature three-act tabletop landscape, expressing a reusable format that organizes a complete role-playing module.\nScene/backdrop: Uncluttered warm-paper tabletop against a deep slate field, with a few quiet cyan edge accents and no loose writing implements.\nSubject: One dominant open navy folio with three nested tactile relief panels: an opening terrain threshold, a branching middle encounter landscape, and a compact final chamber, all visibly connected by the folio construction.\nStyle/medium: premium editorial illustration with tactile dimensional detail; hand-cut paper, book cloth, shallow relief, and restrained architectural modelmaking.\nComposition/framing: exact 16:10 landscape; slightly elevated three-quarter view; the open folio forms one strong centered silhouette; crop-safe focal subject; legible at approximately 290-pixel card width; no essential detail in the outer 8%.\nLighting/mood: calm, capable, quietly technical, with restrained cyan backlighting and one small orange highlight at the final chamber.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nMaterials/textures: fibrous paper edges, navy book cloth, matte card stock, subtle embossed terrain with entirely blank surfaces.\nConstraints: original image; one dominant metaphor; all panels and surfaces must remain completely blank and unmarked; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, cats, cat silhouettes, or Microsoft Fluent styling.\nAvoid: readable map labels, runes, glyphs, typographic marks, interface screens, generic chatbot imagery, glowing brains, clutter, tiny details, gradients that resemble Microsoft Fluent branding.\nTargeted correction: Pull the camera back and make the entire folio, all three panels, every page edge, and both binding ribbons fit comfortably inside the inner 84% of the frame, leaving a clearly visible uncluttered slate-and-warm-paper border on every side; preserve the same text-free three-act folio metaphor and tactile style.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:1990cadc109d85f39ece0a3927fa9e83628cb8a38b3103ebe8f60b4d0a89231b",
+  "coverImageSourceHashVersion": 2
+}

@@ -1,0 +1,202 @@
+{
+  "kind": "prompt-template",
+  "slug": "business-skills-prompts",
+  "name": "Business Skills Prompts",
+  "description": "Professional business business skills prompts prompt designed for high-quality content generation and structured analysis.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Business Strategy",
+    "Planning",
+    "Teaching & Education"
+  ],
+  "tags": [
+    "Business Strategy",
+    "Planning",
+    "Teaching & Education"
+  ],
+  "keywords": [
+    "business strategy",
+    "professional development",
+    "prompt engineering",
+    "skill development",
+    "strategic planning"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "business-skills-prompts.prompt.md",
+  "payloadPaths": [
+    "business-skills-prompts.prompt.md"
+  ],
+  "downloadPath": "bundles/business-skills-prompts.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": null,
+  "subtitle": "Strategic Business Planning and Analysis",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master business business skills prompts with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-business-skills-prompts.md",
+    "sourceUrl": "https://tedt.org/prompts/business-skills-prompts/",
+    "sourceFileSha256": "sha256:64c9be2fdc6e1ab039b9d81e0a133668bcaabd99ca3cd7257dd899f834801a76",
+    "sourcePromptSha256": "sha256:f6d0aa26989b9359295dde1b5e279f9b796e1365526ffea9b5fefefa6c0bf4a0",
+    "importedPromptSha256": "sha256:f6d0aa26989b9359295dde1b5e279f9b796e1365526ffea9b5fefefa6c0bf4a0",
+    "sourceGuideSha256": "sha256:aa013adba537d40dfab5257443c113be1bca098468edf5585bcc97b4bf6e545f",
+    "importedGuideSha256": "sha256:aa013adba537d40dfab5257443c113be1bca098468edf5585bcc97b4bf6e545f",
+    "rawFrontmatterSha256": "sha256:2f433633f21745091e21d904ce895029324751ba0708febeb39d54493ad71bfb",
+    "sourceTitle": "Business Business Skills Prompts",
+    "sourceDescription": "Professional business business skills prompts prompt designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master business business skills prompts with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/business-skills-prompts/"
+    ],
+    "legacyCategories": [
+      "Prompts",
+      "Business",
+      "Opinion"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": null,
+      "sourceUrl": null,
+      "exists": false,
+      "sha256": null,
+      "metadata": {
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-credits": "Ted Tschopp",
+        "image-credits-artist": "Ted Tschopp",
+        "image-credits-artist-URL": "https://tedt.org/",
+        "image-credits-URL": "https://tedt.org/"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts",
+        "Business",
+        "Opinion"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "Professional business business skills prompts prompt designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for business business skills prompts with advanced AI capabilities and structured output formatting.",
+      "image": null,
+      "image_height": null,
+      "image_width": null,
+      "image-alt": "",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-credits": "Ted Tschopp",
+      "image-credits-artist": "Ted Tschopp",
+      "image-credits-artist-URL": "https://tedt.org/",
+      "image-credits-title": "",
+      "image-credits-URL": "https://tedt.org/",
+      "image-description": "",
+      "image-title": "",
+      "keywords": [
+        "business strategy",
+        "professional development",
+        "prompt engineering",
+        "skill development",
+        "strategic planning"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master business business skills prompts with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "Strategic Business Planning and Analysis",
+      "tags": [
+        "Business Strategy",
+        "Planning",
+        "Teaching & Education"
+      ],
+      "title": "Business Business Skills Prompts",
+      "update": null
+    },
+    "appliedRepairs": [
+      "normalize-model-github-to-github-copilot",
+      "repair-title-business-skills-prompts"
+    ]
+  },
+  "coverImage": "skill-art/business-skills-prompts.webp",
+  "coverImageAlt": "Open navy toolbox holding a ladder, faceted simulation piece, mirror, and interlocking blocks.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: a compact strategy toolbox whose distinct instruments unfold into teaching, simulation, negotiation, reflection, and team-building forms\nScene/backdrop: warm paper tabletop with a calm slate-to-navy studio background\nSubject: one open navy toolbox containing five unmistakably different blank tactile tools: a small lesson ladder, two balance tokens, a faceted simulation piece, a reflection mirror, and interlocking team blocks; one orange handle unifies the set\nStyle/medium: premium tactile editorial illustration with crafted miniature objects and restrained dimensional depth\nComposition/framing: exact 16:10 landscape; centered open toolbox as the dominant silhouette; organized fan of tools; crop-safe focal subject; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: resourceful, optimistic, practical, calm studio backlighting\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nMaterials/textures: painted wood, folded paper, brushed metal without markings, soft felt lining\nConstraints: all tools, blocks, and surfaces blank and unmarked; original composition; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, paw logos, cats, cat silhouettes, or Microsoft Fluent styling\nAvoid: ordinary hardware tools, generic briefcase stock imagery, glowing brains, chat bubbles, screens, dashboards, clutter",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:4188913d83f950c6b1ecad1e8b4391ed01a7b45f30dc9403b6cfa0e38fc5cae0",
+  "coverImageSourceHashVersion": 2
+}

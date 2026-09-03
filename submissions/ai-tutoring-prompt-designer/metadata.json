@@ -1,0 +1,175 @@
+{
+  "kind": "prompt-template",
+  "slug": "ai-tutoring-prompt-designer",
+  "name": "AI Tutoring Prompt Designer – Help Others Learn What You Know",
+  "description": "A structured AI prompt template to help users design effective tutoring dialogues that assess prior knowledge, guide learners with open-ended questions, and provide adaptive support for mastering a topic.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Teaching & Education",
+    "Artificial Intelligence",
+    "Planning"
+  ],
+  "tags": [
+    "Teaching & Education",
+    "Artificial Intelligence",
+    "Planning"
+  ],
+  "keywords": [
+    "adaptive learning",
+    "educational AI",
+    "educational dialogue",
+    "instructional design",
+    "prompt engineering",
+    "scaffolding"
+  ],
+  "models": [
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4.5",
+    "microsoft-copilot",
+    "o4-mini",
+    "o4-mini-high"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "ai-tutoring-prompt-designer.prompt.md",
+  "payloadPaths": [
+    "ai-tutoring-prompt-designer.prompt.md"
+  ],
+  "downloadPath": "bundles/ai-tutoring-prompt-designer.prompt.md",
+  "createdAt": "2025-05-04",
+  "updatedAt": null,
+  "subtitle": null,
+  "summaryBullets": [],
+  "seoDescription": null,
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-05-03-AI-Tutoring-Prompt-Designer.md",
+    "sourceUrl": "https://tedt.org/prompts/ai-tutoring-prompt-designer/",
+    "sourceFileSha256": "sha256:2199a38a931275e75d859c362b632b43ac1ba5e8260dfe42a739ddc1f087cc0d",
+    "sourcePromptSha256": "sha256:05752dedf04c312bb07293d92cd687c9ad2293b60f17a6d92038ef994191872c",
+    "importedPromptSha256": "sha256:05752dedf04c312bb07293d92cd687c9ad2293b60f17a6d92038ef994191872c",
+    "sourceGuideSha256": "sha256:32f3f3d419af7b4e1fee38013dd0d318f17efa4b0ea9271a4c02f23235fb83f9",
+    "importedGuideSha256": "sha256:32f3f3d419af7b4e1fee38013dd0d318f17efa4b0ea9271a4c02f23235fb83f9",
+    "rawFrontmatterSha256": "sha256:1bd16ee8c66639cc9e793610add1ddf798438b7d64b6911d4ad5ff26cf612daf",
+    "sourceTitle": "AI Tutoring Prompt Designer – Help Others Learn What You Know",
+    "sourceDescription": "A structured AI prompt template to help users design effective tutoring dialogues that assess prior knowledge, guide learners with open-ended questions, and provide adaptive support for mastering a topic.",
+    "sourceSeoDescription": null,
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-mini",
+      "gpt-4.5",
+      3,
+      "04-mini",
+      "04-mini-high",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [
+      3
+    ],
+    "legacyPaths": [
+      "/prompts/ai-tutoring-prompt-designer/"
+    ],
+    "legacyCategories": [
+      "Prompts"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/Immersive-AI-Simulation.png",
+      "sourceUrl": "https://tedt.org/img/prompts/Immersive-AI-Simulation.png",
+      "exists": true,
+      "sha256": "sha256:9820d5f35d8575a92d173ba9bbcfd104c2985a7e2174b83a6e0c99d8c9b6e9e1",
+      "metadata": {
+        "image": "/img/prompts/Immersive-AI-Simulation.png",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "A female student sits at a classroom desk facing a large screen displaying a male AI teaching assistant. The classroom is bright, filled with greenery, and features modern educational technology.",
+        "image-credits-artist": "Ted Tschopp",
+        "image-credits-artist-URL": "https://tedt.org/",
+        "image-description": "Illustration of a modern, bright classroom where a female student is seated at a desk, attentively interacting with a virtual AI teaching assistant displayed on a large digital screen. The room features abundant natural lighting, lush indoor plants, and minimalist wooden desks, conveying a futuristic yet welcoming educational environment.",
+        "image-title": "AI Teaching Assistant"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "categories": [
+        "Prompts"
+      ],
+      "date": "2025-05-04",
+      "description": "A structured AI prompt template to help users design effective tutoring dialogues that assess prior knowledge, guide learners with open-ended questions, and provide adaptive support for mastering a topic.",
+      "image": "/img/prompts/Immersive-AI-Simulation.png",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "A female student sits at a classroom desk facing a large screen displaying a male AI teaching assistant. The classroom is bright, filled with greenery, and features modern educational technology.",
+      "image-credits-artist": "Ted Tschopp",
+      "image-credits-artist-URL": "https://tedt.org/",
+      "image-description": "Illustration of a modern, bright classroom where a female student is seated at a desk, attentively interacting with a virtual AI teaching assistant displayed on a large digital screen. The room features abundant natural lighting, lush indoor plants, and minimalist wooden desks, conveying a futuristic yet welcoming educational environment.",
+      "image-title": "AI Teaching Assistant",
+      "keywords": [
+        "adaptive learning",
+        "educational AI",
+        "educational dialogue",
+        "instructional design",
+        "prompt engineering",
+        "scaffolding"
+      ],
+      "layout": "prompt-details",
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-mini",
+        "gpt-4.5",
+        3,
+        "04-mini",
+        "04-mini-high",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/ai-tutoring-prompt-designer/",
+      "tags": [
+        "Teaching & Education",
+        "Artificial Intelligence",
+        "Planning"
+      ],
+      "title": "AI Tutoring Prompt Designer – Help Others Learn What You Know"
+    },
+    "appliedRepairs": [
+      "normalize-model-04-mini-high-to-o4-mini-high",
+      "normalize-model-04-mini-to-o4-mini",
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/ai-tutoring-prompt-designer.webp",
+  "coverImageAlt": "An adjustable navy bridge carries a wooden learner figure toward a glowing orange faceted object.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: Adaptive tutoring represented by an adjustable bridge whose supports move to meet a learner at the right height and guide progress toward a glowing knowledge form.\nScene/backdrop: A layered warm paper landscape separated by a calm slate channel.\nSubject: One small abstract wooden learner figure, a modular navy bridge with adjustable cyan supports, and an orange-lit faceted form at the destination.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; strong crop-safe bridge silhouette; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: patient, encouraging, progressively illuminating\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: abstract featureless figure only; completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:777a0b3e23cf990a92819079dee838f0eed117317e265facf4013eafb4522e66",
+  "coverImageSourceHashVersion": 2
+}

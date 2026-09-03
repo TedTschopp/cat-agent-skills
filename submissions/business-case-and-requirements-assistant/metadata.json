@@ -1,0 +1,179 @@
+{
+  "kind": "prompt-template",
+  "slug": "business-case-and-requirements-assistant",
+  "name": "Business Case and Requirements Assistant",
+  "description": "A rigorous, step-by-step Agile coaching prompt that transforms vague goals into clear user stories, requirements, and SMART acceptance criteria—complete with verification and validation approaches.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Requirements Engineering",
+    "Product Management",
+    "Planning",
+    "Business Strategy"
+  ],
+  "tags": [
+    "Requirements Engineering",
+    "Product Management",
+    "Planning",
+    "Business Strategy"
+  ],
+  "keywords": [
+    "business strategy",
+    "Gherkin",
+    "MBSE",
+    "product requirements",
+    "requirements analysis",
+    "user personas",
+    "verification & validation"
+  ],
+  "models": [
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4.1",
+    "gpt-4o",
+    "microsoft-copilot",
+    "o4-mini",
+    "o4-mini-high"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "business-case-and-requirements-assistant.prompt.md",
+  "payloadPaths": [
+    "business-case-and-requirements-assistant.prompt.md"
+  ],
+  "downloadPath": "bundles/business-case-and-requirements-assistant.prompt.md",
+  "createdAt": "2025-08-19",
+  "updatedAt": null,
+  "subtitle": "Agile Backlog Decomposition & Verification and Validation",
+  "summaryBullets": [],
+  "seoDescription": null,
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-08-19-Business-Case-and-Requirements-Assistant.md",
+    "sourceUrl": "https://tedt.org/prompts/business-case-and-requirements-assistant/",
+    "sourceFileSha256": "sha256:112abde7ce66642894e6e8604ef190c6fe1c4600e2c870d86aba9a9e93e1ec5b",
+    "sourcePromptSha256": "sha256:c658b99dc89b41cdd1ecd48d190fd5ded6d1627916e93455fb678d3b7eae2d82",
+    "importedPromptSha256": "sha256:c658b99dc89b41cdd1ecd48d190fd5ded6d1627916e93455fb678d3b7eae2d82",
+    "sourceGuideSha256": "sha256:3b0b4a543ba44be17843d9bdafd1bb2fd91344bfb8aae0e371aedfb3ff742e77",
+    "importedGuideSha256": "sha256:3b0b4a543ba44be17843d9bdafd1bb2fd91344bfb8aae0e371aedfb3ff742e77",
+    "rawFrontmatterSha256": "sha256:3c39b7b7cdd0dd02ca01f7ed43af6818c9ac8d7b4a8cadd3c966672b4af732a2",
+    "sourceTitle": "Business Case and Requirements Assistant",
+    "sourceDescription": "A rigorous, step-by-step Agile coaching prompt that transforms vague goals into clear user stories, requirements, and SMART acceptance criteria—complete with verification and validation approaches.",
+    "sourceSeoDescription": null,
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4.1",
+      "gpt-4o",
+      "gpt-4-mini",
+      "o4-mini",
+      "o4-mini-high",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/business-case-and-requirements-assistant/"
+    ],
+    "legacyCategories": [
+      "Prompts - Business"
+    ],
+    "visibleInAlphaIndex": false,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/Business-Case-Requirements-Assistant.png",
+      "sourceUrl": "https://tedt.org/img/prompts/Business-Case-Requirements-Assistant.png",
+      "exists": true,
+      "sha256": "sha256:5a43397ef3d57a05d555ac4c5f22bc4fd56ab016a199d26336c8b7ffddf7d98b",
+      "metadata": {
+        "image": "/img/prompts/Business-Case-Requirements-Assistant.png",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "Abstract blueprint with sticky notes, checklists, and flow arrows representing backlog refinement.",
+        "image-credits-artist": "Ted Tschopp",
+        "image-credits-artist-URL": "https://tedt.org/",
+        "image-description": "A clean, modern illustration showing a desk with a product blueprint, sticky notes for user stories, a checklist for acceptance criteria, and layered diagrams for verification and validation—evoking disciplined Agile analysis.",
+        "image-title": "From Vague Goal to Verifiable Backlog"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "categories": [
+        "Prompts - Business"
+      ],
+      "date": "2025-08-19",
+      "description": "A rigorous, step-by-step Agile coaching prompt that transforms vague goals into clear user stories, requirements, and SMART acceptance criteria—complete with verification and validation approaches.",
+      "image": "/img/prompts/Business-Case-Requirements-Assistant.png",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "Abstract blueprint with sticky notes, checklists, and flow arrows representing backlog refinement.",
+      "image-credits-artist": "Ted Tschopp",
+      "image-credits-artist-URL": "https://tedt.org/",
+      "image-description": "A clean, modern illustration showing a desk with a product blueprint, sticky notes for user stories, a checklist for acceptance criteria, and layered diagrams for verification and validation—evoking disciplined Agile analysis.",
+      "image-title": "From Vague Goal to Verifiable Backlog",
+      "keywords": [
+        "business strategy",
+        "Gherkin",
+        "MBSE",
+        "product requirements",
+        "requirements analysis",
+        "user personas",
+        "verification & validation"
+      ],
+      "layout": "prompt-details",
+      "mastodon-post-id": "115108567613293915",
+      "models-supported": [
+        "gpt-4",
+        "gpt-4.1",
+        "gpt-4o",
+        "gpt-4-mini",
+        "o4-mini",
+        "o4-mini-high",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/business-case-and-requirements-assistant/",
+      "subtitle": "Agile Backlog Decomposition & Verification and Validation",
+      "tags": [
+        "Requirements Engineering",
+        "Product Management",
+        "Planning",
+        "Business Strategy"
+      ],
+      "title": "Business Case and Requirements Assistant"
+    },
+    "appliedRepairs": [
+      "include-hidden-alpha-prompt",
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/business-case-and-requirements-assistant.webp",
+  "coverImageAlt": "Rough stone moving through cyan shaping gates into a stable stack of fitted blocks.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: a rough, shapeless idea stone passes through a rigorous stepped jig and emerges as a stable foundation of precisely fitted requirement blocks\nScene/backdrop: warm paper workshop plane fading into a quiet navy backdrop\nSubject: one left-to-right transformation apparatus with an irregular slate stone at the entrance, calibrated cyan shaping stages, and a clean load-bearing block foundation at the exit; one orange verification pin locks the final assembly\nStyle/medium: premium tactile editorial illustration with hand-built workshop objects and crisp dimensional detail\nComposition/framing: exact 16:10 landscape; clear single transformation path; strong silhouettes and ample negative space; crop-safe focal subject; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: rigorous, reassuring, quietly methodical, restrained backlighting\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nMaterials/textures: carved stone, matte enamel, pale wood, fibrous paper, soft shadows\nConstraints: every block and surface blank and unmarked; original composition; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, paw logos, cats, cat silhouettes, or Microsoft Fluent styling\nAvoid: generic chatbot imagery, glowing brains, documents covered in marks, screens, dashboards, flowchart arrows, decorative clutter",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:064cf11abd9687f1bb6bd69e0e1ef65fa0a888f9bbc709d9b68dd7220a0e3a69",
+  "coverImageSourceHashVersion": 2
+}

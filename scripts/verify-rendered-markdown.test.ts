@@ -46,8 +46,8 @@ Use \`<script src="javascript:alert(1)"></script>\` only as an example.
 
   assert.deepEqual(verifyRenderedMarkdown({ repoRoot: repo, generatedSlugs: ["safe-examples"] }), {
     files: [
-      "src/content/skills/safe-examples.md",
       "src/content/guides/safe-examples.md",
+      "src/content/skills/safe-examples.md",
     ],
   });
 });
@@ -140,5 +140,70 @@ test("fails closed when the expected generated skill page is missing", (t) => {
   assert.throws(
     () => verifyRenderedMarkdown({ repoRoot: repo, generatedSlugs: ["missing-skill"] }),
     /missing generated Markdown required for verification/,
+  );
+});
+
+test("validates prompt, generic artifact, and guide Markdown by exact generated path", (t) => {
+  const repo = mkdtempSync(join(tmpdir(), "cat-rendered-markdown-"));
+  t.after(() => rmSync(repo, { recursive: true, force: true }));
+  write(repo, "src/content/prompts/example-prompt.md", "# Safe prompt\n");
+  write(repo, "src/content/artifacts/example-instructions.md", "# Safe instructions\n");
+  write(repo, "src/content/guides/example-prompt.md", "# Safe guide\n");
+
+  assert.deepEqual(
+    verifyRenderedMarkdown({
+      repoRoot: repo,
+      generatedFiles: [
+        "src/content/prompts/example-prompt.md",
+        "src/content/artifacts/example-instructions.md",
+        "src/content/guides/example-prompt.md",
+      ],
+    }),
+    {
+      files: [
+        "src/content/artifacts/example-instructions.md",
+        "src/content/guides/example-prompt.md",
+        "src/content/prompts/example-prompt.md",
+      ],
+    },
+  );
+});
+
+test("rejects active content in generated prompt and generic artifact pages", (t) => {
+  const repo = mkdtempSync(join(tmpdir(), "cat-rendered-markdown-"));
+  t.after(() => rmSync(repo, { recursive: true, force: true }));
+  write(repo, "src/content/prompts/unsafe-prompt.md", '<img src="x" onerror="alert(1)">\n');
+  write(repo, "src/content/artifacts/unsafe-instructions.md", '<a href="javascript:alert(1)">run</a>\n');
+
+  assert.throws(
+    () =>
+      verifyRenderedMarkdown({
+        repoRoot: repo,
+        generatedFiles: [
+          "src/content/prompts/unsafe-prompt.md",
+          "src/content/artifacts/unsafe-instructions.md",
+        ],
+      }),
+    (error: unknown) => {
+      assert.ok(error instanceof Error);
+      assert.match(error.message, /src\/content\/prompts\/unsafe-prompt\.md: blocked event-handler/);
+      assert.match(error.message, /src\/content\/artifacts\/unsafe-instructions\.md: blocked javascript: URL/);
+      return true;
+    },
+  );
+});
+
+test("rejects generated Markdown paths outside public content collections", (t) => {
+  const repo = mkdtempSync(join(tmpdir(), "cat-rendered-markdown-"));
+  t.after(() => rmSync(repo, { recursive: true, force: true }));
+  write(repo, "README.md", "# Not generated content\n");
+
+  assert.throws(
+    () =>
+      verifyRenderedMarkdown({
+        repoRoot: repo,
+        generatedFiles: ["README.md"],
+      }),
+    /unsafe or unsupported generated Markdown path/,
   );
 });

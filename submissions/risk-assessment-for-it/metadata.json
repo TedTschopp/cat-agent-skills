@@ -1,0 +1,199 @@
+{
+  "kind": "prompt-template",
+  "slug": "risk-assessment-for-it",
+  "name": "Risk Assessment for IT",
+  "description": "Professional risk assessment prompt designed for high-quality content generation and structured analysis.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Risk Management",
+    "Planning",
+    "Business Strategy"
+  ],
+  "tags": [
+    "Risk Management",
+    "Planning",
+    "Business Strategy"
+  ],
+  "keywords": [
+    "compliance",
+    "IT risk management",
+    "prompt engineering",
+    "risk assessment",
+    "strategic planning"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "risk-assessment-for-it.prompt.md",
+  "payloadPaths": [
+    "risk-assessment-for-it.prompt.md"
+  ],
+  "downloadPath": "bundles/risk-assessment-for-it.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": null,
+  "subtitle": "Corporate Risk Simulation and Assessment",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master risk assessment for IT with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-risk-assessment-for-it.md",
+    "sourceUrl": "https://tedt.org/prompts/risk-assessment-for-it/",
+    "sourceFileSha256": "sha256:2e5630c4aa7d9ed0f440f79a8977994e266ed3eb3ac3455861507c3e269d38ec",
+    "sourcePromptSha256": "sha256:be50c58676a58e52b734bb86aca85929e2e67b9546467d6e2d89c06fd5a48ea6",
+    "importedPromptSha256": "sha256:be50c58676a58e52b734bb86aca85929e2e67b9546467d6e2d89c06fd5a48ea6",
+    "sourceGuideSha256": "sha256:af0fc731d055dd2b3fd09f2bbc61b2b2d987bef806992b4486deb0d893d27983",
+    "importedGuideSha256": "sha256:af0fc731d055dd2b3fd09f2bbc61b2b2d987bef806992b4486deb0d893d27983",
+    "rawFrontmatterSha256": "sha256:622e18c8a1662103b69f439a0e3a9b52b4caefe7e2bdf0b6813fa810eff4f078",
+    "sourceTitle": "Risk Assessment for IT",
+    "sourceDescription": "Professional risk assessment prompt designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master risk assessment for IT with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/risk-assessment-for-it/"
+    ],
+    "legacyCategories": [
+      "Prompts",
+      "Projects"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": null,
+      "sourceUrl": null,
+      "exists": false,
+      "sha256": null,
+      "metadata": {
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-credits": "Ted Tschopp",
+        "image-credits-artist": "Ted Tschopp",
+        "image-credits-artist-URL": "https://tedt.org/",
+        "image-credits-URL": "https://tedt.org/"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts",
+        "Projects"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "Professional risk assessment prompt designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for Risk Analysts to conduct a risk assessment of a situation and understand potential risks.",
+      "image": null,
+      "image_height": null,
+      "image_width": null,
+      "image-alt": "",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-credits": "Ted Tschopp",
+      "image-credits-artist": "Ted Tschopp",
+      "image-credits-artist-URL": "https://tedt.org/",
+      "image-credits-title": "",
+      "image-credits-URL": "https://tedt.org/",
+      "image-description": "",
+      "image-title": "",
+      "keywords": [
+        "compliance",
+        "IT risk management",
+        "prompt engineering",
+        "risk assessment",
+        "strategic planning"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master risk assessment for IT with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "Corporate Risk Simulation and Assessment",
+      "tags": [
+        "Risk Management",
+        "Planning",
+        "Business Strategy"
+      ],
+      "title": "Risk Assessment for IT",
+      "update": null
+    },
+    "appliedRepairs": [
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/risk-assessment-for-it.webp",
+  "coverImageAlt": "A navy vault arch shelters a cyan-linked cluster of operational nodes from four orange pressure wedges.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: A substantial protective arch sheltering a connected cluster of operational nodes while controlled threat forms test it from many directions, expressing a comprehensive enterprise IT risk assessment across technical, organizational, financial, and continuity concerns.\nScene/backdrop: Warm-paper terrain plane against deep slate, abstract and architectural rather than digital or screen-based.\nSubject: One dominant navy shield-like vault arch over a cyan-linked cluster of varied physical nodes; several small orange pressure wedges press against the exterior while the interior network remains orderly and intact.\nStyle/medium: premium editorial illustration with tactile dimensional detail; architectural model, matte ceramic nodes, painted wood arch, and subtle structural joinery.\nComposition/framing: exact 16:10 landscape; low frontal view with the sheltering arch forming a bold silhouette; internal nodes large and sparse enough for approximately 290-pixel card width; crop-safe focal subject; no essential detail in the outer 8%.\nLighting/mood: vigilant, calm, capable, quietly technical; cyan interior illumination and sparing orange external pressure points.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nMaterials/textures: matte painted wood, ceramic nodes, frosted connector rods, warm paper ground, subtle wear.\nConstraints: original image; one dominant protection-and-testing metaphor; abstract unmarked nodes only; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, cats, cat silhouettes, or Microsoft Fluent styling.\nAvoid: padlocks, hacker hoodies, binary code, server dashboard, branded cloud iconography, generic cybersecurity stock imagery, generic chatbot imagery, glowing brains, Microsoft-like gradients.\nTargeted correction: Use a completely plain unmarked warm-paper ground with no contour lines; pull back so the full vault arch, all protected nodes, and every threat wedge sit inside the inner 84% with a clear border; reduce the threats to exactly four small sparing orange pressure wedges, all fully visible and touching only the outside of the arch.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:7f2981c967d16d0702e8d5e550798033efcc52be491e2ccc601b61578f09925d",
+  "coverImageSourceHashVersion": 2
+}

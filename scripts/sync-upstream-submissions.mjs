@@ -1,7 +1,7 @@
 /**
  * Copy only submission directories that exist in Microsoft's catalog but not
  * in this fork. Existing submissions and all fork-owned application code are
- * deliberately immutable. The local importer generates gallery artifacts for
+ * deliberately immutable. The local importer generates library artifacts for
  * the copied slugs in a later, separately validated workflow step.
  */
 import { execFileSync } from "node:child_process";
@@ -25,12 +25,21 @@ const SAFE_SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const MAX_FILES_PER_SUBMISSION = 2_000;
 const MAX_TOTAL_BYTES_PER_SUBMISSION = 100 * 1024 * 1024;
 
-const GENERATED_PATHS = (slug) => [
+const GENERATED_CONTENT_PATHS = (slug) => [
   `src/content/skills/${slug}.md`,
+  `src/content/prompts/${slug}.md`,
+  `src/content/artifacts/${slug}.md`,
+];
+const GENERATED_PATHS = (slug) => [
+  ...GENERATED_CONTENT_PATHS(slug),
+  `src/content/artifact-payloads/${slug}.json`,
   `src/content/guides/${slug}.md`,
   `public/bundles/${slug}.zip`,
   `public/bundles/${slug}.json`,
+  `public/bundles/${slug}.prompt.md`,
+  `public/bundles/${slug}`,
 ];
+const PUBLIC_CATALOG_PATH = "public/assets.json";
 
 function gitText(repoRoot, args) {
   return execFileSync("git", args, {
@@ -91,6 +100,17 @@ function existingGeneratedPaths(repoRoot, slug) {
   return GENERATED_PATHS(slug).filter((path) => existsSync(join(repoRoot, path)));
 }
 
+function existingGeneratedContentPaths(repoRoot, slug) {
+  return GENERATED_CONTENT_PATHS(slug).filter((path) => existsSync(join(repoRoot, path)));
+}
+
+function isGeneratedPathForSlug(path, slug) {
+  return (
+    GENERATED_PATHS(slug).includes(path) ||
+    path.startsWith(`public/bundles/${slug}/`)
+  );
+}
+
 /** Build a fail-closed plan without changing the worktree. */
 export function planUpstreamSync({ repoRoot, upstreamRef }) {
   const root = resolve(repoRoot);
@@ -119,9 +139,15 @@ export function planUpstreamSync({ repoRoot, upstreamRef }) {
 
   // Reconcile only slugs Microsoft actually publishes. Local-only submissions
   // remain under the fork's normal contribution workflow.
-  const pendingGeneratedSlugs = upstreamSlugs
-    .filter((slug) => !existsSync(join(root, "src", "content", "skills", `${slug}.md`)))
-    .sort();
+  const pendingGeneratedSlugs = upstreamSlugs.filter((slug) => {
+    const contentPaths = existingGeneratedContentPaths(root, slug);
+    if (contentPaths.length > 1) {
+      throw new Error(
+        `submission ${slug} has multiple generated catalog pages: ${contentPaths.join(", ")}`,
+      );
+    }
+    return contentPaths.length === 0;
+  }).sort();
 
   for (const slug of pendingGeneratedSlugs) {
     const partialArtifacts = existingGeneratedPaths(root, slug);
@@ -319,7 +345,6 @@ function parseSlugList(value, label) {
 export function verifySyncWorktree({ repoRoot, newSlugs, generatedSlugs }) {
   const root = resolve(repoRoot);
   const newSet = new Set(newSlugs);
-  const generatedPaths = new Set(generatedSlugs.flatMap(GENERATED_PATHS));
   const entries = parseStatus(root);
   const unexpected = [];
 
@@ -328,9 +353,17 @@ export function verifySyncWorktree({ repoRoot, newSlugs, generatedSlugs }) {
       ? entry.path.split("/")[1]
       : undefined;
     const allowed =
-      (submissionSlug && newSet.has(submissionSlug)) || generatedPaths.has(entry.path);
+      (submissionSlug && newSet.has(submissionSlug)) ||
+      generatedSlugs.some((slug) => isGeneratedPathForSlug(entry.path, slug)) ||
+      (generatedSlugs.length > 0 && entry.path === PUBLIC_CATALOG_PATH);
     const additionOnly = entry.status === "??" || entry.status === "A ";
-    if (!allowed || !additionOnly) unexpected.push(`${entry.status} ${entry.path}`);
+    const catalogUpdate =
+      entry.path === PUBLIC_CATALOG_PATH &&
+      generatedSlugs.length > 0 &&
+      ["??", "A ", " M", "M ", "MM"].includes(entry.status);
+    if (!allowed || (!additionOnly && !catalogUpdate)) {
+      unexpected.push(`${entry.status} ${entry.path}`);
+    }
   }
 
   for (const slug of newSlugs) {
@@ -339,8 +372,16 @@ export function verifySyncWorktree({ repoRoot, newSlugs, generatedSlugs }) {
     }
   }
   for (const slug of generatedSlugs) {
-    if (!entries.some((entry) => entry.path === `src/content/skills/${slug}.md`)) {
-      unexpected.push(`missing generated skill page for ${slug}`);
+    const generatedContent = entries.filter((entry) =>
+      GENERATED_CONTENT_PATHS(slug).includes(entry.path),
+    );
+    if (generatedContent.length === 0) {
+      unexpected.push(`missing generated library page for ${slug}`);
+    } else if (generatedContent.length > 1) {
+      unexpected.push(
+        `multiple generated library pages for ${slug}: ` +
+          generatedContent.map((entry) => entry.path).join(", "),
+      );
     }
   }
 
@@ -449,7 +490,7 @@ function main() {
       ? plan.pendingGeneratedSlugs.join(", ")
       : "None";
   appendSummary(
-    `## Microsoft skill sync\n\n` +
+    `## Microsoft Catalog Sync\n\n` +
       `- Upstream commit: \`${plan.upstreamSha}\`\n` +
       `- New submission directories: ${newList}\n` +
       `- Gallery entries to generate: ${pendingList}\n`,

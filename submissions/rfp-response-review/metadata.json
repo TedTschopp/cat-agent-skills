@@ -1,0 +1,200 @@
+{
+  "kind": "prompt-template",
+  "slug": "rfp-response-review",
+  "name": "RFP Response Evaluation Prompt",
+  "description": "This prompt provides a structured framework for evaluating vendor RFP responses. It guides evaluators through parsing requirements, mapping responses, applying a rubric, identifying risks, and generating actionable outputs such as scoring matrices and reviewer Q&A.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Business Strategy",
+    "Planning",
+    "Risk Management"
+  ],
+  "tags": [
+    "Business Strategy",
+    "Planning",
+    "Risk Management"
+  ],
+  "keywords": [
+    "assessment tools",
+    "compliance",
+    "procurement",
+    "quality review",
+    "risk assessment",
+    "strategic planning"
+  ],
+  "models": [
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4.1",
+    "gpt-4o",
+    "microsoft-copilot",
+    "o4-mini",
+    "o4-mini-high"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "rfp-response-review.prompt.md",
+  "payloadPaths": [
+    "rfp-response-review.prompt.md"
+  ],
+  "downloadPath": "bundles/rfp-response-review.prompt.md",
+  "createdAt": "2025-09-28 00:00:00 -0700",
+  "updatedAt": "2025-09-28 00:00:00 -0700",
+  "subtitle": "Structured workflow for analyzing, scoring, and critiquing vendor RFP responses",
+  "summaryBullets": [
+    "Breaks RFP into requirements with unique IDs for traceability.",
+    "Maps vendor responses against requirements and rubric criteria.",
+    "Applies weighted scoring with justifications and citations.",
+    "Evaluates compliance, readability, risks, and gaps.",
+    "Produces scoring matrix, gap analysis, risk summary, and reviewer Q&A."
+  ],
+  "seoDescription": "Structured prompt for scoring and critiquing vendor RFP responses with rubric-based evaluation, risk analysis, and reviewer Q&A outputs.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-09-28-RFP-Response-Review.md",
+    "sourceUrl": "https://tedt.org/prompts/rfp-response-review/",
+    "sourceFileSha256": "sha256:a9bf2da86947bdd2a1591a4765136c2a2dc39bf7e1b1cc027e4890dae9080a54",
+    "sourcePromptSha256": "sha256:fffb7c1d5d4c367cfbd5ffe8421502f94bea9c2716b01dc82adbffc3dd9d4ca7",
+    "importedPromptSha256": "sha256:fffb7c1d5d4c367cfbd5ffe8421502f94bea9c2716b01dc82adbffc3dd9d4ca7",
+    "sourceGuideSha256": "sha256:cda5ca86e57300612d5463865d9ae221b4e60d2d63ba0d90a6c793316da21ac8",
+    "importedGuideSha256": "sha256:cda5ca86e57300612d5463865d9ae221b4e60d2d63ba0d90a6c793316da21ac8",
+    "rawFrontmatterSha256": "sha256:fbe6e7af1f0e0672df13de20c737daabe4f050aa4c730b3db8797731988152eb",
+    "sourceTitle": "RFP Response Evaluation Prompt",
+    "sourceDescription": "This prompt provides a structured framework for evaluating vendor RFP responses. It guides evaluators through parsing requirements, mapping responses, applying a rubric, identifying risks, and generating actionable outputs such as scoring matrices and reviewer Q&A.",
+    "sourceSeoDescription": "Structured prompt for scoring and critiquing vendor RFP responses with rubric-based evaluation, risk analysis, and reviewer Q&A outputs.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4.1",
+      "gpt-4o",
+      "gpt-4-mini",
+      "o4-mini",
+      "o4-mini-high",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/rfp-response-review/"
+    ],
+    "legacyCategories": [
+      "Prompts"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/The-Lighthouse-and-the-New-Lens.webp",
+      "sourceUrl": "https://tedt.org/img/prompts/The-Lighthouse-and-the-New-Lens.webp",
+      "exists": true,
+      "sha256": "sha256:5c782137883bd48ecc055372f2a76c4af24a239883a2e5aa451173f1ff74e789",
+      "metadata": {
+        "image": "/img/prompts/The-Lighthouse-and-the-New-Lens.webp",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "A tall lighthouse perched on a rocky coastal cliff shines its bright beam through heavy fog and storm clouds, illuminating the dark shoreline and turbulent sea below.",
+        "image-credits-artist": "Ted Tschopp",
+        "image-credits-artist-URL": "https://tedt.org/",
+        "image-description": "Lighthouse with keeper and apprentice installing a gleaming new lens, storm clouds pressing in, ocean fog swirling, the beam cutting farther and cleaner across the sea, atmosphere charged with urgency and revelation, Photography style with Canon EOS R5 and 24-70mm f2.8 lens, ultra high resolution realism with cinematic lighting, high texture detail and atmospheric depth",
+        "image-title": "Beacon in the Storm"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Breaks RFP into requirements with unique IDs for traceability.",
+        "Maps vendor responses against requirements and rubric criteria.",
+        "Applies weighted scoring with justifications and citations.",
+        "Evaluates compliance, readability, risks, and gaps.",
+        "Produces scoring matrix, gap analysis, risk summary, and reviewer Q&A."
+      ],
+      "call-to-action": "Discuss on Mastodon",
+      "categories": [
+        "Prompts"
+      ],
+      "date": "2025-09-28 00:00:00 -0700",
+      "description": "This prompt provides a structured framework for evaluating vendor RFP responses. It guides evaluators through parsing requirements, mapping responses, applying a rubric, identifying risks, and generating actionable outputs such as scoring matrices and reviewer Q&A.",
+      "excerpt": "A detailed prompt designed to guide evaluation of vendor RFP responses using structured steps, rubric scoring, and reviewer Q&A.",
+      "image": "/img/prompts/The-Lighthouse-and-the-New-Lens.webp",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "A tall lighthouse perched on a rocky coastal cliff shines its bright beam through heavy fog and storm clouds, illuminating the dark shoreline and turbulent sea below.",
+      "image-credits-artist": "Ted Tschopp",
+      "image-credits-artist-URL": "https://tedt.org/",
+      "image-description": "Lighthouse with keeper and apprentice installing a gleaming new lens, storm clouds pressing in, ocean fog swirling, the beam cutting farther and cleaner across the sea, atmosphere charged with urgency and revelation, Photography style with Canon EOS R5 and 24-70mm f2.8 lens, ultra high resolution realism with cinematic lighting, high texture detail and atmospheric depth",
+      "image-title": "Beacon in the Storm",
+      "keywords": [
+        "assessment tools",
+        "compliance",
+        "procurement",
+        "quality review",
+        "risk assessment",
+        "strategic planning"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "coordinates": {
+          "latitude": 34.147,
+          "longitude": -117.9709
+        },
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4.1",
+        "gpt-4o",
+        "gpt-4-mini",
+        "o4-mini",
+        "o4-mini-high",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "Analyze, score, and critique vendor RFP responses with traceability, grading, and gap analysis.",
+      "seo-description": "Structured prompt for scoring and critiquing vendor RFP responses with rubric-based evaluation, risk analysis, and reviewer Q&A outputs.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "Structured workflow for analyzing, scoring, and critiquing vendor RFP responses",
+      "tags": [
+        "Business Strategy",
+        "Planning",
+        "Risk Management"
+      ],
+      "title": "RFP Response Evaluation Prompt",
+      "update": "2025-09-28 00:00:00 -0700"
+    },
+    "appliedRepairs": [
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/rfp-response-review.webp",
+  "coverImageAlt": "Three anonymous paper parcels rest on a three-arm balance above a cyan-edged comparison mold with an orange gap marker.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: Three anonymous vendor parcels being compared against one physical requirement mold on a precision balance, expressing traceable evaluation, evidence checking, scoring, and risk review of competing RFP responses.\nScene/backdrop: Minimal warm-paper procurement bench against deep slate, without office paperwork, labels, or screens.\nSubject: One dominant navy balance apparatus holding three distinct plain parcels on separate arms; a cyan-edged requirement mold tests their fit, while one small orange spacer reveals a partial gap.\nStyle/medium: premium editorial illustration with tactile dimensional detail; wrapped paper parcels, painted metal balance, carved comparison mold, and restrained workshop realism.\nComposition/framing: exact 16:10 landscape; frontal three-quarter view with a broad stable silhouette; parcels remain large and visually comparable at approximately 290-pixel card width; crop-safe focal subject; no essential detail in the outer 8%.\nLighting/mood: calm, capable, quietly technical; even evaluation light with cyan edge accents and one sparing orange gap marker.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nMaterials/textures: kraft paper without marks, twine without tags, matte painted metal, carved wood, thick card stock.\nConstraints: original image; one dominant comparison metaphor; every parcel and component completely blank and anonymous; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, cats, cat silhouettes, or Microsoft Fluent styling.\nAvoid: company brands, envelopes with seals, score numerals, checkmarks, charts, courtroom scales, generic chatbot imagery, glowing brains, clutter, Microsoft-like gradients.\nTargeted correction: Pull the camera back so the complete three-arm comparison apparatus, all three parcels and bows, the full requirement mold, and the orange gap spacer fit inside the inner 84% with a generous dark border; preserve anonymous blank parcels and avoid any cropping of the compared candidates.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:a6cf70bac4bb0ba94c559ea318e5c307ba1d6b51d448f7fe302fa5c8c72b5ad4",
+  "coverImageSourceHashVersion": 2
+}

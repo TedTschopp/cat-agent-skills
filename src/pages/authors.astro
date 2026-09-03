@@ -1,35 +1,92 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { withBase } from "../lib/url";
-import { formatDate } from "../lib/skills";
-import { allAuthors } from "../lib/badges";
+import { coverGradient, formatDate, initials } from "../lib/skills";
+import { allAuthors, authorKey } from "../lib/badges";
 import { loadBadgeSkills } from "../lib/badge-data";
+import { getLibraryAssets } from "../lib/library-assets";
 import { SITE_METADATA } from "../lib/site-metadata";
 
-// Build the public contribution ledger from the baked skills. Everything here is
-// public (author, github login, featured, dates); the snarky badge is layered on
-// client-side when a visitor looks up their own handle. The same loader feeds the
-// poster page + OG image, so the directory and the shared posters never disagree.
+// Build the public directory from every published library asset. The optional
+// badge reveal remains scoped to skill-family GitHub contributions because those
+// posters use the existing public skills snapshot as their source of record.
 const badgeSkills = await loadBadgeSkills();
-const authors = allAuthors(badgeSkills);
-const totalSkills = badgeSkills.length;
-const featuredTotal = badgeSkills.filter((s) => s.featured).length;
+const badgeAuthors = allAuthors(badgeSkills);
+const assets = await getLibraryAssets();
+type Contributor = {
+  key: string;
+  displayName: string;
+  github: string | null;
+  avatar: string | null;
+  assetCount: number;
+  featuredCount: number;
+  newestCreatedAtMs: number | null;
+  assets: {
+    slug: string;
+    name: string;
+    kindLabel: string;
+    featured: boolean;
+    canonicalPath: string;
+  }[];
+};
+const contributorMap = new Map<string, Contributor>();
+for (const asset of assets) {
+  const key = authorKey(asset.author.github ?? undefined, asset.author.name);
+  const createdAtMs = Date.parse(asset.dates.created ?? asset.dates.updated ?? "");
+  const contributor = contributorMap.get(key) ?? {
+    key,
+    displayName: asset.author.name,
+    github: asset.author.github,
+    avatar: asset.author.avatar,
+    assetCount: 0,
+    featuredCount: 0,
+    newestCreatedAtMs: null,
+    assets: [],
+  };
+  contributor.assetCount += 1;
+  contributor.featuredCount += asset.featured ? 1 : 0;
+  if (Number.isFinite(createdAtMs)) {
+    contributor.newestCreatedAtMs = Math.max(contributor.newestCreatedAtMs ?? 0, createdAtMs);
+  }
+  contributor.assets.push({
+    slug: asset.slug,
+    name: asset.name,
+    kindLabel: asset.kindLabel,
+    featured: asset.featured,
+    canonicalPath: asset.canonicalPath,
+  });
+  contributorMap.set(key, contributor);
+}
+const contributors = [...contributorMap.values()]
+  .map((contributor) => ({
+    ...contributor,
+    assets: contributor.assets.sort(
+      (left, right) => Number(right.featured) - Number(left.featured) || left.name.localeCompare(right.name),
+    ),
+  }))
+  .sort(
+    (left, right) =>
+      right.assetCount - left.assetCount ||
+      right.featuredCount - left.featuredCount ||
+      left.displayName.localeCompare(right.displayName),
+  );
+const featuredTotal = assets.filter((asset) => asset.featured).length;
 
-// How many skill chips to show per author card before collapsing to "+N more".
+// How many asset chips to show per contributor card before collapsing to "+N more".
 const MAX_CHIPS = 8;
 const contributorsSchema = {
   "@type": "ItemList",
   "@id": `${SITE_METADATA.url}authors/#contributors`,
   name: "AI.Tedt.org contributors",
-  numberOfItems: authors.length,
+  numberOfItems: contributors.length,
   isPartOf: { "@id": `${SITE_METADATA.url}authors/#webpage` },
-  itemListElement: authors.map((author, index) => ({
+  itemListElement: contributors.map((author, index) => ({
     "@type": "ListItem",
     position: index + 1,
     item: {
       "@type": "Person",
       name: author.displayName,
-      url: `https://github.com/${author.login}`,
+      ...(author.github ? { url: `https://github.com/${author.github}` } : {}),
     },
   })),
 };
@@ -37,10 +94,10 @@ const contributorsSchema = {
 
 <Layout
   title="Contributors"
-  description="Everyone who has shipped a skill to the AI.Tedt.org gallery — look up your handle to reveal your own contributor badges."
+  description="Everyone who has shipped a reusable asset to the AI.Tedt.org library, including prompt templates, skills, specifications, plugins, and automations."
   image={{
     path: "/social/contributors.jpg",
-    alt: "AI.Tedt.org contributors — the people behind the Prompts and Agent Skills gallery.",
+    alt: "AI.Tedt.org contributors — the people behind the unified AI Library.",
     width: 1200,
     height: 630,
     type: "image/jpeg",
@@ -51,17 +108,17 @@ const contributorsSchema = {
   <section class="mx-auto max-w-8xl px-4 py-10 sm:px-6">
     <header class="mb-8">
       <span class="text-xs font-semibold uppercase tracking-[0.08em] text-accent-text">
-        Community ledger
+        Community Ledger
       </span>
       <h1 class="mt-2 text-4xl leading-tight text-[var(--text-heading)] sm:text-5xl">
         Contributors
       </h1>
       <p class="mt-3 max-w-[68ch] text-lg leading-relaxed text-muted sm:text-xl">
-        Everyone who has shipped a skill to the gallery — each with a{" "}
-        <strong class="text-fg">personal badge</strong> waiting to be claimed.
+        Everyone who has shipped a reusable asset to the library. Skill-family contributors
+        can also reveal the badges earned by their public GitHub contributions.
       </p>
       <p class="mt-1 text-sm text-muted">
-        {authors.length} contributors · {totalSkills} skills · {featuredTotal} featured
+        {contributors.length} contributors · {assets.length} assets · {featuredTotal} featured · {badgeAuthors.length} badge-eligible contributors
       </p>
       <div class="accent-rule mt-5"></div>
     </header>
@@ -70,11 +127,10 @@ const contributorsSchema = {
     <section id="you-panel" class="you-panel mb-14">
       <div class="you-head">
         <div class="you-headings">
-          <h2 class="you-title">Your contributor badge</h2>
+          <h2 class="you-title">Your Skill Contributor Badges</h2>
           <p class="you-sub">
-            Enter your GitHub handle to reveal the badges you’ve earned —
-            computed live from your public contributions, and a little
-            tongue-in-cheek.
+            Enter your GitHub handle to reveal badges computed from public skills,
+            plugins, and automations. The captions remain a little tongue-in-cheek.
           </p>
         </div>
 
@@ -105,68 +161,78 @@ const contributorsSchema = {
 
     {/* ── Public directory: neutral, no snark for others ── */}
     <div class="mb-4 flex items-baseline justify-between gap-3">
-      <h2 class="text-2xl text-[var(--text-heading)]">All contributors</h2>
+      <h2 class="text-2xl text-[var(--text-heading)]">All Contributors</h2>
       <span class="hidden text-sm text-muted sm:inline">
-        sorted by skills shipped
+        Sorted by assets shipped
       </span>
     </div>
     <ul class="author-grid" role="list">
       {
-        authors.map((a) => {
-          const shown = a.skills.slice(0, MAX_CHIPS);
-          const extra = a.skillCount - shown.length;
+        contributors.map((a) => {
+          const shown = a.assets.slice(0, MAX_CHIPS);
+          const extra = a.assetCount - shown.length;
           return (
-            <li class="author-card" data-login={a.login}>
+            <li class="author-card" data-login={a.github ?? a.key}>
               <div class="author-top">
                 <a
                   class="author-avatar-link"
-                  href={withBase(`/?author=${a.login}`)}
-                  aria-label={`Browse ${a.displayName}'s skills`}
+                  href={withBase(`/?contributor=${encodeURIComponent(a.key)}`)}
+                  aria-label={`Browse ${a.displayName}'s assets`}
                 >
-                  <img
-                    src={`https://github.com/${a.login}.png?size=96`}
-                    alt=""
-                    width="44"
-                    height="44"
-                    loading="lazy"
-                    class="author-avatar"
-                  />
+                  {a.avatar || a.github ? (
+                    <img
+                      src={a.avatar ?? `https://github.com/${a.github}.png?size=96`}
+                      alt=""
+                      width="44"
+                      height="44"
+                      loading="lazy"
+                      class="author-avatar"
+                    />
+                  ) : (
+                    <span class="author-avatar grid place-items-center text-xs font-bold text-white" style={`background-image:${coverGradient(a.displayName)}`} aria-hidden="true">
+                      {initials(a.displayName)}
+                    </span>
+                  )}
                 </a>
                 <div class="min-w-0 flex-1">
                   <div class="flex items-center gap-2">
                     <a
-                      href={withBase(`/?author=${a.login}`)}
+                      href={withBase(`/?contributor=${encodeURIComponent(a.key)}`)}
                       class="truncate font-medium hover:text-accent-text"
-                      title={`Browse ${a.displayName}'s skills`}
+                      title={`Browse ${a.displayName}'s assets`}
                     >
                       {a.displayName}
                     </a>
                     <span class="you-flag hidden">you</span>
                   </div>
-                  <a
-                    href={`https://github.com/${a.login}`}
-                    target="_blank"
-                    rel="noopener"
-                    class="block truncate text-sm text-muted hover:text-accent-text"
-                    title={`@${a.login} on GitHub`}
-                  >@{a.login}</a>
+                  {a.github ? (
+                    <a
+                      href={`https://github.com/${a.github}`}
+                      target="_blank"
+                      rel="noopener"
+                      class="block truncate text-sm text-muted hover:text-accent-text"
+                      title={`@${a.github} on GitHub`}
+                    >@{a.github}</a>
+                  ) : (
+                    <span class="block truncate text-sm text-muted">AI.Tedt.org contributor</span>
+                  )}
                 </div>
                 <a
                   class="author-count"
-                  href={withBase(`/?author=${a.login}`)}
-                  title={`Browse all ${a.skillCount} skill${a.skillCount === 1 ? "" : "s"} by ${a.displayName}`}
+                  href={withBase(`/?contributor=${encodeURIComponent(a.key)}`)}
+                  title={`Browse all ${a.assetCount} asset${a.assetCount === 1 ? "" : "s"} by ${a.displayName}`}
                 >
-                  <span class="author-count-num">{a.skillCount}</span>
+                  <span class="author-count-num">{a.assetCount}</span>
                   <span class="author-count-label">
-                    skill{a.skillCount === 1 ? "" : "s"}
+                    asset{a.assetCount === 1 ? "" : "s"}
                   </span>
                 </a>
               </div>
 
-              <ul class="skill-chips" role="list">
+              <ul class="skill-chips" role="list" aria-label={`Assets by ${a.displayName}`}>
                 {shown.map((s) => (
                   <li>
-                    <a class="chip" href={withBase(`/skills/${s.slug}/`)} title={s.name}>
+                    <a class="chip" href={withBase(s.canonicalPath)} title={`${s.name} — ${s.kindLabel}`}>
                       {s.featured && (
                         <span class="chip-featured" title="Featured" aria-hidden="true"></span>
                       )}
@@ -186,7 +252,7 @@ const contributorsSchema = {
                   )}
                   {a.newestCreatedAtMs && (
                     <span class="foot-item">
-                      latest {formatDate(new Date(a.newestCreatedAtMs))}
+                      Latest {formatDate(new Date(a.newestCreatedAtMs))}
                     </span>
                   )}
                 </div>
@@ -335,7 +401,7 @@ const contributorsSchema = {
     /* ---- Directory grid + author cards (template elements → scoped) ---- */
     /* Even grid: every card in a row shares the tallest card's height so there
        are no ragged gaps between rows, while the left-to-right "sorted by
-       skills shipped" order is preserved. Cards are flex columns so the footer
+       assets shipped" order is preserved. Cards are flex columns so the footer
        pins to the bottom edge (see .author-foot). */
     .author-grid {
       display: grid;

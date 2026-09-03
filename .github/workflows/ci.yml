@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   build:
-    name: Build & validate skills
+    name: Build and Validate the Library
     runs-on: ubuntu-latest
     # Allow the workflow to push extracted files back to PR branches from this
     # repo. Forks can't receive a write token, so we fall back to validate-only.
@@ -43,57 +43,47 @@ jobs:
       # Hard-fails on missing/invalid metadata.
       # `authorGithub` is resolved purely from each submission's own metadata
       # (an explicit handle, or a github.com/<login> authorUrl) — never the
-      # PR/merger login — so attribution is stable no matter who lands the skill.
-      - name: Import skill submissions
+      # PR/merger login — so attribution is stable no matter who lands the asset.
+      - name: Import Submissions
         run: npm run import:submissions
 
-      - name: Validate generated skill artwork
+      - name: Validate Generated Artwork
         run: npm run artwork:validate
 
       # Scan every generated page before committing importer output or running
       # Astro. The verifier renders Markdown as HTML, while leaving fenced and
       # inline code examples inert, and rejects active elements, handlers, and
       # dangerous URL protocols that must never reach the published gallery.
-      - name: Reject active content in generated Markdown
-        run: |
-          set -euo pipefail
-          GENERATED_SLUGS="$(
-            find src/content/skills -maxdepth 1 -type f -name '*.md' -print \
-              | sed 's#^src/content/skills/##; s#\.md$##' \
-              | LC_ALL=C sort \
-              | paste -sd, -
-          )"
-          npm run check:upstream-rendered-content -- \
-            --generated-slugs "$GENERATED_SLUGS"
+      - name: Reject Active Content in Generated Markdown
+        run: npm run check:generated-content
 
-      - name: Commit extracted skills
+      - name: Commit Generated Library Files
         if: github.event.pull_request.head.repo.full_name == github.repository
         run: |
-          if [ -n "$(git status --porcelain src/content/skills src/content/guides public/bundles)" ]; then
+          if [ -n "$(git status --porcelain src/content/skills src/content/prompts src/content/artifacts src/content/artifact-payloads src/content/guides public/bundles public/assets.json)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add src/content/skills src/content/guides public/bundles
-            git commit -m "chore: extract skill submissions"
+            git add src/content/skills src/content/prompts src/content/artifacts src/content/artifact-payloads src/content/guides public/bundles public/assets.json
+            git commit -m "chore: generate library submissions"
             git push
           else
-            echo "No extracted changes to commit."
+            echo "No generated library changes to commit."
           fi
 
       # Retain an explicit check-only pass for fork submissions. Import and scan
       # above already exercise their generated output, but this keeps the
       # contributor-facing metadata validation result distinct in the job log.
-      - name: Validate skill submissions (fork PRs)
+      - name: Validate Submissions (Fork PRs)
         if: github.event.pull_request.head.repo.full_name != github.repository
         run: npm run check:submissions
 
-      # `astro build` runs `astro check`-style content validation: every skill in
-      # src/content/skills is parsed against the Zod schema (required platforms,
-      # tags, etc.), so a malformed or out-of-policy skill fails the PR.
-      - name: Build site (validates skill content)
+      # `astro build` parses every generated library collection against its Zod
+      # schema, so malformed or out-of-policy asset metadata fails the PR.
+      - name: Build Site (Validates Library Content)
         run: npm run build
 
   guard-scope:
-    name: Guard PR scope (site vs submissions)
+    name: Guard PR Scope (Site vs. Submissions)
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -103,12 +93,12 @@ jobs:
       # repo config (workflows, scripts, Astro app, root config, etc.) in one go.
       # Submission content and infra/site changes must be reviewed and merged
       # separately so a reviewer can't accidentally approve a site change while
-      # signing off on a skill (or vice versa). Add the `allow-mixed-changes`
+      # signing off on an asset (or vice versa). Add the `allow-mixed-changes`
       # label to intentionally override. Generated artifacts that CI itself
-      # commits back to the branch (src/content/skills, src/content/guides,
-      # public/bundles, src/data/ratings.json) are ignored — they aren't
-      # hand-authored site changes.
-      - name: Detect mixed site + submission changes
+      # commits back to the branch (all generated content collections,
+      # public/bundles, public/assets.json, and derived ratings) are ignored —
+      # they aren't hand-authored site changes.
+      - name: Detect Mixed Site and Submission Changes
         env:
           GH_TOKEN: ${{ github.token }}
           PR: ${{ github.event.pull_request.number }}
@@ -126,8 +116,12 @@ jobs:
           SITE="$(printf '%s\n' "$FILES" \
             | grep -vE '^submissions/' \
             | grep -vE '^src/content/skills/' \
+            | grep -vE '^src/content/prompts/' \
+            | grep -vE '^src/content/artifacts/' \
+            | grep -vE '^src/content/artifact-payloads/' \
             | grep -vE '^src/content/guides/' \
             | grep -vE '^public/bundles/' \
+            | grep -vE '^public/assets\.json$' \
             | grep -vE '^src/data/ratings\.json$' \
             || true)"
           if [ -n "$SUBMISSION" ] && [ -n "$SITE" ]; then

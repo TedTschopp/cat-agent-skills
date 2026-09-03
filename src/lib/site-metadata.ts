@@ -1,8 +1,8 @@
 export const SITE_METADATA = Object.freeze({
   name: "AI.Tedt.org",
-  title: "Prompts and Agent Skills",
+  title: "AI Library",
   description:
-    "Reusable prompts, agent skills, plugins, and automations for Cowork, Copilot Studio, and Scout.",
+    "Reusable agent instruction files, scoped agent instruction files, agent definition files, prompt template files, work specification files, skills, plugins, and automations for leading AI tools.",
   url: "https://ai.tedt.org/",
   language: "en-US",
   locale: "en_US",
@@ -15,7 +15,7 @@ export const SITE_METADATA = Object.freeze({
   themeDark: "#101820",
   socialImagePath: "/social/ai-tedt-org.jpg",
   socialImageAlt:
-    "AI.Tedt.org — Prompts and Agent Skills, beside the illuminated orange-and-cyan TT mark.",
+    "AI.Tedt.org AI Library beside the illuminated orange-and-cyan TT mark.",
   socialImageWidth: 1200,
   socialImageHeight: 630,
   socialImageType: "image/jpeg",

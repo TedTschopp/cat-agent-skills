@@ -1,1055 +1,225 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import SkillCard from "../components/SkillCard.astro";
-import { getCollection } from "astro:content";
-import { PLATFORMS, PLATFORM_COLORS, initials, coverGradient } from "../lib/skills";
-import { authorKey, normalizeLogin } from "../lib/badges";
-import { getRating } from "../lib/ratings";
-import { getDownloads } from "../lib/downloads";
+import AssetCard from "../components/AssetCard.astro";
+import {
+  getLibraryAssets,
+  LIBRARY_ASSET_KINDS,
+  LIBRARY_ASSET_KIND_LABELS,
+} from "../lib/library-assets";
+import { authorKey } from "../lib/badges";
 import { SITE_METADATA } from "../lib/site-metadata";
+import { worksWithLabel } from "../components/asset-labels";
+import { groupAssetsByTopic, topicKey } from "../components/topic-routing";
 
-const isSample = (s: { data: { tags: string[] } }) =>
-  s.data.tags.includes("sample");
+const allAssets = await getLibraryAssets();
+// Publication is fail-closed. A migrated prompt can exist in the content
+// collection before its required artwork is ready, but it cannot enter the
+// public catalog until the normalized adapter marks it published.
+const assets = allAssets.filter((asset) => asset.publicationStatus === "published");
 
-const skills = (await getCollection("skills")).sort((a, b) => {
-  if (isSample(a) !== isSample(b)) return isSample(a) ? 1 : -1;
-  if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
-  return a.data.name.localeCompare(b.data.name);
-});
+const countValues = (values: string[][]) => {
+  const counts = new Map<string, number>();
+  values.flat().forEach((value) => counts.set(value, (counts.get(value) ?? 0) + 1));
+  return [...counts.entries()].sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0]));
+};
 
-const platformCounts = new Map<string, number>();
-for (const skill of skills) {
-  for (const platform of skill.data.platforms) {
-    platformCounts.set(platform, (platformCounts.get(platform) ?? 0) + 1);
-  }
+const kindCounts = new Map<string, number>();
+for (const asset of assets) {
+  kindCounts.set(asset.kind, (kindCounts.get(asset.kind) ?? 0) + 1);
 }
+const shownKinds = LIBRARY_ASSET_KINDS.filter((kind) => kindCounts.has(kind));
+const worksWithOptions = countValues(assets.map((asset) => asset.worksWith.map(worksWithLabel)));
+const topicOptions = groupAssetsByTopic(assets).map((topic) => ({
+  key: topic.key,
+  label: topic.label,
+  count: topic.assets.length,
+}));
 
-const tagCounts = new Map<string, number>();
-for (const skill of skills) {
-  for (const tag of skill.data.tags) {
-    tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
-  }
+const contributorMap = new Map<string, { name: string; count: number }>();
+for (const asset of assets) {
+  const key = authorKey(asset.author.github ?? undefined, asset.author.name);
+  const contributor = contributorMap.get(key);
+  if (contributor) contributor.count += 1;
+  else contributorMap.set(key, { name: asset.author.name, count: 1 });
 }
-const allTags = [...tagCounts.entries()].sort(
-  (a, b) => b[1] - a[1] || a[0].localeCompare(b[0])
-);
-// The full tag list (100+) would bury the gallery, so the bar shows only the
-// most-used tags inline — 3 on mobile, 8 on desktop — and moves the long tail
-// into a searchable "More tags" popover. Multi-select combines tags (match any).
-const popularTags = allTags.slice(0, 8);
+const contributors = [...contributorMap.entries()]
+  .map(([key, value]) => ({ key, ...value }))
+  .sort((left, right) => right.count - left.count || left.name.localeCompare(right.name));
 
-// Contributor directory for the "Filter by contributor" picker. One entry per
-// person (keyed the same way as the ?author= filter), carrying a display name,
-// optional GitHub login for the avatar, and how many skills they've shipped so
-// the list can lead with the most prolific contributors.
-const contributorMap = new Map<
-  string,
-  { name: string; login: string; count: number }
->();
-for (const skill of skills) {
-  const key = authorKey(skill.data.authorGithub, skill.data.author);
-  if (!key) continue;
-  const existing = contributorMap.get(key);
-  if (existing) existing.count++;
-  else
-    contributorMap.set(key, {
-      name: skill.data.author,
-      login: normalizeLogin(skill.data.authorGithub) ?? "",
-      count: 1,
-    });
-}
-const allContributors = [...contributorMap.entries()]
-  .map(([key, v]) => ({ key, ...v }))
-  .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
-
-const indexableSkills = skills.filter((skill) => !isSample(skill));
-const gallerySchema = {
+const librarySchema = {
   "@type": "ItemList",
-  "@id": `${SITE_METADATA.url}#skill-gallery`,
-  name: "Prompts and Agent Skills",
-  numberOfItems: indexableSkills.length,
+  "@id": `${SITE_METADATA.url}#ai-library`,
+  name: "AI Library",
+  numberOfItems: assets.length,
   isPartOf: { "@id": `${SITE_METADATA.url}#webpage` },
-  itemListElement: indexableSkills.map((skill, index) => ({
+  itemListElement: assets.map((asset, index) => ({
     "@type": "ListItem",
     position: index + 1,
-    name: skill.data.name,
-    url: new URL(`/skills/${skill.id}/`, SITE_METADATA.url).href,
+    name: asset.name,
+    url: new URL(asset.canonicalPath, SITE_METADATA.url).href,
   })),
 };
 ---
 
-<Layout schemaType="CollectionPage" structuredData={gallerySchema}>
+<Layout
+  title="AI Library"
+  description={SITE_METADATA.description}
+  schemaType="CollectionPage"
+  structuredData={librarySchema}
+>
   <section class="mx-auto max-w-8xl px-4 pb-8 pt-10 sm:px-6 sm:pb-10 sm:pt-14">
     <header>
       <span class="text-xs font-semibold uppercase tracking-[0.08em] text-accent-text">
-        AI skill library
+        The Public Workbench for AI
       </span>
       <h1 class="mt-2 max-w-[18ch] text-4xl leading-tight text-[var(--text-heading)] sm:text-5xl">
-        The gallery of skills for your AI agents
+        AI Library
       </h1>
       <p class="mt-3 max-w-[68ch] text-lg leading-relaxed text-muted sm:text-xl">
-        Browse <span class="text-fg">skills and plugins contributed by the
-        community</span>: drop-in instructions and script bundles that teach your
-        agents new tricks. Find one, download the markdown (and scripts), and add
-        it to <span class="text-fg">Cowork</span>, <span
-          class="text-fg">Copilot Studio</span
-        >, or <span class="text-fg">Scout</span>.
+        Browse reusable AI assets in one catalog. Find an agent skill, agent instruction
+        file, scoped agent instruction file, agent definition file, prompt template file,
+        work specification file, plugin, or automation. Review how it works, then download
+        the file you need.
       </p>
       <div class="accent-rule mt-5"></div>
     </header>
   </section>
 
-  <div class="mx-auto grid max-w-8xl grid-cols-[minmax(0,1fr)] gap-8 px-4 pb-12 sm:px-6 lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-12">
-    <aside class="min-w-0 rounded-lg border border-border bg-surface-2 p-4 shadow-[var(--shadow-sm)] sm:p-5">
+  <div class="mx-auto grid max-w-8xl grid-cols-[minmax(0,1fr)] gap-8 px-4 pb-12 sm:px-6 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-12">
+    <aside class="min-w-0 rounded-lg border border-border bg-surface-2 p-4 shadow-[var(--shadow-sm)] sm:p-5" aria-label="Library filters">
       <div>
-        <label for="skill-search" class="text-xs font-semibold uppercase tracking-[0.08em] text-subtle">
+        <label for="library-search" class="text-xs font-semibold uppercase tracking-[0.08em] text-subtle">
           Search
         </label>
         <div class="mt-2 flex items-center gap-2 rounded border border-border bg-surface px-3 py-2 shadow-[var(--shadow-inset)] focus-within:border-accent">
           <input
-            id="skill-search"
+            id="library-search"
             type="search"
-            placeholder="Name, contributor, or tag…"
+            placeholder="Title, purpose, topic, or contributor…"
             autocomplete="off"
             class="min-w-0 flex-1 bg-transparent text-sm text-fg placeholder:text-subtle outline-none"
           />
           <button
-            id="search-clear"
+            id="library-search-clear"
             type="button"
-            class="hidden text-xs text-[var(--link)] underline underline-offset-2"
+            class="text-xs text-[var(--link)] underline underline-offset-2 hover:text-[var(--link-hover)]"
+            hidden
           >
             Clear
           </button>
         </div>
       </div>
 
-  <!-- Platform filters -->
-  <section class="mt-6 border-t border-border pt-5">
-    <div>
-      <span class="text-xs font-semibold uppercase tracking-[0.08em] text-subtle"
-        >Platform</span
-      >
-      <div id="platform-filters" class="mt-2 flex flex-col gap-2">
-        <button
-          type="button"
-          data-platform=""
-          class="platform-chip flex w-full items-center justify-between rounded border border-accent bg-accent px-3 py-1.5 text-left text-sm font-semibold text-accent-fg transition"
-          aria-pressed="true"
-        >
-          <span>All platforms</span>
-          <span class="text-xs text-subtle">{skills.length}</span>
-        </button
-        >
-        {
-          PLATFORMS.map((platform) => (
-            <button
-              type="button"
-              data-platform={platform}
-              class="platform-chip flex w-full items-center gap-2 rounded border border-border bg-surface px-3 py-1.5 text-left text-sm font-semibold text-muted transition hover:border-accent/40 hover:text-fg"
-              aria-pressed="false"
-            >
-              <span
-                class="h-2 w-2 rounded-full"
-                style={`background:${PLATFORM_COLORS[platform]}`}
-              />
-              {platform}
-              <span class="ml-auto text-xs text-subtle">
-                {platformCounts.get(platform) ?? 0}
-              </span>
-            </button>
-          ))
-        }
-      </div>
-    </div>
-  </section>
+      <div class="mt-6 space-y-5 border-t border-border pt-5">
+        <label for="library-kind" class="block">
+          <span class="text-xs font-semibold uppercase tracking-[0.08em] text-subtle">Asset Type</span>
+          <select id="library-kind" class="library-filter-select">
+            <option value="">All asset types ({assets.length})</option>
+            {shownKinds.map((kind) => (
+              <option value={kind}>{LIBRARY_ASSET_KIND_LABELS[kind]} ({kindCounts.get(kind)})</option>
+            ))}
+          </select>
+        </label>
 
-  <!-- Tag filters -->
-  <section class="mt-6 border-t border-border pt-5">
-    <div>
-      <span class="text-xs font-semibold uppercase tracking-[0.08em] text-subtle">Tags and contributors</span>
-      <div
-        id="tag-row"
-        class="relative mt-2 flex flex-nowrap items-center gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0"
-      >
-        <button
-          type="button"
-          data-tag-all
-          class="shrink-0 rounded-full border border-accent bg-accent-soft px-3 py-1 text-sm font-medium text-accent-text transition"
-          aria-pressed="true">All</button
-        >
-        {
-          popularTags.map(([tag, count], i) => (
-            <button
-              type="button"
-              data-tag-inline
-              data-tag={tag}
-              class:list={[
-                "shrink-0 rounded-full border border-border bg-surface-2 px-3 py-1 text-sm font-medium text-muted transition hover:border-accent/40 hover:text-fg",
-                i >= 3 && "hidden sm:inline-flex",
-              ]}
-              aria-pressed="false"
-            >
-              {tag}
-              <span class="ml-1 text-xs text-subtle">{count}</span>
-            </button>
-          ))
-        }
-        <div
-          id="tag-backdrop"
-          class="fixed inset-0 z-30 hidden bg-black/40 sm:hidden"
-          aria-hidden="true"
-        ></div>
-        {
-          allTags.length > popularTags.length && (
-            <div class="relative shrink-0">
-              <button
-                type="button"
-                id="tag-more"
-                class="rounded-full border border-dashed border-border px-3 py-1 text-sm font-medium text-accent-text transition hover:border-accent/60"
-                aria-expanded="false"
-                aria-haspopup="true"
-              >
-                More tags ▾
-              </button>
-              <div
-                id="tag-panel"
-                class="fixed inset-x-0 bottom-0 z-40 hidden max-h-[70vh] w-full overflow-y-auto rounded-t-2xl border border-border bg-surface p-3 shadow-2xl sm:absolute sm:inset-x-auto sm:bottom-auto sm:left-0 sm:top-full sm:z-30 sm:mt-2 sm:max-h-none sm:w-80 sm:rounded-lg sm:shadow-lg"
-              >
-          <div class="mb-2 flex items-center justify-between sm:hidden">
-            <span class="text-sm font-semibold text-fg">Filter by tag</span>
-            <button
-              type="button"
-              id="tag-sheet-close"
-              class="px-2 text-lg leading-none text-muted"
-              aria-label="Close tag filter">✕</button
-            >
-          </div>
-          <label for="tag-search" class="sr-only">Search tags</label>
-          <input
-            id="tag-search"
-            type="search"
-            placeholder="Search tags…"
-            autocomplete="off"
-            class="w-full rounded-lg border border-border bg-bg px-3 py-1.5 text-sm text-fg outline-none focus:border-accent"
-          />
-          <div
-            id="tag-list"
-            class="mt-2 flex max-h-[50vh] flex-wrap gap-2 overflow-y-auto sm:max-h-64"
-          >
-            {
-              allTags.map(([tag, count]) => (
-                <button
-                  type="button"
-                  data-tag-list
-                  data-tag={tag}
-                  class="rounded-full border border-border bg-surface-2 px-3 py-1 text-sm font-medium text-muted transition hover:border-accent/40 hover:text-fg"
-                >
-                  {tag}
-                  <span class="ml-1 text-xs text-subtle">{count}</span>
-                </button>
-              ))
-            }
-          </div>
-              </div>
-            </div>
-            )
-          }
-        <div
-          id="contributor-backdrop"
-          class="fixed inset-0 z-30 hidden bg-black/40 sm:hidden"
-          aria-hidden="true"
-        ></div>
-        <div class="relative shrink-0">
-          <button
-            type="button"
-            id="contributor-more"
-            class="flex items-center gap-1.5 rounded-full border border-dashed border-border px-3 py-1 text-sm font-medium text-accent-text transition hover:border-accent/60"
-            aria-expanded="false"
-            aria-haspopup="true"
-          >
-            Contributor<span id="contributor-count" class="font-semibold"></span> ▾
-          </button>
-          <div
-            id="contributor-panel"
-            class="fixed inset-x-0 bottom-0 z-40 hidden max-h-[70vh] w-full overflow-y-auto rounded-t-2xl border border-border bg-surface p-3 shadow-2xl sm:absolute sm:inset-x-auto sm:bottom-auto sm:left-0 sm:top-full sm:z-30 sm:mt-2 sm:max-h-none sm:w-80 sm:rounded-lg sm:shadow-lg"
-          >
-            <div class="mb-2 flex items-center justify-between sm:hidden">
-              <span class="text-sm font-semibold text-fg">Filter by contributor</span>
-              <button
-                type="button"
-                id="contributor-sheet-close"
-                class="px-2 text-lg leading-none text-muted"
-                aria-label="Close contributor filter">✕</button
-              >
-            </div>
-            <label for="contributor-search" class="sr-only">Search contributors</label>
-            <input
-              id="contributor-search"
-              type="search"
-              placeholder="Search contributors…"
-              autocomplete="off"
-              class="w-full rounded-lg border border-border bg-bg px-3 py-1.5 text-sm text-fg outline-none focus:border-accent"
-            />
-            <div
-              id="contributor-list"
-              class="mt-2 flex max-h-[50vh] flex-col gap-0.5 overflow-y-auto sm:max-h-72"
-            >
-              {
-                allContributors.map((c) => (
-                  <button
-                    type="button"
-                    data-contributor-item
-                    data-key={c.key}
-                    data-login={c.login}
-                    data-name={c.name}
-                    aria-pressed="false"
-                    class="contributor-item flex w-full items-center gap-2.5 rounded-lg px-2 py-1.5 text-left transition hover:bg-surface-2"
-                  >
-                    {c.login ? (
-                      <img
-                        src={`https://github.com/${c.login}.png?size=40`}
-                        alt=""
-                        width="22"
-                        height="22"
-                        loading="lazy"
-                        class="h-[22px] w-[22px] shrink-0 rounded-full bg-surface-2 object-cover"
-                      />
-                    ) : (
-                      <span
-                        class="grid h-[22px] w-[22px] shrink-0 place-items-center rounded-full text-[9px] font-bold text-white"
-                        style={`background-image:${coverGradient(c.name)}`}
-                        aria-hidden="true"
-                      >
-                        {initials(c.name)}
-                      </span>
-                    )}
-                    <span class="contributor-name min-w-0 flex-1 truncate text-sm font-medium text-fg">
-                      {c.name}
-                    </span>
-                    <span class="shrink-0 text-xs text-subtle">{c.count}</span>
-                  </button>
-                ))
-              }
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        id="filter-chips"
-        class="flex flex-wrap items-center gap-2"
-      >
-        <span id="contributor-chips" class="contents"></span>
-        <span id="tag-chips" class="contents"></span>
-      </div>
-    </div>
-  </section>
+        <label for="library-works-with" class="block">
+          <span class="text-xs font-semibold uppercase tracking-[0.08em] text-subtle">Works With</span>
+          <select id="library-works-with" class="library-filter-select">
+            <option value="">Any provider or product</option>
+            {worksWithOptions.map(([value, count]) => <option value={value}>{value} ({count})</option>)}
+          </select>
+        </label>
 
+        <label for="library-topic" class="block">
+          <span class="text-xs font-semibold uppercase tracking-[0.08em] text-subtle">Topics</span>
+          <select id="library-topic" class="library-filter-select">
+            <option value="">All topics</option>
+            {topicOptions.map((topic) => <option value={topic.key}>{topic.label} ({topic.count})</option>)}
+          </select>
+        </label>
+
+        <label for="library-contributor" class="block">
+          <span class="text-xs font-semibold uppercase tracking-[0.08em] text-subtle">Contributor</span>
+          <select id="library-contributor" class="library-filter-select">
+            <option value="">All contributors</option>
+            {contributors.map((person) => <option value={person.key}>{person.name} ({person.count})</option>)}
+          </select>
+        </label>
+      </div>
+
+      <button
+        id="library-reset"
+        type="button"
+        class="mt-6 text-sm font-medium text-[var(--link)] underline underline-offset-2 hover:text-[var(--link-hover)]"
+      >
+        Reset Filters
+      </button>
     </aside>
 
-    <div class="min-w-0">
-
-  <!-- Gallery -->
-  <section>
-
-    <div class="mb-5 flex flex-wrap items-center justify-between gap-4">
-      <h2 class="display-face text-2xl text-[var(--text-heading)]">
-        Skills <span id="result-count" class="text-muted"
-          >({skills.length})</span
-        >
-      </h2>
-      <div class="flex flex-wrap items-center gap-3">
-        <div id="type-filters" class="flex flex-wrap gap-0">
-          <button
-            type="button"
-            data-type=""
-            class="type-chip rounded-l border border-accent bg-accent px-3 py-1 text-sm font-medium text-accent-fg transition"
-            aria-pressed="true">All</button
-          >
-          <button
-            type="button"
-            data-type="skill"
-            class="type-chip -ml-px border border-border bg-surface px-3 py-1 text-sm font-medium text-muted transition hover:border-accent/40 hover:text-fg"
-            aria-pressed="false">Skills</button
-          >
-          <button
-            type="button"
-            data-type="plugin"
-            class="type-chip -ml-px border border-border bg-surface px-3 py-1 text-sm font-medium text-muted transition hover:border-accent/40 hover:text-fg"
-            aria-pressed="false">Plugins</button
-          >
-          <button
-            type="button"
-            data-type="automation"
-            class="type-chip -ml-px rounded-r border border-border bg-surface px-3 py-1 text-sm font-medium text-muted transition hover:border-accent/40 hover:text-fg"
-            aria-pressed="false">Automations</button
-          >
-        </div>
-        <label class="flex items-center gap-2 text-sm text-muted">
-          <span class="hidden text-xs font-semibold uppercase tracking-[0.08em] sm:inline">Sort</span>
-          <select
-            id="sort-select"
-            class="rounded border border-border bg-surface px-3 py-1.5 text-sm text-fg focus:border-accent focus:outline-none"
-          >
+    <section class="min-w-0" aria-labelledby="library-results-heading">
+      <div class="mb-5 flex flex-wrap items-center justify-between gap-4">
+        <h2 id="library-results-heading" class="display-face text-2xl text-[var(--text-heading)]">
+          Assets (<span data-library-result-count>{assets.length}</span>)
+        </h2>
+        <label class="flex items-center gap-2 text-sm text-muted" for="library-sort">
+          <span class="text-xs font-semibold uppercase tracking-[0.08em]">Sort</span>
+          <select id="library-sort" class="rounded border border-border bg-surface px-3 py-1.5 text-sm text-fg focus:border-accent focus:outline-none">
             <option value="featured">Featured</option>
-            <option value="rating">Top rated</option>
-            <option value="downloads">Most downloaded</option>
+            <option value="rating">Top Rated</option>
+            <option value="downloads">Most Downloaded</option>
             <option value="name">Name (A–Z)</option>
             <option value="newest">Newest</option>
           </select>
         </label>
       </div>
-    </div>
 
-    <div
-      id="gallery"
-      class="grid grid-cols-1 gap-6 sm:grid-cols-[repeat(auto-fill,minmax(18rem,1fr))]"
-    >
-      {
-        skills.map((skill) => (
-          <div
-            class="skill-item"
-            data-name={skill.data.name.toLowerCase()}
-            data-desc={skill.data.description.toLowerCase()}
-            data-tags={skill.data.tags.join(",").toLowerCase()}
-            data-platforms={skill.data.platforms.join(",")}
-            data-type={skill.data.type}
-            data-author-name={skill.data.author}
-            data-author-login={normalizeLogin(skill.data.authorGithub)}
-            data-author-key={authorKey(skill.data.authorGithub, skill.data.author)}
-            data-rating={getRating(skill.id)}
-            data-downloads={getDownloads(skill.id)}
-            data-featured={skill.data.featured ? "1" : "0"}
-            data-sample={skill.data.tags.includes("sample") ? "1" : "0"}
-            data-updated={(
-              skill.data.updatedAt ??
-              skill.data.createdAt ??
-              new Date(0)
-            ).getTime()}
-          >
-            <SkillCard
-              slug={skill.id}
-              name={skill.data.name}
-              description={skill.data.description}
-              platforms={skill.data.platforms}
-              type={skill.data.type}
-              tags={skill.data.tags}
-              author={skill.data.author}
-              coverColor={skill.data.coverColor}
-              coverImage={skill.data.coverImage}
-              coverImageAlt={skill.data.coverImageAlt}
-              coverImageWidth={skill.data.coverImageWidth}
-              coverImageHeight={skill.data.coverImageHeight}
-              hasBundle={Boolean(skill.data.bundle)}
-              isInstaller={skill.data.type === "automation" && Boolean(skill.data.bundle?.endsWith(".zip"))}
-              rating={getRating(skill.id)}
-              downloads={getDownloads(skill.id)}
-              featured={skill.data.featured}
-            />
-          </div>
-        ))
-      }
-    </div>
+      <div data-library-gallery class="grid grid-cols-1 gap-6 sm:grid-cols-[repeat(auto-fill,minmax(18rem,1fr))]">
+        {assets.map((asset) => {
+          const contributorKey = authorKey(asset.author.github ?? undefined, asset.author.name);
+          const searchable = [
+            asset.name,
+            asset.description,
+            asset.kindLabel,
+            asset.author.name,
+            asset.slug,
+            asset.entrypoint,
+            ...asset.payloadPaths,
+            ...asset.topics,
+            ...asset.tags,
+            ...asset.keywords,
+            ...asset.compatibility,
+            ...asset.worksWith,
+            ...asset.worksWith.map(worksWithLabel),
+          ].join(" ").toLocaleLowerCase();
+          const updated = Date.parse(asset.dates.updated ?? asset.dates.created ?? "") || 0;
+          return (
+            <div
+              data-library-item
+              data-name={asset.name.toLocaleLowerCase()}
+              data-search={searchable}
+              data-kind={asset.kind}
+              data-works-with={JSON.stringify(asset.worksWith.map(worksWithLabel))}
+              data-topics={JSON.stringify([...new Set(asset.topics.map(topicKey))])}
+              data-contributor={contributorKey}
+              data-rating={asset.rating}
+              data-downloads={asset.downloads}
+              data-featured={asset.featured ? "1" : "0"}
+              data-updated={updated}
+            >
+              <AssetCard asset={asset} />
+            </div>
+          );
+        })}
+      </div>
 
-    <p id="empty-state" class="hidden py-16 text-center text-muted">
-      No skills match your search. Try a different term or clear the filters.
-    </p>
-
-    <div id="scroll-sentinel" class="h-10"></div>
-  </section>
-    </div>
+      <div data-library-empty class="rounded-lg border border-dashed border-border bg-surface-2 px-6 py-14 text-center" hidden>
+        <h3 class="text-xl text-[var(--text-heading)]">No Matching Assets</h3>
+        <p class="mt-2 text-sm text-muted">Try another search term or reset one of the filters.</p>
+      </div>
+      <div data-library-sentinel class="h-10" aria-hidden="true"></div>
+    </section>
   </div>
 </Layout>
 
 <script>
-  import { initials, coverGradient } from "../lib/skills";
-
-  const BATCH = 12;
-
-  const gallery = document.getElementById("gallery")!;
-  const items = Array.from(
-    gallery.querySelectorAll<HTMLElement>(".skill-item")
-  );
-  const search = document.getElementById("skill-search") as HTMLInputElement;
-  const searchClear = document.getElementById("search-clear") as HTMLButtonElement;
-  const tagRow = document.getElementById("tag-row")!;
-  const tagAllBtn = tagRow.querySelector<HTMLButtonElement>("[data-tag-all]")!;
-  const tagInlineBtns = Array.from(
-    tagRow.querySelectorAll<HTMLButtonElement>("[data-tag-inline]")
-  );
-  const tagListBtns = Array.from(
-    document.querySelectorAll<HTMLButtonElement>("#tag-list [data-tag-list]")
-  );
-  const tagChipsBox = document.getElementById("tag-chips")!;
-  const tagMore = document.getElementById("tag-more");
-  const tagPanel = document.getElementById("tag-panel");
-  const tagSearch = document.getElementById("tag-search") as HTMLInputElement | null;
-  const tagSheetClose = document.getElementById("tag-sheet-close");
-  const tagBackdrop = document.getElementById("tag-backdrop");
-  const contributorMore = document.getElementById("contributor-more");
-  const contributorPanel = document.getElementById("contributor-panel");
-  const contributorSearch = document.getElementById(
-    "contributor-search"
-  ) as HTMLInputElement | null;
-  const contributorSheetClose = document.getElementById("contributor-sheet-close");
-  const contributorBackdrop = document.getElementById("contributor-backdrop");
-  const contributorCount = document.getElementById("contributor-count");
-  const contributorItemBtns = Array.from(
-    document.querySelectorAll<HTMLButtonElement>(
-      "#contributor-list [data-contributor-item]"
-    )
-  );
-  const platformChips = Array.from(
-    document.querySelectorAll<HTMLButtonElement>(".platform-chip")
-  );
-  const typeChips = Array.from(
-    document.querySelectorAll<HTMLButtonElement>(".type-chip")
-  );
-  const countEl = document.getElementById("result-count")!;
-  const emptyEl = document.getElementById("empty-state")!;
-  const filterChips = document.getElementById("filter-chips")!;
-  const contributorChips = document.getElementById("contributor-chips")!;
-  const sentinel = document.getElementById("scroll-sentinel")!;
-  const sortSelect = document.getElementById("sort-select") as HTMLSelectElement;
-
-  const SORTS = ["featured", "rating", "downloads", "name", "newest"] as const;
-  type SortMode = (typeof SORTS)[number];
-
-  let query = "";
-  const activeTags = new Set<string>();
-  let activePlatform = "";
-  let activeType = "";
-  const activeAuthors = new Set<string>();
-  let sortMode: SortMode = "featured";
-  let shown = BATCH;
-  let matched: HTMLElement[] = items;
-
-  const num = (el: HTMLElement, key: string) => Number(el.dataset[key] ?? "0") || 0;
-
-  function computeMatched(): HTMLElement[] {
-    return items.filter((el) => {
-      const tags = (el.dataset.tags ?? "").split(",");
-      const platforms = (el.dataset.platforms ?? "").split(",");
-      const tagOk =
-        activeTags.size === 0 || tags.some((t) => activeTags.has(t));
-      const platformOk = !activePlatform || platforms.includes(activePlatform);
-      const typeOk = !activeType || (el.dataset.type ?? "skill") === activeType;
-      const authorOk =
-        activeAuthors.size === 0 || activeAuthors.has(el.dataset.authorKey ?? "");
-      const author = `${el.dataset.authorName ?? ""} ${el.dataset.authorLogin ?? ""}`.toLowerCase();
-      const text = `${el.dataset.name} ${el.dataset.desc} ${el.dataset.tags} ${author}`;
-      const queryOk = !query || text.includes(query);
-      return tagOk && platformOk && typeOk && authorOk && queryOk;
-    });
-  }
-
-  function applySort(list: HTMLElement[]): HTMLElement[] {
-    const byName = (a: HTMLElement, b: HTMLElement) =>
-      (a.dataset.name ?? "").localeCompare(b.dataset.name ?? "");
-    return [...list].sort((a, b) => {
-      const sampleDiff = num(a, "sample") - num(b, "sample");
-      if (sampleDiff !== 0) return sampleDiff;
-      switch (sortMode) {
-        case "rating":
-          return num(b, "rating") - num(a, "rating") || byName(a, b);
-        case "downloads":
-          return num(b, "downloads") - num(a, "downloads") || byName(a, b);
-        case "name":
-          return byName(a, b);
-        case "newest":
-          return num(b, "updated") - num(a, "updated") || byName(a, b);
-        case "featured":
-        default:
-          return num(b, "featured") - num(a, "featured") || byName(a, b);
-      }
-    });
-  }
-
-  function reorderDom() {
-    const frag = document.createDocumentFragment();
-    matched.forEach((el) => frag.appendChild(el));
-    items.filter((el) => !matched.includes(el)).forEach((el) => frag.appendChild(el));
-    gallery.appendChild(frag);
-  }
-
-  function render() {
-    items.forEach((el) => (el.style.display = "none"));
-    matched.slice(0, shown).forEach((el) => (el.style.display = ""));
-    countEl.textContent = `(${matched.length})`;
-    emptyEl.classList.toggle("hidden", matched.length > 0);
-  }
-
-  // The infinite-scroll IntersectionObserver below only reacts to *changes* in
-  // the sentinel's visibility. After a filter reset shrinks `shown` back to
-  // BATCH, a sentinel that was already parked in view stays in view and never
-  // re-fires — so `shown` would stay stuck at 12 even when many more cards
-  // match (e.g. switching from a small tag to a larger one, which showed the
-  // right "(N)" count but only the first 12 cards). Top up manually until the
-  // sentinel is pushed past the preload zone, or everything is shown.
-  const PRELOAD = 400;
-  function sentinelInView() {
-    const rect = sentinel.getBoundingClientRect();
-    return rect.top <= window.innerHeight + PRELOAD && rect.bottom >= -PRELOAD;
-  }
-  function fill() {
-    let guard = 0;
-    while (shown < matched.length && sentinelInView() && guard++ < 500) {
-      shown = Math.min(shown + BATCH, matched.length);
-      render();
-    }
-  }
-
-  function refilter() {
-    matched = applySort(computeMatched());
-    shown = BATCH;
-    reorderDom();
-    render();
-    fill();
-  }
-
-  // Contributor filter (?author=<login-or-slug>,…): one or more selected
-  // contributors, chosen from the searchable picker and shown as removable chips
-  // in the filter row. Entry points are the skill detail-page byline and the
-  // Contributors directory, which deep-link here to show everything a person made.
-  function contributorMeta(key: string): { name: string; login: string } {
-    const rep = items.find((el) => (el.dataset.authorKey ?? "") === key);
-    return {
-      name: rep?.dataset.authorName || key,
-      login: rep?.dataset.authorLogin || "",
-    };
-  }
-
-  // Add spacing above the chips row only when it actually holds a chip, so an
-  // empty filter bar collapses cleanly.
-  function updateChipSpacing() {
-    const has =
-      contributorChips.childElementCount > 0 || tagChipsBox.childElementCount > 0;
-    filterChips.classList.toggle("mt-2", has);
-  }
-
-  function buildContributorChip(key: string): HTMLElement {
-    const { name, login } = contributorMeta(key);
-    const chip = document.createElement("span");
-    chip.className =
-      "inline-flex max-w-full items-center gap-1.5 rounded-full border border-accent/40 bg-accent-soft py-1 pl-1 pr-1.5 text-sm";
-
-    if (login) {
-      const img = document.createElement("img");
-      img.src = `https://github.com/${login}.png?size=40`;
-      img.alt = "";
-      img.width = 20;
-      img.height = 20;
-      img.loading = "lazy";
-      img.className = "h-5 w-5 shrink-0 rounded-full bg-surface-2 object-cover";
-      chip.appendChild(img);
-    } else {
-      const mono = document.createElement("span");
-      mono.className =
-        "grid h-5 w-5 shrink-0 place-items-center rounded-full text-[8px] font-bold text-white";
-      mono.style.backgroundImage = coverGradient(name);
-      mono.setAttribute("aria-hidden", "true");
-      mono.textContent = initials(name);
-      chip.appendChild(mono);
-    }
-
-    const label = document.createElement("span");
-    label.className = "min-w-0 truncate font-medium text-fg";
-    label.textContent = name;
-    chip.appendChild(label);
-
-    const clear = document.createElement("button");
-    clear.type = "button";
-    clear.setAttribute("aria-label", `Remove contributor filter: ${name}`);
-    clear.className =
-      "grid h-5 w-5 shrink-0 place-items-center rounded-full text-muted transition-colors hover:bg-surface hover:text-accent-text";
-    clear.textContent = "×";
-    clear.addEventListener("click", () => toggleContributor(key));
-    chip.appendChild(clear);
-    return chip;
-  }
-
-  function renderContributorChips() {
-    contributorChips.replaceChildren();
-    activeAuthors.forEach((key) =>
-      contributorChips.appendChild(buildContributorChip(key))
-    );
-    updateChipSpacing();
-  }
-
-  function paintContributors() {
-    contributorItemBtns.forEach((btn) => {
-      const on = activeAuthors.has(btn.dataset.key ?? "");
-      btn.setAttribute("aria-pressed", String(on));
-      btn.classList.toggle("bg-accent-soft", on);
-      btn
-        .querySelector(".contributor-name")
-        ?.classList.toggle("text-accent-text", on);
-    });
-    const any = activeAuthors.size > 0;
-    contributorMore?.classList.toggle("border-dashed", !any);
-    contributorMore?.classList.toggle("bg-accent-soft", any);
-    if (contributorCount)
-      contributorCount.textContent = any ? ` ${activeAuthors.size}` : "";
-  }
-
-  function toggleContributor(key: string) {
-    if (!key) return;
-    if (activeAuthors.has(key)) activeAuthors.delete(key);
-    else activeAuthors.add(key);
-    paintContributors();
-    renderContributorChips();
-    syncUrl();
-    refilter();
-  }
-
-  // Contributor picker: dropdown on desktop, bottom sheet on mobile. Mutually
-  // exclusive with the "More tags" panel so only one overlay is open at a time.
-  function setContributorPanel(open: boolean) {
-    if (!contributorPanel || !contributorMore) return;
-    if (open) setTagPanel(false);
-    contributorPanel.classList.toggle("hidden", !open);
-    contributorBackdrop?.classList.toggle("hidden", !open);
-    contributorMore.setAttribute("aria-expanded", String(open));
-    if (
-      open &&
-      contributorSearch &&
-      window.matchMedia("(min-width: 640px)").matches
-    ) {
-      contributorSearch.focus();
-    }
-  }
-  contributorMore?.addEventListener("click", (e) => {
-    e.stopPropagation();
-    setContributorPanel(contributorPanel?.classList.contains("hidden") ?? false);
-  });
-  contributorSheetClose?.addEventListener("click", () =>
-    setContributorPanel(false)
-  );
-  contributorBackdrop?.addEventListener("click", () => setContributorPanel(false));
-  contributorItemBtns.forEach((btn) =>
-    btn.addEventListener("click", () => toggleContributor(btn.dataset.key ?? ""))
-  );
-  contributorSearch?.addEventListener("input", () => {
-    const q = contributorSearch.value.trim().toLowerCase();
-    contributorItemBtns.forEach((btn) => {
-      const hay = `${btn.dataset.name ?? ""} ${btn.dataset.login ?? ""}`.toLowerCase();
-      btn.classList.toggle("hidden", !hay.includes(q));
-    });
-  });
-  document.addEventListener("click", (e) => {
-    if (!contributorPanel || contributorPanel.classList.contains("hidden")) return;
-    const target = e.target as Node;
-    if (
-      !contributorPanel.contains(target) &&
-      !contributorMore?.contains(target)
-    ) {
-      setContributorPanel(false);
-    }
-  });
-  document.addEventListener("keydown", (e) => {
-    if (
-      e.key === "Escape" &&
-      contributorPanel &&
-      !contributorPanel.classList.contains("hidden")
-    ) {
-      setContributorPanel(false);
-    }
-  });
-
-  // Search (debounced)
-  let t: number | undefined;
-  search.addEventListener("input", () => {
-    searchClear.classList.toggle("hidden", search.value.length === 0);
-    window.clearTimeout(t);
-    t = window.setTimeout(() => {
-      query = search.value.trim().toLowerCase();
-      syncUrl();
-      refilter();
-    }, 120);
-  });
-  searchClear.addEventListener("click", () => {
-    search.value = "";
-    query = "";
-    searchClear.classList.add("hidden");
-    syncUrl();
-    refilter();
-    search.focus();
-  });
-
-  function paintChips(
-    chips: HTMLButtonElement[],
-    key: "tag" | "platform" | "type",
-    active: string
-  ) {
-    chips.forEach((c) => {
-      const on = (c.dataset[key] ?? "") === active;
-      c.setAttribute("aria-pressed", String(on));
-      c.classList.toggle("border-accent", on);
-      c.classList.toggle("bg-accent", on);
-      c.classList.toggle("text-accent-fg", on);
-      c.classList.toggle("border-border", !on);
-      c.classList.toggle("bg-surface", !on);
-      c.classList.toggle("text-muted", !on);
-    });
-  }
-
-  // Tag filter: multi-select popular pills inline + searchable "More tags"
-  // popover (match ANY selected tag). Long-tail picks show as removable chips.
-  function paintTagBtn(btn: HTMLButtonElement, on: boolean) {
-    btn.setAttribute("aria-pressed", String(on));
-    btn.classList.toggle("border-accent", on);
-    btn.classList.toggle("bg-accent-soft", on);
-    btn.classList.toggle("text-accent-text", on);
-    btn.classList.toggle("border-border", !on);
-    btn.classList.toggle("bg-surface-2", !on);
-    btn.classList.toggle("text-muted", !on);
-    btn.classList.toggle("hover:border-accent/40", !on);
-    btn.classList.toggle("hover:text-fg", !on);
-  }
-
-  const tagPillFor = (tag: string) =>
-    tagInlineBtns.find((b) => b.dataset.tag === tag);
-  // A selected tag only needs a removable chip when it has no visible inline
-  // pill (long-tail tags, or popular tags hidden on the mobile 3-tag row).
-  const tagHasVisiblePill = (tag: string) => {
-    const p = tagPillFor(tag);
-    return !!p && p.offsetParent !== null;
-  };
-
-  function paintTags() {
-    const has = activeTags.size > 0;
-    paintTagBtn(tagAllBtn, !has);
-    tagInlineBtns.forEach((b) =>
-      paintTagBtn(b, activeTags.has(b.dataset.tag ?? ""))
-    );
-    tagListBtns.forEach((b) =>
-      paintTagBtn(b, activeTags.has(b.dataset.tag ?? ""))
-    );
-
-    tagChipsBox.innerHTML = "";
-    [...activeTags]
-      .filter((tag) => !tagHasVisiblePill(tag))
-      .forEach((tag) => {
-        const chip = document.createElement("button");
-        chip.type = "button";
-        chip.className =
-          "inline-flex items-center gap-1 rounded-full border border-accent bg-accent-soft px-3 py-1 text-sm font-medium text-accent-text transition";
-        chip.setAttribute("aria-label", `Remove ${tag} filter`);
-        chip.append(tag);
-        const x = document.createElement("span");
-        x.className = "text-sm leading-none";
-        x.textContent = "×";
-        chip.append(x);
-        chip.addEventListener("click", () => toggleTag(tag));
-        tagChipsBox.appendChild(chip);
-      });
-    updateChipSpacing();
-  }
-
-  function toggleTag(tag: string) {
-    if (!tag) return;
-    if (activeTags.has(tag)) activeTags.delete(tag);
-    else activeTags.add(tag);
-    paintTags();
-    syncUrl();
-    refilter();
-  }
-
-  tagAllBtn.addEventListener("click", () => {
-    if (activeTags.size === 0) return;
-    activeTags.clear();
-    paintTags();
-    syncUrl();
-    refilter();
-  });
-  tagInlineBtns.forEach((b) =>
-    b.addEventListener("click", () => toggleTag(b.dataset.tag ?? ""))
-  );
-  tagListBtns.forEach((b) =>
-    b.addEventListener("click", () => toggleTag(b.dataset.tag ?? ""))
-  );
-
-  // "More tags" popover: dropdown on desktop, bottom sheet on mobile.
-  function setTagPanel(open: boolean) {
-    if (!tagPanel || !tagMore) return;
-    if (open) setContributorPanel(false);
-    tagPanel.classList.toggle("hidden", !open);
-    tagBackdrop?.classList.toggle("hidden", !open);
-    tagMore.setAttribute("aria-expanded", String(open));
-    if (open && tagSearch && window.matchMedia("(min-width: 640px)").matches) {
-      tagSearch.focus();
-    }
-  }
-  tagMore?.addEventListener("click", (e) => {
-    e.stopPropagation();
-    setTagPanel(tagPanel?.classList.contains("hidden") ?? false);
-  });
-  tagSheetClose?.addEventListener("click", () => setTagPanel(false));
-  tagBackdrop?.addEventListener("click", () => setTagPanel(false));
-  document.addEventListener("click", (e) => {
-    if (!tagPanel || tagPanel.classList.contains("hidden")) return;
-    const target = e.target as Node;
-    if (!tagPanel.contains(target) && !tagMore?.contains(target)) {
-      setTagPanel(false);
-    }
-  });
-  document.addEventListener("keydown", (e) => {
-    if (
-      e.key === "Escape" &&
-      tagPanel &&
-      !tagPanel.classList.contains("hidden")
-    ) {
-      setTagPanel(false);
-    }
-  });
-  // Chip-vs-inline-pill depends on the breakpoint, so repaint on resize.
-  window.addEventListener("resize", paintTags);
-  tagSearch?.addEventListener("input", () => {
-    const q = tagSearch.value.trim().toLowerCase();
-    tagListBtns.forEach((el) =>
-      el.classList.toggle("hidden", !(el.dataset.tag ?? "").includes(q))
-    );
-  });
-
-  // Platform chips
-  platformChips.forEach((chip) => {
-    chip.addEventListener("click", () => {
-      activePlatform = chip.dataset.platform ?? "";
-      paintChips(platformChips, "platform", activePlatform);
-      syncUrl();
-      refilter();
-    });
-  });
-
-  // Type chips (All / Skills / Plugins)
-  typeChips.forEach((chip) => {
-    chip.addEventListener("click", () => {
-      activeType = chip.dataset.type ?? "";
-      paintChips(typeChips, "type", activeType);
-      syncUrl();
-      refilter();
-    });
-  });
-
-  // Sort dropdown
-  sortSelect.addEventListener("change", () => {
-    const v = sortSelect.value as SortMode;
-    sortMode = SORTS.includes(v) ? v : "featured";
-    syncUrl();
-    refilter();
-  });
-
-  // Infinite scroll: reveal the next batch as the sentinel nears the viewport.
-  const io = new IntersectionObserver(
-    (entries) => {
-      if (entries[0].isIntersecting && shown < matched.length) {
-        shown = Math.min(shown + BATCH, matched.length);
-        render();
-      }
-    },
-    { rootMargin: `${PRELOAD}px` }
-  );
-  io.observe(sentinel);
-
-  // URL state (?q=&tag=&platform=&sort=) for shareable filters.
-  function syncUrl() {
-    const params = new URLSearchParams();
-    if (query) params.set("q", query);
-    if (activeTags.size) params.set("tag", [...activeTags].join(","));
-    if (activePlatform) params.set("platform", activePlatform);
-    if (activeType) params.set("type", activeType);
-    if (activeAuthors.size)
-      params.set("author", [...activeAuthors].join(","));
-    if (sortMode !== "featured") params.set("sort", sortMode);
-    const qs = params.toString();
-    history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
-  }
-
-  function initFromUrl() {
-    const params = new URLSearchParams(location.search);
-    query = (params.get("q") ?? "").toLowerCase();
-    activeTags.clear();
-    (params.get("tag") ?? "")
-      .split(",")
-      .map((s) => s.trim())
-      .filter(Boolean)
-      .forEach((t) => activeTags.add(t));
-    activePlatform = params.get("platform") ?? "";
-    activeType = params.get("type") ?? "";
-    activeAuthors.clear();
-    (params.get("author") ?? "")
-      .split(",")
-      .map((s) => s.trim().toLowerCase())
-      .filter(Boolean)
-      .forEach((a) => activeAuthors.add(a));
-    const s = params.get("sort") as SortMode | null;
-    sortMode = s && SORTS.includes(s) ? s : "featured";
-    sortSelect.value = sortMode;
-    search.value = query;
-    searchClear.classList.toggle("hidden", query.length === 0);
-    paintTags();
-    paintChips(platformChips, "platform", activePlatform);
-    paintChips(typeChips, "type", activeType);
-    paintContributors();
-    renderContributorChips();
-    refilter();
-  }
-
-  // Remember scroll position + how many cards were revealed, so opening a skill
-  // and pressing Back drops the visitor right where they left off. Otherwise the
-  // module re-runs (or bfcache reconciles) with the infinite-scroll batch reset
-  // to the first 12 cards, leaving the page too short to sit at the old offset —
-  // so the browser dumps them at the top. We take control of restoration, save
-  // on the way out, and re-expand the batch before jumping back on return.
-  const SCROLL_KEY = "gallery-scroll";
-  history.scrollRestoration = "manual";
-
-  function saveScroll() {
-    try {
-      sessionStorage.setItem(
-        SCROLL_KEY,
-        JSON.stringify({ href: location.href, y: window.scrollY, shown })
-      );
-    } catch {}
-  }
-
-  function restoreScroll() {
-    let saved: { href: string; y: number; shown: number } | null = null;
-    try {
-      saved = JSON.parse(sessionStorage.getItem(SCROLL_KEY) ?? "null");
-    } catch {}
-    if (!saved || saved.href !== location.href) return;
-    // Reveal at least as many cards as before so the page is tall enough to
-    // hold the saved offset, then restore it.
-    shown = Math.min(Math.max(shown, saved.shown), matched.length);
-    render();
-    window.scrollTo(0, saved.y);
-  }
-
-  const navType = (
-    performance.getEntriesByType("navigation")[0] as
-      | PerformanceNavigationTiming
-      | undefined
-  )?.type;
-
-  initFromUrl();
-  // A fresh module run restores only on history navigation (Back/forward) or a
-  // reload; a brand-new visit starts at the top.
-  if (navType === "back_forward" || navType === "reload") restoreScroll();
-
-  // A back/forward-cache restore does not re-run this module, so filter state,
-  // the visible-count, and the infinite-scroll batch can be left frozen out of
-  // sync with the DOM. Reconcile from the URL on persisted pageshow, then
-  // re-expand the batch and restore the offset.
-  window.addEventListener("pageshow", (event) => {
-    if (!event.persisted) return;
-    initFromUrl();
-    restoreScroll();
-  });
-
-  // Capture the offset on the way out. pagehide covers navigation + bfcache
-  // freeze; visibilitychange is the reliable fallback on mobile Safari.
-  window.addEventListener("pagehide", saveScroll);
-  document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "hidden") saveScroll();
-  });
+  import "../scripts/library-catalog";
 </script>

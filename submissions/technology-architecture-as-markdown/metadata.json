@@ -1,0 +1,199 @@
+{
+  "kind": "prompt-template",
+  "slug": "technology-architecture-as-markdown",
+  "name": "Technology Architecture Generator",
+  "description": "Professional technology architecture as markdown prompt designed for high-quality content generation and structured analysis.",
+  "status": "beta",
+  "publicationStatus": "published",
+  "topics": [
+    "Architecture",
+    "Requirements Engineering",
+    "Documentation"
+  ],
+  "tags": [
+    "Architecture",
+    "Requirements Engineering",
+    "Documentation"
+  ],
+  "keywords": [
+    "documentation",
+    "markdown",
+    "prompt engineering",
+    "solution architecture",
+    "system architecture",
+    "technology architecture"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "technology-architecture-as-markdown.prompt.md",
+  "payloadPaths": [
+    "technology-architecture-as-markdown.prompt.md"
+  ],
+  "downloadPath": "bundles/technology-architecture-as-markdown.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": null,
+  "subtitle": "Solution Architecture",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master technology architecture as markdown with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-technology-architecture-as-markdown.md",
+    "sourceUrl": "https://tedt.org/prompts/technology-architecture-as-markdown/",
+    "sourceFileSha256": "sha256:3f1749b7a178ab988125c21c15052afaa087757a4296789fb76a6f4e4d2de9a2",
+    "sourcePromptSha256": "sha256:93da6db175e9ea9cf813fcbe205738a0e95540cd0529c2041f7280231f71b9ed",
+    "importedPromptSha256": "sha256:93da6db175e9ea9cf813fcbe205738a0e95540cd0529c2041f7280231f71b9ed",
+    "sourceGuideSha256": "sha256:0c7d07739561be4422ee217a81138eea7cc1f3226b4ed5f3fafc915ba75a8f8e",
+    "importedGuideSha256": "sha256:0c7d07739561be4422ee217a81138eea7cc1f3226b4ed5f3fafc915ba75a8f8e",
+    "rawFrontmatterSha256": "sha256:315ff1ba0b9cf6e7798e2fb55ffd792e82e1dd2d752f36815f0386a801133e3c",
+    "sourceTitle": "Work In Progress: Technology Architecture Generator",
+    "sourceDescription": "Professional technology architecture as markdown prompt designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master technology architecture as markdown with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/technology-architecture-as-markdown/"
+    ],
+    "legacyCategories": [
+      "Prompts",
+      "Projects"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/architecture-product-requirements-document.png",
+      "sourceUrl": "https://tedt.org/img/prompts/architecture-product-requirements-document.png",
+      "exists": true,
+      "sha256": "sha256:e75f8707b50cebef77add8bc54ca39264f9e02a84cd284c2258d48cbfe8d887f",
+      "metadata": {
+        "image": "/img/prompts/architecture-product-requirements-document.png",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+        "image-title": "Architectural Blueprint of Enterprise Product Requirements"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts",
+        "Projects"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "Professional technology architecture as markdown prompt designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for architecture technology architecture as markdown with advanced AI capabilities and structured output formatting.",
+      "image": "/img/prompts/architecture-product-requirements-document.png",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+      "image-title": "Architectural Blueprint of Enterprise Product Requirements",
+      "keywords": [
+        "documentation",
+        "markdown",
+        "prompt engineering",
+        "solution architecture",
+        "system architecture",
+        "technology architecture"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master technology architecture as markdown with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "Solution Architecture",
+      "tags": [
+        "Architecture",
+        "Requirements Engineering",
+        "Documentation"
+      ],
+      "title": "Work In Progress: Technology Architecture Generator",
+      "update": null
+    },
+    "appliedRepairs": [
+      "normalize-model-github-to-github-copilot",
+      "repair-title-technology-architecture-as-markdown"
+    ]
+  },
+  "coverImage": "skill-art/technology-architecture-as-markdown.webp",
+  "coverImageAlt": "Layered miniature city under a translucent dome joined by glowing cyan conduits and an orange central junction.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: Technology architecture represented by a compact cutaway city of infrastructure layers—foundation, compute towers, data conduits, integration bridges, and protective canopy—assembled into one comprehensible system, conveying rigorous architecture documentation without depicting a diagram or software interface.\nScene/backdrop: An uncluttered warm-paper drafting landscape with a dark slate ground plane.\nSubject: One crop-safe isometric architectural model with stacked stone and navy platforms, cyan conduits linking distinct components, a translucent protective canopy, and one orange junction defining the system boundary.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; one dominant central layered-city silhouette with clear depth; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: engineered, dependable, legible; cool architectural light with warm paper bounce\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: use only physical architectural forms and plain conduits; no network glyphs, labels, diagrams, screens, or dashboards; completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:3520069dae383d6347ae61be9650c99cf3586de8877a0433265b55a0040f1dd1",
+  "coverImageSourceHashVersion": 2
+}

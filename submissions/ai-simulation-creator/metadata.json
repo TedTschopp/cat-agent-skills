@@ -1,0 +1,192 @@
+{
+  "kind": "prompt-template",
+  "slug": "ai-simulation-creator",
+  "name": "AI Simulation Creator – Scenario-Based Skill Practice",
+  "description": "A dynamic prompt framework for generating AI-led roleplay simulations, where learners practice applying key skills like negotiation, hiring, or pitching through structured scenarios and guided mentorship.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Teaching & Education",
+    "Artificial Intelligence",
+    "Planning"
+  ],
+  "tags": [
+    "Teaching & Education",
+    "Artificial Intelligence",
+    "Planning"
+  ],
+  "keywords": [
+    "adaptive learning",
+    "AI simulation",
+    "educational AI",
+    "experiential learning",
+    "feedback loops",
+    "instructional design",
+    "prompt engineering",
+    "scenario-based AI",
+    "simulation design",
+    "workplace simulation"
+  ],
+  "models": [
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4.5",
+    "microsoft-copilot",
+    "o4-mini",
+    "o4-mini-high"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "ai-simulation-creator.prompt.md",
+  "payloadPaths": [
+    "ai-simulation-creator.prompt.md"
+  ],
+  "downloadPath": "bundles/ai-simulation-creator.prompt.md",
+  "createdAt": "2025-05-04",
+  "updatedAt": null,
+  "subtitle": null,
+  "summaryBullets": [
+    "AI-led roleplay simulations for skill practice",
+    "Covers negotiation, hiring, pitching scenarios",
+    "AI mentor provides structured guidance and feedback"
+  ],
+  "seoDescription": null,
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-05-02-AI-Simulation-Creator.md",
+    "sourceUrl": "https://tedt.org/prompts/ai-simulation-creator/",
+    "sourceFileSha256": "sha256:17d1eaaaf1e01bbcacecf611bd03befb3a3f9034add4503cfb226bd8cff9df9f",
+    "sourcePromptSha256": "sha256:66222d47e8cf7eb3bd4a00f4595c987804f74b13484419fb13e46e48001d612e",
+    "importedPromptSha256": "sha256:66222d47e8cf7eb3bd4a00f4595c987804f74b13484419fb13e46e48001d612e",
+    "sourceGuideSha256": "sha256:56427c507a6dc2922edf1c9e4d3120229ae14f53eb08c2e67e0749a3206a66e7",
+    "importedGuideSha256": "sha256:56427c507a6dc2922edf1c9e4d3120229ae14f53eb08c2e67e0749a3206a66e7",
+    "rawFrontmatterSha256": "sha256:c043c2f2ebca16102eabd1153c16b44de56308e76f20c65f842d783e91269ed0",
+    "sourceTitle": "AI Simulation Creator – Scenario-Based Skill Practice",
+    "sourceDescription": "A dynamic prompt framework for generating AI-led roleplay simulations, where learners practice applying key skills like negotiation, hiring, or pitching through structured scenarios and guided mentorship.",
+    "sourceSeoDescription": null,
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4.5",
+      "gpt-4-mini",
+      3,
+      "04-mini",
+      "04-mini-high",
+      "github",
+      "microsoft-copilot"
+    ],
+    "unresolvedModelIdentifiers": [
+      3
+    ],
+    "legacyPaths": [
+      "/prompts/ai-simulation-creator/"
+    ],
+    "legacyCategories": [
+      "Prompts"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/AI-Simulation-Creator.png",
+      "sourceUrl": "https://tedt.org/img/prompts/AI-Simulation-Creator.png",
+      "exists": true,
+      "sha256": "sha256:d9db85f21dafc0523ef5400094c5fd14b62560514ae3d918c815e76f98a734d3",
+      "metadata": {
+        "image": "/img/prompts/AI-Simulation-Creator.png",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "A man sits with a tablet in a modern wooden workspace surrounded by massive 3D computer display that looks like walls filled with glowing blue water, handwritten notes seemingly suspended in the water, and soft fire pits illuminating the serene environment.",
+        "image-credits-artist": "Ted Tschopp",
+        "image-credits-artist-URL": "https://tedt.org/",
+        "image-description": "This image showcases a futuristic creative workspace where natural and digital worlds converge. A person sits cross-legged on a minimalist wooden platform beside a warm fire pit, immersed in work on a tablet. Surrounding him are vast transparent aquarium walls filled with glowing cyan water, behind which are illuminated scientific equations and sketches that appear as though written on the glass or within the water itself. The room blends rustic wooden beams and tables with cutting-edge technology and a tranquil ambiance, portraying a harmonious balance between introspection, innovation, and the natural world.",
+        "image-title": "Futurist Learning Lab"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "AI-led roleplay simulations for skill practice",
+        "Covers negotiation, hiring, pitching scenarios",
+        "AI mentor provides structured guidance and feedback"
+      ],
+      "categories": [
+        "Prompts"
+      ],
+      "date": "2025-05-04",
+      "description": "A dynamic prompt framework for generating AI-led roleplay simulations, where learners practice applying key skills like negotiation, hiring, or pitching through structured scenarios and guided mentorship.",
+      "image": "/img/prompts/AI-Simulation-Creator.png",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "A man sits with a tablet in a modern wooden workspace surrounded by massive 3D computer display that looks like walls filled with glowing blue water, handwritten notes seemingly suspended in the water, and soft fire pits illuminating the serene environment.",
+      "image-credits-artist": "Ted Tschopp",
+      "image-credits-artist-URL": "https://tedt.org/",
+      "image-description": "This image showcases a futuristic creative workspace where natural and digital worlds converge. A person sits cross-legged on a minimalist wooden platform beside a warm fire pit, immersed in work on a tablet. Surrounding him are vast transparent aquarium walls filled with glowing cyan water, behind which are illuminated scientific equations and sketches that appear as though written on the glass or within the water itself. The room blends rustic wooden beams and tables with cutting-edge technology and a tranquil ambiance, portraying a harmonious balance between introspection, innovation, and the natural world.",
+      "image-title": "Futurist Learning Lab",
+      "keywords": [
+        "adaptive learning",
+        "AI simulation",
+        "educational AI",
+        "experiential learning",
+        "feedback loops",
+        "instructional design",
+        "prompt engineering",
+        "scenario-based AI",
+        "simulation design",
+        "workplace simulation"
+      ],
+      "layout": "prompt-details",
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4.5",
+        "gpt-4-mini",
+        3,
+        "04-mini",
+        "04-mini-high",
+        "github",
+        "microsoft-copilot"
+      ],
+      "permalink": "/prompts/ai-simulation-creator/",
+      "tags": [
+        "Teaching & Education",
+        "Artificial Intelligence",
+        "Planning"
+      ],
+      "title": "AI Simulation Creator – Scenario-Based Skill Practice"
+    },
+    "appliedRepairs": [
+      "normalize-model-04-mini-high-to-o4-mini-high",
+      "normalize-model-04-mini-to-o4-mini",
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/ai-simulation-creator.webp",
+  "coverImageAlt": "A circular rehearsal stage with wooden figures, branching cyan paths, and an orange feedback beacon.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: Scenario-based skill practice represented by a miniature rehearsal stage whose path branches through several physical choices and returns through a feedback loop.\nScene/backdrop: A simple circular slate stage on warm paper with open negative space.\nSubject: One crop-safe stage platform, two abstract human-like wooden figures, branching cyan pathways, and an orange feedback beacon.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; strong central stage silhouette; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: focused, constructive, experiential, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: abstract featureless figures only; completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:4bead1121de06d5eff1c2a200f924b6470a72fc17f0f13a120f2faf8f849b676",
+  "coverImageSourceHashVersion": 2
+}

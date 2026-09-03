@@ -1,9 +1,9 @@
-name: Skillbot
+name: Librarybot
 
-# When the FIRST comment lands on a skill's discussion, greet the thread and
-# @-mention the skill's author (their `authorGithub` — resolved from the
-# submission metadata and stored in the generated skill frontmatter by the
-# import pipeline). The greeting line is a short, skill-themed pun generated
+# When the FIRST comment lands on an asset's discussion, greet the thread and
+# @-mention the asset's author (their `authorGithub` — resolved from submission
+# metadata and stored in generated frontmatter by the import pipeline). The
+# greeting line is a short, asset-themed pun generated
 # with GitHub Models — with a plain static fallback whenever AI is unavailable.
 # The whole job is best-effort: any missing data or failed call results in a
 # no-op or the fallback, never a red X.
@@ -11,30 +11,30 @@ name: Skillbot
 on:
   discussion_comment:
     types: [created]
-  # Manual test path: run the exact same greet logic against a chosen skill's
+  # Manual test path: run the exact same greet logic against a chosen asset's
   # discussion without waiting for (or faking) a real first comment. Used to
   # validate the bot live; production still fires via discussion_comment.
   workflow_dispatch:
     inputs:
       slug:
-        description: "Skill slug to greet (its discussion title), e.g. doc-format-converter"
+        description: "Asset slug to greet (its discussion title), e.g. doc-format-converter"
         required: true
         type: string
 
 permissions:
-  contents: read # read the generated skill frontmatter
+  contents: read # read generated library frontmatter
   discussions: write # post the greeting comment
   models: read # GitHub Models inference for the pun (free tier)
 
 # One greeting per discussion is plenty; don't stack runs for a busy thread.
 concurrency:
-  group: skillbot-${{ github.event.discussion.number || inputs.slug }}
+  group: librarybot-${{ github.event.discussion.number || inputs.slug }}
   cancel-in-progress: false
 
 jobs:
   greet:
     runs-on: ubuntu-latest
-    # Fast gate for the automatic path: only the ratings/skill discussion
+    # Fast gate for the automatic path: only the ratings/library discussion
     # category, only the very first comment (which also prevents the bot's own
     # reply from re-triggering — it becomes comment #2), and never react to
     # another bot. The manual workflow_dispatch path bypasses this gate.
@@ -48,7 +48,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
-          sparse-checkout: src/content/skills
+          sparse-checkout: |
+            src/content/skills
+            src/content/prompts
+            src/content/artifacts
           sparse-checkout-cone-mode: false
 
       - name: Greet the thread and mention the author
@@ -93,21 +96,28 @@ jobs:
               commenter = (context.payload.comment.user.login || "").toLowerCase();
             }
 
-            // Each skill discussion is titled with the skill slug (giscus
+            // Each asset discussion is titled with the asset slug (giscus
             // mapping="specific"). Anything else (welcome posts, real
-            // announcements) is not a skill — skip quietly.
+            // announcements) is not a library asset — skip quietly.
             const slug = (discussion.title || "").trim();
             const SLUG_RE = /^(?!-)(?!.*--)[a-z0-9-]{1,64}(?<!-)$/;
             if (!SLUG_RE.test(slug)) {
-              core.info(`Discussion title "${slug}" is not a skill slug; nothing to do.`);
+              core.info(`Discussion title "${slug}" is not an asset slug; nothing to do.`);
               return;
             }
 
-            const file = path.join("src", "content", "skills", `${slug}.md`);
-            if (!fs.existsSync(file)) {
-              core.info(`No published skill for slug "${slug}"; nothing to do.`);
+            const files = ["skills", "prompts", "artifacts"]
+              .map((collection) => path.join("src", "content", collection, `${slug}.md`))
+              .filter((candidate) => fs.existsSync(candidate));
+            if (files.length === 0) {
+              core.info(`No published library asset for slug "${slug}"; nothing to do.`);
               return;
             }
+            if (files.length > 1) {
+              core.warning(`Multiple published assets use slug "${slug}"; refusing to guess.`);
+              return;
+            }
+            const file = files[0];
 
             // Pull the fields we need straight out of the YAML frontmatter. The
             // importer emits bare `authorGithub` (login is [A-Za-z0-9-] only) and
@@ -124,9 +134,15 @@ jobs:
               return raw;
             };
 
+            const publicationStatus = readField("publicationStatus");
+            if (publicationStatus && publicationStatus !== "published") {
+              core.info(`Asset "${slug}" is not published; nothing to do.`);
+              return;
+            }
+
             const author = readField("authorGithub");
             if (!author) {
-              core.info(`Skill "${slug}" has no authorGithub; nothing to mention.`);
+              core.info(`Asset "${slug}" has no authorGithub; nothing to mention.`);
               return;
             }
             // Don't ping the author for their own first comment.
@@ -139,7 +155,7 @@ jobs:
             const description = readField("description") || "";
 
             // --- Pun via GitHub Models (best-effort) ------------------------
-            // Grounded ONLY on the trusted skill name + description — never the
+            // Grounded ONLY on the trusted asset name + description — never the
             // untrusted comment body — so a commenter can't inject the model.
             const fallback = `📣 Ping! **${name}** just got its first comment — and that's officially your problem now.`;
             let punLine = fallback;
@@ -147,11 +163,11 @@ jobs:
               const system =
                 "You write a single short, cheeky one-liner (a little snarky, but " +
                 "friendly and PG — never mean) that pokes fun while summoning a " +
-                "software tool's author to a new discussion comment, implying their " +
+                "AI asset's author to a new discussion comment, implying their " +
                 "attention is required. Max 140 characters. No hashtags, no emoji " +
                 "spam, no @-mentions, no quotes, plain text only.";
               const user =
-                `The tool is called "${name}". It does: ${description}. ` +
+                `The AI asset is called "${name}". It does: ${description}. ` +
                 `Someone just left the first comment on its discussion. Write one ` +
                 `snarky one-liner nudging the author that their attention is needed.`;
               const res = await fetch("https://models.github.ai/inference/chat/completions", {
@@ -192,11 +208,11 @@ jobs:
             }
 
             // The workflow — not the model — controls the real mention. Frame it
-            // as an attention-required alert (with a wink) for the skill author.
+            // as an attention-required alert (with a wink) for the asset author.
             const body =
               `${punLine}\n\n` +
               `@${author} — you're the author of **${name}**, and someone just ` +
-              `poked your skill. 👀 Mind swinging by to take a look?`;
+              `poked your asset. 👀 Mind swinging by to take a look?`;
 
             try {
               await github.graphql(

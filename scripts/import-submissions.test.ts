@@ -11,9 +11,11 @@ import { mkdirSync, mkdtempSync, rmSync, symlinkSync, writeFileSync } from "node
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import AdmZip from "adm-zip";
+import matter from "gray-matter";
 import {
   assertSubmissionDirectory,
   buildContent,
+  buildPromptContent,
   buildMeta,
   CATALOG_PASSTHROUGH,
   parseImportCliArgs,
@@ -30,6 +32,28 @@ test("generated Markdown ends with exactly one newline", () => {
 
   assert.match(content, /Instructions stay intact\.\n$/);
   assert.doesNotMatch(content, /\n\n$/);
+});
+
+test("prompt content serializes nested metadata deterministically without trimming payload bytes", () => {
+  const body = "\n  Preserve leading and trailing whitespace.  \n\n";
+  const meta = {
+    variables: [{ name: "topic", type: "text", required: true }],
+    name: "Prompt",
+  };
+  const first = buildPromptContent(meta, body);
+  const second = buildPromptContent({ ...meta }, body);
+  assert.equal(first, second);
+  assert.ok(first.endsWith(body));
+  assert.match(first, /variables:\n  - name: "topic"/);
+});
+
+test("prompt artwork aspect ratios remain strings after a frontmatter round trip", () => {
+  const output = buildPromptContent(
+    { name: "Prompt", coverImageAspectRatio: "16:10" },
+    "Prompt body\n",
+  );
+
+  assert.equal(matter(output).data.coverImageAspectRatio, "16:10");
 });
 
 test("submission enumeration rejects symlinks before reading their targets", (t) => {
@@ -186,6 +210,7 @@ test("only allowlisted catalog fields pass through; everything else is dropped",
     coverImageGenerator: "OpenAI image generation via Codex",
     coverImageGeneratedAt: "2026-08-29",
     coverImageSourceHash: `sha256:${"a".repeat(64)}`,
+    coverImageSourceHashVersion: 2,
     featured: true,
     // undocumented noise that must be dropped:
     slug: "n",

@@ -1,8 +1,8 @@
 {
   "id": "/",
-  "name": "AI.Tedt.org — Prompts and Agent Skills",
+  "name": "AI.Tedt.org — AI Library",
   "short_name": "AI.Tedt.org",
-  "description": "Reusable prompts, agent skills, plugins, and automations for Cowork, Copilot Studio, and Scout.",
+  "description": "Reusable agent instruction files, scoped agent instruction files, agent definition files, prompt template files, work specification files, skills, plugins, and automations for leading AI tools.",
   "lang": "en-US",
   "dir": "ltr",
   "start_url": "/",
@@ -33,8 +33,8 @@
   ],
   "shortcuts": [
     {
-      "name": "Browse skills",
-      "short_name": "Skills",
+      "name": "Browse the AI Library",
+      "short_name": "Library",
       "url": "/"
     },
     {

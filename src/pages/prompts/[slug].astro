@@ -1,0 +1,56 @@
+---
+import { getCollection } from "astro:content";
+import AssetDetailShell from "../../components/AssetDetailShell.astro";
+import PromptAssetContent from "../../components/PromptAssetContent.astro";
+import { relatedAssetsFor } from "../../components/asset-detail-data";
+import { getLibraryAssets, type LibraryAsset } from "../../lib/library-assets";
+
+type PromptRouteProps = {
+  asset: LibraryAsset;
+  redirectTo?: string;
+};
+
+export async function getStaticPaths() {
+  const outputFilesystemIsCaseInsensitive =
+    process.platform === "darwin" || process.platform === "win32";
+  const prompts = (await getLibraryAssets()).filter((asset) => asset.kind === "prompt-template");
+  return prompts.flatMap((asset) => {
+    const paths: Array<{ params: { slug: string }; props: PromptRouteProps }> = [
+      { params: { slug: asset.slug }, props: { asset } },
+    ];
+    for (const legacyPath of asset.legacyPaths) {
+      const match = legacyPath.match(/^\/prompts\/([^/]+)\/?$/);
+      if (!match || match[1] === asset.slug) continue;
+      // GitHub Pages builds on Linux, where the historical mixed-case alias can
+      // coexist with its lowercase canonical directory. On the default macOS
+      // and Windows filesystems it would overwrite the canonical page during a
+      // local static build, so omit only that local duplicate.
+      const differsOnlyByCase = match[1].toLocaleLowerCase("en-US") ===
+        asset.slug.toLocaleLowerCase("en-US");
+      if (outputFilesystemIsCaseInsensitive && differsOnlyByCase) continue;
+      paths.push({
+        params: { slug: match[1] },
+        props: { asset, redirectTo: asset.canonicalPath },
+      });
+    }
+    return paths;
+  });
+}
+
+const { asset, redirectTo } = Astro.props as PromptRouteProps;
+if (redirectTo) return Astro.redirect(redirectTo, 301);
+
+const [prompts, guides, allAssets] = await Promise.all([
+  getCollection("prompts"),
+  getCollection("guides"),
+  getLibraryAssets(),
+]);
+const prompt = prompts.find((entry) => entry.id === asset.slug);
+if (!prompt) throw new Error(`Missing prompt content for ${asset.slug}`);
+const guide = guides.find((entry) => entry.id === asset.slug);
+const relatedAssets = relatedAssetsFor(asset, allAssets);
+---
+
+<AssetDetailShell {asset} {relatedAssets} {allAssets}>
+  <PromptAssetContent {asset} {prompt} {guide} />
+</AssetDetailShell>

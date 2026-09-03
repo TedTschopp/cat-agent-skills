@@ -1,0 +1,196 @@
+{
+  "kind": "prompt-template",
+  "slug": "ai-document-generator",
+  "name": "Architecture AI Document Generator",
+  "description": "Professional architecture ai document generator prompt designed for high-quality content generation and structured analysis.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Artificial Intelligence",
+    "Documentation",
+    "Architecture"
+  ],
+  "tags": [
+    "Artificial Intelligence",
+    "Documentation",
+    "Architecture"
+  ],
+  "keywords": [
+    "content creation",
+    "documentation",
+    "prompt engineering",
+    "system architecture",
+    "technical writing"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "ai-document-generator.prompt.md",
+  "payloadPaths": [
+    "ai-document-generator.prompt.md"
+  ],
+  "downloadPath": "bundles/ai-document-generator.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": null,
+  "subtitle": "Enterprise Architecture and Requirements Engineering",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master architecture ai document generator with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-ai-document-generator.md",
+    "sourceUrl": "https://tedt.org/prompts/ai-document-generator/",
+    "sourceFileSha256": "sha256:47f9c2dad7116f9fff95d554ab10f8e90558f4af4a67ed5723eaf6395aa5e954",
+    "sourcePromptSha256": "sha256:c16203e8661027df5c7e3faa71cd3efd30f64d521f26b5cd6cce1d347e05ab5b",
+    "importedPromptSha256": "sha256:c16203e8661027df5c7e3faa71cd3efd30f64d521f26b5cd6cce1d347e05ab5b",
+    "sourceGuideSha256": "sha256:744b15f027e26b68f3e0f7cf96119d0c90151344a5c0f99caba5ba49f0322ec5",
+    "importedGuideSha256": "sha256:744b15f027e26b68f3e0f7cf96119d0c90151344a5c0f99caba5ba49f0322ec5",
+    "rawFrontmatterSha256": "sha256:e1fcc965c913a1d645eddd6fd4b4c1d8125b4875923d2ee37b0113914d159491",
+    "sourceTitle": "Architecture AI Document Generator",
+    "sourceDescription": "Professional architecture ai document generator prompt designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master architecture ai document generator with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/ai-document-generator/"
+    ],
+    "legacyCategories": [
+      "Prompts",
+      "Projects"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/architecture-product-requirements-document.png",
+      "sourceUrl": "https://tedt.org/img/prompts/architecture-product-requirements-document.png",
+      "exists": true,
+      "sha256": "sha256:e75f8707b50cebef77add8bc54ca39264f9e02a84cd284c2258d48cbfe8d887f",
+      "metadata": {
+        "image": "/img/prompts/architecture-product-requirements-document.png",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+        "image-title": "Architectural Blueprint of Enterprise Product Requirements"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts",
+        "Projects"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "Professional architecture ai document generator prompt designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for architecture ai document generator with advanced AI capabilities and structured output formatting.",
+      "image": "/img/prompts/architecture-product-requirements-document.png",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+      "image-title": "Architectural Blueprint of Enterprise Product Requirements",
+      "keywords": [
+        "content creation",
+        "documentation",
+        "prompt engineering",
+        "system architecture",
+        "technical writing"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master architecture ai document generator with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "Enterprise Architecture and Requirements Engineering",
+      "tags": [
+        "Artificial Intelligence",
+        "Documentation",
+        "Architecture"
+      ],
+      "title": "Architecture AI Document Generator",
+      "update": null
+    },
+    "appliedRepairs": [
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/ai-document-generator.webp",
+  "coverImageAlt": "A navy mechanical drafting arm assembles blank paper planes into a layered architectural model.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: An architecture document generator represented by a precise articulated drafting arm assembling blank paper planes into a coherent structural blueprint model.\nScene/backdrop: An uncluttered slate drafting bench with a warm paper horizon.\nSubject: One elegant mechanical drafting arm, a stack of entirely blank sheets, and a partially assembled navy-and-cyan architectural model.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; one crop-safe central mechanism; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: precise, productive, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: blank unmarked paper only; completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:0fbb813918cbeb1eff0cc12d4bcf8847a87faa3b2e1c601ed7848b7dcbbc3b71",
+  "coverImageSourceHashVersion": 2
+}

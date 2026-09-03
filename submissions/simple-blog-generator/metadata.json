@@ -1,0 +1,242 @@
+{
+  "kind": "prompt-template",
+  "slug": "simple-blog-generator",
+  "name": "Simple Blog Post Generator",
+  "description": "A straightforward blog post generator demonstrating basic variable functionality.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Content Creation",
+    "Writing",
+    "Communications"
+  ],
+  "tags": [
+    "Content Creation",
+    "Writing",
+    "Communications"
+  ],
+  "keywords": [
+    "content creation",
+    "content writing",
+    "copywriting",
+    "prompt engineering",
+    "prompt templates"
+  ],
+  "models": [
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "simple-blog-generator.prompt.md",
+  "payloadPaths": [
+    "simple-blog-generator.prompt.md"
+  ],
+  "downloadPath": "bundles/simple-blog-generator.prompt.md",
+  "createdAt": "2025-01-31",
+  "updatedAt": null,
+  "subtitle": "Basic example with essential variables",
+  "summaryBullets": [
+    "Basic variable functionality demonstration",
+    "Generates 500-800 word blog posts",
+    "Customizable topic, audience, and tone"
+  ],
+  "seoDescription": null,
+  "variables": [
+    {
+      "default": "productivity tips",
+      "label": "Blog Topic",
+      "name": "blog_topic",
+      "placeholder": "What do you want to write about?",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "default": "professionals",
+      "label": "Target Audience",
+      "name": "audience",
+      "options": [
+        "professionals",
+        "students",
+        "general readers"
+      ],
+      "required": true,
+      "type": "select"
+    },
+    {
+      "default": "casual",
+      "label": "Writing Tone",
+      "name": "tone",
+      "options": [
+        "formal",
+        "casual",
+        "inspirational"
+      ],
+      "type": "radio"
+    }
+  ],
+  "series": [
+    {
+      "id": "simple-blog-review",
+      "title": "Simple Blog Review",
+      "step": 1,
+      "totalSteps": 2,
+      "previousAssetId": null,
+      "nextAssetId": "prompt:academic-critique-content"
+    }
+  ],
+  "relatedAssetIds": [
+    "prompt:academic-critique-content"
+  ],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-01-31-simple-blog-generator.md",
+    "sourceUrl": "https://tedt.org/prompts/simple-blog-generator/",
+    "sourceFileSha256": "sha256:e2413b6545742b2c4ee2dc916b826e263d8ae281081c1bd59b88ffe6503371a3",
+    "sourcePromptSha256": "sha256:e056c580ea6ba641b897e996c5e8a1a2593c4dd97679b191240e7c78887b9dfe",
+    "importedPromptSha256": "sha256:e056c580ea6ba641b897e996c5e8a1a2593c4dd97679b191240e7c78887b9dfe",
+    "sourceGuideSha256": "sha256:65aa4e778b7f0f2521f5a8145e6c1392a95a6d80a7c352cda4b3379d92213ee7",
+    "importedGuideSha256": "sha256:65aa4e778b7f0f2521f5a8145e6c1392a95a6d80a7c352cda4b3379d92213ee7",
+    "rawFrontmatterSha256": "sha256:a6ca7d88e1048d544e578260f11ab5b3dac557903dce4d0d02310c3c1c51b7a4",
+    "sourceTitle": "Simple Blog Post Generator",
+    "sourceDescription": "A straightforward blog post generator demonstrating basic variable functionality.",
+    "sourceSeoDescription": null,
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-mini",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/simple-blog-generator/"
+    ],
+    "legacyCategories": [
+      "Prompts"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": null,
+      "sourceUrl": null,
+      "exists": false,
+      "sha256": null,
+      "metadata": {}
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Basic variable functionality demonstration",
+        "Generates 500-800 word blog posts",
+        "Customizable topic, audience, and tone"
+      ],
+      "categories": [
+        "Prompts"
+      ],
+      "date": "2025-01-31",
+      "description": "A straightforward blog post generator demonstrating basic variable functionality.",
+      "keywords": [
+        "content creation",
+        "content writing",
+        "copywriting",
+        "prompt engineering",
+        "prompt templates"
+      ],
+      "layout": "prompt-details",
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-mini",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "series": [
+        {
+          "current": true,
+          "description": "Create initial blog post content based on your topic and audience",
+          "prompt_file": "2025-01-31-simple-blog-generator.md",
+          "step": 1,
+          "title": "Content Generation"
+        },
+        {
+          "description": "Analyze and improve the generated content for quality and effectiveness",
+          "prompt_file": "2025-08-01-Critique-Content.md",
+          "step": 2,
+          "title": "Content Critique"
+        }
+      ],
+      "subtitle": "Basic example with essential variables",
+      "tags": [
+        "Content Creation",
+        "Writing",
+        "Communications"
+      ],
+      "title": "Simple Blog Post Generator",
+      "variables": [
+        {
+          "default": "productivity tips",
+          "label": "Blog Topic",
+          "name": "blog_topic",
+          "placeholder": "What do you want to write about?",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "default": "professionals",
+          "label": "Target Audience",
+          "name": "audience",
+          "options": [
+            "professionals",
+            "students",
+            "general readers"
+          ],
+          "required": true,
+          "type": "select"
+        },
+        {
+          "default": "casual",
+          "label": "Writing Tone",
+          "name": "tone",
+          "options": [
+            "formal",
+            "casual",
+            "inspirational"
+          ],
+          "type": "radio"
+        }
+      ]
+    },
+    "appliedRepairs": [
+      "normalize-model-github-to-github-copilot",
+      "repair-workflow-simple-blog-review"
+    ]
+  },
+  "coverImage": "skill-art/simple-blog-generator.webp",
+  "coverImageAlt": "Three-stage navy plant grows from an orange seed into a fan of blank cyan-edged paper leaves.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: Simple blog creation represented by a small planted idea seed growing through three orderly stages into a neat fan of entirely blank paper leaves, conveying topic, audience, and tone becoming an accessible finished post.\nScene/backdrop: A quiet warm-paper work surface with a shallow slate horizon.\nSubject: One orange seed, a compact navy stem with three branches, and several broad cyan-edged blank paper leaves arranged as a clean article-like sequence without any marks.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; one strong crop-safe plant-to-pages silhouette; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: friendly, direct, productive; soft daylight\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: every paper surface must remain completely blank; completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:45f4b37bb1a429ea2d8423564ecff4d06b3387b387ec1ae619043661a064c93b",
+  "coverImageSourceHashVersion": 2
+}

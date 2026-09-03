@@ -1,0 +1,196 @@
+{
+  "kind": "prompt-template",
+  "slug": "building-block",
+  "name": "Architecture Building Block",
+  "description": "Professional architecture building block prompt designed for high-quality content generation and structured analysis.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Requirements Engineering",
+    "Architecture",
+    "Documentation"
+  ],
+  "tags": [
+    "Requirements Engineering",
+    "Architecture",
+    "Documentation"
+  ],
+  "keywords": [
+    "architecture patterns",
+    "documentation",
+    "prompt engineering",
+    "requirements analysis",
+    "system architecture"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "building-block.prompt.md",
+  "payloadPaths": [
+    "building-block.prompt.md"
+  ],
+  "downloadPath": "bundles/building-block.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": null,
+  "subtitle": "Enterprise Architecture and Requirements Engineering",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master architecture building block with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-building-block.md",
+    "sourceUrl": "https://tedt.org/prompts/building-block/",
+    "sourceFileSha256": "sha256:e38fd09d7bfb5c72573d6bc37d031b218cb203d2086c7a9b0f178ecb6fe305cd",
+    "sourcePromptSha256": "sha256:92f620ed5c2af6b480f1c544bc866849f743b03e54284a2d7a54b465c948644f",
+    "importedPromptSha256": "sha256:92f620ed5c2af6b480f1c544bc866849f743b03e54284a2d7a54b465c948644f",
+    "sourceGuideSha256": "sha256:36d18a13f5156cfd79e9f3e9a16b99a1590613f68a560c6d89e589e69cc89e17",
+    "importedGuideSha256": "sha256:36d18a13f5156cfd79e9f3e9a16b99a1590613f68a560c6d89e589e69cc89e17",
+    "rawFrontmatterSha256": "sha256:3835cc398fc4fc4f79ca39ace49de43c6c3ee784e4d74d13eefce1a651a68abb",
+    "sourceTitle": "Architecture Building Block",
+    "sourceDescription": "Professional architecture building block prompt designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master architecture building block with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/building-block/"
+    ],
+    "legacyCategories": [
+      "Prompts",
+      "Projects"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/architecture-product-requirements-document.png",
+      "sourceUrl": "https://tedt.org/img/prompts/architecture-product-requirements-document.png",
+      "exists": true,
+      "sha256": "sha256:e75f8707b50cebef77add8bc54ca39264f9e02a84cd284c2258d48cbfe8d887f",
+      "metadata": {
+        "image": "/img/prompts/architecture-product-requirements-document.png",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+        "image-title": "Architectural Blueprint of Enterprise Product Requirements"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts",
+        "Projects"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "Professional architecture building block prompt designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for architecture building block with advanced AI capabilities and structured output formatting.",
+      "image": "/img/prompts/architecture-product-requirements-document.png",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+      "image-title": "Architectural Blueprint of Enterprise Product Requirements",
+      "keywords": [
+        "architecture patterns",
+        "documentation",
+        "prompt engineering",
+        "requirements analysis",
+        "system architecture"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master architecture building block with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "Enterprise Architecture and Requirements Engineering",
+      "tags": [
+        "Requirements Engineering",
+        "Architecture",
+        "Documentation"
+      ],
+      "title": "Architecture Building Block",
+      "update": null
+    },
+    "appliedRepairs": [
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/building-block.webp",
+  "coverImageAlt": "Interlocking stone, wood, navy, cyan, and orange modules form a bridge across a slate ravine.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: A reusable architecture building block represented by a set of distinct precision-cut modules locking together to form a load-bearing bridge across a narrow gap.\nScene/backdrop: A minimal slate ravine set into layered warm paper terrain.\nSubject: Several chunky stone, wood, navy, and translucent cyan modules joining around one sparing orange keystone connector.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe modular bridge silhouette; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: robust, modular, quietly confident\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no engraved symbols or markings; completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:0a7107804f9589c6be2fc9819189556052a1dd1bbfbd5cace35fd917d7f14cbe",
+  "coverImageSourceHashVersion": 2
+}

@@ -84,6 +84,10 @@ export const skillSchema = z.object({
     .string()
     .regex(/^sha256:[a-f0-9]{64}$/, "must be a sha256:<64 lowercase hex> digest")
     .optional(),
+  // Version 1 is the historical skill-only source hash (field absent on the 96
+  // existing covers). Version 2 binds the normalized LibraryAsset contract.
+  // New artwork records emit 2; absence intentionally remains valid for v1.
+  coverImageSourceHashVersion: z.literal(2).optional(),
   featured: z.boolean().default(false),
 }).superRefine((data, ctx) => {
   const artworkFields = [

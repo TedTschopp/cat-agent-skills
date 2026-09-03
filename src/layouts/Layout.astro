@@ -187,8 +187,8 @@ const contributorsActive = path.includes("/authors");
     <link
       rel="alternate"
       type="application/json"
-      title="AI.Tedt.org skill catalog"
-      href={withBase("/skills.json")}
+      title="AI.Tedt.org library catalog"
+      href={withBase("/assets.json")}
     />
     <link rel="sitemap" type="application/xml" href={withBase("/sitemap.xml")} />
     <meta property="og:title" content={fullTitle} />
@@ -271,14 +271,14 @@ const contributorsActive = path.includes("/authors");
 
     <UniversalHeader />
 
-    <section class="border-b border-border bg-bg" aria-label="Skills and agents">
+    <section class="border-b border-border bg-bg" aria-label="AI Library">
       <div
         class="mx-auto flex max-w-8xl flex-wrap items-center gap-x-5 gap-y-3 px-4 py-4 sm:px-6"
       >
         <a
           href={withBase("/")}
           class="flex shrink-0 items-center gap-3 no-underline"
-          aria-label="AI.Tedt.org — Prompts and Agent Skills"
+          aria-label="AI.Tedt.org — AI Library"
         >
           <img
             src={withBase("/logo-site.webp")}
@@ -290,7 +290,7 @@ const contributorsActive = path.includes("/authors");
           <span class="flex flex-col leading-none">
             <span class="display-face text-xl text-fg">AI.Tedt.org</span>
             <span class="mt-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-accent-text sm:text-xs">
-              Prompts and Agent Skills
+              AI Library
             </span>
           </span>
         </a>
@@ -318,13 +318,13 @@ const contributorsActive = path.includes("/authors");
             Contributors
           </a>
           <a
-            href="https://github.com/microsoft/cat-agent-skills/blob/main/CONTRIBUTING.md"
+            href="https://github.com/TedTschopp/cat-agent-skills/blob/main/CONTRIBUTING.md"
             target="_blank"
             rel="noopener"
             class="rounded bg-cta px-3 py-1.5 font-semibold text-cta-fg no-underline shadow-sm hover:bg-[var(--action-cta-hover)]"
           >
             <span class="sm:hidden">Contribute</span>
-            <span class="hidden sm:inline">Contribute a skill</span>
+            <span class="hidden sm:inline">Contribute an Asset</span>
           </a>
         </nav>
       </div>
@@ -339,15 +339,15 @@ const contributorsActive = path.includes("/authors");
         class="mx-auto flex max-w-8xl flex-col gap-3 px-4 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between sm:px-6"
       >
         <p>
-          A practitioner-built library for Cowork, Copilot Studio, and Scout agents.
+          A practitioner-built library of reusable files for AI agents and people.
         </p>
         <a
-          href="https://github.com/microsoft/cat-agent-skills"
+          href="https://github.com/TedTschopp/cat-agent-skills"
           target="_blank"
           rel="noopener"
           class="text-[var(--link)] underline underline-offset-2 hover:text-[var(--link-hover)]"
         >
-          View the upstream repository
+          View the Library Source
         </a>
       </div>
     </footer>
@@ -360,7 +360,7 @@ const contributorsActive = path.includes("/authors");
       ANALYTICS_ENABLED && (
         <script
           is:inline
-          set:html={`document.addEventListener("click",function(e){var el=e.target&&e.target.closest?e.target.closest("[data-clarity-event]"):null;if(!el)return;if(typeof window.clarity!=="function")return;var name=el.getAttribute("data-clarity-event");if(!name)return;for(var i=0;i<el.attributes.length;i++){var a=el.attributes[i];if(a.name.indexOf("data-clarity-")===0&&a.name!=="data-clarity-event"){var key=a.name.slice("data-clarity-".length).replace(/-([a-z])/g,function(m,c){return c.toUpperCase();});window.clarity("set",key,a.value);}}window.clarity("event",name);},true);`}
+          set:html={`document.addEventListener("click",function(e){var el=e.target&&e.target.closest?e.target.closest("[data-clarity-event]"):null;if(!el||el.getAttribute("aria-disabled")==="true")return;if(typeof window.clarity!=="function")return;var name=el.getAttribute("data-clarity-event");if(!name)return;var compat=el.getAttribute("data-clarity-compat-event");for(var i=0;i<el.attributes.length;i++){var a=el.attributes[i];if(a.name.indexOf("data-clarity-")===0&&a.name!=="data-clarity-event"&&a.name!=="data-clarity-compat-event"){var key=a.name.slice("data-clarity-".length).replace(/-([a-z])/g,function(m,c){return c.toUpperCase();});window.clarity("set",key,a.value);}}window.clarity("event",name);if(compat&&compat!==name)window.clarity("event",compat);},true);`}
         />
       )
     }

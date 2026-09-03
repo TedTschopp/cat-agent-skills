@@ -1,0 +1,194 @@
+{
+  "kind": "prompt-template",
+  "slug": "sora-prompt",
+  "name": "Sora Prompt",
+  "description": "Professional sora prompt prompt designed for high-quality content generation and structured analysis.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Image Generation",
+    "Artificial Intelligence",
+    "Content Creation"
+  ],
+  "tags": [
+    "Image Generation",
+    "Artificial Intelligence",
+    "Content Creation"
+  ],
+  "keywords": [
+    "prompt engineering",
+    "sora",
+    "prompt"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "sora-prompt.prompt.md",
+  "payloadPaths": [
+    "sora-prompt.prompt.md"
+  ],
+  "downloadPath": "bundles/sora-prompt.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": null,
+  "subtitle": "AI-Powered Content Generation Framework",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master sora prompt with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-sora-prompt.md",
+    "sourceUrl": "https://tedt.org/prompts/sora-prompt/",
+    "sourceFileSha256": "sha256:615b5b92fc33e690261b28285b5251fde2d8a46b535ae5fd701f1960c89071fe",
+    "sourcePromptSha256": "sha256:4304fc03185b51105d953126eb08a43baf89acd1165d02ae1a50f189e74cd5b2",
+    "importedPromptSha256": "sha256:4304fc03185b51105d953126eb08a43baf89acd1165d02ae1a50f189e74cd5b2",
+    "sourceGuideSha256": "sha256:16a35a3ad2efadbd6e68160aaf04b905f8a5f1548b2a94c7be4fcdf1bffade8e",
+    "importedGuideSha256": "sha256:16a35a3ad2efadbd6e68160aaf04b905f8a5f1548b2a94c7be4fcdf1bffade8e",
+    "rawFrontmatterSha256": "sha256:65664e962b57b597b7e13ba24ccac57ce9bb8c52bce9b2a22e9180cb207dfa70",
+    "sourceTitle": "Sora Prompt",
+    "sourceDescription": "Professional sora prompt prompt designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master sora prompt with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/sora-prompt/"
+    ],
+    "legacyCategories": [
+      "Prompts - AI"
+    ],
+    "visibleInAlphaIndex": false,
+    "legacyImage": {
+      "sourcePath": null,
+      "sourceUrl": null,
+      "exists": false,
+      "sha256": null,
+      "metadata": {
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-credits": "Ted Tschopp",
+        "image-credits-artist": "Ted Tschopp",
+        "image-credits-artist-URL": "https://tedt.org/",
+        "image-credits-URL": "https://tedt.org/"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts - AI"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "Professional sora prompt prompt designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for sora prompt with advanced AI capabilities and structured output formatting.",
+      "image": null,
+      "image_height": null,
+      "image_width": null,
+      "image-alt": "",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-credits": "Ted Tschopp",
+      "image-credits-artist": "Ted Tschopp",
+      "image-credits-artist-URL": "https://tedt.org/",
+      "image-credits-title": "",
+      "image-credits-URL": "https://tedt.org/",
+      "image-description": "",
+      "image-title": "",
+      "keywords": [
+        "prompt engineering",
+        "sora",
+        "prompt"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master sora prompt with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "AI-Powered Content Generation Framework",
+      "tags": [
+        "Image Generation",
+        "Artificial Intelligence",
+        "Content Creation"
+      ],
+      "title": "Sora Prompt",
+      "update": null
+    },
+    "appliedRepairs": [
+      "include-hidden-alpha-prompt",
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/sora-prompt.webp",
+  "coverImageAlt": "Three navy storyboard frames transform a miniature stone sphere scene into a luminous cyan cinematic flow.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: Cinematic prompt construction represented by a hand-built sequence of three physical storyboard windows transforming a small scene model into a flowing strip of light, conveying how a cinematographer specifies subject, camera movement, atmosphere, and shot progression for generative video.\nScene/backdrop: A warm-paper miniature film stage set on a slate workbench, entirely abstract and unbranded.\nSubject: Three freestanding navy frames containing only tactile abstract scene elements—a stone sphere, a curved cyan track, and shifting light—with one continuous cyan cinematic ribbon weaving through them and a sparing orange focus marker.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; one strong crop-safe sequence from miniature scene through three frames; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: cinematic, deliberate, imaginative; controlled pools of directional light\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: frames contain no screens, controls, captions, marks, or interface elements; no cameras or film-company branding; completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:f24b5fd6ccd728fac771a8810708434f9863339df28e5d74b3529414385f95e9",
+  "coverImageSourceHashVersion": 2
+}

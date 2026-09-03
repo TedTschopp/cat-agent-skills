@@ -1,0 +1,201 @@
+{
+  "kind": "prompt-template",
+  "slug": "prd-agent",
+  "name": "Architecture PRD Agent",
+  "description": "Professional architecture prd agent prompt designed for high-quality content generation and structured analysis.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Product Management",
+    "Requirements Engineering",
+    "Documentation"
+  ],
+  "tags": [
+    "Product Management",
+    "Requirements Engineering",
+    "Documentation"
+  ],
+  "keywords": [
+    "documentation",
+    "PRD templates",
+    "product management",
+    "product requirements",
+    "requirements analysis"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "prd-agent.prompt.md",
+  "payloadPaths": [
+    "prd-agent.prompt.md"
+  ],
+  "downloadPath": "bundles/prd-agent.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": null,
+  "subtitle": "Enterprise Architecture and Requirements Engineering",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master architecture prd agent with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-prd-agent.md",
+    "sourceUrl": "https://tedt.org/prompts/prd-agent/",
+    "sourceFileSha256": "sha256:7174d625a8b9ccbc364dd13652a35ea297bee90d658a681fdf18c1352dd29274",
+    "sourcePromptSha256": "sha256:c1278b935008ed9b532b8dd1569f271d35c471b5e50303d581f5fd8270f690d1",
+    "importedPromptSha256": "sha256:c1278b935008ed9b532b8dd1569f271d35c471b5e50303d581f5fd8270f690d1",
+    "sourceGuideSha256": "sha256:0abb64c861f7297396f5b1c28bb4ac8900663ef02d2b92853a4b6b11c29e3146",
+    "importedGuideSha256": "sha256:0abb64c861f7297396f5b1c28bb4ac8900663ef02d2b92853a4b6b11c29e3146",
+    "rawFrontmatterSha256": "sha256:6da4c30ce9503b59999198aa7022c3b2da3919f0a1568edee731419d9483165e",
+    "sourceTitle": "Architecture PRD Agent",
+    "sourceDescription": "Professional architecture prd agent prompt designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master architecture prd agent with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/prd-agent/"
+    ],
+    "legacyCategories": [
+      "Prompts",
+      "Business",
+      "Projects"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": null,
+      "sourceUrl": null,
+      "exists": false,
+      "sha256": null,
+      "metadata": {
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-credits": "Ted Tschopp",
+        "image-credits-artist": "Ted Tschopp",
+        "image-credits-artist-URL": "https://tedt.org/",
+        "image-credits-URL": "https://tedt.org/"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts",
+        "Business",
+        "Projects"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "Professional architecture prd agent prompt designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for architecture prd agent with advanced AI capabilities and structured output formatting.",
+      "image": null,
+      "image_height": null,
+      "image_width": null,
+      "image-alt": "",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-credits": "Ted Tschopp",
+      "image-credits-artist": "Ted Tschopp",
+      "image-credits-artist-URL": "https://tedt.org/",
+      "image-credits-title": "",
+      "image-credits-URL": "https://tedt.org/",
+      "image-description": "",
+      "image-title": "",
+      "keywords": [
+        "documentation",
+        "PRD templates",
+        "product management",
+        "product requirements",
+        "requirements analysis"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master architecture prd agent with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "Enterprise Architecture and Requirements Engineering",
+      "tags": [
+        "Product Management",
+        "Requirements Engineering",
+        "Documentation"
+      ],
+      "title": "Architecture PRD Agent",
+      "update": null
+    },
+    "appliedRepairs": [
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/prd-agent.webp",
+  "coverImageAlt": "A faceless wooden steward arranges blank cyan-edged plan pieces around a small architectural model.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: A thoughtful product steward coordinating separate blueprint fragments into one coherent architectural model, expressing an agent that drafts, critiques, coaches, and improves product requirements.\nScene/backdrop: Calm warm-paper design studio on a slate ground, with no walls of diagrams, no screens, and no visible writing.\nSubject: One simplified, faceless slate-and-navy artisan figure at a broad worktable, arranging large blank cyan-edged plan pieces around a small assembled product model; one orange piece marks the unresolved decision under consideration.\nStyle/medium: premium editorial illustration with tactile dimensional detail; carved wood figure, thick paper plans, and handmade architectural maquette.\nComposition/framing: exact 16:10 landscape; centered steward and table create one readable silhouette; plan pieces are broad and sparse; crop-safe focal subject; legible at approximately 290-pixel card width; no essential detail in the outer 8%.\nLighting/mood: calm, capable, quietly technical; gentle studio backlight with cyan edges and one sparing orange accent.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nMaterials/textures: warm carved wood, matte paper, book cloth, clay model surfaces, subtle tool-worn edges.\nConstraints: original image; one dominant metaphor; the figure must be faceless and the plan pieces completely blank; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, cats, cat silhouettes, or Microsoft Fluent styling.\nAvoid: corporate presentation scene, computer displays, humanoid robot, generic chatbot imagery, glowing brains, busy office clutter, recognizable branded products.\nTargeted correction: Pull the camera back enough that the full worktable arrangement, every plan piece, the steward, and the product model sit inside the inner 84% of the frame with a visible uncluttered border on all sides; preserve the same faceless steward, blank interlocking plans, and handcrafted text-free metaphor.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:dfa81b97e1a8450da6af4e20f6ecf3327f9256c65b8788f618ec684211cf7aed",
+  "coverImageSourceHashVersion": 2
+}

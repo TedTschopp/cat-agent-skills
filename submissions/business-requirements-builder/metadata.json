@@ -1,0 +1,201 @@
+{
+  "kind": "prompt-template",
+  "slug": "business-requirements-builder",
+  "name": "Architecture Business Requirements Builder",
+  "description": "Professional architecture business requirements builder prompt designed for high-quality content generation and structured analysis.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Requirements Engineering",
+    "Business Strategy",
+    "Planning"
+  ],
+  "tags": [
+    "Requirements Engineering",
+    "Business Strategy",
+    "Planning"
+  ],
+  "keywords": [
+    "requirements analysis",
+    "business architecture",
+    "strategic planning",
+    "product management",
+    "documentation"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "business-requirements-builder.prompt.md",
+  "payloadPaths": [
+    "business-requirements-builder.prompt.md"
+  ],
+  "downloadPath": "bundles/business-requirements-builder.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": null,
+  "subtitle": "Enterprise Architecture and Requirements Engineering",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master architecture business requirements builder with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-business-requirements-builder.md",
+    "sourceUrl": "https://tedt.org/prompts/business-requirements-builder/",
+    "sourceFileSha256": "sha256:895cd55bb222cf6ff338fb5130abac5387bf18879d907559e11cfa5c5d491702",
+    "sourcePromptSha256": "sha256:5f38c50b3a850d3962ac0b57994184fd992d69980f3132095046266beedc4f81",
+    "importedPromptSha256": "sha256:5f38c50b3a850d3962ac0b57994184fd992d69980f3132095046266beedc4f81",
+    "sourceGuideSha256": "sha256:8cf0c8ee487e5ca0d0bda0fe892290ed08531b2ba812bf711e54394c8428a790",
+    "importedGuideSha256": "sha256:8cf0c8ee487e5ca0d0bda0fe892290ed08531b2ba812bf711e54394c8428a790",
+    "rawFrontmatterSha256": "sha256:ec6b2452d48849bd621f16b8ea46ea8557f477c656629367b01ff45e431d8f42",
+    "sourceTitle": "Architecture Business Requirements Builder",
+    "sourceDescription": "Professional architecture business requirements builder prompt designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master architecture business requirements builder with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/business-requirements-builder/"
+    ],
+    "legacyCategories": [
+      "Prompts",
+      "Business",
+      "Projects"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": null,
+      "sourceUrl": null,
+      "exists": false,
+      "sha256": null,
+      "metadata": {
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-credits": "Ted Tschopp",
+        "image-credits-artist": "Ted Tschopp",
+        "image-credits-artist-URL": "https://tedt.org/",
+        "image-credits-URL": "https://tedt.org/"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts",
+        "Business",
+        "Projects"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "Professional architecture business requirements builder prompt designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for architecture business requirements builder with advanced AI capabilities and structured output formatting.",
+      "image": null,
+      "image_height": null,
+      "image_width": null,
+      "image-alt": "",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-credits": "Ted Tschopp",
+      "image-credits-artist": "Ted Tschopp",
+      "image-credits-artist-URL": "https://tedt.org/",
+      "image-credits-title": "",
+      "image-credits-URL": "https://tedt.org/",
+      "image-description": "",
+      "image-title": "",
+      "keywords": [
+        "requirements analysis",
+        "business architecture",
+        "strategic planning",
+        "product management",
+        "documentation"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master architecture business requirements builder with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "Enterprise Architecture and Requirements Engineering",
+      "tags": [
+        "Requirements Engineering",
+        "Business Strategy",
+        "Planning"
+      ],
+      "title": "Architecture Business Requirements Builder",
+      "update": null
+    },
+    "appliedRepairs": [
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/business-requirements-builder.webp",
+  "coverImageAlt": "Wooden structural frame with measured navy beams, a cyan joinery jig, and an orange locking wedge.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: an architectural joinery bench where measurable business needs become precisely cut beams that lock into a dependable frame\nScene/backdrop: quiet warm-paper craft studio with a deep slate wall and open breathing room\nSubject: one partially assembled timber frame, a cyan measuring jig aligning two navy beams, and one orange locking wedge showing acceptance and fit\nStyle/medium: premium tactile editorial illustration with crafted wood, paper templates, and dimensional model-making detail\nComposition/framing: exact 16:10 landscape; low three-quarter view; scale the complete timber frame down so its roof peak, beams, posts, and base are all fully visible with generous clear margin on every side; dominant frame silhouette centered; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: deliberate, practical, trustworthy, restrained side light\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nMaterials/textures: pale wood grain, matte painted beams, linen paper, metal-free measuring jig, soft workshop dust\nConstraints: measuring surfaces completely blank with no tick marks; original composition; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, paw logos, cats, cat silhouettes, or Microsoft Fluent styling\nAvoid: generic blueprints, generic chatbot imagery, glowing brains, screens, dashboards, office people, construction logos, clutter",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:3564c01e46171888a76701f8267df030658d27ca1493760f5e96e5f7de5ba891",
+  "coverImageSourceHashVersion": 2
+}

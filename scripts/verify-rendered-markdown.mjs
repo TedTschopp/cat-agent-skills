@@ -1,18 +1,21 @@
 /**
- * Fail closed when generated gallery Markdown would render active content.
+ * Fail closed when generated library Markdown would render active content.
  *
  * The check renders Markdown with the same parser family Astro uses, then
  * parses the resulting HTML into HAST. That keeps examples inside inline and
  * fenced code inert while exposing raw HTML and Markdown links/images for
  * structural inspection.
  */
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { fromHtml } from "hast-util-from-html";
 import { markdownToHtml } from "satteri";
 
 const SAFE_SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const SAFE_GENERATED_MARKDOWN_PATH =
+  /^src\/content\/(skills|prompts|artifacts|guides)\/([a-z0-9]+(?:-[a-z0-9]+)*)\.md$/;
+const GENERATED_MARKDOWN_DIRECTORIES = ["skills", "prompts", "artifacts", "guides"];
 const BLOCKED_ELEMENTS = new Set([
   "applet",
   "base",
@@ -50,6 +53,30 @@ function assertSafeSlug(slug) {
   if (!SAFE_SLUG.test(slug)) {
     throw new Error(`unsafe generated slug: ${slug}`);
   }
+}
+
+function assertSafeGeneratedMarkdownPath(path) {
+  if (!SAFE_GENERATED_MARKDOWN_PATH.test(path)) {
+    throw new Error(`unsafe or unsupported generated Markdown path: ${path}`);
+  }
+}
+
+function allGeneratedMarkdownFiles(root) {
+  const files = [];
+  for (const collection of GENERATED_MARKDOWN_DIRECTORIES) {
+    const directory = join(root, "src", "content", collection);
+    if (!existsSync(directory)) continue;
+    for (const entry of readdirSync(directory, { withFileTypes: true })) {
+      if (!entry.name.endsWith(".md")) continue;
+      if (!entry.isFile()) {
+        throw new Error(
+          `generated Markdown must be a regular file: src/content/${collection}/${entry.name}`,
+        );
+      }
+      files.push(`src/content/${collection}/${entry.name}`);
+    }
+  }
+  return files.sort();
 }
 
 function propertyStrings(value) {
@@ -159,10 +186,14 @@ function inspectMarkdown(repoRoot, path, issues) {
   inspectTree(fromHtml(html, { fragment: true }), path, issues);
 }
 
-/** Verify generated skill pages and any generated guide pages for exact slugs. */
-export function verifyRenderedMarkdown({ repoRoot, generatedSlugs }) {
+/** Verify explicitly named generated library pages before they can be published. */
+export function verifyRenderedMarkdown({
+  repoRoot,
+  generatedSlugs = [],
+  generatedFiles = [],
+}) {
   const root = resolve(repoRoot);
-  const files = [];
+  const requestedFiles = [...generatedFiles];
   const issues = [];
 
   for (const slug of [...new Set(generatedSlugs)].sort()) {
@@ -171,10 +202,21 @@ export function verifyRenderedMarkdown({ repoRoot, generatedSlugs }) {
     if (!existsSync(join(root, skillPath))) {
       throw new Error(`missing generated Markdown required for verification: ${skillPath}`);
     }
-    files.push(skillPath);
+    requestedFiles.push(skillPath);
 
     const guidePath = `src/content/guides/${slug}.md`;
-    if (existsSync(join(root, guidePath))) files.push(guidePath);
+    if (existsSync(join(root, guidePath))) requestedFiles.push(guidePath);
+  }
+
+  const files = [...new Set(requestedFiles)].sort();
+  if (files.length === 0) {
+    throw new Error("at least one generated Markdown file is required for verification");
+  }
+  for (const path of files) {
+    assertSafeGeneratedMarkdownPath(path);
+    if (!existsSync(join(root, path))) {
+      throw new Error(`missing generated Markdown required for verification: ${path}`);
+    }
   }
 
   for (const path of files) inspectMarkdown(root, path, issues);
@@ -189,7 +231,12 @@ export function verifyRenderedMarkdown({ repoRoot, generatedSlugs }) {
 }
 
 function parseCliArgs(args) {
-  const options = { repoRoot: process.cwd(), generatedSlugs: undefined };
+  const options = {
+    repoRoot: process.cwd(),
+    generatedSlugs: undefined,
+    generatedFiles: undefined,
+    allGenerated: false,
+  };
   const nextValue = (index, flag) => {
     if (index + 1 >= args.length || !args[index + 1]) {
       throw new Error(`${flag} requires a value`);
@@ -207,19 +254,45 @@ function parseCliArgs(args) {
         .split(",")
         .filter(Boolean);
       index += 1;
+    } else if (arg === "--generated-files") {
+      options.generatedFiles = nextValue(index, arg)
+        .split(",")
+        .filter(Boolean);
+      index += 1;
+    } else if (arg === "--all-generated") {
+      options.allGenerated = true;
     } else {
       throw new Error(`unknown argument: ${arg}`);
     }
   }
 
-  if (!options.generatedSlugs || options.generatedSlugs.length === 0) {
-    throw new Error("--generated-slugs requires at least one slug");
+  const selectionCount = [
+    Boolean(options.generatedSlugs),
+    Boolean(options.generatedFiles),
+    options.allGenerated,
+  ].filter(Boolean).length;
+  if (selectionCount > 1) {
+    throw new Error(
+      "use only one of --generated-slugs, --generated-files, or --all-generated",
+    );
+  }
+  if (
+    (!options.generatedSlugs || options.generatedSlugs.length === 0) &&
+    (!options.generatedFiles || options.generatedFiles.length === 0) &&
+    !options.allGenerated
+  ) {
+    throw new Error(
+      "use --all-generated or provide at least one --generated-files path",
+    );
   }
   return options;
 }
 
 function main() {
   const options = parseCliArgs(process.argv.slice(2));
+  if (options.allGenerated) {
+    options.generatedFiles = allGeneratedMarkdownFiles(resolve(options.repoRoot));
+  }
   const result = verifyRenderedMarkdown(options);
   console.log(
     `Rendered Markdown safety check passed for ${result.files.length} generated file(s).`,

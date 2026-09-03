@@ -1,7 +1,8 @@
 import type { APIRoute } from "astro";
-import { getCollection } from "astro:content";
+import { getLibraryAssets } from "../lib/library-assets";
 import { SITE_METADATA, toIsoDate } from "../lib/site-metadata";
 import { withBase } from "../lib/url";
+import { groupAssetsByTopic } from "../components/topic-routing";
 
 type SitemapEntry = {
   path: string;
@@ -18,13 +19,11 @@ function escapeXml(value: string): string {
 }
 
 export const GET: APIRoute = async ({ site }) => {
-  const skills = await getCollection("skills");
-  const tags = new Set<string>();
+  const assets = await getLibraryAssets();
   const contentDates: string[] = [];
 
-  for (const skill of skills) {
-    for (const tag of skill.data.tags) tags.add(tag);
-    const date = toIsoDate(skill.data.updatedAt ?? skill.data.createdAt);
+  for (const asset of assets) {
+    const date = toIsoDate(asset.dates.updated ?? asset.dates.created ?? undefined);
     if (date) contentDates.push(date);
   }
 
@@ -32,16 +31,15 @@ export const GET: APIRoute = async ({ site }) => {
   const entries: SitemapEntry[] = [
     { path: "/", lastModified: latest },
     { path: "/authors/", lastModified: latest },
-    ...skills
-      .filter((skill) => !skill.data.tags.includes("sample"))
-      .map((skill) => ({
-      path: `/skills/${skill.id}/`,
-      lastModified: toIsoDate(skill.data.updatedAt ?? skill.data.createdAt),
+    ...assets
+      .filter((asset) => !asset.tags.includes("sample"))
+      .map((asset) => ({
+        path: asset.canonicalPath,
+        lastModified: toIsoDate(asset.dates.updated ?? asset.dates.created ?? undefined),
       })),
-    ...[...tags]
-      .sort((a, b) => a.localeCompare(b))
-      .map((tag) => ({
-        path: `/tags/${encodeURIComponent(tag)}/`,
+    ...groupAssetsByTopic(assets)
+      .map((topic) => ({
+        path: `/tags/${topic.routeTopic}/`,
         lastModified: latest,
       })),
   ];

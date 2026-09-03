@@ -1,0 +1,212 @@
+{
+  "kind": "prompt-template",
+  "slug": "requirements-analyst",
+  "name": "Architecture Requirements Analyst - ISO/IEC/IEEE 29148:2018 SRS Generator",
+  "description": "A specialized prompt for converting meeting transcripts into structured ISO/IEC/IEEE 29148:2018 System Requirements Specifications using systems engineering best practices.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Requirements Engineering",
+    "Systems Analysis",
+    "ISO Standards",
+    "Documentation",
+    "Meeting Analysis",
+    "SRS Generation"
+  ],
+  "tags": [
+    "Requirements Engineering",
+    "Systems Analysis",
+    "ISO Standards",
+    "Documentation",
+    "Meeting Analysis",
+    "SRS Generation"
+  ],
+  "keywords": [
+    "requirements analysis",
+    "ISO standards",
+    "systems engineering",
+    "MBSE",
+    "documentation",
+    "SRS generation"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "requirements-analyst.prompt.md",
+  "payloadPaths": [
+    "requirements-analyst.prompt.md"
+  ],
+  "downloadPath": "bundles/requirements-analyst.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": null,
+  "subtitle": "Convert Meeting Transcripts to Structured Requirements Specifications",
+  "summaryBullets": [
+    "ISO/IEC/IEEE 29148:2018 standards compliance",
+    "Meeting transcript analysis and conversion",
+    "Structured requirements specification generation",
+    "Systems engineering best practices",
+    "Multi-stakeholder requirement extraction"
+  ],
+  "seoDescription": "Transform meeting transcripts into professional system requirements specifications following ISO/IEC/IEEE 29148:2018 standards with this specialized analysis prompt.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-requirements-analyst.md",
+    "sourceUrl": "https://tedt.org/prompts/requirements-analyst/",
+    "sourceFileSha256": "sha256:c6c367ae2df3001362d3137282792544ab67820a3b83800d3a6fc657a0b2c2a0",
+    "sourcePromptSha256": "sha256:64e0ed533db4d2c60fbe26f98758691f9d6e2d93e8352a63e0b59dce4a6fc455",
+    "importedPromptSha256": "sha256:64e0ed533db4d2c60fbe26f98758691f9d6e2d93e8352a63e0b59dce4a6fc455",
+    "sourceGuideSha256": "sha256:90536eaee06c296a27d967f867e193a257b1ec2ae8a685289dc539d22225b4cc",
+    "importedGuideSha256": "sha256:90536eaee06c296a27d967f867e193a257b1ec2ae8a685289dc539d22225b4cc",
+    "rawFrontmatterSha256": "sha256:636337f09629197ee47c580faf2eb9f0efa029c00f2d22e1439017a13f60c0de",
+    "sourceTitle": "Architecture Requirements Analyst - ISO/IEC/IEEE 29148:2018 SRS Generator",
+    "sourceDescription": "A specialized prompt for converting meeting transcripts into structured ISO/IEC/IEEE 29148:2018 System Requirements Specifications using systems engineering best practices.",
+    "sourceSeoDescription": "Transform meeting transcripts into professional system requirements specifications following ISO/IEC/IEEE 29148:2018 standards with this specialized analysis prompt.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/requirements-analyst/"
+    ],
+    "legacyCategories": [
+      "Prompts",
+      "Business",
+      "Projects"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": null,
+      "sourceUrl": null,
+      "exists": false,
+      "sha256": null,
+      "metadata": {
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-credits": "Ted Tschopp",
+        "image-credits-artist": "Ted Tschopp",
+        "image-credits-artist-URL": "https://tedt.org/",
+        "image-credits-URL": "https://tedt.org/"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "ISO/IEC/IEEE 29148:2018 standards compliance",
+        "Meeting transcript analysis and conversion",
+        "Structured requirements specification generation",
+        "Systems engineering best practices",
+        "Multi-stakeholder requirement extraction"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts",
+        "Business",
+        "Projects"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "A specialized prompt for converting meeting transcripts into structured ISO/IEC/IEEE 29148:2018 System Requirements Specifications using systems engineering best practices.",
+      "excerpt": "A specialized prompt for systems engineering analysts to convert natural language meeting transcripts into structured ISO/IEC/IEEE 29148:2018 System Requirements Specifications.",
+      "image": null,
+      "image_height": null,
+      "image_width": null,
+      "image-alt": "",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-credits": "Ted Tschopp",
+      "image-credits-artist": "Ted Tschopp",
+      "image-credits-artist-URL": "https://tedt.org/",
+      "image-credits-title": "",
+      "image-credits-URL": "https://tedt.org/",
+      "image-description": "",
+      "image-title": "",
+      "keywords": [
+        "requirements analysis",
+        "ISO standards",
+        "systems engineering",
+        "MBSE",
+        "documentation",
+        "SRS generation"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Transform meeting transcripts into professional system requirements specifications following ISO/IEC/IEEE 29148:2018 standards with this specialized analysis prompt.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "Convert Meeting Transcripts to Structured Requirements Specifications",
+      "tags": [
+        "Requirements Engineering",
+        "Systems Analysis",
+        "ISO Standards",
+        "Documentation",
+        "Meeting Analysis",
+        "SRS Generation"
+      ],
+      "title": "Architecture Requirements Analyst - ISO/IEC/IEEE 29148:2018 SRS Generator",
+      "update": null
+    },
+    "appliedRepairs": [
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/requirements-analyst.webp",
+  "coverImageAlt": "Unmarked cyan conversation ribbons pass through a navy calibration gate and emerge as aligned specification blocks beside an orange exception.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: A flowing cluster of unmarked conversation ribbons passing through a precision organizing gate and emerging as sturdy traceable specification blocks, expressing the conversion of meeting input into a structured systems requirements document.\nScene/backdrop: Open warm-paper work surface on a deep slate field, with a single transformation path and no screens or meeting-room scene.\nSubject: One dominant navy calibration gate; soft cyan speech-like ribbons without symbols enter from one side, then emerge as aligned warm-paper blocks connected by thin cyan joinery, with one orange block set aside as an unresolved issue.\nStyle/medium: premium editorial illustration with tactile dimensional detail; folded paper ribbon, machined metal gate, ceramic blocks, and subtle handcrafted precision.\nComposition/framing: exact 16:10 landscape; clear left-to-right transformation with large simple forms; crop-safe focal subject; legible at approximately 290-pixel card width; no essential detail in the outer 8%.\nLighting/mood: calm, capable, quietly technical; restrained cyan backlight and one sparing orange exception.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nMaterials/textures: thick paper ribbons, matte ceramic blocks, brushed metal, fine paper fibers.\nConstraints: original image; one dominant transformation metaphor; ribbons and blocks entirely blank and unmarked; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, cats, cat silhouettes, or Microsoft Fluent styling.\nAvoid: quotation marks, speech-bubble glyphs, transcript text, requirement IDs, flowchart UI, generic chatbot imagery, glowing brains, clutter, Microsoft-like gradients.\nTargeted correction: Pull the camera back and shorten the input and output paths so every ribbon end, the full calibration gate, all specification blocks, and the orange unresolved block fit completely inside the inner 84% with a visible quiet border on every side; preserve blank unmarked forms and the same transformation metaphor.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:c4738385ecf7897e132b9a28dabf92b7986e61b0b6947be5a1645b9021930cd5",
+  "coverImageSourceHashVersion": 2
+}

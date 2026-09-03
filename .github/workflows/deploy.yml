@@ -67,36 +67,28 @@ jobs:
           # A GITHUB_TOKEN push does not retrigger workflows, so this run still
           # owns the deploy below; the commit only keeps tomorrow's diff stable.
           git push || echo "::warning::Could not push refreshed engagement; will retry next run."
-      # Regenerate every skill page + bundle from submissions/ before building.
+      # Regenerate every library page, guide, download, and catalog snapshot
+      # from submissions/ before building.
       # PR CI only commits generated content back to same-repo PR branches. Fork
       # PRs generate and scan their artifacts in an ephemeral checkout, so those
       # files never land on main. Importing here makes the deployed site reflect
       # submissions/ regardless of how a PR was merged. Idempotent: it rewrites
       # the same files a same-repo PR did.
-      - name: Import skill submissions
+      - name: Import Submissions
         if: steps.engagement.outputs.should_deploy == 'true'
         run: npm run import:submissions
-      - name: Validate generated skill artwork
+      - name: Validate Generated Artwork
         if: steps.engagement.outputs.should_deploy == 'true'
         run: npm run artwork:validate
-      - name: Reject active content in generated Markdown
+      - name: Reject Active Content in Generated Markdown
         if: steps.engagement.outputs.should_deploy == 'true'
-        run: |
-          set -euo pipefail
-          GENERATED_SLUGS="$(
-            find src/content/skills -maxdepth 1 -type f -name '*.md' -print \
-              | sed 's#^src/content/skills/##; s#\.md$##' \
-              | LC_ALL=C sort \
-              | paste -sd, -
-          )"
-          npm run check:upstream-rendered-content -- \
-            --generated-slugs "$GENERATED_SLUGS"
-      - name: Build
+        run: npm run check:generated-content
+      - name: Build the Production Site
         if: steps.engagement.outputs.should_deploy == 'true'
         run: npm run build
         env:
           PUBLIC_LOCAL_GISCUS_ENABLED: ${{ vars.PUBLIC_LOCAL_GISCUS_ENABLED }}
-      - name: Upload Pages artifact
+      - name: Upload Pages Artifact
         if: steps.engagement.outputs.should_deploy == 'true'
         uses: actions/upload-pages-artifact@v3
         with:

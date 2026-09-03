@@ -1,0 +1,213 @@
+{
+  "kind": "prompt-template",
+  "slug": "prd-generator",
+  "name": "Architecture PRD Generator",
+  "description": "Professional architecture prd generator prompt designed for high-quality content generation and structured analysis.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Product Management",
+    "Requirements Engineering",
+    "Documentation"
+  ],
+  "tags": [
+    "Product Management",
+    "Requirements Engineering",
+    "Documentation"
+  ],
+  "keywords": [
+    "documentation",
+    "product management",
+    "product requirements",
+    "requirements analysis",
+    "system architecture"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "prd-generator.prompt.md",
+  "payloadPaths": [
+    "prd-generator.prompt.md"
+  ],
+  "downloadPath": "bundles/prd-generator.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": null,
+  "subtitle": "Enterprise Architecture and Requirements Engineering",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master architecture prd generator with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [
+    {
+      "name": "prd_instructions",
+      "label": "PRD Instructions",
+      "type": "textarea",
+      "required": true,
+      "default": null,
+      "placeholder": "Enter the project-specific instructions for the PRD.",
+      "help": "Describe the product, users, goals, constraints, and requirements the PRD must address.",
+      "rows": 8
+    }
+  ],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-prd-generator.md",
+    "sourceUrl": "https://tedt.org/prompts/prd-generator/",
+    "sourceFileSha256": "sha256:98e0cb0ee8582e2d6b2d58b24b763244aadd16ab51ec24324039ed7f924d3676",
+    "sourcePromptSha256": "sha256:769720548318cde8b3eb406d75c8a0651d91b7efb767db6c2fcc1615effc1c90",
+    "importedPromptSha256": "sha256:769720548318cde8b3eb406d75c8a0651d91b7efb767db6c2fcc1615effc1c90",
+    "sourceGuideSha256": "sha256:350f84b5e2805e201001ace93248e78cc690d76193e8e35f614e1412be21a9a0",
+    "importedGuideSha256": "sha256:350f84b5e2805e201001ace93248e78cc690d76193e8e35f614e1412be21a9a0",
+    "rawFrontmatterSha256": "sha256:9719c56094533f681375b5ccd1c2bcba6055f96ab6526b0636ad29922b85de0b",
+    "sourceTitle": "Architecture PRD Generator",
+    "sourceDescription": "Professional architecture prd generator prompt designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master architecture prd generator with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/prd-generator/"
+    ],
+    "legacyCategories": [
+      "Prompts",
+      "Business",
+      "Projects"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": null,
+      "sourceUrl": null,
+      "exists": false,
+      "sha256": null,
+      "metadata": {
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-credits": "Ted Tschopp",
+        "image-credits-artist": "Ted Tschopp",
+        "image-credits-artist-URL": "https://tedt.org/",
+        "image-credits-URL": "https://tedt.org/"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts",
+        "Business",
+        "Projects"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "Professional architecture prd generator prompt designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for architecture prd generator with advanced AI capabilities and structured output formatting.",
+      "image": null,
+      "image_height": null,
+      "image_width": null,
+      "image-alt": "",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-credits": "Ted Tschopp",
+      "image-credits-artist": "Ted Tschopp",
+      "image-credits-artist-URL": "https://tedt.org/",
+      "image-credits-title": "",
+      "image-credits-URL": "https://tedt.org/",
+      "image-description": "",
+      "image-title": "",
+      "keywords": [
+        "documentation",
+        "product management",
+        "product requirements",
+        "requirements analysis",
+        "system architecture"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master architecture prd generator with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "Enterprise Architecture and Requirements Engineering",
+      "tags": [
+        "Product Management",
+        "Requirements Engineering",
+        "Documentation"
+      ],
+      "title": "Architecture PRD Generator",
+      "update": null
+    },
+    "appliedRepairs": [
+      "add-prd-instructions-variable",
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/prd-generator.webp",
+  "coverImageAlt": "A navy hand press transforms a cyan clay form into a bound stack of blank structured paper sheets.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: A compact bookbinding press transforming one amorphous idea form into a clean stack of structured blank blueprint sheets, expressing conversational collection and generation of a complete product requirements document.\nScene/backdrop: Minimal warm-paper workshop surface against deep slate, with only the press and its transformation path visible.\nSubject: One dominant navy mechanical press; a soft irregular cyan clay form enters one side and emerges as several aligned warm-paper sheets with varied cutout sections and one orange binding thread, all free of marks.\nStyle/medium: premium editorial illustration with tactile dimensional detail; hand-built printing press, molded paper, bookbinding cloth, and restrained mechanical realism.\nComposition/framing: exact 16:10 landscape; low three-quarter view with a bold press silhouette; input and output remain large and legible at approximately 290-pixel card width; crop-safe focal subject; no essential detail in the outer 8%.\nLighting/mood: calm, capable, quietly technical; soft cyan backlight and a single orange thread accent.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nMaterials/textures: brushed painted metal, deckled paper edges, book cloth, matte clay, subtle workshop wear.\nConstraints: original image; one dominant metaphor; every sheet must be completely blank and unmarked; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, cats, cat silhouettes, or Microsoft Fluent styling.\nAvoid: type blocks, printing letters, readable diagrams, screen interfaces, factory clutter, generic chatbot imagery, glowing brains, Microsoft-like color gradients.\nTargeted correction: Pull the camera back and reduce the whole press assembly so the clay input tray, every edge of the press, and the complete bound sheet stack all fit inside the inner 84% of the frame with a clear slate-and-paper border; preserve the same text-free clay-to-structured-sheets transformation.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:563a34df444331e90b9194f395ceb67d20c54251e1712828590dc64c8c440c43",
+  "coverImageSourceHashVersion": 2
+}

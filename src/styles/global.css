@@ -246,6 +246,39 @@ textarea {
   font-family: var(--font-mono);
 }
 
+.library-filter-select {
+  width: 100%;
+  margin-top: 0.5rem;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius);
+  background: var(--surface-card);
+  color: var(--text-primary);
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  box-shadow: var(--shadow-inset);
+}
+
+.library-filter-select:hover,
+.library-filter-select:focus-visible {
+  border-color: var(--border-strong);
+}
+
+[data-library-item][hidden],
+[data-library-empty][hidden] {
+  display: none;
+}
+
+.prompt-workbench textarea[data-prompt-output] {
+  tab-size: 2;
+}
+
+.prompt-workbench input:invalid,
+.prompt-workbench textarea:invalid,
+.prompt-workbench select:invalid {
+  border-color: color-mix(in srgb, var(--danger) 60%, var(--border-default));
+}
+
 .prose :where(table) {
   display: block;
   max-width: 100%;

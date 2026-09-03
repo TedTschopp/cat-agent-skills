@@ -1,0 +1,197 @@
+{
+  "kind": "prompt-template",
+  "slug": "tiered-messaging-framework",
+  "name": "Communications Tiered Messaging Framework",
+  "description": "Professional communications tiered messaging framework prompt designed for high-quality content generation and structured analysis.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Communications",
+    "Content Creation",
+    "Business Strategy"
+  ],
+  "tags": [
+    "Communications",
+    "Content Creation",
+    "Business Strategy"
+  ],
+  "keywords": [
+    "content creation",
+    "copywriting",
+    "messaging framework",
+    "messaging strategy",
+    "prompt engineering",
+    "stakeholder communications"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "tiered-messaging-framework.prompt.md",
+  "payloadPaths": [
+    "tiered-messaging-framework.prompt.md"
+  ],
+  "downloadPath": "bundles/tiered-messaging-framework.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": null,
+  "subtitle": "Professional Content Creation Assistant",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master communications tiered messaging framework with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-tiered-messaging-framework.md",
+    "sourceUrl": "https://tedt.org/prompts/tiered-messaging-framework/",
+    "sourceFileSha256": "sha256:64f7eb42de28e77ee1a692954f3e685de28e1be0ff5e5d4462b1b2711a2b42d2",
+    "sourcePromptSha256": "sha256:eb591cec0edad718baa1e198f9f770f050300482956e80c7bd7349bb43f92df7",
+    "importedPromptSha256": "sha256:eb591cec0edad718baa1e198f9f770f050300482956e80c7bd7349bb43f92df7",
+    "sourceGuideSha256": "sha256:4864dbecaf3d792baa650ce47cbd28896a6875ab860699709f33f90ec9c6367f",
+    "importedGuideSha256": "sha256:4864dbecaf3d792baa650ce47cbd28896a6875ab860699709f33f90ec9c6367f",
+    "rawFrontmatterSha256": "sha256:b0fc1f2e350fe61faf177d469b79a4f45e1168dc61ec0bea3dcd2a6da56be12c",
+    "sourceTitle": "Communications Tiered Messaging Framework",
+    "sourceDescription": "Professional communications tiered messaging framework prompt designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master communications tiered messaging framework with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/tiered-messaging-framework/"
+    ],
+    "legacyCategories": [
+      "Prompts - Communications"
+    ],
+    "visibleInAlphaIndex": false,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/Public-Speaking.webp",
+      "sourceUrl": "https://tedt.org/img/prompts/Public-Speaking.webp",
+      "exists": true,
+      "sha256": "sha256:a28472cf3219df7d6c6941621d2c94d41268233828b90647b52e8318d7297b08",
+      "metadata": {
+        "image": "/img/prompts/Public-Speaking.webp",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "An executive speaker stands on a minimalist stage addressing an audience, while abstract interconnected lines and diagrams form a cloud above, symbolizing ideas, structure, and insight emerging from complexity.",
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-description": "A conceptual illustration of a senior executive delivering a keynote presentation, with abstract networks, diagrams, and flowing lines suspended overhead to represent complex ideas being transformed into clear, structured insight. The image evokes thought leadership, strategic storytelling, and the art of turning complexity into understanding for an engaged audience.",
+        "image-title": "From Complexity to Clarity: The Executive Keynote Moment"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts - Communications"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "Professional communications tiered messaging framework prompt designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for communications tiered messaging framework with advanced AI capabilities and structured output formatting.",
+      "image": "/img/prompts/Public-Speaking.webp",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "An executive speaker stands on a minimalist stage addressing an audience, while abstract interconnected lines and diagrams form a cloud above, symbolizing ideas, structure, and insight emerging from complexity.",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-description": "A conceptual illustration of a senior executive delivering a keynote presentation, with abstract networks, diagrams, and flowing lines suspended overhead to represent complex ideas being transformed into clear, structured insight. The image evokes thought leadership, strategic storytelling, and the art of turning complexity into understanding for an engaged audience.",
+      "image-title": "From Complexity to Clarity: The Executive Keynote Moment",
+      "keywords": [
+        "content creation",
+        "copywriting",
+        "messaging framework",
+        "messaging strategy",
+        "prompt engineering",
+        "stakeholder communications"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master communications tiered messaging framework with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "Professional Content Creation Assistant",
+      "tags": [
+        "Communications",
+        "Content Creation",
+        "Business Strategy"
+      ],
+      "title": "Communications Tiered Messaging Framework",
+      "update": null
+    },
+    "appliedRepairs": [
+      "include-hidden-alpha-prompt",
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/tiered-messaging-framework.webp",
+  "coverImageAlt": "Nested navy acoustic chambers send orange and cyan ribbons into stone bowls at increasing distances.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: Tiered communications represented by one clear core signal passing through three progressively wider handcrafted acoustic chambers, emerging as coordinated waves that reach near, middle, and distant listening vessels with appropriate detail, conveying one message adapted across executive, manager, and practitioner depths.\nScene/backdrop: A warm-paper acoustic landscape with a low slate platform.\nSubject: One small orange core sphere at the mouth of three nested navy-and-cyan horn-like chambers, sending three distinct smooth ribbons toward simple stone listening bowls placed at increasing distances.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; one dominant crop-safe left-to-right nested-signal silhouette; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: clear, aligned, far-reaching; calm directional illumination\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: use only plain sculptural forms and continuous ribbons with no waveform ticks or glyphs; no people and no electronic devices; completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:789c1afba0d2d26abeba35f6d869fdfc99373bd2b654b7dc01efa7c15d4be90b",
+  "coverImageSourceHashVersion": 2
+}

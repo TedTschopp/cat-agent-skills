@@ -8,8 +8,22 @@ const scriptDirectory = fileURLToPath(new URL(".", import.meta.url));
 const root = resolve(scriptDirectory, "..");
 const dist = join(root, "dist");
 const siteOrigin = new URL("https://ai.tedt.org/");
+const expectedSiteDescription =
+  "Reusable agent instruction files, scoped agent instruction files, agent definition files, prompt template files, work specification files, skills, plugins, and automations for leading AI tools.";
+const legacyPromptRedirects = new Map([
+  ["prompts/artistic-Analysis/index.html", "/prompts/artistic-analysis/"],
+  [
+    "prompts/Create-a-Unforgettable-Opening-to-a-TTRPG/index.html",
+    "/prompts/create-a-unforgettable-opening-to-a-ttrpg/",
+  ],
+  [
+    "prompts/midjourney-v6.1-prompt-template/index.html",
+    "/prompts/midjourney-v6-1-prompt-template/",
+  ],
+]);
 const errors = [];
 const imageChecks = new Map();
+const verifiedLegacyPromptRedirects = new Set();
 
 function check(condition, message) {
   if (!condition) errors.push(message);
@@ -26,6 +40,7 @@ function walk(directory, predicate) {
 }
 
 function visit(node, callback) {
+  if (!node) return;
   callback(node);
   for (const child of node.children ?? []) visit(child, callback);
 }
@@ -39,7 +54,7 @@ function elements(tree, tagName) {
 }
 
 function property(node, name) {
-  const value = node.properties?.[name];
+  const value = node?.properties?.[name];
   return Array.isArray(value) ? value.join(" ") : String(value ?? "");
 }
 
@@ -49,6 +64,16 @@ function textContent(node) {
     if (child.type === "text") value += child.value;
   });
   return value;
+}
+
+function decodeXmlText(value) {
+  return value.replace(/&(amp|lt|gt|quot|apos);/g, (_, entity) => ({
+    amp: "&",
+    lt: "<",
+    gt: ">",
+    quot: '"',
+    apos: "'",
+  })[entity]);
 }
 
 function one(values, label, page) {
@@ -195,6 +220,45 @@ for (const file of htmlFiles) {
   const scripts = elements(tree, "script");
   const titles = elements(tree, "title");
 
+  const refreshRedirects = metaBy(metas, "httpEquiv", "refresh");
+  if (refreshRedirects.length > 0) {
+    const expectedTarget = legacyPromptRedirects.get(page);
+    check(Boolean(expectedTarget), `${page}: unexpected static redirect page`);
+    const refresh = one(refreshRedirects, "refresh redirect", page);
+    const redirectTitle = one(titles, "redirect title", page);
+    const redirectRobots = one(metaBy(metas, "name", "robots"), "redirect robots meta", page);
+    const redirectCanonical = one(linksByRel(links, "canonical"), "redirect canonical", page);
+    const refreshMatch = property(refresh, "content").match(/^0;url=(.+)$/);
+    check(Boolean(refreshMatch), `${page}: redirect refresh target is invalid`);
+    check(property(redirectRobots, "content") === "noindex", `${page}: redirect must be noindex`);
+
+    if (expectedTarget) {
+      const expectedTargetUrl = new URL(expectedTarget, siteOrigin).href;
+      let refreshTargetUrl = "";
+      if (refreshMatch) {
+        try {
+          refreshTargetUrl = new URL(refreshMatch[1], siteOrigin).href;
+        } catch {
+          errors.push(`${page}: redirect refresh target is not a valid URL`);
+        }
+      }
+      check(
+        textContent(redirectTitle).trim() === `Redirecting to: ${expectedTarget}`,
+        `${page}: redirect title does not name ${expectedTarget}`,
+      );
+      check(
+        refreshTargetUrl === expectedTargetUrl,
+        `${page}: refresh target must be ${expectedTarget}`,
+      );
+      check(
+        property(redirectCanonical, "href") === expectedTargetUrl,
+        `${page}: redirect canonical must be ${expectedTargetUrl}`,
+      );
+      verifiedLegacyPromptRedirects.add(page);
+    }
+    continue;
+  }
+
   const universalHeaders = elements(tree, "header").filter(
     (node) => property(node, "id") === "tedt-universal-header",
   );
@@ -220,19 +284,15 @@ for (const file of htmlFiles) {
       "Tools",
       "Assessments",
       "Presentations",
-      "Prompts",
-      "Skills & Agents",
+      "AI Library",
     ];
     check(
       JSON.stringify(topLevelLabels) === JSON.stringify(expectedLabels),
       `${page}: universal navigation order is wrong: ${topLevelLabels.join(" > ")}`,
     );
 
-    const prompts = headerLinks.filter(
-      (node) => textContent(node).trim() === "Prompts",
-    );
-    const skillsAndAgents = headerLinks.filter(
-      (node) => textContent(node).trim() === "Skills & Agents",
+    const aiLibrary = headerLinks.filter(
+      (node) => textContent(node).trim() === "AI Library",
     );
     const brand = headerLinks.filter(
       (node) => property(node, "ariaLabel") === "Ted Tschopp home",
@@ -250,19 +310,14 @@ for (const file of htmlFiles) {
         disabled: property(node, "disabled"),
       }));
 
-    check(prompts.length === 1, `${page}: expected one Prompts universal link`);
+    check(aiLibrary.length === 1, `${page}: expected one AI Library universal link`);
     check(
-      prompts[0] && property(prompts[0], "href") === "https://tedt.org/prompts/",
-      `${page}: Prompts must link to https://tedt.org/prompts/`,
-    );
-    check(skillsAndAgents.length === 1, `${page}: expected one Skills & Agents universal link`);
-    check(
-      skillsAndAgents[0] && property(skillsAndAgents[0], "href") === "https://ai.tedt.org/",
-      `${page}: Skills & Agents must link to https://ai.tedt.org/`,
+      aiLibrary[0] && property(aiLibrary[0], "href") === "https://ai.tedt.org/",
+      `${page}: AI Library must link to https://ai.tedt.org/`,
     );
     check(
-      skillsAndAgents[0] && property(skillsAndAgents[0], "ariaCurrent") === "page",
-      `${page}: Skills & Agents must identify the current site`,
+      aiLibrary[0] && property(aiLibrary[0], "ariaCurrent") === "page",
+      `${page}: AI Library must identify the current site`,
     );
     check(
       brand.length === 1 && property(brand[0], "href") === "https://tedt.org/",
@@ -295,6 +350,12 @@ for (const file of htmlFiles) {
   const descriptionText = description ? property(description, "content") : "";
   check(Boolean(descriptionText), `${page}: meta description is empty`);
   check(descriptionText.length <= 200, `${page}: meta description exceeds 200 characters`);
+  if (page === "index.html") {
+    check(
+      descriptionText === expectedSiteDescription,
+      `index.html: meta description must match the unified library description`,
+    );
+  }
 
   const robotsMeta = one(metaBy(metas, "name", "robots"), "robots meta", page);
   const robots = robotsMeta ? property(robotsMeta, "content") : "";
@@ -426,6 +487,12 @@ for (const file of htmlFiles) {
           check(Boolean(pageNode), `${page}: JSON-LD page node does not match canonical`);
           check(Boolean(imageNode), `${page}: JSON-LD image node does not match og:image`);
           check(Boolean(websiteNode), `${page}: JSON-LD WebSite node is missing`);
+          if (websiteNode) {
+            check(
+              websiteNode.description === expectedSiteDescription,
+              `${page}: JSON-LD WebSite description is not the unified library description`,
+            );
+          }
           if (pageNode) {
             check(pageNode.url === canonicalHref, `${page}: JSON-LD page URL differs from canonical`);
             check(
@@ -462,6 +529,28 @@ for (const file of htmlFiles) {
 
 await Promise.all(imageChecks.values());
 
+for (const [redirectPage, target] of legacyPromptRedirects) {
+  const redirectFile = join(dist, redirectPage);
+  const targetPage = join(dist, target.replace(/^\/+|\/+$/g, ""), "index.html");
+  const differsOnlyByCase =
+    redirectPage.toLocaleLowerCase("en-US") ===
+    relative(dist, targetPage).split(sep).join("/").toLocaleLowerCase("en-US");
+  const cannotCoexistLocally =
+    differsOnlyByCase && (process.platform === "darwin" || process.platform === "win32");
+  if (cannotCoexistLocally) continue;
+  if (existsSync(redirectFile)) {
+    check(
+      existsSync(targetPage),
+      `${redirectPage}: legacy redirect target is missing: ${target}`,
+    );
+  }
+  if (!existsSync(targetPage)) continue;
+  check(
+    verifiedLegacyPromptRedirects.has(redirectPage),
+    `${redirectPage}: published canonical prompt is missing its legacy redirect`,
+  );
+}
+
 const robotsPath = join(dist, "robots.txt");
 check(existsSync(robotsPath), "robots.txt is missing");
 if (existsSync(robotsPath)) {
@@ -477,7 +566,9 @@ const sitemapPath = join(dist, "sitemap.xml");
 check(existsSync(sitemapPath), "sitemap.xml is missing");
 if (existsSync(sitemapPath)) {
   const sitemap = readFileSync(sitemapPath, "utf8");
-  const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+  const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) =>
+    decodeXmlText(match[1]),
+  );
   const sitemapUrls = new Set(locations);
   check(locations.length === sitemapUrls.size, "sitemap.xml contains duplicate URLs");
   for (const canonical of canonicalUrls) {
@@ -495,6 +586,10 @@ if (existsSync(manifestPath)) {
     const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
     check(manifest.name && manifest.short_name, "manifest name fields are missing");
     check(manifest.id === "/" && manifest.start_url === "/", "manifest identity URLs are wrong");
+    check(
+      manifest.description === expectedSiteDescription,
+      "manifest description must match the unified library description",
+    );
     check(Array.isArray(manifest.icons) && manifest.icons.length >= 3, "manifest icons are incomplete");
     for (const icon of manifest.icons ?? []) {
       const file = join(dist, String(icon.src).replace(/^\/+/, ""));

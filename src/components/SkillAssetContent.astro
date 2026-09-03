@@ -1,0 +1,83 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import type { LibraryAsset } from "../lib/library-assets";
+import {
+  validateAutomationData,
+  type AutomationDigest,
+} from "../../scripts/validate-automation";
+
+interface Props {
+  asset: LibraryAsset;
+  skill: CollectionEntry<"skills">;
+  guide?: CollectionEntry<"guides"> | null;
+}
+
+const { asset, skill, guide = null } = Astro.props;
+const { Content } = await render(skill);
+const GuideContent = guide ? (await render(guide)).Content : null;
+
+let automation: AutomationDigest | null = null;
+if (asset.kind === "automation" && skill.data.bundle?.endsWith(".json")) {
+  try {
+    const raw = readFileSync(join(process.cwd(), "public", skill.data.bundle), "utf8");
+    const result = validateAutomationData(JSON.parse(raw), asset.slug);
+    if (result.ok && result.digest) automation = result.digest;
+  } catch {
+    automation = null;
+  }
+}
+---
+
+{
+  GuideContent ? (
+    <section aria-labelledby="asset-overview-heading">
+      <h2 id="asset-overview-heading" class="mb-4 text-2xl text-[var(--text-heading)]">About This Asset</h2>
+      <article class="prose max-w-none dark:prose-invert prose-headings:text-fg prose-a:text-accent-text prose-strong:text-fg prose-code:text-accent-text prose-code:before:content-[''] prose-code:after:content-[''] prose-table:text-muted prose-th:text-fg">
+        <GuideContent />
+      </article>
+    </section>
+  ) : automation ? (
+    <section aria-labelledby="automation-steps-heading">
+      <div class="mb-6 rounded-lg border border-[var(--border-subtle)] bg-surface-2 p-4">
+        <h2 class="text-xl text-[var(--text-heading)]">Trigger</h2>
+        <p class="mt-2 text-muted">
+          <span class="font-medium text-fg">
+            {automation.triggerType === "condition" ? "Runs on a condition" : "Runs on a schedule"}
+          </span>
+          {" — "}{automation.scheduleSummary}
+        </p>
+      </div>
+      <div class="mb-3 flex items-baseline gap-2">
+        <h2 id="automation-steps-heading" class="text-2xl text-[var(--text-heading)]">Steps</h2>
+        <span class="text-xs text-subtle">{automation.steps.length} {automation.steps.length === 1 ? "step" : "steps"}</span>
+      </div>
+      <ol class="space-y-6">
+        {automation.steps.map((step, index) => (
+          <li>
+            <div class="mb-2 flex items-center gap-2.5">
+              <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-white">{index + 1}</span>
+              <h3 class="font-semibold text-fg">{step.label || `Step ${index + 1}`}</h3>
+            </div>
+            <pre class="max-h-[28rem] overflow-auto whitespace-pre-wrap break-words rounded-lg border border-border bg-surface-2 px-4 py-3.5 font-mono text-[13px] leading-relaxed text-muted" set:text={step.prompt} />
+          </li>
+        ))}
+      </ol>
+    </section>
+  ) : (
+    <section aria-labelledby="asset-instructions-heading">
+      {skill.data.agentDescription && (
+        <div class="mb-7 rounded-lg border border-[var(--border-subtle)] bg-surface-2 p-4">
+          <h2 class="text-xl text-[var(--text-heading)]">Agent Description</h2>
+          <p class="mt-2 text-muted">{skill.data.agentDescription}</p>
+        </div>
+      )}
+      <h2 id="asset-instructions-heading" class="mb-4 text-2xl text-[var(--text-heading)]">Instructions</h2>
+      <article class="prose max-w-none dark:prose-invert prose-headings:text-fg prose-a:text-accent-text prose-strong:text-fg prose-code:text-accent-text prose-code:before:content-[''] prose-code:after:content-[''] prose-table:text-muted prose-th:text-fg">
+        <Content />
+      </article>
+    </section>
+  )
+}

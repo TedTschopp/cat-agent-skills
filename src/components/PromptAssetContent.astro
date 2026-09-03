@@ -1,0 +1,40 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
+import type { LibraryAsset } from "../lib/library-assets";
+import PromptCustomizer from "./PromptCustomizer.astro";
+
+interface Props {
+  asset: LibraryAsset;
+  prompt: CollectionEntry<"prompts">;
+  guide?: CollectionEntry<"guides"> | null;
+}
+
+const { asset, prompt, guide = null } = Astro.props;
+const GuideContent = guide ? (await render(guide)).Content : null;
+---
+
+<PromptCustomizer
+  slug={asset.slug}
+  body={asset.content.promptBody ?? prompt.body ?? ""}
+  variables={asset.variables}
+  worksWith={asset.worksWith}
+/>
+
+{
+  GuideContent ? (
+    <section aria-labelledby="prompt-guide-heading">
+      <h2 id="prompt-guide-heading" class="mb-4 text-2xl text-[var(--text-heading)]">About This Prompt</h2>
+      <article class="prose max-w-none dark:prose-invert prose-headings:text-fg prose-a:text-accent-text prose-strong:text-fg prose-code:text-accent-text prose-code:before:content-[''] prose-code:after:content-[''] prose-table:text-muted prose-th:text-fg">
+        <GuideContent />
+      </article>
+    </section>
+  ) : (
+    <section aria-labelledby="prompt-details-heading">
+      <h2 id="prompt-details-heading" class="text-2xl text-[var(--text-heading)]">Prompt Details</h2>
+      <p class="mt-2 max-w-[68ch] text-muted">
+        Use the workbench above to fill available fields. Review the complete result before sharing it with an AI provider.
+      </p>
+    </section>
+  )
+}

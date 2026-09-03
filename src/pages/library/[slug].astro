@@ -1,0 +1,21 @@
+---
+import AssetDetailShell from "../../components/AssetDetailShell.astro";
+import GenericAssetContent from "../../components/GenericAssetContent.astro";
+import { isSkillFamily, relatedAssetsFor } from "../../components/asset-detail-data";
+import { getLibraryAssets, type LibraryAsset } from "../../lib/library-assets";
+
+export async function getStaticPaths() {
+  const assets = await getLibraryAssets();
+  return assets
+    .filter((asset) => !isSkillFamily(asset) && asset.kind !== "prompt-template")
+    .map((asset) => ({ params: { slug: asset.slug }, props: { asset } }));
+}
+
+const { asset } = Astro.props as { asset: LibraryAsset };
+const allAssets = await getLibraryAssets();
+const relatedAssets = relatedAssetsFor(asset, allAssets);
+---
+
+<AssetDetailShell {asset} {relatedAssets} {allAssets}>
+  <GenericAssetContent {asset} />
+</AssetDetailShell>

@@ -1,0 +1,341 @@
+{
+  "kind": "prompt-template",
+  "slug": "executive-keynote-generator",
+  "name": "Executive Keynote Generator",
+  "description": "Professional prompt for executive keynote speeches designed for high-quality content generation and structured analysis.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Content Creation",
+    "Communications",
+    "Planning"
+  ],
+  "tags": [
+    "Content Creation",
+    "Communications",
+    "Planning"
+  ],
+  "keywords": [
+    "presentation",
+    "public speaking",
+    "content creation",
+    "prompt engineering",
+    "storytelling"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "executive-keynote-generator.prompt.md",
+  "payloadPaths": [
+    "executive-keynote-generator.prompt.md"
+  ],
+  "downloadPath": "bundles/executive-keynote-generator.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": null,
+  "subtitle": "AI-Powered Content Generation Framework",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master prompt for executive keynote speeches with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [
+    {
+      "default": "",
+      "help": "What is your central idea, stated in a single, compelling sentence?",
+      "label": "The Big Idea",
+      "name": "big_idea",
+      "placeholder": "State your central idea in a single, compelling sentence",
+      "required": true,
+      "rows": 3,
+      "type": "textarea"
+    },
+    {
+      "default": "",
+      "help": "What specific, nagging, and urgent pain point does your big idea solve for the audience?",
+      "label": "Question 1: The Pain Point",
+      "name": "pain_point",
+      "placeholder": "Describe the specific, nagging, and urgent pain point your big idea solves...",
+      "required": true,
+      "rows": 6,
+      "type": "textarea"
+    },
+    {
+      "default": "",
+      "help": "What common misunderstanding, myth, or confusion does your big idea correct?",
+      "label": "Question 2: The Confusion",
+      "name": "confusion",
+      "placeholder": "What common misunderstanding, myth, or confusion does your big idea correct...",
+      "required": true,
+      "rows": 6,
+      "type": "textarea"
+    },
+    {
+      "default": "",
+      "help": "What does the audience *think* they know about this topic that is incomplete or wrong? What is the crucial gap in their knowledge that you will reveal?",
+      "label": "Question 3: The Knowledge Gap (Authority)",
+      "name": "knowledge_gap",
+      "placeholder": "What does the audience think they know that is incomplete or wrong...",
+      "required": true,
+      "rows": 6,
+      "type": "textarea"
+    },
+    {
+      "default": "",
+      "help": "What was missing in your own professional life or organization before you discovered/implemented this idea? Share a brief, personal story of your \"before\" state.",
+      "label": "Question 4: The Personal Stake (Rapport)",
+      "name": "personal_stake",
+      "placeholder": "Share a brief, personal story of your 'before' state...",
+      "required": true,
+      "rows": 6,
+      "type": "textarea"
+    },
+    {
+      "default": "",
+      "help": "Briefly describe a specific, real-world example of how your idea has tangibly improved someone else's life, team, or company. This should be a story.",
+      "label": "Question 5: The Improvement Story (Vision)",
+      "name": "improvement_story",
+      "placeholder": "Describe a specific, real-world example of how your idea has tangibly improved someone else's life...",
+      "required": true,
+      "rows": 6,
+      "type": "textarea"
+    },
+    {
+      "default": "",
+      "help": "What are the 3 most critical, high-level steps to execute your big idea? Keep them simple, memorable, and action-oriented.",
+      "label": "Question 6: The Execution Steps",
+      "name": "execution_steps",
+      "placeholder": "List the 3 most critical, high-level steps to execute your big idea...",
+      "required": true,
+      "rows": 5,
+      "type": "textarea"
+    }
+  ],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-Executive-Keynote-Generator.md",
+    "sourceUrl": "https://tedt.org/prompts/executive-keynote-generator/",
+    "sourceFileSha256": "sha256:e8f91b6b1ac445702ede186f06e4602c4117ee163bddcaf43451744810b09f4d",
+    "sourcePromptSha256": "sha256:88dbb5dae23d83ce11a434e55418fed892896632d29cdb60b63a51797797b7d3",
+    "importedPromptSha256": "sha256:88dbb5dae23d83ce11a434e55418fed892896632d29cdb60b63a51797797b7d3",
+    "sourceGuideSha256": "sha256:a742c4d96d451b3921df3cde8ec0009bd4da640d79f6e8cdfda4509b818a1933",
+    "importedGuideSha256": "sha256:a742c4d96d451b3921df3cde8ec0009bd4da640d79f6e8cdfda4509b818a1933",
+    "rawFrontmatterSha256": "sha256:81ae3fab45ffe87027f3fb100a2f5bb39a73c3c38fdf2d945a9ab0f04a679adc",
+    "sourceTitle": "Executive Keynote Generator",
+    "sourceDescription": "Professional prompt for executive keynote speeches designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master prompt for executive keynote speeches with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/executive-keynote-generator/"
+    ],
+    "legacyCategories": [
+      "Prompts",
+      "Business",
+      "AI"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/Public-Speaking.webp",
+      "sourceUrl": "https://tedt.org/img/prompts/Public-Speaking.webp",
+      "exists": true,
+      "sha256": "sha256:a28472cf3219df7d6c6941621d2c94d41268233828b90647b52e8318d7297b08",
+      "metadata": {
+        "image": "/img/prompts/Public-Speaking.webp",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "An executive speaker stands on a minimalist stage addressing an audience, while abstract interconnected lines and diagrams form a cloud above, symbolizing ideas, structure, and insight emerging from complexity.",
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-description": "A conceptual illustration of a senior executive delivering a keynote presentation, with abstract networks, diagrams, and flowing lines suspended overhead to represent complex ideas being transformed into clear, structured insight. The image evokes thought leadership, strategic storytelling, and the art of turning complexity into understanding for an engaged audience.",
+        "image-title": "From Complexity to Clarity: The Executive Keynote Moment"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts",
+        "Business",
+        "AI"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "Professional prompt for executive keynote speeches designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for prompt for ted talks with advanced AI capabilities and structured output formatting.",
+      "image": "/img/prompts/Public-Speaking.webp",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "An executive speaker stands on a minimalist stage addressing an audience, while abstract interconnected lines and diagrams form a cloud above, symbolizing ideas, structure, and insight emerging from complexity.",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-description": "A conceptual illustration of a senior executive delivering a keynote presentation, with abstract networks, diagrams, and flowing lines suspended overhead to represent complex ideas being transformed into clear, structured insight. The image evokes thought leadership, strategic storytelling, and the art of turning complexity into understanding for an engaged audience.",
+      "image-title": "From Complexity to Clarity: The Executive Keynote Moment",
+      "keywords": [
+        "presentation",
+        "public speaking",
+        "content creation",
+        "prompt engineering",
+        "storytelling"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master prompt for executive keynote speeches with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "AI-Powered Content Generation Framework",
+      "tags": [
+        "Content Creation",
+        "Communications",
+        "Planning"
+      ],
+      "title": "Executive Keynote Generator",
+      "update": null,
+      "variables": [
+        {
+          "default": "",
+          "help": "What is your central idea, stated in a single, compelling sentence?",
+          "label": "The Big Idea",
+          "name": "big_idea",
+          "placeholder": "State your central idea in a single, compelling sentence",
+          "required": true,
+          "rows": 3,
+          "type": "textarea"
+        },
+        {
+          "default": "",
+          "help": "What specific, nagging, and urgent pain point does your big idea solve for the audience?",
+          "label": "Question 1: The Pain Point",
+          "name": "pain_point",
+          "placeholder": "Describe the specific, nagging, and urgent pain point your big idea solves...",
+          "required": true,
+          "rows": 6,
+          "type": "textarea"
+        },
+        {
+          "default": "",
+          "help": "What common misunderstanding, myth, or confusion does your big idea correct?",
+          "label": "Question 2: The Confusion",
+          "name": "confusion",
+          "placeholder": "What common misunderstanding, myth, or confusion does your big idea correct...",
+          "required": true,
+          "rows": 6,
+          "type": "textarea"
+        },
+        {
+          "default": "",
+          "help": "What does the audience *think* they know about this topic that is incomplete or wrong? What is the crucial gap in their knowledge that you will reveal?",
+          "label": "Question 3: The Knowledge Gap (Authority)",
+          "name": "knowledge_gap",
+          "placeholder": "What does the audience think they know that is incomplete or wrong...",
+          "required": true,
+          "rows": 6,
+          "type": "textarea"
+        },
+        {
+          "default": "",
+          "help": "What was missing in your own professional life or organization before you discovered/implemented this idea? Share a brief, personal story of your \"before\" state.",
+          "label": "Question 4: The Personal Stake (Rapport)",
+          "name": "personal_stake",
+          "placeholder": "Share a brief, personal story of your 'before' state...",
+          "required": true,
+          "rows": 6,
+          "type": "textarea"
+        },
+        {
+          "default": "",
+          "help": "Briefly describe a specific, real-world example of how your idea has tangibly improved someone else's life, team, or company. This should be a story.",
+          "label": "Question 5: The Improvement Story (Vision)",
+          "name": "improvement_story",
+          "placeholder": "Describe a specific, real-world example of how your idea has tangibly improved someone else's life...",
+          "required": true,
+          "rows": 6,
+          "type": "textarea"
+        },
+        {
+          "default": "",
+          "help": "What are the 3 most critical, high-level steps to execute your big idea? Keep them simple, memorable, and action-oriented.",
+          "label": "Question 6: The Execution Steps",
+          "name": "execution_steps",
+          "placeholder": "List the 3 most critical, high-level steps to execute your big idea...",
+          "required": true,
+          "rows": 5,
+          "type": "textarea"
+        }
+      ]
+    },
+    "appliedRepairs": [
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/executive-keynote-generator.webp",
+  "coverImageAlt": "Loose navy, cyan, and orange cords braided into one rising strand beneath a stage spotlight.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: several raw story threads—pain, insight, personal stake, proof, and action—are braided into one luminous narrative line that rises into a keynote spotlight\nScene/backdrop: quiet navy stage atmosphere above a warm paper base with generous empty space\nSubject: one braided cyan and slate cord gathering distinct strands at the base, arcing upward through a simple aperture into a restrained cone of light; one orange strand provides the emotional through-line\nStyle/medium: premium tactile editorial illustration with woven fiber, cut paper stage forms, and dimensional sculptural detail\nComposition/framing: exact 16:10 landscape; strong ascending sweep toward a single spotlight; crop-safe focal subject; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: confident, human, consequential, quietly inspiring\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nMaterials/textures: woven cord, matte paper, subtle stage fabric, soft volumetric light\nConstraints: no podium branding, audience signage, or marked paper; original composition; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, paw logos, cats, cat silhouettes, or Microsoft Fluent styling\nAvoid: microphones, speech bubbles, generic business presenter, corporate stock photography, screens, slide decks, glitter, clutter",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:5eaa348f4970441a9eefa998157ad588f9cc396a80ddfddd87b34fd54d026487",
+  "coverImageSourceHashVersion": 2
+}

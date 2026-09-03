@@ -1,0 +1,196 @@
+{
+  "kind": "prompt-template",
+  "slug": "abb-sbb-ubb-builder",
+  "name": "Architecture ABB SBB UBB Builder",
+  "description": "Professional architecture abb sbb ubb builder prompt designed for high-quality content generation and structured analysis.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Architecture",
+    "Requirements Engineering",
+    "Documentation"
+  ],
+  "tags": [
+    "Architecture",
+    "Requirements Engineering",
+    "Documentation"
+  ],
+  "keywords": [
+    "system architecture",
+    "solution architecture",
+    "requirements analysis",
+    "design patterns",
+    "building blocks"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "abb-sbb-ubb-builder.prompt.md",
+  "payloadPaths": [
+    "abb-sbb-ubb-builder.prompt.md"
+  ],
+  "downloadPath": "bundles/abb-sbb-ubb-builder.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": null,
+  "subtitle": "Enterprise Architecture and Requirements Engineering",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master architecture abb sbb ubb builder with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-abb-sbb-ubb-builder.md",
+    "sourceUrl": "https://tedt.org/prompts/abb-sbb-ubb-builder/",
+    "sourceFileSha256": "sha256:eb9f6eb8141415c05693ccdb43f25925692669c1086439c0807a52785f7953f8",
+    "sourcePromptSha256": "sha256:4739ac51f9ddbfdb859a819db3100273a863e81ca3b0bc42210eda8c15d4e13f",
+    "importedPromptSha256": "sha256:4739ac51f9ddbfdb859a819db3100273a863e81ca3b0bc42210eda8c15d4e13f",
+    "sourceGuideSha256": "sha256:f6dcca2c85d0788fab9ff5305f49288abdbdc814689415a0b6e41ad41070524c",
+    "importedGuideSha256": "sha256:f6dcca2c85d0788fab9ff5305f49288abdbdc814689415a0b6e41ad41070524c",
+    "rawFrontmatterSha256": "sha256:e47965628928d96864eaae8db119c802cc483c11813350d67059ce37885aa227",
+    "sourceTitle": "Architecture ABB SBB UBB Builder",
+    "sourceDescription": "Professional architecture abb sbb ubb builder prompt designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master architecture abb sbb ubb builder with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/abb-sbb-ubb-builder/"
+    ],
+    "legacyCategories": [
+      "Prompts",
+      "Projects"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/architecture-product-requirements-document.png",
+      "sourceUrl": "https://tedt.org/img/prompts/architecture-product-requirements-document.png",
+      "exists": true,
+      "sha256": "sha256:e75f8707b50cebef77add8bc54ca39264f9e02a84cd284c2258d48cbfe8d887f",
+      "metadata": {
+        "image": "/img/prompts/architecture-product-requirements-document.png",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+        "image-title": "Architectural Blueprint of Enterprise Product Requirements"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts",
+        "Projects"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "Professional architecture abb sbb ubb builder prompt designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for architecture abb sbb ubb builder with advanced AI capabilities and structured output formatting.",
+      "image": "/img/prompts/architecture-product-requirements-document.png",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+      "image-title": "Architectural Blueprint of Enterprise Product Requirements",
+      "keywords": [
+        "system architecture",
+        "solution architecture",
+        "requirements analysis",
+        "design patterns",
+        "building blocks"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master architecture abb sbb ubb builder with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "Enterprise Architecture and Requirements Engineering",
+      "tags": [
+        "Architecture",
+        "Requirements Engineering",
+        "Documentation"
+      ],
+      "title": "Architecture ABB SBB UBB Builder",
+      "update": null
+    },
+    "appliedRepairs": [
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/abb-sbb-ubb-builder.webp",
+  "coverImageAlt": "Concentric stone, wood, and cyan glass building blocks joined by an orange connector on a slate drafting surface.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: A nested architectural assembly that turns abstract strategy into progressively more concrete, interlocking building blocks, conveying the construction of architecture building blocks across levels without labels.\nScene/backdrop: An uncluttered slate drafting table fading into a warm paper field.\nSubject: Three nested tiers of precisely fitted stone, wood, and translucent cyan blocks, with one sparing orange connector joining the levels.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; one strong crop-safe central silhouette; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: calm, capable, quietly technical; restrained cyan backlighting\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:96a63097f6d7d8d5ecad458c0080651e5038aa9d46d8d7792b9d710159eeecf1",
+  "coverImageSourceHashVersion": 2
+}

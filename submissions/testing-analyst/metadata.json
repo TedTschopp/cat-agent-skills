@@ -1,0 +1,198 @@
+{
+  "kind": "prompt-template",
+  "slug": "testing-analyst",
+  "name": "Requirements / Test Analyst Prompt",
+  "description": "Professional test analyst prompt designed for high-quality content generation and structured analysis.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Requirements Engineering",
+    "Architecture",
+    "Documentation"
+  ],
+  "tags": [
+    "Requirements Engineering",
+    "Architecture",
+    "Documentation"
+  ],
+  "keywords": [
+    "requirements analysis",
+    "verification & validation",
+    "systems engineering",
+    "test cases",
+    "Gherkin"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "testing-analyst.prompt.md",
+  "payloadPaths": [
+    "testing-analyst.prompt.md"
+  ],
+  "downloadPath": "bundles/testing-analyst.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": "2025-10-22",
+  "subtitle": "Enterprise Architecture and Requirements Engineering",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master test analyst with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-testing-analyst.md",
+    "sourceUrl": "https://tedt.org/prompts/testing-analyst/",
+    "sourceFileSha256": "sha256:1cd5668a7faccd2dde129354f28aa0191b7fc3352b5bdd876365b92ef37f654d",
+    "sourcePromptSha256": "sha256:b41d853a666d318e5c5ef78cd81a5dd2454ce9d661d12e30620a097a71425e6a",
+    "importedPromptSha256": "sha256:b41d853a666d318e5c5ef78cd81a5dd2454ce9d661d12e30620a097a71425e6a",
+    "sourceGuideSha256": "sha256:dfd415fb04ad20000bef911e126c1acd75c81af77bdf14a490f25d27e096dd4a",
+    "importedGuideSha256": "sha256:dfd415fb04ad20000bef911e126c1acd75c81af77bdf14a490f25d27e096dd4a",
+    "rawFrontmatterSha256": "sha256:638383e014c9f513a78771ad180577593b34cda5ecba784b06ec2a39ad99351e",
+    "sourceTitle": "Requirements / Test Analyst Prompt",
+    "sourceDescription": "Professional test analyst prompt designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master test analyst with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/testing-analyst/"
+    ],
+    "legacyCategories": [
+      "Prompts",
+      "Business",
+      "Projects"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/architecture-product-requirements-document.png",
+      "sourceUrl": "https://tedt.org/img/prompts/architecture-product-requirements-document.png",
+      "exists": true,
+      "sha256": "sha256:e75f8707b50cebef77add8bc54ca39264f9e02a84cd284c2258d48cbfe8d887f",
+      "metadata": {
+        "image": "/img/prompts/architecture-product-requirements-document.png",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+        "image-title": "Architectural Blueprint of Enterprise Product Requirements"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts",
+        "Business",
+        "Projects"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "Professional test analyst prompt designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for test analyst with advanced AI capabilities and structured output formatting.",
+      "image": "/img/prompts/architecture-product-requirements-document.png",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+      "image-title": "Architectural Blueprint of Enterprise Product Requirements",
+      "keywords": [
+        "requirements analysis",
+        "verification & validation",
+        "systems engineering",
+        "test cases",
+        "Gherkin"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master test analyst with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "Enterprise Architecture and Requirements Engineering",
+      "tags": [
+        "Requirements Engineering",
+        "Architecture",
+        "Documentation"
+      ],
+      "title": "Requirements / Test Analyst Prompt",
+      "update": "2025-10-22"
+    },
+    "appliedRepairs": [
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/testing-analyst.webp",
+  "coverImageAlt": "Navy truss bridge carries three hanging cyan test weights beside an unmarked brass caliper and blank block.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: Requirements testing represented by a small engineered bridge undergoing a careful physical load test while precision instruments compare the structure against a clean reference form, conveying the conversion of requirements into verifiable scenarios and evidence.\nScene/backdrop: An uncluttered warm-paper laboratory table with a deep slate backdrop.\nSubject: One compact navy bridge spanning two stone supports, three smooth cyan test weights suspended at distinct points, and a large brass-and-cyan caliper aligned with a separate blank reference block; one orange indicator bead marks a discovered gap.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; one strong crop-safe bridge-and-caliper silhouette; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: rigorous, measured, constructive; crisp analytical side light\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: instruments and weights contain no scale marks, labels, letters, numbers, or warning symbols; completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes\n\nTargeted correction after inspection: Regenerate the same bridge load-test concept, but make every surface completely unmarked. Remove the ruler ticks from the caliper and remove all drafting lines from the paper. Place the entire caliper safely inside the frame with generous warm-paper clearance beyond it, keeping every essential object outside the outer 8% margin. Preserve the three smooth weights, bridge, separate blank reference block, palette, and tactile editorial style.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:57c9f265102511b60118f60ae613924bdf67cadb018048a6586aed25e846810a",
+  "coverImageSourceHashVersion": 2
+}

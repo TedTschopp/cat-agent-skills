@@ -1,0 +1,119 @@
+---
+import type { LibraryAssetSummary } from "../lib/library-assets";
+import { withBase } from "../lib/url";
+import SkillCover from "./SkillCover.astro";
+import { worksWithLabel } from "./asset-labels";
+
+interface Props {
+  asset: LibraryAssetSummary;
+  href?: string;
+}
+
+const { asset, href = asset.canonicalPath } = Astro.props;
+const shownTopics = asset.topics.slice(0, 3);
+const shownCompatibility = asset.worksWith.map(worksWithLabel).slice(0, 3);
+const isSample = asset.tags.includes("sample");
+const isInteractive = !isSample;
+const Wrapper = isInteractive ? "a" : "div";
+const wrapperProps = isInteractive
+  ? { href: withBase(href) }
+  : {
+      "aria-disabled": "true",
+      title: "Sample content — not a production-ready asset",
+    };
+const statusTone = asset.status === "beta" ? "var(--status-beta)" : "var(--status-active)";
+const borderStyle = asset.featured
+  ? asset.kind === "prompt-template"
+    ? "border-color:var(--orange);border-left-color:var(--accent-signal);"
+    : "border-color:var(--orange);"
+  : "border-color:var(--border-subtle);";
+---
+
+<Wrapper
+  class:list={[
+    "group flex h-full flex-col overflow-hidden rounded-lg border bg-surface text-fg no-underline shadow-[var(--shadow-sm)]",
+    isInteractive && "transition hover:-translate-y-0.5 hover:border-[var(--border-strong)] hover:shadow-[var(--shadow)]",
+    isSample && "cursor-not-allowed select-none opacity-55 saturate-50",
+    asset.kind === "prompt-template" && "border-l-[3px] border-l-[var(--accent-signal)]",
+  ]}
+  style={borderStyle}
+  {...wrapperProps}
+>
+  <SkillCover
+    slug={asset.slug}
+    name={asset.name}
+    coverImage={asset.artwork.image ?? undefined}
+    coverImageAlt={asset.artwork.alt ?? undefined}
+    coverImageWidth={asset.artwork.width ?? undefined}
+    coverImageHeight={asset.artwork.height ?? undefined}
+  />
+
+  <div class="flex flex-1 flex-col gap-2 p-4">
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-1.5">
+      <span class="rounded-sm bg-accent-soft px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-accent-text">
+        {asset.kindLabel}
+      </span>
+      <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-muted">
+        <span class="h-2 w-2 rounded-full" style={`background:${statusTone};`} aria-hidden="true"></span>
+        {asset.status}
+      </span>
+      {
+        asset.featured && (
+          <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-muted">
+            <span class="h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden="true"></span>
+            Featured
+          </span>
+        )
+      }
+    </div>
+
+    <h2
+      class="display-face line-clamp-2 text-xl leading-snug text-[var(--text-heading)] group-hover:text-[var(--accent-signal-text)]"
+      title={asset.name}
+    >
+      {asset.name}
+    </h2>
+
+    <p class="line-clamp-3 flex-1 text-sm leading-relaxed text-muted">
+      {asset.description}
+    </p>
+
+    {
+      shownCompatibility.length > 0 && (
+        <div class="flex flex-wrap items-center gap-1.5 pt-1" aria-label="Works with">
+          {shownCompatibility.map((item) => (
+            <span class="rounded-sm border border-border px-2 py-0.5 text-[11px] font-medium text-muted">
+              {item}
+            </span>
+          ))}
+          {asset.worksWith.length > shownCompatibility.length && (
+            <span class="text-[11px] text-subtle">+{asset.worksWith.length - shownCompatibility.length}</span>
+          )}
+        </div>
+      )
+    }
+
+    {
+      shownTopics.length > 0 && (
+        <div class="mt-auto flex flex-wrap gap-1 pt-1">
+          {shownTopics.map((topic) => (
+            <span class="rounded-full border border-border bg-surface-2 px-2 py-0.5 text-[11px] font-medium text-muted">
+              {topic}
+            </span>
+          ))}
+        </div>
+      )
+    }
+
+    <div class="mt-1 flex items-center justify-between gap-3 border-t border-[var(--border-subtle)] pt-2 text-xs text-subtle">
+      <span class="min-w-0 truncate">{asset.author.name}</span>
+      <span class="flex min-w-0 max-w-[68%] items-center gap-3 tabular-nums">
+        <span class="mono-face min-w-0 truncate text-[var(--accent-signal-text)]" title={asset.entrypoint}>{asset.entrypoint}</span>
+        <span title={`${asset.rating} ${asset.rating === 1 ? "rating" : "ratings"}`}>▲ {asset.rating}</span>
+        <span title={`${asset.downloads.toLocaleString("en-US")} ${asset.downloads === 1 ? "download" : "downloads"}`}>
+          ↓ {asset.downloads.toLocaleString("en-US")}
+        </span>
+      </span>
+    </div>
+  </div>
+</Wrapper>

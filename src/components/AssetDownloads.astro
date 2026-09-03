@@ -1,0 +1,218 @@
+---
+import type { LibraryAsset } from "../lib/library-assets";
+import { withBase } from "../lib/url";
+import { worksWithLabel } from "./asset-labels";
+
+interface Props {
+  asset: LibraryAsset;
+}
+
+const { asset } = Astro.props;
+const trustId = `trust-${asset.slug}`;
+const toSitePath = (path: string) => withBase(`/${path.replace(/^\/+/, "")}`);
+const isPackage = asset.downloadPath?.toLocaleLowerCase().endsWith(".zip") ?? false;
+const downloadFilename = isPackage
+  ? asset.downloadPath?.split("/").at(-1) ?? asset.entrypoint
+  : asset.entrypoint;
+const isSkillFamily = ["skill", "plugin", "automation"].includes(asset.kind);
+const legacyDownloadType = asset.kind === "plugin"
+  ? "plugin"
+  : asset.kind === "automation"
+    ? isPackage ? "automation-installer" : "automation"
+    : isPackage ? "bundle" : "markdown";
+const primaryLabel = asset.kind === "plugin"
+  ? "Download Plugin Package"
+  : asset.kind === "automation"
+    ? isPackage ? "Download Automation Installer" : "Download Automation"
+    : asset.kind === "skill" && isPackage
+      ? "Download Skill Package"
+      : `Download ${asset.entrypoint}`;
+const isGenericFile = [
+  "agent-instruction",
+  "scoped-agent-instruction",
+  "agent-definition",
+  "work-specification",
+].includes(asset.kind);
+const genericDownloadItems = isGenericFile
+  ? [
+      ...(asset.bundleDownloadPath
+        ? [{
+            path: asset.bundleDownloadPath,
+            filename: asset.bundleDownloadPath.split("/").at(-1) ?? `${asset.slug}.zip`,
+            label: "Download Complete Package",
+            type: "bundle",
+            primary: true,
+          }]
+        : []),
+      ...asset.payloads.map((payload) => ({
+        path: payload.downloadPath,
+        filename: payload.path.split("/").at(-1) ?? asset.entrypoint,
+        label: `Download ${payload.path}`,
+        type: "source-file",
+        primary: !asset.bundleDownloadPath && payload.path === asset.entrypoint,
+      })),
+    ]
+  : [];
+const sourceFileUrl = (() => {
+  const repository = asset.provenance.sourceRepository?.replace(/\/+$/, "");
+  const commit = asset.provenance.sourceCommit;
+  const sourcePath = asset.provenance.sourcePath;
+  if (repository?.startsWith("https://github.com/") && commit && sourcePath) {
+    const encodedPath = sourcePath.split("/").map(encodeURIComponent).join("/");
+    return `${repository}/blob/${encodeURIComponent(commit)}/${encodedPath}`;
+  }
+  return asset.provenance.sourceUrl ?? repository;
+})();
+const dateLabel = (value: string | null) => value
+  ? new Date(value).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })
+  : null;
+const updated = dateLabel(asset.dates.updated);
+const added = dateLabel(asset.dates.created);
+---
+
+<div class="p-5" data-download-gate>
+  <h2 class="text-xs font-semibold uppercase tracking-[0.08em] text-subtle">Works With</h2>
+  {
+    asset.worksWith.length > 0 ? (
+      <div class="mt-2 flex flex-wrap gap-2">
+        {asset.worksWith.map((item) => (
+          <span class="rounded-sm border border-border px-2 py-0.5 text-xs font-medium text-muted">{worksWithLabel(item)}</span>
+        ))}
+      </div>
+    ) : (
+      <p class="mt-2 text-xs text-muted">No provider or product requirement is declared.</p>
+    )
+  }
+
+  <hr class="my-5 border-border" />
+
+  <h2 class="text-sm font-semibold text-fg">Download This Asset</h2>
+  <p class="mt-1 text-xs leading-relaxed text-muted">
+    Review the source and its permissions before adding it to an AI tool or repository.
+  </p>
+
+  <div class="mt-4 rounded-lg border border-border bg-surface-2 p-3.5">
+    <label for={trustId} class="flex cursor-pointer items-start gap-2 text-xs leading-relaxed text-muted">
+      <input
+        type="checkbox"
+        id={trustId}
+        class="mt-0.5 h-3.5 w-3.5 shrink-0 cursor-pointer rounded border-border accent-accent"
+        data-trust-ack
+      />
+      <span>
+        I reviewed this {asset.kindLabel.toLocaleLowerCase()} and trust its source and instructions.
+      </span>
+    </label>
+  </div>
+
+  <div class="mt-3 flex flex-col gap-2">
+    {
+      isGenericFile && genericDownloadItems.length > 0 ? (
+        genericDownloadItems.map((item) => (
+          <a
+            href={toSitePath(item.path)}
+            download={item.filename}
+            aria-disabled="true"
+            class:list={[
+              "pointer-events-none cursor-not-allowed rounded px-4 py-2.5 text-center text-sm font-semibold opacity-50 shadow-sm",
+              item.primary
+                ? "bg-cta text-cta-fg hover:bg-[var(--action-cta-hover)]"
+                : "border border-border bg-surface text-[var(--link)] hover:border-[var(--border-strong)] hover:text-[var(--link-hover)]",
+            ]}
+            data-download-gated
+            data-clarity-event="asset_download"
+            data-clarity-asset={asset.slug}
+            data-clarity-asset-kind={asset.kind}
+            data-clarity-download-type={item.type}
+            data-clarity-source-path={item.type === "source-file" ? item.label.replace(/^Download /, "") : undefined}
+          >
+            {item.label}
+          </a>
+        ))
+      ) : asset.downloadPath ? (
+        <a
+          href={toSitePath(asset.downloadPath)}
+          download={downloadFilename}
+          aria-disabled="true"
+          class="pointer-events-none cursor-not-allowed rounded bg-cta px-4 py-2.5 text-center text-sm font-semibold text-cta-fg opacity-50 shadow-sm hover:bg-[var(--action-cta-hover)]"
+          data-download-gated
+          data-clarity-event="asset_download"
+          data-clarity-compat-event={isSkillFamily ? "skill_download" : undefined}
+          data-clarity-asset={asset.slug}
+          data-clarity-asset-kind={asset.kind}
+          data-clarity-skill={isSkillFamily ? asset.slug : undefined}
+          data-clarity-download-type={isSkillFamily ? legacyDownloadType : asset.kind}
+        >
+          {primaryLabel}
+        </a>
+      ) : (
+        <p class="rounded border border-border bg-surface-2 px-3 py-2 text-xs text-muted">
+          No downloadable payload is published for this asset.
+        </p>
+      )
+    }
+  </div>
+
+  <dl class="mt-5 space-y-2 border-t border-border pt-4 text-sm">
+    <div class="flex justify-between gap-3">
+      <dt class="text-muted">Type</dt>
+      <dd class="text-right font-medium text-fg">{asset.kindLabel}</dd>
+    </div>
+    <div class="flex justify-between gap-3">
+      <dt class="text-muted">Status</dt>
+      <dd class="text-right font-medium uppercase text-fg">{asset.status}</dd>
+    </div>
+    <div class="flex justify-between gap-3">
+      <dt class="text-muted">Entrypoint</dt>
+      <dd class="mono-face break-all text-right text-xs font-medium text-fg">{asset.entrypoint}</dd>
+    </div>
+    {asset.payloadPaths.length > 1 && (
+      <div class="flex justify-between gap-3">
+        <dt class="text-muted">Payload</dt>
+        <dd class="text-right font-medium text-fg">{asset.payloadPaths.length} files</dd>
+      </div>
+    )}
+    {asset.version && (
+      <div class="flex justify-between gap-3">
+        <dt class="text-muted">Version</dt>
+        <dd class="text-right font-medium text-fg">{asset.version}</dd>
+      </div>
+    )}
+    {added && (
+      <div class="flex justify-between gap-3">
+        <dt class="text-muted">Added</dt>
+        <dd class="text-right font-medium text-fg">{added}</dd>
+      </div>
+    )}
+    {updated && updated !== added && (
+      <div class="flex justify-between gap-3">
+        <dt class="text-muted">Updated</dt>
+        <dd class="text-right font-medium text-fg">{updated}</dd>
+      </div>
+    )}
+    {asset.artwork.ready && asset.artwork.generator && (
+      <div class="flex justify-between gap-3">
+        <dt class="text-muted">Cover</dt>
+        <dd class="text-right font-medium text-fg">Generated with {asset.artwork.generator}</dd>
+      </div>
+    )}
+  </dl>
+
+  {sourceFileUrl && (
+    <p class="mt-5 border-t border-border pt-4 text-xs leading-relaxed text-subtle">
+      Review the documented source and provenance before use. {" "}
+      <a
+        href={sourceFileUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-[var(--link)] underline underline-offset-2 hover:text-[var(--link-hover)]"
+      >
+        Open Source Record
+      </a>
+    </p>
+  )}
+</div>
+
+<script>
+  import "../scripts/download-gate";
+</script>

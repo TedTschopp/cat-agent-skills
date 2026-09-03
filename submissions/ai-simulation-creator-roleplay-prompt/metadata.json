@@ -1,0 +1,182 @@
+{
+  "kind": "prompt-template",
+  "slug": "ai-simulation-creator-roleplay-prompt",
+  "name": "AI Simulation Creator Prompt – Roleplay-Based Learning Scenarios",
+  "description": "An instructional AI prompt template for generating roleplay-based simulations with an AI mentor guiding students through practical skill-building scenarios such as negotiations, hiring, and pitching.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Teaching & Education",
+    "Artificial Intelligence",
+    "Planning"
+  ],
+  "tags": [
+    "Teaching & Education",
+    "Artificial Intelligence",
+    "Planning"
+  ],
+  "keywords": [
+    "AI simulation",
+    "educational AI",
+    "experiential learning",
+    "instructional design",
+    "prompt engineering"
+  ],
+  "models": [
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4.5",
+    "microsoft-copilot",
+    "o4-mini",
+    "o4-mini-high"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "ai-simulation-creator-roleplay-prompt.prompt.md",
+  "payloadPaths": [
+    "ai-simulation-creator-roleplay-prompt.prompt.md"
+  ],
+  "downloadPath": "bundles/ai-simulation-creator-roleplay-prompt.prompt.md",
+  "createdAt": "2025-05-04",
+  "updatedAt": null,
+  "subtitle": null,
+  "summaryBullets": [
+    "Roleplay-based learning scenarios with AI mentor",
+    "Practice negotiations, hiring, and pitching skills",
+    "Structured instructional template for skill-building"
+  ],
+  "seoDescription": null,
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-05-03-AI-Simulation-Creator-Prompt.md",
+    "sourceUrl": "https://tedt.org/prompts/ai-simulation-creator-roleplay-prompt/",
+    "sourceFileSha256": "sha256:b3d46afa82f47ad478a34e93574e502e08680d72420ce9e1118bae135db07585",
+    "sourcePromptSha256": "sha256:5afa7ea9a1d792d78fc20d3b1c62412fb4177659de038a728c50c54c3de3e4d0",
+    "importedPromptSha256": "sha256:5afa7ea9a1d792d78fc20d3b1c62412fb4177659de038a728c50c54c3de3e4d0",
+    "sourceGuideSha256": "sha256:8bc2f122fbc08be1ab6dcbc1deb6e7e83191f8dd95070853e5c90a15e186923c",
+    "importedGuideSha256": "sha256:8bc2f122fbc08be1ab6dcbc1deb6e7e83191f8dd95070853e5c90a15e186923c",
+    "rawFrontmatterSha256": "sha256:e964ec6ccf8f5055280e1e0fefce9d60a576c96321f274242bc643411dc5abaa",
+    "sourceTitle": "AI Simulation Creator Prompt – Roleplay-Based Learning Scenarios",
+    "sourceDescription": "An instructional AI prompt template for generating roleplay-based simulations with an AI mentor guiding students through practical skill-building scenarios such as negotiations, hiring, and pitching.",
+    "sourceSeoDescription": null,
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4.5",
+      "gpt-4-mini",
+      3,
+      "04-mini",
+      "04-mini-high",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [
+      3
+    ],
+    "legacyPaths": [
+      "/prompts/ai-simulation-creator-roleplay-prompt/"
+    ],
+    "legacyCategories": [
+      "Prompts"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/Immersive-AI-Simulation.png",
+      "sourceUrl": "https://tedt.org/img/prompts/Immersive-AI-Simulation.png",
+      "exists": true,
+      "sha256": "sha256:9820d5f35d8575a92d173ba9bbcfd104c2985a7e2174b83a6e0c99d8c9b6e9e1",
+      "metadata": {
+        "image": "/img/prompts/Immersive-AI-Simulation.png",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "Close-up of an engaged student interacting with a glowing, translucent AI hologram in a modern classroom, symbolizing immersive, technology-driven experiential learning.",
+        "image-credits-artist": "Ted Tschopp",
+        "image-credits-artist-URL": "https://tedt.org/",
+        "image-description": "A captivated student interacts with a shimmering, holographic AI mentor during an immersive roleplay-based simulation. Set within a contemporary classroom, the student is fully engaged, experiencing an innovative, experiential approach to skill development and decision-making guided by advanced AI technology.",
+        "image-title": "Immersive AI Roleplay Simulation"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Roleplay-based learning scenarios with AI mentor",
+        "Practice negotiations, hiring, and pitching skills",
+        "Structured instructional template for skill-building"
+      ],
+      "categories": [
+        "Prompts"
+      ],
+      "date": "2025-05-04",
+      "description": "An instructional AI prompt template for generating roleplay-based simulations with an AI mentor guiding students through practical skill-building scenarios such as negotiations, hiring, and pitching.",
+      "image": "/img/prompts/Immersive-AI-Simulation.png",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "Close-up of an engaged student interacting with a glowing, translucent AI hologram in a modern classroom, symbolizing immersive, technology-driven experiential learning.",
+      "image-credits-artist": "Ted Tschopp",
+      "image-credits-artist-URL": "https://tedt.org/",
+      "image-description": "A captivated student interacts with a shimmering, holographic AI mentor during an immersive roleplay-based simulation. Set within a contemporary classroom, the student is fully engaged, experiencing an innovative, experiential approach to skill development and decision-making guided by advanced AI technology.",
+      "image-title": "Immersive AI Roleplay Simulation",
+      "keywords": [
+        "AI simulation",
+        "educational AI",
+        "experiential learning",
+        "instructional design",
+        "prompt engineering"
+      ],
+      "layout": "prompt-details",
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4.5",
+        "gpt-4-mini",
+        3,
+        "04-mini",
+        "04-mini-high",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/ai-simulation-creator-roleplay-prompt/",
+      "tags": [
+        "Teaching & Education",
+        "Artificial Intelligence",
+        "Planning"
+      ],
+      "title": "AI Simulation Creator Prompt – Roleplay-Based Learning Scenarios"
+    },
+    "appliedRepairs": [
+      "normalize-model-04-mini-high-to-o4-mini-high",
+      "normalize-model-04-mini-to-o4-mini",
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/ai-simulation-creator-roleplay-prompt.webp",
+  "coverImageAlt": "Two carved masks on a circular stage connect to branching scenario forms and an orange destination light.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: Roleplay-based learning represented by a rotating rehearsal platform where two complementary carved masks face a sequence of branching scenario props and a return path for coaching.\nScene/backdrop: A sparse slate theater-in-the-round on a warm paper field.\nSubject: Two featureless sculpted masks, a small circular stage, three abstract choice objects, and a cyan loop returning to an orange mentor light.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe central stage and masks; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: thoughtful, participatory, quietly dramatic\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no written symbols on masks or props; completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:98b7fd147899a5f30572bf0482cdffa4c9ab805be8cc022e2c5da46b25beccfb",
+  "coverImageSourceHashVersion": 2
+}

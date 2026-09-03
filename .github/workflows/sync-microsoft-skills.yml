@@ -1,4 +1,4 @@
-name: Sync Microsoft skills
+name: Sync Microsoft Catalog
 
 on:
   schedule:
@@ -14,31 +14,31 @@ permissions:
   actions: write
 
 concurrency:
-  group: sync-microsoft-skills
+  group: sync-microsoft-catalog
   cancel-in-progress: false
 
 jobs:
   sync:
-    name: Copy and validate missing submissions
+    name: Copy and Validate Missing Submissions
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
       MICROSOFT_REPOSITORY: https://github.com/microsoft/cat-agent-skills.git
 
     steps:
-      - name: Checkout this fork
+      - name: Check Out This Fork
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Setup Node
+      - name: Set Up Node
         uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: npm
 
-      - name: Fetch Microsoft catalog
+      - name: Fetch Microsoft Catalog
         run: |
           set -euo pipefail
           git remote add microsoft "$MICROSOFT_REPOSITORY"
@@ -47,21 +47,21 @@ jobs:
       # This step reads Git objects directly and copies only first-level
       # submissions/<slug>/ directories that do not exist locally. It rejects
       # unsafe names, symlinks, generated-path collisions, and overwrites.
-      - name: Find and copy missing submissions
+      - name: Find and Copy Missing Submissions
         id: sync
         run: npm run sync:upstream -- --upstream-ref microsoft/main
 
-      - name: Install dependencies
+      - name: Install Dependencies
         if: steps.sync.outputs.needs_import == 'true'
         run: npm ci
 
-      - name: Validate all submission sources
+      - name: Validate All Submission Sources
         if: steps.sync.outputs.needs_import == 'true'
         run: npm run check:submissions
 
       # Import only missing slugs. A full-tree import rewrites historical ZIPs;
       # the repeatable --slug filter keeps the automated change addition-only.
-      - name: Generate missing gallery entries
+      - name: Generate Missing Library Entries
         if: steps.sync.outputs.needs_import == 'true'
         env:
           IMPORT_ARGS: ${{ steps.sync.outputs.import_args }}
@@ -69,31 +69,30 @@ jobs:
 
       # Markdown code samples stay inert, but active HTML and unsafe link/image
       # protocols must never reach Astro's renderer from an automated import.
-      - name: Reject active content in generated Markdown
+      - name: Reject Active Content in Generated Markdown
         if: steps.sync.outputs.needs_import == 'true'
-        env:
-          GENERATED_SLUGS: ${{ steps.sync.outputs.pending_slugs }}
-        run: |
-          npm run check:upstream-rendered-content -- \
-            --generated-slugs "$GENERATED_SLUGS"
+        run: npm run check:generated-content
 
-      - name: Run unit tests
+      - name: Run Unit Tests
         if: steps.sync.outputs.needs_import == 'true'
         run: npm test
 
-      - name: Validate generated skill metadata
+      - name: Validate Generated Library Metadata
         if: steps.sync.outputs.needs_import == 'true'
-        run: npm run validate:skills
+        run: |
+          npm run validate:skills
+          npm run validate:prompts
+          npm run validate:artifacts
 
-      - name: Validate generated skill artwork
+      - name: Validate Generated Artwork
         if: steps.sync.outputs.needs_import == 'true'
         run: npm run artwork:validate
 
-      - name: Build the production site
+      - name: Build the Production Site
         if: steps.sync.outputs.needs_import == 'true'
         run: npm run build
 
-      - name: Enforce addition-only scope
+      - name: Enforce Addition-Only Submission Scope
         if: steps.sync.outputs.needs_import == 'true'
         id: scope
         env:
@@ -104,7 +103,7 @@ jobs:
             --new-slugs "$NEW_SLUGS" \
             --generated-slugs "$GENERATED_SLUGS"
 
-      - name: Commit and push validated additions
+      - name: Commit and Push Validated Additions
         if: steps.scope.outputs.changed == 'true'
         env:
           BASE_SHA: ${{ github.sha }}
@@ -123,14 +122,14 @@ jobs:
             exit 1
           fi
 
-          git add -- submissions src/content/skills src/content/guides public/bundles
+          git add -- submissions src/content/skills src/content/prompts src/content/artifacts src/content/artifact-payloads src/content/guides public/bundles public/assets.json
           git diff --cached --check
           git diff --cached --name-status
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit \
-            -m "chore(skills): sync Microsoft upstream catalog" \
+            -m "chore(catalog): sync Microsoft upstream submissions" \
             -m "Microsoft upstream: $UPSTREAM_SHA" \
             -m "New submissions: ${NEW_SLUGS:-none}" \
             -m "Generated entries: $GENERATED_SLUGS"
@@ -139,12 +138,12 @@ jobs:
 
       # A GITHUB_TOKEN push does not trigger push workflows. workflow_dispatch
       # is the documented exception, so explicitly start the Pages release.
-      - name: Dispatch production deployment
+      - name: Dispatch Production Deployment
         if: steps.scope.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run deploy.yml --repo "$GITHUB_REPOSITORY" --ref main
 
-      - name: Report no-op
+      - name: Report No-Op
         if: steps.sync.outputs.needs_import != 'true'
         run: echo "Microsoft has no submission directories or gallery entries missing from this fork."

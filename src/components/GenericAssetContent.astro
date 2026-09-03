@@ -1,0 +1,74 @@
+---
+import type { LibraryAsset } from "../lib/library-assets";
+
+interface Props {
+  asset: LibraryAsset;
+}
+
+const { asset } = Astro.props;
+const files = asset.content.files.length > 0
+  ? asset.content.files
+  : [{ path: asset.entrypoint, body: asset.content.body }];
+const multipleFiles = files.length > 1;
+---
+
+<section aria-labelledby="asset-files-heading">
+  <h2 id="asset-files-heading" class="text-2xl text-[var(--text-heading)]">
+    {multipleFiles ? "Asset Files" : "Asset File"}
+  </h2>
+  {multipleFiles && (
+    <p class="mt-2 text-sm leading-relaxed text-muted">
+      Review or copy each install-ready file. The entrypoint is identified below.
+    </p>
+  )}
+
+  <div class:list={["space-y-8", multipleFiles ? "mt-6" : "mt-4"]}>
+    {files.map((file, index) => {
+      const headingId = `asset-file-${index + 1}-heading`;
+      const statusId = `asset-file-${index + 1}-status`;
+      const isEntrypoint = file.path === asset.entrypoint;
+      return (
+        <section aria-labelledby={headingId} data-source-copy>
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div class="flex min-w-0 flex-wrap items-center gap-2">
+              <h3 id={headingId} class="mono-face break-all text-sm font-semibold text-[var(--text-heading)]">
+                {file.path}
+              </h3>
+              {isEntrypoint && (
+                <span class="rounded-sm border border-border bg-surface-2 px-2 py-0.5 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-subtle">
+                  Entrypoint
+                </span>
+              )}
+            </div>
+            <button
+              type="button"
+              class="rounded border border-border bg-surface px-3 py-1.5 text-sm font-semibold text-[var(--link)] hover:border-[var(--border-strong)] hover:text-[var(--link-hover)]"
+              aria-label={`Copy ${file.path}`}
+              aria-describedby={statusId}
+              data-copy-source
+              data-clarity-event="asset_source_copy"
+              data-clarity-asset={asset.slug}
+              data-clarity-asset-kind={asset.kind}
+              data-clarity-source-path={file.path}
+            >
+              Copy File
+            </button>
+          </div>
+          <pre tabindex="0" class="mono-face mt-3 max-h-[70vh] overflow-auto whitespace-pre-wrap break-words rounded-lg border border-border bg-[var(--code-bg)] p-5 text-[13px] leading-relaxed text-[var(--code-fg)] shadow-[var(--shadow-inset)] outline-none focus:border-accent" data-source-content set:text={file.body} />
+          <p id={statusId} class="mt-2 min-h-5 text-sm text-muted" role="status" aria-live="polite" data-copy-source-status></p>
+        </section>
+      );
+    })}
+  </div>
+</section>
+
+{asset.content.guide && (
+  <section class="mt-8" aria-labelledby="asset-guide-heading">
+    <h2 id="asset-guide-heading" class="text-2xl text-[var(--text-heading)]">Usage Notes</h2>
+    <pre class="mt-4 whitespace-pre-wrap break-words font-sans text-base leading-relaxed text-muted" set:text={asset.content.guide} />
+  </section>
+)}
+
+<script>
+  import "../scripts/source-copy";
+</script>

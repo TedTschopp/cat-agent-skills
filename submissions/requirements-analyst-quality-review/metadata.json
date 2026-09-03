@@ -1,0 +1,196 @@
+{
+  "kind": "prompt-template",
+  "slug": "requirements-analyst-quality-review",
+  "name": "Architecture Requirements Analyst Quality Review",
+  "description": "Professional architecture requirements analyst quality review prompt designed for high-quality content generation and structured analysis.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Requirements Engineering",
+    "Architecture",
+    "Documentation"
+  ],
+  "tags": [
+    "Requirements Engineering",
+    "Architecture",
+    "Documentation"
+  ],
+  "keywords": [
+    "requirements analysis",
+    "verification & validation",
+    "systems engineering",
+    "quality review",
+    "ISO standards"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "requirements-analyst-quality-review.prompt.md",
+  "payloadPaths": [
+    "requirements-analyst-quality-review.prompt.md"
+  ],
+  "downloadPath": "bundles/requirements-analyst-quality-review.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": null,
+  "subtitle": "Enterprise Architecture and Requirements Engineering",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master architecture requirements analyst quality review with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-requirements-analyst-quality-review.md",
+    "sourceUrl": "https://tedt.org/prompts/requirements-analyst-quality-review/",
+    "sourceFileSha256": "sha256:1ddee2cba8cd9e1c303fb03e24c8da2d3c33a7fe29774debf18d5ae049eed0f3",
+    "sourcePromptSha256": "sha256:38ea0916ea9ea07485455dd3891a530bfb5caa68dec17866629fb0761e9afd33",
+    "importedPromptSha256": "sha256:38ea0916ea9ea07485455dd3891a530bfb5caa68dec17866629fb0761e9afd33",
+    "sourceGuideSha256": "sha256:62a20009a110a7af70891424f18c9127a038b7fe91f0e0694c421f58982474ea",
+    "importedGuideSha256": "sha256:62a20009a110a7af70891424f18c9127a038b7fe91f0e0694c421f58982474ea",
+    "rawFrontmatterSha256": "sha256:7386c2791bc8d7fd30643529b38af41554ae171d806696fd37724876f90d6ef9",
+    "sourceTitle": "Architecture Requirements Analyst Quality Review",
+    "sourceDescription": "Professional architecture requirements analyst quality review prompt designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master architecture requirements analyst quality review with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/requirements-analyst-quality-review/"
+    ],
+    "legacyCategories": [
+      "Prompts",
+      "Projects"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/architecture-product-requirements-document.png",
+      "sourceUrl": "https://tedt.org/img/prompts/architecture-product-requirements-document.png",
+      "exists": true,
+      "sha256": "sha256:e75f8707b50cebef77add8bc54ca39264f9e02a84cd284c2258d48cbfe8d887f",
+      "metadata": {
+        "image": "/img/prompts/architecture-product-requirements-document.png",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+        "image-title": "Architectural Blueprint of Enterprise Product Requirements"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts",
+        "Projects"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "Professional architecture requirements analyst quality review prompt designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for architecture requirements analyst quality review with advanced AI capabilities and structured output formatting.",
+      "image": "/img/prompts/architecture-product-requirements-document.png",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+      "image-title": "Architectural Blueprint of Enterprise Product Requirements",
+      "keywords": [
+        "requirements analysis",
+        "verification & validation",
+        "systems engineering",
+        "quality review",
+        "ISO standards"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master architecture requirements analyst quality review with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "Enterprise Architecture and Requirements Engineering",
+      "tags": [
+        "Requirements Engineering",
+        "Architecture",
+        "Documentation"
+      ],
+      "title": "Architecture Requirements Analyst Quality Review",
+      "update": null
+    },
+    "appliedRepairs": [
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/requirements-analyst-quality-review.webp",
+  "coverImageAlt": "A loupe and blue calipers inspect interlocking blank specification blocks, exposing a small orange gap.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: A jeweler's loupe and precision calipers jointly inspecting a small assembly of specification blocks, expressing a rigorous quality review for completeness, clarity, consistency, correctness, verifiability, and conformance.\nScene/backdrop: Quiet slate inspection bench with a warm-paper inlay, stripped of charts, labels, and screens.\nSubject: One dominant inspection arrangement: a large navy loupe hovering over three interlocking warm-paper blocks while cyan calipers test their fit; a tiny orange shim exposes a correctable gap.\nStyle/medium: premium editorial illustration with tactile dimensional detail; brushed instruments, ceramic-paper blocks, fine workshop grain, and restrained editorial realism.\nComposition/framing: exact 16:10 landscape; close three-quarter macro view; loupe, calipers, and blocks read as one compact silhouette; crop-safe focal subject; legible at approximately 290-pixel card width; no essential detail in the outer 8%.\nLighting/mood: calm, capable, quietly technical; crisp cyan inspection light with a sparing orange gap indicator.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nMaterials/textures: brushed dark metal, frosted glass, dense card stock, matte ceramic edges.\nConstraints: original image; one dominant inspection metaphor; blocks completely blank and instruments without scales or markings; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, cats, cat silhouettes, or Microsoft Fluent styling.\nAvoid: magnified writing, ruler marks, checkmarks, scorecards, dashboard UI, generic chatbot imagery, glowing brains, Microsoft-like gradients.\nTargeted correction: Pull the camera back substantially so the entire loupe, both ends of the calipers, every specification block, and the orange shim all fit comfortably inside the inner 84% with a visible quiet border; preserve the same close inspection metaphor but show no instrument scales, ticks, or markings.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:11074a1b67fd6a7eb47545c0145ef16f0780339a02a14a831d81376aaa374a01",
+  "coverImageSourceHashVersion": 2
+}

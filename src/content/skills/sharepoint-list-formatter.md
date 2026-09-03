@@ -83,4 +83,3 @@ Prefix the tenant's SharePoint domain if it's known (e.g. `https://contoso.share
 
 Format the url as Markdown:
 [Open ↗](LINK)
-

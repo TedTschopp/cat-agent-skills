@@ -1,8 +1,9 @@
 /**
- * Import skill submissions into the site content.
+ * Import library submissions into the site content.
  *
- * Every skill is contributed as a `submissions/<slug>/` folder holding a
- * `metadata.json` gallery sidecar plus EXACTLY ONE unpacked skill payload:
+ * Every library asset is contributed as a `submissions/<slug>/` folder holding
+ * a `metadata.json` / `metadata.yaml` gallery sidecar plus its unpacked payload.
+ * Skills use the canonical shape below:
  *
  *   submissions/<slug>/
  *   ├── metadata.json  (or metadata.yaml) Catalog metadata for THIS gallery:
@@ -20,7 +21,10 @@
  *         ├── references/  optional docs
  *         └── assets/      optional templates / data files
  *
- * (A Scout submission may instead ship a single automation `<name>.json`.)
+ * A Scout submission may instead ship a single automation `<name>.json`; a
+ * prompt template ships one `<slug>.prompt.md`; and agent instructions, scoped
+ * instructions, agent definitions, and work specifications list one or more
+ * exact Markdown/`.mdc` paths in metadata `payloadPaths` with one `entrypoint`.
  *
  * `.zip` payloads are NO LONGER ACCEPTED for new submissions — a packed bundle
  * hides its `SKILL.md` and code from review. A handful of pre-existing zip
@@ -32,11 +36,11 @@
  *   - SKILL.md frontmatter `description`  → `agentDescription` (what the agent reads)
  *   - metadata.json `description`         → `description`      (what the gallery shows)
  *
- * For every submission this script validates the merged metadata against the
- * shared schema (HARD FAIL on error), then generates the canonical
- * `src/content/skills/<slug>.md` (which authors never edit by hand). Any skill
- * that ships files beyond SKILL.md also gets a deterministic
- * `public/bundles/<slug>.zip`, with `bundle:` injected into the frontmatter.
+ * For every submission this script validates normalized metadata against its
+ * shared schema (HARD FAIL on error), then generates the appropriate catalog
+ * collection entry. Generic file assets also get a build-only exact-body index,
+ * every payload as an individual public download, and a deterministic ZIP when
+ * they contain multiple payloads. Authors edit submissions, not generated files.
  *
  * Bundling is VERBATIM — no file classification logic. An unpacked skill is
  * zipped exactly as authored (minus the metadata sidecar); a grandfathered
@@ -59,12 +63,24 @@ import {
   statSync,
   writeFileSync,
 } from "node:fs";
-import { basename, join, posix, relative, sep } from "node:path";
+import { createHash } from "node:crypto";
+import { basename, dirname, join, posix, relative, sep } from "node:path";
 import { pathToFileURL } from "node:url";
 import AdmZip from "adm-zip";
 import matter from "gray-matter";
+import { dump as dumpYaml } from "js-yaml";
 import { assertUniquePortablePaths } from "./portable-paths.mjs";
 import { validateSkillData } from "./validate-skill.ts";
+import { validatePromptData } from "./validate-prompt.ts";
+import { writeLibraryAssetsJson } from "./library-assets-json.ts";
+import {
+  artifactPayloadSchema,
+  GENERIC_FILE_ASSET_KINDS,
+  genericFileAssetSchema,
+  normalizeGenericFileAssetInput,
+  type ArtifactPayload,
+  type GenericFileAssetKind,
+} from "../src/lib/library-asset-schema.ts";
 import {
   validateAutomationData,
   validateAutomationInstallerFiles,
@@ -81,6 +97,9 @@ import {
 const ROOT = join(import.meta.dirname, "..");
 const SUBMISSIONS_DIR = join(ROOT, "submissions");
 const CONTENT_DIR = join(ROOT, "src", "content", "skills");
+const PROMPTS_CONTENT_DIR = join(ROOT, "src", "content", "prompts");
+const ARTIFACTS_CONTENT_DIR = join(ROOT, "src", "content", "artifacts");
+const ARTIFACT_PAYLOADS_CONTENT_DIR = join(ROOT, "src", "content", "artifact-payloads");
 // Generated per-entry human-facing "guide" pages (from an optional
 // README.md in a submission). A separate collection dir so the `skills` glob
 // never picks them up.
@@ -95,6 +114,7 @@ const INSTRUCTIONS_NAME = "skill.md";
 // When present it becomes the detail page's main content.
 const README_NAME = "readme.md";
 const METADATA_NAMES = ["metadata.json", "metadata.yaml", "metadata.yml"];
+const GENERIC_FILE_KIND_SET = new Set<string>(GENERIC_FILE_ASSET_KINDS);
 // Canonical name emitted for the instruction file inside every download bundle.
 const BUNDLE_INSTRUCTIONS_NAME = "SKILL.md";
 // Fixed timestamp so generated bundle zips are byte-for-byte reproducible.
@@ -136,6 +156,7 @@ const FIELD_ORDER = [
   "coverImageGenerator",
   "coverImageGeneratedAt",
   "coverImageSourceHash",
+  "coverImageSourceHashVersion",
   "featured",
   "bundle",
 ];
@@ -188,14 +209,19 @@ export function shouldImportSlug(slug: string, selectedSlugs: ReadonlySet<string
 
 type ImportProblem = { source: string; problems: string[] };
 /** A file inside a submission, with a forward-slash relative path. */
-type SubFile = { path: string; data: Buffer };
+export type SubFile = { path: string; data: Buffer };
 /** A loaded submission (folder or packed zip), before parsing/validation. */
-type Submission = {
+export type Submission = {
   slug: string;
   label: string;
-  /** "skill" (default), a Cowork "plugin", or a Scout "automation". */
-  kind: "skill" | "plugin" | "automation";
+  /** The classified payload kind. */
+  kind: "skill" | "plugin" | "automation" | "prompt-template" | GenericFileAssetKind;
   skillMd?: string;
+  /** For a prompt template: the exact decoded prompt payload. */
+  promptMd?: string;
+  promptFileName?: string;
+  /** Exact, explicitly enumerated files for a generic file artifact. */
+  artifactFiles?: SubFile[];
   metaName?: string;
   metaText?: string;
   /**
@@ -268,6 +294,25 @@ export function buildContent(meta: Record<string, unknown>, body: string): strin
 }
 
 /**
+ * Serialize nested prompt metadata without rewriting its payload body.
+ * Prompt bodies are provenance-checked artifacts, so unlike legacy skill
+ * instructions they are never trimmed and no trailing newline is invented.
+ */
+export function buildPromptContent(meta: Record<string, unknown>, body: string): string {
+  const yaml = dumpYaml(meta, {
+    noCompatMode: true,
+    noRefs: true,
+    lineWidth: -1,
+    sortKeys: true,
+    quotingType: '"',
+    // Quote every string so YAML 1.1-shaped values such as the required
+    // artwork ratio `16:10` survive a frontmatter round trip as strings.
+    forceQuotes: true,
+  }).trimEnd();
+  return `---\n${yaml}\n---\n${body}`;
+}
+
+/**
  * Documented, human-authored catalog fields that may flow from a submission's
  * `metadata.*` sidecar into the generated frontmatter as-authored. This is an
  * ALLOWLIST: any catalog key not listed here — undocumented noise, or a
@@ -297,6 +342,7 @@ export const CATALOG_PASSTHROUGH = [
   "coverImageGenerator",
   "coverImageGeneratedAt",
   "coverImageSourceHash",
+  "coverImageSourceHashVersion",
   "featured",
 ] as const;
 
@@ -384,13 +430,15 @@ function parseMetadataFile(name: string, text: string): Record<string, unknown> 
 }
 
 /** Write a deterministic zip from the given files. */
-function writeBundle(files: SubFile[], outPath: string): void {
+export function writeBundle(files: SubFile[], outPath: string): void {
   assertUniquePortablePaths(
     files.map((file) => file.path),
     `bundle ${basename(outPath)}`,
   );
   const out = new AdmZip();
-  for (const file of [...files].sort((a, b) => a.path.localeCompare(b.path))) {
+  for (const file of [...files].sort((a, b) =>
+    Buffer.compare(Buffer.from(a.path, "utf8"), Buffer.from(b.path, "utf8")),
+  )) {
     out.addFile(file.path, file.data);
   }
   for (const entry of out.getEntries()) entry.header.time = FIXED_ZIP_DATE;
@@ -401,6 +449,12 @@ function writeBundle(files: SubFile[], outPath: string): void {
 function writeIfChanged(path: string, content: string): void {
   if (existsSync(path) && readFileSync(path, "utf8") === content) return;
   writeFileSync(path, content, "utf8");
+}
+
+function writeBufferIfChanged(path: string, content: Buffer): void {
+  if (existsSync(path) && readFileSync(path).equals(content)) return;
+  mkdirSync(dirname(path), { recursive: true });
+  writeFileSync(path, content);
 }
 
 /**
@@ -420,6 +474,22 @@ function writeGuide(slug: string, sub: Submission): void {
   } else if (existsSync(out)) {
     rmSync(out);
   }
+}
+
+/** Prompt migration guides are hash-bound, so preserve every normalized byte. */
+function writePromptGuide(slug: string, sub: Submission): void {
+  if (checkOnly) return;
+  const out = join(GUIDES_DIR, `${slug}.md`);
+  if (sub.readmeMd !== undefined) {
+    mkdirSync(GUIDES_DIR, { recursive: true });
+    writeIfChanged(out, sub.readmeMd);
+  } else if (existsSync(out)) {
+    rmSync(out);
+  }
+}
+
+function contentSha256(value: string | Buffer): string {
+  return `sha256:${createHash("sha256").update(value).digest("hex")}`;
 }
 
 /** Require a real directory without following a symlink at the traversal root. */
@@ -506,6 +576,8 @@ function processSubmission(sub: Submission): ImportProblem | null {
   if (sub.loadProblems?.length) {
     return { source: label, problems: sub.loadProblems };
   }
+  if (sub.kind === "prompt-template") return processPrompt(sub);
+  if (GENERIC_FILE_KIND_SET.has(sub.kind)) return processGenericFileAsset(sub);
   if (sub.kind === "plugin") return processPlugin(sub);
   if (sub.kind === "automation") return processAutomation(sub);
   if (sub.skillMd === undefined) {
@@ -602,6 +674,313 @@ function processSubmission(sub: Submission): ImportProblem | null {
     console.log(
       `\u2713 ${label} \u2192 src/content/skills/${slug}.md` +
         (hasBundle ? ` (+ public/bundles/${slug}.zip)` : ""),
+    );
+  }
+  return null;
+}
+
+export function genericArtifactDownloadPath(slug: string, payloadPaths: string[]): string {
+  return payloadPaths.length === 1
+    ? `bundles/${slug}/${payloadPaths[0]}`
+    : `bundles/${slug}.zip`;
+}
+
+export function genericArtifactPayloadDownloadPath(slug: string, payloadPath: string): string {
+  return `bundles/${slug}/${payloadPath}`;
+}
+
+function decodeUtf8(data: Buffer, label: string): string {
+  try {
+    return new TextDecoder("utf-8", { fatal: true }).decode(data);
+  } catch {
+    throw new Error(`${label} is not valid UTF-8`);
+  }
+}
+
+export function validateGenericPayloadFiles(
+  metadata: Record<string, unknown>,
+  files: SubFile[],
+  label = "generic file asset",
+): {
+  problems: string[];
+  payloadPaths: string[];
+  entrypoint: string;
+  expectedDownload: string;
+  decoded: Map<string, string>;
+} {
+  const problems: string[] = [];
+  const payloadPaths = Array.isArray(metadata.payloadPaths)
+    ? metadata.payloadPaths.filter((value): value is string => typeof value === "string")
+    : [];
+  if (
+    !Array.isArray(metadata.payloadPaths) ||
+    payloadPaths.length !== metadata.payloadPaths.length ||
+    payloadPaths.length === 0
+  ) {
+    problems.push("metadata `payloadPaths` must be a non-empty array of exact relative paths");
+  }
+  try {
+    assertUniquePortablePaths(payloadPaths, `${label} metadata.payloadPaths`);
+  } catch (error) {
+    problems.push((error as Error).message);
+  }
+
+  const byPath = new Map(files.map((file) => [file.path, file]));
+  const expected = new Set(payloadPaths);
+  for (const path of payloadPaths) {
+    if (!byPath.has(path)) problems.push(`declared payload path is missing: ${path}`);
+  }
+  for (const path of byPath.keys()) {
+    if (!expected.has(path)) problems.push(`undeclared payload file is not allowed: ${path}`);
+  }
+  const slug = typeof metadata.slug === "string" ? metadata.slug : "";
+  const expectedDownload = genericArtifactDownloadPath(slug, payloadPaths);
+  if (metadata.downloadPath !== expectedDownload) {
+    problems.push(`metadata \`downloadPath\` must equal ${expectedDownload}`);
+  }
+
+  const decoded = new Map<string, string>();
+  for (const file of files) {
+    try {
+      const value = decodeUtf8(file.data, file.path);
+      if (!value.trim()) problems.push(`payload file must not be empty: ${file.path}`);
+      decoded.set(file.path, value);
+    } catch (error) {
+      problems.push((error as Error).message);
+    }
+  }
+  const entrypoint = typeof metadata.entrypoint === "string" ? metadata.entrypoint : "";
+  if (!expected.has(entrypoint)) problems.push("metadata `entrypoint` must be listed in payloadPaths");
+  return {
+    problems: [...new Set(problems)],
+    payloadPaths,
+    entrypoint,
+    expectedDownload,
+    decoded,
+  };
+}
+
+/** Build the importer-owned body index without changing path spelling or bytes. */
+export function buildArtifactPayloadIndex(
+  slug: string,
+  payloadPaths: readonly string[],
+  files: readonly SubFile[],
+): ArtifactPayload {
+  const byPath = new Map(files.map((file) => [file.path, file]));
+  return artifactPayloadSchema.parse({
+    slug,
+    files: payloadPaths.map((path) => {
+      const file = byPath.get(path);
+      if (!file) throw new Error(`cannot index missing payload file: ${path}`);
+      return {
+        path,
+        body: decodeUtf8(file.data, path),
+        sha256: contentSha256(file.data),
+      };
+    }),
+  });
+}
+
+/** Publish every exact source file, plus a deterministic ZIP for multi-file assets. */
+export function writeGenericArtifactDownloads(
+  root: string,
+  slug: string,
+  payloadPaths: readonly string[],
+  files: readonly SubFile[],
+): { payloadDownloadPaths: string[]; bundleDownloadPath: string | null } {
+  if (!SAFE_SLUG.test(slug)) throw new Error(`invalid generic asset slug: ${slug}`);
+  assertUniquePortablePaths([...payloadPaths], `${slug} payloadPaths`);
+  const byPath = new Map(files.map((file) => [file.path, file]));
+  const missing = payloadPaths.filter((path) => !byPath.has(path));
+  const unexpected = files.filter((file) => !payloadPaths.includes(file.path));
+  if (missing.length || unexpected.length || byPath.size !== files.length) {
+    throw new Error(
+      `generic download payload mismatch` +
+        (missing.length ? `; missing: ${missing.join(", ")}` : "") +
+        (unexpected.length ? `; unexpected: ${unexpected.map((file) => file.path).join(", ")}` : ""),
+    );
+  }
+  const payloadDownloadPaths = payloadPaths.map((path) => {
+    const downloadPath = genericArtifactPayloadDownloadPath(slug, path);
+    writeBufferIfChanged(join(root, "public", downloadPath), byPath.get(path)!.data);
+    return downloadPath;
+  });
+  const bundleDownloadPath = payloadPaths.length > 1 ? `bundles/${slug}.zip` : null;
+  if (bundleDownloadPath) {
+    writeBundle([...files], join(root, "public", bundleDownloadPath));
+  }
+  return { payloadDownloadPaths, bundleDownloadPath };
+}
+
+/** Validate and publish an explicitly enumerated generic Markdown file asset. */
+function processGenericFileAsset(sub: Submission): ImportProblem | null {
+  const { slug, label } = sub;
+  if (sub.metaText === undefined) {
+    return {
+      source: label,
+      problems: [
+        `no metadata sidecar found next to the generic file asset ` +
+          `(expected ${METADATA_NAMES.join(" / ")})`,
+      ],
+    };
+  }
+  let rawMetadata: Record<string, unknown>;
+  try {
+    rawMetadata = parseMetadataFile(sub.metaName!, sub.metaText);
+  } catch (error) {
+    return {
+      source: label,
+      problems: [`could not parse ${sub.metaName}: ${(error as Error).message}`],
+    };
+  }
+
+  const problems: string[] = [];
+  if (rawMetadata.kind !== sub.kind || !GENERIC_FILE_KIND_SET.has(String(rawMetadata.kind))) {
+    problems.push(`metadata \`kind\` must be one of ${GENERIC_FILE_ASSET_KINDS.join(", ")}`);
+  }
+  if (rawMetadata.slug !== undefined && rawMetadata.slug !== slug) {
+    problems.push(`metadata \`slug\` must equal ${slug} when provided`);
+  }
+  const normalizedInput = normalizeGenericFileAssetInput(rawMetadata, slug);
+  const validation = genericFileAssetSchema.safeParse(normalizedInput);
+  if (!validation.success) {
+    problems.push(
+      ...validation.error.issues.map((issue) => {
+        const field = issue.path.length ? issue.path.join(".") : "(root)";
+        return `${field}: ${issue.message}`;
+      }),
+    );
+  }
+  const metadata = validation.success
+    ? validation.data
+    : (normalizedInput as Record<string, unknown>);
+  const files = sub.artifactFiles ?? [];
+  const payload = validateGenericPayloadFiles(
+    metadata as unknown as Record<string, unknown>,
+    files,
+    label,
+  );
+  problems.push(...payload.problems);
+  if (problems.length) return { source: label, problems: [...new Set(problems)] };
+
+  if (!validation.success) {
+    return { source: label, problems: ["generic file metadata validation failed"] };
+  }
+  const parsedMetadata = validation.data;
+  const payloadIndex = buildArtifactPayloadIndex(slug, parsedMetadata.payloadPaths, files);
+
+  if (!checkOnly) {
+    mkdirSync(ARTIFACTS_CONTENT_DIR, { recursive: true });
+    writeIfChanged(
+      join(ARTIFACTS_CONTENT_DIR, `${slug}.md`),
+      buildPromptContent(
+        parsedMetadata as unknown as Record<string, unknown>,
+        payload.decoded.get(payload.entrypoint)!,
+      ),
+    );
+    mkdirSync(ARTIFACT_PAYLOADS_CONTENT_DIR, { recursive: true });
+    writeIfChanged(
+      join(ARTIFACT_PAYLOADS_CONTENT_DIR, `${slug}.md`),
+      buildPromptContent(payloadIndex as unknown as Record<string, unknown>, ""),
+    );
+    writePromptGuide(slug, sub);
+    writeGenericArtifactDownloads(ROOT, slug, parsedMetadata.payloadPaths, files);
+    console.log(
+        `✓ ${label} → src/content/artifacts/${slug}.md ` +
+        `(+ ${files.length} individual payload${files.length === 1 ? "" : "s"}` +
+        (files.length > 1 ? ` and public/bundles/${slug}.zip)` : ")"),
+    );
+  }
+  return null;
+}
+
+/** Validate and publish a single-file prompt-template submission. */
+function processPrompt(sub: Submission): ImportProblem | null {
+  const { slug, label } = sub;
+  if (sub.promptMd === undefined || sub.promptFileName === undefined) {
+    return { source: label, problems: ["no prompt-template `.prompt.md` payload found"] };
+  }
+  if (sub.metaText === undefined) {
+    return {
+      source: label,
+      problems: [
+        `no metadata sidecar found next to the prompt template ` +
+          `(expected ${METADATA_NAMES.join(" / ")})`,
+      ],
+    };
+  }
+
+  let metadata: Record<string, unknown>;
+  try {
+    metadata = parseMetadataFile(sub.metaName!, sub.metaText);
+  } catch (error) {
+    return {
+      source: label,
+      problems: [`could not parse ${sub.metaName}: ${(error as Error).message}`],
+    };
+  }
+
+  const expectedEntrypoint = `${slug}.prompt.md`;
+  const expectedDownload = `bundles/${expectedEntrypoint}`;
+  const problems: string[] = [];
+  if (sub.promptFileName !== expectedEntrypoint) {
+    problems.push(
+      `prompt payload must be named \`${expectedEntrypoint}\`; got \`${sub.promptFileName}\``,
+    );
+  }
+  if (!sub.promptMd.trim()) problems.push("prompt payload must not be empty");
+  if (metadata.kind !== "prompt-template") {
+    problems.push("metadata `kind` must be `prompt-template`");
+  }
+  if (metadata.slug !== slug) problems.push(`metadata \`slug\` must equal ${slug}`);
+  if (metadata.entrypoint !== expectedEntrypoint) {
+    problems.push(`metadata \`entrypoint\` must equal ${expectedEntrypoint}`);
+  }
+  if (
+    !Array.isArray(metadata.payloadPaths) ||
+    metadata.payloadPaths.length !== 1 ||
+    metadata.payloadPaths[0] !== expectedEntrypoint
+  ) {
+    problems.push(`metadata \`payloadPaths\` must contain only ${expectedEntrypoint}`);
+  }
+  if (metadata.downloadPath !== expectedDownload) {
+    problems.push(`metadata \`downloadPath\` must equal ${expectedDownload}`);
+  }
+
+  const provenance = metadata.provenance as Record<string, unknown> | undefined;
+  if (provenance) {
+    const promptDigest = contentSha256(sub.promptMd);
+    if (provenance.importedPromptSha256 !== promptDigest) {
+      problems.push(
+        `prompt payload SHA-256 differs from provenance.importedPromptSha256 ` +
+          `(expected ${String(provenance.importedPromptSha256)}, got ${promptDigest})`,
+      );
+    }
+    const guideDigest = contentSha256(sub.readmeMd ?? "");
+    if (provenance.importedGuideSha256 !== guideDigest) {
+      problems.push(
+        `README SHA-256 differs from provenance.importedGuideSha256 ` +
+          `(expected ${String(provenance.importedGuideSha256)}, got ${guideDigest})`,
+      );
+    }
+  }
+
+  const validation = validatePromptData(metadata, label);
+  if (!validation.ok) problems.push(...validation.problems);
+  if (problems.length) return { source: label, problems };
+
+  if (!checkOnly) {
+    mkdirSync(PROMPTS_CONTENT_DIR, { recursive: true });
+    writeIfChanged(
+      join(PROMPTS_CONTENT_DIR, `${slug}.md`),
+      buildPromptContent(metadata, sub.promptMd),
+    );
+    writePromptGuide(slug, sub);
+    mkdirSync(BUNDLES_DIR, { recursive: true });
+    writeIfChanged(join(BUNDLES_DIR, expectedEntrypoint), sub.promptMd);
+    console.log(
+      `✓ ${label} → src/content/prompts/${slug}.md ` +
+        `(+ public/bundles/${expectedEntrypoint})`,
     );
   }
   return null;
@@ -987,12 +1366,13 @@ function processAutomation(sub: Submission): ImportProblem | null {
 }
 
 /**
- * Load a `submissions/<slug>/` folder: a `metadata.json` sidecar plus exactly
- * one skill payload — an unpacked canonical skill (root `SKILL.md` + optional
- * dirs) or, for Scout, a single automation `<name>.json`. `.zip` payloads are
- * no longer accepted (only the grandfathered LEGACY_ZIP_SLUGS still load).
+ * Load a `submissions/<slug>/` folder: a metadata sidecar plus one supported
+ * payload family — an unpacked canonical skill, Scout automation `.json`,
+ * prompt template, or explicitly enumerated generic Markdown/`.mdc` file set.
+ * `.zip` payloads are no longer accepted (only the grandfathered
+ * LEGACY_ZIP_SLUGS still load).
  */
-function loadSubmission(dir: string): Submission {
+export function loadSubmission(dir: string): Submission {
   const slug = basename(dir);
   const label = `submissions/${slug}/`;
   const sub: Submission = { slug, label, kind: "skill", bundleFiles: [] };
@@ -1009,6 +1389,10 @@ function loadSubmission(dir: string): Submission {
   const topFiles = readdirSync(dir).filter((n) => statSync(join(dir, n)).isFile());
   const zips = topFiles.filter((n) => n.toLowerCase().endsWith(".zip"));
   const hasRootSkill = topFiles.some((n) => n.toLowerCase() === INSTRUCTIONS_NAME);
+  const promptFiles = topFiles.filter((n) => n.toLowerCase().endsWith(".prompt.md"));
+  const automationJsons = topFiles.filter(
+    (n) => n.toLowerCase().endsWith(".json") && !METADATA_NAMES.includes(n.toLowerCase()),
+  );
 
   // Metadata sidecar (top-level, next to the payload — never inside the bundle).
   const metaFile = topFiles.find((n) => METADATA_NAMES.includes(n.toLowerCase()));
@@ -1017,12 +1401,70 @@ function loadSubmission(dir: string): Submission {
     sub.metaText = readFileSync(join(dir, metaFile), "utf8");
   }
 
+  let declaredGenericKind: GenericFileAssetKind | undefined;
+  let declaredPayloadPaths: string[] = [];
+  if (sub.metaText !== undefined) {
+    try {
+      const declared = parseMetadataFile(sub.metaName!, sub.metaText);
+      if (typeof declared.kind === "string" && GENERIC_FILE_KIND_SET.has(declared.kind)) {
+        declaredGenericKind = declared.kind as GenericFileAssetKind;
+        declaredPayloadPaths = Array.isArray(declared.payloadPaths)
+          ? declared.payloadPaths.filter((value): value is string => typeof value === "string")
+          : [];
+      }
+    } catch {
+      // The selected processor reports the full metadata parse failure.
+    }
+  }
+
   // Optional human-facing companion doc (top-level, next to the payload). Works
   // for every entry type; never bundled and never part of the agent payload.
   const readmeFile = topFiles.find((n) => n.toLowerCase() === README_NAME);
   if (readmeFile) sub.readmeMd = readFileSync(join(dir, readmeFile), "utf8");
 
-  if (zips.length > 0 && hasRootSkill) {
+  if (declaredGenericKind) {
+    sub.kind = declaredGenericKind;
+    const readmeIsPayload = Boolean(readmeFile && declaredPayloadPaths.includes(readmeFile));
+    if (readmeIsPayload) sub.readmeMd = undefined;
+    sub.artifactFiles = submissionFiles.filter(
+      (file) =>
+        file.path !== metaFile &&
+        !(readmeFile && !readmeIsPayload && file.path === readmeFile),
+    );
+  } else if (promptFiles.length > 0) {
+    sub.kind = "prompt-template";
+    if (promptFiles.length !== 1) {
+      problems.push(
+        `submission has ${promptFiles.length} .prompt.md files — provide exactly one`,
+      );
+    }
+    if (zips.length > 0 || hasRootSkill || automationJsons.length > 0) {
+      problems.push(
+        "prompt-template submission cannot also contain a SKILL.md, .zip, or automation .json payload",
+      );
+    }
+    if (promptFiles.length === 1) {
+      const promptFile = promptFiles[0];
+      const allowed = new Set(
+        [promptFile, metaFile, readmeFile].filter((name): name is string => Boolean(name)),
+      );
+      const unexpected = submissionFiles
+        .map((file) => file.path)
+        .filter((path) => !allowed.has(path));
+      if (unexpected.length > 0) {
+        problems.push(
+          `prompt-template payload contains unexpected file(s): ${unexpected.join(", ")}`,
+        );
+      }
+      sub.promptFileName = promptFile;
+      const promptBytes = readFileSync(join(dir, promptFile));
+      try {
+        sub.promptMd = new TextDecoder("utf-8", { fatal: true }).decode(promptBytes);
+      } catch {
+        problems.push(`${promptFile} is not valid UTF-8`);
+      }
+    }
+  } else if (zips.length > 0 && hasRootSkill) {
     problems.push(
       "submission has BOTH an unpacked SKILL.md and a .zip payload \u2014 " +
         "remove the `.zip` (zip payloads are no longer accepted)",
@@ -1076,10 +1518,6 @@ function loadSubmission(dir: string): Submission {
     // A Scout automation payload: a single top-level `.json` that is NOT the
     // metadata sidecar (all root `.json` files are automations by Scout's
     // GitHub-import convention). The sidecar carries the catalog metadata.
-    const automationJsons = topFiles.filter(
-      (n) =>
-        n.toLowerCase().endsWith(".json") && !METADATA_NAMES.includes(n.toLowerCase()),
-    );
     if (automationJsons.length === 1) {
       sub.kind = "automation";
       sub.automationJsonName = automationJsons[0];
@@ -1092,8 +1530,8 @@ function loadSubmission(dir: string): Submission {
     } else {
       problems.push(
         "submission has no payload \u2014 add a root `SKILL.md` (with optional " +
-          "`scripts/`, `references/`, `assets/`), or a single Scout automation " +
-          "`<name>.json`",
+          "`scripts/`, `references/`, `assets/`), a single Scout automation " +
+          "`<name>.json`, or a single `<slug>.prompt.md` prompt template",
       );
     }
   }
@@ -1124,8 +1562,7 @@ function main() {
     if (name.startsWith(".") || name.startsWith("_")) continue; // _template, etc.
     if (!shouldImportSlug(name, selectedSlugs)) continue;
     const full = join(SUBMISSIONS_DIR, name);
-    // Submissions are folders. Each holds an unpacked skill (root `SKILL.md` +
-    // optional dirs) or, for Scout, a single automation `<name>.json`.
+    // Submissions are folders. Each holds exactly one supported payload kind.
     const entry = lstatSync(full);
     if (entry.isSymbolicLink()) {
       throw new Error(`submission directory is an unsupported symlink: submissions/${name}`);
@@ -1172,17 +1609,21 @@ function main() {
       "\nEach submission is a `submissions/<slug>/` folder with a `metadata.*` " +
         "sidecar (catalog `description`, `platforms`, `tags`) plus exactly one " +
         "payload: an unpacked `SKILL.md` (frontmatter `name` + agent-facing " +
-        "`description`, then instructions), or a single Scout automation " +
-        "`<name>.json`. `.zip` payloads are no longer accepted. Fix the items " +
+        "`description`, then instructions), a single Scout automation " +
+        "`<name>.json`, a single `<slug>.prompt.md` prompt template, or an " +
+        "explicitly enumerated generic Markdown file set. " +
+        "`.zip` payloads are no longer accepted. Fix the items " +
         "above and retry.",
     );
     process.exit(1);
   }
 
+  const catalog = checkOnly ? null : writeLibraryAssetsJson({ root: ROOT });
   console.log(
     checkOnly
       ? `\nAll ${submissions.length} submission(s) passed validation (check-only, nothing written).`
-      : `\nImported ${submissions.length} submission(s).`,
+      : `\nImported ${submissions.length} submission(s); ` +
+          `${catalog!.assets} published asset(s) in public/assets.json.`,
   );
 }
 

@@ -1,0 +1,198 @@
+{
+  "kind": "prompt-template",
+  "slug": "product-requirements-document-prd-for-power-platform",
+  "name": "Architecture Product Requirements Document (PRD) for Power Platform",
+  "description": "Professional architecture product requirements document (prd) for power platform prompt designed for high-quality content generation and structured analysis.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Product Management",
+    "Requirements Engineering",
+    "Documentation"
+  ],
+  "tags": [
+    "Product Management",
+    "Requirements Engineering",
+    "Documentation"
+  ],
+  "keywords": [
+    "documentation",
+    "Power Platform",
+    "product management",
+    "product requirements",
+    "requirements analysis"
+  ],
+  "models": [
+    "claude-3-sonnet",
+    "github-copilot",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "claude",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "product-requirements-document-prd-for-power-platform.prompt.md",
+  "payloadPaths": [
+    "product-requirements-document-prd-for-power-platform.prompt.md"
+  ],
+  "downloadPath": "bundles/product-requirements-document-prd-for-power-platform.prompt.md",
+  "createdAt": "2025-10-17",
+  "updatedAt": null,
+  "subtitle": "Enterprise Architecture and Requirements Engineering",
+  "summaryBullets": [
+    "Advanced prompt engineering techniques",
+    "Structured approach to content generation",
+    "Customizable templates and frameworks",
+    "Best practices for AI interaction",
+    "Professional-grade output formatting"
+  ],
+  "seoDescription": "Master architecture product requirements document (prd) for power platform with this comprehensive AI prompt featuring structured templates and best practices.",
+  "variables": [],
+  "series": [],
+  "relatedAssetIds": [],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-10-17-product-requirements-document-prd-for-power-platform.md",
+    "sourceUrl": "https://tedt.org/prompts/product-requirements-document-prd-for-power-platform/",
+    "sourceFileSha256": "sha256:b54a9bcca4c303474f8f4763e62e50a2184d9cf5953cf2fab13834c5392acd1e",
+    "sourcePromptSha256": "sha256:2468444e94b07caa62a62a03cf3c99c88517b48ad6245ba4474d4d246f7f664c",
+    "importedPromptSha256": "sha256:2468444e94b07caa62a62a03cf3c99c88517b48ad6245ba4474d4d246f7f664c",
+    "sourceGuideSha256": "sha256:9653b9ccf470ecae8b0327558527d31f872e6b7a62edb8c3affb5aaefb05384c",
+    "importedGuideSha256": "sha256:9653b9ccf470ecae8b0327558527d31f872e6b7a62edb8c3affb5aaefb05384c",
+    "rawFrontmatterSha256": "sha256:240f3cc230ae4edf4af48393ee32db467d399bcf24c9e5e8d5df52e2a12d8574",
+    "sourceTitle": "Architecture Product Requirements Document (PRD) for Power Platform",
+    "sourceDescription": "Professional architecture product requirements document (prd) for power platform prompt designed for high-quality content generation and structured analysis.",
+    "sourceSeoDescription": "Master architecture product requirements document (prd) for power platform with this comprehensive AI prompt featuring structured templates and best practices.",
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-4-mini",
+      "claude-3-sonnet",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/product-requirements-document-prd-for-power-platform/"
+    ],
+    "legacyCategories": [
+      "Prompts",
+      "Business",
+      "Projects"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/architecture-product-requirements-document.png",
+      "sourceUrl": "https://tedt.org/img/prompts/architecture-product-requirements-document.png",
+      "exists": true,
+      "sha256": "sha256:e75f8707b50cebef77add8bc54ca39264f9e02a84cd284c2258d48cbfe8d887f",
+      "metadata": {
+        "image": "/img/prompts/architecture-product-requirements-document.png",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+        "image-title": "Architectural Blueprint of Enterprise Product Requirements"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Advanced prompt engineering techniques",
+        "Structured approach to content generation",
+        "Customizable templates and frameworks",
+        "Best practices for AI interaction",
+        "Professional-grade output formatting"
+      ],
+      "call-to-action": "",
+      "categories": [
+        "Prompts",
+        "Business",
+        "Projects"
+      ],
+      "coordinates": {
+        "latitude": 34.147,
+        "longitude": -117.9709
+      },
+      "date": "2025-10-17",
+      "description": "Professional architecture product requirements document (prd) for power platform prompt designed for high-quality content generation and structured analysis.",
+      "excerpt": "A specialized prompt for architecture product requirements document (prd) for power platform with advanced AI capabilities and structured output formatting.",
+      "image": "/img/prompts/architecture-product-requirements-document.png",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+      "image-artist": "Ted Tschopp",
+      "image-artist-URL": "https://tedt.org/",
+      "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+      "image-title": "Architectural Blueprint of Enterprise Product Requirements",
+      "keywords": [
+        "documentation",
+        "Power Platform",
+        "product management",
+        "product requirements",
+        "requirements analysis"
+      ],
+      "layout": "prompt-details",
+      "location": {
+        "name": "Bradbury, CA"
+      },
+      "mastodon-post-id": null,
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-4-mini",
+        "claude-3-sonnet",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "quote": "",
+      "seo-description": "Master architecture product requirements document (prd) for power platform with this comprehensive AI prompt featuring structured templates and best practices.",
+      "source": "Original Content",
+      "source-url": "",
+      "subtitle": "Enterprise Architecture and Requirements Engineering",
+      "tags": [
+        "Product Management",
+        "Requirements Engineering",
+        "Documentation"
+      ],
+      "title": "Architecture Product Requirements Document (PRD) for Power Platform",
+      "update": null
+    },
+    "appliedRepairs": [
+      "normalize-model-github-to-github-copilot"
+    ]
+  },
+  "coverImage": "skill-art/product-requirements-document-prd-for-power-platform.webp",
+  "coverImageAlt": "A navy platform connects four tactile workflow modules with cyan channels and an orange keystone.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: A raised architectural platform that connects modular workflow, data, governance, and approval tiles into one stable product foundation, expressing a comprehensive requirements template for low-code internal solutions without depicting any vendor product.\nScene/backdrop: Warm-paper modelmaking table against a slate backdrop, open and uncluttered.\nSubject: One dominant navy pedestal platform carrying four distinct interlocking physical tiles: a flowing channel, a bead reservoir, a guarded arch, and a stepped approval bridge; cyan connectors link them and one small orange keystone completes the platform.\nStyle/medium: premium editorial illustration with tactile dimensional detail; handcrafted architectural maquette, ceramic tiles, cut paper, and restrained mechanical joinery.\nComposition/framing: exact 16:10 landscape; slightly low three-quarter view that emphasizes the platform silhouette; large simple modules readable at approximately 290-pixel card width; crop-safe focal subject; no essential detail in the outer 8%.\nLighting/mood: calm, capable, quietly technical; controlled cyan underlighting and a sparing orange keystone.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nMaterials/textures: matte ceramic, heavy paper, painted wood, frosted glass connectors, subtle grain.\nConstraints: original image; one dominant metaphor; generic physical workflow components only; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, cats, cat silhouettes, or Microsoft Fluent styling.\nAvoid: recognizable low-code software screens, flowchart icons, branded cloud symbols, app logos, generic chatbot imagery, glowing brains, excessive modules, Microsoft-like gradients.\nTargeted correction: Remove every surrounding document, sheet, line, groove, and mark from the backdrop; show only the complete raised platform centered inside the inner 84% of a plain warm-paper plane with a clear border on all sides, preserving the same four physical modules, cyan connectors, and orange keystone.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:4dc676ced27187f84749b7444762c7920f928e383979ef2b3e183ab0be02be56",
+  "coverImageSourceHashVersion": 2
+}

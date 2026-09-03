@@ -1,0 +1,376 @@
+{
+  "kind": "prompt-template",
+  "slug": "academic-critique-content",
+  "name": "Academic Content Critique Template",
+  "description": "A structured prompt template for critiquing academic papers, articles, and research content with detailed analysis framework, grading rubric, and professional standards.",
+  "status": "active",
+  "publicationStatus": "published",
+  "topics": [
+    "Writing",
+    "Documentation",
+    "Communications"
+  ],
+  "tags": [
+    "Writing",
+    "Documentation",
+    "Communications"
+  ],
+  "keywords": [
+    "academic critique",
+    "content creation",
+    "documentation",
+    "quality review",
+    "technical writing"
+  ],
+  "models": [
+    "github-copilot",
+    "gpt-3.5-turbo",
+    "gpt-4",
+    "gpt-4-mini",
+    "gpt-4-turbo",
+    "microsoft-copilot"
+  ],
+  "compatibility": [
+    "chatgpt",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "worksWith": [
+    "chatgpt",
+    "github-copilot",
+    "microsoft-copilot"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorAvatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+  "entrypoint": "academic-critique-content.prompt.md",
+  "payloadPaths": [
+    "academic-critique-content.prompt.md"
+  ],
+  "downloadPath": "bundles/academic-critique-content.prompt.md",
+  "createdAt": "2025-08-01",
+  "updatedAt": null,
+  "subtitle": "A comprehensive framework for scholarly paper analysis and evaluation",
+  "summaryBullets": [
+    "Structured framework for scholarly paper analysis",
+    "Detailed grading rubric and evaluation criteria",
+    "Professional standards for academic content review"
+  ],
+  "seoDescription": null,
+  "variables": [
+    {
+      "help": "The exact title of the academic paper or article",
+      "label": "Paper Title",
+      "name": "paper_title",
+      "placeholder": "Enter the title of the paper being critiqued",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "help": "Full name(s) of the paper's author(s) exactly as listed",
+      "label": "Author(s)",
+      "name": "author_names",
+      "placeholder": "Enter author name(s) as listed on the paper",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "default": [
+        "methodology",
+        "logic and reasoning",
+        "evidence quality"
+      ],
+      "help": "Select the specific aspects you want to focus on in your critique",
+      "label": "Critique Focus Areas",
+      "name": "critique_focus",
+      "options": [
+        "methodology",
+        "logic and reasoning",
+        "evidence quality",
+        "practical implications",
+        "clarity of writing",
+        "research design",
+        "data analysis",
+        "theoretical framework",
+        "literature review",
+        "conclusions validity"
+      ],
+      "required": false,
+      "type": "checkbox"
+    },
+    {
+      "default": "APA",
+      "help": "The citation style to use in your critique",
+      "label": "Citation Style",
+      "name": "citation_style",
+      "options": [
+        "APA",
+        "MLA",
+        "Chicago",
+        "IEEE",
+        "Vancouver"
+      ],
+      "required": true,
+      "type": "select"
+    },
+    {
+      "default": "standard analysis",
+      "help": "How detailed should the critique be?",
+      "label": "Critique Depth",
+      "name": "critique_depth",
+      "options": [
+        "brief overview",
+        "standard analysis",
+        "comprehensive evaluation",
+        "expert-level critique"
+      ],
+      "required": true,
+      "type": "radio"
+    },
+    {
+      "default": "no",
+      "help": "Should the critique include a formal grading assessment?",
+      "label": "Include Grading Rubric",
+      "name": "include_grading",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "required": true,
+      "type": "radio"
+    }
+  ],
+  "series": [
+    {
+      "id": "simple-blog-review",
+      "title": "Simple Blog Review",
+      "step": 2,
+      "totalSteps": 2,
+      "previousAssetId": "prompt:simple-blog-generator",
+      "nextAssetId": null
+    },
+    {
+      "id": "universal-content-review",
+      "title": "Universal Content Review",
+      "step": 2,
+      "totalSteps": 2,
+      "previousAssetId": "prompt:universal-content-creator-demo",
+      "nextAssetId": null
+    }
+  ],
+  "relatedAssetIds": [
+    "prompt:simple-blog-generator",
+    "prompt:universal-content-creator-demo"
+  ],
+  "featured": false,
+  "provenance": {
+    "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+    "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+    "sourcePath": "_posts/prompts/2025-08-01-Academic-Critique-Content.md",
+    "sourceUrl": "https://tedt.org/prompts/academic-critique-content/",
+    "sourceFileSha256": "sha256:8fc379c7b0335f14addabd6f425eef598880ef28b93e141bdbdd666cbede0c65",
+    "sourcePromptSha256": "sha256:11b8ebb5651e29fc61ad0ced36cf7e261a3790ed2a351df708f31116b777350a",
+    "importedPromptSha256": "sha256:f52788e31edc24d7ec28726754b81791d97097688dc915a6af68f6987d01b848",
+    "sourceGuideSha256": "sha256:f9be6ce7d2a3bdfdae39774bed14c02d49ded4533e28a4a55d1e2fd5f63287e5",
+    "importedGuideSha256": "sha256:f9be6ce7d2a3bdfdae39774bed14c02d49ded4533e28a4a55d1e2fd5f63287e5",
+    "rawFrontmatterSha256": "sha256:f0139193437150db5c793f392d01d31c86cb1918069dca1345d77bce2ebf719c",
+    "sourceTitle": "Academic Content Critique Template",
+    "sourceDescription": "A structured prompt template for critiquing academic papers, articles, and research content with detailed analysis framework, grading rubric, and professional standards.",
+    "sourceSeoDescription": null,
+    "sourceModels": [
+      "gpt-4",
+      "gpt-4-turbo",
+      "gpt-3.5-turbo",
+      "gpt-4-mini",
+      "microsoft-copilot",
+      "github"
+    ],
+    "unresolvedModelIdentifiers": [],
+    "legacyPaths": [
+      "/prompts/academic-critique-content/"
+    ],
+    "legacyCategories": [
+      "Prompts"
+    ],
+    "visibleInAlphaIndex": true,
+    "legacyImage": {
+      "sourcePath": "/img/prompts/academic-critique-template.png",
+      "sourceUrl": "https://tedt.org/img/prompts/academic-critique-template.png",
+      "exists": true,
+      "sha256": "sha256:d36687064063bfaffcc4bf5a9deaba2c34a78fe1170a1b996f22bb203fa62da1",
+      "metadata": {
+        "image": "/img/prompts/academic-critique-template.png",
+        "image_height": 816,
+        "image_width": 1456,
+        "image-alt": "A scholarly desk with papers, books, and evaluation forms representing academic critique and analysis",
+        "image-credits": "Ted Tschopp",
+        "image-credits-artist-URL": "https://tedt.org/",
+        "image-credits-title": "Academic Critique and Analysis"
+      }
+    },
+    "legacyMetadata": {
+      "author": {
+        "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+        "name": "Ted Tschopp",
+        "url": "https://tedt.org/"
+      },
+      "bullets": [
+        "Structured framework for scholarly paper analysis",
+        "Detailed grading rubric and evaluation criteria",
+        "Professional standards for academic content review"
+      ],
+      "categories": [
+        "Prompts"
+      ],
+      "date": "2025-08-01",
+      "description": "A structured prompt template for critiquing academic papers, articles, and research content with detailed analysis framework, grading rubric, and professional standards.",
+      "image": "/img/prompts/academic-critique-template.png",
+      "image_height": 816,
+      "image_width": 1456,
+      "image-alt": "A scholarly desk with papers, books, and evaluation forms representing academic critique and analysis",
+      "image-credits": "Ted Tschopp",
+      "image-credits-artist-URL": "https://tedt.org/",
+      "image-credits-title": "Academic Critique and Analysis",
+      "keywords": [
+        "academic critique",
+        "content creation",
+        "documentation",
+        "quality review",
+        "technical writing"
+      ],
+      "layout": "prompt-details",
+      "mastodon-post-id": "115003055074249913",
+      "models-supported": [
+        "gpt-4",
+        "gpt-4-turbo",
+        "gpt-3.5-turbo",
+        "gpt-4-mini",
+        "microsoft-copilot",
+        "github"
+      ],
+      "permalink": "/prompts/:slug/",
+      "series": [
+        {
+          "description": "Create initial blog post content based on your topic and audience",
+          "prompt_file": "2025-01-31-simple-blog-generator.md",
+          "step": 1,
+          "title": "Content Generation"
+        },
+        {
+          "current": true,
+          "description": "Analyze and improve the generated content for quality and effectiveness",
+          "prompt_file": "2025-08-01-Critique-Content.md",
+          "step": 2,
+          "title": "Content Critique"
+        }
+      ],
+      "subtitle": "A comprehensive framework for scholarly paper analysis and evaluation",
+      "tags": [
+        "Writing",
+        "Documentation",
+        "Communications"
+      ],
+      "title": "Academic Content Critique Template",
+      "variables": [
+        {
+          "help": "The exact title of the academic paper or article",
+          "label": "Paper Title",
+          "name": "paper_title",
+          "placeholder": "Enter the title of the paper being critiqued",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "help": "Full name(s) of the paper's author(s) exactly as listed",
+          "label": "Author(s)",
+          "name": "author_names",
+          "placeholder": "Enter author name(s) as listed on the paper",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "default": [
+            "methodology",
+            "logic and reasoning",
+            "evidence quality"
+          ],
+          "help": "Select the specific aspects you want to focus on in your critique",
+          "label": "Critique Focus Areas",
+          "name": "critique_focus",
+          "options": [
+            "methodology",
+            "logic and reasoning",
+            "evidence quality",
+            "practical implications",
+            "clarity of writing",
+            "research design",
+            "data analysis",
+            "theoretical framework",
+            "literature review",
+            "conclusions validity"
+          ],
+          "required": false,
+          "type": "checkbox"
+        },
+        {
+          "default": "APA",
+          "help": "The citation style to use in your critique",
+          "label": "Citation Style",
+          "name": "citation_style",
+          "options": [
+            "APA",
+            "MLA",
+            "Chicago",
+            "IEEE",
+            "Vancouver"
+          ],
+          "required": true,
+          "type": "select"
+        },
+        {
+          "default": "standard analysis",
+          "help": "How detailed should the critique be?",
+          "label": "Critique Depth",
+          "name": "critique_depth",
+          "options": [
+            "brief overview",
+            "standard analysis",
+            "comprehensive evaluation",
+            "expert-level critique"
+          ],
+          "required": true,
+          "type": "radio"
+        },
+        {
+          "default": "no",
+          "help": "Should the critique include a formal grading assessment?",
+          "label": "Include Grading Rubric",
+          "name": "include_grading",
+          "options": [
+            "yes",
+            "no"
+          ],
+          "required": true,
+          "type": "radio"
+        }
+      ]
+    },
+    "appliedRepairs": [
+      "decode-academic-legacy-serialized-text",
+      "normalize-model-github-to-github-copilot",
+      "repair-workflow-simple-blog-review",
+      "repair-workflow-universal-content-review",
+      "use-academic-include-grading-variable"
+    ]
+  },
+  "coverImage": "skill-art/academic-critique-content.webp",
+  "coverImageAlt": "A brass magnifying lens and balanced scale resting on layered blank manuscript pages.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: A rigorous academic critique represented by a precision magnifying lens examining layered blank manuscript sheets while a small balanced scale tests the evidence.\nScene/backdrop: Warm paper worktable against a quiet slate field with sparse cyan analytical markers made only of geometric shapes.\nSubject: One oversized glass lens, several unmarked paper layers, and a balanced brass-and-navy scale arranged as a single coherent still life.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe central still life; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: calm, discerning, scholarly, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: all papers completely blank and unmarked; completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-03",
+  "coverImageSourceHash": "sha256:a8fd461d59ca8a69beeb3abd969f109c9d486302e1c92c9b7699f067889ca5d3",
+  "coverImageSourceHashVersion": 2
+}
