@@ -23,7 +23,8 @@
     "artwork:prepare": "node --import tsx scripts/skill-artwork.ts prepare",
     "artwork:validate": "node --import tsx scripts/skill-artwork.ts validate",
     "assets:icons": "node scripts/generate-site-icons.mjs",
-    "check:metadata": "node scripts/verify-site-metadata.mjs"
+    "check:metadata": "node scripts/verify-site-metadata.mjs",
+    "inventory:tedt-prompts": "node --import tsx scripts/inventory-tedt-prompts.ts"
   },
   "dependencies": {
     "astro": "^7.1.0",
