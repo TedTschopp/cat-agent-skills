@@ -66,6 +66,7 @@ submissions/repository-instructions/
   "kind": "agent-instruction",
   "name": "Repository Instructions",
   "description": "Persistent operating instructions for a repository.",
+  "topics": ["Architecture and Engineering", "Governance, Risk, and Compliance"],
   "tags": ["engineering", "governance"],
   "author": "Your Name",
   "entrypoint": "AGENTS.md",
@@ -81,15 +82,17 @@ Required contributor fields are:
 | `kind` | One of `agent-instruction`, `scoped-agent-instruction`, `agent-definition`, or `work-specification` |
 | `name` | Human-readable catalog name |
 | `description` | Human-readable catalog summary |
-| `tags` | One or more search and topic labels |
+| `tags` | One or more specific search labels; the catalog maps them to its controlled Topics vocabulary |
 | `author` | Person or team responsible for the asset |
 | `entrypoint` | Exact path of the primary file; it must also appear in `payloadPaths` |
 | `payloadPaths` | Complete, nonempty list of payload files in install-relative order |
 
-The importer derives `slug` from the folder, copies `tags` to `topics` when
-`topics` is omitted, mirrors `compatibility` and `worksWith` when only one is
-provided, and derives the download path. If metadata supplies `slug`, it must
-match the folder name.
+The importer derives `slug` from the folder, uses `topics` or `tags` as source
+terms for the controlled public Topics vocabulary, mirrors `compatibility` and
+`worksWith` when only one is provided, and derives the download path. Granular
+source terms remain searchable even when they are consolidated into a broad
+Topic. If none of the tags map yet, declare at least one canonical `topics`
+value. If metadata supplies `slug`, it must match the folder name.
 
 Optional catalog fields include `keywords`, `models`, `compatibility`,
 `worksWith`, `authorUrl`, `authorGithub`, `authorAvatar`, `createdAt`,

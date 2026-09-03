@@ -49,12 +49,18 @@ test("canonical routes preserve legacy skill routes and use kind-specific unifie
 });
 
 test("prompt schema accepts blocked generic prompts without migration provenance", () => {
-  const parsed = promptSchema.parse(promptData());
+  const parsed = promptSchema.parse(
+    promptData({ keywords: ["Testing", "test keyword"] }),
+  );
   const asset = promptToLibraryAsset({ id: parsed.slug, data: parsed, body: "Exact body" });
   assert.equal(asset.kind, "prompt-template");
   assert.equal(asset.kindLabel, "Prompt Template File");
   assert.equal(asset.canonicalPath, "/prompts/example-prompt/");
   assert.equal(asset.publicationStatus, "blocked-pending-artwork");
+  assert.deepEqual(asset.topics, ["Governance, Risk, and Compliance"]);
+  assert.deepEqual(asset.tags, ["Testing"]);
+  assert.deepEqual(asset.keywords, ["Testing", "test keyword"]);
+  assert.deepEqual(asset.searchTerms, ["Testing"]);
   assert.equal(asset.content.promptBody, "Exact body");
   assert.equal(asset.provenance.sourceRepository, null);
 });

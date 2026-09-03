@@ -16,6 +16,7 @@ export function relatedAssetsFor(
   const seen = new Set<string>([assetId(asset)]);
   const assetCompatibility = new Set(asset.worksWith.map(worksWithLabel));
   const assetTopics = new Set(asset.topics.map(topicKey));
+  const assetTags = new Set(asset.tags.map(topicKey));
 
   for (const id of asset.relatedAssetIds) {
     const candidate = byId.get(id);
@@ -28,10 +29,13 @@ export function relatedAssetsFor(
     .filter((candidate) => !seen.has(assetId(candidate)) && !candidate.tags.includes("sample"))
     .map((candidate) => {
       const sharedTopics = candidate.topics.filter((topic) => assetTopics.has(topicKey(topic))).length;
+      const sharedTags = candidate.tags.filter((tag) => assetTags.has(topicKey(tag))).length;
       const sharedCompatibility = candidate.worksWith
         .map(worksWithLabel)
         .filter((item) => assetCompatibility.has(item)).length;
-      const score = sharedTopics * 4 + sharedCompatibility * 2 + (candidate.kind === asset.kind ? 1 : 0);
+      // Granular contributor tags retain precise relevance after the public
+      // Topics vocabulary is compressed into broad catalog facets.
+      const score = sharedTags * 6 + sharedTopics * 2 + sharedCompatibility * 2 + (candidate.kind === asset.kind ? 1 : 0);
       return { candidate, score };
     })
     .filter(({ score }) => score > 0)
@@ -47,7 +51,9 @@ export function relatedAssetsFor(
     seen.add(id);
   }
 
-  return selected.slice(0, limit).map(({ content: _content, ...summary }) => summary);
+  return selected
+    .slice(0, limit)
+    .map(({ content: _content, searchTerms: _searchTerms, ...summary }) => summary);
 }
 
 export function isSkillFamily(asset: Pick<LibraryAsset, "kind">): boolean {

@@ -37,7 +37,11 @@ function metadata(
     description: "A generic file artifact used to verify the unified library pipeline.",
     status: "active",
     publicationStatus: "blocked-pending-artwork",
-    topics: ["Agent Configuration"],
+    topics: [
+      kind === "work-specification"
+        ? "Planning and Delivery"
+        : "AI and Agents",
+    ],
     tags: ["Agent Configuration"],
     keywords: [],
     models: [],
@@ -63,6 +67,13 @@ test("all four generic file kinds normalize through one LibraryAsset adapter", (
     assert.equal(asset.kind, kind);
     assert.equal(asset.canonicalPath, "/library/generic-example/");
     assert.equal(asset.publicationStatus, "blocked-pending-artwork");
+    assert.deepEqual(
+      asset.topics,
+      kind === "work-specification"
+        ? ["Planning and Delivery"]
+        : ["AI and Agents"],
+    );
+    assert.deepEqual(asset.tags, ["Agent Configuration"]);
     assert.deepEqual(asset.payloadPaths, ["AGENTS.md"]);
     assert.deepEqual(asset.payloads, [
       { path: "AGENTS.md", downloadPath: "bundles/generic-example/AGENTS.md" },
@@ -191,6 +202,7 @@ test("work specifications expose every exact body and download without leaking b
   const serializedSummary = JSON.stringify(toLibraryAssetSummary(asset));
   assert.doesNotMatch(serializedSummary, /unique-spec\/requirements\.md/);
   assert.equal("content" in toLibraryAssetSummary(asset), false);
+  assert.equal("searchTerms" in toLibraryAssetSummary(asset), false);
 });
 
 test("loader classifies exact generic payload paths and reserves non-payload README as guide", (t) => {

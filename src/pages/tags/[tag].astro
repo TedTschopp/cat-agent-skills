@@ -8,18 +8,41 @@ import { groupAssetsByTopic } from "../../components/topic-routing";
 
 export async function getStaticPaths() {
   const assets = await getLibraryAssets();
-  return groupAssetsByTopic(assets).map((topic) => ({
+  const canonicalGroups = groupAssetsByTopic(assets);
+  const canonicalRoutes = new Set(canonicalGroups.map((topic) => topic.routeTopic));
+  const canonicalPaths = canonicalGroups.map((topic) => ({
     params: { tag: topic.routeTopic },
     props: {
+      legacy: false,
       topicKey: topic.key,
       topicLabel: topic.label,
       routeTopic: topic.routeTopic,
       assets: topic.assets.sort((left, right) => left.name.localeCompare(right.name)),
     },
   }));
+  // Keep previously published free-form tag URLs available without returning
+  // them to the public Topics taxonomy or sitemap.
+  const legacyPaths = groupAssetsByTopic(
+    assets.map((asset) => ({ asset, topics: asset.tags })),
+  )
+    .filter((topic) => !canonicalRoutes.has(topic.routeTopic))
+    .map((topic) => ({
+      params: { tag: topic.routeTopic },
+      props: {
+        legacy: true,
+        topicKey: topic.key,
+        topicLabel: topic.label,
+        routeTopic: topic.routeTopic,
+        assets: topic.assets
+          .map(({ asset }) => asset)
+          .sort((left, right) => left.name.localeCompare(right.name)),
+      },
+    }));
+  return [...canonicalPaths, ...legacyPaths];
 }
 
-const { topicKey, topicLabel, routeTopic, assets } = Astro.props as {
+const { legacy, topicKey, topicLabel, routeTopic, assets } = Astro.props as {
+  legacy: boolean;
   topicKey: string;
   topicLabel: string;
   routeTopic: string;
@@ -43,22 +66,32 @@ const tagSchema = {
 ---
 
 <Layout
-  title={`${topicLabel} Assets`}
-  description={`Reusable AI assets about ${topicLabel} in the unified AI.Tedt.org library.`}
+  title={legacy ? `Assets Tagged ${topicLabel}` : `${topicLabel} Assets`}
+  description={legacy
+    ? `AI Library assets that retain the former ${topicLabel} tag.`
+    : `Reusable AI assets about ${topicLabel} in the unified AI.Tedt.org library.`}
+  canonicalPath={legacy ? false : `/tags/${routeTopic}/`}
+  noindex={legacy}
   schemaType="CollectionPage"
-  structuredData={tagSchema}
+  structuredData={legacy ? [] : tagSchema}
 >
   <div class="mx-auto max-w-8xl px-4 py-8 sm:px-6 sm:py-10">
-    <a href={withBase(`/?topic=${encodeURIComponent(topicKey)}`)} class="inline-flex items-center gap-1.5 text-sm text-[var(--link)] underline underline-offset-2 hover:text-[var(--link-hover)]">
-      <span aria-hidden="true">←</span> Back to the Filtered Library
+    <a href={withBase(legacy ? `/?q=${encodeURIComponent(topicLabel)}` : `/?topic=${encodeURIComponent(topicKey)}`)} class="inline-flex items-center gap-1.5 text-sm text-[var(--link)] underline underline-offset-2 hover:text-[var(--link-hover)]">
+      <span aria-hidden="true">←</span> {legacy ? "Search the Library for This Tag" : "Back to the Filtered Library"}
     </a>
 
     <h1 class="mt-4 text-4xl leading-tight text-[var(--text-heading)] sm:text-5xl">
-      <span class="text-accent-text">Topic:</span> {topicLabel}
+      <span class="text-accent-text">{legacy ? "Former Topic:" : "Topic:"}</span> {topicLabel}
     </h1>
-    <p class="mt-2 text-muted">
-      {assets.length} {assets.length === 1 ? "asset" : "assets"} about “{topicLabel}”.
-    </p>
+    {legacy ? (
+      <p class="mt-2 max-w-[68ch] text-muted">
+        This granular label is now retained as a searchable tag. The public Topics filter uses a smaller controlled vocabulary.
+      </p>
+    ) : (
+      <p class="mt-2 text-muted">
+        {assets.length} {assets.length === 1 ? "asset" : "assets"} about “{topicLabel}”.
+      </p>
+    )}
     <div class="accent-rule mt-5"></div>
 
     <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-[repeat(auto-fill,minmax(18rem,1fr))]">

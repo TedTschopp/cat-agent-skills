@@ -12,6 +12,10 @@ import { coverGradient, initials, type SkillType } from "./skills";
 import { getDownloads } from "./downloads";
 import { getSkillEngagement, type SkillEngagement } from "./engagement";
 import { getRating } from "./ratings";
+import {
+  deriveLibraryTopics,
+  uniqueSearchTerms,
+} from "./topic-taxonomy";
 
 // Vite expands these at build time. They let the loader avoid Astro's noisy
 // "collection does not exist or is empty" warning before the first generic
@@ -109,6 +113,8 @@ export type LibraryAsset = {
   topics: string[];
   tags: string[];
   keywords: string[];
+  /** Internal search-only terms omitted from the public catalog snapshot. */
+  searchTerms: string[];
   models: string[];
   compatibility: string[];
   worksWith: string[];
@@ -140,7 +146,7 @@ export type LibraryAsset = {
   content: LibraryAssetContent;
 };
 
-export type LibraryAssetSummary = Omit<LibraryAsset, "content">;
+export type LibraryAssetSummary = Omit<LibraryAsset, "content" | "searchTerms">;
 
 type SkillRecord = {
   id: string;
@@ -268,9 +274,10 @@ export function skillToLibraryAsset(record: SkillRecord, guide: string | null = 
     description: data.description,
     status: "active",
     publicationStatus: "published",
-    topics: [...data.tags],
+    topics: deriveLibraryTopics({ kind, name: data.name, tags: data.tags }),
     tags: [...data.tags],
     keywords: [],
+    searchTerms: [],
     models: [],
     compatibility: [],
     worksWith: [...data.platforms],
@@ -336,9 +343,15 @@ export function promptToLibraryAsset(
       data.publicationStatus === "published" && promptArtwork.ready
         ? "published"
         : "blocked-pending-artwork",
-    topics: [...data.topics],
+    topics: deriveLibraryTopics({
+      kind,
+      name: data.name,
+      authoredTopics: data.topics,
+      tags: data.tags,
+    }),
     tags: [...data.tags],
     keywords: [...data.keywords],
+    searchTerms: uniqueSearchTerms(data.topics),
     models: [...data.models],
     compatibility: [...data.compatibility],
     worksWith: [...data.worksWith],
@@ -452,9 +465,15 @@ export function genericFileToLibraryAsset(
       data.publicationStatus === "published" && genericArtwork.ready
         ? "published"
         : "blocked-pending-artwork",
-    topics: [...data.topics],
+    topics: deriveLibraryTopics({
+      kind: data.kind,
+      name: data.name,
+      authoredTopics: data.topics,
+      tags: data.tags,
+    }),
     tags: [...data.tags],
     keywords: [...data.keywords],
+    searchTerms: uniqueSearchTerms(data.topics),
     models: [...data.models],
     compatibility: [...data.compatibility],
     worksWith: [...data.worksWith],
@@ -535,7 +554,7 @@ export function sortLibraryAssets(assets: readonly LibraryAsset[]): LibraryAsset
 }
 
 export function toLibraryAssetSummary(asset: LibraryAsset): LibraryAssetSummary {
-  const { content: _content, ...summary } = asset;
+  const { content: _content, searchTerms: _searchTerms, ...summary } = asset;
   return summary;
 }
 

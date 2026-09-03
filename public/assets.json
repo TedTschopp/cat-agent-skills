@@ -9,12 +9,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "diagnostics",
-      "runtime",
-      "python",
-      "capabilities",
-      "snapshots",
-      "scripts"
+      "Architecture and Engineering",
+      "AI and Agents"
     ],
     "tags": [
       "diagnostics",
@@ -127,10 +123,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "data",
-      "charts",
-      "matplotlib",
-      "scripts"
+      "Data and Analytics"
     ],
     "tags": [
       "data",
@@ -241,11 +234,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "automation",
-      "teams",
-      "reminders",
-      "follow-up",
-      "productivity"
+      "Productivity and Automation"
     ],
     "tags": [
       "automation",
@@ -355,12 +344,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "compliance",
-      "sustainability",
-      "greenwashing",
-      "eu-regulation",
-      "marketing-review",
-      "esg"
+      "Governance, Risk, and Compliance"
     ],
     "tags": [
       "compliance",
@@ -468,11 +452,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "files",
-      "iteration",
-      "workflow",
-      "collaboration",
-      "productivity"
+      "Productivity and Automation",
+      "Communication and Collaboration"
     ],
     "tags": [
       "files",
@@ -582,11 +563,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "knowledge",
-      "routing",
-      "localization",
-      "location",
-      "grounding"
+      "Knowledge, Learning, and Research"
     ],
     "tags": [
       "knowledge",
@@ -696,8 +673,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "documents",
-      "productivity"
+      "Content and Documentation",
+      "Productivity and Automation"
     ],
     "tags": [
       "documents",
@@ -809,12 +786,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "documents",
-      "conversion",
-      "markdown",
-      "pdf",
-      "office",
-      "scripts"
+      "Content and Documentation"
     ],
     "tags": [
       "documents",
@@ -925,13 +897,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "productivity",
-      "automation",
-      "teams",
-      "email",
-      "calendar",
-      "briefing",
-      "multilingual"
+      "Productivity and Automation"
     ],
     "tags": [
       "productivity",
@@ -1043,9 +1009,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Writing",
-      "Documentation",
-      "Communications"
+      "Content and Documentation",
+      "Communication and Collaboration"
     ],
     "tags": [
       "Writing",
@@ -1439,12 +1404,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "accessibility",
-      "documents",
-      "presentations",
-      "powerpoint",
-      "quality",
-      "scripts"
+      "Design and Media",
+      "Governance, Risk, and Compliance",
+      "Content and Documentation"
     ],
     "tags": [
       "accessibility",
@@ -1551,11 +1513,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "acroform",
-      "pdf",
-      "forms",
-      "python",
-      "documents"
+      "Content and Documentation"
     ],
     "tags": [
       "acroform",
@@ -1660,14 +1618,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "productivity",
-      "automation",
-      "tasks",
-      "teams",
-      "email",
-      "meetings",
-      "microsoft-365",
-      "action-items"
+      "Productivity and Automation"
     ],
     "tags": [
       "productivity",
@@ -1775,9 +1726,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Teaching & Education",
-      "Artificial Intelligence",
-      "Planning"
+      "AI and Agents",
+      "Knowledge, Learning, and Research",
+      "Planning and Delivery"
     ],
     "tags": [
       "Teaching & Education",
@@ -1998,11 +1949,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "evaluation",
-      "testing",
-      "quality-assurance",
-      "go-live",
-      "decision-making"
+      "Governance, Risk, and Compliance",
+      "AI and Agents"
     ],
     "tags": [
       "evaluation",
@@ -2107,14 +2055,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "copilot-studio",
-      "analytics",
-      "optimization",
-      "operations",
-      "post-launch",
-      "backlog",
-      "assessment",
-      "monitoring"
+      "AI and Agents",
+      "Productivity and Automation",
+      "Data and Analytics"
     ],
     "tags": [
       "copilot-studio",
@@ -2223,14 +2166,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "copilot-studio",
-      "security",
-      "prompt-injection",
-      "governance",
-      "responsible-ai",
-      "testing",
-      "risk",
-      "assessment"
+      "Governance, Risk, and Compliance",
+      "AI and Agents"
     ],
     "tags": [
       "copilot-studio",
@@ -2339,12 +2276,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "demo",
-      "copilot",
-      "microsoft-365",
-      "sales-enablement",
-      "content",
-      "productivity"
+      "AI and Agents",
+      "Business and Strategy",
+      "Content and Documentation"
     ],
     "tags": [
       "demo",
@@ -2455,9 +2389,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Teaching & Education",
-      "Artificial Intelligence",
-      "Planning"
+      "AI and Agents",
+      "Knowledge, Learning, and Research",
+      "Planning and Delivery"
     ],
     "tags": [
       "Teaching & Education",
@@ -2663,9 +2597,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Teaching & Education",
-      "Artificial Intelligence",
-      "Planning"
+      "AI and Agents",
+      "Knowledge, Learning, and Research",
+      "Planning and Delivery"
     ],
     "tags": [
       "Teaching & Education",
@@ -2861,9 +2795,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Teaching & Education",
-      "Artificial Intelligence",
-      "Planning"
+      "AI and Agents",
+      "Knowledge, Learning, and Research",
+      "Planning and Delivery"
     ],
     "tags": [
       "Teaching & Education",
@@ -3059,9 +2993,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Teaching & Education",
-      "Artificial Intelligence",
-      "Planning"
+      "AI and Agents",
+      "Knowledge, Learning, and Research",
+      "Planning and Delivery"
     ],
     "tags": [
       "Teaching & Education",
@@ -3254,14 +3188,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "assessment",
-      "ai",
-      "agent",
-      "use-case",
-      "scoring",
-      "report",
-      "html",
-      "intake"
+      "AI and Agents",
+      "Planning and Delivery",
+      "Content and Documentation"
     ],
     "tags": [
       "assessment",
@@ -3383,9 +3312,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "productivity",
-      "process-improvement",
-      "agentic-workflow"
+      "AI and Agents",
+      "Productivity and Automation"
     ],
     "tags": [
       "productivity",
@@ -3489,12 +3417,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "writing",
-      "case-study",
-      "marketing",
-      "documents",
-      "content",
-      "privacy"
+      "Content and Documentation",
+      "Business and Strategy",
+      "Governance, Risk, and Compliance"
     ],
     "tags": [
       "writing",
@@ -3602,9 +3527,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Architecture",
-      "Requirements Engineering",
-      "Documentation"
+      "Architecture and Engineering",
+      "Content and Documentation",
+      "Planning and Delivery"
     ],
     "tags": [
       "Architecture",
@@ -3815,9 +3740,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Artificial Intelligence",
-      "Documentation",
-      "Architecture"
+      "AI and Agents",
+      "Architecture and Engineering",
+      "Content and Documentation"
     ],
     "tags": [
       "Artificial Intelligence",
@@ -4028,9 +3953,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Architecture",
-      "Requirements Engineering",
-      "Documentation"
+      "Architecture and Engineering",
+      "Content and Documentation",
+      "Planning and Delivery"
     ],
     "tags": [
       "Architecture",
@@ -4241,9 +4166,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Architecture",
-      "Requirements Engineering",
-      "Documentation"
+      "Architecture and Engineering",
+      "Content and Documentation",
+      "Planning and Delivery"
     ],
     "tags": [
       "Architecture",
@@ -4454,9 +4379,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Requirements Engineering",
-      "Architecture",
-      "Documentation"
+      "Architecture and Engineering",
+      "Content and Documentation",
+      "Planning and Delivery"
     ],
     "tags": [
       "Requirements Engineering",
@@ -4667,10 +4592,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Architecture",
-      "Business Strategy",
-      "Documentation",
-      "Planning"
+      "Architecture and Engineering",
+      "Business and Strategy",
+      "Content and Documentation"
     ],
     "tags": [
       "Architecture",
@@ -4884,9 +4808,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Requirements Engineering",
-      "Business Strategy",
-      "Planning"
+      "Planning and Delivery",
+      "Business and Strategy"
     ],
     "tags": [
       "Requirements Engineering",
@@ -5101,9 +5024,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Architecture",
-      "Requirements Engineering",
-      "Documentation"
+      "Architecture and Engineering",
+      "Content and Documentation",
+      "Planning and Delivery"
     ],
     "tags": [
       "Architecture",
@@ -5316,9 +5239,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Architecture",
-      "Requirements Engineering",
-      "Documentation"
+      "Architecture and Engineering",
+      "Content and Documentation",
+      "Planning and Delivery"
     ],
     "tags": [
       "Architecture",
@@ -5529,9 +5452,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Product Management",
-      "Requirements Engineering",
-      "Documentation"
+      "Planning and Delivery",
+      "Content and Documentation",
+      "AI and Agents"
     ],
     "tags": [
       "Product Management",
@@ -5746,9 +5669,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Product Management",
-      "Requirements Engineering",
-      "Documentation"
+      "Planning and Delivery",
+      "Content and Documentation"
     ],
     "tags": [
       "Product Management",
@@ -5975,9 +5897,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Product Management",
-      "Requirements Engineering",
-      "Documentation"
+      "Planning and Delivery",
+      "Content and Documentation"
     ],
     "tags": [
       "Product Management",
@@ -6189,9 +6110,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Product Management",
-      "Requirements Engineering",
-      "Documentation"
+      "Planning and Delivery",
+      "Content and Documentation"
     ],
     "tags": [
       "Product Management",
@@ -6403,9 +6323,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Product Management",
-      "Requirements Engineering",
-      "Documentation"
+      "Planning and Delivery",
+      "Content and Documentation"
     ],
     "tags": [
       "Product Management",
@@ -6617,9 +6536,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Product Management",
-      "Requirements Engineering",
-      "Documentation"
+      "Planning and Delivery",
+      "Content and Documentation"
     ],
     "tags": [
       "Product Management",
@@ -6832,9 +6750,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Product Management",
-      "Requirements Engineering",
-      "Documentation"
+      "Planning and Delivery",
+      "Content and Documentation"
     ],
     "tags": [
       "Product Management",
@@ -7050,9 +6967,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Architecture",
-      "Requirements Engineering",
-      "Artificial Intelligence"
+      "AI and Agents",
+      "Architecture and Engineering",
+      "Planning and Delivery"
     ],
     "tags": [
       "Architecture",
@@ -7263,12 +7180,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Requirements Engineering",
-      "Systems Analysis",
-      "ISO Standards",
-      "Documentation",
-      "Meeting Analysis",
-      "SRS Generation"
+      "Planning and Delivery",
+      "Communication and Collaboration",
+      "Content and Documentation"
     ],
     "tags": [
       "Requirements Engineering",
@@ -7491,9 +7405,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Requirements Engineering",
-      "Architecture",
-      "Documentation"
+      "Architecture and Engineering",
+      "Content and Documentation",
+      "Planning and Delivery"
     ],
     "tags": [
       "Requirements Engineering",
@@ -7704,9 +7618,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Writing",
-      "Content Creation",
-      "Documentation"
+      "Content and Documentation"
     ],
     "tags": [
       "Writing",
@@ -7903,16 +7815,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "rh",
-      "folha",
-      "clt",
-      "brasil",
-      "trabalhista",
-      "rescisao",
-      "inss",
-      "irrf",
-      "verbas-rescisorias",
-      "departamento-pessoal"
+      "Industries and Domains"
     ],
     "tags": [
       "rh",
@@ -8024,9 +7927,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Architecture",
-      "Requirements Engineering",
-      "Documentation"
+      "Architecture and Engineering",
+      "Content and Documentation",
+      "Planning and Delivery"
     ],
     "tags": [
       "Architecture",
@@ -8237,13 +8140,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "email",
-      "follow-up",
-      "automation",
-      "productivity",
-      "inbox",
-      "reminder",
-      "multilingual"
+      "Productivity and Automation"
     ],
     "tags": [
       "email",
@@ -8350,12 +8247,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "sales-enablement",
-      "email",
-      "linkedin",
-      "writing",
-      "marketing",
-      "content"
+      "Content and Documentation",
+      "Business and Strategy"
     ],
     "tags": [
       "sales-enablement",
@@ -8463,12 +8356,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "blog",
-      "content",
-      "audit",
-      "writing",
-      "seo",
-      "productivity"
+      "Content and Documentation",
+      "Governance, Risk, and Compliance",
+      "Productivity and Automation"
     ],
     "tags": [
       "blog",
@@ -8576,12 +8466,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "blog",
-      "writing",
-      "authoring",
-      "content",
-      "structure",
-      "productivity"
+      "Content and Documentation",
+      "Productivity and Automation"
     ],
     "tags": [
       "blog",
@@ -8689,13 +8575,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "video",
-      "animation",
-      "python",
-      "marketing",
-      "events",
-      "design",
-      "ffmpeg"
+      "Design and Media",
+      "Business and Strategy"
     ],
     "tags": [
       "video",
@@ -8802,12 +8683,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "branding",
-      "powerpoint",
-      "word",
-      "templates",
-      "documents",
-      "presentations"
+      "Content and Documentation",
+      "Design and Media"
     ],
     "tags": [
       "branding",
@@ -8918,11 +8795,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "writing",
-      "content",
-      "voice",
-      "authoring",
-      "productivity"
+      "Content and Documentation",
+      "Productivity and Automation"
     ],
     "tags": [
       "writing",
@@ -9029,13 +8903,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "testing",
-      "uat",
-      "playwright",
-      "quality",
-      "copilot-studio",
-      "power-platform",
-      "automation"
+      "Governance, Risk, and Compliance",
+      "AI and Agents",
+      "Productivity and Automation"
     ],
     "tags": [
       "testing",
@@ -9142,10 +9012,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Requirements Engineering",
-      "Product Management",
-      "Planning",
-      "Business Strategy"
+      "Planning and Delivery",
+      "Business and Strategy"
     ],
     "tags": [
       "Requirements Engineering",
@@ -9343,9 +9211,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Business Strategy",
-      "Planning",
-      "Risk Management"
+      "Business and Strategy",
+      "Governance, Risk, and Compliance",
+      "Planning and Delivery"
     ],
     "tags": [
       "Business Strategy",
@@ -9560,9 +9428,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Business Strategy",
-      "Planning",
-      "Product Management"
+      "Planning and Delivery",
+      "Business and Strategy"
     ],
     "tags": [
       "Business Strategy",
@@ -9779,13 +9646,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "business",
-      "decision-making",
-      "problem-solving",
-      "project-planning",
-      "process-improvement",
-      "governance",
-      "skill-generation"
+      "Business and Strategy",
+      "Governance, Risk, and Compliance",
+      "Planning and Delivery"
     ],
     "tags": [
       "business",
@@ -9892,9 +9755,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Business Strategy",
-      "Planning",
-      "Teaching & Education"
+      "Business and Strategy",
+      "Knowledge, Learning, and Research",
+      "Planning and Delivery"
     ],
     "tags": [
       "Business Strategy",
@@ -10110,10 +9973,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "productivity",
-      "speaking",
-      "conference",
-      "automation"
+      "Communication and Collaboration",
+      "Productivity and Automation"
     ],
     "tags": [
       "productivity",
@@ -10219,11 +10080,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "marketing",
-      "presentations",
-      "powerpoint",
-      "automation",
-      "scripts"
+      "Design and Media",
+      "Business and Strategy",
+      "Productivity and Automation"
     ],
     "tags": [
       "marketing",
@@ -10333,9 +10192,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "adventure",
-      "game",
-      "python"
+      "Industries and Domains"
     ],
     "tags": [
       "adventure",
@@ -10443,14 +10300,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "video",
-      "demo",
-      "narration",
-      "playwright",
-      "ffmpeg",
-      "copilot-studio",
-      "clipchamp",
-      "tts"
+      "Design and Media",
+      "AI and Agents"
     ],
     "tags": [
       "video",
@@ -10558,8 +10409,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "documents",
-      "productivity"
+      "Content and Documentation",
+      "Productivity and Automation"
     ],
     "tags": [
       "documents",
@@ -10667,12 +10518,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "writing",
-      "style",
-      "teams",
-      "email",
-      "memory",
-      "productivity"
+      "Content and Documentation",
+      "Productivity and Automation"
     ],
     "tags": [
       "writing",
@@ -10779,9 +10626,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Writing",
-      "Content Creation",
-      "Communications"
+      "Content and Documentation",
+      "Communication and Collaboration"
     ],
     "tags": [
       "Writing",
@@ -10992,9 +10838,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Communications",
-      "Content Creation",
-      "Planning"
+      "Communication and Collaboration",
+      "Content and Documentation",
+      "Planning and Delivery"
     ],
     "tags": [
       "Communications",
@@ -11205,9 +11051,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Writing",
-      "Content Creation",
-      "Communications"
+      "Content and Documentation",
+      "Communication and Collaboration"
     ],
     "tags": [
       "Writing",
@@ -11422,9 +11267,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Content Creation",
-      "Communications",
-      "Writing"
+      "Content and Documentation",
+      "Communication and Collaboration"
     ],
     "tags": [
       "Content Creation",
@@ -11640,9 +11484,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Communications",
-      "Content Creation",
-      "Business Strategy"
+      "Business and Strategy",
+      "Communication and Collaboration",
+      "Content and Documentation"
     ],
     "tags": [
       "Communications",
@@ -11855,9 +11699,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "sales-enablement",
-      "productivity",
-      "comparison"
+      "Business and Strategy",
+      "Productivity and Automation"
     ],
     "tags": [
       "sales-enablement",
@@ -11960,12 +11803,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "writing",
-      "conference",
-      "abstract",
-      "speaking",
-      "content",
-      "productivity"
+      "Content and Documentation",
+      "Communication and Collaboration",
+      "Productivity and Automation"
     ],
     "tags": [
       "writing",
@@ -12073,12 +11913,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "content",
-      "quality",
-      "audit",
-      "documents",
-      "productivity",
-      "governance"
+      "Governance, Risk, and Compliance",
+      "Content and Documentation",
+      "Productivity and Automation"
     ],
     "tags": [
       "content",
@@ -12186,13 +12023,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "news",
-      "copilot",
-      "agent",
-      "digest",
-      "automation",
-      "weekly",
-      "teams"
+      "AI and Agents",
+      "Productivity and Automation"
     ],
     "tags": [
       "news",
@@ -12304,11 +12136,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "copilot-studio",
-      "agents",
-      "decision-support",
-      "architecture",
-      "advisor"
+      "AI and Agents",
+      "Architecture and Engineering"
     ],
     "tags": [
       "copilot-studio",
@@ -12420,12 +12249,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "copilot-studio",
-      "testing",
-      "evaluation",
-      "quality",
-      "agents",
-      "power-platform"
+      "AI and Agents",
+      "Governance, Risk, and Compliance"
     ],
     "tags": [
       "copilot-studio",
@@ -12531,12 +12356,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "copilot-studio",
-      "cowork",
-      "architecture",
-      "agent-design",
-      "governance",
-      "licensing"
+      "AI and Agents",
+      "Governance, Risk, and Compliance",
+      "Architecture and Engineering"
     ],
     "tags": [
       "copilot-studio",
@@ -12648,14 +12470,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "copilot-studio",
-      "knowledge",
-      "rag",
-      "sharepoint",
-      "dataverse",
-      "governance",
-      "readiness",
-      "assessment"
+      "AI and Agents",
+      "Governance, Risk, and Compliance",
+      "Knowledge, Learning, and Research"
     ],
     "tags": [
       "copilot-studio",
@@ -12763,10 +12580,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "qa",
-      "eval",
-      "regression",
-      "agent"
+      "Governance, Risk, and Compliance",
+      "AI and Agents"
     ],
     "tags": [
       "qa",
@@ -12870,13 +12685,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "agent",
-      "blueprint",
-      "topics",
-      "design",
-      "power-platform",
-      "orchestration",
-      "adaptive-card"
+      "AI and Agents",
+      "Design and Media"
     ],
     "tags": [
       "agent",
@@ -12983,12 +12793,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "productivity",
-      "use-case",
-      "html",
-      "documents",
-      "writing",
-      "audit"
+      "Content and Documentation",
+      "Governance, Risk, and Compliance",
+      "Planning and Delivery"
     ],
     "tags": [
       "productivity",
@@ -13094,9 +12901,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Game Master",
-      "TTRPG",
-      "Content Creation"
+      "Industries and Domains",
+      "Content and Documentation"
     ],
     "tags": [
       "Game Master",
@@ -13294,10 +13100,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Content Creation",
-      "Communications",
-      "Writing",
-      "Business Strategy"
+      "Content and Documentation",
+      "Business and Strategy",
+      "Communication and Collaboration"
     ],
     "tags": [
       "Content Creation",
@@ -13496,11 +13301,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "dataverse",
-      "mcp",
-      "data-lookup",
-      "power-platform",
-      "crm"
+      "Data and Analytics"
     ],
     "tags": [
       "dataverse",
@@ -13610,12 +13411,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "assessment",
-      "review",
-      "architecture",
-      "enterprise",
-      "design-review",
-      "copilot-studio"
+      "AI and Agents",
+      "Architecture and Engineering"
     ],
     "tags": [
       "assessment",
@@ -13727,9 +13524,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "planning",
-      "productivity",
-      "learning"
+      "Knowledge, Learning, and Research",
+      "Planning and Delivery",
+      "Productivity and Automation"
     ],
     "tags": [
       "planning",
@@ -13832,9 +13629,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Content Creation",
-      "Communications",
-      "Planning"
+      "Communication and Collaboration",
+      "Content and Documentation",
+      "Planning and Delivery"
     ],
     "tags": [
       "Content Creation",
@@ -14189,10 +13986,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "video",
-      "education",
-      "training",
-      "communication"
+      "Knowledge, Learning, and Research",
+      "Communication and Collaboration",
+      "Design and Media"
     ],
     "tags": [
       "video",
@@ -14296,9 +14092,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Planning",
-      "Business Strategy",
-      "Teaching & Education"
+      "Business and Strategy",
+      "Knowledge, Learning, and Research",
+      "Planning and Delivery"
     ],
     "tags": [
       "Planning",
@@ -14515,12 +14311,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "gantt",
-      "timeline",
-      "project-management",
-      "matplotlib",
-      "charts",
-      "scripts"
+      "Planning and Delivery"
     ],
     "tags": [
       "gantt",
@@ -14626,16 +14417,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "greenwashing",
-      "environmental claims",
-      "sustainability",
-      "compliance",
-      "canada",
-      "european union",
-      "united kingdom",
-      "documents",
-      "spreadsheets",
-      "web"
+      "Governance, Risk, and Compliance",
+      "Content and Documentation"
     ],
     "tags": [
       "greenwashing",
@@ -14747,11 +14530,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "files",
-      "export",
-      "zip",
-      "download",
-      "productivity"
+      "Productivity and Automation"
     ],
     "tags": [
       "files",
@@ -14856,14 +14635,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "productivity",
-      "outlook",
-      "teams",
-      "email",
-      "meetings",
-      "calendar",
-      "summarization",
-      "catch-up"
+      "Productivity and Automation"
     ],
     "tags": [
       "productivity",
@@ -14971,11 +14743,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "productivity",
-      "planning",
-      "decision-making",
-      "refinement",
-      "brainstorming"
+      "Planning and Delivery",
+      "Productivity and Automation"
     ],
     "tags": [
       "productivity",
@@ -15080,13 +14849,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "knowledge",
-      "handoff",
-      "leadership",
-      "m365",
-      "offboarding",
-      "documentation",
-      "productivity"
+      "Content and Documentation",
+      "Knowledge, Learning, and Research",
+      "Productivity and Automation"
     ],
     "tags": [
       "knowledge",
@@ -15194,13 +14959,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "knowledge",
-      "sharepoint",
-      "governance",
-      "deduplication",
-      "documents",
-      "uploads",
-      "excel"
+      "Content and Documentation",
+      "Governance, Risk, and Compliance",
+      "Knowledge, Learning, and Research"
     ],
     "tags": [
       "knowledge",
@@ -15316,18 +15077,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "healthcare",
-      "clinical-data",
-      "lab-results",
-      "schema-drift",
-      "column-mapping",
-      "data-ingestion",
-      "loinc",
-      "azure-ai-search",
-      "azure-data-factory",
-      "dataverse",
-      "power-automate",
-      "human-in-the-loop"
+      "Data and Analytics",
+      "Industries and Domains"
     ],
     "tags": [
       "healthcare",
@@ -15439,11 +15190,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "linkedin",
-      "social-media",
-      "writing",
-      "marketing",
-      "content"
+      "Content and Documentation",
+      "Business and Strategy"
     ],
     "tags": [
       "linkedin",
@@ -15550,10 +15298,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "linkedin",
-      "social-media",
-      "writing",
-      "content"
+      "Content and Documentation"
     ],
     "tags": [
       "linkedin",
@@ -15662,9 +15407,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Content Creation",
-      "Communications",
-      "Business Strategy"
+      "Business and Strategy",
+      "Communication and Collaboration",
+      "Content and Documentation"
     ],
     "tags": [
       "Content Creation",
@@ -15855,26 +15600,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "mct",
-      "instructional-intelligence",
-      "microsoft-learning",
-      "courseware",
-      "microsoft-learn",
-      "azure",
-      "business-applications",
-      "data-ai",
-      "modern-work",
-      "security",
-      "instructional-design",
-      "learning-experience",
-      "workshops",
-      "hands-on-labs",
-      "demonstrations",
-      "assessment",
-      "surveys",
-      "learning-analytics",
-      "localization",
-      "responsible-ai"
+      "Knowledge, Learning, and Research",
+      "Governance, Risk, and Compliance"
     ],
     "tags": [
       "mct",
@@ -16000,13 +15727,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "meetings",
-      "analysis",
-      "insights",
-      "personas",
-      "transcription",
-      "productivity",
-      "communication"
+      "Data and Analytics",
+      "Communication and Collaboration",
+      "Productivity and Automation"
     ],
     "tags": [
       "meetings",
@@ -16114,17 +15837,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "advisor",
-      "discovery",
-      "architecture",
-      "decision-making",
-      "requirements",
-      "risk-assessment",
-      "microsoft-365-copilot",
-      "foundry",
-      "foundry-agent-service",
-      "agent-365",
-      "windows-ai-foundry"
+      "AI and Agents",
+      "Planning and Delivery",
+      "Architecture and Engineering"
     ],
     "tags": [
       "advisor",
@@ -16235,9 +15950,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Image Generation",
-      "Artificial Intelligence",
-      "Content Creation"
+      "AI and Agents",
+      "Content and Documentation",
+      "Design and Media"
     ],
     "tags": [
       "Image Generation",
@@ -16434,9 +16149,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Image Generation",
-      "Artificial Intelligence",
-      "Content Creation"
+      "AI and Agents",
+      "Content and Documentation",
+      "Design and Media"
     ],
     "tags": [
       "Image Generation",
@@ -16632,14 +16347,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "monte-carlo",
-      "risk-assessment",
-      "python",
-      "simulation",
-      "matplotlib",
-      "charts",
-      "csv",
-      "analysis"
+      "Data and Analytics",
+      "Governance, Risk, and Compliance"
     ],
     "tags": [
       "monte-carlo",
@@ -16747,12 +16456,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "writing",
-      "voice",
-      "email",
-      "teams",
-      "productivity",
-      "microsoft-365"
+      "Content and Documentation",
+      "Productivity and Automation"
     ],
     "tags": [
       "writing",
@@ -16859,12 +16564,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "productivity",
-      "automation",
-      "content",
-      "email",
-      "teams",
-      "insights"
+      "Productivity and Automation",
+      "Content and Documentation",
+      "Data and Analytics"
     ],
     "tags": [
       "productivity",
@@ -16971,12 +16673,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "automation",
-      "productivity",
-      "teams",
-      "email",
-      "content",
-      "insights"
+      "Productivity and Automation",
+      "Content and Documentation",
+      "Data and Analytics"
     ],
     "tags": [
       "automation",
@@ -17082,13 +16781,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "documents",
-      "extraction",
-      "pdf",
-      "csv",
-      "xlsx",
-      "tables",
-      "sharepoint"
+      "Data and Analytics",
+      "Content and Documentation"
     ],
     "tags": [
       "documents",
@@ -17195,11 +16889,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "communications",
-      "change-management",
-      "launch-readiness",
-      "personas",
-      "qa"
+      "Communication and Collaboration",
+      "Governance, Risk, and Compliance"
     ],
     "tags": [
       "communications",
@@ -17305,14 +16996,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "healthcare",
-      "hls",
-      "phi",
-      "privacy",
-      "redaction",
-      "hipaa",
-      "compliance",
-      "scripts"
+      "Governance, Risk, and Compliance",
+      "Industries and Domains"
     ],
     "tags": [
       "healthcare",
@@ -17422,12 +17107,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "content",
-      "podcast",
-      "audio",
-      "text-to-speech",
-      "ssml",
-      "news"
+      "Design and Media",
+      "Content and Documentation"
     ],
     "tags": [
       "content",
@@ -17538,11 +17219,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "writing",
-      "positioning",
-      "marketing",
-      "content",
-      "social-media"
+      "Content and Documentation",
+      "Business and Strategy"
     ],
     "tags": [
       "writing",
@@ -17649,11 +17327,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "power-automate",
-      "desktop-flows",
-      "automation",
-      "assessment",
-      "governance"
+      "Productivity and Automation",
+      "Governance, Risk, and Compliance"
     ],
     "tags": [
       "power-automate",
@@ -17759,10 +17434,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "power-automate",
-      "documentation",
-      "audit",
-      "governance"
+      "Governance, Risk, and Compliance",
+      "Content and Documentation"
     ],
     "tags": [
       "power-automate",
@@ -17868,12 +17541,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "power-bi",
-      "dax",
-      "semantic-model",
-      "data",
-      "review",
-      "fabric"
+      "Data and Analytics"
     ],
     "tags": [
       "power-bi",
@@ -17981,10 +17649,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "powerpoint",
-      "presentations",
-      "python",
-      "charts"
+      "Design and Media"
     ],
     "tags": [
       "powerpoint",
@@ -18093,11 +17758,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "presentations",
-      "speaker-notes",
-      "powerpoint",
-      "writing",
-      "productivity"
+      "Design and Media",
+      "Content and Documentation",
+      "Productivity and Automation"
     ],
     "tags": [
       "presentations",
@@ -18209,11 +17872,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "process-improvement",
-      "sop",
-      "operations",
-      "powerpoint",
-      "productivity"
+      "Productivity and Automation"
     ],
     "tags": [
       "process-improvement",
@@ -18318,11 +17977,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "regulation",
-      "monitoring",
-      "compliance",
-      "dashboard",
-      "research"
+      "Governance, Risk, and Compliance",
+      "Knowledge, Learning, and Research"
     ],
     "tags": [
       "regulation",
@@ -18433,9 +18089,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Requirements Engineering",
-      "Architecture",
-      "Documentation"
+      "Architecture and Engineering",
+      "Content and Documentation",
+      "Planning and Delivery"
     ],
     "tags": [
       "Requirements Engineering",
@@ -18647,9 +18303,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Business Strategy",
-      "Planning",
-      "Risk Management"
+      "Business and Strategy",
+      "Governance, Risk, and Compliance",
+      "Planning and Delivery"
     ],
     "tags": [
       "Business Strategy",
@@ -18863,11 +18519,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "presentations",
-      "html",
-      "design",
-      "productivity",
-      "writing"
+      "Design and Media",
+      "Content and Documentation",
+      "Productivity and Automation"
     ],
     "tags": [
       "presentations",
@@ -18986,9 +18640,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Risk Management",
-      "Documentation",
-      "Business Strategy"
+      "Business and Strategy",
+      "Content and Documentation",
+      "Governance, Risk, and Compliance"
     ],
     "tags": [
       "Risk Management",
@@ -19203,9 +18857,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Risk Management",
-      "Planning",
-      "Business Strategy"
+      "Business and Strategy",
+      "Governance, Risk, and Compliance",
+      "Planning and Delivery"
     ],
     "tags": [
       "Risk Management",
@@ -19419,9 +19073,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Planning",
-      "Documentation",
-      "Business Strategy"
+      "Business and Strategy",
+      "Content and Documentation",
+      "Planning and Delivery"
     ],
     "tags": [
       "Planning",
@@ -19637,19 +19291,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "maps",
-      "routing",
-      "visualization",
-      "openstreetmap",
-      "python",
-      "leaflet",
-      "geojson",
-      "kml",
-      "deep-links",
-      "qr-codes",
-      "logistics",
-      "azure-maps",
-      "bing-maps"
+      "Data and Analytics"
     ],
     "tags": [
       "maps",
@@ -19762,10 +19404,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "data",
-      "visualization",
-      "storytelling",
-      "reporting"
+      "Data and Analytics",
+      "Content and Documentation"
     ],
     "tags": [
       "data",
@@ -19874,11 +19514,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "sharepoint",
-      "microsoft-365",
-      "productivity",
-      "tables",
-      "data"
+      "Data and Analytics",
+      "Productivity and Automation"
     ],
     "tags": [
       "sharepoint",
@@ -19985,11 +19622,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "sharepoint",
-      "microsoft-365",
-      "lists",
-      "report",
-      "html"
+      "Content and Documentation",
+      "Data and Analytics"
     ],
     "tags": [
       "sharepoint",
@@ -20094,9 +19728,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Content Creation",
-      "Writing",
-      "Communications"
+      "Content and Documentation",
+      "Communication and Collaboration"
     ],
     "tags": [
       "Content Creation",
@@ -20359,11 +19992,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "skills",
-      "authoring",
-      "documentation",
-      "productivity",
-      "agent"
+      "AI and Agents",
+      "Content and Documentation",
+      "Productivity and Automation"
     ],
     "tags": [
       "skills",
@@ -20470,9 +20101,9 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Image Generation",
-      "Artificial Intelligence",
-      "Content Creation"
+      "AI and Agents",
+      "Content and Documentation",
+      "Design and Media"
     ],
     "tags": [
       "Image Generation",
@@ -20682,10 +20313,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "automation",
-      "teams",
-      "out-of-office",
-      "knowledge"
+      "Productivity and Automation",
+      "Knowledge, Learning, and Research"
     ],
     "tags": [
       "automation",
@@ -20794,16 +20423,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "negotiation",
-      "decision-making",
-      "offers",
-      "salary",
-      "sales",
-      "commerce",
-      "BATNA",
-      "ZOPA",
-      "deals",
-      "stoicism"
+      "Business and Strategy"
     ],
     "tags": [
       "negotiation",
@@ -20919,9 +20539,9 @@
     "status": "beta",
     "publicationStatus": "published",
     "topics": [
-      "Architecture",
-      "Requirements Engineering",
-      "Documentation"
+      "Architecture and Engineering",
+      "Content and Documentation",
+      "Planning and Delivery"
     ],
     "tags": [
       "Architecture",
@@ -21135,13 +20755,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "transparency",
-      "observability",
-      "debugging",
-      "workflow",
-      "logging",
-      "json",
-      "productivity"
+      "Architecture and Engineering",
+      "Productivity and Automation"
     ],
     "tags": [
       "transparency",
@@ -21248,12 +20863,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "travel",
-      "expenses",
-      "browser-automation",
-      "playwright",
-      "finance",
-      "productivity"
+      "Industries and Domains",
+      "Productivity and Automation"
     ],
     "tags": [
       "travel",
@@ -21359,9 +20970,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Game Master",
-      "TTRPG",
-      "Content Creation"
+      "Industries and Domains",
+      "Content and Documentation"
     ],
     "tags": [
       "Game Master",
@@ -21572,9 +21182,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Game Master",
-      "TTRPG",
-      "Content Creation"
+      "Industries and Domains",
+      "Content and Documentation"
     ],
     "tags": [
       "Game Master",
@@ -21785,9 +21394,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Game Master",
-      "TTRPG",
-      "Content Creation"
+      "Industries and Domains",
+      "Content and Documentation"
     ],
     "tags": [
       "Game Master",
@@ -21998,9 +21606,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Game Master",
-      "TTRPG",
-      "Content Creation"
+      "Industries and Domains",
+      "Content and Documentation"
     ],
     "tags": [
       "Game Master",
@@ -22211,9 +21818,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "Content Creation",
-      "Artificial Intelligence",
-      "Writing"
+      "Content and Documentation",
+      "AI and Agents"
     ],
     "tags": [
       "Content Creation",
@@ -22660,10 +22266,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "automation",
-      "email",
-      "teams",
-      "out-of-office"
+      "Productivity and Automation"
     ],
     "tags": [
       "automation",
@@ -22767,12 +22370,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "contracts",
-      "legal",
-      "procurement",
-      "risk",
-      "vendor-management",
-      "review"
+      "Governance, Risk, and Compliance"
     ],
     "tags": [
       "contracts",
@@ -22879,14 +22477,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "accessibility",
-      "wcag",
-      "a11y",
-      "power-platform",
-      "power-apps",
-      "pcf",
-      "power-pages",
-      "web"
+      "Governance, Risk, and Compliance"
     ],
     "tags": [
       "accessibility",
@@ -22999,10 +22590,8 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "productivity",
-      "automation",
-      "copilot",
-      "routing"
+      "Productivity and Automation",
+      "AI and Agents"
     ],
     "tags": [
       "productivity",
@@ -23111,13 +22700,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "infographic",
-      "whiteboard",
-      "powerpoint",
-      "presentations",
-      "diagrams",
-      "design",
-      "consulting"
+      "Design and Media"
     ],
     "tags": [
       "infographic",
@@ -23224,13 +22807,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "writing",
-      "content",
-      "editing",
-      "style",
-      "humanize",
-      "ai-detection",
-      "wikipedia"
+      "Content and Documentation"
     ],
     "tags": [
       "writing",
@@ -23344,12 +22921,7 @@
     "status": "active",
     "publicationStatus": "published",
     "topics": [
-      "work-iq",
-      "microsoft-365",
-      "dashboard",
-      "visualization",
-      "work-patterns",
-      "analytics"
+      "Data and Analytics"
     ],
     "tags": [
       "work-iq",

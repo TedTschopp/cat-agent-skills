@@ -18,7 +18,7 @@ deployed as a static site to GitHub Pages.
 ## Features
 
 - **One AI Library** with search and filters for asset type, compatibility,
-  topic, contributor, and sort order.
+  contributor, and a controlled 12-topic vocabulary.
 - **Shared asset pages** with a 16:10 cover, metadata, guide, exact source,
   related assets, downloads, ratings, discussion, and a contextual use panel.
 - **Prompt customization** for text, textarea, number, select, radio, and
@@ -66,11 +66,31 @@ Generic file submissions declare `kind`, `name`, `description`, `tags`,
 - `work-specification`
 
 Optional fields include keywords, compatibility, status, versioning, and
-provenance. The folder name supplies the slug, `topics` defaults to `tags`, and
-the importer derives the download paths. Filenames and relative payload paths
-are preserved. A root `README.md` is an optional human-facing guide and is not
-included in the downloadable payload unless it is explicitly named in
-`payloadPaths`.
+provenance. The folder name supplies the slug, and the importer derives the
+download paths. Filenames and relative payload paths are preserved. Free-form
+`tags` remain searchable, while the catalog maps them into the controlled
+Topics vocabulary below. A root `README.md` is an optional human-facing guide
+and is not included in the downloadable payload unless it is explicitly named
+in `payloadPaths`.
+
+### Topic Taxonomy
+
+The catalog exposes 12 broad Topics. Specific products, formats, industries,
+methods, and capabilities remain searchable as tags instead of crowding the
+filter:
+
+- AI and Agents
+- Architecture and Engineering
+- Business and Strategy
+- Communication and Collaboration
+- Content and Documentation
+- Data and Analytics
+- Design and Media
+- Industries and Domains
+- Governance, Risk, and Compliance
+- Knowledge, Learning, and Research
+- Planning and Delivery
+- Productivity and Automation
 
 For example, a generic Agent Instruction File submission can contain:
 
@@ -86,6 +106,7 @@ submissions/repository-instructions/
   "kind": "agent-instruction",
   "name": "Repository Instructions",
   "description": "Persistent operating instructions for a repository.",
+  "topics": ["Architecture and Engineering"],
   "tags": ["engineering"],
   "author": "Your Name",
   "entrypoint": "AGENTS.md",

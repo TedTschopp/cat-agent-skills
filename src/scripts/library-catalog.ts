@@ -1,3 +1,5 @@
+import { libraryTopicIdForTerm } from "../lib/topic-taxonomy";
+
 const BATCH_SIZE = 18;
 const PRELOAD_PX = 480;
 
@@ -172,7 +174,11 @@ if (gallery && gallery.dataset.enhanced !== "true") {
     );
     setIfAvailable(
       topic,
-      (params.get("topic") ?? params.get("tag")?.split(",")[0] ?? null)?.toLocaleLowerCase(),
+      (() => {
+        const requested = params.get("topic") ?? params.get("tag")?.split(",")[0] ?? null;
+        if (!requested) return null;
+        return libraryTopicIdForTerm(requested) ?? requested.toLocaleLowerCase();
+      })(),
     );
     setIfAvailable(
       contributor,

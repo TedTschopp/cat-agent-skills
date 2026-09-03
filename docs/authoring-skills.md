@@ -71,7 +71,7 @@ The catalog details, kept out of the agent file:
 | ------------- | -------- | -------- | ----------------------------------------------------------------------- |
 | `description` | yes      | string   | Catalog summary used on the card and as the page meta description.      |
 | `platforms`   | yes      | string[] | One or more of `Cowork`, `Copilot Studio`, `Scout`.                     |
-| `tags`        | yes      | string[] | Lowercase tags for filtering/search. Reuse existing tags where you can. |
+| `tags`        | yes      | string[] | Lowercase search terms mapped into the controlled Topics filter. Reuse existing tags where you can. |
 | `author`      |          | string   | Person or team credited for the skill.                                  |
 | `authorUrl`   |          | string   | URL to the author's website/profile; renders the author name as a link. |
 | `version`     |          | string   | Semantic version, e.g. `1.0.0`.                                         |

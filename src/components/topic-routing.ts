@@ -1,10 +1,12 @@
+import { libraryTopic } from "../lib/topic-taxonomy";
+
 /**
  * Topic values come from multiple content families. Treat casing differences
  * as one topic so `Writing` and `writing` cannot generate competing routes on
  * case-insensitive filesystems.
  */
 export const topicKey = (topic: string): string =>
-  topic.trim().toLocaleLowerCase("en-US");
+  libraryTopic(topic)?.id ?? topic.trim().toLocaleLowerCase("en-US");
 
 type TopicAsset = {
   topics: readonly string[];
@@ -26,6 +28,8 @@ const byName = (left: string, right: string): number =>
  * as `/tags/BATNA/`.
  */
 function routeVariant(key: string, variants: readonly string[]): string {
+  const canonical = variants.map(libraryTopic).find(Boolean);
+  if (canonical) return canonical.id;
   return (
     variants.find((variant) => variant === key) ??
     [...variants].sort(byName)[0] ??
@@ -35,6 +39,8 @@ function routeVariant(key: string, variants: readonly string[]): string {
 
 /** Prefer a human-authored capitalized spelling for visible labels. */
 function labelVariant(routeTopic: string, variants: readonly string[]): string {
+  const canonical = variants.map(libraryTopic).find(Boolean);
+  if (canonical) return canonical.label;
   return (
     [...variants]
       .filter((variant) => variant !== topicKey(variant))
