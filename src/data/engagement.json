@@ -3,7 +3,7 @@
   "repositories": {
     "microsoft": {
       "repository": "microsoft/cat-agent-skills",
-      "stars": 62
+      "stars": 63
     },
     "local": {
       "repository": "TedTschopp/cat-agent-skills",
@@ -646,7 +646,7 @@
     },
     "stoic-negotiator": {
       "microsoft": {
-        "rating": 2,
+        "rating": 1,
         "comments": 0,
         "discussions": [
           {
@@ -661,7 +661,7 @@
         "discussions": []
       },
       "total": {
-        "rating": 2,
+        "rating": 1,
         "comments": 0
       }
     },
@@ -688,7 +688,7 @@
     },
     "what-to-use-when": {
       "microsoft": {
-        "rating": 0,
+        "rating": 1,
         "comments": 0,
         "discussions": [
           {
@@ -703,7 +703,7 @@
         "discussions": []
       },
       "total": {
-        "rating": 0,
+        "rating": 1,
         "comments": 0
       }
     },
