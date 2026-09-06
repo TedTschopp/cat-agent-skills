@@ -30,19 +30,7 @@ test("the public taxonomy has twelve unique stable topics and unambiguous aliase
   assert.equal(new Set(aliases).size, aliases.length);
 });
 
-test("every published raw tag is covered while public assets use only one to three controlled topics", () => {
-  const knownTerms = new Set(
-    LIBRARY_TOPICS.flatMap(({ id, label, aliases }) => [
-      normalize(id),
-      normalize(label),
-      ...aliases.map(normalize),
-    ]),
-  );
-  const uncovered = [
-    ...new Set(catalog.flatMap(({ tags }) => tags.map(normalize))),
-  ].filter((tag) => !knownTerms.has(tag));
-  assert.deepEqual(uncovered, []);
-
+test("public assets use only one to three controlled topics even when tags are free-form", () => {
   for (const asset of catalog) {
     assert.ok(asset.topics.length >= 1, `${asset.slug} has no public topic`);
     assert.ok(
@@ -57,7 +45,7 @@ test("every published raw tag is covered while public assets use only one to thr
   }
 });
 
-test("topic derivation honors authored intent and rejects an unmapped-only asset", () => {
+test("topic derivation honors authored intent, allows supporting-only non-personal inputs, and rejects strict unmatched inputs", () => {
   assert.deepEqual(
     deriveLibraryTopics({
       kind: "skill",
@@ -70,8 +58,20 @@ test("topic derivation honors authored intent and rejects an unmapped-only asset
       "Governance, Risk, and Compliance",
     ],
   );
+  assert.deepEqual(
+    deriveLibraryTopics({
+      kind: "automation",
+      tags: ["calendar", "unmapped-new-term"],
+    }),
+    ["Productivity and Automation"],
+  );
   assert.throws(
-    () => deriveLibraryTopics({ kind: "automation", tags: ["unmapped-new-term"] }),
+    () =>
+      deriveLibraryTopics({
+        kind: "automation",
+        tags: ["unmapped-new-term"],
+        strictControlledTopics: true,
+      }),
     /No controlled Topic matches automation/,
   );
 });

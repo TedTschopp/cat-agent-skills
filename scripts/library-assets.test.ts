@@ -1,4 +1,7 @@
 import assert from "node:assert/strict";
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { test } from "node:test";
 import { promptSchema } from "../src/lib/library-asset-schema.ts";
 import {
@@ -6,8 +9,11 @@ import {
   assertUniqueLibraryAssetSlugs,
   canonicalPathFor,
   promptToLibraryAsset,
+  skillToLibraryAsset,
   type LibraryAsset,
 } from "../src/lib/library-assets.ts";
+import { skillSchema } from "../src/lib/skill-schema.ts";
+import { buildLibraryAssetSnapshot } from "./library-assets-json.ts";
 
 function promptData(overrides: Record<string, unknown> = {}) {
   return {
@@ -106,4 +112,81 @@ test("duplicate slugs fail closed across every asset kind", () => {
       ]),
     /duplicate library asset slug same-slug: skill and prompt-template/,
   );
+});
+
+test("Microsoft skill tags stay unchanged and supporting aliases still classify topics", () => {
+  const data = skillSchema.parse({
+    name: "Breathing Room",
+    description: "Catalog summary",
+    agentDescription: "Agent summary",
+    platforms: ["Scout"],
+    type: "skill",
+    tags: [
+      "calendar",
+      "workload",
+      "focus",
+      "work-life-balance",
+      "meetings",
+      "deep-work",
+      "self-service",
+    ],
+    author: "Allan De Castro",
+    authorUrl: "https://github.com/allandecastro",
+    authorGithub: "allandecastro",
+    version: "1.1.1",
+    createdAt: "2026-07-28",
+    updatedAt: "2026-08-20",
+    featured: false,
+  });
+  const asset = skillToLibraryAsset({ id: "breathing-room", data, body: "Body" });
+  assert.deepEqual(asset.tags, data.tags);
+  assert.deepEqual(asset.topics, [
+    "Communication and Collaboration",
+    "Productivity and Automation",
+  ]);
+});
+
+test("catalog snapshot generation keeps Microsoft tags and controlled topics", (t) => {
+  const root = mkdtempSync(join(tmpdir(), "catalog-breathing-room-"));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  const skillsDir = join(root, "src", "content", "skills");
+  mkdirSync(skillsDir, { recursive: true });
+  writeFileSync(
+    join(skillsDir, "breathing-room.md"),
+    `---
+name: Breathing Room
+description: Shows where your own week has room to breathe.
+agentDescription: Reads calendar load for one person.
+platforms: [Scout]
+type: skill
+tags: [calendar, workload, focus, work-life-balance, meetings, deep-work, self-service]
+author: Allan De Castro
+authorUrl: https://github.com/allandecastro
+authorGithub: allandecastro
+version: 1.1.1
+createdAt: 2026-07-28
+updatedAt: 2026-08-20
+featured: false
+---
+Run the workflow.
+`,
+    "utf8",
+  );
+
+  const assets = buildLibraryAssetSnapshot(root);
+  const breathingRoom = assets.find((asset) => asset.slug === "breathing-room");
+  assert.ok(breathingRoom);
+  assert.deepEqual(breathingRoom.tags, [
+    "calendar",
+    "workload",
+    "focus",
+    "work-life-balance",
+    "meetings",
+    "deep-work",
+    "self-service",
+  ]);
+  assert.deepEqual(breathingRoom.topics, [
+    "Communication and Collaboration",
+    "Productivity and Automation",
+  ]);
 });

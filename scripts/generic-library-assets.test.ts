@@ -115,6 +115,63 @@ test("minimal contributor metadata is normalized with importer-owned defaults", 
   assert.equal(parsed.featured, false);
 });
 
+test("verified Prompt Library provenance applies personal topic mapping to canonical topics", () => {
+  const parsed = genericFileAssetSchema.parse(
+    metadata("agent-instruction", ["AGENTS.md"], {
+      topics: ["Prompts - Philosophy"],
+      tags: ["Prompts - Philosophy"],
+      provenance: {
+        sourceRepository: "https://github.com/TedTschopp/tedt.org",
+        sourcePath: "_posts/prompts/2025-10-17-find-your-super-power.md",
+        sourceUrl: "https://tedt.org/prompts/find-your-super-power/",
+      },
+    }),
+  );
+  const asset = genericFileToLibraryAsset({
+    id: parsed.slug,
+    data: parsed,
+    body: "# Instructions\n",
+  });
+  assert.deepEqual(asset.topics, ["Industries and Domains"]);
+});
+
+test("Prompt Library sourceUrl matching is case-insensitive", () => {
+  const parsed = genericFileAssetSchema.parse(
+    metadata("agent-instruction", ["AGENTS.md"], {
+      topics: ["Prompts - Philosophy"],
+      tags: ["Prompts - Philosophy"],
+      provenance: {
+        sourceRepository: "https://github.com/TedTschopp/tedt.org",
+        sourceUrl: "https://tedt.org/Prompts/find-your-super-power/",
+      },
+    }),
+  );
+  const asset = genericFileToLibraryAsset({
+    id: parsed.slug,
+    data: parsed,
+    body: "# Instructions\n",
+  });
+  assert.deepEqual(asset.topics, ["Industries and Domains"]);
+});
+
+test("missing Prompt Library provenance does not auto-apply personal topic mapping", () => {
+  const parsed = genericFileAssetSchema.parse(
+    metadata("agent-instruction", ["AGENTS.md"], {
+      topics: ["Prompts - Philosophy"],
+      tags: ["Prompts - Philosophy"],
+    }),
+  );
+  assert.throws(
+    () =>
+      genericFileToLibraryAsset({
+        id: parsed.slug,
+        data: parsed,
+        body: "# Instructions\n",
+      }),
+    /No controlled Topic matches Generic Example/,
+  );
+});
+
 test("generic schema preserves safe nested paths and derives single versus multi downloads", () => {
   const single = genericFileAssetSchema.parse(
     metadata("agent-instruction", [".github/copilot-instructions.md"]),
