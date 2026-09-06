@@ -15778,8 +15778,13 @@
     "engagement": {
       "microsoft": {
         "rating": 0,
-        "comments": 0,
-        "discussions": []
+        "comments": 2,
+        "discussions": [
+          {
+            "number": 319,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/319"
+          }
+        ]
       },
       "local": {
         "rating": 0,
@@ -15788,7 +15793,7 @@
       },
       "total": {
         "rating": 0,
-        "comments": 0
+        "comments": 2
       }
     },
     "variables": [],
