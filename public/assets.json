@@ -8896,6 +8896,114 @@
   {
     "kind": "skill",
     "kindLabel": "Agent Skill",
+    "slug": "breathing-room",
+    "name": "Breathing Room",
+    "title": "Breathing Room",
+    "description": "Shows where your own week has room to breathe and where it does not, from your calendar and what you send: meeting density, back-to-back runs, deep-work blocks, evenings and weekends, and the load already building three to ten days out. When a day or a coming week is overloaded it points to the most movable meetings, and it recognises time off rather than reading it as a quiet week. Reports on you only, never on anyone else.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Communication and Collaboration",
+      "Productivity and Automation"
+    ],
+    "tags": [
+      "calendar",
+      "workload",
+      "focus",
+      "work-life-balance",
+      "meetings",
+      "deep-work",
+      "self-service"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Scout"
+    ],
+    "author": {
+      "name": "Allan De Castro",
+      "url": "https://github.com/allandecastro",
+      "github": "allandecastro",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-07-28T00:00:00.000Z",
+      "updated": "2026-08-20T00:00:00.000Z"
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/breathing-room.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/breathing-room.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/breathing-room.zip",
+    "downloadPath": "bundles/breathing-room.zip",
+    "canonicalPath": "/skills/breathing-room/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.1.1",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "BR"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/breathing-room",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
     "slug": "browser-uat-analyst",
     "name": "Browser UAT Analyst",
     "title": "Browser UAT Analyst",
