@@ -135,6 +135,25 @@ test("verified Prompt Library provenance applies personal topic mapping to canon
   assert.deepEqual(asset.topics, ["Industries and Domains"]);
 });
 
+test("Prompt Library sourceUrl matching is case-insensitive", () => {
+  const parsed = genericFileAssetSchema.parse(
+    metadata("agent-instruction", ["AGENTS.md"], {
+      topics: ["Prompts - Philosophy"],
+      tags: ["Prompts - Philosophy"],
+      provenance: {
+        sourceRepository: "https://github.com/TedTschopp/tedt.org",
+        sourceUrl: "https://tedt.org/Prompts/find-your-super-power/",
+      },
+    }),
+  );
+  const asset = genericFileToLibraryAsset({
+    id: parsed.slug,
+    data: parsed,
+    body: "# Instructions\n",
+  });
+  assert.deepEqual(asset.topics, ["Industries and Domains"]);
+});
+
 test("missing Prompt Library provenance does not auto-apply personal topic mapping", () => {
   const parsed = genericFileAssetSchema.parse(
     metadata("agent-instruction", ["AGENTS.md"], {

@@ -263,6 +263,15 @@ function skillEntrypoint(type: SkillType, bundle: string | undefined): string {
   return "SKILL.md";
 }
 
+function legacyCategoriesFromMetadata(
+  legacyMetadata: Record<string, unknown> | null | undefined,
+): string[] {
+  if (!legacyMetadata) return [];
+  const categories = legacyMetadata.categories;
+  if (!Array.isArray(categories)) return [];
+  return categories.filter((value): value is string => typeof value === "string");
+}
+
 /** Pure adapter for the existing skill collection. */
 export function skillToLibraryAsset(record: SkillRecord, guide: string | null = null): LibraryAsset {
   const { id: slug, data } = record;
@@ -466,6 +475,9 @@ export function genericFileToLibraryAsset(
       const mappedPromptLibraryTopics = mapPromptLibraryTopicsToCanonical([
         ...data.topics,
         ...data.tags,
+        ...legacyCategoriesFromMetadata(
+          source?.legacyMetadata as Record<string, unknown> | null | undefined,
+        ),
       ]);
       if (mappedPromptLibraryTopics.length === 0) throw error;
       genericTopics = deriveLibraryTopics({

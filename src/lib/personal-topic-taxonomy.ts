@@ -59,7 +59,7 @@ export function isPromptLibraryImport(
     try {
       const parsed = new URL(provenance.sourceUrl);
       return parsed.hostname.toLocaleLowerCase("en-US") === "tedt.org" &&
-        parsed.pathname.startsWith("/prompts/");
+        normalize(parsed.pathname).startsWith("/prompts/");
     } catch {
       return false;
     }
