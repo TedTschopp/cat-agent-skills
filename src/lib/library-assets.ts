@@ -16,6 +16,10 @@ import {
   deriveLibraryTopics,
   uniqueSearchTerms,
 } from "./topic-taxonomy";
+import {
+  isPromptLibraryImport,
+  mapPromptLibraryTopicsToCanonical,
+} from "./personal-topic-taxonomy";
 
 // Vite expands these at build time. They let the loader avoid Astro's noisy
 // "collection does not exist or is empty" warning before the first generic
@@ -274,7 +278,12 @@ export function skillToLibraryAsset(record: SkillRecord, guide: string | null = 
     description: data.description,
     status: "active",
     publicationStatus: "published",
-    topics: deriveLibraryTopics({ kind, name: data.name, tags: data.tags }),
+    topics: deriveLibraryTopics({
+      kind,
+      name: data.name,
+      tags: data.tags,
+      strictControlledTopics: false,
+    }),
     tags: [...data.tags],
     keywords: [],
     searchTerms: [],
@@ -330,6 +339,33 @@ export function promptToLibraryAsset(
   const engagement = getSkillEngagement(slug);
   const promptArtwork = artwork(slug, data.name, data);
   const source = data.provenance;
+  const isPromptLibrary = isPromptLibraryImport(source);
+  const promptTopicInput = {
+    kind,
+    name: data.name,
+    authoredTopics: data.topics,
+    tags: data.tags,
+    strictControlledTopics: isPromptLibrary,
+  } as const;
+  let promptTopics: string[];
+  if (isPromptLibrary) {
+    try {
+      promptTopics = deriveLibraryTopics(promptTopicInput);
+    } catch (error) {
+      const mappedPromptLibraryTopics = mapPromptLibraryTopicsToCanonical([
+        ...data.topics,
+        ...data.tags,
+        ...(source?.legacyCategories ?? []),
+      ]);
+      if (mappedPromptLibraryTopics.length === 0) throw error;
+      promptTopics = deriveLibraryTopics({
+        ...promptTopicInput,
+        authoredTopics: [...data.topics, ...mappedPromptLibraryTopics],
+      });
+    }
+  } else {
+    promptTopics = deriveLibraryTopics(promptTopicInput);
+  }
   return {
     kind,
     kindLabel: LIBRARY_ASSET_KIND_LABELS[kind],
@@ -343,12 +379,7 @@ export function promptToLibraryAsset(
       data.publicationStatus === "published" && promptArtwork.ready
         ? "published"
         : "blocked-pending-artwork",
-    topics: deriveLibraryTopics({
-      kind,
-      name: data.name,
-      authoredTopics: data.topics,
-      tags: data.tags,
-    }),
+    topics: promptTopics,
     tags: [...data.tags],
     keywords: [...data.keywords],
     searchTerms: uniqueSearchTerms(data.topics),
@@ -419,6 +450,32 @@ export function genericFileToLibraryAsset(
   }
   const genericArtwork = artwork(slug, data.name, data);
   const source = data.provenance;
+  const isPromptLibrary = isPromptLibraryImport(source);
+  const genericTopicInput = {
+    kind: data.kind,
+    name: data.name,
+    authoredTopics: data.topics,
+    tags: data.tags,
+    strictControlledTopics: isPromptLibrary,
+  } as const;
+  let genericTopics: string[];
+  if (isPromptLibrary) {
+    try {
+      genericTopics = deriveLibraryTopics(genericTopicInput);
+    } catch (error) {
+      const mappedPromptLibraryTopics = mapPromptLibraryTopicsToCanonical([
+        ...data.topics,
+        ...data.tags,
+      ]);
+      if (mappedPromptLibraryTopics.length === 0) throw error;
+      genericTopics = deriveLibraryTopics({
+        ...genericTopicInput,
+        authoredTopics: [...data.topics, ...mappedPromptLibraryTopics],
+      });
+    }
+  } else {
+    genericTopics = deriveLibraryTopics(genericTopicInput);
+  }
   const providedFiles =
     files ??
     (data.payloadPaths.length === 1
@@ -465,12 +522,7 @@ export function genericFileToLibraryAsset(
       data.publicationStatus === "published" && genericArtwork.ready
         ? "published"
         : "blocked-pending-artwork",
-    topics: deriveLibraryTopics({
-      kind: data.kind,
-      name: data.name,
-      authoredTopics: data.topics,
-      tags: data.tags,
-    }),
+    topics: genericTopics,
     tags: [...data.tags],
     keywords: [...data.keywords],
     searchTerms: uniqueSearchTerms(data.topics),

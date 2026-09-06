@@ -545,6 +545,7 @@ export type LibraryTopicInput = {
   name?: string;
   authoredTopics?: readonly string[];
   tags?: readonly string[];
+  strictControlledTopics?: boolean;
 };
 
 type TopicEvidence = {
@@ -590,8 +591,8 @@ export function deriveLibraryTopics(input: LibraryTopicInput): LibraryTopicLabel
     }
   };
 
-  // Authored Topics are intentional taxonomy choices. Tags add evidence, but
-  // search-only keywords never get to change an asset's visible classification.
+  // Authored Topics are intentional taxonomy choices. Tags add evidence and can
+  // classify non-personal assets when they are the only available signal.
   addTerms(input.authoredTopics ?? [], true);
   addTerms(input.tags ?? [], false);
   const unambiguousNameSignals = new Set(["ai", "agent", "agents", "copilot"]);
@@ -602,7 +603,7 @@ export function deriveLibraryTopics(input: LibraryTopicInput): LibraryTopicLabel
     false,
   );
 
-  const eligible = LIBRARY_TOPICS
+  const preferred = LIBRARY_TOPICS
     .map((topic, order) => ({
       topic,
       order,
@@ -614,6 +615,20 @@ export function deriveLibraryTopics(input: LibraryTopicInput): LibraryTopicLabel
           (evidence.authored > 0 || evidence.core > 0),
       ),
     );
+
+  const strict = input.strictControlledTopics ?? false;
+  const eligible =
+    preferred.length > 0
+      ? preferred
+      : strict
+        ? []
+        : LIBRARY_TOPICS
+            .map((topic, order) => ({
+              topic,
+              order,
+              evidence: evidence.get(topic.id),
+            }))
+            .filter(({ evidence }) => Boolean(evidence));
 
   if (eligible.length === 0) {
     throw new Error(
