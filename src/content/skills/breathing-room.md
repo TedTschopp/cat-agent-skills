@@ -10,6 +10,16 @@ authorGithub: allandecastro
 version: 1.1.1
 createdAt: 2026-07-28
 updatedAt: 2026-08-20
+coverImage: skill-art/breathing-room.webp
+coverImageAlt: Dark slate schedule blocks part to reveal a cyan-lit open passage.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: an architectural field of tightly packed slate schedule blocks opening into one generous, navigable chamber, a visual metaphor for finding reclaimable space in a crowded week\nScene/backdrop: warm paper field with an uncluttered near-black architectural plane and a calm cyan passage emerging through the dense forms\nSubject: strong rectangular slabs clustered in a compressed rhythm, with one subtly movable block angled aside to create a clear open corridor\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; strong silhouette and calm negative space\nLighting/mood: calm, capable, quietly technical, with restrained cyan backlighting and a small orange edge light\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-09-07
+coverImageSourceHash: "sha256:3fbafee5aebf45fd1970997685184ca07bd201e62322523f5120f5b1816521fe"
+coverImageSourceHashVersion: 2
 bundle: bundles/breathing-room.zip
 ---
 # Breathing Room
