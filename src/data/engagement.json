@@ -3,7 +3,7 @@
   "repositories": {
     "microsoft": {
       "repository": "microsoft/cat-agent-skills",
-      "stars": 67
+      "stars": 69
     },
     "local": {
       "repository": "TedTschopp/cat-agent-skills",
@@ -625,8 +625,8 @@
     },
     "scrollytelling-data": {
       "microsoft": {
-        "rating": 7,
-        "comments": 4,
+        "rating": 10,
+        "comments": 5,
         "discussions": [
           {
             "number": 185,
@@ -640,8 +640,8 @@
         "discussions": []
       },
       "total": {
-        "rating": 7,
-        "comments": 4
+        "rating": 10,
+        "comments": 5
       }
     },
     "spend-more-time-with-friends-and-family": {
