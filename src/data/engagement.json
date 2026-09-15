@@ -334,6 +334,27 @@
         "comments": 0
       }
     },
+    "explainer-video": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 333,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/333"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
+        "comments": 0
+      }
+    },
     "generating-podcast-script": {
       "microsoft": {
         "rating": 1,
