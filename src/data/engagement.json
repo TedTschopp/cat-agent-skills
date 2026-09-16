@@ -3,7 +3,7 @@
   "repositories": {
     "microsoft": {
       "repository": "microsoft/cat-agent-skills",
-      "stars": 71
+      "stars": 74
     },
     "local": {
       "repository": "TedTschopp/cat-agent-skills",
@@ -663,6 +663,27 @@
       "total": {
         "rating": 10,
         "comments": 5
+      }
+    },
+    "skill-authoring-coach": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 2,
+        "discussions": [
+          {
+            "number": 335,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/335"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 2
       }
     },
     "spend-more-time-with-friends-and-family": {
