@@ -313,6 +313,27 @@
         "comments": 0
       }
     },
+    "eu-greenwashing-analysis": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 2,
+        "discussions": [
+          {
+            "number": 337,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/337"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
+        "comments": 2
+      }
+    },
     "expense-report-filler": {
       "microsoft": {
         "rating": 1,
@@ -571,7 +592,7 @@
     },
     "redlining-content": {
       "microsoft": {
-        "rating": 2,
+        "rating": 3,
         "comments": 2,
         "discussions": [
           {
@@ -590,7 +611,7 @@
         "discussions": []
       },
       "total": {
-        "rating": 2,
+        "rating": 3,
         "comments": 2
       }
     },
