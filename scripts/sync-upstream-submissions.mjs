@@ -20,6 +20,7 @@ import {
 import { dirname, join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { assertUniquePortablePaths } from "./portable-paths.mjs";
+import { normalizeNewSubmissionMarkdown } from "./normalize-upstream-markdown.mjs";
 
 const SAFE_SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const MAX_FILES_PER_SUBMISSION = 2_000;
@@ -241,7 +242,7 @@ function readSubmissionTree(repoRoot, upstreamRef, slug) {
   return files;
 }
 
-function copyNewSubmissions(repoRoot, upstreamRef, slugs) {
+function copyNewSubmissions(repoRoot, upstreamRef, slugs, logger) {
   if (slugs.length === 0) return;
 
   const submissionsDir = join(repoRoot, "submissions");
@@ -251,7 +252,10 @@ function copyNewSubmissions(repoRoot, upstreamRef, slugs) {
 
   try {
     for (const slug of slugs) {
-      const files = readSubmissionTree(repoRoot, upstreamRef, slug);
+      const files = normalizeNewSubmissionMarkdown(
+        readSubmissionTree(repoRoot, upstreamRef, slug),
+        (message) => logger(`${slug}: ${message}`),
+      );
       const stagedSubmission = join(stagingRoot, slug);
       for (const file of files) {
         const destination = join(stagedSubmission, ...file.relativePath.split("/"));
@@ -287,7 +291,7 @@ export function syncUpstreamSubmissions({
   logger = console.log,
 }) {
   const plan = planUpstreamSync({ repoRoot, upstreamRef });
-  if (!checkOnly) copyNewSubmissions(resolve(repoRoot), upstreamRef, plan.newSlugs);
+  if (!checkOnly) copyNewSubmissions(resolve(repoRoot), upstreamRef, plan.newSlugs, logger);
 
   if (plan.newSlugs.length > 0) {
     logger(

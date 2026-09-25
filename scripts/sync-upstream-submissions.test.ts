@@ -125,6 +125,46 @@ test("fails closed on upstream symlinks without leaving a partial submission", (
   assert.equal(existsSync(join(repo, "submissions/symlink-skill")), false);
 });
 
+test("new Microsoft Markdown passes the staged whitespace gate without touching existing sources", (t) => {
+  const repo = initializeRepository();
+  t.after(() => rmSync(repo, { recursive: true, force: true }));
+  const existing = "existing local content must remain byte-identical \n";
+  write(repo, "submissions/existing/SKILL.md", existing);
+  git(repo, "add", ".");
+  git(repo, "commit", "-m", "existing authored whitespace");
+  git(repo, "switch", "-c", "microsoft-main");
+
+  // These are the accidental single-space endings from the September 25 run.
+  const skill = [
+    "MAC report exports through the *Copilot Adoption Analysis* framework ",
+    "public framework approach such as Microsoft Adoption toolkit or M365 Copilot ",
+    "Adoption Guide. Entire framework is within explained within references) ",
+    "",
+  ].join("\n");
+  const slug = "create-copilot-adoption-dashboard";
+  write(repo, `submissions/${slug}/metadata.json`, '{"name":"Copilot Adoption Dashboard"}\n');
+  write(repo, `submissions/${slug}/SKILL.md`, skill);
+  write(repo, `submissions/${slug}/README.md`, "exports to compare, so they aren't reported. \n");
+  git(repo, "add", ".");
+  git(repo, "commit", "-m", "upstream whitespace regression");
+  const upstreamRef = git(repo, "rev-parse", "HEAD");
+  git(repo, "switch", "main");
+
+  const plan = syncUpstreamSubmissions({ repoRoot: repo, upstreamRef, logger: () => {} });
+  assert.deepEqual(plan.newSlugs, [slug]);
+  assert.equal(readFileSync(join(repo, "submissions/existing/SKILL.md"), "utf8"), existing);
+  const cleanedSkill = readFileSync(join(repo, `submissions/${slug}/SKILL.md`), "utf8");
+  assert.equal(cleanedSkill, skill.replace(/ +$/gm, ""));
+  assert.equal(git(repo, "show", `${upstreamRef}:submissions/${slug}/SKILL.md`), skill.trim());
+  git(repo, "add", `submissions/${slug}`);
+  assert.equal(git(repo, "diff", "--cached", "--check"), "");
+  assert.equal(verifySyncWorktree({ repoRoot: repo, newSlugs: [slug], generatedSlugs: [] }).changed, true);
+
+  const second = syncUpstreamSubmissions({ repoRoot: repo, upstreamRef, logger: () => {} });
+  assert.deepEqual(second.newSlugs, []);
+  assert.equal(readFileSync(join(repo, `submissions/${slug}/SKILL.md`), "utf8"), cleanedSkill);
+});
+
 test("rejects non-portable upstream paths without leaving a partial submission", (t) => {
   const repo = initializeRepository();
   t.after(() => rmSync(repo, { recursive: true, force: true }));

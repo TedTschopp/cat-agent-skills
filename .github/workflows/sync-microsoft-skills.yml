@@ -44,16 +44,17 @@ jobs:
           git remote add microsoft "$MICROSOFT_REPOSITORY"
           git fetch --no-tags --depth=1 microsoft main
 
+      # The copy step uses the existing Markdown parser to normalize accidental
+      # prose whitespace before validation, generated pages, and ZIP bundles.
+      - name: Install Dependencies
+        run: npm ci
+
       # This step reads Git objects directly and copies only first-level
       # submissions/<slug>/ directories that do not exist locally. It rejects
       # unsafe names, symlinks, generated-path collisions, and overwrites.
       - name: Find and Copy Missing Submissions
         id: sync
         run: npm run sync:upstream -- --upstream-ref microsoft/main
-
-      - name: Install Dependencies
-        if: steps.sync.outputs.needs_import == 'true'
-        run: npm ci
 
       - name: Validate All Submission Sources
         if: steps.sync.outputs.needs_import == 'true'
