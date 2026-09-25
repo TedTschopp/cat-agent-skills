@@ -84,7 +84,7 @@
     },
     "brand-template-enforcer": {
       "microsoft": {
-        "rating": 1,
+        "rating": 3,
         "comments": 9,
         "discussions": [
           {
@@ -99,7 +99,7 @@
         "discussions": []
       },
       "total": {
-        "rating": 1,
+        "rating": 3,
         "comments": 9
       }
     },
