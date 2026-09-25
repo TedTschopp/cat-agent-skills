@@ -12242,6 +12242,113 @@
   {
     "kind": "skill",
     "kindLabel": "Agent Skill",
+    "slug": "create-copilot-adoption-dashboard",
+    "name": "Copilot Adoption Dashboard",
+    "title": "Copilot Adoption Dashboard",
+    "description": "Using exported files from MAC usage reports, build html Copilot Adoption Dashboard with integrated framework that suggest next steps",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Data and Analytics",
+      "AI and Agents"
+    ],
+    "tags": [
+      "copilot",
+      "adoption",
+      "data",
+      "dashboard",
+      "kpis",
+      "measure"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Sead Borovina",
+      "url": "https://www.linkedin.com/in/seadb/",
+      "github": null,
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-08-05T00:00:00.000Z",
+      "updated": "2026-08-05T00:00:00.000Z"
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/create-copilot-adoption-dashboard.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/create-copilot-adoption-dashboard.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/create-copilot-adoption-dashboard.zip",
+    "downloadPath": "bundles/create-copilot-adoption-dashboard.zip",
+    "canonicalPath": "/skills/create-copilot-adoption-dashboard/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "CA"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/create-copilot-adoption-dashboard",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
     "slug": "copilot-agent-advisor",
     "name": "Copilot Agent Advisor",
     "title": "Copilot Agent Advisor",
@@ -12338,6 +12445,221 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/copilot-agent-advisor",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "cowork-plugin-engineer",
+    "name": "Copilot Cowork Plugin Engineer",
+    "title": "Copilot Cowork Plugin Engineer",
+    "description": "Create, import, validate, authenticate, package, evaluate, and troubleshoot Microsoft Copilot Cowork plugins with repeatable engineering guardrails.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "AI and Agents"
+    ],
+    "tags": [
+      "cowork",
+      "plugins",
+      "skills",
+      "mcp",
+      "oauth",
+      "validation",
+      "evaluations",
+      "developer-tools"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Srinivas Varukala",
+      "url": "https://github.com/svarukala",
+      "github": "svarukala",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-08-31T00:00:00.000Z",
+      "updated": "2026-09-09T00:00:00.000Z"
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/cowork-plugin-engineer.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/cowork-plugin-engineer.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/cowork-plugin-engineer.zip",
+    "downloadPath": "bundles/cowork-plugin-engineer.zip",
+    "canonicalPath": "/skills/cowork-plugin-engineer/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.1.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "CC"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/cowork-plugin-engineer",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "copilot-studio-adaptive-card-builder",
+    "name": "Copilot Studio Adaptive Card Builder",
+    "title": "Copilot Studio Adaptive Card Builder",
+    "description": "Build a validated, paste-ready Adaptive Card package for Copilot Studio standard-harness agents, with wiring, mappings, accessibility guidance, sample data, and a text fallback.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "AI and Agents",
+      "Governance, Risk, and Compliance"
+    ],
+    "tags": [
+      "copilot-studio",
+      "adaptive-cards",
+      "maker",
+      "accessibility",
+      "validation",
+      "power-fx"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Copilot Studio"
+    ],
+    "author": {
+      "name": "Marc Pascal Solling",
+      "url": "https://github.com/MarcPmedC",
+      "github": "MarcPmedC",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-03T00:00:00.000Z",
+      "updated": "2026-09-03T00:00:00.000Z"
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/copilot-studio-adaptive-card-builder.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/copilot-studio-adaptive-card-builder.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/copilot-studio-adaptive-card-builder.zip",
+    "downloadPath": "bundles/copilot-studio-adaptive-card-builder.zip",
+    "canonicalPath": "/skills/copilot-studio-adaptive-card-builder/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "CS"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/copilot-studio-adaptive-card-builder",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -19407,6 +19729,114 @@
   {
     "kind": "skill",
     "kindLabel": "Agent Skill",
+    "slug": "root-cause-analysis",
+    "name": "Root Cause Analysis",
+    "title": "Root Cause Analysis",
+    "description": "Diagnose the true cause of a problem — not just its symptoms — using structured techniques like 5 Whys, Fishbone diagrams, and contributing factor analysis.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Architecture and Engineering",
+      "Data and Analytics"
+    ],
+    "tags": [
+      "problem-solving",
+      "analysis",
+      "decision-making",
+      "investigation",
+      "debugging"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork",
+      "Copilot Studio",
+      "Scout"
+    ],
+    "author": {
+      "name": "Nayananshu Garai",
+      "url": "https://github.com/N-Garai",
+      "github": "N-Garai",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-08-04T00:00:00.000Z",
+      "updated": "2026-08-04T00:00:00.000Z"
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/root-cause-analysis.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/root-cause-analysis.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/root-cause-analysis.zip",
+    "downloadPath": "bundles/root-cause-analysis.zip",
+    "canonicalPath": "/skills/root-cause-analysis/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "RC"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/root-cause-analysis",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
     "slug": "route-map-visualizer",
     "name": "Route Map Visualizer",
     "title": "Route Map Visualizer",
@@ -19613,6 +20043,216 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/scrollytelling-data",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "semantic-pdf-image-extractor",
+    "name": "Semantic PDF Image Extractor",
+    "title": "Semantic PDF Image Extractor",
+    "description": "Extract meaningful photos, diagrams, charts, maps, screenshots, and other visual evidence from PDFs with context, provenance, quality checks, and duplicate detection.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Content and Documentation"
+    ],
+    "tags": [
+      "pdf",
+      "images",
+      "document-processing",
+      "computer-vision",
+      "knowledge-retrieval"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Copilot Studio"
+    ],
+    "author": {
+      "name": "Bas",
+      "url": "https://github.com/basvb1992",
+      "github": "basvb1992",
+      "avatar": null
+    },
+    "dates": {
+      "created": null,
+      "updated": null
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/semantic-pdf-image-extractor.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/semantic-pdf-image-extractor.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/semantic-pdf-image-extractor.zip",
+    "downloadPath": "bundles/semantic-pdf-image-extractor.zip",
+    "canonicalPath": "/skills/semantic-pdf-image-extractor/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "SP"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/semantic-pdf-image-extractor",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "sharepoint-file-creation",
+    "name": "SharePoint File Creation",
+    "title": "SharePoint File Creation",
+    "description": "Generate a requested file, enforce a safe pre-upload size gate, and upload it to SharePoint without streaming bytes through the model.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Architecture and Engineering",
+      "Productivity and Automation"
+    ],
+    "tags": [
+      "sharepoint",
+      "files",
+      "upload",
+      "microsoft-365"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Copilot Studio"
+    ],
+    "author": {
+      "name": "Lewis Baybutt",
+      "url": "https://github.com/lewisdoesdev",
+      "github": "lewisdoesdev",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-14T00:00:00.000Z",
+      "updated": "2026-09-15T00:00:00.000Z"
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "skills/sharepoint-file-creation.md"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "skills/sharepoint-file-creation.md"
+      }
+    ],
+    "bundleDownloadPath": null,
+    "downloadPath": "skills/sharepoint-file-creation.md",
+    "canonicalPath": "/skills/sharepoint-file-creation/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.1",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "SF"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/sharepoint-file-creation",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
