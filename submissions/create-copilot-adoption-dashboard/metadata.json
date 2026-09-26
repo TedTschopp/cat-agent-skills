@@ -1,11 +1,30 @@
 {
   "name": "Copilot Adoption Dashboard",
   "description": "Using exported files from MAC usage reports, build html Copilot Adoption Dashboard with integrated framework that suggest next steps",
-  "platforms": ["Cowork"],
-  "tags": ["copilot", "adoption", "data", "dashboard", "kpis", "measure"],
+  "platforms": [
+    "Cowork"
+  ],
+  "tags": [
+    "copilot",
+    "adoption",
+    "data",
+    "dashboard",
+    "kpis",
+    "measure"
+  ],
   "author": "Sead Borovina",
   "authorUrl": "https://www.linkedin.com/in/seadb/",
   "version": "1.0.0",
   "createdAt": "2026-08-05",
-  "updatedAt": "2026-08-05"
+  "updatedAt": "2026-08-05",
+  "coverImage": "skill-art/create-copilot-adoption-dashboard.webp",
+  "coverImageAlt": "Four data streams converging through an analytical lens into terraced adoption pathways.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: four measured data streams converge through a single analytical lens into a clear terraced landscape, where illuminated pathways reveal practical next steps and healthy adoption growth\nScene/backdrop: uncluttered slate field transitioning into warm paper terraces with ample calm negative space\nSubject: four distinct unmarked input channels, one faceted observation lens, an organized set of rising terraces, and a few purposeful route markers without symbols\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; legible at small card size\nLighting/mood: calm, capable, quietly technical, restrained cyan backlighting with a sparing orange decision point\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, charts with labels, interface labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; no Microsoft-style gradient",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-26",
+  "coverImageSourceHash": "sha256:2fc905efde45e6fa29e1775ec2eba8a62e18b9fa8f275332d7e41379d19fa5cd",
+  "coverImageSourceHashVersion": 2
 }

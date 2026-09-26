@@ -1,7 +1,9 @@
 {
   "name": "Copilot Cowork Plugin Engineer",
   "description": "Create, import, validate, authenticate, package, evaluate, and troubleshoot Microsoft Copilot Cowork plugins with repeatable engineering guardrails.",
-  "platforms": ["Cowork"],
+  "platforms": [
+    "Cowork"
+  ],
   "tags": [
     "cowork",
     "plugins",
@@ -16,5 +18,15 @@
   "authorUrl": "https://github.com/svarukala",
   "version": "1.1.0",
   "createdAt": "2026-08-31",
-  "updatedAt": "2026-09-09"
+  "updatedAt": "2026-09-09",
+  "coverImage": "skill-art/cowork-plugin-engineer.webp",
+  "coverImageAlt": "Secure engineering hub joining tool modules into a validated plugin assembly.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a precision-engineered central coupling that securely joins several distinct tool modules into one dependable plugin assembly, with one protected connector channel and visible mechanical validation points\nScene/backdrop: uncluttered slate engineering bench with warm paper modules and disciplined negative space\nSubject: a robust central socket hub, three differently shaped but harmonious plug-in modules, a shielded cable conduit, and small inspection fixtures without markings\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; legible at small card size\nLighting/mood: calm, capable, quietly technical, restrained cyan backlighting\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, interface labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; no Microsoft-style gradient",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-09-26",
+  "coverImageSourceHash": "sha256:fc73a6bd2171ea3c629616a8c7c71e51729c30b446b04a2e01e09710d25de485",
+  "coverImageSourceHashVersion": 2
 }

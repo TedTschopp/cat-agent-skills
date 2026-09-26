@@ -10,6 +10,16 @@ authorGithub: MarcPmedC
 version: 1.0.0
 createdAt: 2026-09-03
 updatedAt: 2026-09-03
+coverImage: skill-art/copilot-studio-adaptive-card-builder.webp
+coverImageAlt: Modular card panels locking into a validated interaction pathway on a precision workbench.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a precision workbench where a small set of blank modular card-shaped panels lock together into one validated interaction pathway, with a subtle alignment jig and accessibility ramp expressing safe, usable construction\nScene/backdrop: uncluttered slate workshop field with warm paper components and restrained technical depth\nSubject: interlocking blank card panels, clean connector joints, one testing gauge without markings, and a clear path through the assembled structure\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; legible at small card size\nLighting/mood: calm, capable, quietly technical, restrained cyan backlighting\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, interface labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; no Microsoft-style gradient"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-09-26
+coverImageSourceHash: "sha256:f79621b5e3ea3347f670a4c247b4632238f6aa33d6085e89e8f64f84a561e7fd"
+coverImageSourceHashVersion: 2
 bundle: bundles/copilot-studio-adaptive-card-builder.zip
 ---
 # Copilot Studio Adaptive Card Builder

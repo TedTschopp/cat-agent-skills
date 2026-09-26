@@ -10,6 +10,16 @@ authorGithub: lewisdoesdev
 version: 1.0.1
 createdAt: 2026-09-14
 updatedAt: 2026-09-15
+coverImage: skill-art/sharepoint-file-creation.webp
+coverImageAlt: Sealed file passing through a measured transfer gate into an organized document repository.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a sealed blank file object passes through a carefully calibrated size gate and follows a protected transfer channel into an orderly document repository, expressing safe creation and upload without exposing its contents\nScene/backdrop: uncluttered slate transfer bay with a warm paper destination archive and ample negative space\nSubject: one sealed file-shaped object, an unmarked physical measuring gate, a protected cyan transfer channel, and a neatly organized repository shelf\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; legible at small card size\nLighting/mood: calm, secure, quietly technical, restrained cyan backlighting\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, interface labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; no Microsoft-style gradient"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-09-26
+coverImageSourceHash: "sha256:55870b66f73e5701c1ce3842c43827156eeb59113189b4288e2ebc14c9fc5ac3"
+coverImageSourceHashVersion: 2
 ---
 ## Quick reference — the fixed sequence
 

@@ -8,6 +8,16 @@ author: Bas
 authorUrl: "https://github.com/basvb1992"
 authorGithub: basvb1992
 version: 1.0.0
+coverImage: skill-art/semantic-pdf-image-extractor.webp
+coverImageAlt: Optical frame extracting meaningful image crops from layered documents while preserving source context.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: layered document sheets pass through an optical extraction frame that lifts a few meaningful visual tiles while keeping each tile connected to a larger context window and source page\nScene/backdrop: uncluttered slate document-analysis table with warm paper sheets and disciplined negative space\nSubject: stacked blank pages, one precise optical frame, several distinct image-like geometric crops, and fine provenance threads linking crops back to their page positions\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; legible at small card size\nLighting/mood: calm, capable, quietly technical, restrained cyan backlighting\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, interface labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; no Microsoft-style gradient"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-09-26
+coverImageSourceHash: "sha256:32a265a2618e8aeda1fa6941f02eaf5a99395bb37fb448a185837fc8049a0140"
+coverImageSourceHashVersion: 2
 bundle: bundles/semantic-pdf-image-extractor.zip
 ---
 # Semantic PDF Image Extractor
