@@ -12314,17 +12314,17 @@
     "series": [],
     "relatedAssetIds": [],
     "artwork": {
-      "ready": false,
-      "image": null,
-      "alt": null,
-      "prompt": null,
-      "aspectRatio": null,
-      "width": null,
-      "height": null,
-      "generator": null,
-      "generatedAt": null,
-      "sourceHash": null,
-      "sourceHashVersion": null,
+      "ready": true,
+      "image": "skill-art/create-copilot-adoption-dashboard.webp",
+      "alt": "Four data streams converging through an analytical lens into terraced adoption pathways.",
+      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: four measured data streams converge through a single analytical lens into a clear terraced landscape, where illuminated pathways reveal practical next steps and healthy adoption growth\nScene/backdrop: uncluttered slate field transitioning into warm paper terraces with ample calm negative space\nSubject: four distinct unmarked input channels, one faceted observation lens, an organized set of rising terraces, and a few purposeful route markers without symbols\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; legible at small card size\nLighting/mood: calm, capable, quietly technical, restrained cyan backlighting with a sparing orange decision point\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, charts with labels, interface labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; no Microsoft-style gradient",
+      "aspectRatio": "16:10",
+      "width": 1600,
+      "height": 1000,
+      "generator": "OpenAI image generation via Codex",
+      "generatedAt": "2026-09-26T00:00:00.000Z",
+      "sourceHash": "sha256:2fc905efde45e6fa29e1775ec2eba8a62e18b9fa8f275332d7e41379d19fa5cd",
+      "sourceHashVersion": 2,
       "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
       "fallbackInitials": "CA"
     },
@@ -12535,17 +12535,17 @@
     "series": [],
     "relatedAssetIds": [],
     "artwork": {
-      "ready": false,
-      "image": null,
-      "alt": null,
-      "prompt": null,
-      "aspectRatio": null,
-      "width": null,
-      "height": null,
-      "generator": null,
-      "generatedAt": null,
-      "sourceHash": null,
-      "sourceHashVersion": null,
+      "ready": true,
+      "image": "skill-art/cowork-plugin-engineer.webp",
+      "alt": "Secure engineering hub joining tool modules into a validated plugin assembly.",
+      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a precision-engineered central coupling that securely joins several distinct tool modules into one dependable plugin assembly, with one protected connector channel and visible mechanical validation points\nScene/backdrop: uncluttered slate engineering bench with warm paper modules and disciplined negative space\nSubject: a robust central socket hub, three differently shaped but harmonious plug-in modules, a shielded cable conduit, and small inspection fixtures without markings\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; legible at small card size\nLighting/mood: calm, capable, quietly technical, restrained cyan backlighting\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, interface labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; no Microsoft-style gradient",
+      "aspectRatio": "16:10",
+      "width": 1600,
+      "height": 1000,
+      "generator": "OpenAI image generation via Codex",
+      "generatedAt": "2026-09-26T00:00:00.000Z",
+      "sourceHash": "sha256:fc73a6bd2171ea3c629616a8c7c71e51729c30b446b04a2e01e09710d25de485",
+      "sourceHashVersion": 2,
       "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
       "fallbackInitials": "CC"
     },
@@ -12642,17 +12642,17 @@
     "series": [],
     "relatedAssetIds": [],
     "artwork": {
-      "ready": false,
-      "image": null,
-      "alt": null,
-      "prompt": null,
-      "aspectRatio": null,
-      "width": null,
-      "height": null,
-      "generator": null,
-      "generatedAt": null,
-      "sourceHash": null,
-      "sourceHashVersion": null,
+      "ready": true,
+      "image": "skill-art/copilot-studio-adaptive-card-builder.webp",
+      "alt": "Modular card panels locking into a validated interaction pathway on a precision workbench.",
+      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a precision workbench where a small set of blank modular card-shaped panels lock together into one validated interaction pathway, with a subtle alignment jig and accessibility ramp expressing safe, usable construction\nScene/backdrop: uncluttered slate workshop field with warm paper components and restrained technical depth\nSubject: interlocking blank card panels, clean connector joints, one testing gauge without markings, and a clear path through the assembled structure\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; legible at small card size\nLighting/mood: calm, capable, quietly technical, restrained cyan backlighting\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, interface labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; no Microsoft-style gradient",
+      "aspectRatio": "16:10",
+      "width": 1600,
+      "height": 1000,
+      "generator": "OpenAI image generation via Codex",
+      "generatedAt": "2026-09-26T00:00:00.000Z",
+      "sourceHash": "sha256:f79621b5e3ea3347f670a4c247b4632238f6aa33d6085e89e8f64f84a561e7fd",
+      "sourceHashVersion": 2,
       "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
       "fallbackInitials": "CS"
     },
@@ -12991,6 +12991,114 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/copilot-studio-knowledge-readiness",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "copilot-studio-mcp-readiness",
+    "name": "Copilot Studio MCP Readiness",
+    "title": "Copilot Studio MCP Readiness",
+    "description": "Check an MCP server against the constraints Microsoft documents for Copilot Studio before you wire it up: transport, tool schema shapes that silently drop a tool, supported authentication, orchestration fit, and connector data policy. Returns a per-check verdict with the fix on the server side.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "AI and Agents",
+      "Governance, Risk, and Compliance"
+    ],
+    "tags": [
+      "mcp",
+      "tools",
+      "copilot-studio",
+      "integration",
+      "schema",
+      "authentication",
+      "governance"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Copilot Studio"
+    ],
+    "author": {
+      "name": "Elliot Margot",
+      "url": "https://e-margot.ch",
+      "github": "OwnOptic",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-03T00:00:00.000Z",
+      "updated": "2026-09-03T00:00:00.000Z"
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "skills/copilot-studio-mcp-readiness.md"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "skills/copilot-studio-mcp-readiness.md"
+      }
+    ],
+    "bundleDownloadPath": null,
+    "downloadPath": "skills/copilot-studio-mcp-readiness.md",
+    "canonicalPath": "/skills/copilot-studio-mcp-readiness/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "CS"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/copilot-studio-mcp-readiness",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -19802,17 +19910,17 @@
     "series": [],
     "relatedAssetIds": [],
     "artwork": {
-      "ready": false,
-      "image": null,
-      "alt": null,
-      "prompt": null,
-      "aspectRatio": null,
-      "width": null,
-      "height": null,
-      "generator": null,
-      "generatedAt": null,
-      "sourceHash": null,
-      "sourceHashVersion": null,
+      "ready": true,
+      "image": "skill-art/root-cause-analysis.webp",
+      "alt": "Inspection lens tracing surface cracks to a single illuminated root cause below.",
+      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a branching chain of surface cracks and contributing channels is traced by a focused inspection lens down to one precise buried root mechanism, clearly separating symptoms from the underlying cause\nScene/backdrop: cross-section of a warm paper surface above a deep slate analytical field, uncluttered and diagram-like without labels\nSubject: visible surface fracture, branching causal channels, a magnifying inspection lens, and one illuminated root junction deep below\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; legible at small card size\nLighting/mood: calm, investigative, quietly technical, restrained cyan illumination on the evidence path\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, interface labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; no Microsoft-style gradient",
+      "aspectRatio": "16:10",
+      "width": 1600,
+      "height": 1000,
+      "generator": "OpenAI image generation via Codex",
+      "generatedAt": "2026-09-26T00:00:00.000Z",
+      "sourceHash": "sha256:8459c8bfb2b2668272934e098932e0b3a60a24561313b07d48547c63cf227950",
+      "sourceHashVersion": 2,
       "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
       "fallbackInitials": "RC"
     },
@@ -20130,17 +20238,17 @@
     "series": [],
     "relatedAssetIds": [],
     "artwork": {
-      "ready": false,
-      "image": null,
-      "alt": null,
-      "prompt": null,
-      "aspectRatio": null,
-      "width": null,
-      "height": null,
-      "generator": null,
-      "generatedAt": null,
-      "sourceHash": null,
-      "sourceHashVersion": null,
+      "ready": true,
+      "image": "skill-art/semantic-pdf-image-extractor.webp",
+      "alt": "Optical frame extracting meaningful image crops from layered documents while preserving source context.",
+      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: layered document sheets pass through an optical extraction frame that lifts a few meaningful visual tiles while keeping each tile connected to a larger context window and source page\nScene/backdrop: uncluttered slate document-analysis table with warm paper sheets and disciplined negative space\nSubject: stacked blank pages, one precise optical frame, several distinct image-like geometric crops, and fine provenance threads linking crops back to their page positions\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; legible at small card size\nLighting/mood: calm, capable, quietly technical, restrained cyan backlighting\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, interface labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; no Microsoft-style gradient",
+      "aspectRatio": "16:10",
+      "width": 1600,
+      "height": 1000,
+      "generator": "OpenAI image generation via Codex",
+      "generatedAt": "2026-09-26T00:00:00.000Z",
+      "sourceHash": "sha256:32a265a2618e8aeda1fa6941f02eaf5a99395bb37fb448a185837fc8049a0140",
+      "sourceHashVersion": 2,
       "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
       "fallbackInitials": "SP"
     },
@@ -20235,17 +20343,17 @@
     "series": [],
     "relatedAssetIds": [],
     "artwork": {
-      "ready": false,
-      "image": null,
-      "alt": null,
-      "prompt": null,
-      "aspectRatio": null,
-      "width": null,
-      "height": null,
-      "generator": null,
-      "generatedAt": null,
-      "sourceHash": null,
-      "sourceHashVersion": null,
+      "ready": true,
+      "image": "skill-art/sharepoint-file-creation.webp",
+      "alt": "Sealed file passing through a measured transfer gate into an organized document repository.",
+      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a sealed blank file object passes through a carefully calibrated size gate and follows a protected transfer channel into an orderly document repository, expressing safe creation and upload without exposing its contents\nScene/backdrop: uncluttered slate transfer bay with a warm paper destination archive and ample negative space\nSubject: one sealed file-shaped object, an unmarked physical measuring gate, a protected cyan transfer channel, and a neatly organized repository shelf\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; legible at small card size\nLighting/mood: calm, secure, quietly technical, restrained cyan backlighting\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, interface labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; no Microsoft-style gradient",
+      "aspectRatio": "16:10",
+      "width": 1600,
+      "height": 1000,
+      "generator": "OpenAI image generation via Codex",
+      "generatedAt": "2026-09-26T00:00:00.000Z",
+      "sourceHash": "sha256:55870b66f73e5701c1ce3842c43827156eeb59113189b4288e2ebc14c9fc5ac3",
+      "sourceHashVersion": 2,
       "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
       "fallbackInitials": "SF"
     },
@@ -21283,6 +21391,114 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/stoic-negotiator",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "study-flashcards",
+    "name": "Study Flashcards",
+    "title": "Study Flashcards",
+    "description": "Turn your notes, slides, PDFs, or pasted text into source-grounded flashcards and a practice quiz — delivered as a self-contained interactive HTML study app with spaced repetition.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Content and Documentation",
+      "Knowledge, Learning, and Research",
+      "Productivity and Automation"
+    ],
+    "tags": [
+      "learning",
+      "productivity",
+      "documents",
+      "html"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork",
+      "Copilot Studio",
+      "Scout"
+    ],
+    "author": {
+      "name": "Bobby Chang",
+      "url": "https://github.com/bobbyschang",
+      "github": "bobbyschang",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-29T00:00:00.000Z",
+      "updated": "2026-09-29T00:00:00.000Z"
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/study-flashcards.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/study-flashcards.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/study-flashcards.zip",
+    "downloadPath": "bundles/study-flashcards.zip",
+    "canonicalPath": "/skills/study-flashcards/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "SF"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/study-flashcards",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
