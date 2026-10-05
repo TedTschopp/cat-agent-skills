@@ -1,11 +1,30 @@
 {
   "name": "Study Flashcards",
   "description": "Turn your notes, slides, PDFs, or pasted text into source-grounded flashcards and a practice quiz — delivered as a self-contained interactive HTML study app with spaced repetition.",
-  "platforms": ["Cowork", "Copilot Studio", "Scout"],
-  "tags": ["learning", "productivity", "documents", "html"],
+  "platforms": [
+    "Cowork",
+    "Copilot Studio",
+    "Scout"
+  ],
+  "tags": [
+    "learning",
+    "productivity",
+    "documents",
+    "html"
+  ],
   "author": "Bobby Chang",
   "authorUrl": "https://github.com/bobbyschang",
   "version": "1.0.0",
   "createdAt": "2026-09-29",
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-09-29",
+  "coverImage": "skill-art/study-flashcards.webp",
+  "coverImageAlt": "Blank study cards following a luminous spiral from stacked source pages toward a warm recall point",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a source-grounded learning cycle shown as a sculptural deck of blank study cards moving through a calm ascending spiral, with several cards returning through the loop and one card arriving at a clear luminous recall point\nScene/backdrop: uncluttered warm-paper study surface transitioning into a deep slate backdrop, with a few abstract stacked source pages anchoring the cycle\nSubject: tactile blank cards, a restrained circular memory path rendered only as a smooth continuous ribbon of light, and layered source pages; every card and page face is entirely blank\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; strong silhouette and legible at small card size\nLighting/mood: calm, focused, quietly encouraging, with restrained cyan backlighting and a subtle warm orange recall highlight\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, symbols, labels, logos, trademarks, or watermark; no arrows or arrowheads anywhere; the memory path must be a plain continuous unmarked ribbon with no directional glyphs; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; all card and page faces must remain completely blank",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-10-05",
+  "coverImageSourceHash": "sha256:1a59f69f36a21a33b8eedbee1e3429fc66d4f69ccb1267561b94de32ba47b2ca",
+  "coverImageSourceHashVersion": 2
 }

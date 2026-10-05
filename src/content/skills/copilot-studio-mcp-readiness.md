@@ -10,6 +10,16 @@ authorGithub: OwnOptic
 version: 1.0.0
 createdAt: 2026-09-03
 updatedAt: 2026-09-03
+coverImage: skill-art/copilot-studio-mcp-readiness.webp
+coverImageAlt: "Modular protocol connectors passing through unmarked inspection frames, with one incompatible module set aside"
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a precise readiness inspection for a modular protocol bridge, shown as a chain of interlocking mechanical connector forms passing cleanly through a series of open calibration frames while one incompatible form rests clearly outside the route\nScene/backdrop: uncluttered warm-paper technical workbench fading into a deep slate field, with abstract architectural supports and generous negative space\nSubject: one strong bridge-like sequence of tactile connector modules, open unmarked inspection frames, and a single separated incompatible module; no screens or interface panels\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; strong silhouette and legible at small card size\nLighting/mood: calm, capable, quietly technical, with restrained cyan backlighting and a subtle warm edge light\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, symbols, labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; all calibration frames and connector surfaces must be completely unmarked"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-10-05
+coverImageSourceHash: "sha256:e217581df8f71c64492bb0e9ee5dc04a9c98ad649446a0aa8dcf6457c690c485"
+coverImageSourceHashVersion: 2
 ---
 Review an MCP server against the constraints Microsoft documents for Copilot
 Studio, and report what will break and where to fix it. You review and specify;
