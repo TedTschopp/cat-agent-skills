@@ -13081,17 +13081,17 @@
     "series": [],
     "relatedAssetIds": [],
     "artwork": {
-      "ready": false,
-      "image": null,
-      "alt": null,
-      "prompt": null,
-      "aspectRatio": null,
-      "width": null,
-      "height": null,
-      "generator": null,
-      "generatedAt": null,
-      "sourceHash": null,
-      "sourceHashVersion": null,
+      "ready": true,
+      "image": "skill-art/copilot-studio-mcp-readiness.webp",
+      "alt": "Modular protocol connectors passing through unmarked inspection frames, with one incompatible module set aside",
+      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a precise readiness inspection for a modular protocol bridge, shown as a chain of interlocking mechanical connector forms passing cleanly through a series of open calibration frames while one incompatible form rests clearly outside the route\nScene/backdrop: uncluttered warm-paper technical workbench fading into a deep slate field, with abstract architectural supports and generous negative space\nSubject: one strong bridge-like sequence of tactile connector modules, open unmarked inspection frames, and a single separated incompatible module; no screens or interface panels\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; strong silhouette and legible at small card size\nLighting/mood: calm, capable, quietly technical, with restrained cyan backlighting and a subtle warm edge light\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, symbols, labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; all calibration frames and connector surfaces must be completely unmarked",
+      "aspectRatio": "16:10",
+      "width": 1600,
+      "height": 1000,
+      "generator": "OpenAI image generation via Codex",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "sourceHash": "sha256:e217581df8f71c64492bb0e9ee5dc04a9c98ad649446a0aa8dcf6457c690c485",
+      "sourceHashVersion": 2,
       "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
       "fallbackInitials": "CS"
     },
@@ -13930,6 +13930,115 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/lookup-dataverse-table",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "edison-writing-guide",
+    "name": "Edison Writing Guide",
+    "title": "Edison Writing Guide",
+    "description": "Draft and edit newsroom copy with AP style, concise ledes, clear attribution, and consistent treatment of names, numbers, dates, and titles.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Content and Documentation",
+      "Communication and Collaboration"
+    ],
+    "tags": [
+      "writing",
+      "editing",
+      "newsroom",
+      "AP style",
+      "communications",
+      "headlines"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork",
+      "Copilot Studio",
+      "Scout"
+    ],
+    "author": {
+      "name": "Ted Tschopp",
+      "url": "https://tedt.org/",
+      "github": "TedTschopp",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-05T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/edison-writing-guide.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/edison-writing-guide.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/edison-writing-guide.zip",
+    "downloadPath": "bundles/edison-writing-guide.zip",
+    "canonicalPath": "/skills/edison-writing-guide/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": true,
+      "image": "skill-art/edison-writing-guide.webp",
+      "alt": "Blank paper sheets form an inverted pyramid beside an editor's pencil, illustrating concise newsroom writing.",
+      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a purposeful editorial illustration of concise newsroom editing and putting the most important information first.\nScene/backdrop: a refined editor's table on a flat deep slate background with generous negative space.\nSubject: three completely blank warm-paper sheets form a compact sculptural inverted pyramid: a broad upper sheet, a medium sheet just below it, and a small lower sheet, each suspended at a shallow angle on a simple navy stand. One unbranded orange wooden editor's pencil rests diagonally on the table, with one small cyan paper clip securing the broad upper sheet. The paper layers are real dimensional objects, not charts or interface panels.\nStyle/medium: premium tactile editorial illustration, sculpted paper and matte ceramic, crisp folds and soft realistic shadows, restrained detail.\nComposition/framing: exact 16:10 landscape; centered crop-safe silhouette; entire stand, pencil, and sheets fully inside the inner 80% of the image; clear hierarchy readable at 290-pixel card width.\nLighting/mood: discerning, trustworthy, practical, quietly capable.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nConstraints: all paper surfaces are blank; no text, letters, numbers, punctuation, pseudo-writing, logos, trademarks, or watermarks; no paw imagery, paw logos, cats, or cat silhouettes; no product UI or Microsoft Fluent branding; no electric utility logos or lightning symbols; no glossy glamour effects.",
+      "aspectRatio": "16:10",
+      "width": 1600,
+      "height": 1000,
+      "generator": "OpenAI image generation via Codex",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "sourceHash": "sha256:6cba61ccba7bb5640f179b6a07d812c845d73d635e57d3daa6952ed4909bdf27",
+      "sourceHashVersion": 2,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "EW"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/edison-writing-guide",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -18521,6 +18630,113 @@
     }
   },
   {
+    "kind": "prompt-template",
+    "kindLabel": "Prompt Template File",
+    "slug": "professional-headshot-from-a-photo",
+    "name": "Professional Headshot from a Photo",
+    "title": "Professional Headshot from a Photo",
+    "description": "Create a natural professional headshot from an uploaded photo, preserving identity while tailoring the style, lighting, background, and crop to its intended use.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Design and Media"
+    ],
+    "tags": [
+      "headshot",
+      "portrait",
+      "photography",
+      "linkedin",
+      "image generation"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [
+      "chatgpt"
+    ],
+    "worksWith": [
+      "chatgpt"
+    ],
+    "author": {
+      "name": "Ted Tschopp",
+      "url": "https://tedt.org/",
+      "github": null,
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-14T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "professional-headshot-from-a-photo.prompt.md",
+    "payloadPaths": [
+      "professional-headshot-from-a-photo.prompt.md"
+    ],
+    "payloads": [
+      {
+        "path": "professional-headshot-from-a-photo.prompt.md",
+        "downloadPath": "bundles/professional-headshot-from-a-photo.prompt.md"
+      }
+    ],
+    "bundleDownloadPath": null,
+    "downloadPath": "bundles/professional-headshot-from-a-photo.prompt.md",
+    "canonicalPath": "/prompts/professional-headshot-from-a-photo/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": null,
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": true,
+      "image": "skill-art/professional-headshot-from-a-photo.webp",
+      "alt": "A portrait print in a studio with softbox lighting, a paper backdrop, and a navy jacket.",
+      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org prompt library gallery cover\nPrimary request: editorial artwork for Professional Headshot from a Photo, showing careful portrait lighting and a natural professional presence.\nScene/backdrop: a small refined portrait studio vignette on a calm deep slate field.\nSubject: a single freestanding warm-paper portrait print showing an invented adult with a naturally friendly face and navy jacket; a broad softbox on the left and a curved warm-paper backdrop frame the portrait, with one small orange adjustment dial on the lamp stand. The portrait is a dimensional paper illustration, clearly cover art rather than an actual customer photograph.\nStyle/medium: premium tactile editorial illustration, sculpted paper and matte ceramic, restrained realistic studio shadows, crisp purposeful detail.\nComposition/framing: exact 16:10 landscape, central crop-safe composition with generous negative space, all essential elements within the central 80%, legible at 290-pixel card width.\nLighting/mood: soft flattering studio light, approachable, composed, professional.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, small cyan #00A9E0 accents and sparing orange #E86027.\nConstraints: no text, letters, numbers, pseudo-writing, logos, watermarks, product UI, vendor branding, paw imagery, paw logos, cats, cat silhouettes, or Microsoft Fluent styling. No glossy glamour effects or science-fiction glow.",
+      "aspectRatio": "16:10",
+      "width": 1600,
+      "height": 1000,
+      "generator": "OpenAI image generation via Codex",
+      "generatedAt": "2026-09-14T00:00:00.000Z",
+      "sourceHash": "sha256:6533ef1e5a8f29ff0f8c94a519b2e0c0b09b9694e147e42f1c336f287272e22f",
+      "sourceHashVersion": 2,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "PH"
+    },
+    "provenance": {
+      "sourceRepository": null,
+      "sourceCommit": null,
+      "sourcePath": null,
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
     "kind": "skill",
     "kindLabel": "Agent Skill",
     "slug": "regulation-monitor",
@@ -20856,6 +21072,114 @@
   {
     "kind": "skill",
     "kindLabel": "Agent Skill",
+    "slug": "asd-ste100",
+    "name": "Simplified Technical English (ASD-STE100)",
+    "title": "Simplified Technical English (ASD-STE100)",
+    "description": "Clarify technical instructions, tool descriptions, and agent messages while preserving their meaning, conditions, and uncertainty.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Content and Documentation"
+    ],
+    "tags": [
+      "writing",
+      "editing",
+      "technical writing",
+      "clarity",
+      "controlled language",
+      "agent instructions"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork",
+      "Copilot Studio",
+      "Scout"
+    ],
+    "author": {
+      "name": "Dustin Yuchen Teng",
+      "url": "https://github.com/danyuchn",
+      "github": "danyuchn",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-05T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/asd-ste100.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/asd-ste100.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/asd-ste100.zip",
+    "downloadPath": "bundles/asd-ste100.zip",
+    "canonicalPath": "/skills/asd-ste100/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "0.4.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": true,
+      "image": "skill-art/asd-ste100.webp",
+      "alt": "Tangled paper ribbons pass through a navy guide and emerge as one straight strip, illustrating clear technical instructions.",
+      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: an editorial metaphor for simplifying ambiguous technical language into one clear instruction.\nScene/backdrop: a quiet workbench against a flat deep slate field with ample negative space.\nSubject: a small tangle of three blank warm-paper ribbons enters one smooth navy ceramic alignment guide; a single neatly straightened warm-paper strip exits toward the foreground. A tiny orange adjustment pin and a restrained cyan edge on the guide suggest deliberate editing. Use one compact sculptural assembly with no extraneous props.\nStyle/medium: premium tactile editorial illustration, matte ceramic and folded paper, realistic soft studio shadows, crisp purposeful detail.\nComposition/framing: exact 16:10 landscape; view from slightly above; entire assembly centered inside the inner 80% of the frame; all ribbons fully visible; generous calm margins; silhouette readable at 290-pixel card width.\nLighting/mood: calm, capable, precise, quietly technical, restrained cyan reflected light.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nConstraints: every paper surface is blank; no text, letters, numbers, pseudo-writing, symbols, labels, logos, trademarks, or watermarks; no paw imagery, paw logos, cats, or cat silhouettes; no product UI or Microsoft Fluent branding; no neon glow or decorative gradients.\nCorrection: Scale the entire sculptural assembly down substantially. Shorten all paper strips and keep every ribbon end and the guide completely inside the central 75% of the image, with at least 12% clear slate margin on every side. Preserve the same paper-and-ceramic style and the three-input-to-one-output metaphor.",
+      "aspectRatio": "16:10",
+      "width": 1600,
+      "height": 1000,
+      "generator": "OpenAI image generation via Codex",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "sourceHash": "sha256:910db1783255c051e6d3bbf7d6bd07cbe87d72a5fcbe6eab6f4b8054c45da0ce",
+      "sourceHashVersion": 2,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "ST"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/asd-ste100",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
     "slug": "skill-authoring-coach",
     "name": "Skill Authoring Coach",
     "title": "Skill Authoring Coach",
@@ -21481,17 +21805,17 @@
     "series": [],
     "relatedAssetIds": [],
     "artwork": {
-      "ready": false,
-      "image": null,
-      "alt": null,
-      "prompt": null,
-      "aspectRatio": null,
-      "width": null,
-      "height": null,
-      "generator": null,
-      "generatedAt": null,
-      "sourceHash": null,
-      "sourceHashVersion": null,
+      "ready": true,
+      "image": "skill-art/study-flashcards.webp",
+      "alt": "Blank study cards following a luminous spiral from stacked source pages toward a warm recall point",
+      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a source-grounded learning cycle shown as a sculptural deck of blank study cards moving through a calm ascending spiral, with several cards returning through the loop and one card arriving at a clear luminous recall point\nScene/backdrop: uncluttered warm-paper study surface transitioning into a deep slate backdrop, with a few abstract stacked source pages anchoring the cycle\nSubject: tactile blank cards, a restrained circular memory path rendered only as a smooth continuous ribbon of light, and layered source pages; every card and page face is entirely blank\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; strong silhouette and legible at small card size\nLighting/mood: calm, focused, quietly encouraging, with restrained cyan backlighting and a subtle warm orange recall highlight\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, symbols, labels, logos, trademarks, or watermark; no arrows or arrowheads anywhere; the memory path must be a plain continuous unmarked ribbon with no directional glyphs; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; all card and page faces must remain completely blank",
+      "aspectRatio": "16:10",
+      "width": 1600,
+      "height": 1000,
+      "generator": "OpenAI image generation via Codex",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "sourceHash": "sha256:1a59f69f36a21a33b8eedbee1e3429fc66d4f69ccb1267561b94de32ba47b2ca",
+      "sourceHashVersion": 2,
       "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
       "fallbackInitials": "SF"
     },
@@ -21727,6 +22051,115 @@
         "normalize-model-github-to-github-copilot",
         "repair-title-technology-architecture-as-markdown"
       ]
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "ted-writing-style",
+    "name": "Ted's Writing Style",
+    "title": "Ted's Writing Style",
+    "description": "Draft and revise in Ted Tschopp's personal voice, using concrete openings, visible reasoning, plain explanations, and an ending grounded in consequence.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Content and Documentation"
+    ],
+    "tags": [
+      "writing",
+      "editing",
+      "personal voice",
+      "essays",
+      "storytelling",
+      "technology",
+      "tabletop RPG"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork",
+      "Copilot Studio",
+      "Scout"
+    ],
+    "author": {
+      "name": "Ted Tschopp",
+      "url": "https://tedt.org/",
+      "github": "TedTschopp",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-05T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/ted-writing-style.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/ted-writing-style.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/ted-writing-style.zip",
+    "downloadPath": "bundles/ted-writing-style.zip",
+    "canonicalPath": "/skills/ted-writing-style/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": true,
+      "image": "skill-art/ted-writing-style.webp",
+      "alt": "The referenced writer, wearing glasses and a blue overshirt, draws a bridge in an open book beside a paper path crossing a wooden bridge.",
+      "prompt": "Use case: identity-preserve\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: edit the current cover so the referenced person is actively drawing in the open book.\nInput images: Image 1 is the edit target, showing the writer behind a notebook and a paper path crossing a wooden bridge. Image 2 is the person's reference from https://tedt.org/img/generated/responsive/home/blog--1456w.webp; preserve that person's identity, glasses, beard, swept-up hair, blue overshirt, and black shirt.\nAction: replace the chin-resting pose. He leans slightly forward and looks down at the open notebook with a focused, natural expression. His right hand holds an unbranded orange wooden drawing pencil in a believable grip, with the pencil tip visibly touching the left-hand page. His left hand gently steadies the book. Show a few delicate graphite sketch lines of a small bridge and flowing path on that page, making the drawing action immediately clear; the marks are an illustration, never handwriting, letters, numbers, or labels.\nPreserve: keep the same single person, notebook with navy cloth cover, orange bookmark, continuous sculptural paper path, small wooden bridge, slate background, and restrained warm-paper/navy/cyan/orange palette. Keep the reference likeness recognizable, and preserve the tactile editorial style and matte studio shadows.\nComposition/framing: exact 16:10 landscape; maintain comfortable crop-safe margins of at least 10% around the complete head, hands, book, and bridge. Keep the face and pencil-to-page action large enough to read at a 290-pixel card width. The drawing hand and pencil must be fully visible, without blocking the face.\nLighting/mood: thoughtful, curious, absorbed in the drawing, warm, calm; subtle cyan reflection beneath the paper.\nConstraints: no additional people, extra fingers, malformed hands, text, letters, numbers, pseudo-writing, logos, trademarks, watermark, laptop, paw imagery, cats, product UI, Microsoft Fluent branding, glowing balls, Swiss flags, mountains, religious symbols, or forest background. Alter the pose and add only the drawing pencil and small unlabeled graphite sketch needed for this request.",
+      "aspectRatio": "16:10",
+      "width": 1600,
+      "height": 1000,
+      "generator": "OpenAI image generation via Codex",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "sourceHash": "sha256:f93bf193e4bdb90ee64440c933a54604ee177c839e3a5c7afc23566b23945ba2",
+      "sourceHashVersion": 2,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "TW"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/ted-writing-style",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
     }
   },
   {
