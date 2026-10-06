@@ -1,6 +1,6 @@
 ---
 import type { LibraryAsset } from "../lib/library-assets";
-import { getRepositoryEngagement } from "../lib/engagement";
+import { getRepositoryEngagement, hasMicrosoftUpstream } from "../lib/engagement";
 import {
   LOCAL_GISCUS_CATEGORY,
   LOCAL_GISCUS_CATEGORY_ID,
@@ -19,7 +19,7 @@ interface Props {
 }
 
 const { asset } = Astro.props;
-const hasMicrosoftSource = ["skill", "plugin", "automation"].includes(asset.kind);
+const hasMicrosoftSource = hasMicrosoftUpstream(asset.slug);
 const localRepository = getRepositoryEngagement("local");
 const microsoftRepository = getRepositoryEngagement("microsoft");
 const localDiscussionTarget = asset.engagement.local.discussions[0]?.url ?? localRepository.discussionsUrl;
@@ -41,7 +41,7 @@ const total = hasMicrosoftSource
       {
         hasMicrosoftSource
           ? "Microsoft upstream and AI.Tedt.org remain separate communities. Discovery totals combine their responses, but each discussion stays with its source."
-          : "Ratings and discussion begin fresh on AI.Tedt.org. Legacy prompt reactions and social threads are not carried into this library."
+          : "Ratings and comments are collected on AI.Tedt.org."
       }
     </p>
   </div>
@@ -64,6 +64,11 @@ const total = hasMicrosoftSource
         <p class="mt-2 text-xs leading-relaxed text-subtle">
           Source totals are added. They do not represent unique people.
         </p>
+      )}
+      {!hasMicrosoftSource && (
+        <a href={localRepository.url} target="_blank" rel="noopener noreferrer" class="mt-2 inline-block text-xs text-[var(--link)] underline underline-offset-2 hover:text-[var(--link-hover)]">
+          {localRepository.stars.toLocaleString("en-US")} repository {localRepository.stars === 1 ? "star" : "stars"}
+        </a>
       )}
     </div>
 

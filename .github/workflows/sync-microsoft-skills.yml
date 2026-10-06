@@ -75,7 +75,7 @@ jobs:
         run: npm run check:generated-content
 
       - name: Run Unit Tests
-        if: steps.sync.outputs.needs_import == 'true'
+        if: steps.sync.outputs.needs_update == 'true'
         run: npm test
 
       - name: Validate Generated Library Metadata
@@ -90,17 +90,18 @@ jobs:
         run: npm run artwork:validate
 
       - name: Build the Production Site
-        if: steps.sync.outputs.needs_import == 'true'
+        if: steps.sync.outputs.needs_update == 'true'
         run: npm run build
 
       - name: Enforce Addition-Only Submission Scope
-        if: steps.sync.outputs.needs_import == 'true'
+        if: steps.sync.outputs.needs_update == 'true'
         id: scope
         env:
           NEW_SLUGS: ${{ steps.sync.outputs.new_submission_slugs }}
           GENERATED_SLUGS: ${{ steps.sync.outputs.pending_slugs }}
         run: |
           npm run check:upstream-sync-scope -- \
+            --upstream-ref microsoft/main \
             --new-slugs "$NEW_SLUGS" \
             --generated-slugs "$GENERATED_SLUGS"
 
@@ -123,7 +124,7 @@ jobs:
             exit 1
           fi
 
-          git add -- submissions src/content/skills src/content/prompts src/content/artifacts src/content/artifact-payloads src/content/guides public/bundles public/assets.json
+          git add -- submissions src/content/skills src/content/prompts src/content/artifacts src/content/artifact-payloads src/content/guides src/data/microsoft-catalog.json public/bundles public/assets.json
           git diff --cached --check
           git diff --cached --name-status
 
@@ -146,5 +147,5 @@ jobs:
         run: gh workflow run deploy.yml --repo "$GITHUB_REPOSITORY" --ref main
 
       - name: Report No-Op
-        if: steps.sync.outputs.needs_import != 'true'
+        if: steps.sync.outputs.needs_update != 'true'
         run: echo "Microsoft has no submission directories or gallery entries missing from this fork."

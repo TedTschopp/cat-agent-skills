@@ -72,6 +72,7 @@ test("copies only absent upstream submissions and preserves existing local conte
     logger: () => {},
   });
   assert.equal(existsSync(join(repo, "submissions/new-skill")), false);
+  assert.equal(existsSync(join(repo, "src/data/microsoft-catalog.json")), false);
 
   syncUpstreamSubmissions({ repoRoot: repo, upstreamRef, logger: () => {} });
   assert.equal(
@@ -83,14 +84,21 @@ test("copies only absent upstream submissions and preserves existing local conte
     "new instructions\n",
   );
   assert.notEqual(statSync(join(repo, "submissions/new-skill/scripts/run.sh")).mode & 0o111, 0);
+  assert.deepEqual(
+    JSON.parse(readFileSync(join(repo, "src/data/microsoft-catalog.json"), "utf8")),
+    ["existing", "new-skill"],
+  );
 
   const scope = verifySyncWorktree({
     repoRoot: repo,
     newSlugs: ["new-skill"],
     generatedSlugs: [],
+    upstreamRef,
   });
   assert.equal(scope.changed, true);
-  assert.ok(scope.entries.every((entry) => entry.path.startsWith("submissions/new-skill/")));
+  assert.ok(scope.entries.every((entry) =>
+    entry.path.startsWith("submissions/new-skill/") || entry.path === "src/data/microsoft-catalog.json",
+  ));
 
   write(repo, "src/styles/unexpected.css", "unsafe\n");
   assert.throws(
@@ -99,6 +107,7 @@ test("copies only absent upstream submissions and preserves existing local conte
         repoRoot: repo,
         newSlugs: ["new-skill"],
         generatedSlugs: [],
+        upstreamRef,
       }),
     /outside the addition-only allowlist/,
   );
@@ -158,7 +167,7 @@ test("new Microsoft Markdown passes the staged whitespace gate without touching 
   assert.equal(git(repo, "show", `${upstreamRef}:submissions/${slug}/SKILL.md`), skill.trim());
   git(repo, "add", `submissions/${slug}`);
   assert.equal(git(repo, "diff", "--cached", "--check"), "");
-  assert.equal(verifySyncWorktree({ repoRoot: repo, newSlugs: [slug], generatedSlugs: [] }).changed, true);
+  assert.equal(verifySyncWorktree({ repoRoot: repo, newSlugs: [slug], generatedSlugs: [], upstreamRef }).changed, true);
 
   const second = syncUpstreamSubmissions({ repoRoot: repo, upstreamRef, logger: () => {} });
   assert.deepEqual(second.newSlugs, []);
@@ -220,6 +229,37 @@ test("does not generate fork-only submissions that Microsoft does not publish", 
   const plan = planUpstreamSync({ repoRoot: repo, upstreamRef: "microsoft-main" });
   assert.deepEqual(plan.newSlugs, []);
   assert.deepEqual(plan.pendingGeneratedSlugs, []);
+  assert.equal(plan.catalogChanged, true);
+  const first = syncUpstreamSubmissions({ repoRoot: repo, upstreamRef: "microsoft-main", logger: () => {} });
+  assert.equal(first.catalogChanged, true);
+  assert.deepEqual(
+    JSON.parse(readFileSync(join(repo, "src/data/microsoft-catalog.json"), "utf8")),
+    ["existing"],
+  );
+  assert.equal(existsSync(join(repo, "src/content/skills/fork-only.md")), false);
+  const second = syncUpstreamSubmissions({ repoRoot: repo, upstreamRef: "microsoft-main", logger: () => {} });
+  assert.equal(second.catalogChanged, false);
+});
+
+test("catalog-only updates permit the rebuilt public catalog and reject invented Microsoft sources", (t) => {
+  const repo = initializeRepository();
+  t.after(() => rmSync(repo, { recursive: true, force: true }));
+  git(repo, "branch", "microsoft-main");
+  syncUpstreamSubmissions({ repoRoot: repo, upstreamRef: "microsoft-main", logger: () => {} });
+  write(repo, "public/assets.json", "[]\n");
+  assert.equal(verifySyncWorktree({
+    repoRoot: repo,
+    newSlugs: [],
+    generatedSlugs: [],
+    upstreamRef: "microsoft-main",
+  }).changed, true);
+  write(repo, "src/data/microsoft-catalog.json", '["fork-only"]\n');
+  assert.throws(() => verifySyncWorktree({
+    repoRoot: repo,
+    newSlugs: [],
+    generatedSlugs: [],
+    upstreamRef: "microsoft-main",
+  }), /differs from the fetched upstream submissions/);
 });
 
 test("recognizes a generic artifact page as an existing generated catalog entry", (t) => {

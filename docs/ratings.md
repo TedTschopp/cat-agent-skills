@@ -10,7 +10,8 @@ two independent community sources:
 
 The sources are never copied into one another. This preserves the original
 author, timestamp, reactions, edits, deletions, and moderation history for every
-comment. Detail pages label both sources and link every matching Discussion.
+comment. Entries in Microsoft's catalog show both sources. Local-only entries
+show only AI.Tedt.org ratings, comments, repository stars, and discussion.
 
 ## What the Numbers Mean
 
@@ -19,8 +20,8 @@ comment. Detail pages label both sources and link every matching Discussion.
   score.
 - **Comments** include top-level comments and replies.
 - The gallery's "Top rated" sort uses the combined Microsoft + AI.Tedt.org
-  rating. The detail page always shows the source split, so the total remains
-  traceable.
+  rating for entries with an upstream source, and only AI.Tedt.org reactions
+  for local-only entries. The detail page shows the applicable sources.
 - **Repository stars** are repository-level GitHub stars. They are shown by
   source and never treated as per-skill ratings.
 
@@ -46,7 +47,10 @@ stores Microsoft, local, and combined reaction/comment totals plus all source
 Discussion links. It also stores each repository's star count.
 
 `src/data/ratings.json` remains the small `{ "<slug>": <combined-rating> }`
-compatibility snapshot used by existing sorting, badges, and consumers.
+compatibility snapshot. Site totals, sorting, badges, and public catalogs use
+the source-aware engagement reader, which excludes Microsoft data for local-only
+entries. `src/data/microsoft-catalog.json` records the upstream submission slugs
+and is refreshed by the catalog sync even when no entries need importing.
 
 The Pages workflow refreshes both files at 3:30 a.m. in
 `America/Los_Angeles`, after the 3:00 a.m. catalog sync. It commits and deploys

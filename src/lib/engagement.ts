@@ -7,6 +7,7 @@
  */
 import engagementJson from "../data/engagement.json";
 import legacyRatingsJson from "../data/ratings.json";
+import microsoftCatalog from "../data/microsoft-catalog.json";
 
 export type EngagementSourceKey = "microsoft" | "local";
 
@@ -54,6 +55,12 @@ const DEFAULT_REPOSITORIES: Record<EngagementSourceKey, string> = {
 const snapshot = engagementJson as unknown as Partial<EngagementSnapshot>;
 const legacyRatings = legacyRatingsJson as Record<string, unknown>;
 const supportedSnapshot = snapshot.schemaVersion === 1;
+const microsoftSlugs = new Set(microsoftCatalog);
+
+/** Catalog membership is independent of asset kind and discussion activity. */
+export function hasMicrosoftUpstream(slug: string): boolean {
+  return microsoftSlugs.has(slug);
+}
 
 function count(value: unknown): number {
   return typeof value === "number" && Number.isFinite(value) && value > 0
@@ -116,22 +123,17 @@ function normalizeSource(
   };
 }
 
-/** Source-separated engagement for one skill, with a legacy-safe fallback. */
-export function getSkillEngagement(slug: string): SkillEngagement {
-  const entry = supportedSnapshot ? snapshot.skills?.[slug] : undefined;
-  if (!entry || typeof entry !== "object") {
-    const legacyRating = count(legacyRatings[slug]);
-    return {
-      microsoft: { ...emptySource(), rating: legacyRating },
-      local: emptySource(),
-      total: { rating: legacyRating, comments: 0 },
-    };
-  }
-
-  const microsoft = normalizeSource(
-    entry.microsoft,
-    repositoryName("microsoft"),
-  );
+/** Ignore upstream snapshot data when the asset has no Microsoft source. */
+export function normalizeSkillEngagement(
+  value: unknown,
+  hasMicrosoftSource: boolean,
+): SkillEngagement {
+  const entry = value && typeof value === "object"
+    ? value as Partial<SkillEngagement>
+    : {};
+  const microsoft = hasMicrosoftSource
+    ? normalizeSource(entry.microsoft, repositoryName("microsoft"))
+    : emptySource();
   const local = normalizeSource(entry.local, repositoryName("local"));
 
   // Derive totals from the source records instead of trusting redundant input.
@@ -144,6 +146,19 @@ export function getSkillEngagement(slug: string): SkillEngagement {
       comments: microsoft.comments + local.comments,
     },
   };
+}
+
+/** Source-separated engagement for one asset, with a legacy-safe fallback. */
+export function getSkillEngagement(slug: string): SkillEngagement {
+  const hasMicrosoftSource = hasMicrosoftUpstream(slug);
+  const entry = supportedSnapshot ? snapshot.skills?.[slug] : undefined;
+  if (!entry || typeof entry !== "object") {
+    return normalizeSkillEngagement(
+      { microsoft: { ...emptySource(), rating: count(legacyRatings[slug]) } },
+      hasMicrosoftSource,
+    );
+  }
+  return normalizeSkillEngagement(entry, hasMicrosoftSource);
 }
 
 /** Repository-wide stars and canonical links for one engagement source. */

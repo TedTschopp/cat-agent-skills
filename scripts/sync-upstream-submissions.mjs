@@ -2,7 +2,8 @@
  * Copy only submission directories that exist in Microsoft's catalog but not
  * in this fork. Existing submissions and all fork-owned application code are
  * deliberately immutable. The local importer generates library artifacts for
- * the copied slugs in a later, separately validated workflow step.
+ * the copied slugs in a later, separately validated workflow step. Refresh the
+ * upstream slug index even when no submission needs importing.
  */
 import { execFileSync } from "node:child_process";
 import {
@@ -12,6 +13,7 @@ import {
   lstatSync,
   mkdirSync,
   mkdtempSync,
+  readFileSync,
   readdirSync,
   renameSync,
   rmSync,
@@ -41,6 +43,11 @@ const GENERATED_PATHS = (slug) => [
   `public/bundles/${slug}`,
 ];
 const PUBLIC_CATALOG_PATH = "public/assets.json";
+const MICROSOFT_CATALOG_PATH = "src/data/microsoft-catalog.json";
+
+function serializeMicrosoftCatalog(slugs) {
+  return `${JSON.stringify(slugs, null, 2)}\n`;
+}
 
 function gitText(repoRoot, args) {
   return execFileSync("git", args, {
@@ -117,6 +124,9 @@ export function planUpstreamSync({ repoRoot, upstreamRef }) {
   const root = resolve(repoRoot);
   const upstreamSha = gitText(root, ["rev-parse", `${upstreamRef}^{commit}`]).trim();
   const upstreamSlugs = listUpstreamSubmissionSlugs(root, upstreamRef);
+  const catalogPath = join(root, MICROSOFT_CATALOG_PATH);
+  const catalogChanged = !existsSync(catalogPath) ||
+    readFileSync(catalogPath, "utf8") !== serializeMicrosoftCatalog(upstreamSlugs);
   const localSlugs = listLocalSubmissionSlugs(root);
   const newSlugs = [];
 
@@ -164,6 +174,7 @@ export function planUpstreamSync({ repoRoot, upstreamRef }) {
     upstreamRef,
     upstreamSha,
     upstreamSlugs,
+    catalogChanged,
     localSlugs,
     newSlugs,
     pendingGeneratedSlugs,
@@ -291,7 +302,21 @@ export function syncUpstreamSubmissions({
   logger = console.log,
 }) {
   const plan = planUpstreamSync({ repoRoot, upstreamRef });
-  if (!checkOnly) copyNewSubmissions(resolve(repoRoot), upstreamRef, plan.newSlugs, logger);
+  if (!checkOnly) {
+    const root = resolve(repoRoot);
+    copyNewSubmissions(root, upstreamRef, plan.newSlugs, logger);
+    if (plan.catalogChanged) {
+      const catalogPath = join(root, MICROSOFT_CATALOG_PATH);
+      mkdirSync(dirname(catalogPath), { recursive: true });
+      const temporary = `${catalogPath}.tmp-${process.pid}`;
+      try {
+        writeFileSync(temporary, serializeMicrosoftCatalog(plan.upstreamSlugs));
+        renameSync(temporary, catalogPath);
+      } finally {
+        rmSync(temporary, { force: true });
+      }
+    }
+  }
 
   if (plan.newSlugs.length > 0) {
     logger(
@@ -345,11 +370,18 @@ function parseSlugList(value, label) {
   return slugs.sort();
 }
 
-/** Ensure the generator created additions only, within the exact slug allowlist. */
-export function verifySyncWorktree({ repoRoot, newSlugs, generatedSlugs }) {
+/** Allow submission additions and verified source/public catalog updates only. */
+export function verifySyncWorktree({ repoRoot, newSlugs, generatedSlugs, upstreamRef = "upstream/main" }) {
   const root = resolve(repoRoot);
   const newSet = new Set(newSlugs);
   const entries = parseStatus(root);
+  const sourceCatalogChanged = entries.some((entry) => entry.path === MICROSOFT_CATALOG_PATH);
+  if (sourceCatalogChanged) {
+    const expected = serializeMicrosoftCatalog(listUpstreamSubmissionSlugs(root, upstreamRef));
+    if (readFileSync(join(root, MICROSOFT_CATALOG_PATH), "utf8") !== expected) {
+      throw new Error("Microsoft source catalog differs from the fetched upstream submissions");
+    }
+  }
   const unexpected = [];
 
   for (const entry of entries) {
@@ -359,11 +391,12 @@ export function verifySyncWorktree({ repoRoot, newSlugs, generatedSlugs }) {
     const allowed =
       (submissionSlug && newSet.has(submissionSlug)) ||
       generatedSlugs.some((slug) => isGeneratedPathForSlug(entry.path, slug)) ||
-      (generatedSlugs.length > 0 && entry.path === PUBLIC_CATALOG_PATH);
+      ((generatedSlugs.length > 0 || sourceCatalogChanged) && entry.path === PUBLIC_CATALOG_PATH) ||
+      entry.path === MICROSOFT_CATALOG_PATH;
     const additionOnly = entry.status === "??" || entry.status === "A ";
     const catalogUpdate =
-      entry.path === PUBLIC_CATALOG_PATH &&
-      generatedSlugs.length > 0 &&
+      (entry.path === MICROSOFT_CATALOG_PATH ||
+        (entry.path === PUBLIC_CATALOG_PATH && (generatedSlugs.length > 0 || sourceCatalogChanged))) &&
       ["??", "A ", " M", "M ", "MM"].includes(entry.status);
     if (!allowed || (!additionOnly && !catalogUpdate)) {
       unexpected.push(`${entry.status} ${entry.path}`);
@@ -460,12 +493,13 @@ function main() {
       repoRoot: options.repoRoot,
       newSlugs: options.newSlugs,
       generatedSlugs: options.generatedSlugs,
+      upstreamRef: options.upstreamRef,
     });
     appendOutput("changed", result.changed);
     appendOutput("changed_count", result.entries.length);
     appendSummary(
       `\n### Addition-only scope check\n\n` +
-        `Validated ${result.entries.length} changed path(s); no existing files were overwritten.\n`,
+        `Validated ${result.entries.length} changed path(s) against the submission and catalog allowlist.\n`,
     );
     console.log(`Addition-only scope check passed for ${result.entries.length} changed path(s).`);
     return;
@@ -487,6 +521,8 @@ function main() {
   appendOutput("pending_slugs", plan.pendingGeneratedSlugs.join(","));
   appendOutput("import_args", importArgs);
   appendOutput("needs_import", plan.pendingGeneratedSlugs.length > 0);
+  appendOutput("catalog_changed", plan.catalogChanged);
+  appendOutput("needs_update", plan.pendingGeneratedSlugs.length > 0 || plan.catalogChanged);
 
   const newList = plan.newSlugs.length > 0 ? plan.newSlugs.join(", ") : "None";
   const pendingList =
@@ -497,7 +533,8 @@ function main() {
     `## Microsoft Catalog Sync\n\n` +
       `- Upstream commit: \`${plan.upstreamSha}\`\n` +
       `- New submission directories: ${newList}\n` +
-      `- Gallery entries to generate: ${pendingList}\n`,
+      `- Gallery entries to generate: ${pendingList}\n` +
+      `- Microsoft source catalog: ${plan.catalogChanged ? (options.checkOnly ? "would update" : "updated") : "current"}\n`,
   );
 }
 

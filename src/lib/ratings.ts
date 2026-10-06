@@ -1,16 +1,12 @@
 /**
  * Read-side helper for skill ratings.
  *
- * `src/data/ratings.json` is the compatibility view of the two-source
- * engagement snapshot produced by `scripts/fetch-engagement.ts`. Each value is
- * the combined Microsoft + AI.Tedt.org positive-reaction total for one slug.
+ * Use the same source-aware totals as detail pages and the public catalog.
+ * Microsoft reactions are included only for assets in the upstream catalog.
  */
-import ratings from "../data/ratings.json";
-
-const counts = ratings as Record<string, number>;
+import { getSkillEngagement } from "./engagement";
 
 /** 👍 count for a skill slug (0 when unknown). */
 export function getRating(slug: string): number {
-  const n = counts[slug];
-  return typeof n === "number" && Number.isFinite(n) && n > 0 ? n : 0;
+  return getSkillEngagement(slug).total.rating;
 }
