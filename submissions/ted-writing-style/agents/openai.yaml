@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ted's Writing Style"
+  short_description: "Write and edit in Ted Tschopp's personal voice"
+  default_prompt: "Use $ted-writing-style to write this in my voice while preserving the facts, genre, and intended audience."

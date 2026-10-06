@@ -1,0 +1,31 @@
+{
+  "name": "Simplified Technical English (ASD-STE100)",
+  "description": "Clarify technical instructions, tool descriptions, and agent messages while preserving their meaning, conditions, and uncertainty.",
+  "platforms": [
+    "Cowork",
+    "Copilot Studio",
+    "Scout"
+  ],
+  "tags": [
+    "writing",
+    "editing",
+    "technical writing",
+    "clarity",
+    "controlled language",
+    "agent instructions"
+  ],
+  "author": "Dustin Yuchen Teng",
+  "authorUrl": "https://github.com/danyuchn",
+  "version": "0.4.0",
+  "createdAt": "2026-10-05",
+  "coverImage": "skill-art/asd-ste100.webp",
+  "coverImageAlt": "Tangled paper ribbons pass through a navy guide and emerge as one straight strip, illustrating clear technical instructions.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: an editorial metaphor for simplifying ambiguous technical language into one clear instruction.\nScene/backdrop: a quiet workbench against a flat deep slate field with ample negative space.\nSubject: a small tangle of three blank warm-paper ribbons enters one smooth navy ceramic alignment guide; a single neatly straightened warm-paper strip exits toward the foreground. A tiny orange adjustment pin and a restrained cyan edge on the guide suggest deliberate editing. Use one compact sculptural assembly with no extraneous props.\nStyle/medium: premium tactile editorial illustration, matte ceramic and folded paper, realistic soft studio shadows, crisp purposeful detail.\nComposition/framing: exact 16:10 landscape; view from slightly above; entire assembly centered inside the inner 80% of the frame; all ribbons fully visible; generous calm margins; silhouette readable at 290-pixel card width.\nLighting/mood: calm, capable, precise, quietly technical, restrained cyan reflected light.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nConstraints: every paper surface is blank; no text, letters, numbers, pseudo-writing, symbols, labels, logos, trademarks, or watermarks; no paw imagery, paw logos, cats, or cat silhouettes; no product UI or Microsoft Fluent branding; no neon glow or decorative gradients.\nCorrection: Scale the entire sculptural assembly down substantially. Shorten all paper strips and keep every ribbon end and the guide completely inside the central 75% of the image, with at least 12% clear slate margin on every side. Preserve the same paper-and-ceramic style and the three-input-to-one-output metaphor.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-10-05",
+  "coverImageSourceHash": "sha256:910db1783255c051e6d3bbf7d6bd07cbe87d72a5fcbe6eab6f4b8054c45da0ce",
+  "coverImageSourceHashVersion": 2
+}
