@@ -1,11 +1,32 @@
 {
   "name": "Edison Writing Guide",
   "description": "Draft and edit newsroom copy with AP style, concise ledes, clear attribution, and consistent treatment of names, numbers, dates, and titles.",
-  "platforms": ["Cowork", "Copilot Studio", "Scout"],
-  "tags": ["writing", "editing", "newsroom", "AP style", "communications", "headlines"],
+  "platforms": [
+    "Cowork",
+    "Copilot Studio",
+    "Scout"
+  ],
+  "tags": [
+    "writing",
+    "editing",
+    "newsroom",
+    "AP style",
+    "communications",
+    "headlines"
+  ],
   "author": "Ted Tschopp",
   "authorUrl": "https://tedt.org/",
   "authorGithub": "TedTschopp",
   "version": "1.0.0",
-  "createdAt": "2026-10-05"
+  "createdAt": "2026-10-05",
+  "coverImage": "skill-art/edison-writing-guide.webp",
+  "coverImageAlt": "Blank paper sheets form an inverted pyramid beside an editor's pencil, illustrating concise newsroom writing.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a purposeful editorial illustration of concise newsroom editing and putting the most important information first.\nScene/backdrop: a refined editor's table on a flat deep slate background with generous negative space.\nSubject: three completely blank warm-paper sheets form a compact sculptural inverted pyramid: a broad upper sheet, a medium sheet just below it, and a small lower sheet, each suspended at a shallow angle on a simple navy stand. One unbranded orange wooden editor's pencil rests diagonally on the table, with one small cyan paper clip securing the broad upper sheet. The paper layers are real dimensional objects, not charts or interface panels.\nStyle/medium: premium tactile editorial illustration, sculpted paper and matte ceramic, crisp folds and soft realistic shadows, restrained detail.\nComposition/framing: exact 16:10 landscape; centered crop-safe silhouette; entire stand, pencil, and sheets fully inside the inner 80% of the image; clear hierarchy readable at 290-pixel card width.\nLighting/mood: discerning, trustworthy, practical, quietly capable.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nConstraints: all paper surfaces are blank; no text, letters, numbers, punctuation, pseudo-writing, logos, trademarks, or watermarks; no paw imagery, paw logos, cats, or cat silhouettes; no product UI or Microsoft Fluent branding; no electric utility logos or lightning symbols; no glossy glamour effects.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-10-05",
+  "coverImageSourceHash": "sha256:6cba61ccba7bb5640f179b6a07d812c845d73d635e57d3daa6952ed4909bdf27",
+  "coverImageSourceHashVersion": 2
 }
