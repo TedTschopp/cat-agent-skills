@@ -26,6 +26,6 @@
   "coverImageHeight": 1000,
   "coverImageGenerator": "OpenAI image generation via Codex",
   "coverImageGeneratedAt": "2026-10-05",
-  "coverImageSourceHash": "sha256:f7575e51d0db72379ef74901da9c35550e5317d938894c7ac7829e1990967f2f",
+  "coverImageSourceHash": "sha256:910db1783255c051e6d3bbf7d6bd07cbe87d72a5fcbe6eab6f4b8054c45da0ce",
   "coverImageSourceHashVersion": 2
 }

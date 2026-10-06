@@ -1,6 +1,6 @@
 # ASD-STE100 Skill — Simplified Technical English for Agent Output
 
-A Claude Code skill that rewrites dense, ambiguous English into [ASD-STE100 Simplified Technical English](https://www.asd-ste100.org/) (STE) — the controlled-language standard the aerospace and defense industry built so aircraft maintenance instructions cannot be misread.
+A universal AI skill that rewrites dense, ambiguous English into [ASD-STE100 Simplified Technical English](https://www.asd-ste100.org/) (STE) — the controlled-language standard the aerospace and defense industry built so aircraft maintenance instructions cannot be misread. Its Markdown instructions work with any AI tool that can load them.
 
 This skill repurposes that same discipline for a different reader: an **AI agent** parsing another agent's output, a tool description, an error message, or an inter-agent instruction, with no human in the loop to resolve ambiguity.
 
@@ -37,9 +37,17 @@ Full rule summary and citations: [`references/writing-rules.md`](references/writ
 
 ## Installation
 
+Download the skill package from [AI.Tedt.org](https://ai.tedt.org/skills/asd-ste100/).
+You can also download it directly:
+
 ```bash
-git clone https://github.com/danyuchn/asd-ste100-skill ~/.claude/skills/asd-ste100
+curl -fL https://ai.tedt.org/bundles/asd-ste100.zip -o asd-ste100.zip
 ```
+
+Extract the archive into your AI tool's configured skills directory, or load
+`SKILL.md` and its included reference files as instructions. Keep the bundled
+folder structure and `LICENSE` file intact. The skill does not require a
+specific AI provider or application.
 
 ## Usage
 
@@ -51,7 +59,7 @@ Rewrite this error message so an agent can't misparse it
 Apply ASD-STE100 to this instruction
 ```
 
-Or paste text and ask Claude to "disambiguate this" / "apply STE100 to this" / "reduce ambiguity in this output."
+Or paste text and ask your AI tool to "disambiguate this" / "apply STE100 to this" / "reduce ambiguity in this output."
 
 You get the rewritten text back and nothing else. To see which rules were applied, add "show the diff" or "explain the changes" to the request.
 
