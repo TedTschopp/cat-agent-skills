@@ -1,0 +1,10 @@
+{
+  "name": "Simplified Technical English (ASD-STE100)",
+  "description": "Clarify technical instructions, tool descriptions, and agent messages while preserving their meaning, conditions, and uncertainty.",
+  "platforms": ["Cowork", "Copilot Studio", "Scout"],
+  "tags": ["writing", "editing", "technical writing", "clarity", "controlled language", "agent instructions"],
+  "author": "Dustin Yuchen Teng",
+  "authorUrl": "https://github.com/danyuchn",
+  "version": "0.4.0",
+  "createdAt": "2026-10-05"
+}

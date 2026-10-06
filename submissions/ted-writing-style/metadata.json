@@ -1,0 +1,11 @@
+{
+  "name": "Ted's Writing Style",
+  "description": "Draft and revise in Ted Tschopp's personal voice, using concrete openings, visible reasoning, plain explanations, and an ending grounded in consequence.",
+  "platforms": ["Cowork", "Copilot Studio", "Scout"],
+  "tags": ["writing", "editing", "personal voice", "essays", "storytelling", "technology", "tabletop RPG"],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorGithub": "TedTschopp",
+  "version": "1.0.0",
+  "createdAt": "2026-10-05"
+}

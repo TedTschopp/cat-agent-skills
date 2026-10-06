@@ -1,0 +1,11 @@
+{
+  "name": "Edison Writing Guide",
+  "description": "Draft and edit newsroom copy with AP style, concise ledes, clear attribution, and consistent treatment of names, numbers, dates, and titles.",
+  "platforms": ["Cowork", "Copilot Studio", "Scout"],
+  "tags": ["writing", "editing", "newsroom", "AP style", "communications", "headlines"],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorGithub": "TedTschopp",
+  "version": "1.0.0",
+  "createdAt": "2026-10-05"
+}
