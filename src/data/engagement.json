@@ -3,7 +3,7 @@
   "repositories": {
     "microsoft": {
       "repository": "microsoft/cat-agent-skills",
-      "stars": 79
+      "stars": 80
     },
     "local": {
       "repository": "TedTschopp/cat-agent-skills",
@@ -14,7 +14,7 @@
     "agent-harness-explorer": {
       "microsoft": {
         "rating": 5,
-        "comments": 0,
+        "comments": 2,
         "discussions": [
           {
             "number": 65,
@@ -29,7 +29,7 @@
       },
       "total": {
         "rating": 5,
-        "comments": 0
+        "comments": 2
       }
     },
     "ai-demo-assistant": {
