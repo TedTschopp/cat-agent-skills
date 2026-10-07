@@ -18739,6 +18739,112 @@
   {
     "kind": "skill",
     "kindLabel": "Agent Skill",
+    "slug": "qr-code-builder",
+    "name": "QR Code Builder",
+    "title": "QR Code Builder",
+    "description": "Make branded, scannable QR codes (PNG, SVG, PDF, JPG, WEBP) for a link, Wi-Fi, contact card, email, SMS, phone, map, or event, with optional shapes, colors, logo, caption, and outer frame.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Design and Media",
+      "Productivity and Automation"
+    ],
+    "tags": [
+      "qr-code",
+      "design",
+      "productivity",
+      "assets"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork",
+      "Copilot Studio"
+    ],
+    "author": {
+      "name": "Bobby Chang",
+      "url": "https://github.com/bobbyschang",
+      "github": "bobbyschang",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-29T00:00:00.000Z",
+      "updated": "2026-09-29T00:00:00.000Z"
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/qr-code-builder.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/qr-code-builder.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/qr-code-builder.zip",
+    "downloadPath": "bundles/qr-code-builder.zip",
+    "canonicalPath": "/skills/qr-code-builder/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "QC"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/qr-code-builder",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
     "slug": "regulation-monitor",
     "name": "Regulation Monitor",
     "title": "Regulation Monitor",
