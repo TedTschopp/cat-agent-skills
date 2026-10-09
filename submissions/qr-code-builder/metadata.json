@@ -1,11 +1,29 @@
 {
   "name": "QR Code Builder",
   "description": "Make branded, scannable QR codes (PNG, SVG, PDF, JPG, WEBP) for a link, Wi-Fi, contact card, email, SMS, phone, map, or event, with optional shapes, colors, logo, caption, and outer frame.",
-  "platforms": ["Cowork", "Copilot Studio"],
-  "tags": ["qr-code", "design", "productivity", "assets"],
+  "platforms": [
+    "Cowork",
+    "Copilot Studio"
+  ],
+  "tags": [
+    "qr-code",
+    "design",
+    "productivity",
+    "assets"
+  ],
   "author": "Bobby Chang",
   "authorUrl": "https://github.com/bobbyschang",
   "version": "1.0.0",
   "createdAt": "2026-09-29",
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-09-29",
+  "coverImage": "skill-art/qr-code-builder.webp",
+  "coverImageAlt": "Dimensional square modules being assembled into an abstract QR-style matrix under a cyan alignment beam.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a precision assembly table where small tactile square modules lock into a crisp, intentionally non-scannable abstract matrix, anchored by three bold nested corner frames, expressing reliable QR code construction and visual customization\nScene/backdrop: uncluttered warm-paper studio field with a slate work surface and a few restrained modular pieces suggesting selectable shapes and colors\nSubject: one nearly complete square matrix assembled from dimensional tiles, with three strong corner markers and a single cyan alignment beam showing careful construction\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; strong silhouette and calm negative space; legible at card size\nLighting/mood: calm, capable, quietly technical, with restrained cyan backlighting and a very small orange accent\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: the matrix must be abstract and intentionally non-scannable; no text, letters, numbers, symbols, arrows, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI, Microsoft Fluent gradients, or Microsoft branding",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-10-09",
+  "coverImageSourceHash": "sha256:f068c33e0d510df1651e16418db1de946805eb861fcf59f0afd4477917bf40ee",
+  "coverImageSourceHashVersion": 2
 }
