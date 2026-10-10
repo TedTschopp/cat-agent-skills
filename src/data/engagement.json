@@ -84,8 +84,8 @@
     },
     "brand-template-enforcer": {
       "microsoft": {
-        "rating": 3,
-        "comments": 9,
+        "rating": 4,
+        "comments": 10,
         "discussions": [
           {
             "number": 129,
@@ -99,8 +99,8 @@
         "discussions": []
       },
       "total": {
-        "rating": 3,
-        "comments": 9
+        "rating": 4,
+        "comments": 10
       }
     },
     "campaign-deck-builder": {
