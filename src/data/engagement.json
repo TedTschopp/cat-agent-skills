@@ -3,7 +3,7 @@
   "repositories": {
     "microsoft": {
       "repository": "microsoft/cat-agent-skills",
-      "stars": 81
+      "stars": 82
     },
     "local": {
       "repository": "TedTschopp/cat-agent-skills",
@@ -11,6 +11,27 @@
     }
   },
   "skills": {
+    "action-items-todo": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 365,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/365"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
     "agent-harness-explorer": {
       "microsoft": {
         "rating": 5,
