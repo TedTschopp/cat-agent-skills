@@ -10,7 +10,7 @@
  */
 import { readFileSync } from "node:fs";
 import { basename } from "node:path";
-import matter from "gray-matter";
+import { parseFrontmatter } from "./frontmatter.ts";
 import { skillSchema } from "../src/lib/skill-schema.ts";
 
 /** Result of validating a single markdown source. */
@@ -56,7 +56,7 @@ export function validateSkillSource(
 ): ValidationResult {
   let data: Record<string, unknown>;
   try {
-    data = matter(source).data;
+    data = parseFrontmatter(source).data;
   } catch (err) {
     return {
       label,

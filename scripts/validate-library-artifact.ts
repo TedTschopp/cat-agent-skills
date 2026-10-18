@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { basename, join } from "node:path";
 import { pathToFileURL } from "node:url";
-import matter from "gray-matter";
+import { parseFrontmatter } from "./frontmatter.ts";
 import { genericFileAssetSchema } from "../src/lib/library-asset-schema.ts";
 import type { ValidationResult } from "./validate-skill.ts";
 
@@ -26,7 +26,7 @@ export function validateLibraryArtifactSource(
   label: string,
 ): ValidationResult {
   try {
-    return validateLibraryArtifactData(matter(source).data, label);
+    return validateLibraryArtifactData(parseFrontmatter(source).data, label);
   } catch (error) {
     return {
       label,

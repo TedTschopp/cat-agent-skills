@@ -9,7 +9,7 @@ import {
 } from "node:fs";
 import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
-import matter from "gray-matter";
+import { parseFrontmatter } from "./frontmatter.ts";
 import {
   artifactPayloadSchema,
   genericFileAssetSchema,
@@ -49,7 +49,7 @@ function artifactPayloads(root: string): Map<string, Array<{ path: string; body:
   return new Map(
     markdownFiles(directory).map((name) => {
       const id = name.slice(0, -3);
-      const parsed = matter(readFileSync(join(directory, name), "utf8"));
+      const parsed = parseFrontmatter(readFileSync(join(directory, name), "utf8"));
       const data = artifactPayloadSchema.parse(parsed.data);
       if (data.slug !== id) {
         throw new Error(`artifact payload slug mismatch: entry ${id} declares ${data.slug}`);
@@ -72,7 +72,7 @@ export function buildLibraryAssetSnapshot(rootInput: string): LibraryAssetSummar
   const skillsDirectory = join(root, "src", "content", "skills");
   for (const name of markdownFiles(skillsDirectory)) {
     const slug = name.slice(0, -3);
-    const parsed = matter(readFileSync(join(skillsDirectory, name), "utf8"));
+    const parsed = parseFrontmatter(readFileSync(join(skillsDirectory, name), "utf8"));
     const data = skillSchema.parse(parsed.data);
     assets.push(
       skillToLibraryAsset(
@@ -85,7 +85,7 @@ export function buildLibraryAssetSnapshot(rootInput: string): LibraryAssetSummar
   const promptsDirectory = join(root, "src", "content", "prompts");
   for (const name of markdownFiles(promptsDirectory)) {
     const slug = name.slice(0, -3);
-    const parsed = matter(readFileSync(join(promptsDirectory, name), "utf8"));
+    const parsed = parseFrontmatter(readFileSync(join(promptsDirectory, name), "utf8"));
     const data = promptSchema.parse(parsed.data);
     assets.push(
       promptToLibraryAsset(
@@ -98,7 +98,7 @@ export function buildLibraryAssetSnapshot(rootInput: string): LibraryAssetSummar
   const artifactsDirectory = join(root, "src", "content", "artifacts");
   for (const name of markdownFiles(artifactsDirectory)) {
     const slug = name.slice(0, -3);
-    const parsed = matter(readFileSync(join(artifactsDirectory, name), "utf8"));
+    const parsed = parseFrontmatter(readFileSync(join(artifactsDirectory, name), "utf8"));
     const data = genericFileAssetSchema.parse(parsed.data);
     assets.push(
       genericFileToLibraryAsset(

@@ -32,7 +32,7 @@
     "assets:catalog": "node --import tsx scripts/library-assets-json.ts"
   },
   "dependencies": {
-    "astro": "^7.1.0",
+    "astro": "^7.2.8",
     "giscus": "^1.6.0"
   },
   "devDependencies": {
@@ -42,15 +42,19 @@
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.4",
     "@types/adm-zip": "^0.5.8",
-    "adm-zip": "^0.6.0",
+    "adm-zip": "^0.6.1",
     "croner": "^9.1.0",
-    "gray-matter": "^4.0.3",
     "hast-util-from-html": "^2.0.3",
     "js-yaml": "^4.3.2",
     "satori": "^0.26.0",
     "satteri": "^0.9.5",
-    "sharp": "^0.35.3",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4.1.4",
     "tsx": "^4.22.4"
+  },
+  "overrides": {
+    "@tailwindcss/typography": {
+      "postcss-selector-parser": "^7.1.6"
+    }
   }
 }

@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { basename } from "node:path";
 import { pathToFileURL } from "node:url";
-import matter from "gray-matter";
+import { parseFrontmatter } from "./frontmatter.ts";
 import { promptSchema } from "../src/lib/library-asset-schema.ts";
 import type { ValidationResult } from "./validate-skill.ts";
 
@@ -28,7 +28,7 @@ export function validatePromptData(data: unknown, label: string): ValidationResu
 export function validatePromptSource(source: string, label: string): ValidationResult {
   let data: Record<string, unknown>;
   try {
-    data = matter(source).data;
+    data = parseFrontmatter(source).data;
   } catch (error) {
     return {
       label,

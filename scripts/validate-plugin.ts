@@ -13,7 +13,7 @@
  *
  * Ref: https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-plugin-development
  */
-import matter from "gray-matter";
+import { parseFrontmatter } from "./frontmatter.ts";
 import { posix } from "node:path";
 
 /** A file inside the package, with a forward-slash relative path. */
@@ -205,7 +205,7 @@ export function validatePluginFiles(
       const expectedName = posix.basename(folder);
       let fm: Record<string, unknown> = {};
       try {
-        fm = matter(skillMd.data.toString("utf8")).data as Record<string, unknown>;
+        fm = parseFrontmatter(skillMd.data.toString("utf8")).data;
       } catch (err) {
         problems.push(`${folder}/SKILL.md has invalid frontmatter: ${(err as Error).message}`);
         continue;

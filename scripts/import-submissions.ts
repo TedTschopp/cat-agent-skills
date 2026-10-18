@@ -67,7 +67,7 @@ import { createHash } from "node:crypto";
 import { basename, dirname, join, posix, relative, sep } from "node:path";
 import { pathToFileURL } from "node:url";
 import AdmZip from "adm-zip";
-import matter from "gray-matter";
+import { parseFrontmatter } from "./frontmatter.ts";
 import { dump as dumpYaml } from "js-yaml";
 import { assertUniquePortablePaths } from "./portable-paths.mjs";
 import { validateSkillData } from "./validate-skill.ts";
@@ -425,8 +425,7 @@ function resolveAuthorGithub(meta: Record<string, unknown>): void {
 /** Parse a metadata file (JSON or YAML) into a plain object. */
 function parseMetadataFile(name: string, text: string): Record<string, unknown> {
   if (name.toLowerCase().endsWith(".json")) return JSON.parse(text);
-  // Reuse gray-matter's YAML engine by wrapping the text as frontmatter.
-  return matter(`---\n${text}\n---\n`).data;
+  return parseFrontmatter(`---\n${text}\n---\n`).data;
 }
 
 /** Write a deterministic zip from the given files. */
@@ -597,7 +596,7 @@ function processSubmission(sub: Submission): ImportProblem | null {
   }
 
   // SKILL.md → name + agent-facing description (its own frontmatter) + body.
-  const parsed = matter(sub.skillMd);
+  const parsed = parseFrontmatter(sub.skillMd);
   const skillFm = parsed.data as Record<string, unknown>;
 
   // metadata.* → catalog metadata for this gallery.
