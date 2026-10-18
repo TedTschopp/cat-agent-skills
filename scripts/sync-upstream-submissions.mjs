@@ -23,6 +23,7 @@ import { dirname, join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { assertUniquePortablePaths } from "./portable-paths.mjs";
 import { normalizeNewSubmissionMarkdown } from "./normalize-upstream-markdown.mjs";
+import { readAssetConsolidations } from "./asset-consolidations.mjs";
 
 const SAFE_SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const MAX_FILES_PER_SUBMISSION = 2_000;
@@ -128,10 +129,15 @@ export function planUpstreamSync({ repoRoot, upstreamRef }) {
   const catalogChanged = !existsSync(catalogPath) ||
     readFileSync(catalogPath, "utf8") !== serializeMicrosoftCatalog(upstreamSlugs);
   const localSlugs = listLocalSubmissionSlugs(root);
+  const retired = new Set(readAssetConsolidations(root).map((entry) => entry.slug));
   const newSlugs = [];
 
   for (const slug of upstreamSlugs) {
     const localPath = join(root, "submissions", slug);
+    if (retired.has(slug)) {
+      if (existsSync(localPath)) throw new Error(`retired submission would be republished: ${slug}`);
+      continue;
+    }
     if (existsSync(localPath)) {
       if (!lstatSync(localPath).isDirectory()) {
         throw new Error(`refusing to overwrite non-directory path: submissions/${slug}`);
@@ -151,6 +157,7 @@ export function planUpstreamSync({ repoRoot, upstreamRef }) {
   // Reconcile only slugs Microsoft actually publishes. Local-only submissions
   // remain under the fork's normal contribution workflow.
   const pendingGeneratedSlugs = upstreamSlugs.filter((slug) => {
+    if (retired.has(slug)) return false;
     const contentPaths = existingGeneratedContentPaths(root, slug);
     if (contentPaths.length > 1) {
       throw new Error(

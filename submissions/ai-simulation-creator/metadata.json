@@ -1,8 +1,8 @@
 {
   "kind": "prompt-template",
   "slug": "ai-simulation-creator",
-  "name": "AI Simulation Creator – Scenario-Based Skill Practice",
-  "description": "A dynamic prompt framework for generating AI-led roleplay simulations, where learners practice applying key skills like negotiation, hiring, or pitching through structured scenarios and guided mentorship.",
+  "name": "AI Simulation Creator",
+  "description": "Create a guided roleplay simulation with scenario choices, an AI mentor, and practical feedback on the learner's performance.",
   "status": "active",
   "publicationStatus": "published",
   "topics": [
@@ -55,7 +55,7 @@
   ],
   "downloadPath": "bundles/ai-simulation-creator.prompt.md",
   "createdAt": "2025-05-04",
-  "updatedAt": null,
+  "updatedAt": "2026-10-18T20:50:22.952109+00:00",
   "subtitle": null,
   "summaryBullets": [
     "AI-led roleplay simulations for skill practice",
@@ -76,7 +76,7 @@
     "sourcePromptSha256": "sha256:66222d47e8cf7eb3bd4a00f4595c987804f74b13484419fb13e46e48001d612e",
     "importedPromptSha256": "sha256:66222d47e8cf7eb3bd4a00f4595c987804f74b13484419fb13e46e48001d612e",
     "sourceGuideSha256": "sha256:56427c507a6dc2922edf1c9e4d3120229ae14f53eb08c2e67e0749a3206a66e7",
-    "importedGuideSha256": "sha256:56427c507a6dc2922edf1c9e4d3120229ae14f53eb08c2e67e0749a3206a66e7",
+    "importedGuideSha256": "sha256:bc6c805f0c1bdaa3b6025e954f5ebc009e380caa245476592e8ec8420f1e466b",
     "rawFrontmatterSha256": "sha256:c043c2f2ebca16102eabd1153c16b44de56308e76f20c65f842d783e91269ed0",
     "sourceTitle": "AI Simulation Creator – Scenario-Based Skill Practice",
     "sourceDescription": "A dynamic prompt framework for generating AI-led roleplay simulations, where learners practice applying key skills like negotiation, hiring, or pitching through structured scenarios and guided mentorship.",
@@ -176,7 +176,8 @@
     "appliedRepairs": [
       "normalize-model-04-mini-high-to-o4-mini-high",
       "normalize-model-04-mini-to-o4-mini",
-      "normalize-model-github-to-github-copilot"
+      "normalize-model-github-to-github-copilot",
+      "consolidate-duplicate-entrypoints-2026-10-18"
     ]
   },
   "coverImage": "skill-art/ai-simulation-creator.webp",
@@ -187,6 +188,6 @@
   "coverImageHeight": 1000,
   "coverImageGenerator": "OpenAI image generation via Codex",
   "coverImageGeneratedAt": "2026-09-03",
-  "coverImageSourceHash": "sha256:4bead1121de06d5eff1c2a200f924b6470a72fc17f0f13a120f2faf8f849b676",
+  "coverImageSourceHash": "sha256:73094e1060e9e74fb6eaba0654223b2444567ef19dd86f6df513040bc5564e65",
   "coverImageSourceHashVersion": 2
 }

@@ -1,4 +1,8 @@
 import type { SkillFrontmatter } from "./skill-schema";
+import consolidationRegistry from "../data/asset-consolidations.json";
+import { applyAssetConsolidations, parseAssetConsolidations } from "./asset-consolidations.mjs";
+
+export const assetConsolidations = parseAssetConsolidations(consolidationRegistry);
 import {
   LIBRARY_ASSET_KIND_LABELS,
   type AssetSeriesMembership,
@@ -664,7 +668,7 @@ export async function getAllLibraryAssets(): Promise<LibraryAsset[]> {
     ),
   ];
   assertUniqueLibraryAssetSlugs(assets);
-  return sortLibraryAssets(assets);
+  return sortLibraryAssets(applyAssetConsolidations(assets, assetConsolidations));
 }
 
 /** Public library loader. Publication-blocked assets never reach routes or catalogs. */

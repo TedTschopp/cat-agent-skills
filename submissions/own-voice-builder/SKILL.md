@@ -1,11 +1,14 @@
 ---
 name: own-voice-builder
-description: Analyze the user's own sent emails to build a personal writing-voice profile and generate a reusable personal voice skill from it. Use this skill whenever the user asks to analyze their writing style, learn their tone of voice, create/build/update a personal voice skill or "own voice" profile, make drafts "sound like me", or makes an equivalent request in any other language. Also use it when the user complains that generated emails or Teams messages don't sound like them and no personal voice skill exists yet.
+description: Analyze the user's own sent email or Teams messages to build a writing-voice profile, optionally save a requested memory profile, or create a reusable personal voice skill. Use when the user asks to learn their tone, analyze communication style, create or update a voice profile or skill, or make drafts sound like them.
 ---
 
 # Own Voice Builder
 
-Follow the phases below to analyze the user's sent emails and generate (or update) a personal voice skill (default name: `<firstname>-voice`).
+Follow the phases below to analyze the user's own sent email or Teams messages.
+Return a communication profile, save a requested memory profile, or generate or
+update a personal voice skill (default name: `<firstname>-voice`), according to
+the requested outcome.
 
 ## Phase 0 — Setup questions (keep it short)
 
@@ -13,7 +16,12 @@ Ask the user, in one message, only what you cannot infer:
 
 1. **Time window**: How far back to analyze (default: last 12 months).
 2. **Exclusions**: Any recipients, domains, or topics to skip (e.g. HR, legal, personal contacts).
-3. **Skill name**: Default `<firstname>-voice`; confirm the first name.
+3. **Output**: Honor profile-only, saved memory profile, or reusable skill. If the
+   user asks only for analysis, return a profile in the current conversation.
+   Ask for a skill name only when creating a skill; default to `<firstname>-voice`.
+4. **Sources**: Use the channels the user requests. Use sent mail for email
+   voice, the user's own Teams messages for chat voice, or both when requested.
+   Missing access to one channel does not block useful analysis of the other.
 
 If the user already stated any of these in the conversation, do not re-ask. Check the user's existing memories/preferences for style rules (e.g. "no em-dashes", "never start with 'I hope this finds you well'") — these become **hard rules** in the generated skill, no exceptions.
 
@@ -25,6 +33,13 @@ If the user already stated any of these in the conversation, do not re-ask. Chec
 - Retrieve `subject`, `toRecipients`, `sentDateTime`, `bodyPreview`, and full `body` where needed.
 - Classify each message: internal vs. external recipient (by domain), language, one-to-one vs. group, thread reply vs. fresh mail.
 - Skip anything matching the user's exclusions. Skip auto-generated mail (calendar responses, forwards without added text, one-word replies) — they carry no style signal.
+
+For a quick profile, 20–30 sent messages can be a starting sample; report its
+limitations. When Teams is in scope, inspect relevant recent chats and only
+messages authored by the verified current user. Aim for a diverse sample across
+one-to-one, group, and meeting chats; do not attribute other participants' words
+to the user. Distinguish channel-specific habits from habits shared across
+channels. Use equivalent configured tools when the host uses different names.
 
 **Analyze the sample for:**
 
@@ -40,6 +55,18 @@ If the user already stated any of these in the conversation, do not re-ask. Chec
 **Report:** Present the style report **inline in the chat as Markdown** — do not write the report to a workspace file. (Writing the generated skill file is allowed only in Phase 2’s fallback.)
 
 ## Phase 2 — Validate, then generate the personal skill
+
+For profile-only output, show a dimension-and-pattern table covering greetings,
+tone, length, punctuation, sign-offs, technical explanations, and action habits,
+plus supported phrase patterns and quirks. Stop after the requested analysis.
+If the user requests persistent memory, save only the derived style patterns
+using an available memory tool, respecting its limits; separate basic style from
+phrase and action patterns when useful. Confirm storage only after a successful
+write. If memory is unavailable, return the profile for reuse and state that it
+was not saved. Never store verbatim private messages. Creating a reusable skill
+is a separate output choice, not a mandatory consequence of analyzing style.
+
+For a requested reusable skill:
 
 1. **Validation round**: Draft 2–3 short test messages in different modes (e.g. one formal external mail in each language, one casual internal Teams-style reply) using the extracted profile. Ask the user to rate them and correct the profile. Fold corrections in as rules.
 

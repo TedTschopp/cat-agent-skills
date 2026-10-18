@@ -1,28 +1,15 @@
+# Product Requirements Document Template
 
-This prompt is designed for professional architecture product requirements document (prd) template prompt designed for high-quality content generation and structured analysis.
+Use one template to draft an internal utility software PRD, perform a quality review, or analyze the impact of a review finding or proposed change. Provide the source documents, the requested operation, and any existing PRD. The prompt preserves attachment citations, explicit unknowns, metric instrumentation, anti-goals, release phases, and operating responsibilities.
 
-## How to Use This Prompt
+The creation mode combines the expanded measurement guidance from Template 2 with the input and output controls from Template 4. Quality review preserves the separate quality, clarity, completeness, and next-step assessments.
 
-1. **Copy the prompt** from the prompt content section above
-2. **Customize variables** if any are marked with placeholders like {variable_name}
-3. **Paste into your AI tool** (ChatGPT, Claude, Copilot, etc.)
-4. **Provide your specific input** as requested by the prompt
-5. **Review and iterate** on the generated output as needed
+## Available Modes
 
-## Best Practices
+The numbered PRD variants are maintained here under one stable catalog identity.
 
-- Read through the entire prompt before using to understand its requirements
-- Prepare any background information or context the prompt might need
-- Consider the intended audience and adjust examples accordingly
-- Test with different inputs to see the range of outputs possible
+- Includes the Architecture Product Requirements Document (PRD) Template 2 workflow by Ted Tschopp. [Original source](https://github.com/TedTschopp/cat-agent-skills/tree/1a3e42195454e4e4159a327d175a72870d505268/submissions/product-requirements-document-prd-template-2).
+- Includes the Architecture Product Requirements Document (PRD) Template 3 workflow by Ted Tschopp. [Original source](https://github.com/TedTschopp/cat-agent-skills/tree/1a3e42195454e4e4159a327d175a72870d505268/submissions/product-requirements-document-prd-template-3).
+- Includes the Architecture Product Requirements Document (PRD) Template 4 workflow by Ted Tschopp. [Original source](https://github.com/TedTschopp/cat-agent-skills/tree/1a3e42195454e4e4159a327d175a72870d505268/submissions/product-requirements-document-prd-template-4).
 
-## Supported AI Models
-
-This prompt has been tested and optimized for use with the supported models listed above. It may work with other AI systems but performance may vary.
-
-## Customization Tips
-
-- Modify the tone and style instructions to match your needs
-- Add specific examples relevant to your domain or industry
-- Adjust the output format requirements if needed
-- Include additional constraints or requirements as necessary
+Use this entry for the maintained workflow and current download.

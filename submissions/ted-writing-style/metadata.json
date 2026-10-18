@@ -1,6 +1,6 @@
 {
   "name": "Ted's Writing Style",
-  "description": "Draft and revise in Ted Tschopp's personal voice, using concrete openings, visible reasoning, plain explanations, and an ending grounded in consequence.",
+  "description": "Write and revise in Ted Tschopp's personal voice across essays, technology, fiction, and RPG material, with an optional historical literary profile.",
   "platforms": [
     "Cowork",
     "Copilot Studio",
@@ -18,7 +18,7 @@
   "author": "Ted Tschopp",
   "authorUrl": "https://tedt.org/",
   "authorGithub": "TedTschopp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "createdAt": "2026-10-05",
   "coverImage": "skill-art/ted-writing-style.webp",
   "coverImageAlt": "The referenced writer, wearing glasses and a blue overshirt, draws a bridge in an open book beside a paper path crossing a wooden bridge.",
@@ -28,6 +28,7 @@
   "coverImageHeight": 1000,
   "coverImageGenerator": "OpenAI image generation via Codex",
   "coverImageGeneratedAt": "2026-10-05",
-  "coverImageSourceHash": "sha256:f93bf193e4bdb90ee64440c933a54604ee177c839e3a5c7afc23566b23945ba2",
-  "coverImageSourceHashVersion": 2
+  "coverImageSourceHash": "sha256:70499c1983abcbc8ad38ed0ce753aabdf81d9b80a4325e64845afa7754682b08",
+  "coverImageSourceHashVersion": 2,
+  "updatedAt": "2026-10-18T20:50:22.954153+00:00"
 }

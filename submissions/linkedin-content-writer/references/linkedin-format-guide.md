@@ -53,3 +53,7 @@ Structure:
 - Avoid exaggerated outcomes.
 - Avoid unnecessary references or links unless requested.
 - Keep line breaks natural rather than formulaic.
+
+## Carousel Copy
+
+Return numbered panels, each with one supported idea and concise copy. Preserve the source facts and requested panel count. Produce text for the panels; do not claim to have created or uploaded a designed carousel.

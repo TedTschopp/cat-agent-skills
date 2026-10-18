@@ -1,32 +1,42 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
-import { readFileSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { tmpdir } from "node:os";
 import { test } from "node:test";
 import { promptSchema } from "../src/lib/library-asset-schema.ts";
 import type { PromptInventoryManifest } from "./inventory-tedt-prompts.ts";
+import { readAssetConsolidations } from "./asset-consolidations.mjs";
 import {
   APPROVED_MANIFEST_SHA256,
   APPROVED_SOURCE_COMMIT,
   applyApprovedPromptBodyEdits,
   decodeLegacySerializedPromptText,
   loadApprovedManifest,
+  materializeApprovedPrompts,
   parseMigrationCliArgs,
   preserveArtworkOverlay,
 } from "./migrate-tedt-prompts.ts";
 
 const ROOT = join(import.meta.dirname, "..");
 const MANIFEST_PATH = join(ROOT, "docs", "migrations", "tedt-prompts-inventory.json");
+const consolidations = readAssetConsolidations(ROOT);
+const retired = new Map(consolidations.map((entry) => [entry.slug, entry]));
+const maintained = new Set(consolidations.map((entry) => entry.replacementSlug));
 
 function digest(value: string): string {
   return `sha256:${createHash("sha256").update(value).digest("hex")}`;
 }
 
 function promptPath(slug: string): string {
+  const legacy = retired.get(slug)?.legacyDownloads.find((download) => download.path.endsWith(".prompt.md"));
+  if (legacy) return join(ROOT, "public", legacy.path);
   return join(ROOT, "submissions", slug, `${slug}.prompt.md`);
 }
 
 function metadata(slug: string): Record<string, any> {
+  const legacy = retired.get(slug);
+  if (legacy) return { ...legacy.source.catalog, provenance: legacy.source.provenance };
   return JSON.parse(readFileSync(join(ROOT, "submissions", slug, "metadata.json"), "utf8"));
 }
 
@@ -57,12 +67,37 @@ test("the generator is bound to the byte-exact approved inventory and source com
   );
 });
 
-test("all 56 generated submissions validate and preserve hash-bound payloads and guides", () => {
+test("historical migration cannot recreate retired entries or overwrite a merged keeper", (t) => {
+  const root = mkdtempSync(join(tmpdir(), "cat-retired-migration-"));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  const manifest = loadApprovedManifest(MANIFEST_PATH);
+  const keeper = "product-requirements-document-prd-template";
+  mkdirSync(join(root, "submissions", keeper), { recursive: true });
+  writeFileSync(join(root, "submissions", keeper, `${keeper}.prompt.md`), "Maintained merged behavior.\n");
+  mkdirSync(join(root, "src/data"), { recursive: true });
+  writeFileSync(join(root, "src/data/asset-consolidations.json"), JSON.stringify({ schemaVersion: 1, entries:
+    manifest.records.filter((record) => record.canonicalSlug !== keeper).map((record) => ({
+      slug: record.canonicalSlug, kind: "prompt-template", name: record.canonicalSlug,
+      replacementSlug: keeper, replacementKind: "prompt-template", reason: "Consolidated fixture.", legacyPaths: [],
+      legacyDownloads: [{ path: `bundles/${record.canonicalSlug}.prompt.md`, sha256: record.promptSha256 }],
+      source: { commit: APPROVED_SOURCE_COMMIT, path: `submissions/${record.canonicalSlug}`, author: "Test Author" },
+    })),
+  }));
+  const result = materializeApprovedPrompts({ source: join(root, "unavailable-history"), manifest: MANIFEST_PATH, outputRoot: root, checkOnly: false });
+  assert.deepEqual(result, { prompts: 0, files: 0, changed: 0 });
+  assert.equal(readFileSync(join(root, "submissions", keeper, `${keeper}.prompt.md`), "utf8"), "Maintained merged behavior.\n");
+  for (const record of manifest.records) {
+    if (record.canonicalSlug !== keeper) assert.equal(existsSync(join(root, "submissions", record.canonicalSlug)), false);
+  }
+});
+
+test("all 56 migrated sources retain provenance through active entries or permanent retirements", () => {
   const manifest = loadApprovedManifest(MANIFEST_PATH);
   const slugs = new Set<string>();
   for (const record of manifest.records) {
     const meta = metadata(record.canonicalSlug);
-    assert.doesNotThrow(() => promptSchema.parse(meta), record.canonicalSlug);
+    const retirement = retired.get(record.canonicalSlug);
+    if (!retirement) assert.doesNotThrow(() => promptSchema.parse(meta), record.canonicalSlug);
     assert.equal(meta.slug, record.canonicalSlug);
     assert.equal(meta.kind, "prompt-template");
     assert.ok(["blocked-pending-artwork", "published"].includes(meta.publicationStatus));
@@ -75,14 +110,29 @@ test("all 56 generated submissions validate and preserve hash-bound payloads and
     assert.deepEqual(meta.provenance.legacyImage, record.legacyImage);
 
     const prompt = readFileSync(promptPath(record.canonicalSlug), "utf8");
+    if (retirement) {
+      assert.equal(existsSync(join(ROOT, "submissions", record.canonicalSlug)), false);
+      assert.equal(digest(prompt), record.promptSha256, record.canonicalSlug);
+      assert.equal(digest(prompt), meta.provenance.importedPromptSha256);
+      assert.equal(meta.provenance.importedGuideSha256, record.guideSha256);
+      assert.ok(!slugs.has(record.canonicalSlug));
+      slugs.add(record.canonicalSlug);
+      continue;
+    }
     const guide = readFileSync(
       join(ROOT, "submissions", record.canonicalSlug, "README.md"),
       "utf8",
     );
     assert.equal(digest(prompt), meta.provenance.importedPromptSha256);
-    assert.equal(digest(guide), record.guideSha256);
     assert.equal(digest(guide), meta.provenance.importedGuideSha256);
-    if (record.id !== "prompt:academic-critique-content") {
+    if (maintained.has(record.canonicalSlug)) {
+      assert.ok(meta.provenance.appliedRepairs.includes("consolidate-duplicate-entrypoints-2026-10-18"));
+      assert.equal(meta.provenance.sourcePromptSha256, record.promptSha256);
+      assert.equal(meta.provenance.sourceGuideSha256, record.guideSha256);
+    } else {
+      assert.equal(digest(guide), record.guideSha256);
+    }
+    if (!maintained.has(record.canonicalSlug) && record.id !== "prompt:academic-critique-content") {
       assert.equal(digest(prompt), record.promptSha256, record.canonicalSlug);
     }
     assert.ok(!slugs.has(record.canonicalSlug));

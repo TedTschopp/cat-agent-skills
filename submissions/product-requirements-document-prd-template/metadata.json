@@ -1,8 +1,8 @@
 {
   "kind": "prompt-template",
   "slug": "product-requirements-document-prd-template",
-  "name": "Architecture Product Requirements Document (PRD) Template",
-  "description": "Professional architecture product requirements document (prd) template prompt designed for high-quality content generation and structured analysis.",
+  "name": "Product Requirements Document Template",
+  "description": "Draft, review, or assess the impact of an internal utility software PRD with evidence, measurable success criteria, release gates, and explicit unknowns.",
   "status": "active",
   "publicationStatus": "published",
   "topics": [
@@ -51,7 +51,7 @@
   ],
   "downloadPath": "bundles/product-requirements-document-prd-template.prompt.md",
   "createdAt": "2025-10-17",
-  "updatedAt": null,
+  "updatedAt": "2026-10-18T20:50:22.951394+00:00",
   "subtitle": "Enterprise Architecture and Requirements Engineering",
   "summaryBullets": [
     "Advanced prompt engineering techniques",
@@ -72,9 +72,9 @@
     "sourceUrl": "https://tedt.org/prompts/product-requirements-document-prd-template/",
     "sourceFileSha256": "sha256:ecb6f40f420209bc9f727c5634096ae42f013a4b10dac09e887ea2458a8592c7",
     "sourcePromptSha256": "sha256:3f6e685dc70ba3ba228d3e940b42dccb9c268fea24106ee798f2671e536f5c87",
-    "importedPromptSha256": "sha256:3f6e685dc70ba3ba228d3e940b42dccb9c268fea24106ee798f2671e536f5c87",
+    "importedPromptSha256": "sha256:ac393a9a5cf6222359408944338295cc8d8eb18690aad136f3d95af1fd96ac19",
     "sourceGuideSha256": "sha256:d768f9c1d47817b3e521184790f8ffd6e75c78c2cabd8a4397919bda30fac047",
-    "importedGuideSha256": "sha256:d768f9c1d47817b3e521184790f8ffd6e75c78c2cabd8a4397919bda30fac047",
+    "importedGuideSha256": "sha256:1ab55ac5effef7981c5157ea4be5c3094d9dece21145232d794cc4975a0ddf06",
     "rawFrontmatterSha256": "sha256:98edbb6854e35a781091983f0afa4f70639925f749f9f8e2c153d349607448d6",
     "sourceTitle": "Architecture Product Requirements Document (PRD) Template",
     "sourceDescription": "Professional architecture product requirements document (prd) template prompt designed for high-quality content generation and structured analysis.",
@@ -182,7 +182,8 @@
       "update": null
     },
     "appliedRepairs": [
-      "normalize-model-github-to-github-copilot"
+      "normalize-model-github-to-github-copilot",
+      "consolidate-duplicate-entrypoints-2026-10-18"
     ]
   },
   "coverImage": "skill-art/product-requirements-document-prd-template.webp",
@@ -193,6 +194,6 @@
   "coverImageHeight": 1000,
   "coverImageGenerator": "OpenAI image generation via Codex",
   "coverImageGeneratedAt": "2026-09-03",
-  "coverImageSourceHash": "sha256:09efa85e4246335da1ac95da94e22473279e31942094e45cca839cae5d2c30e2",
+  "coverImageSourceHash": "sha256:bd27c6907ac1e8cff84bbdf421f63368006bac6e31a073c918bd753edf68bfa3",
   "coverImageSourceHashVersion": 2
 }

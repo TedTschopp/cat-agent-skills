@@ -25,6 +25,7 @@ import {
   framedSourceDigest,
   parseMetadataText,
   prepareArtwork,
+  revalidateArtworkSource,
   serializeMetadataText,
   skillSourceHash,
   slugsFromAddedAssetPaths,
@@ -34,6 +35,7 @@ import {
   webpDimensions,
 } from "./skill-artwork.ts";
 import { validateSkillData } from "./validate-skill.ts";
+import { readAssetConsolidations } from "./asset-consolidations.mjs";
 
 function vp8x(width: number, height: number): Buffer {
   const chunk = Buffer.alloc(10);
@@ -211,7 +213,7 @@ test("the v1 skill source hash remains byte-for-byte compatible", (t) => {
   assert.equal(artworkSourceHashVersion(metadata), 1);
 });
 
-test("all 96 enrolled covers retain their stored v1 source hashes", () => {
+test("active original covers retain valid v1 source hashes", () => {
   const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
   const enrollment = JSON.parse(
     readFileSync(
@@ -220,7 +222,9 @@ test("all 96 enrolled covers retain their stored v1 source hashes", () => {
     ),
   ) as { initialSlugs: string[] };
   assert.equal(enrollment.initialSlugs.length, 96);
+  const retired = new Set(readAssetConsolidations(root).map((entry) => entry.slug));
   for (const slug of enrollment.initialSlugs) {
+    if (retired.has(slug)) continue;
     const metadataPath = ["metadata.json", "metadata.yaml", "metadata.yml"]
       .map((name) => join(root, "submissions", slug, name))
       .find((path) => existsSync(path));
@@ -233,6 +237,57 @@ test("all 96 enrolled covers retain their stored v1 source hashes", () => {
       `${slug} v1 source hash changed`,
     );
   }
+});
+
+test("retired identities leave the artwork queue even with stale enrollment or recreated sources", (t) => {
+  const root = mkdtempSync(join(tmpdir(), "artwork-retirement-"));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  git(root, ["init", "--quiet"]);
+  git(root, ["-c", "user.name=Test", "-c", "user.email=test@example.com", "commit", "--allow-empty", "-m", "Fixture baseline", "--quiet"]);
+  const baselineCommit = git(root, ["rev-parse", "HEAD"]);
+  const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+  const retired = readAssetConsolidations(repoRoot)[0];
+  assert.ok(retired);
+  writeJson(join(root, ".agents", "skills", "generate-skill-artwork", "references", "enrollment.json"),
+    { schemaVersion: 1, baselineCommit, initialSlugs: [retired.slug] });
+  writeJson(join(root, "src", "data", "asset-consolidations.json"),
+    { schemaVersion: 1, entries: [retired] });
+  createPromptSubmission(root, "maintained-example");
+  createPromptSubmission(root, retired.slug);
+  assert.deepEqual(discoverCandidates(root).map((entry) => entry.slug), ["maintained-example"]);
+});
+
+test("reviewed cover revalidation changes only the source binding and rejects damaged artwork", (t) => {
+  const root = mkdtempSync(join(tmpdir(), "artwork-revalidate-"));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  const slug = "example-prompt";
+  const source = createPromptSubmission(root, slug);
+  const metadataPath = join(root, "submissions", slug, "metadata.json");
+  const imagePath = join(root, "public/skill-art", `${slug}.webp`);
+  mkdirSync(dirname(imagePath), { recursive: true });
+  const image = vp8x(1600, 1000);
+  writeFileSync(imagePath, image);
+  const original = {
+    ...source, publicationStatus: "published", coverImage: `skill-art/${slug}.webp`,
+    coverImageAlt: "An existing editorial illustration for the example prompt.",
+    coverImagePrompt: "Use case: stylized-concept. Composition/framing: exact 16:10 landscape with a crop-safe subject. Constraints: no paw imagery, no cats, no text, no logos, no trademarks, and no watermark.",
+    coverImageAspectRatio: "16:10", coverImageWidth: 1600, coverImageHeight: 1000,
+    coverImageGenerator: "Original image generator", coverImageGeneratedAt: "2026-09-01",
+    coverImageSourceHash: `sha256:${"a".repeat(64)}`, coverImageSourceHashVersion: 2,
+  };
+  writeJson(metadataPath, original);
+  const payload = readFileSync(join(root, "submissions", slug, `${slug}.prompt.md`));
+  revalidateArtworkSource(root, slug);
+  const updated = JSON.parse(readFileSync(metadataPath, "utf8"));
+  assert.deepEqual({ ...updated, coverImageSourceHash: original.coverImageSourceHash }, original);
+  assert.deepEqual(readFileSync(imagePath), image);
+  assert.deepEqual(readFileSync(join(root, "submissions", slug, `${slug}.prompt.md`)), payload);
+  assert.deepEqual(validateArtwork(root, slug, updated), []);
+  assert.throws(() => revalidateArtworkSource(root, slug), /already current/);
+  writeFileSync(join(root, "submissions", slug, `${slug}.prompt.md`), "Changed source.\n");
+  writeFileSync(imagePath, vp8x(200, 100));
+  assert.throws(() => revalidateArtworkSource(root, slug), /only a stale source hash/);
+  assert.deepEqual(JSON.parse(readFileSync(metadataPath, "utf8")), updated);
 });
 
 test("v2 source hashes bind prompt metadata, payload, guide, and asset kind", (t) => {

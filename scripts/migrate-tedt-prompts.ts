@@ -24,6 +24,7 @@ import {
 import { basename, dirname, join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { promptSchema, type AssetSeriesMembership } from "../src/lib/library-asset-schema.ts";
+import { readAssetConsolidations } from "./asset-consolidations.mjs";
 import {
   EXPECTED_PROMPT_COUNT,
   splitFrontmatter,
@@ -551,11 +552,23 @@ export function materializeApprovedPrompts(options: PromptMigrationCliOptions): 
 
   let fileCount = 0;
   let changed = 0;
+  let promptCount = 0;
+  const consolidations = readAssetConsolidations(options.outputRoot);
+  const retired = new Set(consolidations.map((entry) => entry.slug));
+  const maintained = new Set(consolidations.map((entry) => entry.replacementSlug));
   for (const record of [...manifest.records].sort((a, b) =>
     a.canonicalSlug.localeCompare(b.canonicalSlug),
   )) {
+    if (retired.has(record.canonicalSlug)) continue;
+    if (maintained.has(record.canonicalSlug)) {
+      if (!existsSync(join(options.outputRoot, "submissions", record.canonicalSlug))) {
+        throw new Error(`maintained consolidation source is missing: ${record.canonicalSlug}`);
+      }
+      continue; // Maintainers own the merged source; a historical migration cannot overwrite it.
+    }
     const bytes = readGitBlob(options.source, manifest.source.commit, record.sourceFile);
     const prompt = migratePromptRecord(record, bytes, manifest);
+    promptCount += 1;
     for (const [path, content] of expectedFiles(prompt, options.outputRoot)) {
       fileCount += 1;
       const current = existsSync(path) ? readFileSync(path, "utf8") : null;
@@ -566,7 +579,7 @@ export function materializeApprovedPrompts(options: PromptMigrationCliOptions): 
       if (atomicWrite(path, content)) changed += 1;
     }
   }
-  return { prompts: manifest.records.length, files: fileCount, changed };
+  return { prompts: promptCount, files: fileCount, changed };
 }
 
 function main(): void {

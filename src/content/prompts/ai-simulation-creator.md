@@ -13,11 +13,11 @@ coverImageGeneratedAt: "2026-09-03"
 coverImageGenerator: "OpenAI image generation via Codex"
 coverImageHeight: 1000
 coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: Scenario-based skill practice represented by a miniature rehearsal stage whose path branches through several physical choices and returns through a feedback loop.\nScene/backdrop: A simple circular slate stage on warm paper with open negative space.\nSubject: One crop-safe stage platform, two abstract human-like wooden figures, branching cyan pathways, and an orange feedback beacon.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; strong central stage silhouette; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: focused, constructive, experiential, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: abstract featureless figures only; completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes"
-coverImageSourceHash: "sha256:4bead1121de06d5eff1c2a200f924b6470a72fc17f0f13a120f2faf8f849b676"
+coverImageSourceHash: "sha256:73094e1060e9e74fb6eaba0654223b2444567ef19dd86f6df513040bc5564e65"
 coverImageSourceHashVersion: 2
 coverImageWidth: 1600
 createdAt: "2025-05-04"
-description: "A dynamic prompt framework for generating AI-led roleplay simulations, where learners practice applying key skills like negotiation, hiring, or pitching through structured scenarios and guided mentorship."
+description: "Create a guided roleplay simulation with scenario choices, an AI mentor, and practical feedback on the learner's performance."
 downloadPath: "bundles/ai-simulation-creator.prompt.md"
 entrypoint: "ai-simulation-creator.prompt.md"
 featured: false
@@ -41,7 +41,7 @@ models:
   - "microsoft-copilot"
   - "o4-mini"
   - "o4-mini-high"
-name: "AI Simulation Creator – Scenario-Based Skill Practice"
+name: "AI Simulation Creator"
 payloadPaths:
   - "ai-simulation-creator.prompt.md"
 provenance:
@@ -49,7 +49,8 @@ provenance:
     - "normalize-model-04-mini-high-to-o4-mini-high"
     - "normalize-model-04-mini-to-o4-mini"
     - "normalize-model-github-to-github-copilot"
-  importedGuideSha256: "sha256:56427c507a6dc2922edf1c9e4d3120229ae14f53eb08c2e67e0749a3206a66e7"
+    - "consolidate-duplicate-entrypoints-2026-10-18"
+  importedGuideSha256: "sha256:bc6c805f0c1bdaa3b6025e954f5ebc009e380caa245476592e8ec8420f1e466b"
   importedPromptSha256: "sha256:66222d47e8cf7eb3bd4a00f4595c987804f74b13484419fb13e46e48001d612e"
   legacyCategories:
     - "Prompts"
@@ -160,7 +161,7 @@ topics:
   - "Teaching & Education"
   - "Artificial Intelligence"
   - "Planning"
-updatedAt: null
+updatedAt: "2026-10-18T20:50:22.952109+00:00"
 variables: []
 worksWith:
   - "chatgpt"

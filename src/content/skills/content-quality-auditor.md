@@ -1,15 +1,15 @@
 ---
 name: Content Quality Auditor
-description: "Score documents, pages, posts, or artefact libraries against a configurable quality rubric and recommend fixes."
+description: "Audit documents, pages, or content libraries with a general quality rubric or a specialized blog rubric, then prioritize improvements."
 agentDescription: "Use this skill when the user asks to assess, audit, score, review, improve, prioritise, or quality-check content, documents, pages, posts, decks, or reusable artefacts."
 platforms: [Cowork, Copilot Studio, Scout]
 tags: [content, quality, audit, documents, productivity, governance]
 author: Simon Owen
 authorUrl: "https://github.com/SimonOwenDigital"
 authorGithub: SimonOwenDigital
-version: 0.1.0
+version: 0.2.0
 createdAt: 2026-07-17
-updatedAt: 2026-07-17
+updatedAt: "2026-10-18T20:50:22.953049+00:00"
 coverImage: skill-art/content-quality-auditor.webp
 coverImageAlt: Seven-facet inspection halo reveals orange flaws in a paper structure with cyan repair pieces queued below.
 coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: Depict a blank modular paper artefact inside a seven-facet optical inspection halo; the calibrated light reveals a few orange structural flaws while cyan repair pieces align nearby in clear priority order, a metaphor for evidence-led content scoring and actionable improvement.\nScene/backdrop: quiet slate inspection bay on a warm paper field, minimal and architectural\nSubject: one central layered blank-paper sculpture; one unmarked seven-facet glass-and-metal halo around it; narrow cyan inspection light; two or three visible orange flaws; a short descending sequence of fitted cyan repair pieces ready to restore the structure\nStyle/medium: premium editorial illustration with tactile dimensional detail, cut paper, optical glass, brushed metal, and softly luminous inserts\nComposition/framing: exact 16:10 landscape; centered artefact and complete inspection halo fully contained within the central 84% crop-safe area; strong silhouette with calm negative space\nLighting/mood: rigorous, constructive, calm, quietly technical; cyan analytical light with sparing orange fault highlights\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, pseudo-writing, letters, numbers, tick marks, score labels, checklists, clipboards, magnifying glasses, logos, trademarks, or watermark; no document UI, dashboard UI, product UI, or Microsoft Fluent branding; no paw imagery or paw logo; no cats or cat silhouettes\nTargeted correction: preserve the inspection-halo concept exactly, but scale and lower the complete halo, artefact, flaws, and repair pieces so the highest metal edge and lowest repair piece both sit at least 12% inside the canvas, with broad warm-paper negative space above and below."
@@ -18,7 +18,7 @@ coverImageWidth: 1600
 coverImageHeight: 1000
 coverImageGenerator: OpenAI image generation via Codex
 coverImageGeneratedAt: 2026-08-29
-coverImageSourceHash: "sha256:14768486ed705f40ccc2d6afec67ba463f64fe9cb6fb63216aef912b0a85e091"
+coverImageSourceHash: "sha256:9bee5f870cc1d99da0af5e2c8264595c43d8e7e1408c321a7990ddfb26b85fdd"
 bundle: bundles/content-quality-auditor.zip
 ---
 # Content Quality Auditor
@@ -40,6 +40,22 @@ The skill can be used for:
 - Do not infer missing facts, usage statistics, or business impact.
 - If you cannot access a referenced artefact, state that limitation and assess only what is available.
 - Separate observed evidence from suggested improvements.
+
+## Choose the Audit Mode
+
+Use the blog mode for posts, newsletters, and thought-leadership libraries,
+unless the user supplies a different rubric. Read
+[references/blog-audit-rubric.md](references/blog-audit-rubric.md) for its seven
+dimensions, editorial action labels, and single-post or library outputs. Score
+reader promise, opening, argument, evidence, structure, distinctiveness, and
+next action. For a library, include Keep, Refresh, Rewrite, Merge, or Retire
+recommendations and identify content gaps when the accessible corpus supports
+them. Assess editorial quality only when analytics are unavailable; never infer
+traffic, ranking, engagement, conversion, or current performance.
+
+Use the general rubric below for other content. Preserve a user-provided rubric
+in either mode. Apply the selected mode's scorecard and output structure rather
+than forcing the general template onto a blog audit.
 
 ## Default seven-dimension rubric
 
@@ -78,7 +94,8 @@ If the user supplies a different rubric, use their rubric instead.
 
 ## Output format
 
-Use this format unless the user requests another structure:
+Use this format for a general audit unless the user requests another structure.
+For a blog audit, use the matching output in the blog reference:
 
 ```markdown
 ## Audit summary

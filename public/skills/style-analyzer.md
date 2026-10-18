@@ -1,8 +1,7 @@
 ---
 name: style-analyzer
-description: Analyze the user's communication style across their Teams chats and emails to build a reusable mimicry profile — greetings, tone, length, punctuation, sign-offs, common phrases, and quirks. Use this skill when the user asks to capture or analyze their writing style, or before configuring an assistant (e.g. an OOO auto-responder) that should write in their voice.
+description: "Analyze the user's communication style across their Teams chats and emails to build a reusable mimicry profile — greetings, tone, length, punctuation, sign-offs, common phrases, and quirks. Use this skill when the user asks to capture or analyze their writing style, or before configuring an assistant (e.g. an OOO auto-responder) that should write in their voice."
 ---
-
 # Style Analyzer
 
 Analyze the user's communication patterns across Teams and Outlook and build a

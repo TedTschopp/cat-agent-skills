@@ -44,3 +44,11 @@ The audit reports patterns to review; its counts are not writing targets.
 This skill supports Ted's personal voice. Use the separate Edison Writing
 Guide for SCE newsroom copy unless the request explicitly calls for blending
 the two styles.
+
+## Available Modes
+
+The earlier compact literary and faith-oriented profile is included as a conditional reference. It applies when that subject or mode is requested; it does not turn unrelated writing into religious reflection.
+
+- Includes the Communications [Ted's Writing Style] workflow by Ted Tschopp. [Original source](https://github.com/TedTschopp/cat-agent-skills/tree/1a3e42195454e4e4159a327d175a72870d505268/submissions/teds-writing-style).
+
+Use this entry for the maintained workflow and current download.

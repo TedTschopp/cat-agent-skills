@@ -42,6 +42,16 @@ Submit Agent Skills unpacked. New `.zip` packages are not accepted. Existing
 grandfathered plugins and automation installers remain published, while new
 Scout automations use one directly importable `.json` export.
 
+## Consolidate Existing Assets
+
+Before creating a similar asset, check the existing catalog for a workflow or
+mode that can be extended. Permanent consolidations use
+`src/data/asset-consolidations.json`; follow
+[`docs/catalog-consolidation-2026-10-18.md`](docs/catalog-consolidation-2026-10-18.md).
+Retired slugs cannot be resubmitted. Preserve their source provenance, old
+routes, and hashed compatibility downloads, and keep maintained packages
+self-contained.
+
 ## Let Publication Fail Closed
 
 New Prompt Template Files and generic file assets remain unpublished until

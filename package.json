@@ -24,6 +24,7 @@
     "ratings:fetch": "node --import tsx scripts/fetch-engagement.ts",
     "artwork:pending": "node --import tsx scripts/skill-artwork.ts pending",
     "artwork:prepare": "node --import tsx scripts/skill-artwork.ts prepare",
+    "artwork:revalidate": "node --import tsx scripts/skill-artwork.ts revalidate",
     "artwork:validate": "node --import tsx scripts/skill-artwork.ts validate",
     "assets:icons": "node scripts/generate-site-icons.mjs",
     "check:metadata": "node scripts/verify-site-metadata.mjs",

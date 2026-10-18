@@ -26,6 +26,8 @@ import {
   type LibraryAssetSummary,
 } from "../src/lib/library-assets.ts";
 import { skillSchema } from "../src/lib/skill-schema.ts";
+import { applyAssetConsolidations } from "../src/lib/asset-consolidations.mjs";
+import { readAssetConsolidations } from "./asset-consolidations.mjs";
 
 function markdownFiles(directory: string): string[] {
   if (!existsSync(directory)) return [];
@@ -110,7 +112,7 @@ export function buildLibraryAssetSnapshot(rootInput: string): LibraryAssetSummar
   }
 
   assertUniqueLibraryAssetSlugs(assets);
-  return sortLibraryAssets(assets)
+  return sortLibraryAssets(applyAssetConsolidations(assets, readAssetConsolidations(root)))
     .filter((asset) => asset.publicationStatus === "published")
     .map(toLibraryAssetSummary);
 }

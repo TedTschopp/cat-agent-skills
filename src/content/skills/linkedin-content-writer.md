@@ -1,15 +1,15 @@
 ---
 name: LinkedIn Content Writer
-description: "Create credible LinkedIn content from facts, notes or drafts, with configurable voice and no invented evidence."
-agentDescription: "Create, polish, rewrite, review, repurpose, brainstorm, or configure evidence-led LinkedIn posts, captions, comments, hooks, ideas, and conversation-scoped writing profiles from facts, notes, drafts, research, announcements, or lived experience. Use for the initial LinkedIn request and every follow-up clarification, revision, correction, constraint, or preference in the active task."
-platforms: [Copilot Studio]
+description: "Draft, revise, and review evidence-led LinkedIn posts, newsletter introductions, articles, carousel copy, and comments in a configurable voice."
+agentDescription: "Create, polish, rewrite, review, repurpose, brainstorm, or configure evidence-led LinkedIn posts, newsletter introductions, articles, carousel copy, captions, comments, hooks, ideas, and conversation-scoped writing profiles from facts, notes, drafts, research, announcements, or lived experience. Use for the initial LinkedIn request and follow-up revisions, corrections, constraints, or preferences in the active task."
+platforms: [Cowork, Copilot Studio, Scout]
 tags: [linkedin, social-media, writing, content]
 author: "Becky Still, Digital Boop Ltd"
 authorUrl: "https://digital-boop.co.uk/my-story"
 authorGithub: DigitalBoopLtd
-version: 1.0.1
+version: 1.1.0
 createdAt: 2026-07-14
-updatedAt: 2026-07-17
+updatedAt: "2026-10-18T20:50:22.952574+00:00"
 coverImage: skill-art/linkedin-content-writer.webp
 coverImageAlt: Blank source slips align through a cyan glass lens into one polished portrait card.
 coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: supplied facts are focused into one clear, credible professional story without inventing evidence, represented as a single polished blank publication card built from grounded source pieces\nScene/backdrop: an uncluttered warm-paper writing field with a small centered slate composition table and no stationery or room props\nSubject: several completely blank source slips aligned through one transparent cyan glass focusing lens into one clean blank portrait card, with a small orange foundation block anchoring the composition\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; centered three-quarter view at a noticeably smaller scale; contain every source slip, complete glass lens, finished card, foundation block, table, and shadow within the central 58% of the canvas; leave at least 21% calm empty border on all four sides; no object may enter the outer 16%\nLighting/mood: thoughtful, credible, human, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: all paper surfaces blank and unmarked; no arrows, chevrons, directional rods, social-network logos, profile silhouettes, text, letters, numbers, pseudo-writing, hashtags, icons, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding"
@@ -18,7 +18,8 @@ coverImageWidth: 1600
 coverImageHeight: 1000
 coverImageGenerator: OpenAI image generation via Codex
 coverImageGeneratedAt: 2026-08-29
-coverImageSourceHash: "sha256:3638996fcf80177ca58ae3e45e30229a0b0559e40db0749de9127bdae4ea5e6f"
+coverImageSourceHash: "sha256:ff0ecf77dc1ee73406a3a0737e266510ecd4f2968d22c417255fa7bc637dd8c0"
+bundle: bundles/linkedin-content-writer.zip
 ---
 # LinkedIn Content Writer
 
@@ -210,6 +211,17 @@ For new drafts, substantive rewrites, and repurposing:
   not established author views.
 - **Comment:** Respond to the original point, add one useful thought, and avoid
   turning the reply into self-promotion.
+
+## Choose the LinkedIn Format
+
+Honor the requested surface: standard or promotional post, event announcement,
+newsletter introduction, article introduction, long-form article, carousel copy,
+caption, or comment. Do not compress a requested article into a short post.
+Read [references/linkedin-format-guide.md](references/linkedin-format-guide.md)
+when selecting or adapting one of these formats. Use its structures as optional
+guidance; the source boundary, requested operation, and user preferences take
+precedence over a generic outline. Carousel output is numbered panel copy unless
+the user also requests design work.
 
 ## Configure preferences
 

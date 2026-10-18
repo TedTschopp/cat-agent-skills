@@ -28,6 +28,7 @@ import { basename, join, relative, resolve, sep } from "node:path";
 import { pathToFileURL } from "node:url";
 import { JSON_SCHEMA, dump as dumpYaml, load as loadYaml } from "js-yaml";
 import sharp from "sharp";
+import { readAssetConsolidations } from "./asset-consolidations.mjs";
 import {
   genericFileAssetSchema,
   normalizeGenericFileAssetInput,
@@ -637,6 +638,7 @@ function onDiskNonLegacyAssetSlugs(root: string): string[] {
 /** Discover enrolled current/future library assets and classify their artwork state. */
 export function discoverCandidates(root: string): Candidate[] {
   const enrollment = readEnrollment(root);
+  const retired = new Set(readAssetConsolidations(root).map((entry) => entry.slug));
   const slugs = new Set([
     ...enrollment.initialSlugs,
     ...addedAssetSlugs(root, enrollment.baselineCommit),
@@ -644,6 +646,7 @@ export function discoverCandidates(root: string): Candidate[] {
   ]);
   const candidates: Candidate[] = [];
   for (const slug of [...slugs].sort()) {
+    if (retired.has(slug)) continue;
     let kind: ArtworkAssetKind = "skill";
     let sourceHashVersion: ArtworkSourceHashVersion = ARTWORK_SOURCE_HASH_VERSION;
     try {
@@ -831,6 +834,33 @@ export async function prepareArtwork(root: string, args: string[]): Promise<void
   );
 }
 
+/** Reuse a reviewed existing illustration without rewriting its bytes or history. */
+export function revalidateArtworkSource(root: string, slug: string): void {
+  if (!SAFE_SLUG.test(slug)) throw new Error(`invalid asset slug: ${slug}`);
+  const metadataPath = findMetadata(root, slug);
+  const metadata = readMetadata(metadataPath);
+  const problems = validateArtwork(root, slug, metadata);
+  if (problems.length !== 1 || !problems[0].includes("SourceHash")) {
+    throw new Error(`${slug}: only a stale source hash can be revalidated; ${problems.join("; ") || "artwork is already current"}`);
+  }
+  const version = artworkSourceHashVersion(metadata);
+  const updated = {
+    ...metadata,
+    coverImageSourceHash: version === 1
+      ? skillSourceHash(root, slug, metadata)
+      : assetSourceHash(root, slug, metadata),
+  };
+  const remaining = validateArtwork(root, slug, updated);
+  if (remaining.length > 0) throw new Error(`${slug}: ${remaining.join("; ")}`);
+  const temporary = `${metadataPath}.${process.pid}.tmp`;
+  try {
+    writeFileSync(temporary, serializeMetadataText(metadataPath, updated), "utf8");
+    renameSync(temporary, metadataPath);
+  } finally {
+    rmSync(temporary, { force: true });
+  }
+}
+
 function pending(root: string, args: string[]): void {
   const options = parseArgs(args);
   const rawLimit = options.get("limit") ?? "15";
@@ -896,8 +926,13 @@ async function main(): Promise<void> {
   const [command, ...args] = process.argv.slice(2);
   if (command === "pending") pending(root, args);
   else if (command === "prepare") await prepareArtwork(root, args);
+  else if (command === "revalidate") {
+    const slug = requiredOption(parseArgs(args), "slug");
+    revalidateArtworkSource(root, slug);
+    console.log(`Revalidated ${slug}; existing image and generation provenance preserved.`);
+  }
   else if (command === "validate") validateAll(root);
-  else throw new Error("usage: skill-artwork.ts <pending|prepare|validate> [options]");
+  else throw new Error("usage: skill-artwork.ts <pending|prepare|revalidate|validate> [options]");
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
