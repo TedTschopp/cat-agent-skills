@@ -213,7 +213,7 @@ test("the v1 skill source hash remains byte-for-byte compatible", (t) => {
   assert.equal(artworkSourceHashVersion(metadata), 1);
 });
 
-test("active original covers retain valid v1 source hashes and retired entries leave the queue", () => {
+test("active original covers retain valid v1 source hashes", () => {
   const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
   const enrollment = JSON.parse(
     readFileSync(
@@ -223,12 +223,8 @@ test("active original covers retain valid v1 source hashes and retired entries l
   ) as { initialSlugs: string[] };
   assert.equal(enrollment.initialSlugs.length, 96);
   const retired = new Set(readAssetConsolidations(root).map((entry) => entry.slug));
-  const queue = new Set(discoverCandidates(root).map((entry) => entry.slug));
   for (const slug of enrollment.initialSlugs) {
-    if (retired.has(slug)) {
-      assert.equal(queue.has(slug), false, `${slug} must remain retired`);
-      continue;
-    }
+    if (retired.has(slug)) continue;
     const metadataPath = ["metadata.json", "metadata.yaml", "metadata.yml"]
       .map((name) => join(root, "submissions", slug, name))
       .find((path) => existsSync(path));
@@ -241,6 +237,24 @@ test("active original covers retain valid v1 source hashes and retired entries l
       `${slug} v1 source hash changed`,
     );
   }
+});
+
+test("retired identities leave the artwork queue even with stale enrollment or recreated sources", (t) => {
+  const root = mkdtempSync(join(tmpdir(), "artwork-retirement-"));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  git(root, ["init", "--quiet"]);
+  git(root, ["-c", "user.name=Test", "-c", "user.email=test@example.com", "commit", "--allow-empty", "-m", "Fixture baseline", "--quiet"]);
+  const baselineCommit = git(root, ["rev-parse", "HEAD"]);
+  const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+  const retired = readAssetConsolidations(repoRoot)[0];
+  assert.ok(retired);
+  writeJson(join(root, ".agents", "skills", "generate-skill-artwork", "references", "enrollment.json"),
+    { schemaVersion: 1, baselineCommit, initialSlugs: [retired.slug] });
+  writeJson(join(root, "src", "data", "asset-consolidations.json"),
+    { schemaVersion: 1, entries: [retired] });
+  createPromptSubmission(root, "maintained-example");
+  createPromptSubmission(root, retired.slug);
+  assert.deepEqual(discoverCandidates(root).map((entry) => entry.slug), ["maintained-example"]);
 });
 
 test("reviewed cover revalidation changes only the source binding and rejects damaged artwork", (t) => {
