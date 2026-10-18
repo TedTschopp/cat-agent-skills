@@ -1,11 +1,32 @@
 {
   "name": "Swiss Design Images",
   "description": "Create or restyle images with modular grids, asymmetrical composition, restrained color, and precise typography in the International Typographic Style.",
-  "platforms": ["Cowork", "Copilot Studio", "Scout"],
-  "tags": ["Design and Media", "Swiss graphic design", "International Typographic Style", "image generation", "editorial illustration", "posters"],
+  "platforms": [
+    "Cowork",
+    "Copilot Studio",
+    "Scout"
+  ],
+  "tags": [
+    "Design and Media",
+    "Swiss graphic design",
+    "International Typographic Style",
+    "image generation",
+    "editorial illustration",
+    "posters"
+  ],
   "author": "Ted Tschopp",
   "authorUrl": "https://tedt.org/",
   "authorGithub": "TedTschopp",
   "version": "1.0.0",
-  "createdAt": "2026-10-18"
+  "createdAt": "2026-10-18",
+  "coverImage": "skill-art/create-swiss-images.webp",
+  "coverImageAlt": "A navy circle, cyan rectangle, and orange bar form a precise asymmetrical composition on warm paper.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: Swiss graphic design represented by one carefully composed sculptural paper poster whose geometric forms lock into a precise asymmetrical modular grid, with no lettering.\nScene/backdrop: a calm slate studio field with a warm paper sheet floating just above a low navy work surface; no surrounding clutter.\nSubject: one large flat warm-paper composition, a navy circle, a cyan rectangular plane, and a small orange bar aligned with exact spacing; subtle paper thickness and tiny physical shadows convey deliberate editorial craft. The composition itself is the focal subject, viewed nearly front-on with slight tactile dimensional depth.\nStyle/medium: premium editorial illustration with tactile dimensional detail, disciplined International Typographic Style composition, crisp edges and generous negative space.\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; readable as a simple strong silhouette at a 290-pixel card width.\nLighting/mood: calm, capable, quietly technical; restrained cyan backlight.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nConstraints: no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, Swiss flags, mountains, national symbols, paw imagery, paw logo, cats, cat silhouettes, product UI, or Microsoft Fluent branding.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-10-18",
+  "coverImageSourceHash": "sha256:2f3761b3642a44ed0d2b7286ca2baf308d7ab3403a9bb21bd805bb4ef08c1768",
+  "coverImageSourceHashVersion": 2
 }
