@@ -1,0 +1,32 @@
+{
+  "name": "Ballot Candidate Review",
+  "description": "Research every candidate and measure on a supplied U.S. ballot, compare qualifications and stated policy priorities separately, and build an expandable report with sources and evidence gaps.",
+  "platforms": [
+    "Cowork",
+    "Copilot Studio",
+    "Scout"
+  ],
+  "tags": [
+    "research",
+    "decision-making",
+    "ballots",
+    "elections",
+    "evidence",
+    "candidate qualifications"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorGithub": "TedTschopp",
+  "version": "1.0.0",
+  "createdAt": "2026-10-18",
+  "coverImage": "skill-art/ballot-candidate-review.webp",
+  "coverImageAlt": "A blank ballot sheet and magnifying glass sit beside evidence cards and two separate paper paths for comparing qualifications and policy priorities.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a calm editorial metaphor for researching a ballot using independent evidence before making a personal decision.\nScene/backdrop: a flat slate studio field with generous negative space and a small warm-paper workbench.\nSubject: one blank folded ballot sheet with three simple unmarked circular cutouts, beside a navy magnifying glass that reveals a carefully aligned stack of blank paper evidence cards; two separate narrow paper paths run alongside the evidence stack, suggesting qualifications and personal priorities as distinct considerations. A small orange tab marks the edge of the stack, without choosing any circle. No writing, symbols, or candidates.\nStyle/medium: premium editorial illustration with tactile paper, matte ceramic, restrained dimensional detail, and soft realistic shadows.\nComposition/framing: exact 16:10 landscape; one compact composition fully inside the central 72 percent of the image; every sheet, lens, path, and tab fully visible; empty outer 12 percent crop-safe margin on all sides; strong silhouette legible at card size.\nLighting/mood: calm, thoughtful, independent, capable, quietly technical; restrained cyan reflected light.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nConstraints: no text, letters, numbers, checkmarks, political symbols, flags, party colors, people, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; leave all paper surfaces blank; do not indicate a preferred vote.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-10-18",
+  "coverImageSourceHash": "sha256:268259780ac535a189df48dd715c5f3420a101f5fbd71dd82c6d19ef413d47a3",
+  "coverImageSourceHashVersion": 2
+}
