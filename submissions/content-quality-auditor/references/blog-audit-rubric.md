@@ -30,3 +30,46 @@ Does the post help the reader think, decide or act differently?
 - Rewrite: useful topic but weak structure or argument.
 - Merge: overlaps heavily with another post.
 - Retire: outdated, low-value or no longer aligned.
+
+
+## Single-post output
+
+```markdown
+## Blog audit summary
+
+Overall score: [x]/5
+Recommended action: [Keep / Refresh / Rewrite / Merge / Retire]
+
+## Scorecard
+
+| Dimension | Score /5 | Evidence | Recommended improvement |
+|---|---:|---|---|
+
+## Highest-value improvements
+
+1. [Improvement]
+2. [Improvement]
+3. [Improvement]
+
+## Suggested revised angle
+
+[Suggested angle]
+```
+
+## Library output
+
+```markdown
+## Blog library audit summary
+
+| Post | Overall score /5 | Recommended action | Reason |
+|---|---:|---|---|
+
+## Priority backlog
+
+| Priority | Post | Action | Rationale | Effort |
+|---|---|---|---|---|
+
+## Content gaps
+
+- [Gap]
+```

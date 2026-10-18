@@ -181,6 +181,10 @@ Treat its output as a diagnostic, never as a quota.
 
 ## References
 
+- Read [references/historical-literary-profile.md](references/historical-literary-profile.md)
+  only when a requested literary, seasonal, or faith-oriented piece needs the
+  earlier compact profile. Its religious framing is conditional on the supplied
+  subject and beliefs; it does not override the safeguards above.
 - Read [references/style-profile.md](references/style-profile.md) when making a
   substantial style judgment or blending modes.
 - Read [references/calibration-examples.md](references/calibration-examples.md)

@@ -23,6 +23,22 @@ The skill can be used for:
 - If you cannot access a referenced artefact, state that limitation and assess only what is available.
 - Separate observed evidence from suggested improvements.
 
+## Choose the Audit Mode
+
+Use the blog mode for posts, newsletters, and thought-leadership libraries,
+unless the user supplies a different rubric. Read
+[references/blog-audit-rubric.md](references/blog-audit-rubric.md) for its seven
+dimensions, editorial action labels, and single-post or library outputs. Score
+reader promise, opening, argument, evidence, structure, distinctiveness, and
+next action. For a library, include Keep, Refresh, Rewrite, Merge, or Retire
+recommendations and identify content gaps when the accessible corpus supports
+them. Assess editorial quality only when analytics are unavailable; never infer
+traffic, ranking, engagement, conversion, or current performance.
+
+Use the general rubric below for other content. Preserve a user-provided rubric
+in either mode. Apply the selected mode's scorecard and output structure rather
+than forcing the general template onto a blog audit.
+
 ## Default seven-dimension rubric
 
 Score each dimension from 0 to 5.
@@ -60,7 +76,8 @@ If the user supplies a different rubric, use their rubric instead.
 
 ## Output format
 
-Use this format unless the user requests another structure:
+Use this format for a general audit unless the user requests another structure.
+For a blog audit, use the matching output in the blog reference:
 
 ```markdown
 ## Audit summary

@@ -1,8 +1,8 @@
 {
   "kind": "prompt-template",
   "slug": "abb-sbb-ubb-builder",
-  "name": "Architecture ABB SBB UBB Builder",
-  "description": "Professional architecture abb sbb ubb builder prompt designed for high-quality content generation and structured analysis.",
+  "name": "TOGAF Building Block Builder",
+  "description": "Create interactive or batch TOGAF building-block profiles, distinguishing abstract capabilities from concrete solutions and preserving supplied templates.",
   "status": "active",
   "publicationStatus": "published",
   "topics": [
@@ -51,7 +51,7 @@
   ],
   "downloadPath": "bundles/abb-sbb-ubb-builder.prompt.md",
   "createdAt": "2025-10-17",
-  "updatedAt": null,
+  "updatedAt": "2026-10-18T20:50:22.953553+00:00",
   "subtitle": "Enterprise Architecture and Requirements Engineering",
   "summaryBullets": [
     "Advanced prompt engineering techniques",
@@ -72,9 +72,9 @@
     "sourceUrl": "https://tedt.org/prompts/abb-sbb-ubb-builder/",
     "sourceFileSha256": "sha256:eb9f6eb8141415c05693ccdb43f25925692669c1086439c0807a52785f7953f8",
     "sourcePromptSha256": "sha256:4739ac51f9ddbfdb859a819db3100273a863e81ca3b0bc42210eda8c15d4e13f",
-    "importedPromptSha256": "sha256:4739ac51f9ddbfdb859a819db3100273a863e81ca3b0bc42210eda8c15d4e13f",
+    "importedPromptSha256": "sha256:cefc74079617eeabf85e1d96f1538465dd23d22fca36eed8c55fb0ba352f28fe",
     "sourceGuideSha256": "sha256:f6dcca2c85d0788fab9ff5305f49288abdbdc814689415a0b6e41ad41070524c",
-    "importedGuideSha256": "sha256:f6dcca2c85d0788fab9ff5305f49288abdbdc814689415a0b6e41ad41070524c",
+    "importedGuideSha256": "sha256:42fd660a750a0bb766d4b8d3a74302d835ad9e81727903ecdff6172f410493e5",
     "rawFrontmatterSha256": "sha256:e47965628928d96864eaae8db119c802cc483c11813350d67059ce37885aa227",
     "sourceTitle": "Architecture ABB SBB UBB Builder",
     "sourceDescription": "Professional architecture abb sbb ubb builder prompt designed for high-quality content generation and structured analysis.",
@@ -180,7 +180,8 @@
       "update": null
     },
     "appliedRepairs": [
-      "normalize-model-github-to-github-copilot"
+      "normalize-model-github-to-github-copilot",
+      "consolidate-duplicate-entrypoints-2026-10-18"
     ]
   },
   "coverImage": "skill-art/abb-sbb-ubb-builder.webp",
@@ -191,6 +192,6 @@
   "coverImageHeight": 1000,
   "coverImageGenerator": "OpenAI image generation via Codex",
   "coverImageGeneratedAt": "2026-09-03",
-  "coverImageSourceHash": "sha256:96a63097f6d7d8d5ecad458c0080651e5038aa9d46d8d7792b9d710159eeecf1",
+  "coverImageSourceHash": "sha256:b6bb1404ac808afafdc6cf8b3e58ae4cf9a7a16f7a8487543338e5e530794a7d",
   "coverImageSourceHashVersion": 2
 }

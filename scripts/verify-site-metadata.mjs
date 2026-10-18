@@ -1,8 +1,11 @@
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { fromHtml } from "hast-util-from-html";
 import sharp from "sharp";
+import { readAssetConsolidations } from "./asset-consolidations.mjs";
+import { consolidationRedirects } from "../src/lib/asset-consolidations.mjs";
 
 const scriptDirectory = fileURLToPath(new URL(".", import.meta.url));
 const root = resolve(scriptDirectory, "..");
@@ -21,6 +24,10 @@ const legacyPromptRedirects = new Map([
     "/prompts/midjourney-v6-1-prompt-template/",
   ],
 ]);
+const assetConsolidations = readAssetConsolidations(root);
+for (const [from, to] of consolidationRedirects(assetConsolidations)) {
+  legacyPromptRedirects.set(`${from.replace(/^\/+/, "")}index.html`, to);
+}
 const errors = [];
 const imageChecks = new Map();
 const verifiedLegacyPromptRedirects = new Set();
@@ -606,6 +613,27 @@ if (existsSync(manifestPath)) {
     );
   } catch (error) {
     errors.push(`invalid site.webmanifest: ${error.message}`);
+  }
+}
+
+const catalogPath = join(dist, "assets.json");
+if (assetConsolidations.length > 0) {
+  check(existsSync(catalogPath), "consolidated public catalog is missing");
+  if (existsSync(catalogPath)) {
+    const catalog = JSON.parse(readFileSync(catalogPath, "utf8"));
+    for (const entry of assetConsolidations) {
+      check(!catalog.some((asset) => asset.slug === entry.slug), `retired asset remains in public catalog: ${entry.slug}`);
+      check(catalog.filter((asset) => asset.slug === entry.replacementSlug && asset.kind === entry.replacementKind).length === 1,
+        `consolidated replacement is missing or duplicated: ${entry.replacementSlug}`);
+      for (const download of entry.legacyDownloads) {
+        const file = join(dist, download.path);
+        check(existsSync(file), `legacy download is missing from deployment: ${download.path}`);
+        if (existsSync(file)) {
+          check(`sha256:${createHash("sha256").update(readFileSync(file)).digest("hex")}` === download.sha256,
+            `legacy download bytes changed: ${download.path}`);
+        }
+      }
+    }
   }
 }
 

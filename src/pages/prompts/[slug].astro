@@ -3,7 +3,8 @@ import { getCollection } from "astro:content";
 import AssetDetailShell from "../../components/AssetDetailShell.astro";
 import PromptAssetContent from "../../components/PromptAssetContent.astro";
 import { relatedAssetsFor } from "../../components/asset-detail-data";
-import { getLibraryAssets, type LibraryAsset } from "../../lib/library-assets";
+import { assetConsolidations, getLibraryAssets, type LibraryAsset } from "../../lib/library-assets";
+import { consolidationRedirects } from "../../lib/asset-consolidations.mjs";
 
 type PromptRouteProps = {
   asset: LibraryAsset;
@@ -14,11 +15,13 @@ export async function getStaticPaths() {
   const outputFilesystemIsCaseInsensitive =
     process.platform === "darwin" || process.platform === "win32";
   const prompts = (await getLibraryAssets()).filter((asset) => asset.kind === "prompt-template");
+  const consolidatedRoutes = consolidationRedirects(assetConsolidations);
   return prompts.flatMap((asset) => {
     const paths: Array<{ params: { slug: string }; props: PromptRouteProps }> = [
       { params: { slug: asset.slug }, props: { asset } },
     ];
     for (const legacyPath of asset.legacyPaths) {
+      if (consolidatedRoutes.has(legacyPath)) continue; // Astro's permanent redirect registry owns it.
       const match = legacyPath.match(/^\/prompts\/([^/]+)\/?$/);
       if (!match || match[1] === asset.slug) continue;
       // GitHub Pages builds on Linux, where the historical mixed-case alias can

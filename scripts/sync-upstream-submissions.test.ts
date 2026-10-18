@@ -113,6 +113,31 @@ test("copies only absent upstream submissions and preserves existing local conte
   );
 });
 
+test("upstream sync never resurrects a consolidated submission or regenerates its catalog record", (t) => {
+  const repo = initializeRepository();
+  t.after(() => rmSync(repo, { recursive: true, force: true }));
+  git(repo, "switch", "-c", "microsoft-main");
+  for (const slug of ["retired-skill", "new-skill"]) {
+    write(repo, `submissions/${slug}/SKILL.md`, "upstream instructions\n");
+    write(repo, `submissions/${slug}/metadata.json`, '{"name":"Upstream Skill"}\n');
+  }
+  git(repo, "add", "."); git(repo, "commit", "-m", "upstream additions");
+  const upstreamRef = git(repo, "rev-parse", "HEAD");
+  git(repo, "switch", "main");
+  write(repo, "src/data/asset-consolidations.json", JSON.stringify({ schemaVersion: 1, entries: [{
+    slug: "retired-skill", kind: "skill", name: "Retired Skill", replacementSlug: "existing", replacementKind: "skill",
+    legacyPaths: [], legacyDownloads: [{ path: "bundles/retired-skill.zip", sha256: `sha256:${"a".repeat(64)}` }],
+    reason: "Consolidated into the existing skill.", source: { commit: upstreamRef, path: "submissions/retired-skill", author: "Original Author" },
+  }] }));
+  write(repo, "public/bundles/retired-skill.zip", "preserved legacy package\n");
+  const plan = syncUpstreamSubmissions({ repoRoot: repo, upstreamRef, logger: () => {} });
+  assert.deepEqual(plan.newSlugs, ["new-skill"]);
+  assert.deepEqual(plan.pendingGeneratedSlugs, ["new-skill"]);
+  assert.equal(existsSync(join(repo, "submissions/retired-skill")), false);
+  assert.ok(plan.upstreamSlugs.includes("retired-skill"));
+  assert.equal(readFileSync(join(repo, "public/bundles/retired-skill.zip"), "utf8"), "preserved legacy package\n");
+});
+
 test("fails closed on upstream symlinks without leaving a partial submission", (t) => {
   const repo = initializeRepository();
   t.after(() => rmSync(repo, { recursive: true, force: true }));

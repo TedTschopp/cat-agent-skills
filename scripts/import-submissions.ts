@@ -73,6 +73,7 @@ import { assertUniquePortablePaths } from "./portable-paths.mjs";
 import { validateSkillData } from "./validate-skill.ts";
 import { validatePromptData } from "./validate-prompt.ts";
 import { writeLibraryAssetsJson } from "./library-assets-json.ts";
+import { readAssetConsolidations, reconcileConsolidatedAssets } from "./asset-consolidations.mjs";
 import {
   artifactPayloadSchema,
   GENERIC_FILE_ASSET_KINDS,
@@ -1554,6 +1555,8 @@ function main() {
     console.log("No submissions/ directory \u2014 nothing to import.");
     return;
   }
+  const consolidations = readAssetConsolidations(ROOT);
+  reconcileConsolidatedAssets(ROOT, consolidations, { checkOnly: true });
   assertSubmissionDirectory(SUBMISSIONS_DIR, "submissions");
 
   const submissions: Submission[] = [];
@@ -1617,6 +1620,7 @@ function main() {
     process.exit(1);
   }
 
+  if (!checkOnly) reconcileConsolidatedAssets(ROOT, consolidations);
   const catalog = checkOnly ? null : writeLibraryAssetsJson({ root: ROOT });
   console.log(
     checkOnly

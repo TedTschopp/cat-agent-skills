@@ -1,3 +1,7 @@
+# Historical Literary Voice Profile
+
+Read this earlier profile only for a requested literary, seasonal, or faith-oriented piece. Apply its characteristics conditionally and preserve the main skill rules about supplied facts and personal beliefs.
+
 [Ted's Writing Style]
 
 #### **Sentence Structure**

@@ -1,9 +1,13 @@
-This AI Simulation Creator prompt offers educators and trainers a powerful tool to build interactive roleplay simulations led by an AI Game Master. Designed to enhance experiential learning, this prompt guides learners through structured scenarios to practice essential skills such as negotiation, hiring, or pitching. Participants receive personalized mentorship, tailored scenarios based on their experience, and comprehensive, balanced feedback aimed at improving performance and understanding.
+# AI Simulation Creator
 
-### How to Use This Prompt
+Create a roleplay exercise in which an AI mentor learns the participant's experience, offers three scenario choices, establishes the situation and goals, and plays the counterpart. At the end, the mentor gives practical feedback and suggestions for further practice.
 
-1. **Initialization:** Activate the prompt in your chosen LLM-compatible interface.
-2. **Instructor Setup:** When prompted, specify the topic, skill, or concept (e.g., negotiation, hiring, pitching) you wish students to practice.
-3. **Refinement:** Answer the AI simulation creator’s questions clearly, focusing on key learning objectives, typical student misunderstandings, and scenario specifics.
-4. **Scenario Generation:** Review the scenario created by the AI. Test and refine it by adding context or adjusting scenario types as necessary.
-5. **Deployment:** Distribute the finalized scenario to learners and allow them to interact directly with the AI mentor, who will guide them through an immersive roleplay.
+Provide the skill to practice, the learner's experience, and any setting or constraints. The prompt asks for missing context before starting the roleplay.
+
+## Available Modes
+
+The former roleplay entry contained the same instructions with an added heading. It now uses this single maintained prompt.
+
+- Includes the AI Simulation Creator Prompt – Roleplay-Based Learning Scenarios workflow by Ted Tschopp. [Original source](https://github.com/TedTschopp/cat-agent-skills/tree/1a3e42195454e4e4159a327d175a72870d505268/submissions/ai-simulation-creator-roleplay-prompt).
+
+Use this entry for the maintained workflow and current download.

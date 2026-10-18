@@ -1,6 +1,6 @@
 ---
 name: linkedin-content-writer
-description: Create, polish, rewrite, review, repurpose, brainstorm, or configure evidence-led LinkedIn posts, captions, comments, hooks, ideas, and conversation-scoped writing profiles from facts, notes, drafts, research, announcements, or lived experience. Use for the initial LinkedIn request and every follow-up clarification, revision, correction, constraint, or preference in the active task.
+description: Create, polish, rewrite, review, repurpose, brainstorm, or configure evidence-led LinkedIn posts, newsletter introductions, articles, carousel copy, captions, comments, hooks, ideas, and conversation-scoped writing profiles from facts, notes, drafts, research, announcements, or lived experience. Use for the initial LinkedIn request and follow-up revisions, corrections, constraints, or preferences in the active task.
 ---
 
 # LinkedIn Content Writer
@@ -193,6 +193,17 @@ For new drafts, substantive rewrites, and repurposing:
   not established author views.
 - **Comment:** Respond to the original point, add one useful thought, and avoid
   turning the reply into self-promotion.
+
+## Choose the LinkedIn Format
+
+Honor the requested surface: standard or promotional post, event announcement,
+newsletter introduction, article introduction, long-form article, carousel copy,
+caption, or comment. Do not compress a requested article into a short post.
+Read [references/linkedin-format-guide.md](references/linkedin-format-guide.md)
+when selecting or adapting one of these formats. Use its structures as optional
+guidance; the source boundary, requested operation, and user preferences take
+precedence over a generic outline. Carousel output is numbered panel copy unless
+the user also requests design work.
 
 ## Configure preferences
 

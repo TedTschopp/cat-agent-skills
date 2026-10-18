@@ -115,3 +115,17 @@ automatically.
 
 To **update** a skill later, edit the same `submissions/<slug>/` and open another
 PR — the slug is the identity.
+
+## Reuse an Existing Cover
+
+After reviewing that an existing illustration still fits revised instructions,
+revalidate its source binding without regenerating the image:
+
+```bash
+npm run artwork:revalidate -- --slug <slug>
+```
+
+This explicit maintenance action accepts only a stale source hash. Missing,
+partial, or invalid artwork still fails validation. The image bytes, original
+generation prompt, generator, date, and source-hash version remain unchanged.
+Use new artwork when the existing illustration no longer represents the asset.

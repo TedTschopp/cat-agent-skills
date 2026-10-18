@@ -5,8 +5,9 @@ description: Use this skill whenever the user asks to write, generate, or create
 
 # Podcast Script Generation
 
-Produces a two-host, NotebookLM-style conversational episode: a readable script
-plus a multi-voice SSML document ready for Azure Text-to-Speech.
+Produce a conversational podcast script in the requested format: a two-host
+episode or a host-and-guest interview. Add a multi-voice SSML document and Azure
+Text-to-Speech audio when those outputs are requested.
 
 ## Step 1 — Gather inputs
 
@@ -19,6 +20,8 @@ defaults.
 | `duration` | No | `medium` — `short` ≈ 3 min / ~450 words, `medium` ≈ 6 min / ~900 words, `long` ≈ 12 min / ~1,800 words |
 | `language` | No | English |
 | `cast` | No | Two hosts, NOVA and MILES (see Step 4) |
+| `format` | No | Two-host episode; use an interview when requested |
+| `output` | No | Readable script; include SSML for a TTS-ready or audio request |
 | `generate_audio` | No | Ask after the script is ready |
 
 All word targets assume ~150 spoken words per minute. Stay within 10 percent of
@@ -26,6 +29,13 @@ target.
 
 Derive a lowercase-hyphenated `<slug>` from the source or topic (max 6 words,
 ASCII only).
+
+Use the host's artifact directory or the user's requested destination. In the
+Copilot Studio container this is `/app/created/`; elsewhere substitute the
+available output directory in the file paths below. For a script requested
+directly in chat, return the readable dialogue there and do not require file or
+TTS tooling. Source-ground every factual assertion; scripted dialogue must not
+be presented as an actual quotation or interview with a real person.
 
 ## Step 2 — Parse the source material
 
@@ -45,6 +55,13 @@ disclaimers, legal notices, unsubscribe text, and image captions.
 
 ## Step 3 — Editorial selection
 
+For a single-source interview, build a coherent sequence of questions around
+the source's strongest supported ideas. Do not force a news roundup or fill
+information gaps with invented facts. Keep host-and-guest content PG and omit
+guest marketing or self-promotion unless the user explicitly requests it.
+
+For a multi-item episode:
+
 Rank items by newsworthiness and reader impact. Keep the top 4 to 6 for full
 treatment (fewer for `short`, more for `long`). Group the remainder into one
 fast **rapid fire** segment. If the material has a dominant theme, lead with it
@@ -52,7 +69,8 @@ and thread it through the episode.
 
 ## Step 4 — Cast
 
-Two hosts, always the same personalities, always distinct voices:
+For the default two-host format, use these personalities and distinct voices
+unless the user supplies a different cast:
 
 - **NOVA** — voice `en-US-AvaMultilingualNeural`. Lead host. Warm, curious,
   quick. Drives the agenda, asks the question the listener is thinking, reacts
@@ -63,7 +81,17 @@ Two hosts, always the same personalities, always distinct voices:
 
 Neither host is a narrator. They talk **to each other**, not to the microphone.
 
+For a requested interview, default to Jane as the host and a clearly identified
+guest role. Jane opens, guides the conversation with substantive questions, and
+closes. Keep the guest's claims grounded in the source; do not invent an expert's
+experiences, opinions, or endorsement. Honor supplied names and cast choices.
+For SSML, map the two roles to the selected distinct voices.
+
 ## Step 5 — Episode structure
+
+For an interview, use an opening, a sequence of connected questions and grounded
+answers, an organic recap of the important ideas, and Jane's close. Use the
+roundup structure below for the default two-host news format.
 
 1. **Cold open** (15–20s) — Nova opens on the single most striking fact or
    tension. No "welcome to the podcast", no channel branding, no music cues.
@@ -123,12 +151,16 @@ Write the human-readable transcript to:
 /app/created/<slug>_Podcast_Script.txt
 ```
 
-This file — and only this file — may carry `NOVA:` / `MILES:` speaker labels so
-a person can follow along. It contains no stage directions and no markdown. The
+This file — and only this file — may carry speaker labels matching the selected
+cast, such as `NOVA:` / `MILES:` or `JANE:` / `GUEST:`, so a person can follow
+along. It contains no stage directions and no markdown. The
 spoken text itself must already satisfy Steps 6 and 7 so it can be lifted into
 SSML unchanged.
 
 ## Step 9 — SSML output contract
+
+Skip this step for a script-only request. Apply it when the user requests SSML,
+TTS-ready output, or audio.
 
 Produce the SSML document and **nothing else** — no preamble, no explanation, no
 code fences, no trailing notes inside the artifact. Write it verbatim to:
@@ -195,11 +227,14 @@ between the two `<voice>` elements.
 ## Step 10 — Review, then generate audio
 
 Show the user a table summarising each segment (title, one-line description,
-approximate spoken duration), print both file paths, and ask:
+approximate spoken duration) and the paths of files actually created. For a
+script requested directly in chat, return the dialogue instead of a mandatory
+status table. If audio has already been requested, proceed using that request.
+Otherwise, when SSML is available and audio would be useful, ask:
 
 > Would you like me to convert this to an audio file?
 
-Only if they say yes:
+Only when audio is requested or the user accepts the offer:
 
 1. Confirm the `ConverttexttospeechwithSSML` tool is available on the agent. If
    it is not, tell the user how to add it and stop.
@@ -224,7 +259,9 @@ with open('/app/created/<slug>_Podcast.wav', 'wb') as f:
 
 ## Step 11 — Final report
 
-Always end with:
+For file delivery, report the items actually created using this structure. Omit
+SSML and audio rows when they were not requested or created, and name the actual
+cast, voices, and output directory:
 
 | Item | Details |
 |---|---|
