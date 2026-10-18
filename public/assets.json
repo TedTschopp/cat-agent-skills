@@ -2393,9 +2393,9 @@
     "kind": "prompt-template",
     "kindLabel": "Prompt Template File",
     "slug": "ai-simulation-creator",
-    "name": "AI Simulation Creator – Scenario-Based Skill Practice",
-    "title": "AI Simulation Creator – Scenario-Based Skill Practice",
-    "description": "A dynamic prompt framework for generating AI-led roleplay simulations, where learners practice applying key skills like negotiation, hiring, or pitching through structured scenarios and guided mentorship.",
+    "name": "AI Simulation Creator",
+    "title": "AI Simulation Creator",
+    "description": "Create a guided roleplay simulation with scenario choices, an AI mentor, and practical feedback on the learner's performance.",
     "status": "active",
     "publicationStatus": "published",
     "topics": [
@@ -2418,7 +2418,9 @@
       "prompt engineering",
       "scenario-based AI",
       "simulation design",
-      "workplace simulation"
+      "workplace simulation",
+      "AI Simulation Creator Prompt – Roleplay-Based Learning Scenarios",
+      "ai-simulation-creator-roleplay-prompt"
     ],
     "models": [
       "github-copilot",
@@ -2447,7 +2449,7 @@
     },
     "dates": {
       "created": "2025-05-04T00:00:00.000Z",
-      "updated": null
+      "updated": "2026-10-18T20:50:22.952Z"
     },
     "entrypoint": "ai-simulation-creator.prompt.md",
     "payloadPaths": [
@@ -2463,7 +2465,8 @@
     "downloadPath": "bundles/ai-simulation-creator.prompt.md",
     "canonicalPath": "/prompts/ai-simulation-creator/",
     "legacyPaths": [
-      "/prompts/ai-simulation-creator/"
+      "/prompts/ai-simulation-creator/",
+      "/prompts/ai-simulation-creator-roleplay-prompt/"
     ],
     "featured": false,
     "version": null,
@@ -2498,7 +2501,7 @@
       "height": 1000,
       "generator": "OpenAI image generation via Codex",
       "generatedAt": "2026-09-03T00:00:00.000Z",
-      "sourceHash": "sha256:4bead1121de06d5eff1c2a200f924b6470a72fc17f0f13a120f2faf8f849b676",
+      "sourceHash": "sha256:73094e1060e9e74fb6eaba0654223b2444567ef19dd86f6df513040bc5564e65",
       "sourceHashVersion": 2,
       "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
       "fallbackInitials": "AS"
@@ -2512,7 +2515,7 @@
       "sourcePromptSha256": "sha256:66222d47e8cf7eb3bd4a00f4595c987804f74b13484419fb13e46e48001d612e",
       "importedPromptSha256": "sha256:66222d47e8cf7eb3bd4a00f4595c987804f74b13484419fb13e46e48001d612e",
       "sourceGuideSha256": "sha256:56427c507a6dc2922edf1c9e4d3120229ae14f53eb08c2e67e0749a3206a66e7",
-      "importedGuideSha256": "sha256:56427c507a6dc2922edf1c9e4d3120229ae14f53eb08c2e67e0749a3206a66e7",
+      "importedGuideSha256": "sha256:bc6c805f0c1bdaa3b6025e954f5ebc009e380caa245476592e8ec8420f1e466b",
       "sourceFiles": [],
       "importedFiles": [],
       "legacyPaths": [
@@ -2593,205 +2596,8 @@
       "appliedRepairs": [
         "normalize-model-04-mini-high-to-o4-mini-high",
         "normalize-model-04-mini-to-o4-mini",
-        "normalize-model-github-to-github-copilot"
-      ]
-    }
-  },
-  {
-    "kind": "prompt-template",
-    "kindLabel": "Prompt Template File",
-    "slug": "ai-simulation-creator-roleplay-prompt",
-    "name": "AI Simulation Creator Prompt – Roleplay-Based Learning Scenarios",
-    "title": "AI Simulation Creator Prompt – Roleplay-Based Learning Scenarios",
-    "description": "An instructional AI prompt template for generating roleplay-based simulations with an AI mentor guiding students through practical skill-building scenarios such as negotiations, hiring, and pitching.",
-    "status": "active",
-    "publicationStatus": "published",
-    "topics": [
-      "AI and Agents",
-      "Knowledge, Learning, and Research",
-      "Planning and Delivery"
-    ],
-    "tags": [
-      "Teaching & Education",
-      "Artificial Intelligence",
-      "Planning"
-    ],
-    "keywords": [
-      "AI simulation",
-      "educational AI",
-      "experiential learning",
-      "instructional design",
-      "prompt engineering"
-    ],
-    "models": [
-      "github-copilot",
-      "gpt-4",
-      "gpt-4-mini",
-      "gpt-4.5",
-      "microsoft-copilot",
-      "o4-mini",
-      "o4-mini-high"
-    ],
-    "compatibility": [
-      "chatgpt",
-      "github-copilot",
-      "microsoft-copilot"
-    ],
-    "worksWith": [
-      "chatgpt",
-      "github-copilot",
-      "microsoft-copilot"
-    ],
-    "author": {
-      "name": "Ted Tschopp",
-      "url": "https://tedt.org/",
-      "github": null,
-      "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g"
-    },
-    "dates": {
-      "created": "2025-05-04T00:00:00.000Z",
-      "updated": null
-    },
-    "entrypoint": "ai-simulation-creator-roleplay-prompt.prompt.md",
-    "payloadPaths": [
-      "ai-simulation-creator-roleplay-prompt.prompt.md"
-    ],
-    "payloads": [
-      {
-        "path": "ai-simulation-creator-roleplay-prompt.prompt.md",
-        "downloadPath": "bundles/ai-simulation-creator-roleplay-prompt.prompt.md"
-      }
-    ],
-    "bundleDownloadPath": null,
-    "downloadPath": "bundles/ai-simulation-creator-roleplay-prompt.prompt.md",
-    "canonicalPath": "/prompts/ai-simulation-creator-roleplay-prompt/",
-    "legacyPaths": [
-      "/prompts/ai-simulation-creator-roleplay-prompt/"
-    ],
-    "featured": false,
-    "version": null,
-    "rating": 0,
-    "downloads": 0,
-    "engagement": {
-      "microsoft": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "local": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "total": {
-        "rating": 0,
-        "comments": 0
-      }
-    },
-    "variables": [],
-    "series": [],
-    "relatedAssetIds": [],
-    "artwork": {
-      "ready": true,
-      "image": "skill-art/ai-simulation-creator-roleplay-prompt.webp",
-      "alt": "Two carved masks on a circular stage connect to branching scenario forms and an orange destination light.",
-      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: Roleplay-based learning represented by a rotating rehearsal platform where two complementary carved masks face a sequence of branching scenario props and a return path for coaching.\nScene/backdrop: A sparse slate theater-in-the-round on a warm paper field.\nSubject: Two featureless sculpted masks, a small circular stage, three abstract choice objects, and a cyan loop returning to an orange mentor light.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe central stage and masks; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: thoughtful, participatory, quietly dramatic\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no written symbols on masks or props; completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes",
-      "aspectRatio": "16:10",
-      "width": 1600,
-      "height": 1000,
-      "generator": "OpenAI image generation via Codex",
-      "generatedAt": "2026-09-03T00:00:00.000Z",
-      "sourceHash": "sha256:98b7fd147899a5f30572bf0482cdffa4c9ab805be8cc022e2c5da46b25beccfb",
-      "sourceHashVersion": 2,
-      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
-      "fallbackInitials": "AS"
-    },
-    "provenance": {
-      "sourceRepository": "https://github.com/TedTschopp/tedt.org",
-      "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
-      "sourcePath": "_posts/prompts/2025-05-03-AI-Simulation-Creator-Prompt.md",
-      "sourceUrl": "https://tedt.org/prompts/ai-simulation-creator-roleplay-prompt/",
-      "sourceFileSha256": "sha256:b3d46afa82f47ad478a34e93574e502e08680d72420ce9e1118bae135db07585",
-      "sourcePromptSha256": "sha256:5afa7ea9a1d792d78fc20d3b1c62412fb4177659de038a728c50c54c3de3e4d0",
-      "importedPromptSha256": "sha256:5afa7ea9a1d792d78fc20d3b1c62412fb4177659de038a728c50c54c3de3e4d0",
-      "sourceGuideSha256": "sha256:8bc2f122fbc08be1ab6dcbc1deb6e7e83191f8dd95070853e5c90a15e186923c",
-      "importedGuideSha256": "sha256:8bc2f122fbc08be1ab6dcbc1deb6e7e83191f8dd95070853e5c90a15e186923c",
-      "sourceFiles": [],
-      "importedFiles": [],
-      "legacyPaths": [
-        "/prompts/ai-simulation-creator-roleplay-prompt/"
-      ],
-      "legacyImage": {
-        "exists": true,
-        "metadata": {
-          "image": "/img/prompts/Immersive-AI-Simulation.png",
-          "image-alt": "Close-up of an engaged student interacting with a glowing, translucent AI hologram in a modern classroom, symbolizing immersive, technology-driven experiential learning.",
-          "image-credits-artist": "Ted Tschopp",
-          "image-credits-artist-URL": "https://tedt.org/",
-          "image-description": "A captivated student interacts with a shimmering, holographic AI mentor during an immersive roleplay-based simulation. Set within a contemporary classroom, the student is fully engaged, experiencing an innovative, experiential approach to skill development and decision-making guided by advanced AI technology.",
-          "image-title": "Immersive AI Roleplay Simulation",
-          "image_height": 816,
-          "image_width": 1456
-        },
-        "sha256": "sha256:9820d5f35d8575a92d173ba9bbcfd104c2985a7e2174b83a6e0c99d8c9b6e9e1",
-        "sourcePath": "/img/prompts/Immersive-AI-Simulation.png",
-        "sourceUrl": "https://tedt.org/img/prompts/Immersive-AI-Simulation.png"
-      },
-      "legacyMetadata": {
-        "author": {
-          "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
-          "name": "Ted Tschopp",
-          "url": "https://tedt.org/"
-        },
-        "bullets": [
-          "Roleplay-based learning scenarios with AI mentor",
-          "Practice negotiations, hiring, and pitching skills",
-          "Structured instructional template for skill-building"
-        ],
-        "categories": [
-          "Prompts"
-        ],
-        "date": "2025-05-04",
-        "description": "An instructional AI prompt template for generating roleplay-based simulations with an AI mentor guiding students through practical skill-building scenarios such as negotiations, hiring, and pitching.",
-        "image": "/img/prompts/Immersive-AI-Simulation.png",
-        "image-alt": "Close-up of an engaged student interacting with a glowing, translucent AI hologram in a modern classroom, symbolizing immersive, technology-driven experiential learning.",
-        "image-credits-artist": "Ted Tschopp",
-        "image-credits-artist-URL": "https://tedt.org/",
-        "image-description": "A captivated student interacts with a shimmering, holographic AI mentor during an immersive roleplay-based simulation. Set within a contemporary classroom, the student is fully engaged, experiencing an innovative, experiential approach to skill development and decision-making guided by advanced AI technology.",
-        "image-title": "Immersive AI Roleplay Simulation",
-        "image_height": 816,
-        "image_width": 1456,
-        "keywords": [
-          "AI simulation",
-          "educational AI",
-          "experiential learning",
-          "instructional design",
-          "prompt engineering"
-        ],
-        "layout": "prompt-details",
-        "mastodon-post-id": null,
-        "models-supported": [
-          "gpt-4",
-          "gpt-4.5",
-          "gpt-4-mini",
-          3,
-          "04-mini",
-          "04-mini-high",
-          "microsoft-copilot",
-          "github"
-        ],
-        "permalink": "/prompts/ai-simulation-creator-roleplay-prompt/",
-        "tags": [
-          "Teaching & Education",
-          "Artificial Intelligence",
-          "Planning"
-        ],
-        "title": "AI Simulation Creator Prompt – Roleplay-Based Learning Scenarios"
-      },
-      "appliedRepairs": [
-        "normalize-model-04-mini-high-to-o4-mini-high",
-        "normalize-model-04-mini-to-o4-mini",
-        "normalize-model-github-to-github-copilot"
+        "normalize-model-github-to-github-copilot",
+        "consolidate-duplicate-entrypoints-2026-10-18"
       ]
     }
   },
@@ -3638,219 +3444,6 @@
   {
     "kind": "prompt-template",
     "kindLabel": "Prompt Template File",
-    "slug": "abb-sbb-ubb-builder",
-    "name": "Architecture ABB SBB UBB Builder",
-    "title": "Architecture ABB SBB UBB Builder",
-    "description": "Professional architecture abb sbb ubb builder prompt designed for high-quality content generation and structured analysis.",
-    "status": "active",
-    "publicationStatus": "published",
-    "topics": [
-      "Architecture and Engineering",
-      "Content and Documentation",
-      "Planning and Delivery"
-    ],
-    "tags": [
-      "Architecture",
-      "Requirements Engineering",
-      "Documentation"
-    ],
-    "keywords": [
-      "system architecture",
-      "solution architecture",
-      "requirements analysis",
-      "design patterns",
-      "building blocks"
-    ],
-    "models": [
-      "claude-3-sonnet",
-      "github-copilot",
-      "gpt-4",
-      "gpt-4-mini",
-      "gpt-4-turbo",
-      "microsoft-copilot"
-    ],
-    "compatibility": [
-      "chatgpt",
-      "claude",
-      "github-copilot",
-      "microsoft-copilot"
-    ],
-    "worksWith": [
-      "chatgpt",
-      "claude",
-      "github-copilot",
-      "microsoft-copilot"
-    ],
-    "author": {
-      "name": "Ted Tschopp",
-      "url": "https://tedt.org/",
-      "github": null,
-      "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g"
-    },
-    "dates": {
-      "created": "2025-10-17T00:00:00.000Z",
-      "updated": null
-    },
-    "entrypoint": "abb-sbb-ubb-builder.prompt.md",
-    "payloadPaths": [
-      "abb-sbb-ubb-builder.prompt.md"
-    ],
-    "payloads": [
-      {
-        "path": "abb-sbb-ubb-builder.prompt.md",
-        "downloadPath": "bundles/abb-sbb-ubb-builder.prompt.md"
-      }
-    ],
-    "bundleDownloadPath": null,
-    "downloadPath": "bundles/abb-sbb-ubb-builder.prompt.md",
-    "canonicalPath": "/prompts/abb-sbb-ubb-builder/",
-    "legacyPaths": [
-      "/prompts/abb-sbb-ubb-builder/"
-    ],
-    "featured": false,
-    "version": null,
-    "rating": 0,
-    "downloads": 0,
-    "engagement": {
-      "microsoft": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "local": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "total": {
-        "rating": 0,
-        "comments": 0
-      }
-    },
-    "variables": [],
-    "series": [],
-    "relatedAssetIds": [],
-    "artwork": {
-      "ready": true,
-      "image": "skill-art/abb-sbb-ubb-builder.webp",
-      "alt": "Concentric stone, wood, and cyan glass building blocks joined by an orange connector on a slate drafting surface.",
-      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: A nested architectural assembly that turns abstract strategy into progressively more concrete, interlocking building blocks, conveying the construction of architecture building blocks across levels without labels.\nScene/backdrop: An uncluttered slate drafting table fading into a warm paper field.\nSubject: Three nested tiers of precisely fitted stone, wood, and translucent cyan blocks, with one sparing orange connector joining the levels.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; one strong crop-safe central silhouette; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: calm, capable, quietly technical; restrained cyan backlighting\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes",
-      "aspectRatio": "16:10",
-      "width": 1600,
-      "height": 1000,
-      "generator": "OpenAI image generation via Codex",
-      "generatedAt": "2026-09-03T00:00:00.000Z",
-      "sourceHash": "sha256:96a63097f6d7d8d5ecad458c0080651e5038aa9d46d8d7792b9d710159eeecf1",
-      "sourceHashVersion": 2,
-      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
-      "fallbackInitials": "AA"
-    },
-    "provenance": {
-      "sourceRepository": "https://github.com/TedTschopp/tedt.org",
-      "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
-      "sourcePath": "_posts/prompts/2025-10-17-abb-sbb-ubb-builder.md",
-      "sourceUrl": "https://tedt.org/prompts/abb-sbb-ubb-builder/",
-      "sourceFileSha256": "sha256:eb9f6eb8141415c05693ccdb43f25925692669c1086439c0807a52785f7953f8",
-      "sourcePromptSha256": "sha256:4739ac51f9ddbfdb859a819db3100273a863e81ca3b0bc42210eda8c15d4e13f",
-      "importedPromptSha256": "sha256:4739ac51f9ddbfdb859a819db3100273a863e81ca3b0bc42210eda8c15d4e13f",
-      "sourceGuideSha256": "sha256:f6dcca2c85d0788fab9ff5305f49288abdbdc814689415a0b6e41ad41070524c",
-      "importedGuideSha256": "sha256:f6dcca2c85d0788fab9ff5305f49288abdbdc814689415a0b6e41ad41070524c",
-      "sourceFiles": [],
-      "importedFiles": [],
-      "legacyPaths": [
-        "/prompts/abb-sbb-ubb-builder/"
-      ],
-      "legacyImage": {
-        "exists": true,
-        "metadata": {
-          "image": "/img/prompts/architecture-product-requirements-document.png",
-          "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
-          "image-artist": "Ted Tschopp",
-          "image-artist-URL": "https://tedt.org/",
-          "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
-          "image-title": "Architectural Blueprint of Enterprise Product Requirements",
-          "image_height": 816,
-          "image_width": 1456
-        },
-        "sha256": "sha256:e75f8707b50cebef77add8bc54ca39264f9e02a84cd284c2258d48cbfe8d887f",
-        "sourcePath": "/img/prompts/architecture-product-requirements-document.png",
-        "sourceUrl": "https://tedt.org/img/prompts/architecture-product-requirements-document.png"
-      },
-      "legacyMetadata": {
-        "author": {
-          "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
-          "name": "Ted Tschopp",
-          "url": "https://tedt.org/"
-        },
-        "bullets": [
-          "Advanced prompt engineering techniques",
-          "Structured approach to content generation",
-          "Customizable templates and frameworks",
-          "Best practices for AI interaction",
-          "Professional-grade output formatting"
-        ],
-        "call-to-action": "",
-        "categories": [
-          "Prompts",
-          "Projects"
-        ],
-        "coordinates": {
-          "latitude": 34.147,
-          "longitude": -117.9709
-        },
-        "date": "2025-10-17",
-        "description": "Professional architecture abb sbb ubb builder prompt designed for high-quality content generation and structured analysis.",
-        "excerpt": "A specialized prompt for architecture abb sbb ubb builder with advanced AI capabilities and structured output formatting.",
-        "image": "/img/prompts/architecture-product-requirements-document.png",
-        "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
-        "image-artist": "Ted Tschopp",
-        "image-artist-URL": "https://tedt.org/",
-        "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
-        "image-title": "Architectural Blueprint of Enterprise Product Requirements",
-        "image_height": 816,
-        "image_width": 1456,
-        "keywords": [
-          "system architecture",
-          "solution architecture",
-          "requirements analysis",
-          "design patterns",
-          "building blocks"
-        ],
-        "layout": "prompt-details",
-        "location": {
-          "name": "Bradbury, CA"
-        },
-        "mastodon-post-id": null,
-        "models-supported": [
-          "gpt-4",
-          "gpt-4-turbo",
-          "gpt-4-mini",
-          "claude-3-sonnet",
-          "microsoft-copilot",
-          "github"
-        ],
-        "permalink": "/prompts/:slug/",
-        "quote": "",
-        "seo-description": "Master architecture abb sbb ubb builder with this comprehensive AI prompt featuring structured templates and best practices.",
-        "source": "Original Content",
-        "source-url": "",
-        "subtitle": "Enterprise Architecture and Requirements Engineering",
-        "tags": [
-          "Architecture",
-          "Requirements Engineering",
-          "Documentation"
-        ],
-        "title": "Architecture ABB SBB UBB Builder",
-        "update": null
-      },
-      "appliedRepairs": [
-        "normalize-model-github-to-github-copilot"
-      ]
-    }
-  },
-  {
-    "kind": "prompt-template",
-    "kindLabel": "Prompt Template File",
     "slug": "ai-document-generator",
     "name": "Architecture AI Document Generator",
     "title": "Architecture AI Document Generator",
@@ -4480,219 +4073,6 @@
           "Documentation"
         ],
         "title": "Architecture AVD as Markdown",
-        "update": null
-      },
-      "appliedRepairs": [
-        "normalize-model-github-to-github-copilot"
-      ]
-    }
-  },
-  {
-    "kind": "prompt-template",
-    "kindLabel": "Prompt Template File",
-    "slug": "building-block",
-    "name": "Architecture Building Block",
-    "title": "Architecture Building Block",
-    "description": "Professional architecture building block prompt designed for high-quality content generation and structured analysis.",
-    "status": "active",
-    "publicationStatus": "published",
-    "topics": [
-      "Architecture and Engineering",
-      "Content and Documentation",
-      "Planning and Delivery"
-    ],
-    "tags": [
-      "Requirements Engineering",
-      "Architecture",
-      "Documentation"
-    ],
-    "keywords": [
-      "architecture patterns",
-      "documentation",
-      "prompt engineering",
-      "requirements analysis",
-      "system architecture"
-    ],
-    "models": [
-      "claude-3-sonnet",
-      "github-copilot",
-      "gpt-4",
-      "gpt-4-mini",
-      "gpt-4-turbo",
-      "microsoft-copilot"
-    ],
-    "compatibility": [
-      "chatgpt",
-      "claude",
-      "github-copilot",
-      "microsoft-copilot"
-    ],
-    "worksWith": [
-      "chatgpt",
-      "claude",
-      "github-copilot",
-      "microsoft-copilot"
-    ],
-    "author": {
-      "name": "Ted Tschopp",
-      "url": "https://tedt.org/",
-      "github": null,
-      "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g"
-    },
-    "dates": {
-      "created": "2025-10-17T00:00:00.000Z",
-      "updated": null
-    },
-    "entrypoint": "building-block.prompt.md",
-    "payloadPaths": [
-      "building-block.prompt.md"
-    ],
-    "payloads": [
-      {
-        "path": "building-block.prompt.md",
-        "downloadPath": "bundles/building-block.prompt.md"
-      }
-    ],
-    "bundleDownloadPath": null,
-    "downloadPath": "bundles/building-block.prompt.md",
-    "canonicalPath": "/prompts/building-block/",
-    "legacyPaths": [
-      "/prompts/building-block/"
-    ],
-    "featured": false,
-    "version": null,
-    "rating": 0,
-    "downloads": 0,
-    "engagement": {
-      "microsoft": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "local": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "total": {
-        "rating": 0,
-        "comments": 0
-      }
-    },
-    "variables": [],
-    "series": [],
-    "relatedAssetIds": [],
-    "artwork": {
-      "ready": true,
-      "image": "skill-art/building-block.webp",
-      "alt": "Interlocking stone, wood, navy, cyan, and orange modules form a bridge across a slate ravine.",
-      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: A reusable architecture building block represented by a set of distinct precision-cut modules locking together to form a load-bearing bridge across a narrow gap.\nScene/backdrop: A minimal slate ravine set into layered warm paper terrain.\nSubject: Several chunky stone, wood, navy, and translucent cyan modules joining around one sparing orange keystone connector.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe modular bridge silhouette; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: robust, modular, quietly confident\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no engraved symbols or markings; completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes",
-      "aspectRatio": "16:10",
-      "width": 1600,
-      "height": 1000,
-      "generator": "OpenAI image generation via Codex",
-      "generatedAt": "2026-09-03T00:00:00.000Z",
-      "sourceHash": "sha256:0a7107804f9589c6be2fc9819189556052a1dd1bbfbd5cace35fd917d7f14cbe",
-      "sourceHashVersion": 2,
-      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
-      "fallbackInitials": "AB"
-    },
-    "provenance": {
-      "sourceRepository": "https://github.com/TedTschopp/tedt.org",
-      "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
-      "sourcePath": "_posts/prompts/2025-10-17-building-block.md",
-      "sourceUrl": "https://tedt.org/prompts/building-block/",
-      "sourceFileSha256": "sha256:e38fd09d7bfb5c72573d6bc37d031b218cb203d2086c7a9b0f178ecb6fe305cd",
-      "sourcePromptSha256": "sha256:92f620ed5c2af6b480f1c544bc866849f743b03e54284a2d7a54b465c948644f",
-      "importedPromptSha256": "sha256:92f620ed5c2af6b480f1c544bc866849f743b03e54284a2d7a54b465c948644f",
-      "sourceGuideSha256": "sha256:36d18a13f5156cfd79e9f3e9a16b99a1590613f68a560c6d89e589e69cc89e17",
-      "importedGuideSha256": "sha256:36d18a13f5156cfd79e9f3e9a16b99a1590613f68a560c6d89e589e69cc89e17",
-      "sourceFiles": [],
-      "importedFiles": [],
-      "legacyPaths": [
-        "/prompts/building-block/"
-      ],
-      "legacyImage": {
-        "exists": true,
-        "metadata": {
-          "image": "/img/prompts/architecture-product-requirements-document.png",
-          "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
-          "image-artist": "Ted Tschopp",
-          "image-artist-URL": "https://tedt.org/",
-          "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
-          "image-title": "Architectural Blueprint of Enterprise Product Requirements",
-          "image_height": 816,
-          "image_width": 1456
-        },
-        "sha256": "sha256:e75f8707b50cebef77add8bc54ca39264f9e02a84cd284c2258d48cbfe8d887f",
-        "sourcePath": "/img/prompts/architecture-product-requirements-document.png",
-        "sourceUrl": "https://tedt.org/img/prompts/architecture-product-requirements-document.png"
-      },
-      "legacyMetadata": {
-        "author": {
-          "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
-          "name": "Ted Tschopp",
-          "url": "https://tedt.org/"
-        },
-        "bullets": [
-          "Advanced prompt engineering techniques",
-          "Structured approach to content generation",
-          "Customizable templates and frameworks",
-          "Best practices for AI interaction",
-          "Professional-grade output formatting"
-        ],
-        "call-to-action": "",
-        "categories": [
-          "Prompts",
-          "Projects"
-        ],
-        "coordinates": {
-          "latitude": 34.147,
-          "longitude": -117.9709
-        },
-        "date": "2025-10-17",
-        "description": "Professional architecture building block prompt designed for high-quality content generation and structured analysis.",
-        "excerpt": "A specialized prompt for architecture building block with advanced AI capabilities and structured output formatting.",
-        "image": "/img/prompts/architecture-product-requirements-document.png",
-        "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
-        "image-artist": "Ted Tschopp",
-        "image-artist-URL": "https://tedt.org/",
-        "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
-        "image-title": "Architectural Blueprint of Enterprise Product Requirements",
-        "image_height": 816,
-        "image_width": 1456,
-        "keywords": [
-          "architecture patterns",
-          "documentation",
-          "prompt engineering",
-          "requirements analysis",
-          "system architecture"
-        ],
-        "layout": "prompt-details",
-        "location": {
-          "name": "Bradbury, CA"
-        },
-        "mastodon-post-id": null,
-        "models-supported": [
-          "gpt-4",
-          "gpt-4-turbo",
-          "gpt-4-mini",
-          "claude-3-sonnet",
-          "microsoft-copilot",
-          "github"
-        ],
-        "permalink": "/prompts/:slug/",
-        "quote": "",
-        "seo-description": "Master architecture building block with this comprehensive AI prompt featuring structured templates and best practices.",
-        "source": "Original Content",
-        "source-url": "",
-        "subtitle": "Enterprise Architecture and Requirements Engineering",
-        "tags": [
-          "Requirements Engineering",
-          "Architecture",
-          "Documentation"
-        ],
-        "title": "Architecture Building Block",
         "update": null
       },
       "appliedRepairs": [
@@ -6221,863 +5601,6 @@
   {
     "kind": "prompt-template",
     "kindLabel": "Prompt Template File",
-    "slug": "product-requirements-document-prd-template",
-    "name": "Architecture Product Requirements Document (PRD) Template",
-    "title": "Architecture Product Requirements Document (PRD) Template",
-    "description": "Professional architecture product requirements document (prd) template prompt designed for high-quality content generation and structured analysis.",
-    "status": "active",
-    "publicationStatus": "published",
-    "topics": [
-      "Planning and Delivery",
-      "Content and Documentation"
-    ],
-    "tags": [
-      "Product Management",
-      "Requirements Engineering",
-      "Documentation"
-    ],
-    "keywords": [
-      "documentation",
-      "product management",
-      "product requirements",
-      "requirements analysis",
-      "templates"
-    ],
-    "models": [
-      "claude-3-sonnet",
-      "github-copilot",
-      "gpt-4",
-      "gpt-4-mini",
-      "gpt-4-turbo",
-      "microsoft-copilot"
-    ],
-    "compatibility": [
-      "chatgpt",
-      "claude",
-      "github-copilot",
-      "microsoft-copilot"
-    ],
-    "worksWith": [
-      "chatgpt",
-      "claude",
-      "github-copilot",
-      "microsoft-copilot"
-    ],
-    "author": {
-      "name": "Ted Tschopp",
-      "url": "https://tedt.org/",
-      "github": null,
-      "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g"
-    },
-    "dates": {
-      "created": "2025-10-17T00:00:00.000Z",
-      "updated": null
-    },
-    "entrypoint": "product-requirements-document-prd-template.prompt.md",
-    "payloadPaths": [
-      "product-requirements-document-prd-template.prompt.md"
-    ],
-    "payloads": [
-      {
-        "path": "product-requirements-document-prd-template.prompt.md",
-        "downloadPath": "bundles/product-requirements-document-prd-template.prompt.md"
-      }
-    ],
-    "bundleDownloadPath": null,
-    "downloadPath": "bundles/product-requirements-document-prd-template.prompt.md",
-    "canonicalPath": "/prompts/product-requirements-document-prd-template/",
-    "legacyPaths": [
-      "/prompts/product-requirements-document-prd-template/"
-    ],
-    "featured": false,
-    "version": null,
-    "rating": 0,
-    "downloads": 0,
-    "engagement": {
-      "microsoft": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "local": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "total": {
-        "rating": 0,
-        "comments": 0
-      }
-    },
-    "variables": [],
-    "series": [],
-    "relatedAssetIds": [],
-    "artwork": {
-      "ready": true,
-      "image": "skill-art/product-requirements-document-prd-template.webp",
-      "alt": "A navy drafting frame organizes six blank hinged paper pockets with cyan pins and an orange corner brace.",
-      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: A sturdy architectural drafting frame holding a balanced set of completely blank paper compartments, expressing a dependable product requirements template that gives diverse project information one coherent structure.\nScene/backdrop: Flat warm-paper drafting surface surrounded by deep slate negative space, without rulers, labels, or screens.\nSubject: One dominant navy rectangular drafting frame seen nearly straight-on, containing several large asymmetrical warm-paper compartments joined by cyan pins; a single orange corner brace signals readiness.\nStyle/medium: premium editorial illustration with tactile dimensional detail; thick cut paper, painted wood, linen hinge tape, and understated handcrafted precision.\nComposition/framing: exact 16:10 landscape; near-orthographic view; bold rectangular silhouette with few large compartments; crop-safe focal subject; legible at approximately 290-pixel card width; no essential detail in the outer 8%.\nLighting/mood: calm, capable, quietly technical; soft raking light revealing paper depth with restrained cyan edge glow.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nMaterials/textures: deckled paper, matte painted wood, linen tape, subtle fiber and shallow shadows.\nConstraints: original image; coherent PRD-template family; one dominant drafting-frame metaphor; all compartments completely blank and unmarked; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, cats, cat silhouettes, or Microsoft Fluent styling.\nAvoid: browser-card layout, dashboard panels, readable grids, blueprint annotations, generic chatbot imagery, glowing brains, Microsoft-like gradients.\nTargeted correction: Pull back to a clearly physical oblique tabletop view, keep the complete frame inside the inner 84% with visible warm-paper space around it, and make the compartments visibly hinged handcrafted paper pockets of varied silhouettes rather than a flat dashboard-like rectangular grid; preserve blank surfaces and the single orange brace.",
-      "aspectRatio": "16:10",
-      "width": 1600,
-      "height": 1000,
-      "generator": "OpenAI image generation via Codex",
-      "generatedAt": "2026-09-03T00:00:00.000Z",
-      "sourceHash": "sha256:09efa85e4246335da1ac95da94e22473279e31942094e45cca839cae5d2c30e2",
-      "sourceHashVersion": 2,
-      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
-      "fallbackInitials": "AP"
-    },
-    "provenance": {
-      "sourceRepository": "https://github.com/TedTschopp/tedt.org",
-      "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
-      "sourcePath": "_posts/prompts/2025-10-17-product-requirements-document-prd-template.md",
-      "sourceUrl": "https://tedt.org/prompts/product-requirements-document-prd-template/",
-      "sourceFileSha256": "sha256:ecb6f40f420209bc9f727c5634096ae42f013a4b10dac09e887ea2458a8592c7",
-      "sourcePromptSha256": "sha256:3f6e685dc70ba3ba228d3e940b42dccb9c268fea24106ee798f2671e536f5c87",
-      "importedPromptSha256": "sha256:3f6e685dc70ba3ba228d3e940b42dccb9c268fea24106ee798f2671e536f5c87",
-      "sourceGuideSha256": "sha256:d768f9c1d47817b3e521184790f8ffd6e75c78c2cabd8a4397919bda30fac047",
-      "importedGuideSha256": "sha256:d768f9c1d47817b3e521184790f8ffd6e75c78c2cabd8a4397919bda30fac047",
-      "sourceFiles": [],
-      "importedFiles": [],
-      "legacyPaths": [
-        "/prompts/product-requirements-document-prd-template/"
-      ],
-      "legacyImage": {
-        "exists": true,
-        "metadata": {
-          "image": "/img/prompts/architecture-product-requirements-document.png",
-          "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
-          "image-artist": "Ted Tschopp",
-          "image-artist-URL": "https://tedt.org/",
-          "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
-          "image-title": "Architectural Blueprint of Enterprise Product Requirements",
-          "image_height": 816,
-          "image_width": 1456
-        },
-        "sha256": "sha256:e75f8707b50cebef77add8bc54ca39264f9e02a84cd284c2258d48cbfe8d887f",
-        "sourcePath": "/img/prompts/architecture-product-requirements-document.png",
-        "sourceUrl": "https://tedt.org/img/prompts/architecture-product-requirements-document.png"
-      },
-      "legacyMetadata": {
-        "author": {
-          "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
-          "name": "Ted Tschopp",
-          "url": "https://tedt.org/"
-        },
-        "bullets": [
-          "Advanced prompt engineering techniques",
-          "Structured approach to content generation",
-          "Customizable templates and frameworks",
-          "Best practices for AI interaction",
-          "Professional-grade output formatting"
-        ],
-        "call-to-action": "",
-        "categories": [
-          "Prompts",
-          "Business",
-          "Projects"
-        ],
-        "coordinates": {
-          "latitude": 34.147,
-          "longitude": -117.9709
-        },
-        "date": "2025-10-17",
-        "description": "Professional architecture product requirements document (prd) template prompt designed for high-quality content generation and structured analysis.",
-        "excerpt": "A specialized prompt for architecture product requirements document (prd) template with advanced AI capabilities and structured output formatting.",
-        "image": "/img/prompts/architecture-product-requirements-document.png",
-        "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
-        "image-artist": "Ted Tschopp",
-        "image-artist-URL": "https://tedt.org/",
-        "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
-        "image-title": "Architectural Blueprint of Enterprise Product Requirements",
-        "image_height": 816,
-        "image_width": 1456,
-        "keywords": [
-          "documentation",
-          "product management",
-          "product requirements",
-          "requirements analysis",
-          "templates"
-        ],
-        "layout": "prompt-details",
-        "location": {
-          "name": "Bradbury, CA"
-        },
-        "mastodon-post-id": null,
-        "models-supported": [
-          "gpt-4",
-          "gpt-4-turbo",
-          "gpt-4-mini",
-          "claude-3-sonnet",
-          "microsoft-copilot",
-          "github"
-        ],
-        "permalink": "/prompts/:slug/",
-        "quote": "",
-        "seo-description": "Master architecture product requirements document (prd) template with this comprehensive AI prompt featuring structured templates and best practices.",
-        "source": "Original Content",
-        "source-url": "",
-        "subtitle": "Enterprise Architecture and Requirements Engineering",
-        "tags": [
-          "Product Management",
-          "Requirements Engineering",
-          "Documentation"
-        ],
-        "title": "Architecture Product Requirements Document (PRD) Template",
-        "update": null
-      },
-      "appliedRepairs": [
-        "normalize-model-github-to-github-copilot"
-      ]
-    }
-  },
-  {
-    "kind": "prompt-template",
-    "kindLabel": "Prompt Template File",
-    "slug": "product-requirements-document-prd-template-2",
-    "name": "Architecture Product Requirements Document (PRD) Template 2",
-    "title": "Architecture Product Requirements Document (PRD) Template 2",
-    "description": "Professional architecture product requirements document (prd) template 2 prompt designed for high-quality content generation and structured analysis.",
-    "status": "active",
-    "publicationStatus": "published",
-    "topics": [
-      "Planning and Delivery",
-      "Content and Documentation"
-    ],
-    "tags": [
-      "Product Management",
-      "Requirements Engineering",
-      "Documentation"
-    ],
-    "keywords": [
-      "documentation",
-      "product management",
-      "product requirements",
-      "requirements analysis",
-      "templates"
-    ],
-    "models": [
-      "claude-3-sonnet",
-      "github-copilot",
-      "gpt-4",
-      "gpt-4-mini",
-      "gpt-4-turbo",
-      "microsoft-copilot"
-    ],
-    "compatibility": [
-      "chatgpt",
-      "claude",
-      "github-copilot",
-      "microsoft-copilot"
-    ],
-    "worksWith": [
-      "chatgpt",
-      "claude",
-      "github-copilot",
-      "microsoft-copilot"
-    ],
-    "author": {
-      "name": "Ted Tschopp",
-      "url": "https://tedt.org/",
-      "github": null,
-      "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g"
-    },
-    "dates": {
-      "created": "2025-10-17T00:00:00.000Z",
-      "updated": null
-    },
-    "entrypoint": "product-requirements-document-prd-template-2.prompt.md",
-    "payloadPaths": [
-      "product-requirements-document-prd-template-2.prompt.md"
-    ],
-    "payloads": [
-      {
-        "path": "product-requirements-document-prd-template-2.prompt.md",
-        "downloadPath": "bundles/product-requirements-document-prd-template-2.prompt.md"
-      }
-    ],
-    "bundleDownloadPath": null,
-    "downloadPath": "bundles/product-requirements-document-prd-template-2.prompt.md",
-    "canonicalPath": "/prompts/product-requirements-document-prd-template-2/",
-    "legacyPaths": [
-      "/prompts/product-requirements-document-prd-template-2/"
-    ],
-    "featured": false,
-    "version": null,
-    "rating": 0,
-    "downloads": 0,
-    "engagement": {
-      "microsoft": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "local": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "total": {
-        "rating": 0,
-        "comments": 0
-      }
-    },
-    "variables": [],
-    "series": [],
-    "relatedAssetIds": [],
-    "artwork": {
-      "ready": true,
-      "image": "skill-art/product-requirements-document-prd-template-2.webp",
-      "alt": "Four translucent drafting layers align on cyan pegs above blank paper, marked by one orange spacer.",
-      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: Several transparent drafting layers hovering in precise registration above one blank foundation sheet, expressing a product requirements template that separates concerns while preserving traceability and alignment.\nScene/backdrop: Deep slate tabletop with a warm-paper base plane and generous empty space, free of tools, labels, and screens.\nSubject: One dominant vertical stack of four broad translucent acetate sheets, each carrying only abstract cutout geometry rather than marks; cyan registration pegs align the layers and a small orange spacer distinguishes one decision layer.\nStyle/medium: premium editorial illustration with tactile dimensional detail; frosted acetate, vellum, machined pegs, paper fibers, and subtle physical shadows.\nComposition/framing: exact 16:10 landscape; elevated oblique view with the separated layers forming a clear stepped silhouette; crop-safe focal subject; legible at approximately 290-pixel card width; no essential detail in the outer 8%.\nLighting/mood: calm, capable, quietly technical; soft cyan transmitted light through the layers with one sparing orange spacer.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nMaterials/textures: translucent frosted acetate, thick vellum, matte metal pegs, deckled base paper.\nConstraints: original image; coherent PRD-template family yet unmistakably distinct from a framed layout; one dominant layered-registration metaphor; all surfaces blank and unmarked; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, cats, cat silhouettes, or Microsoft Fluent styling.\nAvoid: software layer panels, annotated technical drawings, readable diagrams, overlapping clutter, generic chatbot imagery, glowing brains, Microsoft-like gradients.\nTargeted correction: Pull back so every layer and peg is inside the inner 84% with a clear border; remove the full orange sheet and use orange only on one small spacer; replace all node-link, interface-like, or symbol-like cutouts with a few large nonrepresentational architectural apertures that cannot read as diagrams, writing, or product UI.",
-      "aspectRatio": "16:10",
-      "width": 1600,
-      "height": 1000,
-      "generator": "OpenAI image generation via Codex",
-      "generatedAt": "2026-09-03T00:00:00.000Z",
-      "sourceHash": "sha256:fa833ee868ad2bfa6b4980b0867f88c2e9e817c6b1035a3cd13306a9cc810563",
-      "sourceHashVersion": 2,
-      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
-      "fallbackInitials": "AP"
-    },
-    "provenance": {
-      "sourceRepository": "https://github.com/TedTschopp/tedt.org",
-      "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
-      "sourcePath": "_posts/prompts/2025-10-17-product-requirements-document-prd-template-2.md",
-      "sourceUrl": "https://tedt.org/prompts/product-requirements-document-prd-template-2/",
-      "sourceFileSha256": "sha256:c362a218af7420fd6faf026efa31632dc64bba6b185306f8a94373235c3972ad",
-      "sourcePromptSha256": "sha256:b6f0aef24529df6684fc5fbb6e4bec25ddeda46adcda736d3ee01d74b383e228",
-      "importedPromptSha256": "sha256:b6f0aef24529df6684fc5fbb6e4bec25ddeda46adcda736d3ee01d74b383e228",
-      "sourceGuideSha256": "sha256:c3e8f5e7b43cd41dc1a2ca167e3fed978ded2168383ab8854ea598e38e54538a",
-      "importedGuideSha256": "sha256:c3e8f5e7b43cd41dc1a2ca167e3fed978ded2168383ab8854ea598e38e54538a",
-      "sourceFiles": [],
-      "importedFiles": [],
-      "legacyPaths": [
-        "/prompts/product-requirements-document-prd-template-2/"
-      ],
-      "legacyImage": {
-        "exists": true,
-        "metadata": {
-          "image": "/img/prompts/architecture-product-requirements-document.png",
-          "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
-          "image-artist": "Ted Tschopp",
-          "image-artist-URL": "https://tedt.org/",
-          "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
-          "image-title": "Architectural Blueprint of Enterprise Product Requirements",
-          "image_height": 816,
-          "image_width": 1456
-        },
-        "sha256": "sha256:e75f8707b50cebef77add8bc54ca39264f9e02a84cd284c2258d48cbfe8d887f",
-        "sourcePath": "/img/prompts/architecture-product-requirements-document.png",
-        "sourceUrl": "https://tedt.org/img/prompts/architecture-product-requirements-document.png"
-      },
-      "legacyMetadata": {
-        "author": {
-          "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
-          "name": "Ted Tschopp",
-          "url": "https://tedt.org/"
-        },
-        "bullets": [
-          "Advanced prompt engineering techniques",
-          "Structured approach to content generation",
-          "Customizable templates and frameworks",
-          "Best practices for AI interaction",
-          "Professional-grade output formatting"
-        ],
-        "call-to-action": "",
-        "categories": [
-          "Prompts",
-          "Business",
-          "Projects"
-        ],
-        "coordinates": {
-          "latitude": 34.147,
-          "longitude": -117.9709
-        },
-        "date": "2025-10-17",
-        "description": "Professional architecture product requirements document (prd) template 2 prompt designed for high-quality content generation and structured analysis.",
-        "excerpt": "A specialized prompt for architecture product requirements document (prd) template 2 with advanced AI capabilities and structured output formatting.",
-        "image": "/img/prompts/architecture-product-requirements-document.png",
-        "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
-        "image-artist": "Ted Tschopp",
-        "image-artist-URL": "https://tedt.org/",
-        "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
-        "image-title": "Architectural Blueprint of Enterprise Product Requirements",
-        "image_height": 816,
-        "image_width": 1456,
-        "keywords": [
-          "documentation",
-          "product management",
-          "product requirements",
-          "requirements analysis",
-          "templates"
-        ],
-        "layout": "prompt-details",
-        "location": {
-          "name": "Bradbury, CA"
-        },
-        "mastodon-post-id": null,
-        "models-supported": [
-          "gpt-4",
-          "gpt-4-turbo",
-          "gpt-4-mini",
-          "claude-3-sonnet",
-          "microsoft-copilot",
-          "github"
-        ],
-        "permalink": "/prompts/:slug/",
-        "quote": "",
-        "seo-description": "Master architecture product requirements document (prd) template 2 with this comprehensive AI prompt featuring structured templates and best practices.",
-        "source": "Original Content",
-        "source-url": "",
-        "subtitle": "Enterprise Architecture and Requirements Engineering",
-        "tags": [
-          "Product Management",
-          "Requirements Engineering",
-          "Documentation"
-        ],
-        "title": "Architecture Product Requirements Document (PRD) Template 2",
-        "update": null
-      },
-      "appliedRepairs": [
-        "normalize-model-github-to-github-copilot"
-      ]
-    }
-  },
-  {
-    "kind": "prompt-template",
-    "kindLabel": "Prompt Template File",
-    "slug": "product-requirements-document-prd-template-3",
-    "name": "Architecture Product Requirements Document (PRD) Template 3",
-    "title": "Architecture Product Requirements Document (PRD) Template 3",
-    "description": "Professional architecture product requirements document (PRD) Template 3 prompt designed for high-quality content generation and structured analysis.",
-    "status": "active",
-    "publicationStatus": "published",
-    "topics": [
-      "Planning and Delivery",
-      "Content and Documentation"
-    ],
-    "tags": [
-      "Product Management",
-      "Requirements Engineering",
-      "Documentation"
-    ],
-    "keywords": [
-      "documentation",
-      "product management",
-      "product requirements",
-      "requirements analysis",
-      "templates"
-    ],
-    "models": [
-      "claude-3-sonnet",
-      "github-copilot",
-      "gpt-4",
-      "gpt-4-mini",
-      "gpt-4-turbo",
-      "microsoft-copilot"
-    ],
-    "compatibility": [
-      "chatgpt",
-      "claude",
-      "github-copilot",
-      "microsoft-copilot"
-    ],
-    "worksWith": [
-      "chatgpt",
-      "claude",
-      "github-copilot",
-      "microsoft-copilot"
-    ],
-    "author": {
-      "name": "Ted Tschopp",
-      "url": "https://tedt.org/",
-      "github": null,
-      "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g"
-    },
-    "dates": {
-      "created": "2025-12-07T00:00:00.000Z",
-      "updated": null
-    },
-    "entrypoint": "product-requirements-document-prd-template-3.prompt.md",
-    "payloadPaths": [
-      "product-requirements-document-prd-template-3.prompt.md"
-    ],
-    "payloads": [
-      {
-        "path": "product-requirements-document-prd-template-3.prompt.md",
-        "downloadPath": "bundles/product-requirements-document-prd-template-3.prompt.md"
-      }
-    ],
-    "bundleDownloadPath": null,
-    "downloadPath": "bundles/product-requirements-document-prd-template-3.prompt.md",
-    "canonicalPath": "/prompts/product-requirements-document-prd-template-3/",
-    "legacyPaths": [
-      "/prompts/product-requirements-document-prd-template-3/"
-    ],
-    "featured": false,
-    "version": null,
-    "rating": 0,
-    "downloads": 0,
-    "engagement": {
-      "microsoft": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "local": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "total": {
-        "rating": 0,
-        "comments": 0
-      }
-    },
-    "variables": [],
-    "series": [],
-    "relatedAssetIds": [],
-    "artwork": {
-      "ready": true,
-      "image": "skill-art/product-requirements-document-prd-template-3.webp",
-      "alt": "A blank warm-paper sheet folds into a freestanding cyan-edged architectural scaffold locked by one orange fold.",
-      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: A single blank sheet folded into a stable architectural scaffold with connected spaces for product intent, users, requirements, and delivery, expressing a template that turns source material into an integrated product plan.\nScene/backdrop: Warm-paper floor fading into a deep slate studio field, uncluttered and free of tools or screens.\nSubject: One dominant freestanding origami scaffold made from warm paper, with four large connected planes and bridges; cyan fold edges reveal structure and one small orange locking fold provides stability.\nStyle/medium: premium editorial illustration with tactile dimensional detail; precision paper folding, subtle fibers, crisp creases, and architectural model photography rendered as illustration.\nComposition/framing: exact 16:10 landscape; low frontal three-quarter view; strong sculptural silhouette distinct from flat documents and layered sheets; crop-safe focal subject; legible at approximately 290-pixel card width; no essential detail in the outer 8%.\nLighting/mood: calm, capable, quietly technical; restrained cyan rim light and soft grounded shadows with a sparing orange locking fold.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nMaterials/textures: fibrous heavyweight paper, matte folded edges, subtle embossed depth without marks.\nConstraints: original image; coherent PRD-template family yet unmistakably distinct through a freestanding origami silhouette; every plane completely blank and unmarked; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, cats, cat silhouettes, or Microsoft Fluent styling.\nAvoid: paper airplane, recognizable animal origami, icon-like symbols, architectural lettering, generic chatbot imagery, glowing brains, Microsoft-like gradients.",
-      "aspectRatio": "16:10",
-      "width": 1600,
-      "height": 1000,
-      "generator": "OpenAI image generation via Codex",
-      "generatedAt": "2026-09-03T00:00:00.000Z",
-      "sourceHash": "sha256:e8007eb223f65f1c4c364c474e9fb87c2c4c0215cfbf98f5227219614c8430ea",
-      "sourceHashVersion": 2,
-      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
-      "fallbackInitials": "AP"
-    },
-    "provenance": {
-      "sourceRepository": "https://github.com/TedTschopp/tedt.org",
-      "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
-      "sourcePath": "_posts/prompts/2025-10-17-product-requirements-document-prd-template-3.md",
-      "sourceUrl": "https://tedt.org/prompts/product-requirements-document-prd-template-3/",
-      "sourceFileSha256": "sha256:7d3d491e21435fe5a74931121ee945b58d623c5e9cd8c8a645fe2003ffe570c7",
-      "sourcePromptSha256": "sha256:b6f0aef24529df6684fc5fbb6e4bec25ddeda46adcda736d3ee01d74b383e228",
-      "importedPromptSha256": "sha256:b6f0aef24529df6684fc5fbb6e4bec25ddeda46adcda736d3ee01d74b383e228",
-      "sourceGuideSha256": "sha256:c3e8f5e7b43cd41dc1a2ca167e3fed978ded2168383ab8854ea598e38e54538a",
-      "importedGuideSha256": "sha256:c3e8f5e7b43cd41dc1a2ca167e3fed978ded2168383ab8854ea598e38e54538a",
-      "sourceFiles": [],
-      "importedFiles": [],
-      "legacyPaths": [
-        "/prompts/product-requirements-document-prd-template-3/"
-      ],
-      "legacyImage": {
-        "exists": true,
-        "metadata": {
-          "image": "/img/prompts/architecture-product-requirements-document.png",
-          "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
-          "image-artist": "Ted Tschopp",
-          "image-artist-URL": "https://tedt.org/",
-          "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
-          "image-title": "Architectural Blueprint of Enterprise Product Requirements",
-          "image_height": 816,
-          "image_width": 1456
-        },
-        "sha256": "sha256:e75f8707b50cebef77add8bc54ca39264f9e02a84cd284c2258d48cbfe8d887f",
-        "sourcePath": "/img/prompts/architecture-product-requirements-document.png",
-        "sourceUrl": "https://tedt.org/img/prompts/architecture-product-requirements-document.png"
-      },
-      "legacyMetadata": {
-        "author": {
-          "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
-          "name": "Ted Tschopp",
-          "url": "https://tedt.org/"
-        },
-        "bullets": [
-          "Advanced prompt engineering techniques",
-          "Structured approach to content generation",
-          "Customizable templates and frameworks",
-          "Best practices for AI interaction",
-          "Professional-grade output formatting"
-        ],
-        "call-to-action": "",
-        "categories": [
-          "Prompts",
-          "Business",
-          "Projects"
-        ],
-        "coordinates": {
-          "latitude": 34.147,
-          "longitude": -117.9709
-        },
-        "date": "2025-12-07",
-        "description": "Professional architecture product requirements document (prd) template 2 prompt designed for high-quality content generation and structured analysis.",
-        "excerpt": "A specialized prompt for architecture product requirements document (prd) template 3 with advanced AI capabilities and structured output formatting.",
-        "image": "/img/prompts/architecture-product-requirements-document.png",
-        "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
-        "image-artist": "Ted Tschopp",
-        "image-artist-URL": "https://tedt.org/",
-        "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
-        "image-title": "Architectural Blueprint of Enterprise Product Requirements",
-        "image_height": 816,
-        "image_width": 1456,
-        "keywords": [
-          "documentation",
-          "product management",
-          "product requirements",
-          "requirements analysis",
-          "templates"
-        ],
-        "layout": "prompt-details",
-        "location": {
-          "name": "Bradbury, CA"
-        },
-        "mastodon-post-id": null,
-        "models-supported": [
-          "gpt-4",
-          "gpt-4-turbo",
-          "gpt-4-mini",
-          "claude-3-sonnet",
-          "microsoft-copilot",
-          "github"
-        ],
-        "permalink": "/prompts/:slug/",
-        "quote": "",
-        "seo-description": "Master architecture product requirements document (prd) template 2 with this comprehensive AI prompt featuring structured templates and best practices.",
-        "source": "Original Content",
-        "source-url": "",
-        "subtitle": "Enterprise Architecture and Requirements Engineering",
-        "tags": [
-          "Product Management",
-          "Requirements Engineering",
-          "Documentation"
-        ],
-        "title": "Architecture Product Requirements Document (PRD) Template 3",
-        "update": null
-      },
-      "appliedRepairs": [
-        "normalize-model-github-to-github-copilot",
-        "repair-prd-template-3-description"
-      ]
-    }
-  },
-  {
-    "kind": "prompt-template",
-    "kindLabel": "Prompt Template File",
-    "slug": "product-requirements-document-prd-template-4",
-    "name": "Architecture Product Requirements Document (PRD) Template 4",
-    "title": "Architecture Product Requirements Document (PRD) Template 4",
-    "description": "Professional architecture product requirements document (prd) template 4 prompt designed for high-quality content generation and structured analysis.",
-    "status": "active",
-    "publicationStatus": "published",
-    "topics": [
-      "Planning and Delivery",
-      "Content and Documentation"
-    ],
-    "tags": [
-      "Product Management",
-      "Requirements Engineering",
-      "Documentation"
-    ],
-    "keywords": [
-      "documentation",
-      "product management",
-      "product requirements",
-      "requirements analysis",
-      "templates"
-    ],
-    "models": [
-      "claude-3-sonnet",
-      "github-copilot",
-      "gpt-4",
-      "gpt-4-mini",
-      "gpt-4-turbo",
-      "gpt-5.1",
-      "gpt-5.2",
-      "microsoft-copilot"
-    ],
-    "compatibility": [
-      "chatgpt",
-      "claude",
-      "github-copilot",
-      "microsoft-copilot"
-    ],
-    "worksWith": [
-      "chatgpt",
-      "claude",
-      "github-copilot",
-      "microsoft-copilot"
-    ],
-    "author": {
-      "name": "Ted Tschopp",
-      "url": "https://tedt.org/",
-      "github": null,
-      "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g"
-    },
-    "dates": {
-      "created": "2025-10-17T00:00:00.000Z",
-      "updated": null
-    },
-    "entrypoint": "product-requirements-document-prd-template-4.prompt.md",
-    "payloadPaths": [
-      "product-requirements-document-prd-template-4.prompt.md"
-    ],
-    "payloads": [
-      {
-        "path": "product-requirements-document-prd-template-4.prompt.md",
-        "downloadPath": "bundles/product-requirements-document-prd-template-4.prompt.md"
-      }
-    ],
-    "bundleDownloadPath": null,
-    "downloadPath": "bundles/product-requirements-document-prd-template-4.prompt.md",
-    "canonicalPath": "/prompts/product-requirements-document-prd-template-4/",
-    "legacyPaths": [
-      "/prompts/product-requirements-document-prd-template-4/"
-    ],
-    "featured": false,
-    "version": null,
-    "rating": 0,
-    "downloads": 0,
-    "engagement": {
-      "microsoft": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "local": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "total": {
-        "rating": 0,
-        "comments": 0
-      }
-    },
-    "variables": [],
-    "series": [],
-    "relatedAssetIds": [],
-    "artwork": {
-      "ready": true,
-      "image": "skill-art/product-requirements-document-prd-template-4.webp",
-      "alt": "A navy cabinet sorts blank paper pieces into open planning trays beside an empty tray and orange unresolved piece.",
-      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: A compact cabinet of planning trays that gathers uncertain source pieces and organizes them into a concise, traceable product requirements set, expressing a disciplined clarify-then-draft workflow.\nScene/backdrop: Minimal warm-paper workshop wall against deep slate, with no office furniture, labels, or screens.\nSubject: One dominant navy tabletop cabinet in oblique view with several differently sized open trays; blank warm-paper shapes are sorted into the trays, cyan rails connect the levels, and one orange unresolved piece waits beside a deliberately empty tray.\nStyle/medium: premium editorial illustration with tactile dimensional detail; miniature cabinetmaking, linen-lined trays, thick paper pieces, and restrained handcrafted realism.\nComposition/framing: exact 16:10 landscape; oblique three-quarter view with a compact stepped silhouette distinct from the other PRD covers; crop-safe focal subject; legible at approximately 290-pixel card width; no essential detail in the outer 8%.\nLighting/mood: calm, capable, quietly technical; soft cyan shelf light and a sparing orange unresolved piece.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nMaterials/textures: matte painted wood, linen tray lining, deckled paper pieces, brushed metal rails.\nConstraints: original image; coherent PRD-template family yet unmistakably distinct through a cabinet-and-trays silhouette; every paper piece and tray face completely blank; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, cats, cat silhouettes, or Microsoft Fluent styling.\nAvoid: filing-cabinet labels, interface panels, document thumbnails, office stock imagery, generic chatbot imagery, glowing brains, Microsoft-like gradients.\nTargeted correction: Pull the camera back slightly so the cabinet top, every open tray, the empty tray, and the orange unresolved paper piece all fit inside the inner 84% with a visible border; place the orange piece immediately beside the empty tray rather than near an image edge, and keep every surface completely blank.",
-      "aspectRatio": "16:10",
-      "width": 1600,
-      "height": 1000,
-      "generator": "OpenAI image generation via Codex",
-      "generatedAt": "2026-09-03T00:00:00.000Z",
-      "sourceHash": "sha256:9021d5d0b091330ea7b533143de65e0cf812ef55edb6eecd7ea6bad042e012ae",
-      "sourceHashVersion": 2,
-      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
-      "fallbackInitials": "AP"
-    },
-    "provenance": {
-      "sourceRepository": "https://github.com/TedTschopp/tedt.org",
-      "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
-      "sourcePath": "_posts/prompts/2025-10-17-product-requirements-document-prd-template-4.md",
-      "sourceUrl": "https://tedt.org/prompts/product-requirements-document-prd-template-4/",
-      "sourceFileSha256": "sha256:80f1c061c8ddffccf1354dee06fb2de1fd053eba62250d3d5d171d338539b8e1",
-      "sourcePromptSha256": "sha256:dd92e75bd6070f706c17d25e9d015d46e7774e098c23579cb9b295068bb40942",
-      "importedPromptSha256": "sha256:dd92e75bd6070f706c17d25e9d015d46e7774e098c23579cb9b295068bb40942",
-      "sourceGuideSha256": "sha256:53957f2e8808b752556d9fc2735acf2f1bf1a7c2d1439215174025d13486ea13",
-      "importedGuideSha256": "sha256:53957f2e8808b752556d9fc2735acf2f1bf1a7c2d1439215174025d13486ea13",
-      "sourceFiles": [],
-      "importedFiles": [],
-      "legacyPaths": [
-        "/prompts/product-requirements-document-prd-template-4/"
-      ],
-      "legacyImage": {
-        "exists": true,
-        "metadata": {
-          "image": "/img/prompts/architecture-product-requirements-document.png",
-          "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
-          "image-artist": "Ted Tschopp",
-          "image-artist-URL": "https://tedt.org/",
-          "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
-          "image-title": "Architectural Blueprint of Enterprise Product Requirements",
-          "image_height": 816,
-          "image_width": 1456
-        },
-        "sha256": "sha256:e75f8707b50cebef77add8bc54ca39264f9e02a84cd284c2258d48cbfe8d887f",
-        "sourcePath": "/img/prompts/architecture-product-requirements-document.png",
-        "sourceUrl": "https://tedt.org/img/prompts/architecture-product-requirements-document.png"
-      },
-      "legacyMetadata": {
-        "author": {
-          "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
-          "name": "Ted Tschopp",
-          "url": "https://tedt.org/"
-        },
-        "bullets": [
-          "Advanced prompt engineering techniques",
-          "Structured approach to content generation",
-          "Customizable templates and frameworks",
-          "Best practices for AI interaction",
-          "Professional-grade output formatting"
-        ],
-        "call-to-action": "",
-        "categories": [
-          "Prompts",
-          "Business",
-          "Projects"
-        ],
-        "coordinates": {
-          "latitude": 34.147,
-          "longitude": -117.9709
-        },
-        "date": "2025-10-17",
-        "description": "Professional architecture product requirements document (prd) template 4 prompt designed for high-quality content generation and structured analysis.",
-        "excerpt": "A specialized prompt for architecture product requirements document (prd) template 4 with advanced AI capabilities and structured output formatting.",
-        "image": "/img/prompts/architecture-product-requirements-document.png",
-        "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
-        "image-artist": "Ted Tschopp",
-        "image-artist-URL": "https://tedt.org/",
-        "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
-        "image-title": "Architectural Blueprint of Enterprise Product Requirements",
-        "image_height": 816,
-        "image_width": 1456,
-        "keywords": [
-          "documentation",
-          "product management",
-          "product requirements",
-          "requirements analysis",
-          "templates"
-        ],
-        "layout": "prompt-details",
-        "location": {
-          "name": "Bradbury, CA"
-        },
-        "mastodon-post-id": null,
-        "models-supported": [
-          "gpt-5.2",
-          "gpt-5.1",
-          "gpt-4",
-          "gpt-4-turbo",
-          "gpt-4-mini",
-          "claude-3-sonnet",
-          "microsoft-copilot",
-          "github"
-        ],
-        "permalink": "/prompts/:slug/",
-        "quote": "",
-        "seo-description": "Master architecture product requirements document (prd) template 4 with this comprehensive AI prompt featuring structured templates and best practices.",
-        "source": "Original Content",
-        "source-url": "",
-        "subtitle": "Enterprise Architecture and Requirements Engineering",
-        "tags": [
-          "Product Management",
-          "Requirements Engineering",
-          "Documentation"
-        ],
-        "title": "Architecture Product Requirements Document (PRD) Template 4",
-        "update": null
-      },
-      "appliedRepairs": [
-        "normalize-model-github-to-github-copilot"
-      ]
-    }
-  },
-  {
-    "kind": "prompt-template",
-    "kindLabel": "Prompt Template File",
     "slug": "architecture-prompt",
     "name": "Architecture Prompt",
     "title": "Architecture Prompt",
@@ -8558,116 +7081,6 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/ballot-candidate-review",
-      "sourceUrl": null,
-      "sourceFileSha256": null,
-      "sourcePromptSha256": null,
-      "importedPromptSha256": null,
-      "sourceGuideSha256": null,
-      "importedGuideSha256": null,
-      "sourceFiles": [],
-      "importedFiles": [],
-      "legacyPaths": [],
-      "legacyImage": null,
-      "legacyMetadata": null,
-      "appliedRepairs": []
-    }
-  },
-  {
-    "kind": "skill",
-    "kindLabel": "Agent Skill",
-    "slug": "blog-content-auditor",
-    "name": "Blog Content Auditor",
-    "title": "Blog Content Auditor",
-    "description": "Audit blog posts or a blog library for clarity, structure, evidence, audience fit, and improvement priority.",
-    "status": "active",
-    "publicationStatus": "published",
-    "topics": [
-      "Content and Documentation",
-      "Governance, Risk, and Compliance",
-      "Productivity and Automation"
-    ],
-    "tags": [
-      "blog",
-      "content",
-      "audit",
-      "writing",
-      "seo",
-      "productivity"
-    ],
-    "keywords": [],
-    "models": [],
-    "compatibility": [],
-    "worksWith": [
-      "Cowork",
-      "Copilot Studio",
-      "Scout"
-    ],
-    "author": {
-      "name": "Simon Owen",
-      "url": "https://github.com/SimonOwenDigital",
-      "github": "SimonOwenDigital",
-      "avatar": null
-    },
-    "dates": {
-      "created": "2026-07-17T00:00:00.000Z",
-      "updated": "2026-07-17T00:00:00.000Z"
-    },
-    "entrypoint": "SKILL.md",
-    "payloadPaths": [
-      "bundles/blog-content-auditor.zip"
-    ],
-    "payloads": [
-      {
-        "path": "SKILL.md",
-        "downloadPath": "bundles/blog-content-auditor.zip"
-      }
-    ],
-    "bundleDownloadPath": "bundles/blog-content-auditor.zip",
-    "downloadPath": "bundles/blog-content-auditor.zip",
-    "canonicalPath": "/skills/blog-content-auditor/",
-    "legacyPaths": [],
-    "featured": false,
-    "version": "0.1.0",
-    "rating": 0,
-    "downloads": 0,
-    "engagement": {
-      "microsoft": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "local": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "total": {
-        "rating": 0,
-        "comments": 0
-      }
-    },
-    "variables": [],
-    "series": [],
-    "relatedAssetIds": [],
-    "artwork": {
-      "ready": true,
-      "image": "skill-art/blog-content-auditor.webp",
-      "alt": "A dark editorial inspection frame examines three blank article sheets, revealing simple cyan content blocks and one orange priority wedge.",
-      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: Create a premium editorial illustration of a rigorous blog-content audit that turns a scattered article library into an evidence-based priority.\nScene/backdrop: A warm paper-toned editorial inspection table with generous calm negative space and no screens or interface chrome.\nSubject: A compact dark-slate inspection frame holds three blank article sheets at staggered depths; a clear cyan optical lens reveals a balanced arrangement of large geometric content blocks on the center sheet, while one small orange priority wedge selects the strongest next action and two spare sheets settle into an orderly queue.\nStyle/medium: Premium editorial illustration with tactile dimensional detail, layered cut paper, matte ceramic hardware, and subtle translucent acrylic.\nComposition/framing: Exact 16:10 landscape; crop-safe centered focal cluster; strong inspection-frame silhouette; no essential detail in the outer 8%; large simple forms legible on a small gallery card.\nLighting/mood: Calm, discerning, evidence-led, quietly technical, with restrained cyan backlighting and one sparing warm orange accent.\nColor palette: Warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nConstraints: No text, letters, numbers, scores, interface labels, logos, trademarks, or watermark; no pseudo-writing or writing-like lines; no paw imagery or paw logo; no cats or cat silhouettes; no magnifying-glass icon, checklist, literal browser, product UI, Microsoft Fluent gradients, or Microsoft branding.\nTargeted correction: Remove every narrow horizontal bar or line that could resemble writing. The article sheets must contain only a few large blank rectangles, one cyan circle, and one orange wedge, with no line clusters or typographic rhythm. Keep the inspection apparatus compact and fully inside the crop.",
-      "aspectRatio": "16:10",
-      "width": 1600,
-      "height": 1000,
-      "generator": "OpenAI image generation via Codex",
-      "generatedAt": "2026-08-29T00:00:00.000Z",
-      "sourceHash": "sha256:e71b573b320ebd3b88be31cc3b6970f7201edb941f197e597a41f0068e3f003a",
-      "sourceHashVersion": 1,
-      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
-      "fallbackInitials": "BC"
-    },
-    "provenance": {
-      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
-      "sourceCommit": null,
-      "sourcePath": "submissions/blog-content-auditor",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -10843,326 +9256,6 @@
     }
   },
   {
-    "kind": "skill",
-    "kindLabel": "Agent Skill",
-    "slug": "style-analyzer",
-    "name": "Communication Style Analyzer",
-    "title": "Communication Style Analyzer",
-    "description": "Analyzes your Teams chats and emails to build a reusable profile of your writing voice — greetings, tone, length, punctuation, sign-offs, common phrases, and quirks — and saves it to memory for other assistants to use.",
-    "status": "active",
-    "publicationStatus": "published",
-    "topics": [
-      "Content and Documentation",
-      "Productivity and Automation"
-    ],
-    "tags": [
-      "writing",
-      "style",
-      "teams",
-      "email",
-      "memory",
-      "productivity"
-    ],
-    "keywords": [],
-    "models": [],
-    "compatibility": [],
-    "worksWith": [
-      "Cowork",
-      "Scout"
-    ],
-    "author": {
-      "name": "Srinivas Varukala",
-      "url": "https://github.com/svarukala",
-      "github": "svarukala",
-      "avatar": null
-    },
-    "dates": {
-      "created": "2026-07-26T00:00:00.000Z",
-      "updated": "2026-07-26T00:00:00.000Z"
-    },
-    "entrypoint": "SKILL.md",
-    "payloadPaths": [
-      "skills/style-analyzer.md"
-    ],
-    "payloads": [
-      {
-        "path": "SKILL.md",
-        "downloadPath": "skills/style-analyzer.md"
-      }
-    ],
-    "bundleDownloadPath": null,
-    "downloadPath": "skills/style-analyzer.md",
-    "canonicalPath": "/skills/style-analyzer/",
-    "legacyPaths": [],
-    "featured": false,
-    "version": "1.0.0",
-    "rating": 0,
-    "downloads": 0,
-    "engagement": {
-      "microsoft": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "local": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "total": {
-        "rating": 0,
-        "comments": 0
-      }
-    },
-    "variables": [],
-    "series": [],
-    "relatedAssetIds": [],
-    "artwork": {
-      "ready": true,
-      "image": "skill-art/style-analyzer.webp",
-      "alt": "Several paper-like communication rhythms pass through a cyan prism and become one distinctive waveform.",
-      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: many subtle communication rhythms are distilled into one distinctive reusable voice profile without revealing any message content\nScene/backdrop: an uncluttered slate acoustic studio with translucent warm-paper ribbons flowing through a cyan-lit analytical prism\nSubject: varied abstract speech rhythms and punctuation-like curves enter separately, then emerge as one coherent layered waveform sculpture with a unique cadence\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; graceful convergence toward a clear central profile with negative space\nLighting/mood: calm, capable, quietly technical; soft cyan edge light and subtle orange accent at the final profile\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: purely abstract rhythm forms with no readable communication content; no text, letters, numbers, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding",
-      "aspectRatio": "16:10",
-      "width": 1600,
-      "height": 1000,
-      "generator": "OpenAI image generation via Codex",
-      "generatedAt": "2026-08-30T00:00:00.000Z",
-      "sourceHash": "sha256:c566251b68e52c530bfff4ee8c9256afaea178c5ebe84843a7f27cd7957668e4",
-      "sourceHashVersion": 1,
-      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
-      "fallbackInitials": "CS"
-    },
-    "provenance": {
-      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
-      "sourceCommit": null,
-      "sourcePath": "submissions/style-analyzer",
-      "sourceUrl": null,
-      "sourceFileSha256": null,
-      "sourcePromptSha256": null,
-      "importedPromptSha256": null,
-      "sourceGuideSha256": null,
-      "importedGuideSha256": null,
-      "sourceFiles": [],
-      "importedFiles": [],
-      "legacyPaths": [],
-      "legacyImage": null,
-      "legacyMetadata": null,
-      "appliedRepairs": []
-    }
-  },
-  {
-    "kind": "prompt-template",
-    "kindLabel": "Prompt Template File",
-    "slug": "teds-writing-style",
-    "name": "Communications [Ted's Writing Style]",
-    "title": "Communications [Ted's Writing Style]",
-    "description": "Professional communications [ted's writing style] prompt designed for high-quality content generation and structured analysis.",
-    "status": "active",
-    "publicationStatus": "published",
-    "topics": [
-      "Content and Documentation",
-      "Communication and Collaboration"
-    ],
-    "tags": [
-      "Writing",
-      "Content Creation",
-      "Communications"
-    ],
-    "keywords": [
-      "content creation",
-      "copywriting",
-      "creative writing",
-      "prompt engineering",
-      "technical writing"
-    ],
-    "models": [
-      "claude-3-sonnet",
-      "github-copilot",
-      "gpt-4",
-      "gpt-4-mini",
-      "gpt-4-turbo",
-      "microsoft-copilot"
-    ],
-    "compatibility": [
-      "chatgpt",
-      "claude",
-      "github-copilot",
-      "microsoft-copilot"
-    ],
-    "worksWith": [
-      "chatgpt",
-      "claude",
-      "github-copilot",
-      "microsoft-copilot"
-    ],
-    "author": {
-      "name": "Ted Tschopp",
-      "url": "https://tedt.org/",
-      "github": null,
-      "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g"
-    },
-    "dates": {
-      "created": "2025-10-17T00:00:00.000Z",
-      "updated": null
-    },
-    "entrypoint": "teds-writing-style.prompt.md",
-    "payloadPaths": [
-      "teds-writing-style.prompt.md"
-    ],
-    "payloads": [
-      {
-        "path": "teds-writing-style.prompt.md",
-        "downloadPath": "bundles/teds-writing-style.prompt.md"
-      }
-    ],
-    "bundleDownloadPath": null,
-    "downloadPath": "bundles/teds-writing-style.prompt.md",
-    "canonicalPath": "/prompts/teds-writing-style/",
-    "legacyPaths": [
-      "/prompts/teds-writing-style/"
-    ],
-    "featured": false,
-    "version": null,
-    "rating": 0,
-    "downloads": 0,
-    "engagement": {
-      "microsoft": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "local": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "total": {
-        "rating": 0,
-        "comments": 0
-      }
-    },
-    "variables": [],
-    "series": [],
-    "relatedAssetIds": [],
-    "artwork": {
-      "ready": true,
-      "image": "skill-art/teds-writing-style.webp",
-      "alt": "Navy tuning fork gathers loose cyan threads into a woven ribbon flowing over blank paper.",
-      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: A distinctive personal writing voice represented by a handcrafted tuning fork shaping scattered, uneven raw speech waves into one warm, nuanced narrative ribbon that settles onto an entirely blank sheet, conveying reflective story-driven prose with a recognizable cadence.\nScene/backdrop: A quiet warm-paper writer's table against a deep slate alcove.\nSubject: One tactile navy tuning fork, several irregular incoming cyan threads with varied rhythm, and one coherent woven cyan-and-paper ribbon curving toward a blank page; a single orange knot marks a personal inflection.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; one strong crop-safe tuning-fork-and-ribbon silhouette; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: thoughtful, humane, reflective, unmistakably personal\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: the page must be completely blank and waves must be plain continuous threads with no waveform markings; do not depict a person or portrait; completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes",
-      "aspectRatio": "16:10",
-      "width": 1600,
-      "height": 1000,
-      "generator": "OpenAI image generation via Codex",
-      "generatedAt": "2026-09-03T00:00:00.000Z",
-      "sourceHash": "sha256:7fb70a37a2caf97b398c244944afc8d3a2a40fe736be33475cb01ac768502332",
-      "sourceHashVersion": 2,
-      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
-      "fallbackInitials": "C["
-    },
-    "provenance": {
-      "sourceRepository": "https://github.com/TedTschopp/tedt.org",
-      "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
-      "sourcePath": "_posts/prompts/2025-10-17-teds-writing-style.md",
-      "sourceUrl": "https://tedt.org/prompts/teds-writing-style/",
-      "sourceFileSha256": "sha256:e4657c323495a82f23f7d5fb1edfefc2e5f23bdf7f043cd8e699a59652605fed",
-      "sourcePromptSha256": "sha256:925c8adfba57bc598354bd75112b57edae96fab1794837ab6ca21b0dd6af62f5",
-      "importedPromptSha256": "sha256:925c8adfba57bc598354bd75112b57edae96fab1794837ab6ca21b0dd6af62f5",
-      "sourceGuideSha256": "sha256:1a680d4440a15597572ead612dc40467f4990a6522b6eda2755966db3ca1045e",
-      "importedGuideSha256": "sha256:1a680d4440a15597572ead612dc40467f4990a6522b6eda2755966db3ca1045e",
-      "sourceFiles": [],
-      "importedFiles": [],
-      "legacyPaths": [
-        "/prompts/teds-writing-style/"
-      ],
-      "legacyImage": {
-        "exists": true,
-        "metadata": {
-          "image": "/img/prompts/teds-writing-style.webp",
-          "image-alt": "A solitary figure walks along a river path toward distant buildings, rendered in fine architectural linework with handwritten notes and grid marks, as if the scene were both a memory and a blueprint.",
-          "image-artist": "Ted Tschopp",
-          "image-artist-URL": "https://tedt.org/",
-          "image-description": "A contemplative urban scene drawn as a hybrid of sketch, blueprint, and memory. A lone figure walks beside a calm river toward softly rendered historic buildings, while precise grid lines, annotations, and measured marks overlay the image. Bare trees, muted winter tones, and a small warm glow in the distance create a quiet tension between order and longing, structure and soul—suggesting a journey where reflection, faith, and hope are carefully, almost reverently, mapped out over time.",
-          "image-title": "Walking the Measure of Memory",
-          "image_height": 816,
-          "image_width": "1456 "
-        },
-        "sha256": "sha256:a3a54de92a8c82f05571c2fb31067e16e0a206f8550f59ed75d4fca3e6a70878",
-        "sourcePath": "/img/prompts/teds-writing-style.webp",
-        "sourceUrl": "https://tedt.org/img/prompts/teds-writing-style.webp"
-      },
-      "legacyMetadata": {
-        "author": {
-          "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
-          "name": "Ted Tschopp",
-          "url": "https://tedt.org/"
-        },
-        "bullets": [
-          "Advanced prompt engineering techniques",
-          "Structured approach to content generation",
-          "Customizable templates and frameworks",
-          "Best practices for AI interaction",
-          "Professional-grade output formatting"
-        ],
-        "call-to-action": "",
-        "categories": [
-          "Prompts",
-          "Communications"
-        ],
-        "coordinates": {
-          "latitude": 34.147,
-          "longitude": -117.9709
-        },
-        "date": "2025-10-17",
-        "description": "Professional communications [ted's writing style] prompt designed for high-quality content generation and structured analysis.",
-        "excerpt": "A specialized prompt for communications [ted's writing style] with advanced AI capabilities and structured output formatting.",
-        "image": "/img/prompts/teds-writing-style.webp",
-        "image-alt": "A solitary figure walks along a river path toward distant buildings, rendered in fine architectural linework with handwritten notes and grid marks, as if the scene were both a memory and a blueprint.",
-        "image-artist": "Ted Tschopp",
-        "image-artist-URL": "https://tedt.org/",
-        "image-description": "A contemplative urban scene drawn as a hybrid of sketch, blueprint, and memory. A lone figure walks beside a calm river toward softly rendered historic buildings, while precise grid lines, annotations, and measured marks overlay the image. Bare trees, muted winter tones, and a small warm glow in the distance create a quiet tension between order and longing, structure and soul—suggesting a journey where reflection, faith, and hope are carefully, almost reverently, mapped out over time.",
-        "image-title": "Walking the Measure of Memory",
-        "image_height": 816,
-        "image_width": "1456 ",
-        "keywords": [
-          "content creation",
-          "copywriting",
-          "creative writing",
-          "prompt engineering",
-          "technical writing"
-        ],
-        "layout": "prompt-details",
-        "location": {
-          "name": "Bradbury, CA"
-        },
-        "mastodon-post-id": null,
-        "models-supported": [
-          "gpt-4",
-          "gpt-4-turbo",
-          "gpt-4-mini",
-          "claude-3-sonnet",
-          "microsoft-copilot",
-          "github"
-        ],
-        "permalink": "/prompts/:slug/",
-        "quote": "",
-        "seo-description": "Master communications [ted's writing style] with this comprehensive AI prompt featuring structured templates and best practices.",
-        "source": "Original Content",
-        "source-url": "",
-        "subtitle": "Professional Content Creation Assistant",
-        "tags": [
-          "Writing",
-          "Content Creation",
-          "Communications"
-        ],
-        "title": "Communications [Ted's Writing Style]",
-        "update": null
-      },
-      "appliedRepairs": [
-        "normalize-model-github-to-github-copilot"
-      ]
-    }
-  },
-  {
     "kind": "prompt-template",
     "kindLabel": "Prompt Template File",
     "slug": "be-an-expert-and-give-advice",
@@ -11588,223 +9681,6 @@
         "include-hidden-alpha-prompt",
         "normalize-model-github-to-github-copilot",
         "repair-title-expert-novelist"
-      ]
-    }
-  },
-  {
-    "kind": "prompt-template",
-    "kindLabel": "Prompt Template File",
-    "slug": "script-a-podcast",
-    "name": "Communications Script a Podcast",
-    "title": "Communications Script a Podcast",
-    "description": "Professional communications script a podcast prompt designed for high-quality content generation and structured analysis.",
-    "status": "active",
-    "publicationStatus": "published",
-    "topics": [
-      "Content and Documentation",
-      "Communication and Collaboration"
-    ],
-    "tags": [
-      "Content Creation",
-      "Communications",
-      "Writing"
-    ],
-    "keywords": [
-      "audio content",
-      "content creation",
-      "content writing",
-      "podcast scripting",
-      "prompt engineering",
-      "stakeholder communications"
-    ],
-    "models": [
-      "claude-3-sonnet",
-      "github-copilot",
-      "gpt-4",
-      "gpt-4-mini",
-      "gpt-4-turbo",
-      "microsoft-copilot"
-    ],
-    "compatibility": [
-      "chatgpt",
-      "claude",
-      "github-copilot",
-      "microsoft-copilot"
-    ],
-    "worksWith": [
-      "chatgpt",
-      "claude",
-      "github-copilot",
-      "microsoft-copilot"
-    ],
-    "author": {
-      "name": "Ted Tschopp",
-      "url": "https://tedt.org/",
-      "github": null,
-      "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g"
-    },
-    "dates": {
-      "created": "2025-10-17T00:00:00.000Z",
-      "updated": null
-    },
-    "entrypoint": "script-a-podcast.prompt.md",
-    "payloadPaths": [
-      "script-a-podcast.prompt.md"
-    ],
-    "payloads": [
-      {
-        "path": "script-a-podcast.prompt.md",
-        "downloadPath": "bundles/script-a-podcast.prompt.md"
-      }
-    ],
-    "bundleDownloadPath": null,
-    "downloadPath": "bundles/script-a-podcast.prompt.md",
-    "canonicalPath": "/prompts/script-a-podcast/",
-    "legacyPaths": [
-      "/prompts/script-a-podcast/"
-    ],
-    "featured": false,
-    "version": null,
-    "rating": 0,
-    "downloads": 0,
-    "engagement": {
-      "microsoft": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "local": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "total": {
-        "rating": 0,
-        "comments": 0
-      }
-    },
-    "variables": [],
-    "series": [],
-    "relatedAssetIds": [],
-    "artwork": {
-      "ready": true,
-      "image": "skill-art/script-a-podcast.webp",
-      "alt": "Navy studio microphone transforms blank paper fragments into a continuous cyan audio ribbon.",
-      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: Podcast scripting represented by a studio microphone that draws a tangled stream of raw source fragments through a sculptural editing loop and releases one coherent, flowing audio ribbon, conveying transformation of messy source material into an engaging spoken narrative.\nScene/backdrop: An uncluttered warm-paper studio alcove with a low slate tabletop.\nSubject: One tactile navy broadcast microphone, a loose incoming bundle of irregular blank paper fibers, and a single smooth cyan sound ribbon emerging in a graceful arc with one small orange splice marker.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; one strong crop-safe central microphone-and-ribbon silhouette; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: intimate, articulate, carefully produced; soft directional studio light\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: all source fragments are entirely blank and the audio ribbon is a plain continuous shape; completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes",
-      "aspectRatio": "16:10",
-      "width": 1600,
-      "height": 1000,
-      "generator": "OpenAI image generation via Codex",
-      "generatedAt": "2026-09-03T00:00:00.000Z",
-      "sourceHash": "sha256:f1e79987f15a6bb4144910f277b94c2dbd32478a52df03d9a6ff29e92142c868",
-      "sourceHashVersion": 2,
-      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
-      "fallbackInitials": "CS"
-    },
-    "provenance": {
-      "sourceRepository": "https://github.com/TedTschopp/tedt.org",
-      "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
-      "sourcePath": "_posts/prompts/2025-10-17-script-a-podcast.md",
-      "sourceUrl": "https://tedt.org/prompts/script-a-podcast/",
-      "sourceFileSha256": "sha256:9240e1e4de701ffb40236a385c3b97ae3a771267cb3af98bccfe52042311b3b3",
-      "sourcePromptSha256": "sha256:34507b3df34276cf685bc874be1379b1c10ac57c2eaaafc6fc72c449d8c6c31a",
-      "importedPromptSha256": "sha256:34507b3df34276cf685bc874be1379b1c10ac57c2eaaafc6fc72c449d8c6c31a",
-      "sourceGuideSha256": "sha256:fe007896f0bc9130ab4f86f5b7f682781675fdb0b8bf8f1097db417065c33aa9",
-      "importedGuideSha256": "sha256:fe007896f0bc9130ab4f86f5b7f682781675fdb0b8bf8f1097db417065c33aa9",
-      "sourceFiles": [],
-      "importedFiles": [],
-      "legacyPaths": [
-        "/prompts/script-a-podcast/"
-      ],
-      "legacyImage": {
-        "exists": false,
-        "metadata": {
-          "image-artist": "Ted Tschopp",
-          "image-artist-URL": "https://tedt.org/",
-          "image-credits": "Ted Tschopp",
-          "image-credits-URL": "https://tedt.org/",
-          "image-credits-artist": "Ted Tschopp",
-          "image-credits-artist-URL": "https://tedt.org/"
-        },
-        "sha256": null,
-        "sourcePath": null,
-        "sourceUrl": null
-      },
-      "legacyMetadata": {
-        "author": {
-          "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
-          "name": "Ted Tschopp",
-          "url": "https://tedt.org/"
-        },
-        "bullets": [
-          "Advanced prompt engineering techniques",
-          "Structured approach to content generation",
-          "Customizable templates and frameworks",
-          "Best practices for AI interaction",
-          "Professional-grade output formatting"
-        ],
-        "call-to-action": "",
-        "categories": [
-          "Prompts - Communications"
-        ],
-        "coordinates": {
-          "latitude": 34.147,
-          "longitude": -117.9709
-        },
-        "date": "2025-10-17",
-        "description": "Professional communications script a podcast prompt designed for high-quality content generation and structured analysis.",
-        "excerpt": "A specialized prompt for communications script a podcast with advanced AI capabilities and structured output formatting.",
-        "image": null,
-        "image-alt": "",
-        "image-artist": "Ted Tschopp",
-        "image-artist-URL": "https://tedt.org/",
-        "image-credits": "Ted Tschopp",
-        "image-credits-URL": "https://tedt.org/",
-        "image-credits-artist": "Ted Tschopp",
-        "image-credits-artist-URL": "https://tedt.org/",
-        "image-credits-title": "",
-        "image-description": "",
-        "image-title": "",
-        "image_height": null,
-        "image_width": null,
-        "keywords": [
-          "audio content",
-          "content creation",
-          "content writing",
-          "podcast scripting",
-          "prompt engineering",
-          "stakeholder communications"
-        ],
-        "layout": "prompt-details",
-        "location": {
-          "name": "Bradbury, CA"
-        },
-        "mastodon-post-id": null,
-        "models-supported": [
-          "gpt-4",
-          "gpt-4-turbo",
-          "gpt-4-mini",
-          "claude-3-sonnet",
-          "microsoft-copilot",
-          "github"
-        ],
-        "permalink": "/prompts/:slug/",
-        "quote": "",
-        "seo-description": "Master communications script a podcast with this comprehensive AI prompt featuring structured templates and best practices.",
-        "source": "Original Content",
-        "source-url": "",
-        "subtitle": "Professional Content Creation Assistant",
-        "tags": [
-          "Content Creation",
-          "Communications",
-          "Writing"
-        ],
-        "title": "Communications Script a Podcast",
-        "update": null
-      },
-      "appliedRepairs": [
-        "include-hidden-alpha-prompt",
-        "normalize-model-github-to-github-copilot"
       ]
     }
   },
@@ -12243,7 +10119,7 @@
     "slug": "content-quality-auditor",
     "name": "Content Quality Auditor",
     "title": "Content Quality Auditor",
-    "description": "Score documents, pages, posts, or artefact libraries against a configurable quality rubric and recommend fixes.",
+    "description": "Audit documents, pages, or content libraries with a general quality rubric or a specialized blog rubric, then prioritize improvements.",
     "status": "active",
     "publicationStatus": "published",
     "topics": [
@@ -12259,7 +10135,10 @@
       "productivity",
       "governance"
     ],
-    "keywords": [],
+    "keywords": [
+      "Blog Content Auditor",
+      "blog-content-auditor"
+    ],
     "models": [],
     "compatibility": [],
     "worksWith": [
@@ -12275,7 +10154,7 @@
     },
     "dates": {
       "created": "2026-07-17T00:00:00.000Z",
-      "updated": "2026-07-17T00:00:00.000Z"
+      "updated": "2026-10-18T20:50:22.953Z"
     },
     "entrypoint": "SKILL.md",
     "payloadPaths": [
@@ -12290,9 +10169,11 @@
     "bundleDownloadPath": "bundles/content-quality-auditor.zip",
     "downloadPath": "bundles/content-quality-auditor.zip",
     "canonicalPath": "/skills/content-quality-auditor/",
-    "legacyPaths": [],
+    "legacyPaths": [
+      "/skills/blog-content-auditor/"
+    ],
     "featured": false,
-    "version": "0.1.0",
+    "version": "0.2.0",
     "rating": 0,
     "downloads": 0,
     "engagement": {
@@ -12324,7 +10205,7 @@
       "height": 1000,
       "generator": "OpenAI image generation via Codex",
       "generatedAt": "2026-08-29T00:00:00.000Z",
-      "sourceHash": "sha256:14768486ed705f40ccc2d6afec67ba463f64fe9cb6fb63216aef912b0a85e091",
+      "sourceHash": "sha256:9bee5f870cc1d99da0af5e2c8264595c43d8e7e1408c321a7990ddfb26b85fdd",
       "sourceHashVersion": 1,
       "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
       "fallbackInitials": "CQ"
@@ -16061,118 +13942,10 @@
   {
     "kind": "skill",
     "kindLabel": "Agent Skill",
-    "slug": "linkedin-content-system",
-    "name": "LinkedIn Content System",
-    "title": "LinkedIn Content System",
-    "description": "Create evidence-led LinkedIn posts, promos, newsletter intros, and long-form copy from supplied facts or drafts.",
-    "status": "active",
-    "publicationStatus": "published",
-    "topics": [
-      "Content and Documentation",
-      "Business and Strategy"
-    ],
-    "tags": [
-      "linkedin",
-      "social-media",
-      "writing",
-      "marketing",
-      "content"
-    ],
-    "keywords": [],
-    "models": [],
-    "compatibility": [],
-    "worksWith": [
-      "Cowork",
-      "Copilot Studio",
-      "Scout"
-    ],
-    "author": {
-      "name": "Simon Owen",
-      "url": "https://github.com/SimonOwenDigital",
-      "github": "SimonOwenDigital",
-      "avatar": null
-    },
-    "dates": {
-      "created": "2026-07-17T00:00:00.000Z",
-      "updated": "2026-07-17T00:00:00.000Z"
-    },
-    "entrypoint": "SKILL.md",
-    "payloadPaths": [
-      "bundles/linkedin-content-system.zip"
-    ],
-    "payloads": [
-      {
-        "path": "SKILL.md",
-        "downloadPath": "bundles/linkedin-content-system.zip"
-      }
-    ],
-    "bundleDownloadPath": "bundles/linkedin-content-system.zip",
-    "downloadPath": "bundles/linkedin-content-system.zip",
-    "canonicalPath": "/skills/linkedin-content-system/",
-    "legacyPaths": [],
-    "featured": false,
-    "version": "0.1.0",
-    "rating": 0,
-    "downloads": 0,
-    "engagement": {
-      "microsoft": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "local": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
-      },
-      "total": {
-        "rating": 0,
-        "comments": 0
-      }
-    },
-    "variables": [],
-    "series": [],
-    "relatedAssetIds": [],
-    "artwork": {
-      "ready": true,
-      "image": "skill-art/linkedin-content-system.webp",
-      "alt": "Blank evidence cards pass through an editorial loom and emerge as three coherent publication forms.",
-      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a grounded set of evidence fragments passes through an orderly editorial loom and resolves into several coherent publication forms, suggesting one reusable system for credible professional content\nScene/backdrop: an uncluttered warm-paper editorial workshop field with one compact centered slate plinth and no desk accessories\nSubject: a small fan of completely blank evidence cards feeding through a tactile navy-and-cyan weaving frame into three distinct blank portrait-format paper forms, with one restrained orange quality marker expressed only as material\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; centered frontal view at a compact scale; contain all cards, frame, finished forms, plinth, and shadows within the central 68% of the canvas; leave at least 16% calm empty border on every side; no object may enter the outer 12%\nLighting/mood: credible, composed, practical, quietly technical\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: every paper surface blank and unmarked; no social-network logos, brand colors, profile silhouettes, text, letters, numbers, pseudo-writing, hashtags, icons, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding",
-      "aspectRatio": "16:10",
-      "width": 1600,
-      "height": 1000,
-      "generator": "OpenAI image generation via Codex",
-      "generatedAt": "2026-08-29T00:00:00.000Z",
-      "sourceHash": "sha256:5ffe1e3f252182e363149476413a27ea6fc9d7ae3882da799ae95d871ad0bb5b",
-      "sourceHashVersion": 1,
-      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
-      "fallbackInitials": "LC"
-    },
-    "provenance": {
-      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
-      "sourceCommit": null,
-      "sourcePath": "submissions/linkedin-content-system",
-      "sourceUrl": null,
-      "sourceFileSha256": null,
-      "sourcePromptSha256": null,
-      "importedPromptSha256": null,
-      "sourceGuideSha256": null,
-      "importedGuideSha256": null,
-      "sourceFiles": [],
-      "importedFiles": [],
-      "legacyPaths": [],
-      "legacyImage": null,
-      "legacyMetadata": null,
-      "appliedRepairs": []
-    }
-  },
-  {
-    "kind": "skill",
-    "kindLabel": "Agent Skill",
     "slug": "linkedin-content-writer",
     "name": "LinkedIn Content Writer",
     "title": "LinkedIn Content Writer",
-    "description": "Create credible LinkedIn content from facts, notes or drafts, with configurable voice and no invented evidence.",
+    "description": "Draft, revise, and review evidence-led LinkedIn posts, newsletter introductions, articles, carousel copy, and comments in a configurable voice.",
     "status": "active",
     "publicationStatus": "published",
     "topics": [
@@ -16184,11 +13957,16 @@
       "writing",
       "content"
     ],
-    "keywords": [],
+    "keywords": [
+      "LinkedIn Content System",
+      "linkedin-content-system"
+    ],
     "models": [],
     "compatibility": [],
     "worksWith": [
-      "Copilot Studio"
+      "Cowork",
+      "Copilot Studio",
+      "Scout"
     ],
     "author": {
       "name": "Becky Still, Digital Boop Ltd",
@@ -16198,24 +13976,26 @@
     },
     "dates": {
       "created": "2026-07-14T00:00:00.000Z",
-      "updated": "2026-07-17T00:00:00.000Z"
+      "updated": "2026-10-18T20:50:22.952Z"
     },
     "entrypoint": "SKILL.md",
     "payloadPaths": [
-      "skills/linkedin-content-writer.md"
+      "bundles/linkedin-content-writer.zip"
     ],
     "payloads": [
       {
         "path": "SKILL.md",
-        "downloadPath": "skills/linkedin-content-writer.md"
+        "downloadPath": "bundles/linkedin-content-writer.zip"
       }
     ],
-    "bundleDownloadPath": null,
-    "downloadPath": "skills/linkedin-content-writer.md",
+    "bundleDownloadPath": "bundles/linkedin-content-writer.zip",
+    "downloadPath": "bundles/linkedin-content-writer.zip",
     "canonicalPath": "/skills/linkedin-content-writer/",
-    "legacyPaths": [],
+    "legacyPaths": [
+      "/skills/linkedin-content-system/"
+    ],
     "featured": false,
-    "version": "1.0.1",
+    "version": "1.1.0",
     "rating": 2,
     "downloads": 60,
     "engagement": {
@@ -16252,7 +14032,7 @@
       "height": 1000,
       "generator": "OpenAI image generation via Codex",
       "generatedAt": "2026-08-29T00:00:00.000Z",
-      "sourceHash": "sha256:3638996fcf80177ca58ae3e45e30229a0b0559e40db0749de9127bdae4ea5e6f",
+      "sourceHash": "sha256:ff0ecf77dc1ee73406a3a0737e266510ecd4f2968d22c417255fa7bc637dd8c0",
       "sourceHashVersion": 1,
       "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
       "fallbackInitials": "LC"
@@ -17335,7 +15115,7 @@
     "slug": "own-voice-builder",
     "name": "Own Voice Builder",
     "title": "Own Voice Builder",
-    "description": "Mines your sent emails to extract your real writing voice — languages, tone modes, structure, vocabulary, taboo phrases — and generates a personal voice skill that makes every email and Teams draft sound like you.",
+    "description": "Analyze your own sent email or Teams messages and return a communication profile, save a requested memory profile, or create a reusable voice skill.",
     "status": "active",
     "publicationStatus": "published",
     "topics": [
@@ -17350,7 +15130,10 @@
       "productivity",
       "microsoft-365"
     ],
-    "keywords": [],
+    "keywords": [
+      "Communication Style Analyzer",
+      "style-analyzer"
+    ],
     "models": [],
     "compatibility": [],
     "worksWith": [
@@ -17365,7 +15148,7 @@
     },
     "dates": {
       "created": null,
-      "updated": null
+      "updated": "2026-10-18T20:50:22.953Z"
     },
     "entrypoint": "SKILL.md",
     "payloadPaths": [
@@ -17380,9 +15163,11 @@
     "bundleDownloadPath": null,
     "downloadPath": "skills/own-voice-builder.md",
     "canonicalPath": "/skills/own-voice-builder/",
-    "legacyPaths": [],
+    "legacyPaths": [
+      "/skills/style-analyzer/"
+    ],
     "featured": false,
-    "version": "1.0.0",
+    "version": "1.1.0",
     "rating": 0,
     "downloads": 0,
     "engagement": {
@@ -17414,7 +15199,7 @@
       "height": 1000,
       "generator": "OpenAI image generation via Codex",
       "generatedAt": "2026-08-29T00:00:00.000Z",
-      "sourceHash": "sha256:fbb9a57ff87148b3bb0fb152b2ca544ca3717ef534fb944196c954535e033e4d",
+      "sourceHash": "sha256:7e575526e9a69792be53e3a7020ed32f25a44f30465114b1954fe12076aba41d",
       "sourceHashVersion": 1,
       "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
       "fallbackInitials": "OV"
@@ -17986,7 +15771,7 @@
     "slug": "generating-podcast-script",
     "name": "Podcast Script Generator",
     "title": "Podcast Script Generator",
-    "description": "Turn a topic or a pile of source material — a newsletter, news digest, or set of articles — into a two-host, NotebookLM-style podcast episode, with multi-voice SSML and optional Azure Text-to-Speech audio.",
+    "description": "Turn source material or a topic into a two-host episode or host-and-guest interview, with optional SSML and Azure Text-to-Speech audio.",
     "status": "active",
     "publicationStatus": "published",
     "topics": [
@@ -18001,11 +15786,16 @@
       "ssml",
       "news"
     ],
-    "keywords": [],
+    "keywords": [
+      "Communications Script a Podcast",
+      "script-a-podcast"
+    ],
     "models": [],
     "compatibility": [],
     "worksWith": [
-      "Copilot Studio"
+      "Cowork",
+      "Copilot Studio",
+      "Scout"
     ],
     "author": {
       "name": "Remi Dyon",
@@ -18015,7 +15805,7 @@
     },
     "dates": {
       "created": "2026-07-28T00:00:00.000Z",
-      "updated": "2026-07-28T00:00:00.000Z"
+      "updated": "2026-10-18T20:50:22.953Z"
     },
     "entrypoint": "SKILL.md",
     "payloadPaths": [
@@ -18030,9 +15820,11 @@
     "bundleDownloadPath": null,
     "downloadPath": "skills/generating-podcast-script.md",
     "canonicalPath": "/skills/generating-podcast-script/",
-    "legacyPaths": [],
+    "legacyPaths": [
+      "/prompts/script-a-podcast/"
+    ],
     "featured": false,
-    "version": "1.1.0",
+    "version": "1.2.0",
     "rating": 1,
     "downloads": 0,
     "engagement": {
@@ -18069,7 +15861,7 @@
       "height": 1000,
       "generator": "OpenAI image generation via Codex",
       "generatedAt": "2026-08-29T00:00:00.000Z",
-      "sourceHash": "sha256:b48b0d30dd95a2eccb5ba7fa57212a1b75aba452f0fa741bb1c9f649d59888d4",
+      "sourceHash": "sha256:75c89409b502b3131b4d56e1a6f71f2ab760fdd5e3592ed0170ff353a712c81f",
       "sourceHashVersion": 1,
       "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
       "fallbackInitials": "PS"
@@ -18848,6 +16640,229 @@
       "legacyImage": null,
       "legacyMetadata": null,
       "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "prompt-template",
+    "kindLabel": "Prompt Template File",
+    "slug": "product-requirements-document-prd-template",
+    "name": "Product Requirements Document Template",
+    "title": "Product Requirements Document Template",
+    "description": "Draft, review, or assess the impact of an internal utility software PRD with evidence, measurable success criteria, release gates, and explicit unknowns.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Planning and Delivery",
+      "Content and Documentation"
+    ],
+    "tags": [
+      "Product Management",
+      "Requirements Engineering",
+      "Documentation"
+    ],
+    "keywords": [
+      "documentation",
+      "product management",
+      "product requirements",
+      "requirements analysis",
+      "templates",
+      "Architecture Product Requirements Document (PRD) Template 2",
+      "product-requirements-document-prd-template-2",
+      "Architecture Product Requirements Document (PRD) Template 3",
+      "product-requirements-document-prd-template-3",
+      "Architecture Product Requirements Document (PRD) Template 4",
+      "product-requirements-document-prd-template-4"
+    ],
+    "models": [
+      "claude-3-sonnet",
+      "github-copilot",
+      "gpt-4",
+      "gpt-4-mini",
+      "gpt-4-turbo",
+      "microsoft-copilot"
+    ],
+    "compatibility": [
+      "chatgpt",
+      "claude",
+      "github-copilot",
+      "microsoft-copilot"
+    ],
+    "worksWith": [
+      "chatgpt",
+      "claude",
+      "github-copilot",
+      "microsoft-copilot"
+    ],
+    "author": {
+      "name": "Ted Tschopp",
+      "url": "https://tedt.org/",
+      "github": null,
+      "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g"
+    },
+    "dates": {
+      "created": "2025-10-17T00:00:00.000Z",
+      "updated": "2026-10-18T20:50:22.951Z"
+    },
+    "entrypoint": "product-requirements-document-prd-template.prompt.md",
+    "payloadPaths": [
+      "product-requirements-document-prd-template.prompt.md"
+    ],
+    "payloads": [
+      {
+        "path": "product-requirements-document-prd-template.prompt.md",
+        "downloadPath": "bundles/product-requirements-document-prd-template.prompt.md"
+      }
+    ],
+    "bundleDownloadPath": null,
+    "downloadPath": "bundles/product-requirements-document-prd-template.prompt.md",
+    "canonicalPath": "/prompts/product-requirements-document-prd-template/",
+    "legacyPaths": [
+      "/prompts/product-requirements-document-prd-template/",
+      "/prompts/product-requirements-document-prd-template-2/",
+      "/prompts/product-requirements-document-prd-template-3/",
+      "/prompts/product-requirements-document-prd-template-4/"
+    ],
+    "featured": false,
+    "version": null,
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": true,
+      "image": "skill-art/product-requirements-document-prd-template.webp",
+      "alt": "A navy drafting frame organizes six blank hinged paper pockets with cyan pins and an orange corner brace.",
+      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: A sturdy architectural drafting frame holding a balanced set of completely blank paper compartments, expressing a dependable product requirements template that gives diverse project information one coherent structure.\nScene/backdrop: Flat warm-paper drafting surface surrounded by deep slate negative space, without rulers, labels, or screens.\nSubject: One dominant navy rectangular drafting frame seen nearly straight-on, containing several large asymmetrical warm-paper compartments joined by cyan pins; a single orange corner brace signals readiness.\nStyle/medium: premium editorial illustration with tactile dimensional detail; thick cut paper, painted wood, linen hinge tape, and understated handcrafted precision.\nComposition/framing: exact 16:10 landscape; near-orthographic view; bold rectangular silhouette with few large compartments; crop-safe focal subject; legible at approximately 290-pixel card width; no essential detail in the outer 8%.\nLighting/mood: calm, capable, quietly technical; soft raking light revealing paper depth with restrained cyan edge glow.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nMaterials/textures: deckled paper, matte painted wood, linen tape, subtle fiber and shallow shadows.\nConstraints: original image; coherent PRD-template family; one dominant drafting-frame metaphor; all compartments completely blank and unmarked; no text, pseudo-writing, letters, numbers, product UI, vendor logos, trademarks, watermarks, paws, paw imagery, cats, cat silhouettes, or Microsoft Fluent styling.\nAvoid: browser-card layout, dashboard panels, readable grids, blueprint annotations, generic chatbot imagery, glowing brains, Microsoft-like gradients.\nTargeted correction: Pull back to a clearly physical oblique tabletop view, keep the complete frame inside the inner 84% with visible warm-paper space around it, and make the compartments visibly hinged handcrafted paper pockets of varied silhouettes rather than a flat dashboard-like rectangular grid; preserve blank surfaces and the single orange brace.",
+      "aspectRatio": "16:10",
+      "width": 1600,
+      "height": 1000,
+      "generator": "OpenAI image generation via Codex",
+      "generatedAt": "2026-09-03T00:00:00.000Z",
+      "sourceHash": "sha256:bd27c6907ac1e8cff84bbdf421f63368006bac6e31a073c918bd753edf68bfa3",
+      "sourceHashVersion": 2,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "PR"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+      "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+      "sourcePath": "_posts/prompts/2025-10-17-product-requirements-document-prd-template.md",
+      "sourceUrl": "https://tedt.org/prompts/product-requirements-document-prd-template/",
+      "sourceFileSha256": "sha256:ecb6f40f420209bc9f727c5634096ae42f013a4b10dac09e887ea2458a8592c7",
+      "sourcePromptSha256": "sha256:3f6e685dc70ba3ba228d3e940b42dccb9c268fea24106ee798f2671e536f5c87",
+      "importedPromptSha256": "sha256:ac393a9a5cf6222359408944338295cc8d8eb18690aad136f3d95af1fd96ac19",
+      "sourceGuideSha256": "sha256:d768f9c1d47817b3e521184790f8ffd6e75c78c2cabd8a4397919bda30fac047",
+      "importedGuideSha256": "sha256:1ab55ac5effef7981c5157ea4be5c3094d9dece21145232d794cc4975a0ddf06",
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [
+        "/prompts/product-requirements-document-prd-template/"
+      ],
+      "legacyImage": {
+        "exists": true,
+        "metadata": {
+          "image": "/img/prompts/architecture-product-requirements-document.png",
+          "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+          "image-artist": "Ted Tschopp",
+          "image-artist-URL": "https://tedt.org/",
+          "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+          "image-title": "Architectural Blueprint of Enterprise Product Requirements",
+          "image_height": 816,
+          "image_width": 1456
+        },
+        "sha256": "sha256:e75f8707b50cebef77add8bc54ca39264f9e02a84cd284c2258d48cbfe8d887f",
+        "sourcePath": "/img/prompts/architecture-product-requirements-document.png",
+        "sourceUrl": "https://tedt.org/img/prompts/architecture-product-requirements-document.png"
+      },
+      "legacyMetadata": {
+        "author": {
+          "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+          "name": "Ted Tschopp",
+          "url": "https://tedt.org/"
+        },
+        "bullets": [
+          "Advanced prompt engineering techniques",
+          "Structured approach to content generation",
+          "Customizable templates and frameworks",
+          "Best practices for AI interaction",
+          "Professional-grade output formatting"
+        ],
+        "call-to-action": "",
+        "categories": [
+          "Prompts",
+          "Business",
+          "Projects"
+        ],
+        "coordinates": {
+          "latitude": 34.147,
+          "longitude": -117.9709
+        },
+        "date": "2025-10-17",
+        "description": "Professional architecture product requirements document (prd) template prompt designed for high-quality content generation and structured analysis.",
+        "excerpt": "A specialized prompt for architecture product requirements document (prd) template with advanced AI capabilities and structured output formatting.",
+        "image": "/img/prompts/architecture-product-requirements-document.png",
+        "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+        "image-title": "Architectural Blueprint of Enterprise Product Requirements",
+        "image_height": 816,
+        "image_width": 1456,
+        "keywords": [
+          "documentation",
+          "product management",
+          "product requirements",
+          "requirements analysis",
+          "templates"
+        ],
+        "layout": "prompt-details",
+        "location": {
+          "name": "Bradbury, CA"
+        },
+        "mastodon-post-id": null,
+        "models-supported": [
+          "gpt-4",
+          "gpt-4-turbo",
+          "gpt-4-mini",
+          "claude-3-sonnet",
+          "microsoft-copilot",
+          "github"
+        ],
+        "permalink": "/prompts/:slug/",
+        "quote": "",
+        "seo-description": "Master architecture product requirements document (prd) template with this comprehensive AI prompt featuring structured templates and best practices.",
+        "source": "Original Content",
+        "source-url": "",
+        "subtitle": "Enterprise Architecture and Requirements Engineering",
+        "tags": [
+          "Product Management",
+          "Requirements Engineering",
+          "Documentation"
+        ],
+        "title": "Architecture Product Requirements Document (PRD) Template",
+        "update": null
+      },
+      "appliedRepairs": [
+        "normalize-model-github-to-github-copilot",
+        "consolidate-duplicate-entrypoints-2026-10-18"
+      ]
     }
   },
   {
@@ -22494,7 +20509,7 @@
     "slug": "ted-writing-style",
     "name": "Ted's Writing Style",
     "title": "Ted's Writing Style",
-    "description": "Draft and revise in Ted Tschopp's personal voice, using concrete openings, visible reasoning, plain explanations, and an ending grounded in consequence.",
+    "description": "Write and revise in Ted Tschopp's personal voice across essays, technology, fiction, and RPG material, with an optional historical literary profile.",
     "status": "active",
     "publicationStatus": "published",
     "topics": [
@@ -22509,7 +20524,10 @@
       "technology",
       "tabletop RPG"
     ],
-    "keywords": [],
+    "keywords": [
+      "Communications [Ted's Writing Style]",
+      "teds-writing-style"
+    ],
     "models": [],
     "compatibility": [],
     "worksWith": [
@@ -22525,7 +20543,7 @@
     },
     "dates": {
       "created": "2026-10-05T00:00:00.000Z",
-      "updated": null
+      "updated": "2026-10-18T20:50:22.954Z"
     },
     "entrypoint": "SKILL.md",
     "payloadPaths": [
@@ -22540,9 +20558,11 @@
     "bundleDownloadPath": "bundles/ted-writing-style.zip",
     "downloadPath": "bundles/ted-writing-style.zip",
     "canonicalPath": "/skills/ted-writing-style/",
-    "legacyPaths": [],
+    "legacyPaths": [
+      "/prompts/teds-writing-style/"
+    ],
     "featured": false,
-    "version": "1.0.0",
+    "version": "1.1.0",
     "rating": 0,
     "downloads": 0,
     "engagement": {
@@ -22574,7 +20594,7 @@
       "height": 1000,
       "generator": "OpenAI image generation via Codex",
       "generatedAt": "2026-10-05T00:00:00.000Z",
-      "sourceHash": "sha256:f93bf193e4bdb90ee64440c933a54604ee177c839e3a5c7afc23566b23945ba2",
+      "sourceHash": "sha256:70499c1983abcbc8ad38ed0ce753aabdf81d9b80a4325e64845afa7754682b08",
       "sourceHashVersion": 2,
       "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
       "fallbackInitials": "TW"
@@ -22595,6 +20615,223 @@
       "legacyImage": null,
       "legacyMetadata": null,
       "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "prompt-template",
+    "kindLabel": "Prompt Template File",
+    "slug": "abb-sbb-ubb-builder",
+    "name": "TOGAF Building Block Builder",
+    "title": "TOGAF Building Block Builder",
+    "description": "Create interactive or batch TOGAF building-block profiles, distinguishing abstract capabilities from concrete solutions and preserving supplied templates.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Architecture and Engineering",
+      "Content and Documentation",
+      "Planning and Delivery"
+    ],
+    "tags": [
+      "Architecture",
+      "Requirements Engineering",
+      "Documentation"
+    ],
+    "keywords": [
+      "system architecture",
+      "solution architecture",
+      "requirements analysis",
+      "design patterns",
+      "building blocks",
+      "Architecture Building Block",
+      "building-block"
+    ],
+    "models": [
+      "claude-3-sonnet",
+      "github-copilot",
+      "gpt-4",
+      "gpt-4-mini",
+      "gpt-4-turbo",
+      "microsoft-copilot"
+    ],
+    "compatibility": [
+      "chatgpt",
+      "claude",
+      "github-copilot",
+      "microsoft-copilot"
+    ],
+    "worksWith": [
+      "chatgpt",
+      "claude",
+      "github-copilot",
+      "microsoft-copilot"
+    ],
+    "author": {
+      "name": "Ted Tschopp",
+      "url": "https://tedt.org/",
+      "github": null,
+      "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g"
+    },
+    "dates": {
+      "created": "2025-10-17T00:00:00.000Z",
+      "updated": "2026-10-18T20:50:22.953Z"
+    },
+    "entrypoint": "abb-sbb-ubb-builder.prompt.md",
+    "payloadPaths": [
+      "abb-sbb-ubb-builder.prompt.md"
+    ],
+    "payloads": [
+      {
+        "path": "abb-sbb-ubb-builder.prompt.md",
+        "downloadPath": "bundles/abb-sbb-ubb-builder.prompt.md"
+      }
+    ],
+    "bundleDownloadPath": null,
+    "downloadPath": "bundles/abb-sbb-ubb-builder.prompt.md",
+    "canonicalPath": "/prompts/abb-sbb-ubb-builder/",
+    "legacyPaths": [
+      "/prompts/abb-sbb-ubb-builder/",
+      "/prompts/building-block/"
+    ],
+    "featured": false,
+    "version": null,
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": true,
+      "image": "skill-art/abb-sbb-ubb-builder.webp",
+      "alt": "Concentric stone, wood, and cyan glass building blocks joined by an orange connector on a slate drafting surface.",
+      "prompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: A nested architectural assembly that turns abstract strategy into progressively more concrete, interlocking building blocks, conveying the construction of architecture building blocks across levels without labels.\nScene/backdrop: An uncluttered slate drafting table fading into a warm paper field.\nSubject: Three nested tiers of precisely fitted stone, wood, and translucent cyan blocks, with one sparing orange connector joining the levels.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; one strong crop-safe central silhouette; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: calm, capable, quietly technical; restrained cyan backlighting\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes",
+      "aspectRatio": "16:10",
+      "width": 1600,
+      "height": 1000,
+      "generator": "OpenAI image generation via Codex",
+      "generatedAt": "2026-09-03T00:00:00.000Z",
+      "sourceHash": "sha256:b6bb1404ac808afafdc6cf8b3e58ae4cf9a7a16f7a8487543338e5e530794a7d",
+      "sourceHashVersion": 2,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "TB"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/tedt.org",
+      "sourceCommit": "61d55789c8754fec010824ccccb893e25f19ccb3",
+      "sourcePath": "_posts/prompts/2025-10-17-abb-sbb-ubb-builder.md",
+      "sourceUrl": "https://tedt.org/prompts/abb-sbb-ubb-builder/",
+      "sourceFileSha256": "sha256:eb9f6eb8141415c05693ccdb43f25925692669c1086439c0807a52785f7953f8",
+      "sourcePromptSha256": "sha256:4739ac51f9ddbfdb859a819db3100273a863e81ca3b0bc42210eda8c15d4e13f",
+      "importedPromptSha256": "sha256:cefc74079617eeabf85e1d96f1538465dd23d22fca36eed8c55fb0ba352f28fe",
+      "sourceGuideSha256": "sha256:f6dcca2c85d0788fab9ff5305f49288abdbdc814689415a0b6e41ad41070524c",
+      "importedGuideSha256": "sha256:42fd660a750a0bb766d4b8d3a74302d835ad9e81727903ecdff6172f410493e5",
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [
+        "/prompts/abb-sbb-ubb-builder/"
+      ],
+      "legacyImage": {
+        "exists": true,
+        "metadata": {
+          "image": "/img/prompts/architecture-product-requirements-document.png",
+          "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+          "image-artist": "Ted Tschopp",
+          "image-artist-URL": "https://tedt.org/",
+          "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+          "image-title": "Architectural Blueprint of Enterprise Product Requirements",
+          "image_height": 816,
+          "image_width": 1456
+        },
+        "sha256": "sha256:e75f8707b50cebef77add8bc54ca39264f9e02a84cd284c2258d48cbfe8d887f",
+        "sourcePath": "/img/prompts/architecture-product-requirements-document.png",
+        "sourceUrl": "https://tedt.org/img/prompts/architecture-product-requirements-document.png"
+      },
+      "legacyMetadata": {
+        "author": {
+          "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+          "name": "Ted Tschopp",
+          "url": "https://tedt.org/"
+        },
+        "bullets": [
+          "Advanced prompt engineering techniques",
+          "Structured approach to content generation",
+          "Customizable templates and frameworks",
+          "Best practices for AI interaction",
+          "Professional-grade output formatting"
+        ],
+        "call-to-action": "",
+        "categories": [
+          "Prompts",
+          "Projects"
+        ],
+        "coordinates": {
+          "latitude": 34.147,
+          "longitude": -117.9709
+        },
+        "date": "2025-10-17",
+        "description": "Professional architecture abb sbb ubb builder prompt designed for high-quality content generation and structured analysis.",
+        "excerpt": "A specialized prompt for architecture abb sbb ubb builder with advanced AI capabilities and structured output formatting.",
+        "image": "/img/prompts/architecture-product-requirements-document.png",
+        "image-alt": "Abstract architectural sketch of an enterprise workspace with layered blueprints, technical annotations, and interconnected systems representing a structured product requirements document.",
+        "image-artist": "Ted Tschopp",
+        "image-artist-URL": "https://tedt.org/",
+        "image-description": "A detailed architectural illustration depicting an enterprise workspace overlaid with hand-drawn blueprints, system diagrams, and technical annotations. The image visually represents the complexity and rigor of an Architecture Product Requirements Document (PRD), emphasizing structure, traceability, and disciplined design thinking across people, processes, and technology.",
+        "image-title": "Architectural Blueprint of Enterprise Product Requirements",
+        "image_height": 816,
+        "image_width": 1456,
+        "keywords": [
+          "system architecture",
+          "solution architecture",
+          "requirements analysis",
+          "design patterns",
+          "building blocks"
+        ],
+        "layout": "prompt-details",
+        "location": {
+          "name": "Bradbury, CA"
+        },
+        "mastodon-post-id": null,
+        "models-supported": [
+          "gpt-4",
+          "gpt-4-turbo",
+          "gpt-4-mini",
+          "claude-3-sonnet",
+          "microsoft-copilot",
+          "github"
+        ],
+        "permalink": "/prompts/:slug/",
+        "quote": "",
+        "seo-description": "Master architecture abb sbb ubb builder with this comprehensive AI prompt featuring structured templates and best practices.",
+        "source": "Original Content",
+        "source-url": "",
+        "subtitle": "Enterprise Architecture and Requirements Engineering",
+        "tags": [
+          "Architecture",
+          "Requirements Engineering",
+          "Documentation"
+        ],
+        "title": "Architecture ABB SBB UBB Builder",
+        "update": null
+      },
+      "appliedRepairs": [
+        "normalize-model-github-to-github-copilot",
+        "consolidate-duplicate-entrypoints-2026-10-18"
+      ]
     }
   },
   {

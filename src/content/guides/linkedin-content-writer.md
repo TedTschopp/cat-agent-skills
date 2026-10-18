@@ -149,3 +149,11 @@ about facts. It is designed to:
 
 Always review the final draft before publishing, particularly when the source
 contains confidential material, third-party claims or regulated information.
+
+## Available Modes
+
+Choose a standard post, promotional or event post, newsletter or article introduction, long-form article, carousel panel copy, or comment. The package includes a format guide; evidence and conversation-scoped preferences apply to every format.
+
+- Includes the LinkedIn Content System workflow by Simon Owen. [Original source](https://github.com/TedTschopp/cat-agent-skills/tree/1a3e42195454e4e4159a327d175a72870d505268/submissions/linkedin-content-system).
+
+Use this entry for the maintained workflow and current download.

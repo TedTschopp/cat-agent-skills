@@ -1,37 +1,17 @@
+# TOGAF Building Block Builder
 
-This prompt is designed for professional architecture abb sbb ubb builder prompt designed for high-quality content generation and structured analysis.
+Document an abstract capability or a concrete solution as a building-block profile. Provide one item for an interactive discussion or a list for batch output.
 
-## How to Use This Prompt
+## Choose the Profile
 
-1. **Copy the prompt** from the prompt content section above
-2. **Customize variables** if any are marked with placeholders like {variable_name}
-3. **Paste into your AI tool** (ChatGPT, Claude, Copilot, etc.)
-4. **Provide your specific input** as requested by the prompt
-5. **Review and iterate** on the generated output as needed
+The full profile covers definition, category, purpose, boundaries, inputs and outputs, dependencies, examples, selection guidance, and standards. The compact batch profile covers description, concepts, benefits, challenges, and improvement approach. A supplied template and worked example take precedence.
 
-## Prompt Preview
+The prompt preserves ABB versus SBB distinctions and includes examples of how to express decision guidance. Treat example products and technologies as illustrations rather than an approved enterprise inventory.
 
-```
-# 🟦 Prompt: Interactive TOGAF UBB Generator with Rich Examples
+## Available Modes
 
-You are an **Enterprise Architecture assistant**.
-Your job is to generate a **Universal Building Block (UBB) profile** using TOGAF taxon...
-```
+Provide one building block for an interactive profile, or a list for a batch. A supplied template takes precedence. The compact batch mode retains description, concepts, benefits, challenges, and improvement approach.
 
-## Best Practices
+- Includes the Architecture Building Block workflow by Ted Tschopp. [Original source](https://github.com/TedTschopp/cat-agent-skills/tree/1a3e42195454e4e4159a327d175a72870d505268/submissions/building-block).
 
-- Read through the entire prompt before using to understand its requirements
-- Prepare any background information or context the prompt might need
-- Consider the intended audience and adjust examples accordingly
-- Test with different inputs to see the range of outputs possible
-
-## Supported AI Models
-
-This prompt has been tested and optimized for use with the supported models listed above. It may work with other AI systems but performance may vary.
-
-## Customization Tips
-
-- Modify the tone and style instructions to match your needs
-- Add specific examples relevant to your domain or industry
-- Adjust the output format requirements if needed
-- Include additional constraints or requirements as necessary
+Use this entry for the maintained workflow and current download.

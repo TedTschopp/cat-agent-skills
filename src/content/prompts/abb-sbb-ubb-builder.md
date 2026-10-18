@@ -14,11 +14,11 @@ coverImageGeneratedAt: "2026-09-03"
 coverImageGenerator: "OpenAI image generation via Codex"
 coverImageHeight: 1000
 coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org artifact gallery cover\nArtifact kind: Prompt Template File\nPrimary request: A nested architectural assembly that turns abstract strategy into progressively more concrete, interlocking building blocks, conveying the construction of architecture building blocks across levels without labels.\nScene/backdrop: An uncluttered slate drafting table fading into a warm paper field.\nSubject: Three nested tiers of precisely fitted stone, wood, and translucent cyan blocks, with one sparing orange connector joining the levels.\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; one strong crop-safe central silhouette; no essential detail in the outer 8%; legible at approximately 290-pixel card width\nLighting/mood: calm, capable, quietly technical; restrained cyan backlighting\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: completely original image; no input or reference images; no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, product UI, vendor branding, Microsoft Fluent styling, paw imagery, paw logo, cats, or cat silhouettes"
-coverImageSourceHash: "sha256:96a63097f6d7d8d5ecad458c0080651e5038aa9d46d8d7792b9d710159eeecf1"
+coverImageSourceHash: "sha256:b6bb1404ac808afafdc6cf8b3e58ae4cf9a7a16f7a8487543338e5e530794a7d"
 coverImageSourceHashVersion: 2
 coverImageWidth: 1600
 createdAt: "2025-10-17"
-description: "Professional architecture abb sbb ubb builder prompt designed for high-quality content generation and structured analysis."
+description: "Create interactive or batch TOGAF building-block profiles, distinguishing abstract capabilities from concrete solutions and preserving supplied templates."
 downloadPath: "bundles/abb-sbb-ubb-builder.prompt.md"
 entrypoint: "abb-sbb-ubb-builder.prompt.md"
 featured: false
@@ -36,14 +36,15 @@ models:
   - "gpt-4-mini"
   - "gpt-4-turbo"
   - "microsoft-copilot"
-name: "Architecture ABB SBB UBB Builder"
+name: "TOGAF Building Block Builder"
 payloadPaths:
   - "abb-sbb-ubb-builder.prompt.md"
 provenance:
   appliedRepairs:
     - "normalize-model-github-to-github-copilot"
-  importedGuideSha256: "sha256:f6dcca2c85d0788fab9ff5305f49288abdbdc814689415a0b6e41ad41070524c"
-  importedPromptSha256: "sha256:4739ac51f9ddbfdb859a819db3100273a863e81ca3b0bc42210eda8c15d4e13f"
+    - "consolidate-duplicate-entrypoints-2026-10-18"
+  importedGuideSha256: "sha256:42fd660a750a0bb766d4b8d3a74302d835ad9e81727903ecdff6172f410493e5"
+  importedPromptSha256: "sha256:cefc74079617eeabf85e1d96f1538465dd23d22fca36eed8c55fb0ba352f28fe"
   legacyCategories:
     - "Prompts"
     - "Projects"
@@ -162,7 +163,7 @@ topics:
   - "Architecture"
   - "Requirements Engineering"
   - "Documentation"
-updatedAt: null
+updatedAt: "2026-10-18T20:50:22.953553+00:00"
 variables: []
 worksWith:
   - "chatgpt"
@@ -174,7 +175,23 @@ worksWith:
 
 You are an **Enterprise Architecture assistant**.
 Your job is to generate a **Universal Building Block (UBB) profile** using TOGAF taxonomy.
-Before producing the output, gather context through a short interactive Q\&A.
+Gather missing context through a short interactive Q\&A. If the user has already
+supplied a list, template, example, and enough context, process the batch without
+asking for a single building block again.
+
+## Choose the Operation
+
+- **Interactive profile:** Use the nine-part profile and decision guidance below.
+- **Batch profiles:** Apply one consistent structure to each supplied technology
+  or capability, preserving the user's order and distinguishing ABBs from SBBs.
+  When a compact legacy profile is requested, use Building Block Name,
+  Description / Considerations, Key Concepts, Expected Benefits, Challenges, and
+  Improvement Approach. If the user supplies a template and worked example,
+  follow those instead of forcing the nine-part layout.
+
+Do not treat example technology lists or named products as a required scope.
+Record missing enterprise facts as unknown rather than inventing adoption,
+approval, benefits, or operating constraints.
 
 ## Step 1: Ask for the UBB
 

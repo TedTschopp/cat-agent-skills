@@ -1,14 +1,15 @@
 ---
 name: "Ted's Writing Style"
-description: "Draft and revise in Ted Tschopp's personal voice, using concrete openings, visible reasoning, plain explanations, and an ending grounded in consequence."
+description: "Write and revise in Ted Tschopp's personal voice across essays, technology, fiction, and RPG material, with an optional historical literary profile."
 agentDescription: "Write, rewrite, or edit in Ted Tschopp's personal voice, derived from his TedT.org posts published before 2020. Use when Ted asks for his style, voice, a Ted-style article, blog post, essay, reflection, technology argument, organizational-change piece, fiction, or tabletop RPG material. Preserve the factual content and intended genre while applying Ted's characteristic concrete openings, visible reasoning, analogies, rhetorical questions, parallelism, reflective warmth, and purposeful endings. Do not use for SCE newsroom copy unless Ted explicitly asks to blend the two styles."
 platforms: [Cowork, Copilot Studio, Scout]
 tags: [writing, editing, personal voice, essays, storytelling, technology, tabletop RPG]
 author: Ted Tschopp
 authorUrl: "https://tedt.org/"
 authorGithub: TedTschopp
-version: 1.0.0
+version: 1.1.0
 createdAt: 2026-10-05
+updatedAt: "2026-10-18T20:50:22.954153+00:00"
 coverImage: skill-art/ted-writing-style.webp
 coverImageAlt: "The referenced writer, wearing glasses and a blue overshirt, draws a bridge in an open book beside a paper path crossing a wooden bridge."
 coverImagePrompt: "Use case: identity-preserve\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: edit the current cover so the referenced person is actively drawing in the open book.\nInput images: Image 1 is the edit target, showing the writer behind a notebook and a paper path crossing a wooden bridge. Image 2 is the person's reference from https://tedt.org/img/generated/responsive/home/blog--1456w.webp; preserve that person's identity, glasses, beard, swept-up hair, blue overshirt, and black shirt.\nAction: replace the chin-resting pose. He leans slightly forward and looks down at the open notebook with a focused, natural expression. His right hand holds an unbranded orange wooden drawing pencil in a believable grip, with the pencil tip visibly touching the left-hand page. His left hand gently steadies the book. Show a few delicate graphite sketch lines of a small bridge and flowing path on that page, making the drawing action immediately clear; the marks are an illustration, never handwriting, letters, numbers, or labels.\nPreserve: keep the same single person, notebook with navy cloth cover, orange bookmark, continuous sculptural paper path, small wooden bridge, slate background, and restrained warm-paper/navy/cyan/orange palette. Keep the reference likeness recognizable, and preserve the tactile editorial style and matte studio shadows.\nComposition/framing: exact 16:10 landscape; maintain comfortable crop-safe margins of at least 10% around the complete head, hands, book, and bridge. Keep the face and pencil-to-page action large enough to read at a 290-pixel card width. The drawing hand and pencil must be fully visible, without blocking the face.\nLighting/mood: thoughtful, curious, absorbed in the drawing, warm, calm; subtle cyan reflection beneath the paper.\nConstraints: no additional people, extra fingers, malformed hands, text, letters, numbers, pseudo-writing, logos, trademarks, watermark, laptop, paw imagery, cats, product UI, Microsoft Fluent branding, glowing balls, Swiss flags, mountains, religious symbols, or forest background. Alter the pose and add only the drawing pencil and small unlabeled graphite sketch needed for this request."
@@ -17,7 +18,7 @@ coverImageWidth: 1600
 coverImageHeight: 1000
 coverImageGenerator: OpenAI image generation via Codex
 coverImageGeneratedAt: 2026-10-05
-coverImageSourceHash: "sha256:f93bf193e4bdb90ee64440c933a54604ee177c839e3a5c7afc23566b23945ba2"
+coverImageSourceHash: "sha256:70499c1983abcbc8ad38ed0ce753aabdf81d9b80a4325e64845afa7754682b08"
 coverImageSourceHashVersion: 2
 bundle: bundles/ted-writing-style.zip
 ---
@@ -196,6 +197,10 @@ Treat its output as a diagnostic, never as a quota.
 
 ## References
 
+- Read [references/historical-literary-profile.md](references/historical-literary-profile.md)
+  only when a requested literary, seasonal, or faith-oriented piece needs the
+  earlier compact profile. Its religious framing is conditional on the supplied
+  subject and beliefs; it does not override the safeguards above.
 - Read [references/style-profile.md](references/style-profile.md) when making a
   substantial style judgment or blending modes.
 - Read [references/calibration-examples.md](references/calibration-examples.md)
