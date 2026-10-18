@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ballot Candidate Review"
+  short_description: "Research ballot qualifications and policy alignment"
+  default_prompt: "Use $ballot-candidate-review to review my attached ballot, ask for my priorities for this election, and produce a report with expandable details and separate qualifications and policy-alignment assessments."
