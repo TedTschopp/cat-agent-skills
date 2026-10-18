@@ -1,0 +1,4 @@
+interface:
+  display_name: "Aquatint Etching Images"
+  short_description: "Draw dark aquatint prints on warm antique paper"
+  default_prompt: "Use $create-aquatint-etching-images to draw an old observatory in the supplied dark etching and aquatint style."

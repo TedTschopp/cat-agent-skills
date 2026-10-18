@@ -1,0 +1,32 @@
+{
+  "name": "Aquatint Etching Images",
+  "description": "Create or restyle images as dark etching and aquatint prints, with fine crosshatching, granular shadows, warm ivory paper, and a quietly theatrical mood.",
+  "platforms": [
+    "Cowork",
+    "Copilot Studio",
+    "Scout"
+  ],
+  "tags": [
+    "Design and Media",
+    "image generation",
+    "etching",
+    "aquatint",
+    "printmaking",
+    "illustration"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorGithub": "TedTschopp",
+  "version": "1.0.0",
+  "createdAt": "2026-10-18",
+  "coverImage": "skill-art/create-aquatint-etching-images.webp",
+  "coverImageAlt": "An ivory observatory print rests over a dark engraved plate beside an orange-handled etching needle.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: the craft of etching and aquatint illustrated as a warm ivory intaglio print emerging from a dark engraved plate, with a single small stone observatory revealed in finely hatched lines and granular ink shadows.\nScene/backdrop: uncluttered deep slate printmaker's work surface with calm dark negative space.\nSubject: one crop-safe ivory print sheet lifted slightly from a navy-black engraved metal plate; the sheet shows an original stone observatory with a simple dome, pale silhouette, fine irregular etched contours, crosshatching, and velvety aquatint grain. A single unbranded orange-handled etching needle lies beside the plate. No people.\nStyle/medium: premium editorial illustration with tactile dimensional detail; real paper fibers, engraved linework and granular ink within the printed observatory, restrained dimensional depth in the sheet and plate.\nComposition/framing: exact 16:10 landscape; clear focal silhouette and comfortable margins; no essential detail in the outer 8%; the paper print remains legible at a 290-pixel card width.\nLighting/mood: calm, capable, quietly technical, gently theatrical; warm raking light on paper and a restrained cyan reflection on the metal edge.\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027.\nConstraints: no text, pseudo-writing, letters, numbers, logos, trademarks, watermark, signatures, paw imagery, paw logo, cats, cat silhouettes, product UI, Microsoft Fluent branding, ornate frames, or excessive paper stains.",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-10-18",
+  "coverImageSourceHash": "sha256:862947b3470658c746b0b3c2e3e09d99be05d0d0e9ea898fdf6271ef4dbba230",
+  "coverImageSourceHashVersion": 2
+}
