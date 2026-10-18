@@ -11,7 +11,7 @@ import { mkdirSync, mkdtempSync, rmSync, symlinkSync, writeFileSync } from "node
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import AdmZip from "adm-zip";
-import matter from "gray-matter";
+import { parseFrontmatter } from "./frontmatter.ts";
 import {
   assertSubmissionDirectory,
   buildContent,
@@ -53,7 +53,7 @@ test("prompt artwork aspect ratios remain strings after a frontmatter round trip
     "Prompt body\n",
   );
 
-  assert.equal(matter(output).data.coverImageAspectRatio, "16:10");
+  assert.equal(parseFrontmatter(output).data.coverImageAspectRatio, "16:10");
 });
 
 test("submission enumeration rejects symlinks before reading their targets", (t) => {

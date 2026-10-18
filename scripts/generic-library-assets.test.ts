@@ -23,7 +23,7 @@ import {
   writeBundle,
   writeGenericArtifactDownloads,
 } from "./import-submissions.ts";
-import matter from "gray-matter";
+import { parseFrontmatter } from "./frontmatter.ts";
 
 function metadata(
   kind: GenericFileAssetKind,
@@ -342,7 +342,7 @@ test("artifact payload indexes round-trip exact ordered bodies and content hashe
     ["requirements.md", "design.md"],
     files,
   );
-  const roundTrip = matter(
+  const roundTrip = parseFrontmatter(
     buildPromptContent(index as unknown as Record<string, unknown>, ""),
   ).data;
   assert.deepEqual(roundTrip.files.map((file: { path: string }) => file.path), [
