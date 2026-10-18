@@ -1,0 +1,11 @@
+{
+  "name": "Swiss Design Images",
+  "description": "Create or restyle images with modular grids, asymmetrical composition, restrained color, and precise typography in the International Typographic Style.",
+  "platforms": ["Cowork", "Copilot Studio", "Scout"],
+  "tags": ["Design and Media", "Swiss graphic design", "International Typographic Style", "image generation", "editorial illustration", "posters"],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorGithub": "TedTschopp",
+  "version": "1.0.0",
+  "createdAt": "2026-10-18"
+}

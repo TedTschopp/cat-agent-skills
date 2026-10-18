@@ -1,0 +1,11 @@
+{
+  "name": "Aquatint Etching Images",
+  "description": "Create or restyle images as dark etching and aquatint prints, with fine crosshatching, granular shadows, warm ivory paper, and a quietly theatrical mood.",
+  "platforms": ["Cowork", "Copilot Studio", "Scout"],
+  "tags": ["Design and Media", "image generation", "etching", "aquatint", "printmaking", "illustration"],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorGithub": "TedTschopp",
+  "version": "1.0.0",
+  "createdAt": "2026-10-18"
+}
