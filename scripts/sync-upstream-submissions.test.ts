@@ -199,6 +199,33 @@ test("new Microsoft Markdown passes the staged whitespace gate without touching 
   assert.equal(readFileSync(join(repo, `submissions/${slug}/SKILL.md`), "utf8"), cleanedSkill);
 });
 
+test("new submission blank Markdown lines and JSON EOF pass the staged whitespace gate", (t) => {
+  const repo = initializeRepository();
+  t.after(() => rmSync(repo, { recursive: true, force: true }));
+  git(repo, "switch", "-c", "microsoft-main");
+  const prefix = "submissions/inbox-triage";
+  const source = "1. Resolve the folder.\n   - Pass the arguments:\n     1. `create`\n     \n     Discover the parent folder.\n";
+  const config = '{"folder":"Keep  "}\n\n';
+  write(repo, `${prefix}/metadata.json`, '{"name":"Inbox Triage"}\n');
+  write(repo, `${prefix}/SKILL.md`, source);
+  write(repo, `${prefix}/assets/config.example.json`, config);
+  git(repo, "add", ".");
+  git(repo, "commit", "-m", "upstream blank-line whitespace");
+  const upstreamRef = git(repo, "rev-parse", "HEAD");
+  git(repo, "switch", "main");
+
+  const plan = syncUpstreamSubmissions({ repoRoot: repo, upstreamRef, logger: () => {} });
+  assert.deepEqual(plan.newSlugs, ["inbox-triage"]);
+  assert.equal(readFileSync(join(repo, prefix, "SKILL.md"), "utf8"), source.replace("     \n", "\n"));
+  const cleaned = readFileSync(join(repo, prefix, "assets/config.example.json"), "utf8");
+  assert.equal(cleaned, '{"folder":"Keep  "}\n');
+  assert.deepEqual(JSON.parse(cleaned), JSON.parse(config));
+  assert.equal(git(repo, "show", `${upstreamRef}:${prefix}/SKILL.md`), source.trim());
+  git(repo, "add", prefix);
+  assert.equal(git(repo, "diff", "--cached", "--check"), "");
+  assert.equal(verifySyncWorktree({ repoRoot: repo, newSlugs: ["inbox-triage"], generatedSlugs: [], upstreamRef }).changed, true);
+});
+
 test("rejects non-portable upstream paths without leaving a partial submission", (t) => {
   const repo = initializeRepository();
   t.after(() => rmSync(repo, { recursive: true, force: true }));
