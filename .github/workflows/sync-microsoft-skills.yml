@@ -44,8 +44,8 @@ jobs:
           git remote add microsoft "$MICROSOFT_REPOSITORY"
           git fetch --no-tags --depth=1 microsoft main
 
-      # The copy step uses the existing Markdown parser to normalize accidental
-      # prose whitespace before validation, generated pages, and ZIP bundles.
+      # The copy step normalizes accidental Markdown/JSON whitespace without
+      # changing parsed content, code examples, or hash-bound source files.
       - name: Install Dependencies
         run: npm ci
 

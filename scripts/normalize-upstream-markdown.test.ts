@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import {
   normalizeMarkdownWhitespace,
+  normalizeJsonWhitespace,
   normalizeNewSubmissionMarkdown,
 } from "./normalize-upstream-markdown.mjs";
 
@@ -30,6 +31,52 @@ test("cleans prose while preserving Markdown meaning, code, and CRLF bytes", () 
 test("does not turn an escaped trailing space into a Markdown line break", () => {
   const source = "Keep this backslash\\ \nfollowed by text\n";
   assert.equal(normalizeMarkdownWhitespace(source), source);
+});
+
+test("cleans blank prose lines and final blank lines while retaining hard breaks", () => {
+  const source = [
+    "1. Resolve the folder.",
+    "   - Pass these arguments:",
+    "     1. `create`",
+    "     2. `-b`",
+    "     ",
+    "     Discover the parent folder before continuing.",
+    "",
+    "Keep this intentional break  ",
+    "and the next line.",
+    " \t ",
+    "",
+  ].join("\r\n");
+  const expected = source.replace("     \r\n", "\r\n").replace(/ \t \r\n$/, "");
+  const result = normalizeMarkdownWhitespace(source);
+  assert.equal(result, expected);
+  assert.equal(normalizeMarkdownWhitespace(result), result);
+});
+
+test("normalizes valid JSON formatting without reserializing values or line endings", () => {
+  const source = '{\r\n  "folder": "Keep  ", \r\n  "number": 1e3\t\r\n}\r\n \t\r\n\r\n';
+  const result = normalizeJsonWhitespace(source);
+  assert.equal(result, '{\r\n  "folder": "Keep  ",\r\n  "number": 1e3\r\n}\r\n');
+  assert.deepEqual(JSON.parse(result), JSON.parse(source));
+  assert.equal(normalizeJsonWhitespace(result), result);
+  assert.equal(normalizeJsonWhitespace('{"invalid": "literal\nspace "}\n\n'), '{"invalid": "literal\nspace "}\n\n');
+});
+
+test("cleans new JSON examples but preserves hash-bound JSON, scripts, and binary files", () => {
+  const files = [
+    { relativePath: "metadata.json", data: Buffer.from("{}\n") },
+    { relativePath: "assets/config.example.json", data: Buffer.from('{"folder":"Keep  "}\n\n') },
+    { relativePath: "scripts/run.sh", data: Buffer.from("echo 'keep' \n\n") },
+    { relativePath: "assets/binary.json", data: Buffer.from([0xff, 0x20, 0x0a]) },
+  ];
+  const result = normalizeNewSubmissionMarkdown(files);
+  assert.equal(result[1].data.toString(), '{"folder":"Keep  "}\n');
+  for (const index of [0, 2, 3]) assert.deepEqual(result[index], files[index]);
+  const bound = [
+    { relativePath: "metadata.json", data: Buffer.from('{"provenance":{"sourceCommit":"recorded"}}') },
+    ...files.slice(1),
+  ];
+  assert.deepEqual(normalizeNewSubmissionMarkdown(bound), bound);
 });
 
 test("preserves hash-bound submissions and malformed metadata without rewriting claims", () => {
