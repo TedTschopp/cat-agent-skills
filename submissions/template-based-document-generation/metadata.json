@@ -1,11 +1,30 @@
 {
   "name": "Template-Based Document Generation",
   "description": "Populate an existing Word template from supplied data while preserving branding, repeating table rows, and reporting missing values and changes for review.",
-  "platforms": ["Copilot Studio"],
-  "tags": ["word", "docx", "templates", "documents", "automation", "python"],
+  "platforms": [
+    "Copilot Studio"
+  ],
+  "tags": [
+    "word",
+    "docx",
+    "templates",
+    "documents",
+    "automation",
+    "python"
+  ],
   "author": "sgshaji",
   "authorUrl": "https://github.com/sgshaji",
   "version": "3.8.0",
   "createdAt": "2026-09-30",
-  "updatedAt": "2026-10-19"
+  "updatedAt": "2026-10-19",
+  "coverImage": "skill-art/template-based-document-generation.webp",
+  "coverImageAlt": "Blank paper forms fit into a precision document template jig.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a precision document-making jig holds the border and structure of a blank paper template steady while neatly shaped data pieces settle into matching cutouts, producing one complete pristine sheet without disturbing its original frame\nScene/backdrop: uncluttered slate craft table with layered warm paper and quiet architectural depth\nSubject: one blank high-quality paper template in a precision jig, several abstract rounded data pieces fitting into geometric openings, and an intact raised border; all paper surfaces completely blank with no writing or glyph-like marks\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; strong silhouette and calm negative space; legible at small card size\nLighting/mood: calm, capable, quietly technical, with restrained cyan backlighting and a tiny orange completion accent\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, placeholder marks, symbols, labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; no screens and no visible software interface",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-10-21",
+  "coverImageSourceHash": "sha256:7eeb4eb8909a30cdcc960b67be7df1fc2997962d849ad5ee2f2dcec313e804f8",
+  "coverImageSourceHashVersion": 2
 }

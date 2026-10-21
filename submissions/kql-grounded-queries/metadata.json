@@ -1,12 +1,34 @@
 {
   "name": "KQL Grounded Queries",
   "description": "Writes KQL for Sentinel, Log Analytics and Defender XDR without inventing table or column names — checks every identifier against its real source, Microsoft documentation or your own tenant's schema, and stops instead of guessing.",
-  "platforms": ["Cowork", "Copilot Studio"],
-  "tags": ["kql", "sentinel", "defender-xdr", "log-analytics", "security", "threat-hunting", "detection-engineering", "grounding"],
+  "platforms": [
+    "Cowork",
+    "Copilot Studio"
+  ],
+  "tags": [
+    "kql",
+    "sentinel",
+    "defender-xdr",
+    "log-analytics",
+    "security",
+    "threat-hunting",
+    "detection-engineering",
+    "grounding"
+  ],
   "author": "Shashank Raina",
   "authorUrl": "https://shashankraina.substack.com",
   "authorGithub": "shashank-raina",
   "version": "1.0.0",
   "createdAt": "2026-09-15",
-  "updatedAt": "2026-09-15"
+  "updatedAt": "2026-09-15",
+  "coverImage": "skill-art/kql-grounded-queries.webp",
+  "coverImageAlt": "A precision optical instrument verifies colored nodes against a geometric lattice.",
+  "coverImagePrompt": "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a precision verification instrument examines a field of abstract data nodes against a physical reference lattice, allowing only perfectly aligned pieces to join a stable coherent pathway, expressing grounded query construction from verified schemas rather than guesswork\nScene/backdrop: deep slate technical workbench with a warm paper reference plane and restrained dimensional depth\nSubject: one sculptural optical verifier, a clean geometric reference lattice, and abstract rounded data nodes; every surface is blank and contains no query fragments, glyphs, or interface markings\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; strong central silhouette, calm negative space, legible at small card size\nLighting/mood: calm, capable, quietly technical, with a focused cyan verification glow and a tiny orange calibration accent\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, code, symbols, labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; no screens and no faux code",
+  "coverImageAspectRatio": "16:10",
+  "coverImageWidth": 1600,
+  "coverImageHeight": 1000,
+  "coverImageGenerator": "OpenAI image generation via Codex",
+  "coverImageGeneratedAt": "2026-10-21",
+  "coverImageSourceHash": "sha256:4c73b1297e50d660f86404d46bcc3d1577c1b7b85192a570992e102942e9a304",
+  "coverImageSourceHashVersion": 2
 }

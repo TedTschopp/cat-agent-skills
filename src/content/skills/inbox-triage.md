@@ -10,6 +10,16 @@ authorGithub: jchha001
 version: 1.0.0
 createdAt: 2026-08-06
 updatedAt: 2026-08-11
+coverImage: skill-art/inbox-triage.webp
+coverImageAlt: Blank envelopes sorted into navy trays beside a protected clear cradle.
+coverImagePrompt: "Use case: stylized-concept\nAsset type: AI.Tedt.org skill gallery cover\nPrimary request: a calm reversible sorting metaphor in which unmarked sealed envelopes are gently organized into a small set of open archival trays while a few important envelopes remain protected inside a clear cradle, expressing review-first inbox triage without deletion\nScene/backdrop: uncluttered slate work surface with warm paper planes and quiet architectural depth\nSubject: tactile blank envelopes, orderly shallow trays, and one transparent protective cradle; all surfaces completely free of writing, stamps, symbols, or glyph-like marks\nStyle/medium: premium editorial illustration with tactile dimensional detail\nComposition/framing: exact 16:10 landscape; crop-safe focal subject; no essential detail in the outer 8%; strong silhouette and calm negative space; legible at small card size\nLighting/mood: calm, capable, quietly technical, with restrained cyan backlighting and a tiny orange highlight\nColor palette: warm paper #F8F6F0, slate #101820, navy #00446F, cyan #00A9E0, sparing orange #E86027\nConstraints: no text, letters, numbers, symbols, stamps, labels, logos, trademarks, or watermark; no paw imagery or paw logo; no cats or cat silhouettes; no product UI or Microsoft Fluent branding; no deletion or trash imagery"
+coverImageAspectRatio: "16:10"
+coverImageWidth: 1600
+coverImageHeight: 1000
+coverImageGenerator: OpenAI image generation via Codex
+coverImageGeneratedAt: 2026-10-21
+coverImageSourceHash: "sha256:8e9d1a1ea73e7698cc165a465372ad7ffe6cff1541cdad4dd291e2dba40757cf"
+coverImageSourceHashVersion: 2
 bundle: bundles/inbox-triage.zip
 ---
 # Inbox Triage
