@@ -1,0 +1,23 @@
+{
+  "name": "Personal Newspaper",
+  "description": "Build a personalized newspaper with family planning, sourced reading, comics, drawing lessons, and checked puzzles, delivered as a reviewed PDF with optional email and printing.",
+  "platforms": [
+    "Cowork",
+    "Scout"
+  ],
+  "tags": [
+    "Productivity and Automation",
+    "Content and Documentation",
+    "personal newspaper",
+    "family planning",
+    "newsletters",
+    "PDF",
+    "comics",
+    "puzzles"
+  ],
+  "author": "Ted Tschopp",
+  "authorUrl": "https://tedt.org/",
+  "authorGithub": "TedTschopp",
+  "version": "1.0.0",
+  "createdAt": "2026-10-24"
+}
