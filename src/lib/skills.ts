@@ -4,7 +4,7 @@
  */
 
 /** The agent platforms a skill can target. */
-export const PLATFORMS = ["Cowork", "Copilot Studio", "Scout"] as const;
+export const PLATFORMS = ["Cowork", "Copilot Studio", "Scout", "Codex"] as const;
 export type Platform = (typeof PLATFORMS)[number];
 
 /**
@@ -19,6 +19,7 @@ export const PLATFORM_COLORS: Record<Platform, string> = {
   Cowork: "#00446f",
   "Copilot Studio": "#00a9e0",
   Scout: "#e86027",
+  Codex: "#101820",
 };
 
 const COVER_GLOWS = [

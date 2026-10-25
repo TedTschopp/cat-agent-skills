@@ -19,7 +19,7 @@ export const skillSchema = z.object({
   // canonical Agent Skills format). Optional so older catalog-only skills still
   // validate.
   agentDescription: z.string().optional(),
-  // Agent platform(s) the skill targets: Cowork, Copilot Studio, and/or Scout.
+  // Agent platform(s) the skill targets, from the shared platform registry.
   platforms: z.array(z.enum(PLATFORMS)).nonempty(),
   // Distinguishes a single cross-platform Agent Skill from a Cowork plugin (an
   // M365 app package bundling one or more skills + optional connectors) or a

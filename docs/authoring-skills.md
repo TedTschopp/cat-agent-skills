@@ -1,7 +1,7 @@
 # Authoring a skill
 
 A **skill** is a reusable instruction set for an AI agent — targeting one or more
-of **Cowork**, **Copilot Studio**, and **Scout** — published in this gallery
+of **Cowork**, **Copilot Studio**, **Scout**, and **Codex** — published in this gallery
 with optional helper `scripts/` (and `references/` / `assets/`).
 
 You contribute every skill the same way: **add a submission to the
@@ -70,7 +70,7 @@ The catalog details, kept out of the agent file:
 | Field         | Required | Type     | Description                                                             |
 | ------------- | -------- | -------- | ----------------------------------------------------------------------- |
 | `description` | yes      | string   | Catalog summary used on the card and as the page meta description.      |
-| `platforms`   | yes      | string[] | One or more of `Cowork`, `Copilot Studio`, `Scout`.                     |
+| `platforms`   | yes      | string[] | One or more of `Cowork`, `Copilot Studio`, `Scout`, `Codex`.            |
 | `tags`        | yes      | string[] | Lowercase search terms mapped into the controlled Topics filter. Reuse existing tags where you can. |
 | `author`      |          | string   | Person or team credited for the skill.                                  |
 | `authorUrl`   |          | string   | URL to the author's website/profile; renders the author name as a link. |
