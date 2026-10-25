@@ -99,6 +99,7 @@
   --platform-cowork: var(--navy);
   --platform-copilot-studio: var(--cyan);
   --platform-scout: var(--orange);
+  --platform-codex: var(--slate);
 
   --status-active: var(--success);
   --status-beta: var(--cyan);
@@ -173,6 +174,7 @@
   --platform-cowork: #4e9fd1;
   --platform-copilot-studio: #4fc7f2;
   --platform-scout: #f2793f;
+  --platform-codex: var(--text-primary);
 
   --code-bg: var(--surface-inset);
   --code-fg: var(--gold);

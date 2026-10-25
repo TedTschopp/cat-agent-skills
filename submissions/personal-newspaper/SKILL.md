@@ -38,6 +38,8 @@ Record the first three scheduled runs with `pilot`: start/finish, actual deliver
 
 ## Commands and portability
 
+In Codex, read [Codex runtime](references/codex.md) before setup or production to select the Python environment and map the available source, image, delivery and scheduling tools.
+
 Run `python scripts/newspaper.py --help` from this skill folder, replacing `python` with the receiving environment's interpreter. The detailed command workflow is in [operations](references/operations.md). Requires Python 3.12+, `scripts/requirements.txt`, WeasyPrint's platform libraries and Poppler `pdftoppm`. Private connectors, image tools, email and scheduling capabilities must be mapped during setup. A missing capability remains an explicit gap, never a fabricated success.
 
 For an offline demonstration, use `assets/full.profile.json`, `assets/full.snapshot.json` and `assets/full.edition.json`. This 18-page fictional example demonstrates every page module, two comics, a two-animal drawing lesson and all four games. Its art setting is optional so most section pages are text-only; a new user's full profile can require artwork on every page. The smaller original three-page fixtures remain useful for basic smoke tests. Run tests with `python -m unittest discover -s scripts -p 'test_*.py'`.

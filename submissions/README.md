@@ -180,7 +180,7 @@ The metadata sidecar provides the human-facing catalog fields:
 
 `name`, `description`, `platforms`, `tags`, and `author` are required in skill
 metadata. `platforms` must contain one or more of `Cowork`, `Copilot Studio`,
-and `Scout`. Optional fields include `authorUrl`, `authorGithub`, `version`,
+`Scout`, and `Codex`. Optional fields include `authorUrl`, `authorGithub`, `version`,
 `createdAt`, `updatedAt`, `coverColor`, and `featured`. The importer derives
 `authorGithub` from a direct GitHub profile `authorUrl` when possible.
 

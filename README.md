@@ -167,7 +167,7 @@ Write the agent instructions here as Markdown — this body becomes the
 {
   "name": "My Great Skill",
   "description": "One-line catalog summary shown on the card and detail page.",
-  "platforms": ["Cowork", "Copilot Studio", "Scout"],
+  "platforms": ["Cowork", "Copilot Studio", "Scout", "Codex"],
   "tags": ["productivity", "automation"],
   "author": "Your Name",
   "authorUrl": "https://example.com",
@@ -176,7 +176,7 @@ Write the agent instructions here as Markdown — this body becomes the
 ```
 
 > `name`, `description`, `platforms`, and `tags` are required (`platforms` must be
-> one or more of `Cowork`, `Copilot Studio`, `Scout`). PRs run a build check that
+> one or more of `Cowork`, `Copilot Studio`, `Scout`, `Codex`). PRs run a build check that
 > validates every skill against the schema.
 
 > Besides single skills, you can submit a **Scout automation** (a `.json` export,

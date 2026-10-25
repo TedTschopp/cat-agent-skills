@@ -3,7 +3,8 @@
   "description": "Build a personalized newspaper with family planning, sourced reading, comics, drawing lessons, and checked puzzles, delivered as a reviewed PDF with optional email and printing.",
   "platforms": [
     "Cowork",
-    "Scout"
+    "Scout",
+    "Codex"
   ],
   "tags": [
     "Productivity and Automation",
@@ -28,6 +29,6 @@
   "coverImageHeight": 1000,
   "coverImageGenerator": "OpenAI image generation via Codex",
   "coverImageGeneratedAt": "2026-10-24",
-  "coverImageSourceHash": "sha256:b4a96ce6715cebd43d5ea92ddc16243617424d5e830fce8b86945f2eb4cd31eb",
+  "coverImageSourceHash": "sha256:90a2e154d039032427e1b3acebbe05754cabecaf8a49af79188e15d1c7a335e5",
   "coverImageSourceHashVersion": 2
 }

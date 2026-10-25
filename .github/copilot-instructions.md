@@ -57,7 +57,7 @@ leave it out.
 
 ### Platform fit vs. executable code
 
-A skill's `platforms` (`Cowork`, `Copilot Studio`, `Scout`) must match the
+A skill's `platforms` (`Cowork`, `Copilot Studio`, `Scout`, `Codex`) must match the
 runtime its executable steps actually assume. The runtimes are **not** the same,
 so the same snippet can be fine on one platform and broken on another:
 
@@ -74,6 +74,9 @@ so the same snippet can be fine on one platform and broken on another:
   than shelling out for it. A per-OS **branch** is acceptable only when each
   branch calls a command that OS's shell genuinely has; a branch like that is
   doing the *right* thing and must **not** be flagged as a "won't run" error.
+- **Codex** uses the selected local or cloud environment. Check its actual
+  interpreter, native libraries, connectors, and tools; local desktop access,
+  email, image generation, scheduling, and printing are capability-dependent.
 
 Flag a submission when its runnable code, **runtime dependency**, or filesystem
 assumptions don't match the platforms it targets, for example:

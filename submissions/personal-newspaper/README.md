@@ -41,6 +41,25 @@ agent reports partial or unavailable coverage when a source cannot be read.
 
 ## Runtime requirements
 
+### Codex
+
+Extract the complete bundle into
+`<project>/.agents/skills/personal-newspaper/` for one repository, or
+`~/.agents/skills/personal-newspaper/` for your user account. Keep `SKILL.md`,
+`agents/`, `scripts/`, `references/`, and `assets/` together. Then invoke
+`$personal-newspaper` in Codex. See the
+[official skill documentation](https://learn.chatgpt.com/docs/build-skills)
+for discovery and installation details.
+
+Codex can use its bundled Python runtime when available, with the required
+packages installed in a separate environment. The runtime note in
+`references/codex.md` covers native libraries and optional tools. A Codex
+session with Python and PDF dependencies can produce a local newspaper;
+account access, artwork, email, scheduling, and printing depend on the tools
+available in that session.
+
+### Python and optional tools
+
 The PDF tools require Python 3.12 or later, the packages in
 `scripts/requirements.txt`, WeasyPrint's platform libraries, and Poppler's
 `pdftoppm` command for page previews. Install them in the receiving agent's
