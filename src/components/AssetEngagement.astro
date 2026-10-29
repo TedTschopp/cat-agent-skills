@@ -200,4 +200,4 @@ const total = hasMicrosoftSource
 <script>
   import "giscus";
 </script>
-<script is:inline set:html={`(function(){function themeFor(){return document.documentElement.getAttribute('data-theme')==='dark'?'dark':'light';}function apply(){document.querySelectorAll('giscus-widget').forEach(function(widget){widget.setAttribute('theme',themeFor());});}document.addEventListener('themechange',apply);apply();})();`} />
+<script is:inline set:html={`(function(){function themeFor(){return document.documentElement.getAttribute('data-theme')==='dark'?'dark':'light';}function apply(){document.querySelectorAll('giscus-widget').forEach(function(widget){widget.setAttribute('theme',themeFor());});}window.addEventListener('tedt:theme-change',apply);apply();})();`} />
