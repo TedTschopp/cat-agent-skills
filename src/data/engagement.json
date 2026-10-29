@@ -3,7 +3,7 @@
   "repositories": {
     "microsoft": {
       "repository": "microsoft/cat-agent-skills",
-      "stars": 93
+      "stars": 94
     },
     "local": {
       "repository": "TedTschopp/cat-agent-skills",
@@ -677,6 +677,10 @@
           {
             "number": 248,
             "url": "https://github.com/microsoft/cat-agent-skills/discussions/248"
+          },
+          {
+            "number": 395,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/395"
           }
         ]
       },
