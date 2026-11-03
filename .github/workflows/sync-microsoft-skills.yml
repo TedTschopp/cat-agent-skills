@@ -44,8 +44,8 @@ jobs:
           git remote add microsoft "$MICROSOFT_REPOSITORY"
           git fetch --no-tags --depth=1 microsoft main
 
-      # The copy step normalizes accidental Markdown/JSON whitespace without
-      # changing parsed content, code examples, or hash-bound source files.
+      # The copy step normalizes accidental Markdown/JSON/Python whitespace
+      # only when parsed meaning agrees and no source hashes are claimed.
       - name: Install Dependencies
         run: npm ci
 
@@ -125,7 +125,9 @@ jobs:
           fi
 
           git add -- submissions src/content/skills src/content/prompts src/content/artifacts src/content/artifact-payloads src/content/guides src/data/microsoft-catalog.json public/bundles public/assets.json
-          git diff --cached --check
+          # CSV exports use standard CRLF records. Preserve those bytes while
+          # retaining checks for trailing spaces, blank EOF, and space/tab errors.
+          git -c core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol diff --cached --check
           git diff --cached --name-status
 
           git config user.name "github-actions[bot]"

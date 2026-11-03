@@ -226,6 +226,31 @@ test("new submission blank Markdown lines and JSON EOF pass the staged whitespac
   assert.equal(verifySyncWorktree({ repoRoot: repo, newSlugs: ["inbox-triage"], generatedSlugs: [], upstreamRef }).changed, true);
 });
 
+test("Python cleanup and CRLF CSV records pass the real staged gate without weakening trailing-space checks", (t) => {
+  const repo = initializeRepository();
+  t.after(() => rmSync(repo, { recursive: true, force: true }));
+  git(repo, "switch", "-c", "microsoft-main");
+  const prefix = "submissions/source-formats";
+  const csv = "name,value\r\nexample,42\r\n";
+  write(repo, `${prefix}/metadata.json`, '{"name":"Source Formats"}\n');
+  write(repo, `${prefix}/SKILL.md`, "Instructions\n");
+  write(repo, `${prefix}/assets/sample.csv`, csv);
+  write(repo, `${prefix}/scripts/classify.py`, "def classify():\n    why = [] \n    return why\n");
+  git(repo, "add", "."); git(repo, "commit", "-m", "upstream source formats");
+  const upstreamRef = git(repo, "rev-parse", "HEAD");
+  git(repo, "switch", "main");
+  syncUpstreamSubmissions({ repoRoot: repo, upstreamRef, logger: () => {} });
+  assert.equal(readFileSync(join(repo, prefix, "assets/sample.csv"), "utf8"), csv);
+  assert.equal(readFileSync(join(repo, prefix, "scripts/classify.py"), "utf8"), "def classify():\n    why = []\n    return why\n");
+  git(repo, "add", prefix);
+  const rule = "core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol";
+  assert.equal(git(repo, "-c", rule, "diff", "--cached", "--check"), "");
+  assert.equal(verifySyncWorktree({ repoRoot: repo, newSlugs: ["source-formats"], generatedSlugs: [], upstreamRef }).changed, true);
+  write(repo, `${prefix}/assets/sample.csv`, csv + "bad,space \r\n");
+  git(repo, "add", prefix);
+  assert.throws(() => git(repo, "-c", rule, "diff", "--cached", "--check"));
+});
+
 test("rejects non-portable upstream paths without leaving a partial submission", (t) => {
   const repo = initializeRepository();
   t.after(() => rmSync(repo, { recursive: true, force: true }));

@@ -1,5 +1,6 @@
 import { markdownToMdast } from "satteri";
 import { load as loadYaml } from "js-yaml";
+import { execFileSync } from "node:child_process";
 
 const METADATA_NAMES = new Set(["metadata.json", "metadata.yaml", "metadata.yml"]);
 const PROTECTED_NODES = new Set(["code", "inlineCode", "html", "yaml", "toml"]);
@@ -73,7 +74,33 @@ export function normalizeJsonWhitespace(source) {
   return removeFinalBlankLines(source.replace(/[\t ]+(?=\r\n|\n|\r|$)/g, ""));
 }
 
-/** Clean only a new submission's Markdown/JSON before staging and generation. */
+/** Parse, never execute, Python and retain changes only when both ASTs agree. */
+export function normalizePythonWhitespace(source) {
+  const normalized = removeFinalBlankLines(source.replace(/[\t ]+(?=\r\n|\n|\r|$)/g, ""));
+  if (normalized === source) return source;
+  try {
+    const same = execFileSync("python3", ["-I", "-c", [
+      "import ast, json, sys",
+      "before, after = json.load(sys.stdin)",
+      "def tree(source):",
+      "    return ast.dump(ast.parse(source, type_comments=True), include_attributes=False)",
+      "try:",
+      "    print('same' if tree(before) == tree(after) else 'preserve')",
+      "except (SyntaxError, ValueError, RecursionError):",
+      "    print('preserve')",
+    ].join("\n")], {
+      input: JSON.stringify([source, normalized]), encoding: "utf8",
+      timeout: 10_000, maxBuffer: 1024 * 1024, stdio: ["pipe", "pipe", "pipe"],
+    }).trim();
+    return same === "same" ? normalized : source;
+  } catch {
+    // Unsupported syntax, unavailable parser, or resource limits leave the
+    // original bytes for the normal validation/whitespace gate to inspect.
+    return source;
+  }
+}
+
+/** Clean only unclaimed new source bytes before staging and generation. */
 export function normalizeNewSubmissionMarkdown(files, logger = () => {}) {
   const metadataFiles = files.filter((file) => METADATA_NAMES.has(file.relativePath.toLowerCase()));
   if (metadataFiles.length !== 1) return files;
@@ -92,13 +119,15 @@ export function normalizeNewSubmissionMarkdown(files, logger = () => {}) {
   return files.map((file) => {
     const format = /\.(?:md|markdown)$/i.test(file.relativePath)
       ? "Markdown"
-      : /\.json$/i.test(file.relativePath) ? "JSON" : undefined;
+      : /\.json$/i.test(file.relativePath) ? "JSON"
+      : /\.py$/i.test(file.relativePath) ? "Python" : undefined;
     if (!format) return file;
     const source = file.data.toString("utf8");
     if (source.includes("\0") || !Buffer.from(source, "utf8").equals(file.data)) return file;
     const normalized = format === "Markdown"
       ? normalizeMarkdownWhitespace(source)
-      : normalizeJsonWhitespace(source);
+      : format === "JSON" ? normalizeJsonWhitespace(source)
+      : normalizePythonWhitespace(source);
     if (normalized === source) return file;
     logger(`Normalized accidental ${format} whitespace: ${file.relativePath}`);
     return { ...file, data: Buffer.from(normalized, "utf8") };

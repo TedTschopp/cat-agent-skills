@@ -3,6 +3,7 @@ import { test } from "node:test";
 import {
   normalizeMarkdownWhitespace,
   normalizeJsonWhitespace,
+  normalizePythonWhitespace,
   normalizeNewSubmissionMarkdown,
 } from "./normalize-upstream-markdown.mjs";
 
@@ -95,17 +96,38 @@ test("preserves hash-bound submissions and malformed metadata without rewriting 
   }
 });
 
-test("leaves non-Markdown, invalid UTF-8, binary data, and BOM/line endings intact", () => {
+test("leaves other formats, invalid UTF-8, binary data, and BOM/line endings intact", () => {
   const files = [
     { relativePath: "metadata.json", data: Buffer.from("{}") },
     { relativePath: "README.md", data: Buffer.from("\uFEFFProse \r\n") },
-    { relativePath: "script.py", data: Buffer.from("print('keep') \n") },
+    { relativePath: "script.sh", data: Buffer.from("echo 'keep' \n") },
     { relativePath: "invalid.md", data: Buffer.from([0xff, 0x20, 0x0a]) },
     { relativePath: "binary.md", data: Buffer.from("binary\0 \n") },
   ];
   const result = normalizeNewSubmissionMarkdown(files);
   assert.equal(result[1].data.toString(), "\uFEFFProse\r\n");
   for (const index of [0, 2, 3, 4]) assert.deepEqual(result[index], files[index]);
+});
+
+test("Python cleanup preserves its AST, never executes source, and is idempotent", () => {
+  const source = "def classify(): \n    why = [] \n    return why\t\n\n";
+  const expected = "def classify():\n    why = []\n    return why\n";
+  assert.equal(normalizePythonWhitespace(source), expected);
+  assert.equal(normalizePythonWhitespace(expected), expected);
+  assert.equal(normalizePythonWhitespace("raise RuntimeError('must not execute') \n"), "raise RuntimeError('must not execute')\n");
+});
+
+test("Python strings, invalid syntax, and source hash claims keep their bytes", () => {
+  for (const source of ["value = '''meaningful \nspace'''\n", "def invalid syntax: \n"]) {
+    assert.equal(normalizePythonWhitespace(source), source);
+  }
+  const files = [
+    { relativePath: "metadata.json", data: Buffer.from('{"coverImageSourceHash":"sha256:recorded"}') },
+    { relativePath: "script.py", data: Buffer.from("why = [] \n") },
+  ];
+  assert.deepEqual(normalizeNewSubmissionMarkdown(files), files);
+  files[0].data = Buffer.from("{}");
+  assert.equal(normalizeNewSubmissionMarkdown(files)[1].data.toString(), "why = []\n");
 });
 
 test("handles cyclic and shared YAML aliases without repeatedly traversing their objects", () => {
