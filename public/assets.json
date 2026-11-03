@@ -669,6 +669,218 @@
     }
   },
   {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "maintenance-triage",
+    "name": "Maintenance Triage",
+    "title": "Maintenance Triage",
+    "description": "Move a fault forward: read the fault note, alarm codes and asset history, rank the likely failure modes against OEM manuals and past work orders, prioritise by asset criticality and downtime cost, and draft the work-order update with a recommended action.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Productivity and Automation"
+    ],
+    "tags": [
+      "maintenance",
+      "triage",
+      "cmms",
+      "reliability",
+      "failure-mode",
+      "work-order"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Industry Templates",
+      "url": "https://github.com/SravaniSeethi",
+      "github": "SravaniSeethi",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-08-01T00:00:00.000Z",
+      "updated": "2026-09-04T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/maintenance-triage.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/maintenance-triage.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/maintenance-triage.zip",
+    "downloadPath": "bundles/maintenance-triage.zip",
+    "canonicalPath": "/skills/maintenance-triage/",
+    "legacyPaths": [],
+    "featured": true,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "MT"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/maintenance-triage",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "quality-inspection",
+    "name": "Quality Inspection & Nonconformance",
+    "title": "Quality Inspection & Nonconformance",
+    "description": "Clear an inspection lot end to end: read the part spec, drawing, inspection plan, CoC and measurement export, compare every actual against tolerance, grade each defect by severity and disposition, and draft the nonconformance report with every call cited back to the spec.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Governance, Risk, and Compliance"
+    ],
+    "tags": [
+      "quality",
+      "inspection",
+      "ncr",
+      "nonconformance",
+      "tolerance",
+      "mrb"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Industry Templates",
+      "url": "https://github.com/SravaniSeethi",
+      "github": "SravaniSeethi",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-08-01T00:00:00.000Z",
+      "updated": "2026-09-04T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/quality-inspection.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/quality-inspection.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/quality-inspection.zip",
+    "downloadPath": "bundles/quality-inspection.zip",
+    "canonicalPath": "/skills/quality-inspection/",
+    "legacyPaths": [],
+    "featured": true,
+    "version": "2.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "QI"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/quality-inspection",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
     "kind": "skill",
     "kindLabel": "Agent Skill",
     "slug": "redlining-content",
@@ -767,6 +979,112 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/redlining-content",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "store-associate-assist",
+    "name": "Store Associate Assist",
+    "title": "Store Associate Assist",
+    "description": "The associate's cited answer on the shop floor: takes a question with store, role and department context, retrieves the applicable policy, product attributes and current promotion, resolves the policy and compares products deterministically, and returns a cited answer or a drafted escalation.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Productivity and Automation"
+    ],
+    "tags": [
+      "retailer",
+      "store-operations",
+      "associate",
+      "policy",
+      "promotion",
+      "product-compare"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Industry Templates",
+      "url": "https://github.com/SravaniSeethi",
+      "github": "SravaniSeethi",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-05T00:00:00.000Z",
+      "updated": "2026-09-08T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/store-associate-assist.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/store-associate-assist.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/store-associate-assist.zip",
+    "downloadPath": "bundles/store-associate-assist.zip",
+    "canonicalPath": "/skills/store-associate-assist/",
+    "legacyPaths": [],
+    "featured": true,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "SA"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/store-associate-assist",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -2152,6 +2470,113 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/agent-performance-triage",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "agent-rai-impact-assessment",
+    "name": "Agent RAI Impact Assessment",
+    "title": "Agent RAI Impact Assessment",
+    "description": "Draft a Responsible AI impact assessment for an AI agent, covering affected people, action authority, harm scenarios, controls, and residual risk.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Governance, Risk, and Compliance",
+      "AI and Agents",
+      "Architecture and Engineering"
+    ],
+    "tags": [
+      "responsible-ai",
+      "agents",
+      "architecture",
+      "risk-assessment",
+      "governance"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Copilot Studio"
+    ],
+    "author": {
+      "name": "Arindam Choudhury",
+      "url": "https://github.com/ari20089",
+      "github": "ari20089",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-15T00:00:00.000Z",
+      "updated": "2026-10-15T00:00:00.000Z"
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/agent-rai-impact-assessment.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/agent-rai-impact-assessment.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/agent-rai-impact-assessment.zip",
+    "downloadPath": "bundles/agent-rai-impact-assessment.zip",
+    "canonicalPath": "/skills/agent-rai-impact-assessment/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "AR"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/agent-rai-impact-assessment",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -6559,6 +6984,112 @@
     }
   },
   {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "audit-readiness",
+    "name": "Audit Readiness",
+    "title": "Audit Readiness",
+    "description": "Walk into the audit prepared: map the audit scope to the standard's clauses, gather and complete the evidence register, validate each piece of evidence against what the clause actually requires, flag every gap with a severity, and draft the readiness pack with owners and actions.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Governance, Risk, and Compliance"
+    ],
+    "tags": [
+      "quality",
+      "audit",
+      "compliance",
+      "iso-9001",
+      "iatf-16949",
+      "readiness"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Industry Templates",
+      "url": "https://github.com/SravaniSeethi",
+      "github": "SravaniSeethi",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-01T00:00:00.000Z",
+      "updated": "2026-09-04T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/audit-readiness.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/audit-readiness.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/audit-readiness.zip",
+    "downloadPath": "bundles/audit-readiness.zip",
+    "canonicalPath": "/skills/audit-readiness/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "AR"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/audit-readiness",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
     "kind": "prompt-template",
     "kindLabel": "Prompt Template File",
     "slug": "architecture-designer",
@@ -10114,6 +10645,112 @@
     }
   },
   {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "consumer-market-insight-synthesis",
+    "name": "Consumer & Market Insight Synthesis",
+    "title": "Consumer & Market Insight Synthesis",
+    "description": "Prior research reused instead of re-commissioned: retrieve and rank prior research and panel extracts, compare trends across markets and periods, flag contradictory evidence rather than smoothing it, check usage rights and claim provenance, and draft a cited insight brief with a provenance record.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Data and Analytics"
+    ],
+    "tags": [
+      "cpg",
+      "insights",
+      "consumer-research",
+      "category",
+      "panel",
+      "provenance"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Industry Templates",
+      "url": "https://github.com/SravaniSeethi",
+      "github": "SravaniSeethi",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-07T00:00:00.000Z",
+      "updated": "2026-09-08T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/consumer-market-insight-synthesis.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/consumer-market-insight-synthesis.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/consumer-market-insight-synthesis.zip",
+    "downloadPath": "bundles/consumer-market-insight-synthesis.zip",
+    "canonicalPath": "/skills/consumer-market-insight-synthesis/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "C&"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/consumer-market-insight-synthesis",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
     "kind": "skill",
     "kindLabel": "Agent Skill",
     "slug": "content-quality-auditor",
@@ -11431,6 +12068,114 @@
   {
     "kind": "skill",
     "kindLabel": "Agent Skill",
+    "slug": "cowork-consumption-advisor",
+    "name": "Cowork & Work IQ Consumption Advisor",
+    "title": "Cowork & Work IQ Consumption Advisor",
+    "description": "Turn Microsoft 365 Cost Management exports into an interactive Cowork and Work IQ consumption report, with service breakdowns, spending-limit analysis, forecasts, and evidence-backed recommendations.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Data and Analytics"
+    ],
+    "tags": [
+      "cowork",
+      "work-iq",
+      "copilot-credits",
+      "consumption",
+      "cost-management",
+      "finops",
+      "dashboard",
+      "analysis"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Bojan Buhac",
+      "url": "https://github.com/bojanbuhac",
+      "github": "bojanbuhac",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-14T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/cowork-consumption-advisor.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/cowork-consumption-advisor.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/cowork-consumption-advisor.zip",
+    "downloadPath": "bundles/cowork-consumption-advisor.zip",
+    "canonicalPath": "/skills/cowork-consumption-advisor/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #0f6cbd 0%, #0f6cbd 100%)",
+      "fallbackInitials": "C&"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/cowork-consumption-advisor",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
     "slug": "cowork-use-case-one-pager",
     "name": "Cowork Use Case One-Pager",
     "title": "Cowork Use Case One-Pager",
@@ -11937,6 +12682,112 @@
     }
   },
   {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "customer-service-order-support",
+    "name": "Customer Service & Order Support",
+    "title": "Customer Service & Order Support",
+    "description": "A grounded first response, and a clean escalation packet when it cannot resolve: classify intent against the taxonomy, assemble customer, order, loyalty and delivery context while detecting contradictions, retrieve the approved answer, and draft the resolution in channel and tone.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Business and Strategy"
+    ],
+    "tags": [
+      "retailer",
+      "customer-service",
+      "contact-centre",
+      "wismo",
+      "intent",
+      "escalation"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Industry Templates",
+      "url": "https://github.com/SravaniSeethi",
+      "github": "SravaniSeethi",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-05T00:00:00.000Z",
+      "updated": "2026-09-08T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/customer-service-order-support.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/customer-service-order-support.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/customer-service-order-support.zip",
+    "downloadPath": "bundles/customer-service-order-support.zip",
+    "canonicalPath": "/skills/customer-service-order-support/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.1",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "CS"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/customer-service-order-support",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
     "kind": "skill",
     "kindLabel": "Agent Skill",
     "slug": "lookup-dataverse-table",
@@ -12141,6 +12992,112 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/edison-writing-guide",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "engineering-change-bom",
+    "name": "Engineering Change & BOM",
+    "title": "Engineering Change & BOM",
+    "description": "Turn a change request into a decision: read the ECR, spec delta and BOM, trace impact across the BOM with where-used, classify form/fit/function impact and flag interface violations, roll up document and inventory dispositions, and draft the ECN with the affected-item list.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Architecture and Engineering"
+    ],
+    "tags": [
+      "engineering-change",
+      "ecr",
+      "ecn",
+      "bom",
+      "where-used",
+      "plm"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Industry Templates",
+      "url": "https://github.com/SravaniSeethi",
+      "github": "SravaniSeethi",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-01T00:00:00.000Z",
+      "updated": "2026-09-04T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/engineering-change-bom.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/engineering-change-bom.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/engineering-change-bom.zip",
+    "downloadPath": "bundles/engineering-change-bom.zip",
+    "canonicalPath": "/skills/engineering-change-bom/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "EC"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/engineering-change-bom",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -14713,6 +15670,113 @@
   {
     "kind": "skill",
     "kindLabel": "Agent Skill",
+    "slug": "meeting-moments-library-builder-cowork",
+    "name": "Meeting Moments Library Builder for Cowork",
+    "title": "Meeting Moments Library Builder for Cowork",
+    "description": "Discover authorized Microsoft 365 meeting transcripts and turn them into a reviewed, searchable library of verified timestamped moments, delivered as portable HTML, CSV, and JSON files.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Knowledge, Learning, and Research",
+      "Productivity and Automation"
+    ],
+    "tags": [
+      "meetings",
+      "transcripts",
+      "knowledge",
+      "library",
+      "deep-links",
+      "productivity"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Sandra Boucenna",
+      "url": "https://github.com/SandraBcna",
+      "github": "SandraBcna",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-28T00:00:00.000Z",
+      "updated": "2026-09-28T00:00:00.000Z"
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/meeting-moments-library-builder-cowork.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/meeting-moments-library-builder-cowork.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/meeting-moments-library-builder-cowork.zip",
+    "downloadPath": "bundles/meeting-moments-library-builder-cowork.zip",
+    "canonicalPath": "/skills/meeting-moments-library-builder-cowork/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.2.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "MM"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/meeting-moments-library-builder-cowork",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
     "slug": "microsoft-ai-platform-advisor",
     "name": "Microsoft AI Platform Advisor",
     "title": "Microsoft AI Platform Advisor",
@@ -15315,6 +16379,112 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/monte-carlo-analysis",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "order-intake-o2c-exception",
+    "name": "Order Intake & O2C Exception",
+    "title": "Order Intake & O2C Exception",
+    "description": "Orders arriving by email, PDF and portal validated and exceptions routed instead of rekeyed: extract and normalise order lines, validate against customer, pricing, product and credit master data, queue exceptions with reason codes and a recommended correction, and draft the customer response.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Productivity and Automation"
+    ],
+    "tags": [
+      "retailer",
+      "order-management",
+      "o2c",
+      "exception",
+      "validation",
+      "edi"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Industry Templates",
+      "url": "https://github.com/SravaniSeethi",
+      "github": "SravaniSeethi",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-07T00:00:00.000Z",
+      "updated": "2026-09-08T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/order-intake-o2c-exception.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/order-intake-o2c-exception.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/order-intake-o2c-exception.zip",
+    "downloadPath": "bundles/order-intake-o2c-exception.zip",
+    "canonicalPath": "/skills/order-intake-o2c-exception/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "OI"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/order-intake-o2c-exception",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -16974,6 +18144,112 @@
     }
   },
   {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "product-content-catalog-enrichment",
+    "name": "Product Content & Catalog Enrichment",
+    "title": "Product Content & Catalog Enrichment",
+    "description": "Turn incomplete supplier data into channel-ready, claim-safe product records: normalise attributes against the taxonomy with GTIN validation, score completeness per channel, validate claims and regulated terms against the approved claim library, and draft the descriptions and review packet.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Content and Documentation"
+    ],
+    "tags": [
+      "retailer",
+      "merchandising",
+      "pim",
+      "gdsn",
+      "gtin",
+      "catalog"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Industry Templates",
+      "url": "https://github.com/SravaniSeethi",
+      "github": "SravaniSeethi",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-05T00:00:00.000Z",
+      "updated": "2026-09-08T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/product-content-catalog-enrichment.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/product-content-catalog-enrichment.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/product-content-catalog-enrichment.zip",
+    "downloadPath": "bundles/product-content-catalog-enrichment.zip",
+    "canonicalPath": "/skills/product-content-catalog-enrichment/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "PC"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/product-content-catalog-enrichment",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
     "kind": "prompt-template",
     "kindLabel": "Prompt Template File",
     "slug": "product-requirements-document-prd-template",
@@ -17197,6 +18473,111 @@
     }
   },
   {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "production-planning",
+    "name": "Production Planning",
+    "title": "Production Planning",
+    "description": "Turn demand into a publishable shift plan: pull the forecast and open orders, check capacity, constraints and material availability, sequence the week to minimise changeovers with a deterministic campaign heuristic, and draft the shift plan for the planner to publish.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Productivity and Automation"
+    ],
+    "tags": [
+      "operations",
+      "scheduling",
+      "production-planning",
+      "changeover",
+      "capacity"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Industry Templates",
+      "url": "https://github.com/SravaniSeethi",
+      "github": "SravaniSeethi",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-01T00:00:00.000Z",
+      "updated": "2026-09-04T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/production-planning.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/production-planning.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/production-planning.zip",
+    "downloadPath": "bundles/production-planning.zip",
+    "canonicalPath": "/skills/production-planning/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "PP"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/production-planning",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
     "kind": "prompt-template",
     "kindLabel": "Prompt Template File",
     "slug": "professional-headshot-from-a-photo",
@@ -17395,6 +18776,112 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/qr-code-builder",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "quality-incident-capa",
+    "name": "Quality Incident & CAPA",
+    "title": "Quality Incident & CAPA",
+    "description": "Take an open NCR through to a closed CAPA: read the incident, complaint and inspection data, establish root cause with a structured method, build corrective and preventive actions with mandatory effectiveness checks, validate closure readiness, and draft the 8D report cited to the clause.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Governance, Risk, and Compliance"
+    ],
+    "tags": [
+      "quality",
+      "capa",
+      "8d",
+      "root-cause",
+      "ncr",
+      "iso-9001"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Industry Templates",
+      "url": "https://github.com/SravaniSeethi",
+      "github": "SravaniSeethi",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-01T00:00:00.000Z",
+      "updated": "2026-09-04T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/quality-incident-capa.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/quality-incident-capa.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/quality-incident-capa.zip",
+    "downloadPath": "bundles/quality-incident-capa.zip",
+    "canonicalPath": "/skills/quality-incident-capa/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "QI"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/quality-incident-capa",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -17733,6 +19220,218 @@
       "appliedRepairs": [
         "normalize-model-github-to-github-copilot"
       ]
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "retail-execution-perfect-store",
+    "name": "Retail Execution & Perfect Store",
+    "title": "Retail Execution & Perfect Store",
+    "description": "A prepared call and a complete, evidenced visit report: assemble the pre-call plan, score the perfect-store gap deterministically against the channel standard, rank gaps by revenue impact rather than count, and draft the visit report, action register and suggested order for the rep to confirm.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Business and Strategy"
+    ],
+    "tags": [
+      "cpg",
+      "field-sales",
+      "retail-execution",
+      "perfect-store",
+      "dsr",
+      "visit-report"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Industry Templates",
+      "url": "https://github.com/SravaniSeethi",
+      "github": "SravaniSeethi",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-07T00:00:00.000Z",
+      "updated": "2026-09-08T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/retail-execution-perfect-store.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/retail-execution-perfect-store.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/retail-execution-perfect-store.zip",
+    "downloadPath": "bundles/retail-execution-perfect-store.zip",
+    "canonicalPath": "/skills/retail-execution-perfect-store/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "RE"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/retail-execution-perfect-store",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "returns-refund-case",
+    "name": "Returns & Refund Case",
+    "title": "Returns & Refund Case",
+    "description": "Consistent, policy-cited return decisions with a complete case packet on first touch: classify the return reason, validate eligibility deterministically with the policy clause cited, surface fraud signals without adjudicating them, and draft the recommendation and case packet.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Business and Strategy"
+    ],
+    "tags": [
+      "retailer",
+      "returns",
+      "refund",
+      "reverse-commerce",
+      "eligibility",
+      "fraud-signals"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Industry Templates",
+      "url": "https://github.com/SravaniSeethi",
+      "github": "SravaniSeethi",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-05T00:00:00.000Z",
+      "updated": "2026-09-08T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/returns-refund-case.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/returns-refund-case.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/returns-refund-case.zip",
+    "downloadPath": "bundles/returns-refund-case.zip",
+    "canonicalPath": "/skills/returns-refund-case/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "R&"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/returns-refund-case",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
     }
   },
   {
@@ -18934,6 +20633,222 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/route-map-visualizer",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "safety-incident",
+    "name": "Safety Incident Assist",
+    "title": "Safety Incident Assist",
+    "description": "Handle an EHS incident the same way every time: take the report from a form, email or voice note, classify severity, near-miss status and OSHA recordability, route it to the right investigator with the regulatory clocks attached, and draft the incident summary and RCA template.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Governance, Risk, and Compliance"
+    ],
+    "tags": [
+      "ehs",
+      "safety",
+      "incident",
+      "osha",
+      "recordable",
+      "iso-45001"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Industry Templates",
+      "url": "https://github.com/SravaniSeethi",
+      "github": "SravaniSeethi",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-08-01T00:00:00.000Z",
+      "updated": "2026-09-04T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/safety-incident.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/safety-incident.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/safety-incident.zip",
+    "downloadPath": "bundles/safety-incident.zip",
+    "canonicalPath": "/skills/safety-incident/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "SI"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/safety-incident",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "sap-power-platform-integration-architect",
+    "name": "SAP–Power Platform Integration Architect",
+    "title": "SAP–Power Platform Integration Architect",
+    "description": "Your SAP + Microsoft architect: when to use SAP Joule, Microsoft 365 Copilot or Copilot Studio and how they work together; whether to extend in SAP (Fiori, SAP Build) or with Power Platform; and exactly how to connect SAP to Power Platform — connector, gateway, API layer, single sign-on — with a shareable HTML architecture report.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "AI and Agents",
+      "Architecture and Engineering"
+    ],
+    "tags": [
+      "sap",
+      "power-platform",
+      "copilot-studio",
+      "joule",
+      "integration",
+      "architecture",
+      "advisor",
+      "extensibility",
+      "single-sign-on"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Copilot Studio"
+    ],
+    "author": {
+      "name": "César Calvo Cobo",
+      "url": "https://github.com/CesarCalvoCobo",
+      "github": "CesarCalvoCobo",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-21T00:00:00.000Z",
+      "updated": "2026-10-22T00:00:00.000Z"
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/sap-power-platform-integration-architect.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/sap-power-platform-integration-architect.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/sap-power-platform-integration-architect.zip",
+    "downloadPath": "bundles/sap-power-platform-integration-architect.zip",
+    "canonicalPath": "/skills/sap-power-platform-integration-architect/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "0.3.1",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "SP"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/sap-power-platform-integration-architect",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -20407,6 +22322,113 @@
     }
   },
   {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "store-task-promotion-execution",
+    "name": "Store Task & Promotion Execution",
+    "title": "Store Task & Promotion Execution",
+    "description": "Turn the HQ campaign pack into a store-specific, verifiable execution plan before launch day: map requirements to the store's format and cluster, flag pricing and signage conflicts deterministically, rank exceptions by revenue impact, and draft the readiness checklist and shift brief.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Planning and Delivery",
+      "Productivity and Automation"
+    ],
+    "tags": [
+      "retailer",
+      "store-operations",
+      "promotion",
+      "campaign",
+      "execution",
+      "readiness"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Industry Templates",
+      "url": "https://github.com/SravaniSeethi",
+      "github": "SravaniSeethi",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-05T00:00:00.000Z",
+      "updated": "2026-09-08T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/store-task-promotion-execution.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/store-task-promotion-execution.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/store-task-promotion-execution.zip",
+    "downloadPath": "bundles/store-task-promotion-execution.zip",
+    "canonicalPath": "/skills/store-task-promotion-execution/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "ST"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/store-task-promotion-execution",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
     "kind": "skill",
     "kindLabel": "Agent Skill",
     "slug": "study-flashcards",
@@ -20500,6 +22522,324 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/study-flashcards",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "supplier-vendor-performance",
+    "name": "Supplier & Vendor Performance Review",
+    "title": "Supplier & Vendor Performance Review",
+    "description": "A defensible supplier review pack assembled from records instead of a week of spreadsheet work: roll up the OTIF, defect and dispute scorecard with trends, cluster recurring issues with evidence, retrieve the governing trading term, and draft the agenda, corrective action request and commitment tracker.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Business and Strategy"
+    ],
+    "tags": [
+      "retailer",
+      "merchandising",
+      "supplier",
+      "vendor",
+      "otif",
+      "scorecard"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Industry Templates",
+      "url": "https://github.com/SravaniSeethi",
+      "github": "SravaniSeethi",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-07T00:00:00.000Z",
+      "updated": "2026-09-08T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/supplier-vendor-performance.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/supplier-vendor-performance.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/supplier-vendor-performance.zip",
+    "downloadPath": "bundles/supplier-vendor-performance.zip",
+    "canonicalPath": "/skills/supplier-vendor-performance/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "S&"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/supplier-vendor-performance",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "supplier-disruption",
+    "name": "Supplier Disruption Assist",
+    "title": "Supplier Disruption Assist",
+    "description": "Get ahead of a supply problem: take a late PO, shipment delay or supplier notice, map the shortage through BOM where-used to the affected products, lines, open orders and at-risk dates, recommend expedite / substitute / reschedule, and draft both the supplier follow-up and the internal escalation brief.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Business and Strategy"
+    ],
+    "tags": [
+      "supply-chain",
+      "procurement",
+      "shortage",
+      "po",
+      "erp",
+      "mrp"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Industry Templates",
+      "url": "https://github.com/SravaniSeethi",
+      "github": "SravaniSeethi",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-08-01T00:00:00.000Z",
+      "updated": "2026-09-04T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/supplier-disruption.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/supplier-disruption.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/supplier-disruption.zip",
+    "downloadPath": "bundles/supplier-disruption.zip",
+    "canonicalPath": "/skills/supplier-disruption/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "SD"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/supplier-disruption",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "supplier-qualification",
+    "name": "Supplier Qualification",
+    "title": "Supplier Qualification",
+    "description": "Qualify a new supplier on the evidence: gather the dossier of certs, financials, audits and PPAP elements, score risk across quality, financial and geographic dimensions, compare against the approved vendor list and category requirements, and draft the qualification memo with conditions.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Governance, Risk, and Compliance"
+    ],
+    "tags": [
+      "supply-chain",
+      "sourcing",
+      "supplier-qualification",
+      "ppap",
+      "apqp",
+      "risk"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Industry Templates",
+      "url": "https://github.com/SravaniSeethi",
+      "github": "SravaniSeethi",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-01T00:00:00.000Z",
+      "updated": "2026-09-04T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/supplier-qualification.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/supplier-qualification.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/supplier-qualification.zip",
+    "downloadPath": "bundles/supplier-qualification.zip",
+    "canonicalPath": "/skills/supplier-qualification/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "SQ"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/supplier-qualification",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -21370,6 +23710,112 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/tool-tracer",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "trade-promotion-deduction-recovery",
+    "name": "Trade Promotion & Deduction Recovery",
+    "title": "Trade Promotion & Deduction Recovery",
+    "description": "Invalid deductions caught and disputed with evidence: match each claim to the governing promotion, allowance or trade term, classify validity deterministically and quantify the disputable amount with the calculation shown, and draft the dispute packet and post-event brief.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Business and Strategy"
+    ],
+    "tags": [
+      "cpg",
+      "rgm",
+      "trade-promotion",
+      "deduction",
+      "dispute",
+      "tpm"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Industry Templates",
+      "url": "https://github.com/SravaniSeethi",
+      "github": "SravaniSeethi",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-09-07T00:00:00.000Z",
+      "updated": "2026-09-08T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/trade-promotion-deduction-recovery.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/trade-promotion-deduction-recovery.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/trade-promotion-deduction-recovery.zip",
+    "downloadPath": "bundles/trade-promotion-deduction-recovery.zip",
+    "canonicalPath": "/skills/trade-promotion-deduction-recovery/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "TP"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/trade-promotion-deduction-recovery",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -23534,6 +25980,112 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/work-iq-signalboard",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "work-order-assist",
+    "name": "Work Order Assistant",
+    "title": "Work Order Assistant",
+    "description": "Everything a technician or planner needs for a work order in one place: asset context, the relevant SOPs and OEM manuals, the most similar past jobs ranked, a parts-readiness check against the storeroom and supersession table, and clean drafted notes with the next best action.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Productivity and Automation"
+    ],
+    "tags": [
+      "maintenance",
+      "work-order",
+      "cmms",
+      "sop",
+      "parts",
+      "storeroom"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Industry Templates",
+      "url": "https://github.com/SravaniSeethi",
+      "github": "SravaniSeethi",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-08-01T00:00:00.000Z",
+      "updated": "2026-09-04T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/work-order-assist.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/work-order-assist.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/work-order-assist.zip",
+    "downloadPath": "bundles/work-order-assist.zip",
+    "canonicalPath": "/skills/work-order-assist/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "WO"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/work-order-assist",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
