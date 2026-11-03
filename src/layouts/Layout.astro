@@ -247,10 +247,7 @@ const contributorsActive = path.includes("/authors");
       <script type="application/ld+json" set:html={serializedJsonLd} />
     )}
     {/* Resolve the saved preference before paint to prevent a theme flash. */}
-    <script
-      is:inline
-      set:html={`(function(){try{var d=document.documentElement;var key='ai-tedt-theme';var p=localStorage.getItem(key)||d.dataset.defaultTheme||'system';var dark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;var resolved=p==='system'?(dark?'dark':'light'):p;d.dataset.themePreference=p;d.setAttribute('data-theme',resolved);}catch(e){document.documentElement.dataset.themePreference='system';document.documentElement.setAttribute('data-theme','light');}})();`}
-    />
+
     {
       ANALYTICS_ENABLED && (
         <script
@@ -260,7 +257,9 @@ const contributorsActive = path.includes("/authors");
         />
       )
     }
-  </head>
+  <link rel="stylesheet" href="/css/tedt-header-embed.css">
+<script is:inline src="/js/tedt-theme-init.js"></script>
+</head>
   <body class="flex min-h-screen flex-col antialiased">
     <a
       href="#main-content"
@@ -352,10 +351,7 @@ const contributorsActive = path.includes("/authors");
       </div>
     </footer>
 
-    <script
-      is:inline
-      set:html={`(function(){var d=document.documentElement;var key='ai-tedt-theme';var buttons=Array.prototype.slice.call(document.querySelectorAll('[data-theme-choice]'));var mq=window.matchMedia?window.matchMedia('(prefers-color-scheme: dark)'):null;function resolved(p){return p==='system'?((mq&&mq.matches)?'dark':'light'):p;}function paint(){var p=d.dataset.themePreference||'system';buttons.forEach(function(b){var on=b.dataset.themeChoice===p;b.setAttribute('aria-pressed',String(on));});}function setPreference(p,save){d.dataset.themePreference=p;d.setAttribute('data-theme',resolved(p));if(save){try{localStorage.setItem(key,p);}catch(e){}}paint();document.dispatchEvent(new CustomEvent('themechange',{detail:{theme:d.getAttribute('data-theme'),preference:p}}));}buttons.forEach(function(b){b.addEventListener('click',function(){setPreference(b.dataset.themeChoice||'system',true);});});if(mq){var onSystem=function(){if((d.dataset.themePreference||'system')==='system')setPreference('system',false);};if(mq.addEventListener)mq.addEventListener('change',onSystem);else if(mq.addListener)mq.addListener(onSystem);}paint();})();`}
-    />
+
     {
       ANALYTICS_ENABLED && (
         <script

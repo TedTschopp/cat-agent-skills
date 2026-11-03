@@ -88,6 +88,10 @@ jobs:
         run: npm run build
         env:
           PUBLIC_LOCAL_GISCUS_ENABLED: ${{ vars.PUBLIC_LOCAL_GISCUS_ENABLED }}
+      - name: Verify shared analytics coverage
+        run: |
+          python3 scripts/site_analytics.py dist --mode standard
+          python3 scripts/site_analytics.py dist --mode standard --check
       - name: Upload Pages Artifact
         if: steps.engagement.outputs.should_deploy == 'true'
         uses: actions/upload-pages-artifact@v3

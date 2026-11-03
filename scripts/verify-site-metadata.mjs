@@ -266,88 +266,18 @@ for (const file of htmlFiles) {
     continue;
   }
 
-  const universalHeaders = elements(tree, "header").filter(
-    (node) => property(node, "id") === "tedt-universal-header",
-  );
-  const universalHeader = one(universalHeaders, "TedT.org universal header", page);
-  if (universalHeader) {
-    const headerLinks = elements(universalHeader, "a");
-    const headerImages = elements(universalHeader, "img");
-    const headerButtons = elements(universalHeader, "button");
-    const topLevelLabels = [];
-    visit(universalHeader, (node) => {
-      if (
-        node.type === "element" &&
-        property(node, "className").split(/\s+/).includes("tedt-navbar__link")
-      ) {
-        topLevelLabels.push(textContent(node).trim().replace(/\s+/g, " "));
-      }
-    });
-
-    const expectedLabels = [
-      "Profile",
-      "Career",
-      "Projects",
-      "Tools",
-      "Assessments",
-      "Presentations",
-      "AI Library",
-    ];
-    check(
-      JSON.stringify(topLevelLabels) === JSON.stringify(expectedLabels),
-      `${page}: universal navigation order is wrong: ${topLevelLabels.join(" > ")}`,
-    );
-
-    const aiLibrary = headerLinks.filter(
-      (node) => textContent(node).trim() === "AI Library",
-    );
-    const brand = headerLinks.filter(
-      (node) => property(node, "ariaLabel") === "Ted Tschopp home",
-    );
-    const logo = headerImages.filter(
-      (node) => property(node, "alt") === "Ted Tschopp home",
-    );
-    const themeChoices = headerButtons
-      .filter((node) => ["Light", "System", "Dark"].includes(property(node, "title")))
-      .map((node) => property(node, "title"));
-    const tocChoices = headerButtons
-      .filter((node) => ["Show TOC", "Hide TOC"].includes(property(node, "title")))
-      .map((node) => ({
-        title: property(node, "title"),
-        disabled: property(node, "disabled"),
-      }));
-
-    check(aiLibrary.length === 1, `${page}: expected one AI Library universal link`);
-    check(
-      aiLibrary[0] && property(aiLibrary[0], "href") === "https://ai.tedt.org/",
-      `${page}: AI Library must link to https://ai.tedt.org/`,
-    );
-    check(
-      aiLibrary[0] && property(aiLibrary[0], "ariaCurrent") === "page",
-      `${page}: AI Library must identify the current site`,
-    );
-    check(
-      brand.length === 1 && property(brand[0], "href") === "https://tedt.org/",
-      `${page}: universal brand must return to https://tedt.org/`,
-    );
-    check(
-      logo.length === 1 &&
-        property(logo[0], "src") === "https://tedt.org/img/home/logo-Tschopp.svg" &&
-        property(logo[0], "height") === "64",
-      `${page}: universal header must use the canonical 64px TedT.org logo`,
-    );
-    check(
-      JSON.stringify(themeChoices) === JSON.stringify(["Light", "System", "Dark"]),
-      `${page}: universal theme controls must be Light, System, Dark`,
-    );
-    check(
-      JSON.stringify(tocChoices) ===
-        JSON.stringify([
-          { title: "Show TOC", disabled: "true" },
-          { title: "Hide TOC", disabled: "true" },
-        ]),
-      `${page}: unavailable TOC controls must remain present and disabled`,
-    );
+  const sharedHeader = one(elements(tree, "tedt-global-header"), "TedT.org shared header", page);
+  if (sharedHeader) {
+    check(property(sharedHeader, "site") === "ai", `${page}: shared header must identify the AI Library`);
+    check(property(sharedHeader, "section") === "tools", `${page}: AI Library belongs to Tools`);
+    const fallbackLinks = elements(sharedHeader, "a");
+    check(JSON.stringify(fallbackLinks.map(node => textContent(node).trim())) === JSON.stringify([
+      "Ted Tschopp", "Essays", "Stories & Folklore", "Games & Worlds", "Tools", "Learn", "About"
+    ]), `${page}: shared-header fallback destinations are incomplete or out of order`);
+    check(fallbackLinks.every(node => property(node, "href").startsWith("https://")), `${page}: fallback links must work across origins`);
+    const sharedScripts = elements(tree, "script").filter(node => property(node, "src") === "https://tedt.org/assets/global-header/v1/header.js");
+    check(sharedScripts.length === 1, `${page}: expected exactly one central header script`);
+    check(!elements(tree, "header").some(node => property(node, "id") === "tedt-universal-header"), `${page}: copied legacy header must be removed`);
   }
 
   const title = one(titles, "title", page);
