@@ -76,6 +76,24 @@ test("topic derivation honors authored intent, allows supporting-only non-person
   );
 });
 
+test("new Cowork business plugins map to existing controlled topics", () => {
+  for (const [tag, topic] of [
+    ["customer-service", "Business and Strategy"],
+    ["engineering-change", "Architecture and Engineering"],
+    ["maintenance", "Productivity and Automation"],
+    ["order-management", "Productivity and Automation"],
+    ["catalog", "Content and Documentation"],
+    ["retail-execution", "Business and Strategy"],
+    ["returns", "Business and Strategy"],
+    ["safety", "Governance, Risk, and Compliance"],
+    ["store-operations", "Productivity and Automation"],
+    ["supplier", "Business and Strategy"],
+    ["trade-promotion", "Business and Strategy"],
+  ]) {
+    assert.deepEqual(deriveLibraryTopics({ kind: "plugin", tags: [tag] }), [topic]);
+  }
+});
+
 test("keywords cannot displace authored topics and single implementation tags stay secondary", () => {
   const topicsFor = (slug: string): string[] =>
     catalog.find((asset) => asset.slug === slug)?.topics ?? [];
