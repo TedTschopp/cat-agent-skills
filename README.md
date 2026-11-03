@@ -181,9 +181,11 @@ Write the agent instructions here as Markdown — this body becomes the
 
 > Besides single skills, you can submit a **Scout automation** (a `.json` export,
 > Scout-only). It drops into `submissions/<slug>/` the same way and is
-> auto-detected by its payload. (Cowork plugins and Scout automation installers
-> were `.zip` packages and are **no longer accepted** — `.zip` payloads have
-> been retired; existing ones stay published.) See
+> auto-detected by its payload. Cowork plugins are accepted as unpacked folders
+> containing a root `manifest.json`, icons, and their `skills/` tree. They use the
+> existing plugin validator and deterministic bundle writer. Do not combine a
+> plugin with another payload type. New plugin/automation-installer `.zip`
+> submissions remain retired; grandfathered packages stay published. See
 > [`submissions/README.md`](submissions/README.md) for the details.
 
 ## Project Structure
