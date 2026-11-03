@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "npm run assets:catalog && astro build && node scripts/verify-site-metadata.mjs",
+    "build": "npm run assets:catalog && astro build && node scripts/verify-site-metadata.mjs && python3 scripts/site_analytics.py dist --mode standard && python3 scripts/site_analytics.py dist --mode standard --check",
     "preview": "astro preview",
     "astro": "astro",
     "validate:skills": "node --import tsx scripts/validate-skill.ts src/content/skills/*.md",
