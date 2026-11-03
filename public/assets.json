@@ -13875,8 +13875,12 @@
     "engagement": {
       "microsoft": {
         "rating": 0,
-        "comments": 0,
+        "comments": 3,
         "discussions": [
+          {
+            "number": 389,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/389"
+          },
           {
             "number": 179,
             "url": "https://github.com/microsoft/cat-agent-skills/discussions/179"
@@ -13894,7 +13898,7 @@
       },
       "total": {
         "rating": 0,
-        "comments": 0
+        "comments": 3
       }
     },
     "variables": [],
@@ -18008,6 +18012,10 @@
         "rating": 3,
         "comments": 0,
         "discussions": [
+          {
+            "number": 395,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/395"
+          },
           {
             "number": 248,
             "url": "https://github.com/microsoft/cat-agent-skills/discussions/248"
