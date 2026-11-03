@@ -1,12 +1,12 @@
 /**
  * Validate a Cowork plugin (an M365 app package) thoroughly.
  *
- * A plugin is a `.zip` whose ROOT holds a `manifest.json` (Unified M365 app
+ * A plugin's unpacked ROOT holds a `manifest.json` (Unified M365 app
  * manifest), `color.png` / `outline.png` icons, and a `skills/` tree with one or
  * more Agent Skills. Unlike a single cross-platform skill, a plugin runs only on
  * Copilot Cowork.
  *
- * This module inspects the exploded zip files (never the filesystem) so the same
+ * This module inspects enumerated files (never the filesystem) so the same
  * rules run at submission time and in CI. It returns the parsed manifest plus a
  * digest of the contained skills/connectors, which the importer uses to
  * synthesize the gallery detail page.

@@ -1389,6 +1389,7 @@ export function loadSubmission(dir: string): Submission {
   const topFiles = readdirSync(dir).filter((n) => statSync(join(dir, n)).isFile());
   const zips = topFiles.filter((n) => n.toLowerCase().endsWith(".zip"));
   const hasRootSkill = topFiles.some((n) => n.toLowerCase() === INSTRUCTIONS_NAME);
+  const hasRootManifest = isPluginPackage(submissionFiles);
   const promptFiles = topFiles.filter((n) => n.toLowerCase().endsWith(".prompt.md"));
   const automationJsons = topFiles.filter(
     (n) => n.toLowerCase().endsWith(".json") && !METADATA_NAMES.includes(n.toLowerCase()),
@@ -1421,6 +1422,10 @@ export function loadSubmission(dir: string): Submission {
   // for every entry type; never bundled and never part of the agent payload.
   const readmeFile = topFiles.find((n) => n.toLowerCase() === README_NAME);
   if (readmeFile) sub.readmeMd = readFileSync(join(dir, readmeFile), "utf8");
+
+  if (hasRootManifest && (hasRootSkill || promptFiles.length > 0 || zips.length > 0 || declaredGenericKind)) {
+    problems.push("an unpacked Cowork plugin cannot also declare a skill, prompt, ZIP, or generic payload");
+  }
 
   if (declaredGenericKind) {
     sub.kind = declaredGenericKind;
@@ -1511,6 +1516,14 @@ export function loadSubmission(dir: string): Submission {
         classifyPayload(sub, files);
       }
     }
+  } else if (hasRootManifest) {
+    // Unpacked M365 packages use the same validator and deterministic bundle
+    // writer as grandfathered plugin ZIPs. Never interpret their structured
+    // manifest name/description fields as a Scout automation.
+    sub.kind = "plugin";
+    sub.pluginFiles = submissionFiles.filter(
+      (file) => file.path !== metaFile && file.path !== readmeFile,
+    );
   } else if (hasRootSkill) {
     // Unpacked: bundle the folder contents verbatim (minus the metadata sidecar).
     classifyPayload(sub, submissionFiles);
@@ -1613,6 +1626,7 @@ function main() {
         "payload: an unpacked `SKILL.md` (frontmatter `name` + agent-facing " +
         "`description`, then instructions), a single Scout automation " +
         "`<name>.json`, a single `<slug>.prompt.md` prompt template, or an " +
+        "unpacked Cowork plugin (`manifest.json`, icons, and skills), or an " +
         "explicitly enumerated generic Markdown file set. " +
         "`.zip` payloads are no longer accepted. Fix the items " +
         "above and retry.",
