@@ -17,7 +17,7 @@ coverImageWidth: 1600
 coverImageHeight: 1000
 coverImageGenerator: OpenAI image generation via Codex
 coverImageGeneratedAt: 2026-10-24
-coverImageSourceHash: "sha256:90a2e154d039032427e1b3acebbe05754cabecaf8a49af79188e15d1c7a335e5"
+coverImageSourceHash: "sha256:0199d49dd051f1a63b200b4cc30f7f3d5e0e923a228bc97753e1243705d64005"
 coverImageSourceHashVersion: 2
 bundle: bundles/personal-newspaper.zip
 ---
