@@ -3,7 +3,7 @@
   "repositories": {
     "microsoft": {
       "repository": "microsoft/cat-agent-skills",
-      "stars": 95
+      "stars": 97
     },
     "local": {
       "repository": "TedTschopp/cat-agent-skills",
