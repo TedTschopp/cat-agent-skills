@@ -53,6 +53,27 @@
         "comments": 2
       }
     },
+    "agent-rai-impact-assessment": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 405,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/405"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
     "ai-demo-assistant": {
       "microsoft": {
         "rating": 0,
@@ -518,6 +539,27 @@
           {
             "number": 151,
             "url": "https://github.com/microsoft/cat-agent-skills/discussions/151"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
+        "comments": 0
+      }
+    },
+    "maintenance-triage": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 408,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/408"
           }
         ]
       },

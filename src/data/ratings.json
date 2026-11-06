@@ -1,6 +1,7 @@
 {
   "action-items-todo": 0,
   "agent-harness-explorer": 5,
+  "agent-rai-impact-assessment": 0,
   "ai-demo-assistant": 0,
   "ai-usecase-assessment": 3,
   "brand-template-enforcer": 4,
@@ -23,6 +24,7 @@
   "knowledge-source-router": 3,
   "linkedin-content-writer": 2,
   "lookup-dataverse-table": 1,
+  "maintenance-triage": 1,
   "mct-excellence-iq": 1,
   "meeting-analyzer": 0,
   "powerpoint-deck-designer": 0,
