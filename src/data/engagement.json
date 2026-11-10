@@ -418,6 +418,27 @@
         "comments": 0
       }
     },
+    "fsi-asset-management": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 413,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/413"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
     "generating-podcast-script": {
       "microsoft": {
         "rating": 1,
