@@ -3,7 +3,7 @@
   "repositories": {
     "microsoft": {
       "repository": "microsoft/cat-agent-skills",
-      "stars": 103
+      "stars": 105
     },
     "local": {
       "repository": "TedTschopp/cat-agent-skills",
@@ -754,6 +754,27 @@
       },
       "total": {
         "rating": 3,
+        "comments": 0
+      }
+    },
+    "safety-incident-assist": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 416,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/416"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
         "comments": 0
       }
     },
