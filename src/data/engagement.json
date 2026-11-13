@@ -678,6 +678,27 @@
         "comments": 0
       }
     },
+    "qr-code-builder": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 2,
+        "discussions": [
+          {
+            "number": 418,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/418"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
+        "comments": 2
+      }
+    },
     "redlining-content": {
       "microsoft": {
         "rating": 3,
