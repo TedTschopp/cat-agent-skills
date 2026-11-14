@@ -720,13 +720,18 @@
     "legacyPaths": [],
     "featured": true,
     "version": "1.0.0",
-    "rating": 0,
+    "rating": 1,
     "downloads": 0,
     "engagement": {
       "microsoft": {
-        "rating": 0,
+        "rating": 1,
         "comments": 0,
-        "discussions": []
+        "discussions": [
+          {
+            "number": 408,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/408"
+          }
+        ]
       },
       "local": {
         "rating": 0,
@@ -734,7 +739,7 @@
         "discussions": []
       },
       "total": {
-        "rating": 0,
+        "rating": 1,
         "comments": 0
       }
     },
@@ -2543,7 +2548,12 @@
       "microsoft": {
         "rating": 0,
         "comments": 0,
-        "discussions": []
+        "discussions": [
+          {
+            "number": 405,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/405"
+          }
+        ]
       },
       "local": {
         "rating": 0,
@@ -18845,13 +18855,18 @@
     "legacyPaths": [],
     "featured": false,
     "version": "1.0.0",
-    "rating": 0,
+    "rating": 1,
     "downloads": 0,
     "engagement": {
       "microsoft": {
-        "rating": 0,
-        "comments": 0,
-        "discussions": []
+        "rating": 1,
+        "comments": 2,
+        "discussions": [
+          {
+            "number": 418,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/418"
+          }
+        ]
       },
       "local": {
         "rating": 0,
@@ -18859,8 +18874,8 @@
         "discussions": []
       },
       "total": {
-        "rating": 0,
-        "comments": 0
+        "rating": 1,
+        "comments": 2
       }
     },
     "variables": [],
