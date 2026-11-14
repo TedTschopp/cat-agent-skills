@@ -89,6 +89,7 @@ jobs:
         env:
           PUBLIC_LOCAL_GISCUS_ENABLED: ${{ vars.PUBLIC_LOCAL_GISCUS_ENABLED }}
       - name: Verify shared analytics coverage
+        if: steps.engagement.outputs.should_deploy == 'true'
         run: |
           python3 scripts/site_analytics.py dist --mode standard
           python3 scripts/site_analytics.py dist --mode standard --check
