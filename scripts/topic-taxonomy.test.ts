@@ -78,11 +78,14 @@ test("topic derivation honors authored intent, allows supporting-only non-person
 
 test("new Cowork business plugins map to existing controlled topics", () => {
   for (const [tag, topic] of [
+    ["accounting", "Industries and Domains"],
     ["customer-service", "Business and Strategy"],
     ["engineering-change", "Architecture and Engineering"],
     ["maintenance", "Productivity and Automation"],
     ["order-management", "Productivity and Automation"],
     ["catalog", "Content and Documentation"],
+    ["financial-services", "Industries and Domains"],
+    ["professional-services", "Industries and Domains"],
     ["retail-execution", "Business and Strategy"],
     ["returns", "Business and Strategy"],
     ["safety", "Governance, Risk, and Compliance"],

@@ -290,6 +290,7 @@ export const LIBRARY_TOPICS = [
     id: "industries-domains",
     label: "Industries and Domains",
     aliases: [
+      "accounting",
       "adventure",
       "brasil",
       "canada",
@@ -299,6 +300,7 @@ export const LIBRARY_TOPICS = [
       "european union",
       "expenses",
       "finance",
+      "financial-services",
       "folha",
       "game",
       "game master",
@@ -311,6 +313,7 @@ export const LIBRARY_TOPICS = [
       "logistics",
       "loinc",
       "offboarding",
+      "professional-services",
       "rescisao",
       "rh",
       "stoicism",
