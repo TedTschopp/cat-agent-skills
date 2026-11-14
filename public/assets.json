@@ -3771,6 +3771,109 @@
   {
     "kind": "skill",
     "kindLabel": "Agent Skill",
+    "slug": "answer-research",
+    "name": "Answer Research",
+    "title": "Answer Research",
+    "description": "Research source-backed answers to support, policy, eligibility, and troubleshooting questions with explicit evidence gaps.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Knowledge, Learning, and Research"
+    ],
+    "tags": [
+      "customer-service",
+      "research",
+      "troubleshooting"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-31T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/answer-research.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/answer-research.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/answer-research.zip",
+    "downloadPath": "bundles/answer-research.zip",
+    "canonicalPath": "/skills/answer-research/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": null,
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "AR"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/answer-research",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
     "slug": "create-aquatint-etching-images",
     "name": "Aquatint Etching Images",
     "title": "Aquatint Etching Images",
@@ -6882,6 +6985,116 @@
     }
   },
   {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "fsi-asset-management",
+    "name": "Asset Management",
+    "title": "Asset Management",
+    "description": "RFP and DDQ drafting, investment commentary, research briefs, peer product comparisons, client review prep, and consultant database refreshes for institutional asset managers.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Industries and Domains"
+    ],
+    "tags": [
+      "financial-services",
+      "asset-management",
+      "rfp",
+      "ddq",
+      "investment-commentary"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-28T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/fsi-asset-management.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/fsi-asset-management.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/fsi-asset-management.zip",
+    "downloadPath": "bundles/fsi-asset-management.zip",
+    "canonicalPath": "/skills/fsi-asset-management/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.1",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 413,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/413"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "AM"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/fsi-asset-management",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
     "kind": "skill",
     "kindLabel": "Agent Skill",
     "slug": "clt-hr-assistant",
@@ -8490,6 +8703,109 @@
     }
   },
   {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "business-case-composer",
+    "name": "Business Case Composer",
+    "title": "Business Case Composer",
+    "description": "Draft a customer-specific business case connecting the problem, investment, and evidence-backed value.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Business and Strategy"
+    ],
+    "tags": [
+      "sales",
+      "business-case",
+      "customer-value"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-31T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/business-case-composer.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/business-case-composer.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/business-case-composer.zip",
+    "downloadPath": "bundles/business-case-composer.zip",
+    "canonicalPath": "/skills/business-case-composer/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": null,
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "BC"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/business-case-composer",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
     "kind": "prompt-template",
     "kindLabel": "Prompt Template File",
     "slug": "lean-six-sigma-analysis",
@@ -9471,6 +9787,317 @@
     }
   },
   {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "capital-markets-for-cowork",
+    "name": "Capital Markets",
+    "title": "Capital Markets",
+    "description": "Analyst work for banking, research and private equity.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Industries and Domains"
+    ],
+    "tags": [
+      "financial-services",
+      "capital-markets",
+      "investment-research",
+      "due-diligence"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-31T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/capital-markets-for-cowork.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/capital-markets-for-cowork.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/capital-markets-for-cowork.zip",
+    "downloadPath": "bundles/capital-markets-for-cowork.zip",
+    "canonicalPath": "/skills/capital-markets-for-cowork/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.7",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "CM"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/capital-markets-for-cowork",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "case-preparation-brief",
+    "name": "Case Preparation Brief",
+    "title": "Case Preparation Brief",
+    "description": "Prepare a decision-ready support case brief with status, history, open commitments, and the recommended next step.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Business and Strategy",
+      "Communication and Collaboration"
+    ],
+    "tags": [
+      "customer-service",
+      "case-management",
+      "handoff"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-31T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/case-preparation-brief.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/case-preparation-brief.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/case-preparation-brief.zip",
+    "downloadPath": "bundles/case-preparation-brief.zip",
+    "canonicalPath": "/skills/case-preparation-brief/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": null,
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "CP"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/case-preparation-brief",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "case-triage",
+    "name": "Case Triage",
+    "title": "Case Triage",
+    "description": "Prioritize support issues using impact, deadlines, commitments, and evidence-backed urgency.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Business and Strategy"
+    ],
+    "tags": [
+      "customer-service",
+      "triage",
+      "prioritization"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-31T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/case-triage.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/case-triage.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/case-triage.zip",
+    "downloadPath": "bundles/case-triage.zip",
+    "canonicalPath": "/skills/case-triage/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": null,
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "CT"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/case-triage",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
     "kind": "skill",
     "kindLabel": "Agent Skill",
     "slug": "classic-text-adventure",
@@ -9564,6 +10191,112 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/classic-text-adventure",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "clinical-documentation-companion",
+    "name": "Clinical Docs Companion",
+    "title": "Clinical Docs Companion",
+    "description": "The documents that follow a signed visit note: draft the referral letter, after-visit summary and clinician handoff, build the coding rationale for codes already on the claim and check quality measures, each cited to a line of the note.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Industries and Domains"
+    ],
+    "tags": [
+      "healthcare",
+      "clinical-documentation",
+      "referral",
+      "after-visit-summary",
+      "quality-measures",
+      "coding"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-28T00:00:00.000Z",
+      "updated": "2026-10-28T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/clinical-documentation-companion.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/clinical-documentation-companion.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/clinical-documentation-companion.zip",
+    "downloadPath": "bundles/clinical-documentation-companion.zip",
+    "canonicalPath": "/skills/clinical-documentation-companion/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.3",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "CD"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/clinical-documentation-companion",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -9688,6 +10421,112 @@
     }
   },
   {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "engagement-closeout-knowledge-harvest",
+    "name": "Closeout Knowledge Harvest",
+    "title": "Closeout Knowledge Harvest",
+    "description": "Reusable knowledge from a finished engagement without leaking client confidences: assemble the final deliverables, decision log and retrospective, score reusable assets, cluster lessons learned, hold anything that fails the confidentiality gate and draft a sanitised knowledge record for practice review.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Industries and Domains"
+    ],
+    "tags": [
+      "professional-services",
+      "closeout",
+      "knowledge-management",
+      "lessons-learned",
+      "reuse",
+      "confidentiality"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-11-06T00:00:00.000Z",
+      "updated": "2026-11-06T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/engagement-closeout-knowledge-harvest.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/engagement-closeout-knowledge-harvest.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/engagement-closeout-knowledge-harvest.zip",
+    "downloadPath": "bundles/engagement-closeout-knowledge-harvest.zip",
+    "canonicalPath": "/skills/engagement-closeout-knowledge-harvest/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.5",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "CK"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/engagement-closeout-knowledge-harvest",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
     "kind": "skill",
     "kindLabel": "Agent Skill",
     "slug": "commenting-content",
@@ -9782,6 +10621,111 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/commenting-content",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "fsi-commercial-banking",
+    "name": "Commercial Banking",
+    "title": "Commercial Banking",
+    "description": "Spreads, credit memos, annual review packets, covenant checks, borrower research, and RM call prep for commercial banking credit and coverage teams.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Industries and Domains"
+    ],
+    "tags": [
+      "financial-services",
+      "commercial-banking",
+      "credit",
+      "covenants",
+      "spreading"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-28T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/fsi-commercial-banking.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/fsi-commercial-banking.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/fsi-commercial-banking.zip",
+    "downloadPath": "bundles/fsi-commercial-banking.zip",
+    "canonicalPath": "/skills/fsi-commercial-banking/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.1",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "CB"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/fsi-commercial-banking",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -10530,6 +11474,109 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/competitive-battlecard-builder",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "competitive-strategy",
+    "name": "Competitive Strategy",
+    "title": "Competitive Strategy",
+    "description": "Build customer-specific competitive positioning with supported differentiators, tradeoffs, and objection responses.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Business and Strategy"
+    ],
+    "tags": [
+      "sales",
+      "competitive-strategy",
+      "positioning"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-31T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/competitive-strategy.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/competitive-strategy.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/competitive-strategy.zip",
+    "downloadPath": "bundles/competitive-strategy.zip",
+    "canonicalPath": "/skills/competitive-strategy/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": null,
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "CS"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/competitive-strategy",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -12692,6 +13739,109 @@
     }
   },
   {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "customer-engagement-and-deal-risk-insights",
+    "name": "Customer Engagement and Deal Risk Insights",
+    "title": "Customer Engagement and Deal Risk Insights",
+    "description": "Explain customer engagement and deal momentum with evidence-backed risks, blockers, and next actions.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Business and Strategy"
+    ],
+    "tags": [
+      "sales",
+      "customer-engagement",
+      "deal-risk"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-31T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/customer-engagement-and-deal-risk-insights.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/customer-engagement-and-deal-risk-insights.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/customer-engagement-and-deal-risk-insights.zip",
+    "downloadPath": "bundles/customer-engagement-and-deal-risk-insights.zip",
+    "canonicalPath": "/skills/customer-engagement-and-deal-risk-insights/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": null,
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "CE"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/customer-engagement-and-deal-risk-insights",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
     "kind": "plugin",
     "kindLabel": "Plugin",
     "slug": "customer-service-order-support",
@@ -12910,6 +14060,530 @@
   {
     "kind": "skill",
     "kindLabel": "Agent Skill",
+    "slug": "deal-catchup",
+    "name": "Deal Catch-up",
+    "title": "Deal Catch-up",
+    "description": "Summarize what changed across a scoped set of deals, separating customer movement from record housekeeping.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Business and Strategy"
+    ],
+    "tags": [
+      "sales",
+      "deal-updates",
+      "pipeline"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-31T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/deal-catchup.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/deal-catchup.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/deal-catchup.zip",
+    "downloadPath": "bundles/deal-catchup.zip",
+    "canonicalPath": "/skills/deal-catchup/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": null,
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "DC"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/deal-catchup",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "deliverable-review-quality-gate",
+    "name": "Deliverable Quality Gate",
+    "title": "Deliverable Quality Gate",
+    "description": "A cited partner review packet before a deliverable goes to the client: map each assertion to the support pack, run the firm's quality-gate criteria and required-language checks, rank the findings by severity and list every release blocker.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Industries and Domains"
+    ],
+    "tags": [
+      "professional-services",
+      "quality-review",
+      "deliverable",
+      "qrm",
+      "evidence",
+      "release-gate"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-11-06T00:00:00.000Z",
+      "updated": "2026-11-06T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/deliverable-review-quality-gate.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/deliverable-review-quality-gate.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/deliverable-review-quality-gate.zip",
+    "downloadPath": "bundles/deliverable-review-quality-gate.zip",
+    "canonicalPath": "/skills/deliverable-review-quality-gate/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.9",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "DQ"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/deliverable-review-quality-gate",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "denials-appeals-response",
+    "name": "Denials & Appeals Response",
+    "title": "Denials & Appeals Response",
+    "description": "A denied claim from the remittance to a draft appeal: classify the denial and its reason codes, attach the governing payer policy and chart evidence, rank the queue by deadline then recoverable value and draft the appeal at the right level.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Industries and Domains"
+    ],
+    "tags": [
+      "healthcare",
+      "denials",
+      "appeals",
+      "revenue-cycle",
+      "payer",
+      "claims"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-28T00:00:00.000Z",
+      "updated": "2026-10-28T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/denials-appeals-response.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/denials-appeals-response.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/denials-appeals-response.zip",
+    "downloadPath": "bundles/denials-appeals-response.zip",
+    "canonicalPath": "/skills/denials-appeals-response/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.3",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "D&"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/denials-appeals-response",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "discharge-care-transition",
+    "name": "Discharge Transition Packet",
+    "title": "Discharge Transition Packet",
+    "description": "The packet for a patient going home from hospital: reconcile admission, inpatient and discharge medications, draft the discharge summary and plain language patient instructions, and build a dated follow-up checklist with owners, each cited to the record.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Industries and Domains"
+    ],
+    "tags": [
+      "healthcare",
+      "discharge",
+      "care-transition",
+      "medication-reconciliation",
+      "patient-instructions",
+      "follow-up"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-28T00:00:00.000Z",
+      "updated": "2026-10-28T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/discharge-care-transition.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/discharge-care-transition.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/discharge-care-transition.zip",
+    "downloadPath": "bundles/discharge-care-transition.zip",
+    "canonicalPath": "/skills/discharge-care-transition/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.3",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "DT"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/discharge-care-transition",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "draft-customer-reply",
+    "name": "Draft Customer Reply",
+    "title": "Draft Customer Reply",
+    "description": "Draft a reviewable customer support reply grounded in known facts, applicable policy, and customer needs.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Communication and Collaboration"
+    ],
+    "tags": [
+      "customer-service",
+      "communication",
+      "customer-replies"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-31T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/draft-customer-reply.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/draft-customer-reply.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/draft-customer-reply.zip",
+    "downloadPath": "bundles/draft-customer-reply.zip",
+    "canonicalPath": "/skills/draft-customer-reply/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": null,
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "DC"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/draft-customer-reply",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
     "slug": "edison-writing-guide",
     "name": "Edison Writing Guide",
     "title": "Edison Writing Guide",
@@ -13002,6 +14676,216 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/edison-writing-guide",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "education-for-cowork",
+    "name": "Education",
+    "title": "Education",
+    "description": "Helps education teams with teaching, governance, and institution workflows.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Governance, Risk, and Compliance",
+      "Knowledge, Learning, and Research"
+    ],
+    "tags": [
+      "education",
+      "teaching",
+      "governance"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-31T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/education-for-cowork.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/education-for-cowork.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/education-for-cowork.zip",
+    "downloadPath": "bundles/education-for-cowork.zip",
+    "canonicalPath": "/skills/education-for-cowork/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "ED"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/education-for-cowork",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "engagement-mobilization-onboarding-pack",
+    "name": "Engagement Mobilization Pack",
+    "title": "Engagement Mobilization Pack",
+    "description": "A cited onboarding pack for a new engagement joiner: digest the SOW scope, separate confirmed from proposed staff, match only released prior knowledge, apply the ethical-wall register and draft least-privilege access requests and a first-week plan.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Industries and Domains"
+    ],
+    "tags": [
+      "professional-services",
+      "onboarding",
+      "mobilization",
+      "ethical-walls",
+      "access",
+      "knowledge-reuse"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-11-06T00:00:00.000Z",
+      "updated": "2026-11-06T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/engagement-mobilization-onboarding-pack.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/engagement-mobilization-onboarding-pack.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/engagement-mobilization-onboarding-pack.zip",
+    "downloadPath": "bundles/engagement-mobilization-onboarding-pack.zip",
+    "canonicalPath": "/skills/engagement-mobilization-onboarding-pack/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.7",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "EM"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/engagement-mobilization-onboarding-pack",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -13794,6 +15678,109 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/explainer-video",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "finance-for-cowork",
+    "name": "Finance",
+    "title": "Finance",
+    "description": "Finance close, review prep, audits, and three-statement, DCF and LBO models.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Content and Documentation"
+    ],
+    "tags": [
+      "finance",
+      "financial-modeling",
+      "reporting"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-31T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/finance-for-cowork.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/finance-for-cowork.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/finance-for-cowork.zip",
+    "downloadPath": "bundles/finance-for-cowork.zip",
+    "canonicalPath": "/skills/finance-for-cowork/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.7",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "FI"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/finance-for-cowork",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -14907,6 +16894,109 @@
   {
     "kind": "skill",
     "kindLabel": "Agent Skill",
+    "slug": "knowledge-harvest",
+    "name": "Knowledge Harvest",
+    "title": "Knowledge Harvest",
+    "description": "Turn verified support resolutions into reviewable, reusable knowledge while removing identifying details.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Business and Strategy"
+    ],
+    "tags": [
+      "customer-service",
+      "knowledge-management",
+      "case-resolution"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-31T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/knowledge-harvest.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/knowledge-harvest.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/knowledge-harvest.zip",
+    "downloadPath": "bundles/knowledge-harvest.zip",
+    "canonicalPath": "/skills/knowledge-harvest/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": null,
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "KH"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/knowledge-harvest",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
     "slug": "kql-grounded-queries",
     "name": "KQL Grounded Queries",
     "title": "KQL Grounded Queries",
@@ -15112,6 +17202,109 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/lab-column-mapper",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "legal-for-cowork",
+    "name": "Legal",
+    "title": "Legal",
+    "description": "Understand, organize, review, and prepare legal documents.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Governance, Risk, and Compliance"
+    ],
+    "tags": [
+      "legal",
+      "contracts",
+      "document-review"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-31T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/legal-for-cowork.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/legal-for-cowork.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/legal-for-cowork.zip",
+    "downloadPath": "bundles/legal-for-cowork.zip",
+    "canonicalPath": "/skills/legal-for-cowork/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.10",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "LE"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/legal-for-cowork",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -15770,6 +17963,109 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/meeting-moments-library-builder-cowork",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "meeting-prep",
+    "name": "Meeting Prep",
+    "title": "Meeting Prep",
+    "description": "Prepare an evidence-backed brief for an upcoming customer conversation, including what to learn, say, prove, and ask.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Business and Strategy"
+    ],
+    "tags": [
+      "sales",
+      "meeting-preparation",
+      "customer-engagement"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-31T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/meeting-prep.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/meeting-prep.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/meeting-prep.zip",
+    "downloadPath": "bundles/meeting-prep.zip",
+    "canonicalPath": "/skills/meeting-prep/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": null,
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "MP"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/meeting-prep",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -17279,6 +19575,109 @@
   {
     "kind": "skill",
     "kindLabel": "Agent Skill",
+    "slug": "pipeline-prioritizer",
+    "name": "Pipeline Prioritizer",
+    "title": "Pipeline Prioritizer",
+    "description": "Rank open opportunities into an evidence-backed worklist explaining what to work on next and why.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Business and Strategy"
+    ],
+    "tags": [
+      "sales",
+      "pipeline",
+      "prioritization"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-31T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/pipeline-prioritizer.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/pipeline-prioritizer.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/pipeline-prioritizer.zip",
+    "downloadPath": "bundles/pipeline-prioritizer.zip",
+    "canonicalPath": "/skills/pipeline-prioritizer/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": null,
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "PP"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/pipeline-prioritizer",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
     "slug": "generating-podcast-script",
     "name": "Podcast Script Generator",
     "title": "Podcast Script Generator",
@@ -17381,6 +19780,109 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/generating-podcast-script",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "post-meeting-follow-up",
+    "name": "Post-Meeting Follow-Up",
+    "title": "Post-Meeting Follow-Up",
+    "description": "Capture sales meeting decisions and commitments, propose next actions, and draft a reviewable customer follow-up.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Business and Strategy"
+    ],
+    "tags": [
+      "sales",
+      "meetings",
+      "follow-up"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-31T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/post-meeting-follow-up.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/post-meeting-follow-up.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/post-meeting-follow-up.zip",
+    "downloadPath": "bundles/post-meeting-follow-up.zip",
+    "canonicalPath": "/skills/post-meeting-follow-up/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": null,
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "PF"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/post-meeting-follow-up",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -18143,6 +20645,112 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/presentation-talk-track-builder",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "prior-auth-assist",
+    "name": "Prior Authorization Packet",
+    "title": "Prior Authorization Packet",
+    "description": "A cited prior authorization packet before the request goes to the payer: find the governing coverage policy, check the chart against each criterion, cite the notes that satisfy it, draft the medical necessity narrative and list what is still missing.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Industries and Domains"
+    ],
+    "tags": [
+      "healthcare",
+      "prior-authorization",
+      "payer",
+      "utilization-management",
+      "medical-necessity",
+      "revenue-cycle"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-28T00:00:00.000Z",
+      "updated": "2026-10-28T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/prior-auth-assist.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/prior-auth-assist.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/prior-auth-assist.zip",
+    "downloadPath": "bundles/prior-auth-assist.zip",
+    "canonicalPath": "/skills/prior-auth-assist/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.3",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "PA"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/prior-auth-assist",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -19006,6 +21614,112 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/quality-incident-capa",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "reg-submission-authoring",
+    "name": "Reg Submission Authoring",
+    "title": "Reg Submission Authoring",
+    "description": "A cited first draft of a clinical study report or 510(k) section set: plan the sections from the locked protocol, SAP and TLFs, draft each one from source facts, check every number and population against the sources and assemble the draft with its open items.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Industries and Domains"
+    ],
+    "tags": [
+      "healthcare",
+      "life-sciences",
+      "regulatory",
+      "clinical-study-report",
+      "510k",
+      "medical-writing"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-28T00:00:00.000Z",
+      "updated": "2026-10-28T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/reg-submission-authoring.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/reg-submission-authoring.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/reg-submission-authoring.zip",
+    "downloadPath": "bundles/reg-submission-authoring.zip",
+    "canonicalPath": "/skills/reg-submission-authoring/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.3",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "RS"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/reg-submission-authoring",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -19885,6 +22599,111 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/rich-html-presentation",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "fsi-risk-and-compliance",
+    "name": "Risk and Compliance",
+    "title": "Risk and Compliance",
+    "description": "Cited working papers for compliance, risk, and audit teams: regulatory change triage, policy gap tables, exam request trackers, enforcement read-across, vendor SOC 2 reviews, and KYC research records.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Governance, Risk, and Compliance"
+    ],
+    "tags": [
+      "financial-services",
+      "compliance",
+      "regulatory-change",
+      "kyc",
+      "vendor-risk"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-28T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/fsi-risk-and-compliance.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/fsi-risk-and-compliance.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/fsi-risk-and-compliance.zip",
+    "downloadPath": "bundles/fsi-risk-and-compliance.zip",
+    "canonicalPath": "/skills/fsi-risk-and-compliance/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.29",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "RA"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/fsi-risk-and-compliance",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -20863,6 +23682,220 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/safety-incident",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "safety-incident-assist",
+    "name": "Safety Incident Assist",
+    "title": "Safety Incident Assist",
+    "description": "Prepare cited incident drafts from supplied local evidence, with draft classification, proposed unsent routing, and a write-up for qualified EHS review.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Governance, Risk, and Compliance"
+    ],
+    "tags": [
+      "safety",
+      "ehs",
+      "incident",
+      "manufacturing",
+      "drafting"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-11-10T00:00:00.000Z",
+      "updated": "2026-11-10T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/safety-incident-assist.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/safety-incident-assist.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/safety-incident-assist.zip",
+    "downloadPath": "bundles/safety-incident-assist.zip",
+    "canonicalPath": "/skills/safety-incident-assist/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "2.0.0-rc.7",
+    "rating": 1,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 416,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/416"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "SI"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/safety-incident-assist",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "sales-progress-update",
+    "name": "Sales Progress Update",
+    "title": "Sales Progress Update",
+    "description": "Create a sales progress update covering work completed, deal movement, forecast position, and help needed.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Business and Strategy",
+      "Content and Documentation"
+    ],
+    "tags": [
+      "sales",
+      "reporting",
+      "forecasting"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-31T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/sales-progress-update.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/sales-progress-update.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/sales-progress-update.zip",
+    "downloadPath": "bundles/sales-progress-update.zip",
+    "canonicalPath": "/skills/sales-progress-update/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": null,
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "SP"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/sales-progress-update",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -22330,6 +25363,215 @@
     }
   },
   {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "engagement-staffing-bench-match",
+    "name": "Staffing & Bench Match",
+    "title": "Staffing & Bench Match",
+    "description": "A ranked, partner-ready staffing slate for a signed engagement: extract the roles from the SOW, score bench fit against availability and rates, refuse conflicted or unavailable candidates with the rule cited and draft the recommendation.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Industries and Domains"
+    ],
+    "tags": [
+      "professional-services",
+      "staffing",
+      "resource-management",
+      "bench",
+      "independence",
+      "conflicts"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-11-06T00:00:00.000Z",
+      "updated": "2026-11-06T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/engagement-staffing-bench-match.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/engagement-staffing-bench-match.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/engagement-staffing-bench-match.zip",
+    "downloadPath": "bundles/engagement-staffing-bench-match.zip",
+    "canonicalPath": "/skills/engagement-staffing-bench-match/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.1.14",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "S&"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/engagement-staffing-bench-match",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "stakeholder-and-decision-map",
+    "name": "Stakeholder & Decision Map",
+    "title": "Stakeholder & Decision Map",
+    "description": "Map a deal's buying group, engagement, and decision process, highlighting missing stakeholders and evidence.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Business and Strategy"
+    ],
+    "tags": [
+      "sales",
+      "stakeholders",
+      "decision-making"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-31T00:00:00.000Z",
+      "updated": null
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/stakeholder-and-decision-map.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/stakeholder-and-decision-map.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/stakeholder-and-decision-map.zip",
+    "downloadPath": "bundles/stakeholder-and-decision-map.zip",
+    "canonicalPath": "/skills/stakeholder-and-decision-map/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": null,
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "S&"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/stakeholder-and-decision-map",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
     "kind": "skill",
     "kindLabel": "Agent Skill",
     "slug": "stoic-negotiator",
@@ -23509,6 +26751,112 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/template-based-document-generation",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "plugin",
+    "kindLabel": "Plugin",
+    "slug": "time-expense-narrative-compliance",
+    "name": "Time & Expense Narrative Check",
+    "title": "Time & Expense Narrative Check",
+    "description": "Pre-bill-ready time narratives: gather cited calendar and document activity, draft grounded narratives, recommend phase and task codes, check entries against client billing guidelines and missing time, and build the pre-bill exception packet. Time entries only.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Industries and Domains"
+    ],
+    "tags": [
+      "professional-services",
+      "time-entry",
+      "billing",
+      "pre-bill",
+      "billing-guidelines",
+      "wip"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork"
+    ],
+    "author": {
+      "name": "Microsoft",
+      "url": "https://github.com/microsoft",
+      "github": "microsoft",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-11-06T00:00:00.000Z",
+      "updated": "2026-11-06T00:00:00.000Z"
+    },
+    "entrypoint": "manifest.json",
+    "payloadPaths": [
+      "bundles/time-expense-narrative-compliance.zip"
+    ],
+    "payloads": [
+      {
+        "path": "manifest.json",
+        "downloadPath": "bundles/time-expense-narrative-compliance.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/time-expense-narrative-compliance.zip",
+    "downloadPath": "bundles/time-expense-narrative-compliance.zip",
+    "canonicalPath": "/skills/time-expense-narrative-compliance/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.13",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "T&"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/time-expense-narrative-compliance",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -26104,6 +29452,113 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/work-iq-signalboard",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "skill",
+    "kindLabel": "Agent Skill",
+    "slug": "work-iq-sphere",
+    "name": "Work IQ Sphere",
+    "title": "Work IQ Sphere",
+    "description": "Turn your Microsoft 365 work into an interactive 3D Work IQ sphere, a customer-safe view, and a matching PowerPoint slide.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Productivity and Automation"
+    ],
+    "tags": [
+      "productivity",
+      "work-iq",
+      "microsoft-365",
+      "data-visualization",
+      "powerpoint"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Cowork",
+      "Copilot Studio",
+      "Scout"
+    ],
+    "author": {
+      "name": "raemone",
+      "url": "https://github.com/raemone",
+      "github": "raemone",
+      "avatar": null
+    },
+    "dates": {
+      "created": null,
+      "updated": null
+    },
+    "entrypoint": "SKILL.md",
+    "payloadPaths": [
+      "bundles/work-iq-sphere.zip"
+    ],
+    "payloads": [
+      {
+        "path": "SKILL.md",
+        "downloadPath": "bundles/work-iq-sphere.zip"
+      }
+    ],
+    "bundleDownloadPath": "bundles/work-iq-sphere.zip",
+    "downloadPath": "bundles/work-iq-sphere.zip",
+    "canonicalPath": "/skills/work-iq-sphere/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "2.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "WI"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/work-iq-sphere",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
