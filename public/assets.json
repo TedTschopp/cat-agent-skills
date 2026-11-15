@@ -18591,6 +18591,113 @@
     }
   },
   {
+    "kind": "automation",
+    "kindLabel": "Automation",
+    "slug": "missed-meeting-recovery",
+    "name": "Missed-Meeting Recovery",
+    "title": "Missed-Meeting Recovery",
+    "description": "When you miss or decline a calendar meeting, pulls the transcript, meeting chat, or event details and produces a recap with the decisions made and the action items assigned to you, then sends it to you by email and Teams chat.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Productivity and Automation"
+    ],
+    "tags": [
+      "automation",
+      "meetings",
+      "calendar",
+      "transcripts",
+      "action-items",
+      "email",
+      "teams"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Scout"
+    ],
+    "author": {
+      "name": "Payal Awasthi",
+      "url": "https://github.com/awasthipayal07-tech",
+      "github": "awasthipayal07-tech",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-24T00:00:00.000Z",
+      "updated": "2026-11-05T00:00:00.000Z"
+    },
+    "entrypoint": "missed-meeting-recovery.json",
+    "payloadPaths": [
+      "bundles/missed-meeting-recovery.json"
+    ],
+    "payloads": [
+      {
+        "path": "missed-meeting-recovery.json",
+        "downloadPath": "bundles/missed-meeting-recovery.json"
+      }
+    ],
+    "bundleDownloadPath": null,
+    "downloadPath": "bundles/missed-meeting-recovery.json",
+    "canonicalPath": "/skills/missed-meeting-recovery/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.1.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "MR"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/missed-meeting-recovery",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
     "kind": "skill",
     "kindLabel": "Agent Skill",
     "slug": "monte-carlo-analysis",
@@ -18685,6 +18792,113 @@
       "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
       "sourceCommit": null,
       "sourcePath": "submissions/monte-carlo-analysis",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
+    "kind": "automation",
+    "kindLabel": "Automation",
+    "slug": "nudge-for-response",
+    "name": "Nudge for Response",
+    "title": "Nudge for Response",
+    "description": "Every weekday at 9:00 AM, finds sent emails with an ask that has gone unanswered for 3+ business days, saves brief polite nudge replies as drafts for manual review, and posts a Teams summary. Never sends mail.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Productivity and Automation"
+    ],
+    "tags": [
+      "automation",
+      "email",
+      "follow-up",
+      "drafts",
+      "teams",
+      "workiq",
+      "productivity"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Scout"
+    ],
+    "author": {
+      "name": "Payal Awasthi",
+      "url": "https://github.com/awasthipayal07-tech",
+      "github": "awasthipayal07-tech",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-24T00:00:00.000Z",
+      "updated": "2026-11-05T00:00:00.000Z"
+    },
+    "entrypoint": "nudge-for-response.json",
+    "payloadPaths": [
+      "bundles/nudge-for-response.json"
+    ],
+    "payloads": [
+      {
+        "path": "nudge-for-response.json",
+        "downloadPath": "bundles/nudge-for-response.json"
+      }
+    ],
+    "bundleDownloadPath": null,
+    "downloadPath": "bundles/nudge-for-response.json",
+    "canonicalPath": "/skills/nudge-for-response/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.1.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "NF"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/nudge-for-response",
       "sourceUrl": null,
       "sourceFileSha256": null,
       "sourcePromptSha256": null,
@@ -21412,6 +21626,113 @@
     }
   },
   {
+    "kind": "automation",
+    "kindLabel": "Automation",
+    "slug": "prompt-to-set-agenda",
+    "name": "Prompt to Set Agenda",
+    "title": "Prompt to Set Agenda",
+    "description": "Every weekday at 9:00 AM, flags newly set up meetings in the next 3 days that have no agenda, saves one draft email per meeting asking the organizer for an agenda and pre-read, and sends a run summary to Teams and email.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Productivity and Automation"
+    ],
+    "tags": [
+      "automation",
+      "meetings",
+      "agenda",
+      "calendar",
+      "outlook",
+      "teams",
+      "productivity"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Scout"
+    ],
+    "author": {
+      "name": "Payal Awasthi",
+      "url": "https://github.com/awasthipayal07-tech",
+      "github": "awasthipayal07-tech",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-24T00:00:00.000Z",
+      "updated": "2026-11-05T00:00:00.000Z"
+    },
+    "entrypoint": "prompt-to-set-agenda.json",
+    "payloadPaths": [
+      "bundles/prompt-to-set-agenda.json"
+    ],
+    "payloads": [
+      {
+        "path": "prompt-to-set-agenda.json",
+        "downloadPath": "bundles/prompt-to-set-agenda.json"
+      }
+    ],
+    "bundleDownloadPath": null,
+    "downloadPath": "bundles/prompt-to-set-agenda.json",
+    "canonicalPath": "/skills/prompt-to-set-agenda/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.0.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #00a9e0 0%, #00a9e0 100%)",
+      "fallbackInitials": "PT"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/prompt-to-set-agenda",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
+    }
+  },
+  {
     "kind": "skill",
     "kindLabel": "Agent Skill",
     "slug": "qr-code-builder",
@@ -22058,6 +22379,114 @@
       "appliedRepairs": [
         "normalize-model-github-to-github-copilot"
       ]
+    }
+  },
+  {
+    "kind": "automation",
+    "kindLabel": "Automation",
+    "slug": "reschedule-declined-1-1",
+    "name": "Reschedule Declined 1:1",
+    "title": "Reschedule Declined 1:1",
+    "description": "When a one-on-one meeting is declined — by you or by the other person — finds the three best replacement slots in the next 7 business days, creates a real Outlook draft proposing them, and sends you a Teams and email summary. Never sends the draft automatically.",
+    "status": "active",
+    "publicationStatus": "published",
+    "topics": [
+      "Productivity and Automation"
+    ],
+    "tags": [
+      "automation",
+      "meetings",
+      "calendar",
+      "scheduling",
+      "one-on-one",
+      "outlook",
+      "teams",
+      "email"
+    ],
+    "keywords": [],
+    "models": [],
+    "compatibility": [],
+    "worksWith": [
+      "Scout"
+    ],
+    "author": {
+      "name": "Payal Awasthi",
+      "url": "https://github.com/awasthipayal07-tech",
+      "github": "awasthipayal07-tech",
+      "avatar": null
+    },
+    "dates": {
+      "created": "2026-10-24T00:00:00.000Z",
+      "updated": "2026-11-05T00:00:00.000Z"
+    },
+    "entrypoint": "reschedule-declined-1-1.json",
+    "payloadPaths": [
+      "bundles/reschedule-declined-1-1.json"
+    ],
+    "payloads": [
+      {
+        "path": "reschedule-declined-1-1.json",
+        "downloadPath": "bundles/reschedule-declined-1-1.json"
+      }
+    ],
+    "bundleDownloadPath": null,
+    "downloadPath": "bundles/reschedule-declined-1-1.json",
+    "canonicalPath": "/skills/reschedule-declined-1-1/",
+    "legacyPaths": [],
+    "featured": false,
+    "version": "1.1.0",
+    "rating": 0,
+    "downloads": 0,
+    "engagement": {
+      "microsoft": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 0,
+        "comments": 0
+      }
+    },
+    "variables": [],
+    "series": [],
+    "relatedAssetIds": [],
+    "artwork": {
+      "ready": false,
+      "image": null,
+      "alt": null,
+      "prompt": null,
+      "aspectRatio": null,
+      "width": null,
+      "height": null,
+      "generator": null,
+      "generatedAt": null,
+      "sourceHash": null,
+      "sourceHashVersion": null,
+      "fallbackGradient": "linear-gradient(135deg, #e86027 0%, #e86027 100%)",
+      "fallbackInitials": "RD"
+    },
+    "provenance": {
+      "sourceRepository": "https://github.com/TedTschopp/cat-agent-skills",
+      "sourceCommit": null,
+      "sourcePath": "submissions/reschedule-declined-1-1",
+      "sourceUrl": null,
+      "sourceFileSha256": null,
+      "sourcePromptSha256": null,
+      "importedPromptSha256": null,
+      "sourceGuideSha256": null,
+      "importedGuideSha256": null,
+      "sourceFiles": [],
+      "importedFiles": [],
+      "legacyPaths": [],
+      "legacyImage": null,
+      "legacyMetadata": null,
+      "appliedRepairs": []
     }
   },
   {
