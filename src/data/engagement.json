@@ -3,7 +3,7 @@
   "repositories": {
     "microsoft": {
       "repository": "microsoft/cat-agent-skills",
-      "stars": 112
+      "stars": 113
     },
     "local": {
       "repository": "TedTschopp/cat-agent-skills",
@@ -405,6 +405,27 @@
           {
             "number": 333,
             "url": "https://github.com/microsoft/cat-agent-skills/discussions/333"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 1,
+        "comments": 0
+      }
+    },
+    "financial-statement-spreading": {
+      "microsoft": {
+        "rating": 1,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 435,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/435"
           }
         ]
       },
