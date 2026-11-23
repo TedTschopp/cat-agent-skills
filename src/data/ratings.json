@@ -1,6 +1,6 @@
 {
   "action-items-todo": 0,
-  "agent-harness-explorer": 5,
+  "agent-harness-explorer": 6,
   "agent-rai-impact-assessment": 0,
   "ai-demo-assistant": 0,
   "ai-usecase-assessment": 3,
@@ -31,6 +31,7 @@
   "meeting-analyzer": 0,
   "powerpoint-deck-designer": 0,
   "presentation-talk-track-builder": 1,
+  "project-planning-cowork": 2,
   "qr-code-builder": 1,
   "redlining-content": 3,
   "regulation-monitor": 1,

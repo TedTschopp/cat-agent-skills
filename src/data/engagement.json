@@ -34,12 +34,16 @@
     },
     "agent-harness-explorer": {
       "microsoft": {
-        "rating": 5,
+        "rating": 6,
         "comments": 2,
         "discussions": [
           {
             "number": 65,
             "url": "https://github.com/microsoft/cat-agent-skills/discussions/65"
+          },
+          {
+            "number": 437,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/437"
           }
         ]
       },
@@ -49,7 +53,7 @@
         "discussions": []
       },
       "total": {
-        "rating": 5,
+        "rating": 6,
         "comments": 2
       }
     },
@@ -696,6 +700,27 @@
       },
       "total": {
         "rating": 1,
+        "comments": 0
+      }
+    },
+    "project-planning-cowork": {
+      "microsoft": {
+        "rating": 2,
+        "comments": 0,
+        "discussions": [
+          {
+            "number": 436,
+            "url": "https://github.com/microsoft/cat-agent-skills/discussions/436"
+          }
+        ]
+      },
+      "local": {
+        "rating": 0,
+        "comments": 0,
+        "discussions": []
+      },
+      "total": {
+        "rating": 2,
         "comments": 0
       }
     },
